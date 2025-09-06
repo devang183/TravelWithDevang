@@ -504,7 +504,7 @@ const TaylorSwiftDashboard = ({cityred}) => {
                    !(post.preview && post.preview.images && post.preview.images.length > 0) &&
                    (post.url === `https://www.reddit.com${post.permalink}` || !post.url) && (
                     <div className="bg-gray-50 rounded-lg p-4 text-center text-gray-500">
-                      This post doesn't contain displayable content
+                      This post does not contain displayable content
                     </div>
                   )}
                 </div>

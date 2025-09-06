@@ -105,7 +105,7 @@ export default function CityPage({ params }) {
       ) : (
         <div className="p-6 text-center text-gray-600">
           <h2 className="text-xl font-semibold mb-2">Maps Coming Soon</h2>
-          <p>We're working on adding maps for this city. Please check back later!</p>
+          <p>We are working on adding maps for this city. Please check back later!</p>
         </div>
       )}
 

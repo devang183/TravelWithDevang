@@ -1,0 +1,647 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2025-08-11T21:23:45Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/264698492",
+        "amenity": "place_of_worship",
+        "check_date": "2024-10-01",
+        "denomination": "roman_catholic",
+        "fixme": "Location? Extent?",
+        "indoor": "room",
+        "name": "Gort Muire",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2402933,
+          53.2803372
+        ]
+      },
+      "id": "node/264698492"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/626656507",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.20594,
+          53.2825656
+        ]
+      },
+      "id": "node/626656507"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/631694926",
+        "addr:city": "Dublin",
+        "addr:country": "IE",
+        "addr:housenumber": "64",
+        "addr:street": "Great Strand Street",
+        "amenity": "place_of_worship",
+        "name": "Destiny Christian Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2667392,
+          53.346748
+        ]
+      },
+      "id": "node/631694926"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/639840911",
+        "amenity": "place_of_worship",
+        "name": "Universal Church of the Kingdom of God",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2724918,
+          53.3610977
+        ]
+      },
+      "id": "node/639840911"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/653535739",
+        "addr:city": "Dublin",
+        "addr:housenumber": "29",
+        "addr:street": "Pearse Street",
+        "amenity": "place_of_worship",
+        "check_date": "2025-05-12",
+        "denomination": "baptist",
+        "name": "Grace",
+        "religion": "christian",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2532462,
+          53.3450174
+        ]
+      },
+      "id": "node/653535739"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/944132699",
+        "amenity": "place_of_worship",
+        "denomination": "elim_pentecostal",
+        "name": "Ballyfermot Community Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.359608,
+          53.3441445
+        ]
+      },
+      "id": "node/944132699"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1180835203",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "inscription": "Ave Maria",
+        "name": "Blessed Virgin Mary",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.255727,
+          53.3679201
+        ]
+      },
+      "id": "node/1180835203"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1274545409",
+        "addr:housenumber": "1",
+        "addr:street": "Gardiner Street Upper",
+        "amenity": "place_of_worship",
+        "name": "Dublin Zen Dojo",
+        "religion": "buddhist",
+        "website": "https://zenireland.com/dublin.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.259357,
+          53.3568691
+        ]
+      },
+      "id": "node/1274545409"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1420144047",
+        "addr:housenumber": "21",
+        "addr:street": "Herbert Park",
+        "alt_name": "1st Church of Christ Scientist",
+        "amenity": "place_of_worship",
+        "denomination": "christ_scientist",
+        "name": "First Church of Christ, Scientist",
+        "religion": "christian",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2379144,
+          53.3265081
+        ]
+      },
+      "id": "node/1420144047"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1719786533",
+        "addr:city": "Dublin",
+        "addr:housename": "Unit 5 Liberty Corner",
+        "addr:postcode": "D01 N5H6",
+        "addr:street": "James Joyce Street",
+        "amenity": "place_of_worship",
+        "contact:twitter": "https://twitter.com/dbuddhistcentre",
+        "denomination": "triratna",
+        "email": "info@dublinbuddhistcentre.org",
+        "name": "Dublin Buddhist Centre",
+        "opening_hours": "Mo-Fr 12:30-14:00, 15:00-18:00",
+        "phone": "+353 1 8178933",
+        "religion": "buddhist",
+        "website": "https://www.dublinbuddhistcentre.org/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2535303,
+          53.3519499
+        ]
+      },
+      "id": "node/1719786533"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2003224651",
+        "addr:city": "Dublin",
+        "addr:street": "Ardee Street",
+        "amenity": "place_of_worship",
+        "check_date": "2023-08-13",
+        "denomination": "nondenominational",
+        "name": "UCKG Help Centre",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2799337,
+          53.3391038
+        ]
+      },
+      "id": "node/2003224651"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2261754495",
+        "amenity": "place_of_worship",
+        "check_date": "2025-03-04",
+        "denomination": "roman_catholic",
+        "name": "Church of the Immaculate Conception",
+        "religion": "christian",
+        "website": "http://www.clondalkinparish.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3937256,
+          53.3186158
+        ]
+      },
+      "id": "node/2261754495"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2401795304",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "fixme": "Location? Extent?",
+        "indoor": "room",
+        "name": "Saint Attracta's Oratory",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2554247,
+          53.2815394
+        ]
+      },
+      "id": "node/2401795304"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2941566497",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2539103,
+          53.3638872
+        ]
+      },
+      "id": "node/2941566497"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3015337101",
+        "addr:housenumber": "83",
+        "addr:street": "Middle Abbey Street",
+        "amenity": "place_of_worship",
+        "denomination": "vaishnavism",
+        "email": "dublin@krishna.ie",
+        "name": "ISKCON Dublin",
+        "phone:mobile": "+353-86-2120452",
+        "religion": "hindu",
+        "website": "https://www.iskcondublin.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.260767,
+          53.3483554
+        ]
+      },
+      "id": "node/3015337101"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3052794801",
+        "addr:city": "Dublin",
+        "addr:housenumber": "46",
+        "addr:street": "Parnell Square West",
+        "amenity": "place_of_worship",
+        "name": "Christian Congregation in Ireland",
+        "opening_hours": "Sa 19:30-21:00, Su 18:00-19:30",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2643219,
+          53.3525024
+        ]
+      },
+      "id": "node/3052794801"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3234606193",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "drinking_water": "no",
+        "heritage": "2",
+        "heritage:operator": "IE:smr",
+        "man_made": "water_well",
+        "name": "Our Lady’s Well",
+        "name:etymology:wikidata": "Q345",
+        "place_of_worship": "holy_well",
+        "ref:IE:smr": "DU013-009----",
+        "religion": "christian",
+        "tourism": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3917662,
+          53.4084045
+        ]
+      },
+      "id": "node/3234606193"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3425117454",
+        "addr:housename": "Mater Misericordiae University Hospital",
+        "addr:street": "North Circular Road",
+        "amenity": "place_of_worship",
+        "name": "Mortuary Chapel of Repose"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2679149,
+          53.360273
+        ]
+      },
+      "id": "node/3425117454"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3466015125",
+        "addr:city": "Dublin",
+        "addr:street": "Parnell Street",
+        "amenity": "place_of_worship",
+        "name": "Mercy Christian Fellowship International",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2579351,
+          53.3541019
+        ]
+      },
+      "id": "node/3466015125"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3688125657",
+        "addr:city": "Dublin",
+        "addr:street": "Corn Exchange Place",
+        "amenity": "place_of_worship",
+        "email": "dublin@diamondway-center.org",
+        "name": "Diamond Way Buddhist Centre",
+        "phone": "+353-1-515-9290",
+        "religion": "buddhist",
+        "website": "https://www.diamondway.ie/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2558845,
+          53.3470004
+        ]
+      },
+      "id": "node/3688125657"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4761907138",
+        "addr:city": "Blanchardstown",
+        "addr:housenumber": "224",
+        "addr:street": "Blanchardstown Corporate Park 2",
+        "amenity": "place_of_worship",
+        "denomination": "pentecostal",
+        "name": "The Kingdom Center",
+        "opening_hours": "Mo-Sa 10:30-17:00",
+        "religion": "christian",
+        "service_times": "Su 11:00, 12:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3635665,
+          53.4116552
+        ]
+      },
+      "id": "node/4761907138"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5209292894",
+        "amenity": "place_of_worship",
+        "level": "1",
+        "name": "Camino Rest",
+        "religion": "multifaith"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.294807,
+          53.3390997
+        ]
+      },
+      "id": "node/5209292894"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5555008721",
+        "amenity": "place_of_worship",
+        "name": "Lord of the Harvest Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2635741,
+          53.3472049
+        ]
+      },
+      "id": "node/5555008721"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5628799860",
+        "addr:housename": "Church of St. George and St. Thomas",
+        "addr:street": "Cathal Brugha Street",
+        "amenity": "place_of_worship",
+        "denomination": "indian_orthodox",
+        "email": "office@indianorthodoxireland.ie",
+        "name": "St. Thomas Indian Orthodox Church",
+        "phone": "+353-89-2288818",
+        "religion": "christian",
+        "website": "https://indianorthodoxireland.ie/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2596673,
+          53.3524184
+        ]
+      },
+      "id": "node/5628799860"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7352243827",
+        "addr:city": "Tyrrelstown",
+        "addr:street": "Tyrrelstown Avenue",
+        "amenity": "place_of_worship",
+        "denomination": "methodist",
+        "name": "Tyrrelstown Methodist Centre",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.383408,
+          53.4203658
+        ]
+      },
+      "id": "node/7352243827"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7977380510",
+        "addr:city": "Dublin",
+        "addr:housenumber": "59",
+        "addr:postcode": "D01 K286",
+        "addr:street": "Grenville Lane",
+        "amenity": "place_of_worship",
+        "email": "info@dublincitymasjid.com",
+        "name": "City Masjid",
+        "phone": "+353 (0) 89 490 7936",
+        "religion": "muslim",
+        "service_times": "All Days: 6:00 am to 11:30 pm",
+        "website": "https://dublincitymasjid.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2592375,
+          53.3557985
+        ]
+      },
+      "id": "node/7977380510"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8553665774",
+        "amenity": "place_of_worship",
+        "heritage": "2",
+        "heritage:operator": "IE:smr",
+        "name": "Toberbunny",
+        "place_of_worship": "holy_well",
+        "ref:IE:smr": "DU014-023",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2310022,
+          53.4200829
+        ]
+      },
+      "id": "node/8553665774"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9023846497",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Saint John's Well",
+        "name:etymology:wikidata": "Q40662",
+        "natural": "spring",
+        "note": "not on Sites & Monuments Records (2023)",
+        "place_of_worship": "holy_well",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2508398,
+          53.3714472
+        ]
+      },
+      "id": "node/9023846497"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9905088317",
+        "addr:city": "Tallaght",
+        "addr:housename": "Sitecast Industrial Estate",
+        "addr:street": "Hibernian Industrial Estate",
+        "amenity": "place_of_worship",
+        "name": "Mosque of Tallaght",
+        "name:ar": "مسجد تلاغت",
+        "religion": "muslim"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3500296,
+          53.2949413
+        ]
+      },
+      "id": "node/9905088317"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10556690863",
+        "amenity": "place_of_worship",
+        "check_date": "2025-07-12",
+        "name": "Omni centre Oratory",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2485643,
+          53.3916246
+        ]
+      },
+      "id": "node/10556690863"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10968097378",
+        "amenity": "place_of_worship",
+        "check_date": "2023-06-10",
+        "denomination": "roman_catholic",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1849989,
+          53.279519
+        ]
+      },
+      "id": "node/10968097378"
+    }
+  ]
+}

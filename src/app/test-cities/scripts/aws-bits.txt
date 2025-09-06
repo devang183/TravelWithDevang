@@ -1,0 +1,3 @@
+console sign-in url: https://381492288445.signin.aws.amazon.com/console
+s3-upload-script
+q7W05D%N

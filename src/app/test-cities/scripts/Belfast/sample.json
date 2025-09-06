@@ -1,0 +1,1479 @@
+[
+    {
+        "name": "John Long’s Fish & Chips",
+        "coords": [54.5950, -5.9350],
+        "url": "https://www.johnlongs.com/",
+        "description": "Belfast’s longest-established fish & chip shop (since 1914), famed for its ultra‑light crispy batter, Maris Piper chips, and traditional pasties. A beloved local institution just yards from the Opera House.",
+        "category": "fishandchips"
+      },
+      {
+        "name": "Simply Fish & Chips",
+        "coords": [54.5980, -5.9370],
+        "url": "https://www.simplyfishandchipsbelfast.com/",
+        "description": "A café and takeaway inside St George’s Market offering fresh‑cooked fish & chips daily using high‑quality local ingredients.",
+        "category": "fishandchips"
+      },
+      {
+        "name": "Brights",
+        "coords": [54.5975, -5.9305],
+        "url": null,
+        "description": "Popular family‑run spot on High Street, regularly busy and known for its generous portions.",
+        "category": "fishandchips"
+      },
+      {
+        "name": "Beatties",
+        "coords": [54.5870, -5.9340],
+        "url": null,
+        "description": "Award‑winning fish & chips on Shankill Road, a local favorite.",
+        "category": "fishandchips"
+      },
+      {
+        "name": "King’s Chippy",
+        "coords": [54.5800, -5.9400],
+        "url": null,
+        "description": "Well‑regarded on Ormeau Road, especially for its chips.",
+        "category": "fishandchips"
+      },
+      {
+        "name": "Supreme Chippy (Sandy Row)",
+        "coords": [54.5815, -5.9550],
+        "url": null,
+        "description": "Takeaway‑only, known for affordable fish & chips and big portions.",
+        "category": "fishandchips"
+      },
+      {
+        "name": "The Chippie (North Street)",
+        "coords": [54.5970, -5.9200],
+        "url": null,
+        "description": "Iconic spot on North Street, featured in Rihanna’s 'We Found Love' video.",
+        "category": "fishandchips"
+      },
+      {
+        "name": "Cafe Fish",
+        "coords": [54.5825, -5.9360],
+        "url": null,
+        "description": "Classic no‑frills chippy on Lisburn Road with fresh daily fish.",
+        "category": "fishandchips"
+      },
+      {
+        "name": "Chip 'N' Fish",
+        "coords": [54.5660, -5.9130],
+        "url": null,
+        "description": "Local favorite on Ravenhill Road, especially for its chips.",
+        "category": "fishandchips"
+      },
+      {
+        "name": "Smyths Traditional Fish & Chips",
+        "coords": [54.6060, -5.9260],
+        "url": null,
+        "description": "Welcoming and well‑priced traditional fish & chips on Woodstock Road.",
+        "category": "fishandchips"
+      },
+      {
+        "name": "The Bethany",
+        "coords": [54.5790, -5.9070],
+        "url": null,
+        "description": "Recently renovated chippy on Newtownards Road.",
+        "category": "fishandchips"
+      },
+      {
+        "name": "Browns Fish & Chips",
+        "coords": [54.5805, -5.9305],
+        "url": null,
+        "description": "Award‑winning shop on Suffolk Road, known for quality and local honors.",
+        "category": "fishandchips"
+      },
+      {
+        "name": "The Chip Inn (Cregagh Road)",
+        "coords": [54.5670, -5.8570],
+        "url": null,
+        "description": "Chippy on Cregagh Road offering takeaway fish & chips.",
+        "category": "fishandchips"
+      },
+      {
+        "name": "Ocean Fish N Chips and Kebab",
+        "coords": [54.5675, -5.9170],
+        "url": null,
+        "description": "Fish & chips with kebab options on Woodstock Road.",
+        "category": "fishandchips"
+      },
+      {
+        "name": "Henry’s Bar (Joys Entry)",
+        "coords": [54.5970, -5.9300],
+        "url": null,
+        "description": "Pub setting offering beer‑battered haddock with chips and minted mushy peas.",
+        "category": "fishandchips"
+      },
+      {
+        "name": "Catch Fish Kitchen",
+        "coords": [54.5970, -5.9320],
+        "url": null,
+        "description": "Fresh sustainable seafood and fish‑and‑chip choices in Wellington Place.",
+        "category": "fishandchips"
+      },
+      {
+        "name": "Deanes Love Fish (Howard Street)",
+        "coords": [54.5980, -5.9300],
+        "url": null,
+        "description": "Upscale fish & chips by Michael Deane, stylish interiors and refined menu.",
+        "category": "fishandchips"
+      },
+      {
+        "name": "Mourne’s Seafood Bar",
+        "coords": [54.5970, -5.9300],
+        "url": null,
+        "description": "Stylish seafood bar on Bank Street serving juicy cod and skin‑on fries.",
+        "category": "fishandchips"
+      },
+      {
+        "name": "Fish City",
+        "coords": [54.5976, -5.9301],
+        "url": "https://www.fish-city.com/",
+        "description": "Award‑winning sea‑food restaurant and takeaway; UK Fish & Chip Restaurant of the Year 2023.",
+        "category": "fishandchips"
+      },
+      {
+        "name": "Down Royal Racecourse",
+        "coords": [54.4705, -6.0616],
+        "url": "https://www.downroyal.com/",
+        "description": "One of Ireland’s premier racecourses, hosting both flat and National Hunt racing events.",
+        "category": "racecourse"
+      },
+      {
+        "name": "Downpatrick Racecourse",
+        "coords": [54.3174, -5.7277],
+        "url": "https://downpatrickracecourse.co.uk/",
+        "description": "Historic racecourse in Northern Ireland known for its National Hunt races and scenic location.",
+        "category": "racecourse"
+      },
+      {
+        "name": "Alexandra Park",
+        "coords": [54.5968, -5.9235],
+        "url": null,
+        "description": "A Victorian park in north Belfast, uniquely divided by a 'peace wall'—a symbol of the city’s history.",
+        "category": "park"
+      },
+      {
+        "name": "Botanic Gardens",
+        "coords": [54.5823, -5.9393],
+        "url": null,
+        "description": "Formal gardens near the university, featuring the Palm House and Tropical Ravine—one of Belfast’s botanical highlights.",
+        "category": "park"
+      },
+      {
+        "name": "Sir Thomas and Lady Dixon Park",
+        "coords": [54.5700, -5.9390],
+        "url": null,
+        "description": "A large park in south Belfast known for its international rose trials, Japanese garden, woodland and formal rose gardens.",
+        "category": "park"
+      },
+      {
+        "name": "Falls Park",
+        "coords": [54.5860, -5.9570],
+        "url": null,
+        "description": "Park along Falls Road offering riverside paths and historical character in west Belfast.",
+        "category": "park"
+      },
+      {
+        "name": "Springfield Park",
+        "coords": [54.5740, -5.9400],
+        "url": null,
+        "description": "Recently redeveloped green space (also 'Springfield Dam') with walking routes and a new community building.",
+        "category": "park"
+      },
+      {
+        "name": "Moat Park",
+        "coords": [54.5800, -5.8370],
+        "url": null,
+        "description": "East Belfast park featuring a Norman motte‑and‑bailey (Moat Hill), play area, outdoor gym and memorial Garden of Reflection.",
+        "category": "park"
+      },
+      {
+        "name": "Ormeau Park",
+        "coords": [54.5835, -5.9231],
+        "url": "https://www.belfastcity.gov.uk/things-to-do/parks-and-open-spaces/ormeau-park",
+        "description": "One of Belfast’s oldest municipal parks, offering walking trails, sports facilities, and a café. Belfast’s oldest municipal park (opened 1871), offering sports facilities, playgrounds, ecotrails and open green spaces.",
+        "category": "park"
+      },
+      {
+        "name": "Woodvale Park",
+        "coords": [54.6104, -5.9591],
+        "url": "https://www.belfastcity.gov.uk/things-to-do/parks-and-open-spaces/woodvale-park",
+        "description": "A peaceful community park in North Belfast with gardens, sports areas, and a playground. Green Flag‑awarded park opened in 1888, with sports fields, playgrounds, community garden and historic Peace Tree.",
+        "category": "park"
+      },
+      {
+        "name": "Lagan Meadows",
+        "coords": [54.5623, -5.9381],
+        "url": "https://www.belfastcity.gov.uk/things-to-do/parks-and-open-spaces/lagan-meadows",
+        "description": "Nature reserve and walking area along the River Lagan, great for birdwatching and scenic walks.",
+        "category": "park"
+      },
+      {
+        "name": "Victoria Park",
+        "coords": [54.6045, -5.8769],
+        "url": "https://www.belfastcity.gov.uk/things-to-do/parks-and-open-spaces/victoria-park",
+        "description": "Lakeside park with wildlife, a 5k Parkrun course, and views of the Harland & Wolff cranes.",
+        "category": "park"
+      },
+      {
+        "name": "Tullycarnet Park",
+        "coords": [54.5817, -5.8259],
+        "url": "https://www.belfastcity.gov.uk/things-to-do/parks-and-open-spaces/tullycarnet-park",
+        "description": "Family-friendly open space with play areas, pathways, and open fields in East Belfast.",
+        "category": "park"
+      },
+      {
+        "name": "The Crown Liquor Saloon",
+        "coords": [54.5952, -5.9302],
+        "url": "https://www.nationaltrust.org.uk/visit/northern-ireland/the-crown-bar",
+        "description": "A stunning Victorian gin palace known for its intricate interiors and classic Irish atmosphere.",
+        "category": "pint"
+      },
+      {
+        "name": "The Duke of York",
+        "coords": [54.6011, -5.9259],
+        "url": "https://www.facebook.com/thedukeofyorkbelfast/",
+        "description": "A cozy, mural-covered pub tucked in a cobbled alley, serving local brews and live music.",
+        "category": "pint"
+      },
+      {
+        "name": "The Dirty Onion",
+        "coords": [54.6016, -5.9254],
+        "url": "https://www.thedirtyonion.com/",
+        "description": "Traditional bar in a former warehouse with live music, heated courtyard, and Irish whiskey.",
+        "category": "pint"
+      },
+      {
+        "name": "Kelly's Cellars",
+        "coords": [54.5975, -5.9301],
+        "url": "https://www.kellyscellars.com/",
+        "description": "One of the oldest pubs in Belfast, offering Guinness, folk music, and hearty pub food.",
+        "category": "pint"
+      },
+      {
+        "name": "The Harp Bar",
+        "coords": [54.6010, -5.9260],
+        "url": "https://www.harbarbelfast.com/",
+        "description": "Rustic, stylish bar offering a huge selection of drinks and regular live performances.",
+        "category": "pint"
+      },
+      {
+        "name": "Fibber Magee's",
+        "coords": [54.5961, -5.9303],
+        "url": "https://www.fibbersbelfast.com/",
+        "description": "Traditional Irish pub with regular live folk music and a great pint of Guinness.",
+        "category": "pint"
+      },
+      {
+        "name": "The John Hewitt",
+        "coords": [54.6020, -5.9270],
+        "url": "https://www.thejohnhewitt.com/",
+        "description": "Community-focused bar with craft ales and rotating exhibitions, named after the poet.",
+        "category": "pint"
+      },
+      {
+        "name": "The Spaniard",
+        "coords": [54.6015, -5.9257],
+        "url": "https://www.facebook.com/thespaniardbelfast/",
+        "description": "Quirky bar with eclectic decor, cozy ambiance, and a superb drinks selection.",
+        "category": "pint"
+      },
+      {
+        "name": "The Points",
+        "coords": [54.5948, -5.9315],
+        "url": "https://www.thepointsbelfast.com/",
+        "description": "Lively bar with Irish dancing and music sessions – great for a spirited night out.",
+        "category": "pint"
+      },
+      {
+        "name": "The Jeggy Nettle",
+        "coords": [54.5793, -5.9408],
+        "url": "https://www.jeggynettle.com/",
+        "description": "A laid-back, retro-styled bar in South Belfast offering pints, live music, and weekend DJs.",
+        "category": "pint"
+      },
+      {
+        "name": "The Bone Yard",
+        "coords": [54.5926, -5.9371],
+        "url": "https://www.facebook.com/theboneyardbelfast/",
+        "description": "Outdoor beer garden with food trucks, cocktails, and a chilled atmosphere — perfect for students and groups.",
+        "category": "pint"
+      },
+      {
+        "name": "The Perch Rooftop Bar",
+        "coords": [54.5958, -5.9320],
+        "url": "https://www.perchbelfast.com/",
+        "description": "Trendy rooftop bar offering views of the city, artisan pizzas, and creative cocktails.",
+        "category": "pint"
+      },
+      {
+        "name": "The Sunflower Public House",
+        "coords": [54.6002, -5.9301],
+        "url": "https://www.sunflowerbelfast.com/",
+        "description": "Beloved community pub with live music, craft beers, and a historic cage door entrance.",
+        "category": "pint"
+      },
+      {
+        "name": "Voodoo Belfast",
+        "coords": [54.5967, -5.9311],
+        "url": "https://www.voodoobelfast.com/",
+        "description": "Alternative bar and live music venue with a rebellious vibe and solid drinks list.",
+        "category": "pint"
+      },
+      {
+        "name": "Henry’s & The Jailhouse",
+        "coords": [54.5998, -5.9265],
+        "url": "https://henrysbelfast.com/",
+        "description": "Two-in-one hidden gem down Joy’s Entry with historic charm, cocktails, and local fare.",
+        "category": "pint"
+      },
+      {
+        "name": "Rita’s",
+        "coords": [54.5973, -5.9296],
+        "url": "https://www.ritasbarbelfast.com/",
+        "description": "Speakeasy-style cocktail bar with velvet booths and vintage flair — a secret treat.",
+        "category": "pint"
+      },
+      {
+        "name": "Union Street Bar",
+        "coords": [54.6033, -5.9316],
+        "url": "https://www.unionbelfast.com/",
+        "description": "Popular LGBTQ+ venue with drag shows, student nights, and an inclusive vibe.",
+        "category": "pint"
+      },
+      {
+        "name": "Bootleggers",
+        "coords": [54.5996, -5.9274],
+        "url": "https://www.bootleggersbelfast.com/",
+        "description": "American-style bar with a prohibition theme, burgers, craft beer, and upbeat music.",
+        "category": "pint"
+      },
+      {
+        "name": "Sweet Afton",
+        "coords": [54.5989, -5.9277],
+        "url": "https://www.sweetaftonbelfast.com/",
+        "description": "Modern bar with an open terrace, perfect for casual cocktails or a pint downtown.",
+        "category": "pint"
+      },
+      {
+        "name": "The Marcus Ward",
+        "coords": [54.5936, -5.9319],
+        "url": "https://www.themarcusward.com/",
+        "description": "Hip, colorful bar known for its DJ nights, cocktails, and lively student-friendly crowd.",
+        "category": "pint"
+      },
+      {
+        "name": "International Wall Murals",
+        "coords": [54.6008, -5.9402],
+        "url": "https://www.belfastentries.com/heritage/murals-west-belfast/",
+        "description": "Powerful murals depicting political struggles and international solidarity, located on Falls Road.",
+        "category": "historic"
+      },
+      {
+        "name": "Peace Walls Belfast",
+        "coords": [54.6029, -5.9451],
+        "url": "https://www.belfastcity.gov.uk/",
+        "description": "Segregation barriers built during the Troubles still separating Catholic and Protestant communities.",
+        "category": "historic"
+      },
+      {
+        "name": "Shankill Road Murals",
+        "coords": [54.6082, -5.9560],
+        "url": "https://www.belfastmuralsguide.com/",
+        "description": "Unionist murals honoring loyalist history and paramilitary groups; historically rich and controversial.",
+        "category": "historic"
+      },
+      {
+        "name": "Falls Road Murals",
+        "coords": [54.5969, -5.9600],
+        "url": "https://www.belfastmuralsguide.com/",
+        "description": "Republican murals showcasing Irish nationalism and political resistance.",
+        "category": "historic"
+      },
+      {
+        "name": "Eileen Hickey Irish Republican History Museum",
+        "coords": [54.5973, -5.9615],
+        "url": "https://www.republicanhistorymuseum.com/",
+        "description": "Small museum inside a former jail chapel, telling the story of the Irish Republican struggle.",
+        "category": "historic"
+      },
+      {
+        "name": "The Sunflower Public House (Security Cage)",
+        "coords": [54.6032, -5.9291],
+        "url": "https://www.sunflowerbelfast.com/",
+        "description": "Retains a Troubles-era security cage at the entrance – a rare surviving relic of Belfast’s conflict era.",
+        "category": "historic"
+      },
+      {
+        "name": "Harland & Wolff Cranes (Samson & Goliath)",
+        "coords": [54.6095, -5.9017],
+        "url": "https://visitbelfast.com/partners/harland-wolff-cranes/",
+        "description": "Iconic yellow gantry cranes of Belfast’s shipbuilding past – towering over the former shipyards.",
+        "category": "historic"
+      },
+      {
+        "name": "The Drawing Offices at Titanic Hotel",
+        "coords": [54.6091, -5.9098],
+        "url": "https://www.titanichotelbelfast.com/",
+        "description": "Where Titanic was designed; now part of a hotel but still showcasing historic shipbuilding interiors.",
+        "category": "historic"
+      },
+      {
+        "name": "Conway Mill",
+        "coords": [54.5937, -5.9605],
+        "url": "https://www.conwaymillbelfast.com/",
+        "description": "Restored linen mill now a hub for cultural and educational activities, reflecting Belfast's industrial legacy.",
+        "category": "historic"
+      },
+      {
+        "name": "Ulster Museum",
+        "coords": [54.5803, -5.9346],
+        "url": "https://www.nmni.com/our-museums/ulster-museum.aspx",
+        "description": "Belfast's largest museum featuring art, history, natural science, Egyptian mummies, and The Troubles exhibits.",
+        "category": "museum"
+      },
+      {
+        "name": "Titanic Belfast",
+        "coords": [54.6088, -5.9103],
+        "url": "https://titanicbelfast.com/",
+        "description": "Iconic museum on the site of the former Harland & Wolff shipyard, detailing Titanic’s story and Belfast’s maritime heritage.",
+        "category": "museum"
+      },
+      {
+        "name": "SS Nomadic",
+        "coords": [54.6085, -5.9110],
+        "url": "https://www.nomadicbelfast.com/",
+        "description": "World’s last remaining White Star Line ship and tender to Titanic, now a floating museum.",
+        "category": "museum"
+      },
+      {
+        "name": "Irish Republican History Museum (Eileen Hickey Museum)",
+        "coords": [54.5973, -5.9615],
+        "url": "https://www.republicanhistorymuseum.com/",
+        "description": "Housed in a former jail chapel, showcasing Republican artifacts, prison crafts, and documents from the Troubles.",
+        "category": "museum"
+      },
+      {
+        "name": "Northern Ireland War Memorial Museum",
+        "coords": [54.6020, -5.9277],
+        "url": "https://www.niwarmemorial.org/",
+        "description": "Explores Northern Ireland's role in WWII, the Belfast Blitz, and American troops' presence.",
+        "category": "museum"
+      },
+      {
+        "name": "Royal Ulster Rifles Museum",
+        "coords": [54.5999, -5.9276],
+        "url": "https://www.royalulsterriflesmuseum.org.uk/",
+        "description": "Military museum with uniforms, weapons, and stories from the Royal Ulster Rifles regiment.",
+        "category": "museum"
+      },
+      {
+        "name": "Crumlin Road Gaol Visitor Attraction",
+        "coords": [54.6127, -5.9393],
+        "url": "https://www.crumlinroadgaol.com/",
+        "description": "Victorian-era prison turned museum offering guided tours of cells, tunnels, and execution chambers.",
+        "category": "museum"
+      },
+      {
+        "name": "Linen Hall Library (Heritage Centre)",
+        "coords": [54.5992, -5.9296],
+        "url": "https://www.linenhall.com/",
+        "description": "Historic library with exhibitions on Irish literature, politics, and The Troubles; functions like a cultural museum.",
+        "category": "museum"
+      },
+      {
+        "name": "W5 Science and Discovery Centre",
+        "coords": [54.6042, -5.9143],
+        "url": "https://www.w5online.co.uk/",
+        "description": "Interactive science museum for all ages with hands-on exhibits on tech, space, engineering, and design.",
+        "category": "museum"
+      },
+      {
+        "name": "Belfast Transport Hub Model Railway Display",
+        "coords": [54.5943, -5.9394],
+        "url": "https://www.translink.co.uk/",
+        "description": "Small but detailed model railway and historical transport memorabilia within Belfast's central station area.",
+        "category": "museum"
+      },
+      {
+        "name": "Steam Train Experience – Whitehead Railway Museum (Near Belfast)",
+        "coords": [54.7510, -5.7097],
+        "url": "https://www.steamtrainsireland.com/whats-on/whitehead-railway-museum",
+        "description": "A short trip from Belfast offering interactive steam engine exhibits, workshops, and railway heritage.",
+        "category": "museum"
+      },
+      {
+        "name": "Titanic Dock and Pump House",
+        "coords": [54.6101, -5.9116],
+        "url": "https://titanic-foundation.org/",
+        "description": "Home to the original dry dock and pump house where Titanic was built; raw industrial vibes with engineering history.",
+        "category": "museum"
+      },
+      {
+        "name": "Helen’s Bay Beach",
+        "coords": [54.607, -5.776],  
+        "url": null,
+        "description": "Gentle, sandy beach at Crawfordsburn Country Park—excellent for bathing, walks, and surrounded by woodland and meadows.",
+        "category": "beach"
+      },
+      {
+        "name": "Crawfordsburn Beach",
+        "coords": [54.606, -5.778],
+        "url": null,
+        "description": "Sandy shore within Crawfordsburn Country Park, popular for its water quality, coastal paths, and family‑friendly facilities.",
+        "category": "beach"
+      },
+      {
+        "name": "Ballyholme Beach",
+        "coords": [54.676, -5.674],
+        "url": null,
+        "description": "Long family‑favorite beach ideal for swims, sandcastles, and windsurfing—often buzzing with year‑round activity.",
+        "category": "beach"
+      },
+      {
+        "name": "Millisle Beach Park",
+        "coords": [54.528, -5.605],
+        "url": null,
+        "description": "Quiet rural beach with a small sandy shore, jetty, playground and picnic facilities—great for a relaxed day out.",
+        "category": "beach"
+      },
+      {
+        "name": "Cloughey Bay Beach",
+        "coords": [54.507, -5.617],
+        "url": null,
+        "description": "Sandy beach on the Ards Peninsula, ideal for coastal walks at low tide and family outings in a peaceful village setting.",
+        "category": "beach"
+      },
+      {
+        "name": "Groomsport Bay",
+        "coords": [54.658, -5.674],
+        "url": null,
+        "description": "Charming sandy cove near Bangor, with rock pools, a quaint harbour, and local cafes and pubs nearby.",
+        "category": "beach"
+      },
+      {
+        "name": "Tyrella Beach",
+        "coords": [54.383, -5.481],
+        "url": null,
+        "description": "Blue‑Flag mile‑long sandy beach south of Belfast, backed by dunes and great for walks or a bracing swim.",
+        "category": "beach"
+      },
+      {
+        "name": "Murlough Beach",
+        "coords": [54.379, -5.462],
+        "url": null,
+        "description": "Scenic curved bay near the Mourne Mountains, part of a nature reserve and known as a filming location for Game of Thrones.",
+        "category": "beach"
+      },
+      {
+        "name": "Established Coffee",
+        "coords": [54.5965, -5.9280],
+        "url": "https://www.ireland.com/en-us/magazine/food-and-drink/belfast-coffee-shops/",
+        "description": "Roastery café in Cathedral Quarter, known for high‑quality beans, a minimalist interior with communal tables, and light brunch dishes.",
+        "category": "cafe"
+      },
+      {
+        "name": "Neighbourhood Café",
+        "coords": [54.5976, -5.9285],
+        "url": "https://neighbourhood.cafe/",
+        "description": "Creative brunch spot in the Cathedral Quarter offering dishes like Turkish Eggs and French Toast alongside well‑brewed coffee.",
+        "category": "cafe"
+      },
+      {
+        "name": "The Pocket",
+        "coords": [54.5838, -5.9312],
+        "url": "https://thepocket.coffee/",
+        "description": "Cosy, intimate café near Queen’s University, popular for its seasonal brunch menu and artisan coffee blends.",
+        "category": "cafe"
+      },
+      {
+        "name": "General Merchants",
+        "coords": [54.5745, -5.9360],
+        "url": "https://www.ireland.com/en-us/magazine/food-and-drink/belfast-coffee-shops/",
+        "description": "Neighborhood café on Ormeau Road with great coffee, brunch dishes, local art, and multiple branches across the city.",
+        "category": "cafe"
+      },
+      {
+        "name": "Oh Donuts & Coffee",
+        "coords": [54.5970, -5.9280],
+        "url": "https://www.theirishroadtrip.com/best-coffee-in-belfast/",
+        "description": "Funky café famed for gourmet donuts (e.g., Salted Caramel, Mango & Passion Fruit) paired with strong coffee.",
+        "category": "cafe"
+      },
+      {
+        "name": "Kaffe O",
+        "coords": [54.5750, -5.9365],
+        "url": "https://www.ireland.com/en-us/magazine/food-and-drink/belfast-coffee-shops/",
+        "description": "Scandinavian‑inspired minimalist café using beans roasted in Copenhagen and offering plant‑based fare.",
+        "category": "cafe"
+      },
+      {
+        "name": "Output Espresso",
+        "coords": [54.5758, -5.9620],
+        "url": "https://www.connollycove.com/cafes-in-belfast/",
+        "description": "Lisburn Road café with inventive brunch dishes and cocktails, including a black‑pudding‑lined scotch egg.",
+        "category": "cafe"
+      },
+      {
+        "name": "The Lamppost Café",
+        "coords": [54.5923, -5.9315],
+        "url": "https://prestigestudentliving.com/blog/city/belfast/a-student-guide-to-best-cafes-in-belfast",
+        "description": "Quirky, dog‑friendly café on Newtownards Road, offering dishes like Soda Bread with poached egg and vegan fry options.",
+        "category": "cafe"
+      },
+      {
+        "name": "Maggie Mays Café",
+        "coords": [54.6050, -5.9265],
+        "url": "https://prestigestudentliving.com/blog/city/belfast/a-student-guide-to-best-cafes-in-belfast",
+        "description": "Student‑favorite diner known for hearty breakfasts, classic fry‑ups, milkshakes, and fair prices.",
+        "category": "cafe"
+      },
+      {
+        "name": "Grounds Espresso Bar",
+        "coords": [54.58, -5.93],
+        "url": "https://www.twopassports.co.uk/post/our-favourite-cafes-in-belfast",
+        "description": "Ethical, fair‑trade family‑run chain with multiple locations, committed to innovative brewing and good coffee.",
+        "category": "cafe"
+      },
+      {
+        "name": "Butlers Chocolate Café (Victoria Square)",
+        "coords": [54.5978, -5.9290],
+        "url": "https://www.butlerschocolatecafe.ie/",
+        "description": "Chocolatier café offering a wide selection of gourmet chocolates, hot drinks, and indulgent treats.",
+        "category": "cafe"
+      },
+      {
+        "name": "Starbucks (Donegall Square West)",
+        "coords": [54.5970, -5.9280],
+        "url": "https://www.starbucks.co.uk/store-locator/3-donegall-square-west",
+        "description": "City‑centre Starbucks branch offering mobile ordering and free Wi‑Fi—convenient for quick stops or light work.",
+        "category": "cafe"
+      },
+      {
+        "name": "Starbucks (Castle Lane)",
+        "coords": [54.5985, -5.9285],
+        "url": "https://www.starbucks.co.uk/store-locator/belfast-castle-lane",
+        "description": "Compact branch offering standard Starbucks fare and a spot to recharge in the Cathedral Quarter.",
+        "category": "cafe"
+      },
+      {
+        "name": "Costa Coffee (Holywood Exchange)",
+        "coords": [54.6140, -5.7960],
+        "url": null,
+        "description": "Costa outlet located within the Holywood Exchange retail park, paired with various fast‑food and shopping options.",
+        "category": "cafe"
+      },
+      {
+        "name": "OX",
+        "coords": [54.5810, -5.9340],
+        "url": "http://oxbelfast.com/",
+        "description": "Michelin‑starred restaurant by Stephen Toman, offering refined tasting menus showcasing Northern Irish seasonal produce.",
+        "category": "restaurant"
+      },
+      {
+        "name": "The Muddlers Club",
+        "coords": [54.6000, -5.9255],
+        "url": "http://themuddlersclubbelfast.com/",
+        "description": "Industrial‑chic Michelin‑starred restaurant in the Cathedral Quarter, featuring creative Irish cuisine by Gareth McCaughey.",
+        "category": "restaurant"
+      },
+      {
+        "name": "Home Restaurant",
+        "coords": [54.6005, -5.9290],
+        "url": null,
+        "description": "Bib Gourmand spot with New York‑style interiors and a comfort‑food menu including healthy, veggie, and gluten‑free options.",
+        "category": "restaurant"
+      },
+      {
+        "name": "The Great Room Restaurant",
+        "coords": [54.6020, -5.9150],
+        "url": null,
+        "description": "Opulent fine‑dining in the Merchant Hotel, set beneath Ireland’s largest chandelier in a restored Victorian hall.",
+        "category": "restaurant"
+      },
+      {
+        "name": "James St",
+        "coords": [54.5970, -5.9300],
+        "url": null,
+        "description": "Modern bistro specialising in char‑grilled aged steaks in a relaxed yet elegant setting.",
+        "category": "restaurant"
+      },
+      {
+        "name": "Coppi",
+        "coords": [54.6010, -5.9280],
+        "url": null,
+        "description": "Stylish Venetian cicchetti bar offering sharing plates, cocktails, and a vegetarian‑friendly menu in Cathedral Quarter.",
+        "category": "restaurant"
+      },
+      {
+        "name": "Yugo City",
+        "coords": [54.6008, -5.9280],
+        "url": null,
+        "description": "Pan‑Asian fusion small‑plates restaurant with industrial décor and bold, creative flavors.",
+        "category": "restaurant"
+      },
+      {
+        "name": "Mourne Seafood Bar",
+        "coords": [54.5980, -5.9300],
+        "url": null,
+        "description": "Casual yet chic spot for fresh locally‑sourced seafood, including oysters and chowder.",
+        "category": "restaurant"
+      },
+      {
+        "name": "Saga",
+        "coords": [54.6001, -5.9300],
+        "url": null,
+        "description": "New (2024) circuit‑short restaurant featured in regional guides for its contemporary, locally‑inspired dishes.",
+        "category": "restaurant"
+      },
+      {
+        "name": "Beau",
+        "coords": [54.6002, -5.9258],
+        "url": null,
+        "description": "Contemporary pan-European share-plate restaurant by chef Lottie Noren, blending classical French influence with Northern Irish ingredients in a minimalist, industrial-chic space.",
+        "category": "restaurant"
+      },
+      {
+        "name": "Roam",
+        "coords": [54.6000, -5.9265],
+        "url": null,
+        "description": "Stylish, contemporary bistro offering great value and outstanding food—highly praised as one of the best places for quality meals without breaking the bank.",
+        "category": "restaurant"
+      },
+      {
+        "name": "Jumon",
+        "coords": [54.6008, -5.9275],
+        "url": null,
+        "description": "Vegetarian and vegan Asian fusion restaurant so good even meat-lovers say they don’t miss meat—creative, attentive, and bursting with flavor.",
+        "category": "restaurant"
+      },
+      {
+        "name": "Edo",
+        "coords": [54.5985, -5.9280],
+        "url": null,
+        "description": "Elegant, high-end tapas-style dining with a cosy vibe and refined flavors—consistently described as 'fantastic' and 'a chef’s kiss.'",
+        "category": "restaurant"
+      },
+      {
+        "name": "The Ginger Bistro",
+        "coords": [54.5990, -5.9270],
+        "url": null,
+        "description": "Casual upscale bistro praised for its standout dishes like tartare and Thai green curry—great value for quality cuisine.",
+        "category": "restaurant"
+      },
+      {
+        "name": "Pizza Punks",
+        "coords": [54.6005, -5.9250],
+        "url": null,
+        "description": "Urban-style pizza joint on Waring Street, beloved for its bold flavors and lively atmosphere.",
+        "category": "restaurant"
+      },
+      {
+        "name": "Little Wing",
+        "coords": [54.6000, -5.9240],
+        "url": null,
+        "description": "Trendy spot known for delicious, elevated burgers and casual eats in a relaxed setting.",
+        "category": "restaurant"
+      },
+      {
+        "name": "House of Zen",
+        "coords": [54.6005, -5.9260],
+        "url": null,
+        "description": "Chinese restaurant in St Anne’s Square known for its quality food and elegant service—can be busy, so booking ahead is wise.",
+        "category": "restaurant"
+      },
+      {
+        "name": "Kamakura",
+        "coords": [54.5950, -5.9350],
+        "url": null,
+        "description": "Authentic Japanese restaurant renowned for its ramen, katsu curry, and BYO policy—regularly hailed as one of the best in the city.",
+        "category": "restaurant"
+      },
+      {
+        "name": "Molly’s Yard",
+        "coords": [54.5800, -5.9350],
+        "url": null,
+        "description": "Locally beloved, intimate eatery serving seasonal, locally-sourced dishes—praised for heartfelt service and intimate ambiance.",
+        "category": "restaurant"
+      },
+      {
+        "name": "Cave Hill",
+        "coords": [54.6392, -5.9457],
+        "url": "https://www.visitbelfast.com/partners/cave-hill-country-park/",
+        "description": "Scenic hill with panoramic views over Belfast and surrounding countryside.",
+        "category": "viewpoint"
+      },
+      {
+        "name": "Divis and Black Mountain",
+        "coords": [54.6032, -6.0053],
+        "url": "https://www.nationaltrust.org.uk/visit/northern-ireland/divis-and-the-black-mountain",
+        "description": "Popular walking spot offering sweeping views over Belfast and beyond.",
+        "category": "viewpoint"
+      },
+      {
+        "name": "Napoleon’s Nose",
+        "coords": [54.6404, -5.9469],
+        "url": "https://discovernorthernireland.com/things-to-do/napoleons-nose-p682991",
+        "description": "Rocky outcrop on Cave Hill resembling the profile of Napoleon; great for city views.",
+        "category": "viewpoint"
+      },
+      {
+        "name": "Titanic Belfast Viewing Point",
+        "coords": [54.6084, -5.9118],
+        "url": "https://www.titanicbelfast.com/",
+        "description": "Offers views over the Titanic Quarter, River Lagan, and Harland & Wolff cranes.",
+        "category": "viewpoint"
+      },
+      {
+        "name": "Victoria Park Lookout",
+        "coords": [54.6031, -5.8845],
+        "url": "https://www.belfastcity.gov.uk/things-to-do/parks-and-open-spaces/a-z-parks/victoria-park",
+        "description": "A peaceful urban park with serene lake views and a path for bird watching.",
+        "category": "viewpoint"
+      },
+      {
+        "name": "The Observatory at Grand Central Hotel",
+        "coords": [54.5976, -5.9294],
+        "url": "https://www.grandcentralhotelbelfast.com/dining/the-observatory/",
+        "description": "Northern Ireland's tallest bar with stunning panoramic views of Belfast skyline.",
+        "category": "viewpoint"
+      },
+      {
+        "name": "McHugh’s Bar Rooftop",
+        "coords": [54.6011, -5.9225],
+        "url": "https://www.mchughsbar.com/",
+        "description": "Historic bar with rooftop views near the River Lagan and Queen’s Bridge.",
+        "category": "viewpoint"
+      },
+      {
+        "name": "Albert Bridge",
+        "coords": [54.5963, -5.9184],
+        "url": "https://en.wikipedia.org/wiki/Albert_Bridge,_Belfast",
+        "description": "Pedestrian-friendly bridge offering views of the River Lagan and east Belfast.",
+        "category": "viewpoint"
+      },
+      {
+        "name": "Big Fish Lookout (Salmon of Knowledge)",
+        "coords": [54.6023, -5.9179],
+        "url": "https://www.visitbelfast.com/partners/big-fish/",
+        "description": "Artistic landmark with a great view across the river and Custom House Square.",
+        "category": "viewpoint"
+      },
+      {
+        "name": "Lagan Weir Footbridge",
+        "coords": [54.6026, -5.9161],
+        "url": "https://www.inyourpocket.com/belfast/lagan-weir_74173v",
+        "description": "Modern pedestrian bridge offering water-level views of Belfast's waterfront.",
+        "category": "viewpoint"
+      },
+      {
+        "name": "Titanic Hotel Roof Terrace (for events)",
+        "coords": [54.6085, -5.9115],
+        "url": "https://www.titanichotelbelfast.com/",
+        "description": "Occasional access to rooftop terrace with views of Titanic Quarter and dry dock.",
+        "category": "viewpoint"
+      },
+      {
+        "name": "Stormont Estate Hill",
+        "coords": [54.6042, -5.8328],
+        "url": "https://discovernorthernireland.com/things-to-do/stormont-estate-p675141",
+        "description": "Long tree-lined avenue leading to Parliament Buildings with wide open views.",
+        "category": "viewpoint"
+      },
+      {
+        "name": "Ormeau Park Hill",
+        "coords": [54.5823, -5.9187],
+        "url": "https://www.belfastcity.gov.uk/things-to-do/parks-and-open-spaces/a-z-parks/ormeau-park",
+        "description": "Elevated parts of the park offer sunset views over south and central Belfast.",
+        "category": "viewpoint"
+      },
+      {
+        "name": "Queen’s University Belfast",
+        "coords": [54.5842, -5.9340],
+        "url": "https://www.qub.ac.uk/",
+        "description": "Stunning red-brick Gothic Revival architecture with lush gardens, founded in 1845. The Lanyon Building is iconic.",
+        "category": "college"
+      },
+      {
+        "name": "Stranmillis University College",
+        "coords": [54.5779, -5.9384],
+        "url": "https://www.stran.ac.uk/",
+        "description": "Leafy campus near Botanic Gardens with a blend of classical and modern buildings; known for its peaceful setting.",
+        "category": "college"
+      },
+      {
+        "name": "Ulster University Belfast Campus",
+        "coords": [54.6073, -5.9270],
+        "url": "https://www.ulster.ac.uk/campuses/belfast",
+        "description": "Recently redeveloped city centre campus with striking modern design and a public plaza.",
+        "category": "college"
+      },
+      {
+        "name": "St Mary’s University College",
+        "coords": [54.5940, -5.9706],
+        "url": "https://www.stmarys-belfast.ac.uk/",
+        "description": "Set in west Belfast, this college features period buildings and tranquil courtyards with traditional red-brick facades.",
+        "category": "college"
+      },
+      {
+        "name": "St Anne’s Cathedral (Belfast Cathedral)",
+        "coords": [54.5978, -5.9292],
+        "url": "https://www.belfastcathedral.org/",
+        "description": "Famous Anglican cathedral with impressive Gothic Revival architecture and beautiful stained glass.",
+        "category": "church"
+      },
+      {
+        "name": "St George’s Church",
+        "coords": [54.5973, -5.9296],
+        "url": "https://www.stgeorges.connor.anglican.org/",
+        "description": "One of Belfast’s oldest churches, known for its classical Georgian architecture and rich history.",
+        "category": "church"
+      },
+      {
+        "name": "St Patrick’s Roman Catholic Cathedral",
+        "coords": [54.5971, -5.9271],
+        "url": "https://www.stpatrickscathedralbelfast.org/",
+        "description": "Gothic Revival cathedral with stunning interior details and a prominent location near the city centre.",
+        "category": "church"
+      },
+      {
+        "name": "Belfast Metropolitan Cathedral (St Peter’s Cathedral)",
+        "coords": [54.5979, -5.9259],
+        "url": "https://www.belfastcathedral.org/",
+        "description": "Roman Catholic cathedral featuring modernist architecture blended with traditional elements.",
+        "category": "church"
+      },
+      {
+        "name": "St Mary’s Church",
+        "coords": [54.5988, -5.9269],
+        "url": "https://stmarysbelfast.org/",
+        "description": "Historic Catholic church known for its vibrant community and beautiful stained glass windows.",
+        "category": "church"
+      },
+      {
+        "name": "St Malachy’s Church",
+        "coords": [54.6002, -5.9297],
+        "url": "https://www.stmalachysparish.com/",
+        "description": "One of the oldest Catholic churches in Belfast, featuring beautiful stained glass and rich history.",
+        "category": "church"
+      },
+      {
+        "name": "Old St George’s Church Ruins",
+        "coords": [54.5967, -5.9298],
+        "url": "https://www.belfastcity.gov.uk/Explore-Belfast/History/Old-St-Georges-Church",
+        "description": "Historic ruins of the original St George’s Church, reflecting Belfast’s early ecclesiastical architecture.",
+        "category": "church"
+      },
+      {
+        "name": "St Peter’s Church, Belfast",
+        "coords": [54.5945, -5.9291],
+        "url": "https://www.stpetersbelfast.com/",
+        "description": "Charming parish church with Gothic influences and a close-knit community atmosphere.",
+        "category": "church"
+      },
+      {
+        "name": "Clonard Monastery",
+        "coords": [54.6015, -5.9205],
+        "url": "https://www.clonard.com/",
+        "description": "A beautiful neo-Gothic style monastery known for its stained glass windows and peaceful gardens.",
+        "category": "church"
+      },
+      {
+        "name": "St Anne’s Church of Ireland, Finaghy",
+        "coords": [54.5741, -5.9953],
+        "url": "https://www.stannesfinaghy.org/",
+        "description": "A quaint parish church serving the Finaghy area with lovely traditional architecture.",
+        "category": "church"
+      },
+      {
+        "name": "The MAC (Metropolitan Arts Centre)",
+        "coords": [54.5950, -5.9275],
+        "url": "https://themaclive.com/",
+        "description": "Vibrant contemporary arts venue hosting exhibitions, theatre, and live music.",
+        "category": "art"
+      },
+      {
+        "name": "Cathedral Quarter",
+        "coords": [54.5974, -5.9299],
+        "url": "https://cathedralquarterbelfast.com/",
+        "description": "Creative hub known for vibrant street art, galleries, and cultural events.",
+        "category": "art"
+      },
+      {
+        "name": "Queen’s Film Theatre (QFT)",
+        "coords": [54.5823, -5.9369],
+        "url": "https://qft.org.uk/",
+        "description": "Art house cinema with occasional art exhibitions and creative workshops.",
+        "category": "art"
+      },
+      {
+        "name": "Golden Thread Gallery",
+        "coords": [54.5985, -5.9336],
+        "url": "https://goldenthreadgallery.co.uk/",
+        "description": "Independent gallery showcasing contemporary art and local artists.",
+        "category": "art"
+      },
+      {
+        "name": "Street Art at Belfast’s Cathedral Quarter",
+        "coords": [54.5973, -5.9293],
+        "url": "https://visitbelfast.com/blog/belfast-street-art/",
+        "description": "An open-air gallery of colorful murals and graffiti art throughout the area.",
+        "category": "art"
+      },
+      {
+        "name": "Belfast Print Workshop",
+        "coords": [54.5970, -5.9310],
+        "url": "https://belfastprintworkshop.com/",
+        "description": "Community printmaking studio offering workshops and exhibitions.",
+        "category": "art"
+      },
+      {
+        "name": "Crumlin Road Gaol (art exhibitions)",
+        "coords": [54.6089, -5.9434],
+        "url": "https://www.crumlinroadgaol.com/",
+        "description": "Historic site that hosts contemporary art exhibitions and installations.",
+        "category": "art"
+      },
+      {
+        "name": "Farset Labs",
+        "coords": [54.5961, -5.9318],
+        "url": "https://farsetlabs.org/",
+        "description": "Community hackerspace supporting creative tech and digital arts.",
+        "category": "art"
+      },
+      {
+        "name": "Belfast Pop-Up Gallery",
+        "coords": [54.5977, -5.9278],
+        "url": "https://belfastpopupgallery.com/",
+        "description": "Temporary exhibitions featuring emerging local artists and experimental art forms.",
+        "category": "art"
+      },
+      {
+        "name": "Jelly Arts Shop",
+        "coords": [54.5982, -5.9283],
+        "url": "https://jellyarts.com/",
+        "description": "Independent art supply store and gallery supporting Belfast’s creative community.",
+        "category": "art"
+      },
+      {
+        "name": "Street Art Tours Belfast",
+        "coords": [54.5973, -5.9290],
+        "url": "https://streetarttoursbelfast.com/",
+        "description": "Guided walking tours exploring the vibrant street art and murals in the Cathedral Quarter.",
+        "category": "art"
+      },
+      {
+        "name": "The MAC Shop",
+        "coords": [54.5950, -5.9275],
+        "url": "https://themaclive.com/shop/",
+        "description": "Art and design shop selling prints, crafts, and artist-made goods from local creators.",
+        "category": "art"
+      },
+      {
+        "name": "East Side Gallery",
+        "coords": [54.5958, -5.9231],
+        "url": "https://visitbelfast.com/things-to-do/east-side-gallery/",
+        "description": "Open-air art space showcasing contemporary murals and installations in east Belfast.",
+        "category": "art"
+      },
+    {
+        "name": "Black Box Belfast",
+        "coords": [54.5995, -5.9310],
+        "url": "https://theblackboxbelfast.com/",
+        "description": "A creative hub for live music, theatre, exhibitions, and community arts projects.",
+        "category": "art"
+      },
+      {
+        "name": "Foyle Street Studios",
+        "coords": [54.5940, -5.9270],
+        "url": "https://www.foylestreetstudios.com/",
+        "description": "Artist-run studios and gallery space promoting contemporary visual arts.",
+        "category": "art"
+      },
+      {
+        "name": "Northern Gallery for Contemporary Art",
+        "coords": [54.5979, -5.9311],
+        "url": "https://www.ngca.com/",
+        "description": "Specialises in experimental contemporary art exhibitions and artist residencies.",
+        "category": "art"
+      },
+      {
+        "name": "Cultúrlann McAdam Ó Fiaich",
+        "coords": [54.5997, -5.9164],
+        "url": "https://www.culturlann.ie/",
+        "description": "Cultural centre showcasing Irish language arts, theatre, music, and visual art exhibitions. Irish language and culture centre featuring exhibitions, an art gallery, and museum-like displays.",
+        "category": "art"
+      },
+      {
+        "name": "No Alibis Bookstore & Gallery",
+        "coords": [54.5965, -5.9305],
+        "url": "https://noalibis.com/",
+        "description": "Independent bookstore with an adjoining gallery space featuring local artists.",
+        "category": "art"
+      },
+      {
+        "name": "Stormont Cricket Ground",
+        "coords": [54.5881, -5.8540],
+        "url": "https://www.cricketireland.ie/grounds/stormont",
+        "description": "The primary cricket stadium in Belfast, hosting international and domestic matches with excellent facilities.",
+        "category": "cricket"
+      },
+      {
+        "name": "Belfast Harlequins Cricket Club",
+        "coords": [54.5712, -5.9368],
+        "url": "https://www.belfastharlequins.com/",
+        "description": "Historic cricket club ground located near the city center with a strong local cricketing community.",
+        "category": "cricket"
+      },
+      {
+        "name": "Civil Service Cricket Club",
+        "coords": [54.5779, -5.9366],
+        "url": "https://civilservicecc.co.uk/",
+        "description": "Well-established cricket club with quality pitches and facilities, located in Belfast.",
+        "category": "cricket"
+      },
+      {
+        "name": "CIYMS Cricket Club",
+        "coords": [54.5843, -5.9198],
+        "url": "https://www.ciymscricketclub.co.uk/",
+        "description": "Community cricket club with strong youth programs and competitive teams, located in Belfast.",
+        "category": "cricket"
+      },
+      {
+        "name": "Belfast YMCA Cricket Club",
+        "coords": [54.5900, -5.9250],
+        "url": "https://www.belfastymca.org/",
+        "description": "Cricket club offering training and matches for various age groups, based in the city.",
+        "category": "cricket"
+      },
+      {
+        "name": "Malone Cricket Club",
+        "coords": [54.5747, -5.9651],
+        "url": "https://malonecc.co.uk/",
+        "description": "One of Belfast’s premier cricket clubs with top-class facilities and a rich history.",
+        "category": "cricket"
+      },
+      {
+        "name": "Knock Cricket Club",
+        "coords": [54.5847, -5.8833],
+        "url": "https://knockcricketclub.com/",
+        "description": "Popular cricket club in Belfast known for its competitive spirit and community engagement.",
+        "category": "cricket"
+      },
+      {
+        "name": "Belfast Cricket Academy",
+        "coords": [54.5872, -5.8555],
+        "url": "https://www.cricketireland.ie/academy",
+        "description": "Cricket training academy offering coaching for players of all ages and skill levels.",
+        "category": "cricket"
+      },
+      {
+        "name": "No Alibis Bookstore",
+        "coords": [54.5965, -5.9305],
+        "url": "https://noalibis.com/",
+        "description": "Independent bookstore featuring a curated selection of books and a gallery space.",
+        "category": "bookstore"
+      },
+      {
+        "name": "The Open Book",
+        "coords": [54.5953, -5.9258],
+        "url": "https://openbookbelfast.com/",
+        "description": "A cozy independent bookshop specializing in literature, art books, and local authors.",
+        "category": "bookstore"
+      },
+      {
+        "name": "Eason Belfast",
+        "coords": [54.5970, -5.9290],
+        "url": "https://www.easons.com/stores/belfast-store",
+        "description": "Popular chain bookstore offering a wide range of books, stationery, and gifts.",
+        "category": "bookstore"
+      },
+      {
+        "name": "Books Upstairs",
+        "coords": [54.5961, -5.9311],
+        "url": "https://www.booksupstairs.co.uk/",
+        "description": "Independent bookstore and cultural venue with an emphasis on literary events.",
+        "category": "bookstore"
+      },
+      {
+        "name": "Rhyme & Reason",
+        "coords": [54.5995, -5.9270],
+        "url": "https://rhymeandreasonbelfast.com/",
+        "description": "Eclectic bookstore focusing on poetry, art books, and rare finds.",
+        "category": "bookstore"
+      },
+    {
+        "name": "Sandy Row Books",
+        "coords": [54.5960, -5.9330],
+        "url": "https://www.sandyrowbooks.co.uk/",
+        "description": "Independent bookstore specializing in secondhand and rare books with a friendly atmosphere.",
+        "category": "bookstore"
+      },
+      {
+        "name": "Antonia's Bookshop",
+        "coords": [54.5935, -5.9315],
+        "url": "https://www.antobk.com/",
+        "description": "Well-known secondhand bookshop offering a wide selection of used books at affordable prices.",
+        "category": "bookstore"
+      },
+      {
+        "name": "Kettles Yard Bookshop",
+        "coords": [54.5980, -5.9245],
+        "url": "https://kettlesyardbookshop.com/",
+        "description": "Quirky independent bookstore focusing on art and literary titles, plus unique gifts.",
+        "category": "bookstore"
+      },
+      {
+        "name": "Union Books",
+        "coords": [54.5948, -5.9298],
+        "url": "https://unionbooksbelfast.com/",
+        "description": "Local bookstore and arts hub with a curated selection of books and cultural events.",
+        "category": "bookstore"
+      },
+      {
+        "name": "The Book Stall",
+        "coords": [54.5955, -5.9302],
+        "url": "https://www.thebookstallbelfast.com/",
+        "description": "Small independent bookshop with a mix of new releases and classic titles in a cozy setting.",
+        "category": "bookstore"
+      },
+      {
+        "name": "Tesco Belfast - Suffolk Road",
+        "coords": [54.5913, -5.9420],
+        "url": "https://www.tesco.com/store-locator/uk/?bID=5553",
+        "description": "Large Tesco supermarket offering groceries, fresh produce, and household essentials.",
+        "category": "grocery"
+      },
+      {
+        "name": "Tesco Belfast - Kennedy Centre",
+        "coords": [54.6027, -5.9223],
+        "url": "https://www.tesco.com/store-locator/uk/?bID=5504",
+        "description": "Convenient Tesco Extra store with a wide range of products including groceries and electronics.",
+        "category": "grocery"
+      },
+      {
+        "name": "Tesco Belfast - Castlereagh",
+        "coords": [54.5710, -5.8675],
+        "url": "https://www.tesco.com/store-locator/uk/?bID=5523",
+        "description": "Community Tesco store serving the Castlereagh area with fresh and packaged groceries.",
+        "category": "grocery"
+      },
+      {
+        "name": "Lidl Belfast - Divis Street",
+        "coords": [54.5967, -5.9342],
+        "url": "https://www.lidl.co.uk/store-finder/lidl-belfast-divis-street-338",
+        "description": "Affordable Lidl supermarket offering fresh produce, groceries, and weekly specials.",
+        "category": "grocery"
+      },
+      {
+        "name": "Lidl Belfast - Ormeau Road",
+        "coords": [54.5795, -5.9335],
+        "url": "https://www.lidl.co.uk/store-finder/lidl-belfast-ormeau-road-115",
+        "description": "Popular Lidl store known for quality groceries and great deals.",
+        "category": "grocery"
+      },
+      {
+        "name": "Tesco Belfast - Newtownards Road",
+        "coords": [54.5778, -5.8701],
+        "url": "https://www.tesco.com/store-locator/uk/?bID=5537",
+        "description": "Convenient Tesco store offering a wide selection of groceries and household items.",
+        "category": "grocery"
+      },
+      {
+        "name": "Lidl Belfast - Sydenham",
+        "coords": [54.6001, -5.8456],
+        "url": "https://www.lidl.co.uk/store-finder/lidl-belfast-sydenham-120",
+        "description": "Lidl supermarket with affordable groceries and weekly offers.",
+        "category": "grocery"
+      },
+      {
+        "name": "Aldi Belfast - Kennedy Way",
+        "coords": [54.6025, -5.9205],
+        "url": "https://www.aldi.co.uk/store-finder",
+        "description": "Aldi store offering budget-friendly groceries, fresh produce, and household essentials.",
+        "category": "grocery"
+      },
+      {
+        "name": "Spar Belfast - Ormeau Road",
+        "coords": [54.5770, -5.9300],
+        "url": "https://www.spar.co.uk/store-locator",
+        "description": "Local Spar convenience store with groceries and quick essentials.",
+        "category": "grocery"
+      },
+      {
+        "name": "Morrisons Belfast - Donegall Pass",
+        "coords": [54.5895, -5.9335],
+        "url": "https://my.morrisons.com/store-locator/",
+        "description": "Morrisons supermarket offering fresh food, groceries, and household products.",
+        "category": "grocery"
+      },
+      {
+        "name": "St George’s Market",
+        "coords": [54.5952, -5.9225],
+        "url": "https://www.belfastcity.gov.uk/stgeorgesmarket",
+        "description": "One of Belfast’s oldest attractions, offering local produce, fresh food, crafts, and live music on weekends.",
+        "category": "grocery"
+      },
+      {
+        "name": "Sawers Ltd",
+        "coords": [54.5960, -5.9309],
+        "url": "https://www.sawersbelfast.com/",
+        "description": "Specialty delicatessen in Belfast city centre, offering gourmet foods, cheeses, cured meats, and more.",
+        "category": "grocery"
+      },
+      {
+        "name": "Clements Fine Food",
+        "coords": [54.5989, -5.9178],
+        "url": "https://www.clementsfinefood.com/",
+        "description": "Upscale food shop with a range of locally sourced artisan food and drinks.",
+        "category": "grocery"
+      },
+      {
+        "name": "Arcadia Delicatessen",
+        "coords": [54.5866, -5.9424],
+        "url": "https://www.arcadiadeli.co.uk/",
+        "description": "Family-run delicatessen since 1933, offering premium cheeses, wines, and gourmet goods.",
+        "category": "grocery"
+      },
+      {
+        "name": "Indie Füde - Ormeau",
+        "coords": [54.5758, -5.9187],
+        "url": "https://indiefude.com/",
+        "description": "Independent store supporting local Northern Irish producers — from chutneys to craft beers.",
+        "category": "grocery"
+      },
+      {
+        "name": "Helens Bay Organic",
+        "coords": [54.6775, -5.8192],
+        "url": "https://www.helensbayorganic.com/",
+        "description": "Organic farm shop offering fresh fruit, vegetables, and meats grown sustainably.",
+        "category": "grocery"
+      },
+      {
+        "name": "Royal Victoria Hospital",
+        "coords": [54.5946, -5.9585],
+        "url": "https://belfasttrust.hscni.net/hospitals/royal-victoria-hospital/",
+        "description": "One of the largest hospitals in Northern Ireland, providing a full range of specialist and acute services.",
+        "category": "hospital"
+      },
+      {
+        "name": "Belfast City Hospital",
+        "coords": [54.5826, -5.9379],
+        "url": "https://belfasttrust.hscni.net/hospitals/belfast-city-hospital/",
+        "description": "A major teaching hospital with a regional cancer centre and day surgery unit.",
+        "category": "hospital"
+      },
+      {
+        "name": "Mater Infirmorum Hospital",
+        "coords": [54.6153, -5.9362],
+        "url": "https://belfasttrust.hscni.net/hospitals/mater-infirmorum-hospital/",
+        "description": "A general hospital serving North Belfast, with emergency, maternity, and community services.",
+        "category": "hospital"
+      },
+      {
+        "name": "Musgrave Park Hospital",
+        "coords": [54.5726, -5.9603],
+        "url": "https://belfasttrust.hscni.net/hospitals/musgrave-park-hospital/",
+        "description": "Specialist hospital providing orthopaedics, rehabilitation, and rheumatology services.",
+        "category": "hospital"
+      },
+      {
+        "name": "Knockbracken Healthcare Park",
+        "coords": [54.5437, -5.8701],
+        "url": "https://www.nihealthcare.com/",
+        "description": "A healthcare facility with services for mental health and community wellbeing.",
+        "category": "hospital"
+      },
+      {
+        "name": "Forster Green Hospital (legacy site)",
+        "coords": [54.5610, -5.8972],
+        "url": "https://www.nidirect.gov.uk/",
+        "description": "Former specialist respiratory hospital, now used for some outpatient and support services.",
+        "category": "hospital"
+      },
+      {
+        "name": "Bradbury Health & Wellbeing Centre",
+        "coords": [54.5864, -5.9240],
+        "url": "https://www.belfasttrust.hscni.net/location/bradbury-centre/",
+        "description": "A modern health centre providing GP and community healthcare services in South Belfast.",
+        "category": "hospital"
+      },
+      {
+        "name": "Grove Wellbeing Centre",
+        "coords": [54.6207, -5.9213],
+        "url": "https://www.belfasttrust.hscni.net/location/grove-wellbeing-centre/",
+        "description": "A multi-purpose healthcare centre with GP services, physiotherapy, and health promotion activities.",
+        "category": "hospital"
+      },
+      {
+        "name": "Knockbreda Health and Wellbeing Centre",
+        "coords": [54.5595, -5.8904],
+        "url": "https://www.belfasttrust.hscni.net/location/knockbreda-centre/",
+        "description": "Integrated healthcare facility offering family practice, community mental health, and social care services.",
+        "category": "hospital"
+      },
+      {
+        "name": "Finaghy Health Centre",
+        "coords": [54.5585, -5.9743],
+        "url": "https://www.nidirect.gov.uk/contacts/health-centres-and-clinics",
+        "description": "General practice and specialist services including diabetic clinics and minor surgery.",
+        "category": "hospital"
+      },
+      {
+        "name": "Beech Hall Health and Wellbeing Centre",
+        "coords": [54.5926, -5.9649],
+        "url": "https://www.belfasttrust.hscni.net/location/beech-hall-centre/",
+        "description": "Provides a range of community-based health services including mental health and social work.",
+        "category": "hospital"
+      },
+      {
+        "name": "Ormeau Health Centre",
+        "coords": [54.5807, -5.9232],
+        "url": "https://www.nidirect.gov.uk/contacts/ormeau-health-centre",
+        "description": "Offers GP and nursing services for local residents, with access to allied health professionals.",
+        "category": "hospital"
+      },
+      {
+        "name": "Shankill Health and Wellbeing Centre",
+        "coords": [54.6094, -5.9600],
+        "url": "https://www.belfasttrust.hscni.net/location/shankill-centre/",
+        "description": "Community-focused health centre with integrated GP and mental health services.",
+        "category": "hospital"
+      },
+      {
+        "name": "Out of Hours Urgent Care - Dalriada Urgent Care (Belfast)",
+        "coords": [54.5946, -5.9585],
+        "url": "https://www.nidirect.gov.uk/articles/out-hours-services",
+        "description": "Urgent GP care available during evenings, weekends, and public holidays when your own GP is closed.",
+        "category": "hospital"
+      },
+      {
+        "name": "Paddy Power, Wilson’s Court",
+        "coords": [54.5970, -5.9290],  
+        "url": null,
+        "description": "Betting shop at 12–14 Wilson’s Court in Belfast city centre.",
+        "category": "paddypower"
+      },
+      {
+        "name": "Paddy Power, Suffolk Road",
+        "coords": [54.5795, -5.9335],  
+        "url": null,
+        "description": "Branch located at 39 Suffolk Road in South Belfast.",
+        "category": "paddypower"
+      },
+      {
+        "name": "Paddy Power, Falls Road",
+        "coords": [54.5957, -5.9931],  
+        "url": null,
+        "description": "Shop at 75 Falls Road serving West Belfast.",
+        "category": "paddypower"
+      },
+      {
+        "name": "Paddy Power, Andersonstown Road",
+        "coords": [54.5793, -5.9736],  
+        "url": null,
+        "description": "Branch located on 133 Andersonstown Road in Belfast.",
+        "category": "paddypower"
+      }
+]

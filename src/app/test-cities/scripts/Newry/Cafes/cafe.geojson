@@ -1,0 +1,404 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2025-08-12T15:10:47Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/541122146",
+        "amenity": "cafe",
+        "name": "Synge & Byrne"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3366077,
+          54.1791091
+        ]
+      },
+      "id": "node/541122146"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/960862427",
+        "addr:city": "Newry",
+        "addr:county": "Down",
+        "addr:housenumber": "1",
+        "addr:postcode": "BT35 6BH",
+        "addr:street": "Monaghan Court",
+        "amenity": "cafe",
+        "check_date": "2025-06-08",
+        "fhrs:id": "752912",
+        "fixme:addr:1": "Lisdrumgullion",
+        "name": "Deli Lites"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3432594,
+          54.1772581
+        ]
+      },
+      "id": "node/960862427"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/960937346",
+        "addr:housenumber": "14",
+        "addr:postcode": "BT34 2BN",
+        "addr:street": "Hill Street",
+        "amenity": "cafe",
+        "fhrs:id": "752621",
+        "name": "Cafe Krem",
+        "outdoor_seating": "yes",
+        "source:addr": "FHRS Open Data"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3384516,
+          54.1735392
+        ]
+      },
+      "id": "node/960937346"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2210446007",
+        "amenity": "cafe",
+        "name": "Synge and Byrne.",
+        "opening_hours": "Mo-Su 09:00-17:00",
+        "operator": "Grounded"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.408241,
+          54.115266
+        ]
+      },
+      "id": "node/2210446007"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6416659707",
+        "addr:city": "Warrenpoint",
+        "addr:housenumber": "8",
+        "addr:postcode": "BT34 3NT",
+        "addr:street": "Mary Street",
+        "amenity": "cafe",
+        "diet:vegetarian": "yes",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "Leafy Greens and Co.",
+        "phone:mobile": "+44-7708-334051",
+        "website": "https://www.leafygreensandco.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2541643,
+          54.1001633
+        ]
+      },
+      "id": "node/6416659707"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6982845065",
+        "addr:housenumber": "6A",
+        "addr:postcode": "BT34 1DF",
+        "addr:street": "Margaret Street",
+        "amenity": "cafe",
+        "cuisine": "regional;coffee_shop",
+        "fhrs:id": "1105721",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "level": "0",
+        "name": "Maggie's Coffee Shop",
+        "opening_hours": "Mo-Sa 08:00-17:00; Su 10:00-16:00",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3369339,
+          54.1761566
+        ]
+      },
+      "id": "node/6982845065"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7765435876",
+        "addr:city": "Warrenpoint",
+        "addr:housenumber": "1",
+        "addr:postcode": "BT34 3HN",
+        "addr:street": "Church Street",
+        "amenity": "cafe",
+        "name": "Fulla Beans"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2540828,
+          54.1012496
+        ]
+      },
+      "id": "node/7765435876"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8768855298",
+        "addr:city": "Newry",
+        "addr:country": "GB",
+        "addr:housenumber": "3",
+        "addr:postcode": "BT34 2EG",
+        "addr:street": "Abbey Yard",
+        "amenity": "cafe",
+        "cuisine": "ice_cream",
+        "fhrs:id": "753105",
+        "name": "Price's Ice Cream"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3353141,
+          54.1714872
+        ]
+      },
+      "id": "node/8768855298"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9170623458",
+        "addr:city": "Newry",
+        "addr:housename": "Damolly Retail Park",
+        "addr:postcode": "BT35 6PR",
+        "addr:street": "Armagh Road",
+        "addr:unit": "10",
+        "amenity": "cafe",
+        "brand": "Costa",
+        "brand:wikidata": "Q608845",
+        "brand:wikipedia": "en:Costa Coffee",
+        "cuisine": "coffee_shop",
+        "fhrs:id": "753173",
+        "name": "Costa",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3499947,
+          54.191007
+        ]
+      },
+      "id": "node/9170623458"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9514994244",
+        "addr:city": "Newry",
+        "addr:housenumber": "14b",
+        "addr:postcode": "BT35 6AA",
+        "addr:street": "Monaghan Street",
+        "amenity": "cafe",
+        "cuisine": "coffee_shop;burger;sandwich",
+        "internet_access": "wlan",
+        "internet_access:fee": "customers",
+        "name": "Brew Birds",
+        "phone": "+44 28 3026 6121"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3417964,
+          54.1767269
+        ]
+      },
+      "id": "node/9514994244"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11586762763",
+        "amenity": "cafe",
+        "name": "Deli Lites"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3396628,
+          54.1687166
+        ]
+      },
+      "id": "node/11586762763"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11586780579",
+        "amenity": "cafe",
+        "brand": "Caffè Nero",
+        "brand:wikidata": "Q675808",
+        "check_date": "2024-08-22",
+        "check_date:opening_hours": "2024-08-22",
+        "cuisine": "coffee_shop",
+        "name": "Caffè Nero",
+        "opening_hours": "Mo-Tu 08:00-18:30; We-Fr 08:00-21:00; Sa 08:00-18:30; Su 11:00-18:30",
+        "takeaway": "yes",
+        "website": "https://www.caffenero.com/uk/stores/newry-the-quays"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3397203,
+          54.1690102
+        ]
+      },
+      "id": "node/11586780579"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11586910487",
+        "amenity": "cafe",
+        "brand": "Muffin Break",
+        "brand:wikidata": "Q16964876",
+        "cuisine": "coffee_shop",
+        "name": "Muffin Break",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3417824,
+          54.1720966
+        ]
+      },
+      "id": "node/11586910487"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12412809255",
+        "addr:housename": "Unit 26, WIN Industrial Estate",
+        "amenity": "cafe",
+        "cuisine": "irish",
+        "name": "The Full Irish"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3364281,
+          54.1833305
+        ]
+      },
+      "id": "node/12412809255"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12612978088",
+        "addr:city": "Newry",
+        "addr:housenumber": "4",
+        "addr:postcode": "BT34 2BP",
+        "addr:street": "John Mitchel Place",
+        "amenity": "cafe",
+        "contact:facebook": "https://www.facebook.com/people/Measured-Brew-Bar/100088298352234/",
+        "contact:instagram": "measuredbrewbar",
+        "contact:website": "https://measured-brew-bar.square.site/",
+        "cuisine": "coffee_shop",
+        "name": "Measured Coffee",
+        "opening_hours": "Mo-Fr 08:00-16:00; Sa-Su 09:00-16:00",
+        "payment:cards": "yes",
+        "payment:cash": "yes",
+        "takeaway": "yes",
+        "takeaway:description": "available until 4pm",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3375468,
+          54.1722348
+        ]
+      },
+      "id": "node/12612978088"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12650942084",
+        "amenity": "cafe"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.4116916,
+          54.1803827
+        ]
+      },
+      "id": "node/12650942084"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12655800993",
+        "amenity": "cafe"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2546818,
+          54.1015424
+        ]
+      },
+      "id": "node/12655800993"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12655800994",
+        "amenity": "cafe"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2546135,
+          54.1015096
+        ]
+      },
+      "id": "node/12655800994"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12658177012",
+        "amenity": "cafe",
+        "cuisine": "coffee_shop"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2961279,
+          54.180201
+        ]
+      },
+      "id": "node/12658177012"
+    }
+  ]
+}

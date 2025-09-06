@@ -1,0 +1,401 @@
+export const luasStops = [
+  {
+    name: "Tallaght",
+    coords: [53.2874944444444, -6.37458888888889],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "Hospital",
+    coords: [53.2893694444444, -6.37885],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "Cookstown",
+    coords: [53.2935055555556, -6.38439722222222],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "Belgard",
+    coords: [53.2992861111111, -6.37488611111111],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "Kingswood",
+    coords: [53.3036944444444, -6.36525],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "Red Cow",
+    coords: [53.3168333333333, -6.36987222222222],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "Kylemore",
+    coords: [53.3266555555556, -6.34344444444444],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "Bluebell",
+    coords: [53.3292972222222, -6.33379166666667],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "Blackhorse",
+    coords: [53.3342583333333, -6.32739444444444],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "Drimnagh",
+    coords: [53.3353611111111, -6.31816111111111],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "Goldenbridge",
+    coords: [53.3358916666667, -6.31356944444444],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "Suir Road",
+    coords: [53.3366166666667, -6.30721111111111],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "Rialto",
+    coords: [53.3379083333333, -6.29724166666667],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "Fatima",
+    coords: [53.3384388888889, -6.29254722222222],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "James's",
+    coords: [53.3419416666667, -6.29336111111111],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "Heuston",
+    coords: [53.3466472222222, -6.29180833333333],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "Museum",
+    coords: [53.3478666666667, -6.28671388888889],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "Smithfield",
+    coords: [53.3471333333333, -6.27772777777778],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "Four Courts",
+    coords: [53.3468638888889, -6.27343611111111],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "Jervis",
+    coords: [53.3476861111111, -6.26533333333333],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "Abbey Street",
+    coords: [53.3485888888889, -6.25817222222222],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "Busáras",
+    coords: [53.350075, -6.25145],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "Connolly",
+    coords: [53.3509222222222, -6.24994166666667],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "St. Stephen's Green",
+    coords: [53.3390722222222, -6.26133333333333],
+    description: "",
+    url: "",
+    category: "Green"
+  },
+  {
+    name: "Harcourt",
+    coords: [53.3333583333333, -6.26265],
+    description: "",
+    url: "",
+    category: "Green"
+  },
+  {
+    name: "Charlemont",
+    coords: [53.3306694444444, -6.25868333333333],
+    description: "",
+    url: "",
+    category: "Green"
+  },
+  {
+    name: "Ranelagh",
+    coords: [53.3264333333333, -6.25620277777778],
+    description: "",
+    url: "",
+    category: "Green"
+  },
+  {
+    name: "Beechwood",
+    coords: [53.3208222222222, -6.25465277777778],
+    description: "",
+    url: "",
+    category: "Green"
+  },
+  {
+    name: "Cowper",
+    coords: [53.3164666666667, -6.25344722222222],
+    description: "",
+    url: "",
+    category: "Green"
+  },
+  {
+    name: "Milltown",
+    coords: [53.3099166666667, -6.25172777777778],
+    description: "",
+    url: "",
+    category: "Green"
+  },
+  {
+    name: "Windy Arbour",
+    coords: [53.3015583333333, -6.25070833333333],
+    description: "",
+    url: "",
+    category: "Green"
+  },
+  {
+    name: "Dundrum",
+    coords: [53.2923583333333, -6.24511666666667],
+    description: "",
+    url: "",
+    category: "Green"
+  },
+  {
+    name: "Balally",
+    coords: [53.2861055555556, -6.23677222222222],
+    description: "",
+    url: "",
+    category: "Green"
+  },
+  {
+    name: "Kilmacud",
+    coords: [53.2830083333333, -6.22388611111111],
+    description: "",
+    url: "",
+    category: "Green"
+  },
+  {
+    name: "Stillorgan",
+    coords: [53.2793111111111, -6.20991944444444],
+    description: "",
+    url: "",
+    category: "Green"
+  },
+  {
+    name: "Sandyford",
+    coords: [53.2776027777778, -6.20467777777778],
+    description: "",
+    url: "",
+    category: "Green"
+  },
+  {
+    name: "Central Park",
+    coords: [53.27015, -6.20376388888889],
+    description: "",
+    url: "",
+    category: "Green"
+  },
+  {
+    name: "Glencairn",
+    coords: [53.2663361111111, -6.20994166666667],
+    description: "",
+    url: "",
+    category: "Green"
+  },
+  {
+    name: "The Gallops",
+    coords: [53.2611638888889, -6.20602222222222],
+    description: "",
+    url: "",
+    category: "Green"
+  },
+  {
+    name: "Leopardstown Valley",
+    coords: [53.2582472222222, -6.19836111111111],
+    description: "",
+    url: "",
+    category: "Green"
+  },
+  {
+    name: "Ballyogan Wood",
+    coords: [53.255047, -6.184475],
+    description: "",
+    url: "",
+    category: "Green"
+  },
+  {
+    name: "Racecourse",
+    coords: [53.2553666666667, -6.17516111111111],
+    description: "",
+    url: "",
+    category: "Green"
+  },
+  {
+    name: "Carrickmines",
+    coords: [53.2540333333333, -6.16990833333333],
+    description: "",
+    url: "",
+    category: "Green"
+  },
+  {
+    name: "Brennanstown",
+    coords: [53.2526194444444, -6.16159722222222],
+    description: "",
+    url: "",
+    category: "Green"
+  },
+  {
+    name: "Laughanstown",
+    coords: [53.2506055555556, -6.15500555555556],
+    description: "",
+    url: "",
+    category: "Green"
+  },
+  {
+    name: "Cherrywood",
+    coords: [53.2453333333333, -6.14585277777778],
+    description: "",
+    url: "",
+    category: "Green"
+  },
+  {
+    name: "Brides Glen",
+    coords: [53.242075, -6.14288611111111],
+    description: "",
+    url: "",
+    category: "Green"
+  },
+  {
+    name: "Fettercairn",
+    coords: [53.29351885, -6.395553516667],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "Cheeverstown",
+    coords: [53.290982416667, -6.4068485],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "Citywest Campus",
+    coords: [53.28783255, -6.418914583333],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "Fortunestown",
+    coords: [53.284250633333, -6.42460165],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "Saggart",
+    coords: [53.28467885, -6.43776255],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "George's Dock",
+    coords: [53.349528, -6.247575],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "Mayor Square - NCI",
+    coords: [53.3492472222222, -6.24339444444444],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "Spencer Dock",
+    coords: [53.3488222222222, -6.23714722222222],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "The Point",
+    coords: [53.34835, -6.22925833333333],
+    description: "",
+    url: "",
+    category: "Red"
+  },
+  {
+    name: "Depot",
+    coords: [53.3146583333333, -6.36995833333333],
+    description: "",
+    url: "",
+    category: "Red"
+  }
+];

@@ -1,0 +1,471 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2025-08-12T14:45:21Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/305313396",
+        "addr:city": "Dublin",
+        "addr:housename": "Pudding Row",
+        "addr:street": "Essex Street West",
+        "indoor_seating": "yes",
+        "name": "The Bakery",
+        "outdoor_seating": "no",
+        "shop": "bakery",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2686326,
+          53.3446102
+        ]
+      },
+      "id": "node/305313396"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/559854617",
+        "addr:city": "Dublin",
+        "addr:country": "IE",
+        "addr:housenumber": "5",
+        "addr:street": "George's Street Great South",
+        "contact:facebook": "https://www.facebook.com/100079457434207/",
+        "level": "0",
+        "name": "Krust Bakery",
+        "old_name": "Fame Hair Academy",
+        "shop": "bakery",
+        "toilets:wheelchair": "no",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2642558,
+          53.3436458
+        ]
+      },
+      "id": "node/559854617"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1403258746",
+        "addr:housenumber": "49",
+        "addr:street": "Francis Street",
+        "email": "lovincatering@gmail.com",
+        "fax": "+353-1-4733972",
+        "name": "Lovin' Catering",
+        "old_name": "Gallic Kitchen",
+        "phone": "+353-1-4544912",
+        "shop": "bakery",
+        "website": "https://lovincatering.com/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2742004,
+          53.3407017
+        ]
+      },
+      "id": "node/1403258746"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1408878833",
+        "addr:housenumber": "1a",
+        "addr:street": "Lennox Street",
+        "email": "bretzelshop@bretzel.ie",
+        "name": "The Bretzel Bakery",
+        "phone": "+353 1 4759445",
+        "shop": "bakery",
+        "website": "https://www.bretzel.ie/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2649791,
+          53.3312357
+        ]
+      },
+      "id": "node/1408878833"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1412421802",
+        "addr:housenumber": "43",
+        "addr:street": "Meath Street",
+        "amenity": "fast_food",
+        "contact:instagram": "bakeology.treats",
+        "cuisine": "fish_and_chips",
+        "name": "Bakeology",
+        "opening_hours": "Mo-Fr 08:00-16:00; Sa 09:00-17:00; Su 10:00-16:00",
+        "shop": "bakery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.278201,
+          53.3401127
+        ]
+      },
+      "id": "node/1412421802"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1473450253",
+        "addr:city": "Dublin",
+        "addr:housenumber": "39-40",
+        "addr:street": "Thomas Street",
+        "name": "Mannings Bakery & Café",
+        "opening_hours": "Mo-Sa 09:00-18:00",
+        "shop": "bakery",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.279722,
+          53.342785
+        ]
+      },
+      "id": "node/1473450253"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1473502333",
+        "name": "Catherine's",
+        "shop": "bakery",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2790218,
+          53.3417894
+        ]
+      },
+      "id": "node/1473502333"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1956582489",
+        "addr:city": "Dublin",
+        "addr:housenumber": "19",
+        "addr:street": "Liffey Street Lower",
+        "name": "Filipino Bakery",
+        "shop": "bakery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2636859,
+          53.347752
+        ]
+      },
+      "id": "node/1956582489"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2939213024",
+        "addr:housename": "Park Shopping Centre",
+        "addr:housenumber": "9",
+        "addr:street": "Prussia Street",
+        "name": "Thunders home bakery",
+        "shop": "bakery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2871591,
+          53.3559411
+        ]
+      },
+      "id": "node/2939213024"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3338276450",
+        "addr:city": "Dublin",
+        "addr:street": "Pearse Street",
+        "amenity": "cafe",
+        "indoor_seating": "yes",
+        "name": "il Valentino",
+        "opening_hours": "Mo-Fr 07:00-19:00; Sa,Su 08:00-19:00",
+        "outdoor_seating": "yes",
+        "shop": "bakery",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.ilvalentino.ie/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2390303,
+          53.3426047
+        ]
+      },
+      "id": "node/3338276450"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3465653399",
+        "addr:housenumber": "21",
+        "addr:street": "Eden Quay",
+        "name": "The One 2 Vue Shop",
+        "opening_hours": "Mo-Sa 12:00-19:00",
+        "shop": "bakery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2566824,
+          53.3481947
+        ]
+      },
+      "id": "node/3465653399"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3874513562",
+        "addr:city": "Dublin",
+        "addr:housenumber": "91",
+        "addr:street": "Manor Street",
+        "name": "The Green Door",
+        "shop": "bakery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2831189,
+          53.3513747
+        ]
+      },
+      "id": "node/3874513562"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4899884232",
+        "addr:housenumber": "330",
+        "addr:street": "North Circular Road",
+        "name": "The Mad Scone Bakery",
+        "old_name": "Cremore",
+        "opening_hours": "Tu-Sa 08:30-15:00; Su 09:00-15:00",
+        "shop": "bakery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2746689,
+          53.3606251
+        ]
+      },
+      "id": "node/4899884232"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5046224021",
+        "addr:city": "Dublin",
+        "addr:street": "Baggot Street Lower",
+        "email": "baggotst@thenaturalbakery.ie",
+        "name": "The Natural Bakery",
+        "name:en": "The Natural Bakery",
+        "opening_hours": "Mo-Sa 07:00-19:00; Su 08:00-19:00",
+        "phone": "+353 1 662 9745",
+        "shop": "bakery",
+        "website": "https://thenaturalbakery.ie/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2522304,
+          53.3379592
+        ]
+      },
+      "id": "node/5046224021"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5111896429",
+        "email": "baggotst@thenaturalbakery.ie",
+        "name": "The Natural Bakery",
+        "opening_hours": "Mo-Sa 07:00-19:00; Su 08:00-19:00",
+        "phone": "016629745",
+        "shop": "bakery",
+        "website": "https://thenaturalbakery.ie/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2522275,
+          53.3379519
+        ]
+      },
+      "id": "node/5111896429"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5212682322",
+        "addr:city": "Dublin",
+        "contact:facebook": "https://www.facebook.com/LadureeIreland/",
+        "contact:instagram": "https://www.instagram.com/ladureeireland/",
+        "name": "Ladurée Dublin",
+        "pastry_shop": "yes",
+        "shop": "bakery",
+        "website": "https://ladureeireland.com/",
+        "website:booking": "https://ladureeireland.com/collections/book-a-table",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2621548,
+          53.3429671
+        ]
+      },
+      "id": "node/5212682322"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5405991623",
+        "addr:street": "Dorset Street Lower",
+        "name": "Goldribbon",
+        "shop": "bakery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2615653,
+          53.3591149
+        ]
+      },
+      "id": "node/5405991623"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6144855291",
+        "addr:city": "Dublin",
+        "addr:country": "IE",
+        "addr:county": "Dublin",
+        "addr:housenumber": "64",
+        "addr:postcode": "D01 CX97",
+        "addr:street": "Capel Street",
+        "indoor_seating": "yes",
+        "name": "Padoca",
+        "old_name": "On The Pig's Back Eatery",
+        "opening_hours": "Mo-Su 12:00-22:00",
+        "outdoor_seating": "yes",
+        "shop": "bakery",
+        "toilets:wheelchair": "no",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2692361,
+          53.3499096
+        ]
+      },
+      "id": "node/6144855291"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6257799722",
+        "addr:city": "Dublin",
+        "addr:street": "Wellington Quay",
+        "contact:facebook": "https://www.facebook.com/100054472809826",
+        "name": "Haoliland",
+        "shop": "bakery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2638427,
+          53.3458121
+        ]
+      },
+      "id": "node/6257799722"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6421393839",
+        "name": "Gaillot et Gray",
+        "shop": "bakery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2754167,
+          53.3325765
+        ]
+      },
+      "id": "node/6421393839"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11741914281",
+        "addr:city": "Dublin",
+        "addr:street": "Russell Street",
+        "check_date": "2024-03-18",
+        "internet_access": "no",
+        "name": "Russell Street Bakery",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "shop": "bakery",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2543962,
+          53.3590857
+        ]
+      },
+      "id": "node/11741914281"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12161713561",
+        "addr:city": "Dublin",
+        "addr:street": "Pearse Street",
+        "name": "Bread 41 Lab",
+        "operator": "Bread 41",
+        "shop": "bakery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2518317,
+          53.3447701
+        ]
+      },
+      "id": "node/12161713561"
+    }
+  ]
+}

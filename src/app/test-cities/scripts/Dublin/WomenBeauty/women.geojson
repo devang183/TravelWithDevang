@@ -1,0 +1,5000 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2025-08-15T08:22:58Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/564076265",
+        "addr:city": "Dublin",
+        "addr:housenumber": "3",
+        "addr:street": "Fields Terrace",
+        "beauty": "aesthetic",
+        "email": "info@sisuclinic.com",
+        "name": "SISU Clinic",
+        "old_name": "Dahlia",
+        "phone:mobile": "+353-85-1892489",
+        "shop": "beauty",
+        "website": "https://sisuclinic.com/sisu-clinic-ranelagh-dublin/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2554094,
+          53.3252812
+        ]
+      },
+      "id": "node/564076265"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/576099238",
+        "name": "Beauty Bar",
+        "shop": "beauty",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2415014,
+          53.3335062
+        ]
+      },
+      "id": "node/576099238"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/658492285",
+        "addr:city": "Dún Laoghaire",
+        "addr:housenumber": "52",
+        "addr:street": "Georges Street Upper",
+        "beauty": "nails",
+        "contact:facebook": "https://www.facebook.com/newyorkinailsDunLaoghaire/",
+        "name": "New YorKi Nails",
+        "opening_hours": "Mo-Tu 10:00-19:00; We 10:00-19:30; Th 10:00-20:00; Fr 10:00-19:30; Sa 10:00-19:00; Su 11:00-18:00",
+        "phone": "+353-1-214-0066",
+        "shop": "beauty",
+        "website": "https://newyorkinails.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1308475,
+          53.2899399
+        ]
+      },
+      "id": "node/658492285"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/667886886",
+        "addr:city": "Sallynoggin",
+        "addr:housenumber": "10",
+        "addr:postcode": "A96 E8V0",
+        "addr:street": "Church Place",
+        "beauty": "nails",
+        "check_date": "2025-01-28",
+        "check_date:opening_hours": "2023-02-21",
+        "contact:facebook": "https://www.facebook.com/lavish.sallynoggin/",
+        "currency:EUR": "yes",
+        "email": "lavish.sallynoggin@gmail.com",
+        "level": "0",
+        "name": "Lavish Nail Spa & Beauty",
+        "name:en": "Lavish Nail Spa & Beauty",
+        "opening_hours": "Mo-We 10:00-18:30; Th-Fr 10:00-19:30; Sa 10:00-18:30; Su,PH 10:00-18:30",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+353-1-561-5951",
+        "shop": "beauty",
+        "start_date": "2021-06-14",
+        "website": "https://lavishnails.ie/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.137795,
+          53.2753021
+        ]
+      },
+      "id": "node/667886886"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/725113287",
+        "beauty": "tanning",
+        "name": "Havana",
+        "shop": "beauty",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2455903,
+          53.3495268
+        ]
+      },
+      "id": "node/725113287"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/972094204",
+        "addr:city": "Dublin",
+        "addr:street": "Phibsborough Road",
+        "check_date": "2024-09-28",
+        "name": "La Mode",
+        "phone": "+353 1 811 7518",
+        "shop": "beauty",
+        "website": "https://www.lamode.ie/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2725009,
+          53.3612797
+        ]
+      },
+      "id": "node/972094204"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1418311153",
+        "addr:city": "Blackrock",
+        "addr:housenumber": "45",
+        "addr:street": "Booterstown Avenue",
+        "beauty": "nails",
+        "check_date": "2023-07-03",
+        "name": "Gloss House",
+        "shop": "beauty",
+        "website": "https://glosshouse.ie/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1972476,
+          53.3067634
+        ]
+      },
+      "id": "node/1418311153"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1424006142",
+        "addr:street": "Woodstown Shopping Centre",
+        "name": "Red Apple Hair & Beauty Salon",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.330083,
+          53.2756924
+        ]
+      },
+      "id": "node/1424006142"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1532673677",
+        "beauty": "eyebrow",
+        "name": "Brow Bar",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3858513,
+          53.3910017
+        ]
+      },
+      "id": "node/1532673677"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1835454848",
+        "addr:housename": "Rockview House",
+        "addr:street": "Enniskerry Road",
+        "check_date": "2023-07-02",
+        "name": "Vanity Rooms",
+        "shop": "beauty",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2139289,
+          53.2529204
+        ]
+      },
+      "id": "node/1835454848"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2001070418",
+        "addr:city": "Dublin",
+        "addr:housenumber": "144-145",
+        "addr:street": "Leeson Street Upper",
+        "email": "info@blow.ie",
+        "name": "Blow Hair & Beauty",
+        "opening_hours": "Mo-Fr 06:30-19:30, Sa 08:30-18:00, Su & BH 09:30-16:00",
+        "phone": "+353-1-6070222",
+        "shop": "beauty",
+        "website": "https://www.blow.ie/",
+        "website:booking": "https://www.fresha.com/a/blow-leeson-street-dublin-leeson-street-upper-144-us9dkofp/booking",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2516775,
+          53.3311169
+        ]
+      },
+      "id": "node/2001070418"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2480237252",
+        "addr:city": "Dublin",
+        "addr:street": "Irishtown Road",
+        "check_date": "2025-07-05",
+        "name": "Studio 11 Beauty Salon",
+        "shop": "beauty",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2267484,
+          53.3419705
+        ]
+      },
+      "id": "node/2480237252"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2523754087",
+        "name": "Brazilian Aesthetics",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2678192,
+          53.3563759
+        ]
+      },
+      "id": "node/2523754087"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2523759926",
+        "addr:street": "North Circular Road",
+        "beauty": "nails;hair",
+        "name": "Orchid's Hair Nail & Beauty Salon",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2706624,
+          53.3605553
+        ]
+      },
+      "id": "node/2523759926"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2531423259",
+        "addr:city": "Dublin",
+        "addr:housenumber": "Unit 1",
+        "addr:street": "Hyde Court",
+        "beauty": "tanning",
+        "email": "Tan-N-Glo@hotmail.com",
+        "name": "Tan n Glo",
+        "phone": "+353 85 276 404",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2514916,
+          53.3456367
+        ]
+      },
+      "id": "node/2531423259"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2625914022",
+        "addr:city": "Dublin",
+        "addr:housenumber": "1",
+        "addr:postal_district": "D18",
+        "addr:street": "Leopardstown Gardens",
+        "name": "Leopardstown Beauty Salon",
+        "shop": "beauty",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1964909,
+          53.2796901
+        ]
+      },
+      "id": "node/2625914022"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2632336674",
+        "addr:city": "Dublin",
+        "addr:country": "IE",
+        "addr:housenumber": "42D",
+        "addr:street": "Pearse Street",
+        "name": "Bowie Aesthetics Bar",
+        "old_name": "Clifford Antiques",
+        "shop": "beauty",
+        "website": "https://bowieaesthetics.ie/",
+        "website:booking": "https://www.fresha.com/a/bowie-aesthetics-pearse-street-dublin-pearse-street-42d-kiuplzpy/booking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2498604,
+          53.344378
+        ]
+      },
+      "id": "node/2632336674"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2696246358",
+        "addr:city": "Dublin",
+        "addr:housenumber": "255",
+        "addr:postal_district": "D6W",
+        "addr:street": "Harold's Cross Road",
+        "name": "V.Claire",
+        "old_name": "Virginie Claire",
+        "phone": "+353-1-4978833",
+        "shop": "beauty",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2792475,
+          53.3181899
+        ]
+      },
+      "id": "node/2696246358"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2797188912",
+        "addr:city": "Dublin",
+        "addr:housenumber": "8",
+        "addr:street": "Rathmines Road Upper",
+        "name": "Blitz It Beauty Express",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2655368,
+          53.3212393
+        ]
+      },
+      "id": "node/2797188912"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2865381027",
+        "addr:city": "Dublin",
+        "addr:housenumber": "185",
+        "addr:street": "Botanic Road",
+        "name": "Slender Health",
+        "opening_hours": "Mo-Th 09:00-22:00; Fr 09:00-21:00; Sa 09:00-18:00; Su 09:00-16:00",
+        "phone": "+353 1 857 4104",
+        "shop": "beauty",
+        "website": "https://www.slenderhealth.ie/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2685402,
+          53.3724941
+        ]
+      },
+      "id": "node/2865381027"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2885369316",
+        "addr:city": "Dublin",
+        "addr:housenumber": "12",
+        "addr:street": "Rathgar Road",
+        "name": "Ivy Nails and Beauty",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2669627,
+          53.3216355
+        ]
+      },
+      "id": "node/2885369316"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2886231112",
+        "addr:city": "Dublin",
+        "addr:postal_district": "D06",
+        "addr:street": "Rathmines Road Lower",
+        "contact:facebook": "https://www.facebook.com/100063491263389/",
+        "contact:instagram": "https://www.instagram.com/sandynailsbeautysalon/",
+        "name": "Sandy Nails",
+        "old_name": "The 3rd Policeman",
+        "shop": "beauty",
+        "website:booking": "https://booksy.com/en-ie/4997_sandy-nails_nail-salons_52940_wicklow#ba_s=seo",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2651617,
+          53.3262436
+        ]
+      },
+      "id": "node/2886231112"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2983580706",
+        "addr:city": "Dublin",
+        "addr:housenumber": "94",
+        "addr:street": "Rathmines Road Lower",
+        "name": "Mademoiselle @ The Beauty Boudoir",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2646335,
+          53.3265716
+        ]
+      },
+      "id": "node/2983580706"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2983580707",
+        "addr:city": "Dublin",
+        "addr:housenumber": "96",
+        "addr:street": "Rathmines Road Lower",
+        "beauty": "tanning",
+        "name": "Tanning Hub",
+        "old_name:2016": "The Muscle Shop",
+        "old_name:2017": "Yankee Donuts",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2646335,
+          53.3265235
+        ]
+      },
+      "id": "node/2983580707"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2983667548",
+        "addr:city": "Dublin",
+        "addr:housenumber": "220",
+        "addr:street": "Rathmines Road Lower",
+        "drive_through": "no",
+        "name": "Abbie Nail & Beauty",
+        "old_name": "Bourke's Allcare Pharmacy",
+        "shop": "beauty",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2653499,
+          53.3234562
+        ]
+      },
+      "id": "node/2983667548"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2985558133",
+        "addr:city": "Dublin",
+        "addr:housenumber": "189",
+        "addr:postal_district": "D06",
+        "addr:street": "Rathmines Road Lower",
+        "contact:facebook": "https://www.facebook.com/heavenrathminesfaceandbody/",
+        "level": "1",
+        "name": "Heaven Face and Body Clinic",
+        "phone": "+353 1 491 0101",
+        "shop": "beauty",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2658498,
+          53.322697
+        ]
+      },
+      "id": "node/2985558133"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2988406966",
+        "addr:city": "Dublin",
+        "addr:postal_district": "D6W",
+        "addr:street": "Kimmage Road Lower",
+        "name": "be U. Nail & Bauty Clinic",
+        "phone": "+353 1 4925187",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2910089,
+          53.319406
+        ]
+      },
+      "id": "node/2988406966"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2991107248",
+        "addr:city": "Dublin",
+        "addr:street": "Bangor Drive",
+        "contact:phone": "+353 1 416 9948",
+        "level": "1",
+        "name": "Halo Hair and Beauty",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3044931,
+          53.3274111
+        ]
+      },
+      "id": "node/2991107248"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2994323503",
+        "addr:city": "Dublin",
+        "addr:street": "Richmond Street South",
+        "name": "Roches",
+        "old_name": "Gloss",
+        "phone": "+353 1 4758798",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2646711,
+          53.3309675
+        ]
+      },
+      "id": "node/2994323503"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2994960412",
+        "addr:housename": "Triangular Building",
+        "addr:street": "Richmond Street South",
+        "beauty": "nails",
+        "internet_access": "terminal",
+        "name": "Mint Nails & Spa",
+        "old_name": "I@WAY",
+        "old_name_1": "Talkshop / Netshop",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2646438,
+          53.3323997
+        ]
+      },
+      "id": "node/2994960412"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2995293838",
+        "addr:housenumber": "6",
+        "addr:street": "Lisle Road",
+        "name": "Studio Dolls",
+        "old_name": "James Robinson Gallery",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3170225,
+          53.3205318
+        ]
+      },
+      "id": "node/2995293838"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2995293840",
+        "name": "Nails & Beauty by Jen",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3170446,
+          53.320647
+        ]
+      },
+      "id": "node/2995293840"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2995767480",
+        "name": "TN Beauty Salon",
+        "shop": "beauty",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2656691,
+          53.3368488
+        ]
+      },
+      "id": "node/2995767480"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2996988355",
+        "addr:housenumber": "66-67",
+        "addr:street": "Aungier Street",
+        "beauty": "cosmetics",
+        "name": "Queen",
+        "phone": "+353-1-4789633",
+        "shop": "beauty",
+        "website": "http://www.queen.ie/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2658921,
+          53.3404061
+        ]
+      },
+      "id": "node/2996988355"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3005930485",
+        "addr:city": "Dublin",
+        "addr:housenumber": "65a",
+        "addr:street": "Harold's Cross Road",
+        "name": "Natural Beauty",
+        "phone": "+353-1-5374066",
+        "shop": "beauty",
+        "website": "http://www.dermalogicaconnect.ie/naturalbeauty/about"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2774451,
+          53.3269799
+        ]
+      },
+      "id": "node/3005930485"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3008717116",
+        "addr:city": "Dublin",
+        "addr:housenumber": "66",
+        "addr:street": "Clanbrassil Street Lower",
+        "name": "New Image Hair & Beauty Salon",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2753978,
+          53.3331347
+        ]
+      },
+      "id": "node/3008717116"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3039675547",
+        "addr:city": "Dublin",
+        "addr:housenumber": "101",
+        "addr:street": "Rathgar Road",
+        "contact:facebook": "https://www.facebook.com/marinas.beautysalon.5/",
+        "name": "Marina's Beauty Salon",
+        "phone": "+353 1 4905860",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2740502,
+          53.3124754
+        ]
+      },
+      "id": "node/3039675547"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3039751433",
+        "addr:city": "Dublin",
+        "addr:housenumber": "91",
+        "addr:street": "Rathgar Road",
+        "name": "Iconic Beauty",
+        "phone": "+353 1 4928462",
+        "shop": "beauty",
+        "website": "https://www.iconicbeauty.ie/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.273282,
+          53.3134014
+        ]
+      },
+      "id": "node/3039751433"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3042075585",
+        "addr:city": "Dublin",
+        "addr:housenumber": "21",
+        "addr:street": "Dawson Street",
+        "contact:facebook": "https://www.facebook.com/BlinkandWinkIRE",
+        "email": "hello@blinkandwink.ie",
+        "name": "Blink & Wink",
+        "opening_hours": "Tu-We 10:00-19:00, Th-Fr 10:00-20:00, Sa 10:00-18:00",
+        "phone": "+353-1-6624772",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2585291,
+          53.3397781
+        ]
+      },
+      "id": "node/3042075585"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3044894568",
+        "addr:city": "Dublin",
+        "addr:housenumber": "27",
+        "addr:street": "St. Stephen's Green",
+        "name": "The Spa at The Shelbourne",
+        "opening_hours": "Sa-Tu 09:00-19:00, We-Fr 09:00-21:00",
+        "phone": "+353 1 6634500",
+        "shop": "beauty",
+        "website": "https://www.theshelbourne.com/wellness/the-spa",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2554231,
+          53.3387816
+        ]
+      },
+      "id": "node/3044894568"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3051154797",
+        "addr:city": "Dublin",
+        "addr:housenumber": "55",
+        "addr:street": "O'Connell Street Lower",
+        "name": "Heaven Face & Body Clinic",
+        "phone": "+353 1 8748405",
+        "shop": "beauty",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2597451,
+          53.3476241
+        ]
+      },
+      "id": "node/3051154797"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3061990914",
+        "addr:city": "Dublin",
+        "addr:street": "Ballygall Road West",
+        "name": "Gold Hair & Beauty",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2885723,
+          53.3904704
+        ]
+      },
+      "id": "node/3061990914"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3067754005",
+        "addr:city": "Dublin",
+        "addr:street": "Clanbrassil Street Lower",
+        "name": "Hair & Beauty Bar",
+        "phone": "+353 1 4020404",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2735274,
+          53.335208
+        ]
+      },
+      "id": "node/3067754005"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3069611648",
+        "addr:city": "Dublin",
+        "addr:housenumber": "20",
+        "addr:street": "Garville Lane",
+        "name": "The Lane Beauty Salon",
+        "opening_hours": "Mo 17:00-21:00, Tu-Fr 11:00+, Sa 10:30-16:00",
+        "phone": "+353 1 4970028",
+        "shop": "beauty",
+        "website": "http://thelanebeautysalon.ie/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2755631,
+          53.3162149
+        ]
+      },
+      "id": "node/3069611648"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3080859022",
+        "addr:housenumber": "21",
+        "addr:street": "Corrig Road",
+        "name": "Simply Beauty",
+        "shop": "beauty",
+        "website": "https://www.simplybeauty.ie/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.214961,
+          53.2765882
+        ]
+      },
+      "id": "node/3080859022"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3088074380",
+        "addr:city": "Dublin",
+        "addr:housenumber": "13",
+        "addr:street": "Fade Street",
+        "name": "Zenergy",
+        "opening_hours": "Mo-Tu 10:00-20:00, We-Th 10:00-21:00, Fr 10:00-20:00, Sa 10:00-18:00, Su 11:00-18:00",
+        "phone": "+353 1 6111100",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2643013,
+          53.3421229
+        ]
+      },
+      "id": "node/3088074380"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3094553143",
+        "addr:city": "Dublin",
+        "addr:housenumber": "18",
+        "addr:street": "Terenure Road North",
+        "name": "Elegance Nail Studio",
+        "phone": "+353 85 2367160",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2825184,
+          53.3138314
+        ]
+      },
+      "id": "node/3094553143"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3094826362",
+        "addr:city": "Dublin",
+        "addr:housename": "4 Eaton Hall",
+        "addr:street": "Terenure Road North",
+        "name": "Studio 6",
+        "opening_hours": "Tu-We 09:00-17:30, Th-Fr 09:00+, Sa 09:00-17:00",
+        "phone": "+353 1 4928653",
+        "shop": "beauty",
+        "website": "https://www.studio6hairandbeauty.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2826455,
+          53.3125123
+        ]
+      },
+      "id": "node/3094826362"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3125025420",
+        "addr:city": "Dublin",
+        "addr:street": "Thomas Street",
+        "name": "Hair Beauty & Massage Centre",
+        "phone": "+353 1 4535347",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2774036,
+          53.3426982
+        ]
+      },
+      "id": "node/3125025420"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3126035957",
+        "addr:housenumber": "280",
+        "addr:street": "Glasnevin Avenue",
+        "name": "Beauty Salon",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.286749,
+          53.390673
+        ]
+      },
+      "id": "node/3126035957"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3127013423",
+        "addr:city": "Dublin",
+        "addr:street": "Phibsborough Road",
+        "name": "Mary's Beauty Salon",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2729844,
+          53.3595554
+        ]
+      },
+      "id": "node/3127013423"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3127019239",
+        "addr:city": "Dublin",
+        "addr:housenumber": "52a",
+        "addr:street": "Phibsborough Road",
+        "name": "Arshia's",
+        "phone": "+353 83 1171786",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.272789,
+          53.3598537
+        ]
+      },
+      "id": "node/3127019239"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3133935919",
+        "addr:housenumber": "35",
+        "addr:street": "Dawson Street",
+        "email": "spa@thedawson.ie",
+        "name": "The Dawson Spa",
+        "old_name": "The Dawson Brasserie",
+        "opening_hours": "Tu-We 10:00-18:00, Th-Fr 10:00-20:00, Sa-Su 10:00-18:00",
+        "operator": "Miro 2 Hotel Ltd",
+        "phone": "+353-1-6717099",
+        "shop": "beauty",
+        "website": "https://www.thedawson.ie/the-dawnson-spa.html",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2587568,
+          53.3404001
+        ]
+      },
+      "id": "node/3133935919"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3137599782",
+        "addr:city": "Dublin",
+        "addr:housenumber": "5",
+        "addr:street": "Poppintree Parade",
+        "name": "Pop In Beauty",
+        "opening_hours": "Tu-We 10:00-18:00, Th-Fr 10:00-20:00, Sa 10:00-18:00",
+        "phone": "+353 1 8623423",
+        "shop": "beauty",
+        "website": "https://www.facebook.com/pages/Pop-In-Beauty/129838917033315"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2763955,
+          53.3998457
+        ]
+      },
+      "id": "node/3137599782"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3162003413",
+        "addr:city": "Dublin",
+        "addr:street": "Meakstown Commercial Centre",
+        "name": "Cut Above",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2968787,
+          53.4018293
+        ]
+      },
+      "id": "node/3162003413"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3233585904",
+        "name": "Body Treatments",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3971656,
+          53.402349
+        ]
+      },
+      "id": "node/3233585904"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3436216532",
+        "addr:city": "Dublin",
+        "addr:housenumber": "313",
+        "addr:street": "Swords Road",
+        "check_date": "2025-07-12",
+        "email": "info@savvibeauty.ie",
+        "name": "Savvi Beauty Salon",
+        "opening_hours": "Mo \"By Appointment\"; Tu-We,Fr 11:00-19:00; Th 11:00-20:00; Sa 11:00-15:00",
+        "phone": "+353 1 8428653",
+        "shop": "beauty",
+        "website": "https://www.savvibeauty.ie/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.246606,
+          53.39153
+        ]
+      },
+      "id": "node/3436216532"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3466337294",
+        "addr:city": "Dublin",
+        "addr:housenumber": "3",
+        "addr:street": "Burgh Quay",
+        "email": "charminghairbeauty@hotmail.com",
+        "name": "Charming Hair & Beauty Salon",
+        "opening_hours": "Mo-We 10:00-19:00, Th-Fr 10:00-20:00, Sa 10:00-19:00, Su 11:30-18:00",
+        "phone": "+353-1-6339090",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2580325,
+          53.3470242
+        ]
+      },
+      "id": "node/3466337294"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3471930076",
+        "addr:city": "Dublin",
+        "addr:street": "Amiens Street",
+        "name": "Only Beauty",
+        "shop": "beauty",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.250639,
+          53.3507891
+        ]
+      },
+      "id": "node/3471930076"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3481459338",
+        "addr:city": "Dublin",
+        "addr:housenumber": "30",
+        "addr:postal_district": "D03",
+        "addr:street": "Marino Mart",
+        "email": "info@sparklebeauty.ie",
+        "opening_hours": "Mo-We 10:00-18:00, Th-Fr 10:00-20:00, Sa 10:00-18:00",
+        "phone": "+353 1 8186794",
+        "shop": "beauty",
+        "website": "https://www.sparklebeauty.ie/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2299269,
+          53.3646812
+        ]
+      },
+      "id": "node/3481459338"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3482855207",
+        "addr:city": "Dublin",
+        "addr:street": "May Park",
+        "name": "Rouge Hair & Beauty Salon",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2178299,
+          53.3762839
+        ]
+      },
+      "id": "node/3482855207"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3498180254",
+        "addr:city": "Dublin",
+        "addr:street": "Brookville Park",
+        "check_date": "2025-03-29",
+        "name": "Minaal",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1966738,
+          53.3906179
+        ]
+      },
+      "id": "node/3498180254"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3559872193",
+        "name": "The Beauty Room",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2487702,
+          53.3573888
+        ]
+      },
+      "id": "node/3559872193"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3579222546",
+        "addr:city": "Dublin",
+        "addr:housenumber": "20b",
+        "addr:street": "Buckingham Street Upper",
+        "name": "JC's",
+        "old_name": "Creative Vibes",
+        "phone": "+353-1-8881122",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2501145,
+          53.3545164
+        ]
+      },
+      "id": "node/3579222546"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3579222573",
+        "addr:city": "Dublin",
+        "addr:housenumber": "9",
+        "addr:street": "James Joyce Street",
+        "contact:facebook": "https://www.facebook.com/PerfectLadySalon",
+        "email": "info@perfectlady.ie",
+        "name": "Perfect Lady",
+        "opening_hours": "Tu-We 10:00-18:00, Th-Sa 10:00-19:00",
+        "phone": "+353 1 894 4769",
+        "shop": "beauty",
+        "website": "https://www.perfectlady.ie/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2532668,
+          53.351541
+        ]
+      },
+      "id": "node/3579222573"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3641130727",
+        "addr:city": "Dublin",
+        "addr:housenumber": "51a",
+        "addr:street": "Hill Street",
+        "contact:facebook": "https://www.facebook.com/pages/Enigma-of-Beauty/304634159691259",
+        "email": "sallonhairrrr@gmail.com",
+        "name": "Enigma of Beauty",
+        "opening_hours": "Mo-Sa 12:00-19:00",
+        "phone:mobile": "+353 85 750 2993",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2591456,
+          53.3543043
+        ]
+      },
+      "id": "node/3641130727"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3675638688",
+        "addr:city": "Dublin",
+        "addr:housenumber": "34a",
+        "addr:street": "Ballybough Road",
+        "contact:facebook": "https://www.facebook.com/thebeauty.spot.79",
+        "name": "The Beauty Spot",
+        "phone": "+353 86 0610847",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2441089,
+          53.3603459
+        ]
+      },
+      "id": "node/3675638688"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3730301534",
+        "addr:city": "Blackrock",
+        "addr:housenumber": "9/11",
+        "addr:street": "Main Street",
+        "beauty": "nails",
+        "contact:facebook": "https://www.facebook.com/Tiffany-Nail-Blackrock-431105203988739/",
+        "name": "Tiffany Nails",
+        "opening_hours": "Mo-Tu 10:00-19:00; We 10:00-19:30; Th 10:00-20:00; Fr 10:00-19:00; Sa 10:00-19:00; Su 11:00-18:00",
+        "phone": "+353-1-283-6786",
+        "shop": "beauty",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1785175,
+          53.3021307
+        ]
+      },
+      "id": "node/3730301534"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3730373621",
+        "addr:city": "Blackrock",
+        "addr:housenumber": "36",
+        "addr:street": "Main Street",
+        "female": "yes",
+        "name": "Brown Sugar",
+        "opening_hours": "Mo-We 09:00-17:30; Th-Fr 09:00-21:00; Sa 09:00-17:00; Su off",
+        "phone": "+353-1-210-8630",
+        "shop": "beauty",
+        "website": "https://www.brownsugar.ie/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1766401,
+          53.3010972
+        ]
+      },
+      "id": "node/3730373621"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3730393523",
+        "addr:city": "Blackrock",
+        "addr:housenumber": "69",
+        "addr:street": "Main Street",
+        "contact:facebook": "https://www.facebook.com/Blush-Beauty-113169893468316",
+        "contact:instagram": "https://www.instagram.com/blush_beauty_dublin/",
+        "name": "Blush",
+        "phone": "+353-85-822-7073",
+        "shop": "beauty",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1757235,
+          53.3006777
+        ]
+      },
+      "id": "node/3730393523"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3730407315",
+        "addr:city": "Blackrock",
+        "addr:housenumber": "73",
+        "addr:street": "Main Street",
+        "contact:facebook": "https://www.facebook.com/CarterBeauty/",
+        "email": "hello@cbeautystudio.ie",
+        "name": "C Beauty Studio",
+        "opening_hours": "Mo 09:00-18:00; Tu-Fr 09:00-21:00; Sa 09:30-17:30; Su 11:00-17:00",
+        "phone": "+353-1-210-3624",
+        "shop": "beauty",
+        "website": "https://www.cbeautystudio.ie/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.175592,
+          53.3006125
+        ]
+      },
+      "id": "node/3730407315"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3732079959",
+        "addr:city": "Stillorgan",
+        "addr:street": "The Hill",
+        "name": "Aqua Beauty",
+        "phone": "+353-1-278-1616",
+        "shop": "beauty",
+        "website": "https://www.aquabeauty.ie/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1976768,
+          53.2885311
+        ]
+      },
+      "id": "node/3732079959"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3733532957",
+        "addr:city": "Blackrock",
+        "addr:street": "Main Street",
+        "name": "Aidan Fitzgerald",
+        "phone": "+353-1-288-6479",
+        "shop": "beauty",
+        "website": "https://www.aidanfitzgerald.ie/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1775629,
+          53.3016159
+        ]
+      },
+      "id": "node/3733532957"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3740250991",
+        "addr:street": "Blackrock Market",
+        "name": "Natural Beauty Corner",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1779082,
+          53.3012394
+        ]
+      },
+      "id": "node/3740250991"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3780382361",
+        "addr:city": "Dublin",
+        "addr:housenumber": "44",
+        "addr:street": "Fassaugh Road",
+        "name": "Eden Therapy",
+        "opening_hours": "Mo-Fr 08:45-18:00; Sa 09:30-17:30",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2866864,
+          53.3646916
+        ]
+      },
+      "id": "node/3780382361"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3800882475",
+        "addr:city": "Dublin",
+        "addr:housenumber": "8-9",
+        "addr:street": "Molesworth Street",
+        "beauty": "aesthetic;hair_removal",
+        "brand": "Thérapie Clinic",
+        "brand:wikidata": "Q123034602",
+        "check_date": "2024-09-22",
+        "check_date:opening_hours": "2024-09-22",
+        "contact:facebook": "http://www.facebook.com/TherapieClinics",
+        "contact:twitter": "@therapieclinics",
+        "email": "hello@therapieclinic.com",
+        "name": "Thérapie Clinic",
+        "opening_hours": "Mo-Fr 09:00-21:00; Sa 09:00-18:00; Su closed",
+        "phone": "+353 1 223 8180",
+        "shop": "beauty",
+        "website": "https://therapieclinic.com/locations/molesworth-street",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2571844,
+          53.3412894
+        ]
+      },
+      "id": "node/3800882475"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3847712756",
+        "addr:city": "Blackrock",
+        "addr:street": "Main Street",
+        "level": "1",
+        "name": "In Vogue",
+        "opening_hours": "Mo-Tu 08:30-19:00; We-Th 08:30-20:30; Fr 09:00-19:00; Sa 09:00-18:00",
+        "phone": "+353-1-288-8880",
+        "shop": "beauty",
+        "website": "https://www.invogue.ie/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1774807,
+          53.3012984
+        ]
+      },
+      "id": "node/3847712756"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3912941576",
+        "addr:city": "Carrickmines",
+        "addr:housename": "2/3 The Mall",
+        "addr:street": "Carrickmines Retail Park",
+        "name": "Brown Cow",
+        "phone": "+353 1 294 5541",
+        "shop": "beauty",
+        "website": "https://www.browncow.ie/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1848264,
+          53.2518164
+        ]
+      },
+      "id": "node/3912941576"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3971768001",
+        "addr:city": "Dublin",
+        "addr:housenumber": "45",
+        "addr:street": "Westland Row",
+        "name": "Beauty Takeaway",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2498431,
+          53.3428743
+        ]
+      },
+      "id": "node/3971768001"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4078519909",
+        "addr:city": "Stillorgan",
+        "addr:housenumber": "81",
+        "addr:street": "Kilmacud Road Lower",
+        "name": "Peaches and Lime",
+        "phone": "+353-1-205-6709",
+        "shop": "beauty",
+        "website": "https://www.peacheslime.ie/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2045126,
+          53.2890176
+        ]
+      },
+      "id": "node/4078519909"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4080150084",
+        "addr:city": "Stillorgan",
+        "addr:housenumber": "4",
+        "addr:street": "Old Dublin Road",
+        "name": "Golden Nails",
+        "opening_hours": "Mo-We 10:00-18:30; Tu-Fr 10:00-19:30; Sa 10:00-18:00; Su 11:00-16:00",
+        "phone": "+353-1-210-9266",
+        "shop": "beauty",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2005355,
+          53.2909136
+        ]
+      },
+      "id": "node/4080150084"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4166453112",
+        "addr:city": "Dublin",
+        "addr:postal_district": "D6W",
+        "addr:street": "Harold's Cross Road",
+        "name": "Steven An Nail Spa",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2794803,
+          53.3218017
+        ]
+      },
+      "id": "node/4166453112"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4211528683",
+        "addr:city": "Dublin",
+        "addr:housenumber": "187",
+        "addr:postal_district": "D6W",
+        "addr:street": "Kimmage Road Lower",
+        "name": "Sydney Nails",
+        "phone": "+353 1 4990606",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2914131,
+          53.3190687
+        ]
+      },
+      "id": "node/4211528683"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4256475791",
+        "addr:housenumber": "6",
+        "addr:street": "D'Olier Street",
+        "beauty": "tanning",
+        "name": "TanningSalon.ie",
+        "opening_hours": "Mo-Su 10:00-20:00",
+        "phone": "+353-1-6770787",
+        "shop": "beauty",
+        "website": "https://tanningsalon.ie/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2585176,
+          53.3464485
+        ]
+      },
+      "id": "node/4256475791"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4256561590",
+        "name": "Elegance",
+        "opening_hours": "Mo,Tu,Sa 10:00-18:00;We-Fr 10:00-20:00",
+        "phone": "+353-1-2023030",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1500024,
+          53.2608003
+        ]
+      },
+      "id": "node/4256561590"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4256571989",
+        "addr:city": "Dublin",
+        "addr:housenumber": "6",
+        "addr:street": "D'Olier Street",
+        "name": "Menina Bonita Beauty Salon",
+        "opening_hours": "Mo,Tu 12:00-20:00; We-Fr 10:00-20:00; Sa 09:00-19:00",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2584174,
+          53.346333
+        ]
+      },
+      "id": "node/4256571989"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4386444277",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3606937,
+          53.2850315
+        ]
+      },
+      "id": "node/4386444277"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4554246003",
+        "addr:city": "Dublin",
+        "addr:housenumber": "95a",
+        "addr:street": "Morehampton Road",
+        "beauty": "nails",
+        "email": "info@rosannacrothers.com",
+        "name": "Rosanna Crothers",
+        "note": "There are two adjacent Rosanna Crothers salons.",
+        "phone": "+353-1-6608408",
+        "shop": "beauty",
+        "website": "https://rosannacrothers.com/",
+        "website:booking": "https://rosannacrothers.com/booking-now/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2400861,
+          53.3241737
+        ]
+      },
+      "id": "node/4554246003"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4567587051",
+        "addr:city": "Stillorgan",
+        "addr:housenumber": "18",
+        "addr:street": "Kilmacud Road Lower",
+        "check_date": "2025-06-28",
+        "name": "Elaine's Beauty Spot",
+        "name:en": "Elaine's Beauty Spot",
+        "opening_hours": "Mo off; Tu 09:00-19:00; We 09:00-18:00; Th 09:00-20:00; Fr 09:00-18:00; Sa 09:00-17:00; Su off",
+        "phone": "+353-1-210-7991",
+        "shop": "beauty",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.19987,
+          53.288333
+        ]
+      },
+      "id": "node/4567587051"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4591260584",
+        "addr:unit": "D2B",
+        "check_date": "2025-05-21",
+        "name": "Beauty Laine",
+        "opening_hours": "Mo-Tu 10:00-18:00; We 10:00-20:00; Th 10:00-21:00; Fr 10:00-19:00; Sa 09:00-17:00; Su off",
+        "phone": "+353-1-891-6838",
+        "shop": "beauty",
+        "website": "https://beautylaine.ie/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2600323,
+          53.4036278
+        ]
+      },
+      "id": "node/4591260584"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4612876868",
+        "addr:housenumber": "120",
+        "addr:street": "Kilmacud Road Lower",
+        "level": "1",
+        "name": "The Absolute Beauty Clinic",
+        "opening_hours": "Mo-Tu 09:30-18:00; We-Th 09:30-20:00; Fr 09:30-19:00; Sa 09:30-17:30; Su off",
+        "phone": "+353-1-283-4457",
+        "shop": "beauty",
+        "website": "https://www.absolutebeautyclinic.ie/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2166443,
+          53.2885442
+        ]
+      },
+      "id": "node/4612876868"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4686846040",
+        "addr:city": "Swords",
+        "addr:housename": "Swords Pavilions Shopping Centre",
+        "addr:street": "Malahide Road",
+        "beauty": "nails",
+        "name": "Sugardolls",
+        "phone": "+353-1-8706070",
+        "shop": "beauty",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2189199,
+          53.4537017
+        ]
+      },
+      "id": "node/4686846040"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4844594140",
+        "addr:city": "Dublin",
+        "addr:housenumber": "17",
+        "addr:street": "Trinity Street",
+        "contact:facebook": "https://www.facebook.com/100063743135333/",
+        "name": "Glam Nail & Beauty Salon",
+        "phone": "+353-1-6791111",
+        "shop": "beauty",
+        "website": "https://www.glamnailandbeauty.com/",
+        "website:booking": "https://www.fresha.com/a/glam-nail-beauty-dublin-2-17-trinity-street-uv8jdj4z/booking?menu=true",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2624452,
+          53.3440026
+        ]
+      },
+      "id": "node/4844594140"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4917818148",
+        "beauty": "skin_care",
+        "name": "Ms Skin Care",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.38256,
+          53.3878561
+        ]
+      },
+      "id": "node/4917818148"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4938934826",
+        "addr:unit": "22",
+        "email": "bushrablackrock@gmail.com",
+        "level": "0",
+        "name": "Bushra's Beauty Express",
+        "opening_hours": "Mo-Tu 10:00-19:00; We 10:00-20:00; Th-Fr 09:30-20:00; Sa 10:00-20:00; Su 12:00-18:00",
+        "phone": "+353-1-200-0333",
+        "shop": "beauty",
+        "website": "https://bushrasbeauty.ie/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1795709,
+          53.3019187
+        ]
+      },
+      "id": "node/4938934826"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5114071663",
+        "addr:housename": "Leonard's Corner House",
+        "addr:housenumber": "54",
+        "addr:street": "Clanbrassil Street Lower",
+        "beauty": "nails;skin;body",
+        "contact:facebook": "https://www.facebook.com/beautystudiothea",
+        "contact:linkedin": "https://ie.linkedin.com/in/tea-kranjcec-19041210b",
+        "contact:twitter": "https://twitter.com/studiothea_d6",
+        "contact:youtube": "https://www.youtube.com/channel/UCNfU1QyTxpVNivQ5-DqnGPw",
+        "email": "beautystudiothea@gmail.com",
+        "name": "Thea",
+        "opening_hours": "Mo 10:00-18:00, Tu-We 10:00-19:00, Th-Sa 10:00-20:00, Su 12:00-20:00",
+        "phone": "+353-1-5342632",
+        "shop": "beauty",
+        "website": "https://beautystudiothea.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2749686,
+          53.3323541
+        ]
+      },
+      "id": "node/5114071663"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5120001472",
+        "addr:city": "Dublin",
+        "addr:housenumber": "51-52",
+        "addr:postal_district": "D06",
+        "addr:street": "Rathgar Avenue",
+        "contact:facebook": "https://www.facebook.com/InFinnity-Beauty-Boutique-869840976460808/",
+        "email": "infinnitybeauty@hotmail.com",
+        "name": "Infinite Beauty Boutique",
+        "opening_hours": "Tu-Fr 13:30-19:30, Sa 10:00-16:00",
+        "phone": "+353-87-6571566",
+        "shop": "beauty",
+        "website": "http://www.infinnitybeauty.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2788099,
+          53.318245
+        ]
+      },
+      "id": "node/5120001472"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5154811470",
+        "addr:housename": "The Waxworks",
+        "addr:unit": "10",
+        "beauty": "tanning",
+        "contact:facebook": "https://www.facebook.com/ibizatanteam/",
+        "email": "ibizatan@outlook.com",
+        "name": "Ibiza Tan",
+        "opening_hours": "Mo-Fr 11:00-21:00, Sa 10:00-18:00",
+        "phone": "+353-85-8312771",
+        "shop": "beauty",
+        "website": "https://ibiza-tan.business.site/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3325557,
+          53.3764251
+        ]
+      },
+      "id": "node/5154811470"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5166524285",
+        "addr:street": "Aungier Street",
+        "beauty": "nails",
+        "name": "Hollywood Nails",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2658963,
+          53.3386939
+        ]
+      },
+      "id": "node/5166524285"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5301569910",
+        "addr:street": "Parnell Street",
+        "name": "Artisan",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2609694,
+          53.3526561
+        ]
+      },
+      "id": "node/5301569910"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5347538726",
+        "addr:city": "Dublin",
+        "addr:housenumber": "118",
+        "addr:street": "Rathmines Road Lower",
+        "contact:facebook": "https://www.facebook.com/lilysbeautysalonbiola/",
+        "email": "contact@lilysbeautysalon.org",
+        "name": "Lily's Beauty Salon",
+        "opening_hours": "Mo 10:00-18:00, We 10:00-18:00, Th 10:00-19:00, Fr-Sa 10:00-18:00",
+        "phone": "+353-87-0973127",
+        "shop": "beauty",
+        "website": "https://www.lilysbeautysalon.org/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2647295,
+          53.3260403
+        ]
+      },
+      "id": "node/5347538726"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5355731688",
+        "addr:housename": "The Times Building",
+        "addr:street": "Fleet Street",
+        "addr:unit": "6",
+        "beauty": "eyebrow;eyelash;waxing",
+        "brand": "Benefit",
+        "brand:wikidata": "Q2895769",
+        "brand:wikipedia": "en:Benefit Cosmetics",
+        "contact:facebook": "https://www.facebook.com/BenefitCosmeticsIreland/",
+        "contact:instagram": "https://www.instagram.com/benefit_ire",
+        "name": "Benefit Brow Bar",
+        "opening_hours": "Mo-We 10:00-19:00, Th 10:00-20:00, Fr-Sa 09:00-19:00, Su 12:00-18:00",
+        "phone": "+353-1-5586368",
+        "shop": "beauty",
+        "website": "https://www.benefitcosmetics.com",
+        "website:booking": "https://www.benefitcosmetics.com/en-ie/services.html",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2578087,
+          53.3459965
+        ]
+      },
+      "id": "node/5355731688"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5376941074",
+        "addr:city": "Dublin",
+        "addr:street": "Liffey Street Lower",
+        "name": "Neelu's",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2632622,
+          53.3471177
+        ]
+      },
+      "id": "node/5376941074"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5377045688",
+        "addr:city": "Dublin",
+        "addr:housenumber": "33",
+        "addr:street": "Liffey Street Upper",
+        "name": "Zero",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2640759,
+          53.3481575
+        ]
+      },
+      "id": "node/5377045688"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5396212398",
+        "addr:housenumber": "93",
+        "addr:street": "Swords Road",
+        "contact:facebook": "https://www.facebook.com/Cheek2Cheek-Beauty-Salon-165186610254038/",
+        "name": "Cheek 2 Cheek Beauty Salon",
+        "opening_hours": "Tu-We 09:30-18:00, Th-Fr 09:30-20:00, Sa 09:30-15:00",
+        "phone": "+353-1-8375437",
+        "shop": "beauty",
+        "website": "http://cheek2cheekbeautysalon.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2453977,
+          53.3813608
+        ]
+      },
+      "id": "node/5396212398"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5400322672",
+        "name": "Allure",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2567382,
+          53.3651941
+        ]
+      },
+      "id": "node/5400322672"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5400402794",
+        "addr:street": "Dorset Street Upper",
+        "name": "S. Hair & Beauty",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2652331,
+          53.3563001
+        ]
+      },
+      "id": "node/5400402794"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5406199356",
+        "addr:city": "Dublin",
+        "addr:housenumber": "18",
+        "addr:street": "Drumcondra Road Lower",
+        "contact:facebook": "https://www.facebook.com/The.SpaceDrumcondra",
+        "contact:instagram": "https://www.instagram.com/thespacehairsoulbeauty/",
+        "email": "hello@thespace.ie",
+        "name": "The Space",
+        "opening_hours": "Mo-Tu 10:00-18:00, We-Th 10:00-21:00, Fr 09:00-19:00, Sa 09:00-17:00",
+        "phone": "+353-1-4411877",
+        "shop": "beauty",
+        "website": "https://thespace.ie/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2590365,
+          53.3623925
+        ]
+      },
+      "id": "node/5406199356"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5414197186",
+        "addr:street": "Swords Road",
+        "check_date": "2024-11-21",
+        "name": "Kate Elizabeth",
+        "shop": "beauty",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2453433,
+          53.3885059
+        ]
+      },
+      "id": "node/5414197186"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5414746182",
+        "addr:city": "Dublin",
+        "addr:housenumber": "254",
+        "addr:street": "Swords Road",
+        "contact:facebook": "https://www.facebook.com/pg/Orchidsantry",
+        "email": "luonannan1981@gmail.com",
+        "name": "Orchid's Hair, Nail and Beauty Salon",
+        "opening_hours": "Mo-Fr 09:30-18:30; Sa,Su off",
+        "phone": "+353-1-5580888",
+        "shop": "beauty",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.245708,
+          53.3892301
+        ]
+      },
+      "id": "node/5414746182"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5419193390",
+        "addr:street": "Gateway Crescent",
+        "beauty": "tanning",
+        "name": "Miami Sun",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2646682,
+          53.3942744
+        ]
+      },
+      "id": "node/5419193390"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5419527344",
+        "addr:city": "Dublin",
+        "addr:street": "Shantalla Road",
+        "beauty": "nails",
+        "fixme": "Check name",
+        "name": "Jea Nail",
+        "shop": "beauty",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2385073,
+          53.3877027
+        ]
+      },
+      "id": "node/5419527344"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5432530575",
+        "addr:housenumber": "6-7",
+        "addr:street": "Vernon Avenue",
+        "opening_hours": "Mo 09:30-19:00, Tu-We 09:30-21:00, Th 09:30-21:00, Fr 09:30-19:00, Sa 09:30-18:00",
+        "phone": "+353-1-8337021",
+        "shop": "beauty",
+        "website": "https://annerossi.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1960819,
+          53.3598451
+        ]
+      },
+      "id": "node/5432530575"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5492525268",
+        "addr:city": "Dublin",
+        "addr:housenumber": "95a",
+        "addr:street": "Morehampton Road",
+        "contact:facebook": "https://www.facebook.com/BespokeBeautyByElaine/",
+        "contact:twitter": "https://twitter.com/BespokeBeautyEB",
+        "email": "bookings@bespokebeauty.ie",
+        "level": "1",
+        "name": "Bespoke Beauty",
+        "opening_hours": "Mo-Tu 10:00-20:30, We-Th 10:00-20:30, Fr-Sa 10:00-20:30",
+        "operator": "Elaine Bulter Doolin",
+        "phone": "+353-1-6674912",
+        "shop": "beauty",
+        "website": "https://bespokebeauty.ie/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2400715,
+          53.3241602
+        ]
+      },
+      "id": "node/5492525268"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5492609793",
+        "addr:housenumber": "89",
+        "addr:street": "Morehampton Road",
+        "beauty": "nails",
+        "email": "info@rosannacrothers.com",
+        "name": "Rosanna Crothers",
+        "note": "There are two adjacent Rosanna Crothers salons.",
+        "phone": "+353-1-6608408",
+        "shop": "beauty",
+        "website": "https://rosannacrothers.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2403145,
+          53.3243105
+        ]
+      },
+      "id": "node/5492609793"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5493927442",
+        "beauty": "nails",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2052318,
+          53.4500516
+        ]
+      },
+      "id": "node/5493927442"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5515321818",
+        "addr:street": "Marian Road",
+        "name": "Bare Beauty",
+        "shop": "beauty",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2984691,
+          53.2905599
+        ]
+      },
+      "id": "node/5515321818"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5556364722",
+        "name": "W Beauty",
+        "shop": "beauty",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.392454,
+          53.3524471
+        ]
+      },
+      "id": "node/5556364722"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5565643890",
+        "addr:housenumber": "4",
+        "addr:street": "Aughrim Street",
+        "email": "info@toptotoe.ie",
+        "name": "Top To Toe Beauty",
+        "phone": "+353-1-8388537",
+        "shop": "beauty",
+        "website": "https://toptotoe.ie/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2861774,
+          53.3533566
+        ]
+      },
+      "id": "node/5565643890"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5602947270",
+        "addr:housenumber": "4",
+        "addr:street": "Convent Road",
+        "beauty": "nails;hair;waxing",
+        "check_date": "2025-03-04",
+        "name": "Rainbow",
+        "phone": "+353 89 243 7881",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3946109,
+          53.3193338
+        ]
+      },
+      "id": "node/5602947270"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5782917155",
+        "addr:city": "Dublin",
+        "addr:housenumber": "2",
+        "addr:street": "Fowney Street Lower",
+        "contact:facebook": "https://www.facebook.com/TheRegentBarber/",
+        "name": "Regent Barber Shop",
+        "shop": "beauty",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2633584,
+          53.3457028
+        ]
+      },
+      "id": "node/5782917155"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6032605030",
+        "addr:city": "Dún Laoghaire",
+        "addr:housenumber": "Unit 8",
+        "addr:street": "Glenageary Road Upper",
+        "beauty": "nails;waxing;hair;hair_removal;pedicure",
+        "check_date": "2025-07-08",
+        "contact:instagram": "https://www.instagram.com/lombrehairbeauty/",
+        "contact:tiktok": "lombrehairandbeauty",
+        "currency:EUR": "yes",
+        "email": "glenageary@lombre.ie",
+        "level": "0",
+        "name": "l'Ombre",
+        "name:en": "l'Ombre",
+        "opening_hours": "Mo-We 09:00-18:00; Th 09:00-21:00; Fr 09:00-20:00; Sa 09:00-18:00; Su 10:00-17:00",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+353-1-538-8880",
+        "shop": "beauty",
+        "website": "https://lombre.ie/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1438555,
+          53.2822196
+        ]
+      },
+      "id": "node/6032605030"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6050242205",
+        "addr:street": "Swords Road",
+        "beauty": "nails;skin_care",
+        "name": "Bea Beauty",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2450182,
+          53.3968348
+        ]
+      },
+      "id": "node/6050242205"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6050242220",
+        "addr:street": "Swords Road",
+        "beauty": "tanning",
+        "check_date:opening_hours": "2022-01-12",
+        "name": "TanningSalon.ie",
+        "opening_hours": "Mo-Sa 09:00-23:00, Su 10:00-20:00",
+        "phone": "+353-1-8625193",
+        "shop": "beauty",
+        "website": "https://tanningsalon.ie/oursalons/santry/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2450078,
+          53.3965143
+        ]
+      },
+      "id": "node/6050242220"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6058228458",
+        "addr:city": "Dún Laoghaire",
+        "addr:housenumber": "23",
+        "addr:street": "Oliver Plunkett Road",
+        "check_date": "2025-03-06",
+        "check_date:opening_hours": "2022-10-26",
+        "level": "0",
+        "name": "Urban Beauty Salon",
+        "name:en": "Urban Beauty Salon",
+        "opening_hours": "Mo,Tu 10:00-18:00; We,Th 09:00-18:00; Fr 09:00-21:00; Sa 09:00-18:00",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+353 1 2020 145",
+        "shop": "beauty",
+        "website": "https://urbanbeauty.ie",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.15361,
+          53.2854971
+        ]
+      },
+      "id": "node/6058228458"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6064664249",
+        "addr:housenumber": "564",
+        "addr:street": "South Circular Road",
+        "contact:facebook": "https://www.facebook.com/purehoneysalon/",
+        "name": "Pure Honey",
+        "phone": "+353-1-4539100",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2989291,
+          53.3370864
+        ]
+      },
+      "id": "node/6064664249"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6071990584",
+        "addr:street": "Main Street",
+        "name": "Radiance",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1714135,
+          53.4034844
+        ]
+      },
+      "id": "node/6071990584"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6077829873",
+        "addr:housenumber": "68",
+        "addr:street": "Main Street",
+        "contact:facebook": "https://www.facebook.com/LanasBeauty%20/",
+        "email": "lanabeautysalon@yahoo.ie",
+        "name": "Lana's Beauty",
+        "phone": "+353-1-8285947",
+        "shop": "beauty",
+        "website": "http://lanasbeauty.ie"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1577954,
+          53.4029657
+        ]
+      },
+      "id": "node/6077829873"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6113704754",
+        "addr:city": "Dublin",
+        "addr:housenumber": "179",
+        "addr:street": "Townsend Street",
+        "contact:facebook": "https://www.facebook.com/avantbeautystudio/",
+        "email": "avantbeautystudio@gmail.com",
+        "name": "Avant Beauty Studio by Richard Correia",
+        "shop": "beauty",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2555398,
+          53.3458352
+        ]
+      },
+      "id": "node/6113704754"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6128203803",
+        "addr:city": "Dublin",
+        "addr:street": "Wellington Quay",
+        "beauty": "tanning",
+        "name": "TanningSalon.ie",
+        "old_name": "Tanzone",
+        "opening_hours": "Mo-Sa 09:00-21:00; Su,PH 10:00-20:00",
+        "operator": "TanningSalon.ie",
+        "shop": "beauty",
+        "website": "https://tanningsalon.ie/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2631696,
+          53.3459332
+        ]
+      },
+      "id": "node/6128203803"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6151989484",
+        "addr:housenumber": "45c",
+        "addr:street": "O'Rourke Park",
+        "beauty": "hair",
+        "check_date": "2025-01-31",
+        "contact:facebook": "https://www.facebook.com/salonsia.ie/",
+        "currency:EUR": "yes",
+        "email": "info@salonsia.ie",
+        "level": "0",
+        "name": "Salon Sia",
+        "name:en": "Salon Sia",
+        "opening_hours": "Tu-Sa 09:00-17:00",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+353-1-202-3216",
+        "shop": "beauty",
+        "stroller": "yes",
+        "website": "https://salonsia.ie/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1414861,
+          53.2778021
+        ]
+      },
+      "id": "node/6151989484"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6177303517",
+        "addr:city": "Dublin",
+        "addr:housenumber": "45",
+        "addr:street": "Donnybrook Road",
+        "beauty": "nails",
+        "check_date": "2023-07-03",
+        "name": "Mink",
+        "opening_hours": "Mo-We 10:00-20:00, Th-Fr 10:00-21:00, Sa 09:00-18:00",
+        "shop": "beauty",
+        "website": "https://www.mink.ie/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2353627,
+          53.3214676
+        ]
+      },
+      "id": "node/6177303517"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6178834141",
+        "addr:city": "Dún Laoghaire",
+        "addr:housenumber": "71",
+        "addr:street": "George's Street Lower",
+        "check_date": "2025-05-15",
+        "check_date:opening_hours": "2025-05-15",
+        "contact:facebook": "https://www.facebook.com/Salon-71-1731102130451610/",
+        "name": "Salon 71",
+        "opening_hours": "Mo-We 09:00-18:00; Th-Sa 09:00-19:00; Su 10:00-18:00",
+        "phone": "+353-1-214-0636",
+        "shop": "beauty",
+        "toilets:wheelchair": "no",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1367326,
+          53.2924991
+        ]
+      },
+      "id": "node/6178834141"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6179116857",
+        "addr:city": "Dún Laoghaire",
+        "addr:housenumber": "110",
+        "addr:street": "George's Street Lower",
+        "check_date": "2019-01-01",
+        "contact:facebook": "https://www.facebook.com/EssenceBeautydublin",
+        "name": "Essence of Beauty",
+        "opening_hours": "Mo-Fr 10:00-19:00; Sa 10:00-18:00; Su off",
+        "phone": "+353-1-230-4278",
+        "shop": "beauty",
+        "website": "https://www.essenceofbeautydublin.com/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1397882,
+          53.2939809
+        ]
+      },
+      "id": "node/6179116857"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6179116860",
+        "addr:city": "Dún Laoghaire",
+        "addr:housenumber": "109",
+        "addr:street": "George's Street Lower",
+        "check_date": "2023-05-22",
+        "check_date:opening_hours": "2023-02-22",
+        "contact:facebook": "https://www.facebook.com/EvaNails.Dun.Laoghaire/",
+        "name": "Eva Nails and Beauty",
+        "opening_hours": "Mo-Sa 10:00-19:00; Su 11:00-17:00",
+        "phone": "+353-1-280-8955",
+        "shop": "beauty",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1396104,
+          53.2939019
+        ]
+      },
+      "id": "node/6179116860"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6179505936",
+        "addr:city": "Dún Laoghaire",
+        "addr:housenumber": "70",
+        "addr:street": "Convent Road",
+        "beauty": "nails",
+        "check_date": "2019-01-01",
+        "contact:facebook": "https://www.facebook.com/Snow-nail-beauty-569432450196665",
+        "contact:instagram": "https://www.instagram.com/snow_nails_beauty/",
+        "name": "Snow Nail and Beauty",
+        "opening_hours": "Mo-We 10:00-18:00; Th 10:00-19:30; Sa 10:00-16:00; Su off",
+        "phone": "+353-1-284-5784",
+        "shop": "beauty",
+        "toilets:wheelchair": "no",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1373308,
+          53.2923725
+        ]
+      },
+      "id": "node/6179505936"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6184960053",
+        "addr:city": "Dún Laoghaire",
+        "addr:housenumber": "18",
+        "addr:postcode": "A96 T1X6",
+        "addr:street": "Georges Street Upper",
+        "check_date": "2023-05-22",
+        "email": "lilyleebbc@icloud.com",
+        "level": "1",
+        "name": "Lily Lee Beauty Clinic",
+        "opening_hours": "Tu,We 09:30-18:00; Th,Fr 09:30-21:00; Sa 10:00-18:00",
+        "phone": "+353-1-697-2267",
+        "shop": "beauty",
+        "website": "https://www.lilyleebeauty.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1350126,
+          53.2917031
+        ]
+      },
+      "id": "node/6184960053"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6196929744",
+        "addr:housenumber": "2a",
+        "addr:street": "Emmet Road",
+        "name": "Nouveau Glamour",
+        "phone": "+353-1-5343458",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.307859,
+          53.3404996
+        ]
+      },
+      "id": "node/6196929744"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6199648432",
+        "addr:housenumber": "26-29",
+        "addr:street": "Old Kilmainham",
+        "email": "southdublin@flair.ie",
+        "fax": "+353-1-6717128",
+        "name": "Flair",
+        "phone": "+353-1-6713239",
+        "shop": "beauty",
+        "website": "https://www.flair.ie/KILMAINHAM-DUBLIN-STORE-SOUTH.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3039469,
+          53.3408008
+        ]
+      },
+      "id": "node/6199648432"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6205542463",
+        "addr:street": "North Circular Road",
+        "beauty": "nails",
+        "name": "Nail Art Lana",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2771335,
+          53.3600372
+        ]
+      },
+      "id": "node/6205542463"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6205880403",
+        "addr:city": "Dublin",
+        "addr:street": "North Circular Road",
+        "name": "Nail & Beauty",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.273356,
+          53.3608997
+        ]
+      },
+      "id": "node/6205880403"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6211308349",
+        "addr:city": "Deansgrange",
+        "addr:housenumber": "40",
+        "addr:street": "Abbey Road",
+        "name": "Pure Elegance",
+        "opening_hours": "Mo off; Tu-Sa 09:00-17:00; Su off",
+        "phone": "+353-1-284-5405",
+        "shop": "beauty",
+        "website": "https://pureelegance.ie/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1600471,
+          53.2817272
+        ]
+      },
+      "id": "node/6211308349"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6214434161",
+        "addr:housenumber": "30",
+        "addr:street": "Castle Street",
+        "name": "MB Glow",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2690028,
+          53.3434245
+        ]
+      },
+      "id": "node/6214434161"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6217439419",
+        "addr:housenumber": "17",
+        "addr:street": "Berkeley Road",
+        "name": "Diamond",
+        "phone": "+353-1-5357480",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2699166,
+          53.3588351
+        ]
+      },
+      "id": "node/6217439419"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6217439420",
+        "addr:housenumber": "16",
+        "addr:street": "Berkeley Road",
+        "beauty": "nails",
+        "name": "LA Nails Studio",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2698736,
+          53.3587869
+        ]
+      },
+      "id": "node/6217439420"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6221821126",
+        "name": "Nail It",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2653158,
+          53.4008019
+        ]
+      },
+      "id": "node/6221821126"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6222161651",
+        "addr:housename": "1 Ardilaun Court",
+        "addr:street": "Patrick Street",
+        "beauty": "nails",
+        "name": "Effies",
+        "opening_hours": "Tu 10:00-18:00, We 10:00-18:30, Th 10:00-20:00, Fr 10:00-18:00, Sa 10:30-17:00",
+        "phone": "+353-1-4730033",
+        "shop": "beauty",
+        "website": "https://effies.ie/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2725569,
+          53.3410391
+        ]
+      },
+      "id": "node/6222161651"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6245890992",
+        "addr:housename": "Glendenning House",
+        "addr:housenumber": "6-8",
+        "addr:street": "Wicklow Street",
+        "contact:facebook": "https://www.facebook.com/cooganberginclinic/",
+        "contact:instagram": "https://www.instagram.com/cooganberginclinic/",
+        "email": "bookings@cooganbergin.com",
+        "name": "Coogan Bergin Clinic & College of Beauty Therapy",
+        "phone": "+353-1-6794254",
+        "shop": "beauty",
+        "website": "https://www.cooganbergin.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2604769,
+          53.3428882
+        ]
+      },
+      "id": "node/6245890992"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6366489210",
+        "addr:housenumber": "2-3",
+        "addr:street": "Blackglen Village Centre",
+        "contact:facebook": "https://www.facebook.com/brown.cowsandyford",
+        "name": "Brown Cow",
+        "opening_hours": "Mo-Tu 11:00-20:00, We-Th 11:00-21:00, Fr 11:00-20:00, Sa 10:00-18:00",
+        "phone": "+353-1-2074784",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2426676,
+          53.2686718
+        ]
+      },
+      "id": "node/6366489210"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6368908368",
+        "addr:street": "Rathfarnham Road",
+        "name": "Neville Russell",
+        "shop": "beauty",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2840994,
+          53.309009
+        ]
+      },
+      "id": "node/6368908368"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6377025688",
+        "addr:housenumber": "14",
+        "addr:street": "Main Street",
+        "beauty": "nails",
+        "email": "info@claraspa.ie",
+        "name": "Clara Hand & Foot Spa",
+        "phone": "+353-1-2172817",
+        "shop": "beauty",
+        "website": "http://claraspa.ie/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1774617,
+          53.3015946
+        ]
+      },
+      "id": "node/6377025688"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6433689519",
+        "addr:housename": "1 Windy Arbour",
+        "addr:postcode": "D14 NW80",
+        "addr:street": "Dundrum Road",
+        "check_date": "2023-09-14",
+        "contact:facebook": "https://www.facebook.com/MMStudios.ie/",
+        "contact:instagram": "https://www.instagram.com/mmstudios1/",
+        "email": "michelle@mmstudios.ie",
+        "name": "Michelle Montgomery Studios",
+        "shop": "beauty",
+        "website": "https://mmstudios.ie/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2459655,
+          53.3011612
+        ]
+      },
+      "id": "node/6433689519"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6434652380",
+        "addr:city": "Dundrum",
+        "beauty": "tanning",
+        "name": "TaningSalon.ie",
+        "opening_hours": "Mo-Sa 09:00-23:00; Su 10:00-22:00",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2464423,
+          53.2939062
+        ]
+      },
+      "id": "node/6434652380"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6466955120",
+        "addr:city": "Dún Laoghaire",
+        "addr:housenumber": "48a",
+        "addr:street": "Georges Street Upper",
+        "contact:facebook": "https://www.facebook.com/beautytimedublin",
+        "email": "beautytimedl@gmail.com",
+        "level": "1",
+        "name": "Beauty Time",
+        "opening_hours": "Mo 09:00-14:00; Tu-Fr 09:00-20:00; Sa 09:00-17:00; Su off",
+        "phone": "+353-1-205-4000",
+        "shop": "beauty",
+        "website": "https://beautytime.ie/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1311964,
+          53.2900374
+        ]
+      },
+      "id": "node/6466955120"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6649643985",
+        "addr:housename": "Sutton Cross Centre",
+        "addr:street": "Howth Road",
+        "beauty": "nails",
+        "name": "Nail Nirvana",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1090512,
+          53.3894399
+        ]
+      },
+      "id": "node/6649643985"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6660270538",
+        "addr:street": "Harbour Road",
+        "email": "howthhaven@gmail.com",
+        "name": "Howth Haven",
+        "phone": "+353-1-8394979",
+        "shop": "beauty",
+        "website": "http://howthhavenbeauty.com/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.0670513,
+          53.3876598
+        ]
+      },
+      "id": "node/6660270538"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6749206542",
+        "beauty": "nails",
+        "check_date": "2025-03-18",
+        "level": "0",
+        "name": "Lotus Nails",
+        "name:en": "Lotus Nails",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1938576,
+          53.2742664
+        ]
+      },
+      "id": "node/6749206542"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6984776460",
+        "addr:city": "Dublin",
+        "addr:street": "William Street South",
+        "beauty": "aesthetic;hair_removal",
+        "brand": "Thérapie Clinic",
+        "brand:wikidata": "Q123034602",
+        "check_date": "2024-09-22",
+        "check_date:opening_hours": "2024-09-22",
+        "contact:facebook": "https://www.facebook.com/TherapieClinics/",
+        "name": "Thérapie Clinic",
+        "opening_hours": "Mo 10:00-21:00; Tu 10:00-18:00; We 10:00-20:00; Th 09:00-20:00; Fr 10:00-19:00; Sa 09:00-18:00; Su closed",
+        "phone": "+353 1 223 8712",
+        "shop": "beauty",
+        "website": "https://therapieclinic.com/locations/south-william-street",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2621534,
+          53.3425156
+        ]
+      },
+      "id": "node/6984776460"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6984962680",
+        "addr:city": "Dublin",
+        "addr:street": "William Street South",
+        "name": "Elysian Brows",
+        "shop": "beauty",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2634488,
+          53.3410755
+        ]
+      },
+      "id": "node/6984962680"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7030951795",
+        "addr:city": "Dún Laoghaire",
+        "addr:housenumber": "71",
+        "addr:street": "York Road",
+        "contact:facebook": "https://www.facebook.com/Maja-Nails-Beauty-972617802750042/",
+        "email": "salonmnb@gmail.com",
+        "name": "Maja Nails & Beauty",
+        "opening_hours": "Mo off; Tu 10:00-18:00; We 10:00-18:30; Th 10:00-20:00; Fr 10:00-19:00; Sa 10:00-17:00; Su off",
+        "phone": "+353-86-7948333",
+        "shop": "beauty",
+        "website": "http://majanailsandbeauty.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1425443,
+          53.2943949
+        ]
+      },
+      "id": "node/7030951795"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7070310238",
+        "addr:city": "Dún Laoghaire",
+        "addr:housenumber": "2a",
+        "addr:street": "Convent Road",
+        "beauty": "waxing",
+        "contact:facebook": "https://www.facebook.com/waxpertssalon/",
+        "contact:instagram": "https://www.instagram.com/waxperts/",
+        "contact:twitter": "https://twitter.com/Waxperts",
+        "email": "info@waxperts.ie",
+        "name": "Waxperts",
+        "opening_hours": "Mo off; Tu 08:00-19:00; We-Th 08:00-20:00; Fr 08:00-18:00; Sa 09:00-17:00; Su off",
+        "phone": "+353-1-214-0757",
+        "shop": "beauty",
+        "website": "http://waxperts.ie/home/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1383093,
+          53.2914402
+        ]
+      },
+      "id": "node/7070310238"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7292491645",
+        "beauty": "nails",
+        "name": "Skye Nails",
+        "opening_hours": "Mo-Fr 10:00-19:00; Sa 10:00-18:00; Su 11:00-17:00",
+        "phone": "+353 1 535 8438",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3706905,
+          53.3442931
+        ]
+      },
+      "id": "node/7292491645"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7292491647",
+        "beauty": "tanning",
+        "name": "Sunny Island",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3706751,
+          53.3443382
+        ]
+      },
+      "id": "node/7292491647"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7475727119",
+        "beauty": "tanning",
+        "name": "Sunny Sky Solarium",
+        "shop": "beauty",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.287406,
+          53.3364656
+        ]
+      },
+      "id": "node/7475727119"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7762652443",
+        "addr:street": "Main Street",
+        "name": "Finglas Hair and Beauty Spot",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2979231,
+          53.3878071
+        ]
+      },
+      "id": "node/7762652443"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7840435032",
+        "level": "1",
+        "name": "Core Beauty",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3531017,
+          53.2758267
+        ]
+      },
+      "id": "node/7840435032"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7995211892",
+        "addr:housename": "Unit 7",
+        "beauty": "nails;tanning;cosmetics;hair;skin_care;spa;cosmetic_studio;waxing;hair_removal;eyebrow",
+        "email": "thomasina_23@hotmail.com",
+        "name": "Beautilicious by Thomasina",
+        "phone": "012721800",
+        "shop": "beauty",
+        "website": "https://www.beautiliciousbythomasina.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1242477,
+          53.2303522
+        ]
+      },
+      "id": "node/7995211892"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8038094589",
+        "beauty": "nails",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3598806,
+          53.2993096
+        ]
+      },
+      "id": "node/8038094589"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8287135445",
+        "addr:city": "Dublin",
+        "addr:housenumber": "58",
+        "addr:street": "Bolton Street",
+        "beauty": "waxing;skin_care;hair_removal;eyebrow;laser_hair_removal",
+        "facebook": "https://www.facebook.com/LaserExpressBeauty/",
+        "name": "Laser Express Beauty",
+        "opening_hours": "Tu-Sa 09:30-14:00",
+        "phone": "+353 1 872 6900",
+        "shop": "beauty",
+        "website": "http://laserexpressbeauty.ie/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2700396,
+          53.351284
+        ]
+      },
+      "id": "node/8287135445"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8521097187",
+        "name": "Rainbow Salon",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3560552,
+          53.343327
+        ]
+      },
+      "id": "node/8521097187"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8812544032",
+        "beauty": "spa;massage;nails;tanning",
+        "contact:facebook": "https://www.facebook.com/replenishspadublin",
+        "email": "info@replenishspadublin.com",
+        "name": "Replenish Spa",
+        "opening_hours": "Mo-Sa 10:00-18:00; Su off",
+        "phone": "+353-1-285-3555",
+        "shop": "beauty",
+        "website": "https://www.rochestownlodge.com/spa/replenish"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1417986,
+          53.2694512
+        ]
+      },
+      "id": "node/8812544032"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8870036821",
+        "addr:city": "Dún Laoghaire",
+        "addr:housenumber": "unit 2",
+        "addr:street": "Georges Street Upper",
+        "contact:facebook": "https://www.facebook.com/skinwisedermatology/",
+        "contact:instagram": "https://www.instagram.com/skinwise_dermatology",
+        "email": "skinwise.ie@gmail.com",
+        "name": "Skinwise Aesthetics",
+        "opening_hours": "Mo-We 09:30-19:00; Th 09:30-20:00; Fr 09:30-20:00; Sa 09:00-17:00",
+        "phone": "+353-85-257-4797",
+        "shop": "beauty",
+        "website": "https://skinwiseaesthetics.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1322353,
+          53.2905085
+        ]
+      },
+      "id": "node/8870036821"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9122745580",
+        "addr:housename": "1 Ely House",
+        "addr:street": "Nutgrove Avenue",
+        "email": "info@elybeauty.ie",
+        "name": "Ely Beauty Clinic",
+        "phone": "+353-1-4950000",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2790533,
+          53.2945498
+        ]
+      },
+      "id": "node/9122745580"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9233286189",
+        "addr:housename": "Laurkur House",
+        "addr:street": "Deansgrange Road",
+        "beauty": "eyelash",
+        "contact:facebook": "https://www.facebook.com/Ooh-Lah-Lah-Lash-extension-bar-and-beauty-salon-116380311711131/",
+        "contact:instagram": "https://www.instagram.com/ooh_lah_lah",
+        "contact:twitter": "https://twitter.com/oohlahlah",
+        "level": "1",
+        "name": "Ooh Lah Lah",
+        "opening_hours": "Mo off; Tu 10:00-16:00; We 10:00-19:30; Tu 10:00-19:00; Fr 10:00-18:00; Sa 10:00-16:00; Su off",
+        "phone": "+353-1-289-8681",
+        "shop": "beauty",
+        "start_date": "2010",
+        "website": "https://www.oohlahlah.ie/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1642776,
+          53.279812
+        ]
+      },
+      "id": "node/9233286189"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9233286191",
+        "addr:housename": "Laurkur House",
+        "addr:street": "Deansgrange Road",
+        "contact:facebook": "https://www.facebook.com/pages/Urban-Escape/223623151023321",
+        "contact:instagram": "https://www.instagram.com/urbanescapedublin/",
+        "contact:twitter": "https://twitter.com/UrbanEscapeDG",
+        "level": "1",
+        "name": "Urban Escape",
+        "opening_hours": "Mo off; Tu 09:30-19:00; We-Th 09:30-20:00; Fr 09:30-19:00; Sa 09:30-18:00; Su off",
+        "phone": "+353-1-289-0600",
+        "shop": "beauty",
+        "website": "https://www.urbanescape.ie/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.164236,
+          53.2796537
+        ]
+      },
+      "id": "node/9233286191"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9233482886",
+        "addr:city": "Deansgrange",
+        "addr:housenumber": "10",
+        "addr:street": "Clonkeen Road",
+        "contact:facebook": "https://www.facebook.com/looksbeautyandnails/",
+        "contact:twitter": "https://twitter.com/LooksSalon",
+        "level": "1",
+        "name": "Looks Beauty & Nails",
+        "opening_hours": "Mo off; Tu-Th 09:30-20:00; Fr 09:30-18:00; Sa 09:30-17:00",
+        "phone": "+353-1-289-8303",
+        "shop": "beauty",
+        "website": "https://looksbeauty.ie/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1632147,
+          53.2779986
+        ]
+      },
+      "id": "node/9233482886"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9307607854",
+        "addr:city": "Bray",
+        "addr:street": "Main Street",
+        "beauty": "nails",
+        "name": "New York Nails",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1091508,
+          53.204146
+        ]
+      },
+      "id": "node/9307607854"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9307607869",
+        "addr:city": "Bray",
+        "addr:housenumber": "66a",
+        "addr:street": "Main Street",
+        "name": "Soul of Beauty",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.111073,
+          53.2014866
+        ]
+      },
+      "id": "node/9307607869"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9566504190",
+        "addr:city": "Dalkey",
+        "addr:housenumber": "3A",
+        "addr:street": "Castle Street",
+        "email": "silkbeautyspa@gmail.com",
+        "level": "1",
+        "mobile": "+353-89-260-6777",
+        "name": "Silk Beauty Spa",
+        "opening_hours": "Mo-Sa 10:00-18:00",
+        "phone": "+353-1-285-9649",
+        "shop": "beauty",
+        "website": "https://www.silkbeautyspa.ie/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1073524,
+          53.27824
+        ]
+      },
+      "id": "node/9566504190"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9584072929",
+        "beauty": "nails",
+        "name": "Nail & Spa",
+        "operator": "Blackrock's Barber Shop",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1759989,
+          53.2881372
+        ]
+      },
+      "id": "node/9584072929"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9622455518",
+        "addr:city": "Dún Laoghaire",
+        "addr:housenumber": "137",
+        "addr:postcode": "A96 CD96",
+        "addr:street": "Oliver Plunkett Road",
+        "beauty": "nails",
+        "check_date": "2023-02-03",
+        "contact:instagram": "https://www.instagram.com/beauty_k_lab",
+        "description": "Located inside Monkstown Barbers",
+        "level": "0",
+        "name": "Beauty_K_Lab",
+        "name:en": "Beauty_K_Lab",
+        "phone": "+353 83 847 4883",
+        "shop": "beauty",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1473939,
+          53.2835396
+        ]
+      },
+      "id": "node/9622455518"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9733286758",
+        "addr:city": "Dublin",
+        "addr:housenumber": "31",
+        "addr:street": "Capel Street",
+        "beauty": "nails;waxing;eyelash;massage",
+        "contact:facebook": "knaiksluxury",
+        "name": "K- Nails Luxury",
+        "opening_hours": "Mo-We 10:00-19:30; Th,Sa 10:00-20:00; Su 11:00-18:00",
+        "phone": "+353 01 5389719",
+        "shop": "beauty",
+        "website": "https://knailsluxury.ie/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2684255,
+          53.3478632
+        ]
+      },
+      "id": "node/9733286758"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9927412444",
+        "addr:city": "Castleknock",
+        "check_date": "2025-04-12",
+        "check_date:opening_hours": "2025-04-12",
+        "name": "So Belle",
+        "opening_hours:signed": "no",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3610148,
+          53.3726177
+        ]
+      },
+      "id": "node/9927412444"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9998555981",
+        "addr:city": "Dublin",
+        "addr:street": "Hampton Wood Road",
+        "name": "Anilla",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2838997,
+          53.4045692
+        ]
+      },
+      "id": "node/9998555981"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10079508002",
+        "addr:city": "Dublin",
+        "addr:street": "Henry Street",
+        "email": "info@sugardollsnailbar.ie",
+        "fixme": "Check details",
+        "name": "SugarDolls",
+        "shop": "beauty",
+        "website": "https://sugardolls.ie/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2612062,
+          53.34955
+        ]
+      },
+      "id": "node/10079508002"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10079508531",
+        "addr:city": "Dublin",
+        "addr:street": "Henry Street",
+        "beauty": "aesthetic;hair_removal",
+        "brand": "Thérapie Clinic",
+        "brand:wikidata": "Q123034602",
+        "check_date": "2024-09-22",
+        "check_date:opening_hours": "2024-09-22",
+        "name": "Thérapie Clinic",
+        "opening_hours": "Mo-We 10:00-20:00; Th 10:00-21:00; Fr 10:00-20:00; Sa 09:00-18:00; Su closed",
+        "phone": "+353 1 912 8115",
+        "shop": "beauty",
+        "website": "https://therapieclinic.com/locations/henry-street"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2631953,
+          53.3494538
+        ]
+      },
+      "id": "node/10079508531"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10119086779",
+        "addr:city": "Dublin",
+        "addr:housenumber": "199",
+        "addr:postcode": "D12 YHH6",
+        "addr:street": "Crumlin Road",
+        "name": "Cosmetic Fairies",
+        "shop": "beauty",
+        "website": "https://cosmeticfairies.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3059879,
+          53.3281264
+        ]
+      },
+      "id": "node/10119086779"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10119844200",
+        "addr:city": "Dublin",
+        "addr:street": "Collins Avenue East",
+        "name": "The Avenue",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2101772,
+          53.3729904
+        ]
+      },
+      "id": "node/10119844200"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10282295925",
+        "addr:city": "Dublin",
+        "name": "Romina Daniel",
+        "shop": "beauty",
+        "website": "https://www.rominadaniel.ie/palmerstown"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3788544,
+          53.3501952
+        ]
+      },
+      "id": "node/10282295925"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10555210327",
+        "addr:street": "Abberley Square West",
+        "beauty": "tanning",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3666794,
+          53.2876477
+        ]
+      },
+      "id": "node/10555210327"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10555210332",
+        "addr:street": "High Street",
+        "name": "Couture Beauty",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3649797,
+          53.2876986
+        ]
+      },
+      "id": "node/10555210332"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10555210337",
+        "addr:street": "High Street",
+        "beauty": "nails",
+        "name": "VIP",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3641885,
+          53.287879
+        ]
+      },
+      "id": "node/10555210337"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10577702923",
+        "addr:city": "Dublin",
+        "addr:street": "Donnybrook Road",
+        "name": "SKIN by Olga",
+        "shop": "beauty",
+        "website": "https://www.skinbyolga.ie/",
+        "website:booking": "https://www.fresha.com/a/skin-by-olga-dublin-donnybrook-road-34-2w644jjp/booking?menu=true"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2359061,
+          53.3220726
+        ]
+      },
+      "id": "node/10577702923"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10602668658",
+        "name": "The Kingdom",
+        "phone": "083 0988084",
+        "shop": "beauty",
+        "twitter": "@thekingdomsalon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2670299,
+          53.3396272
+        ]
+      },
+      "id": "node/10602668658"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10685727564",
+        "addr:city": "Dún Laoghaire",
+        "addr:housenumber": "13",
+        "addr:street": "Patrick Street",
+        "check_date": "2023-02-22",
+        "name": "Sunita's Beauty",
+        "opening_hours": "Mo-We 10:00-18:00; Th-Fr 10:00-20:00; Sa 10:00-18:00; Su off",
+        "phone": "+353 1 4424 868",
+        "shop": "beauty",
+        "website": "https://www.sunitasbeauty.ie/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1370754,
+          53.2917622
+        ]
+      },
+      "id": "node/10685727564"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10777607070",
+        "addr:city": "Dublin",
+        "addr:street": "William Street South",
+        "beauty": "waxing",
+        "level": "0",
+        "name": "Wax in the City",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2630665,
+          53.3416267
+        ]
+      },
+      "id": "node/10777607070"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10951811285",
+        "check_date": "2023-06-04",
+        "name": "Iconic Beauty",
+        "opening_hours": "Mo,Su off; Tu 09:30-18:00; We-Th 09:30-21:00; Fr 09:30-19:00; Sa 09:30-17:00",
+        "phone": "+353 1 2070 757",
+        "shop": "beauty",
+        "website": "https://www.iconicbeauty.ie"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1834081,
+          53.2662832
+        ]
+      },
+      "id": "node/10951811285"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11030231727",
+        "beauty": "nails",
+        "name": "Sugar Dolls",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3902619,
+          53.3528919
+        ]
+      },
+      "id": "node/11030231727"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11162924398",
+        "addr:postcode": "A96 PX22",
+        "beauty": "tanning",
+        "check_date": "2025-01-29",
+        "contact:facebook": "https://www.facebook.com/tanningsalon.ie/",
+        "contact:instagram": "https://www.instagram.com/tanningsalon.ie/",
+        "leisure": "tanning_salon",
+        "level": "0",
+        "name": "Tanning Salon.ie",
+        "name:en": "Tanning Salon.ie",
+        "opening_hours": "Mo-Sa 09:00-22:00; Su,PH 10:00-22:00",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+353 1 235 3932",
+        "shop": "beauty",
+        "website": "https://tanningsalon.ie/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1390588,
+          53.2766995
+        ]
+      },
+      "id": "node/11162924398"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11387440043",
+        "addr:city": "Dundrum",
+        "addr:housename": "Dundrum Town Centre",
+        "addr:housenumber": "Unit 4-6 Level 4",
+        "addr:postcode": "D16 XN22",
+        "addr:street": "Sandyford Road",
+        "beauty": "nails;eyelash;spa;cosmetics;hair_removal",
+        "check_date": "2024-04-04",
+        "contact:facebook": "https://www.facebook.com/pinkdundrum/",
+        "level": "4,5,6",
+        "name": "Edvard & Pink",
+        "opening_hours": "We-Fr 09:00-21:00; Tu 09:00-20:00; Mo 09:00-19:00; Sa 09:00-18:00; Su 11:00-17:00",
+        "operator": "Edvard & Pink",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "012157958",
+        "shop": "beauty",
+        "website": "https://edvardandpink.ie/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2411282,
+          53.2863826
+        ]
+      },
+      "id": "node/11387440043"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11387993477",
+        "name": "Lush Beauty",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3933453,
+          53.3205292
+        ]
+      },
+      "id": "node/11387993477"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11420585569",
+        "addr:city": "Dublin 8",
+        "addr:street": "Ring Terrace",
+        "name": "Rose Royal Beauty",
+        "phone": "+353 85 713 2403",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3269056,
+          53.335971
+        ]
+      },
+      "id": "node/11420585569"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11522730018",
+        "name": "Beauty at Eden",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1249785,
+          53.2874027
+        ]
+      },
+      "id": "node/11522730018"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11942675163",
+        "addr:street": "Main Street",
+        "beauty": "hair_removal",
+        "name": "Havana",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2447264,
+          53.2900994
+        ]
+      },
+      "id": "node/11942675163"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11943260447",
+        "name": "Kate's",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2827045,
+          53.3513078
+        ]
+      },
+      "id": "node/11943260447"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12012313080",
+        "addr:housename": "Stillorgan Village Shopping Centre",
+        "addr:street": "Old Dublin Road",
+        "beauty": "nails;hair_removal;waxing;pedicure",
+        "check_date": "2025-06-28",
+        "contact:facebook": "https://www.facebook.com/oslobeautydublin/",
+        "contact:instagram": "https://www.instagram.com/oslo_beauty/",
+        "email": "stillorgan@inoslo.ie",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "level": "1",
+        "name": "Oslo",
+        "name:en": "Oslo",
+        "opening_hours": "Mo-We,Sa 09:00-18:00; Th-Fr 09:00-20:00; Su off",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+353 1 5599 601",
+        "shop": "beauty",
+        "website": "https://oslobeauty.ie/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2012181,
+          53.2897875
+        ]
+      },
+      "id": "node/12012313080"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12041198346",
+        "addr:city": "Dublin",
+        "addr:place": "Temple Bar",
+        "name": "The Beauty Temple",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2628394,
+          53.3456529
+        ]
+      },
+      "id": "node/12041198346"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12055187172",
+        "addr:city": "Dublin",
+        "addr:street": "Exchequer Street",
+        "contact:facebook": "https://www.facebook.com/sallybeauty",
+        "contact:instagram": "https://www.instagram.com/sallybeauty/",
+        "name": "Sally",
+        "shop": "beauty",
+        "website": "https://www.sallybeauty.co.uk/ie/storeinfo?StoreID=7961"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2624856,
+          53.3431235
+        ]
+      },
+      "id": "node/12055187172"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12082835277",
+        "addr:door": "2",
+        "addr:floor": "1",
+        "addr:housenumber": "44",
+        "addr:postcode": "D01 WR65",
+        "addr:street": "Henry Street",
+        "air_conditioning": "yes",
+        "beauty": "eyebrow",
+        "check_date": "2024-07-30",
+        "contact:instagram": "https://www.instagram.com/jaquelineeyebrows",
+        "email": "jakeline_vieira@yahoo.com.br",
+        "internet_access": "no",
+        "level": "1",
+        "name": "Jaqueline Eyebrows",
+        "payment:app": "yes",
+        "payment:bank_transfer": "yes",
+        "payment:cards": "no",
+        "payment:credit_cards": "no",
+        "payment:debit_cards": "no",
+        "shop": "beauty",
+        "stroller": "no",
+        "toilets": "yes",
+        "website": "https://www.fresha.com/a/jaqueline-eyebrow-artist-dublin-44-henry-street-kuuz73vr/booking?menu=true&dppub=true&employeeId=2050682",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2623944,
+          53.3495646
+        ]
+      },
+      "id": "node/12082835277"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12093934862",
+        "addr:city": "Dublin",
+        "addr:housenumber": "22",
+        "addr:street": "Wicklow Street",
+        "beauty": "nails",
+        "name": "K-Nails",
+        "shop": "beauty",
+        "website": "https://knailsdublin.ie/",
+        "website:booking": "https://www.phorest.com/salon/knailswicklowltd"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2616692,
+          53.3431128
+        ]
+      },
+      "id": "node/12093934862"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12093934868",
+        "addr:city": "Dublin",
+        "addr:street": "Wicklow Street",
+        "beauty": "nails",
+        "contact:instagram": "https://www.instagram.com/fifth_avenue_ireland/",
+        "name": "5th Avenue",
+        "shop": "beauty",
+        "website": "https://5thavenue.ie/dublin-wicklow-lane/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.26175,
+          53.3429856
+        ]
+      },
+      "id": "node/12093934868"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12093934878",
+        "addr:city": "Dublin",
+        "addr:housenumber": "37",
+        "addr:street": "Wicklow Street",
+        "beauty": "nails",
+        "contact:facebook": "https://www.facebook.com/nailsdublin",
+        "contact:instagram": "https://www.instagram.com/nailsdublin/",
+        "name": "Nails",
+        "shop": "beauty",
+        "website": "https://www.dublinnails.com/",
+        "website:booking": "https://www.phorest.com/salon/wicklow"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.260785,
+          53.3428197
+        ]
+      },
+      "id": "node/12093934878"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12093934884",
+        "addr:city": "Dublin",
+        "addr:street": "Clarendon Street",
+        "beauty": "nails",
+        "contact:facebook": "https://www.facebook.com/fabe.ie/",
+        "contact:instagram": "https://www.instagram.com/fifth_avenue_ireland/",
+        "name": "5th Avenue",
+        "shop": "beauty",
+        "website": "https://5thavenue.ie/",
+        "website:booking": "https://5thavenue.ie/booking/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2615878,
+          53.3418681
+        ]
+      },
+      "id": "node/12093934884"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12093934895",
+        "addr:city": "Dublin",
+        "addr:street": "Clarendon Street",
+        "contact:facebook": "https://www.facebook.com/urbanahairremovalclinic/",
+        "contact:instagram": "https://www.instagram.com/urbanahairremovalclinic/",
+        "name": "Urbana",
+        "shop": "beauty",
+        "website": "https://www.urbana.ie/",
+        "website:booking": "https://www.urbana.ie/appointments/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2620593,
+          53.3413963
+        ]
+      },
+      "id": "node/12093934895"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12093934897",
+        "addr:city": "Dublin",
+        "addr:street": "Clarendon Street",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2621274,
+          53.3413237
+        ]
+      },
+      "id": "node/12093934897"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12093934900",
+        "addr:city": "Dublin",
+        "addr:housenumber": "36-37",
+        "addr:street": "William Street South",
+        "name": "Nails & Brows",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2633619,
+          53.3411456
+        ]
+      },
+      "id": "node/12093934900"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12109840004",
+        "addr:city": "Dublin",
+        "addr:street": "William Street South",
+        "contact:facebook": "https://www.facebook.com/southwilliamclinic",
+        "contact:instagram": "https://www.instagram.com/southwilliamclinic/",
+        "name": "South William Clinic & Spa",
+        "shop": "beauty",
+        "website": "https://southwilliamclinic.com/",
+        "website:booking": "https://www.phorest.com/salon/southwilliamclinic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2628689,
+          53.3414509
+        ]
+      },
+      "id": "node/12109840004"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12109840007",
+        "addr:city": "Dublin",
+        "addr:street": "William Street South",
+        "beauty": "nails",
+        "name": "Tropical Popical",
+        "shop": "beauty",
+        "website": "https://www.tropicalpopical.com/",
+        "website:booking": "https://www.tropicalpopical.com/book"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2631052,
+          53.3415437
+        ]
+      },
+      "id": "node/12109840007"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12109840009",
+        "addr:city": "Dublin",
+        "addr:street": "William Street South",
+        "contact:facebook": "https://www.facebook.com/100063651816241/",
+        "contact:instagram": "https://www.instagram.com/claudinekingbrows/",
+        "name": "Claudine King",
+        "shop": "beauty",
+        "website": "https://claudinekingbrows.ie/",
+        "website:booking": "https://claudinekingbrows.ie/#onlinebookings"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2628659,
+          53.341871
+        ]
+      },
+      "id": "node/12109840009"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12161713574",
+        "addr:city": "Dublin",
+        "addr:street": "Tara Street",
+        "contact:facebook": "https://www.facebook.com/perolapadilhaclinicspa/",
+        "name": "Perola Padilha",
+        "old_name": "Beehive",
+        "shop": "beauty",
+        "website:booking": "https://www.treatwell.ie/place/perola-padilha-clinic-spa/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2553409,
+          53.3455953
+        ]
+      },
+      "id": "node/12161713574"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12167965957",
+        "addr:city": "Dublin",
+        "addr:street": "Grafton Street",
+        "contact:facebook": "https://www.facebook.com/fadelaser/",
+        "level": "1",
+        "name": "Fade",
+        "shop": "beauty",
+        "website": "https://www.fadelaser.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2592891,
+          53.3430431
+        ]
+      },
+      "id": "node/12167965957"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12180722189",
+        "addr:floor": "G",
+        "addr:housenumber": "16",
+        "addr:street": "Stillorgan Park Avenue",
+        "check_date": "2024-09-16",
+        "email": "newdermreception@icloud.com",
+        "internet_access": "no",
+        "level": "0",
+        "name": "Newderm",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+353 83 111 0202",
+        "shop": "beauty",
+        "website": "https://newderm.ie/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.192992,
+          53.2875381
+        ]
+      },
+      "id": "node/12180722189"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12391350044",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1556127,
+          53.4522019
+        ]
+      },
+      "id": "node/12391350044"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12558234186",
+        "beauty": "tanning",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3751799,
+          53.2865446
+        ]
+      },
+      "id": "node/12558234186"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12558252118",
+        "beauty": "nails",
+        "name": "Fashion Nail & Beauty",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3756993,
+          53.2858909
+        ]
+      },
+      "id": "node/12558252118"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12633856957",
+        "beauty": "laser_hair_removal",
+        "check_date": "2025-03-03",
+        "name": "Midas Touch",
+        "phone": "+353 1 4595 313",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3919678,
+          53.3143934
+        ]
+      },
+      "id": "node/12633856957"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12636352969",
+        "check_date": "2025-03-04",
+        "name": "Monroes",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3962487,
+          53.3246338
+        ]
+      },
+      "id": "node/12636352969"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12636592595",
+        "check_date": "2025-03-04",
+        "name": "Wonderland",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3948064,
+          53.3206927
+        ]
+      },
+      "id": "node/12636592595"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12650724202",
+        "addr:city": "Dublin",
+        "addr:housenumber": "52",
+        "addr:street": "King Street South",
+        "beauty": "spa",
+        "contact:facebook": "https://www.facebook.com/thebuffdayspa",
+        "contact:instagram": "https://www.instagram.com/thebuffdayspa/",
+        "name": "The Buff",
+        "shop": "beauty",
+        "website": "https://www.thebuffdayspa.com/",
+        "website:booking": "https://booking.barespace.app/Thebuffdayspa/service/?location=8906bcce-71a9-44a6-b94b-e136bd4711aa"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2612954,
+          53.34023
+        ]
+      },
+      "id": "node/12650724202"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12650724205",
+        "addr:city": "Dublin",
+        "addr:housenumber": "15",
+        "addr:street": "Wicklow Street",
+        "beauty": "eyebrow",
+        "name": "Shine",
+        "shop": "beauty",
+        "website": "https://shinebeauty.ie/",
+        "website:booking": "https://www.fresha.com/a/shine-beauty-brow-bar-dublin-2-15-wicklow-street-dublin-2-xziafigk/booking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2610284,
+          53.3431012
+        ]
+      },
+      "id": "node/12650724205"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12849752418",
+        "addr:street": "Johnstown Road",
+        "check_date": "2024-06-04",
+        "name": "Elegance Beauty Clinic",
+        "opening_hours": "Mo-Tu,Sa 10:00-18:00; We-Fr 10:00-20:00; Su off",
+        "phone": "+353 1 2023 030",
+        "shop": "beauty",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1504401,
+          53.2610437
+        ]
+      },
+      "id": "node/12849752418"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12951633492",
+        "addr:city": "Dublin",
+        "addr:housenumber": "36B",
+        "addr:street": "Talbot Street",
+        "beauty": "nails",
+        "contact:facebook": "https://www.facebook.com/100083605594677/",
+        "contact:instagram": "https://www.instagram.com/vdaisy_nails_dublin1/",
+        "name": "V Daisy",
+        "shop": "beauty",
+        "website:booking": "https://www.fresha.com/a/v-daisy-nails-salon-dublin-talbot-street-36b-aajgj853/booking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2519422,
+          53.351251
+        ]
+      },
+      "id": "node/12951633492"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12959262924",
+        "check_date": "2025-06-28",
+        "name": "Zero",
+        "name:en": "Zero",
+        "opening_hours": "Tu,Sa 10:00-18:00; We-Fr 10:00-19:00",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1984602,
+          53.289461
+        ]
+      },
+      "id": "node/12959262924"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12983397520",
+        "name": "Anna Nails & Beauty",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2809415,
+          53.340735
+        ]
+      },
+      "id": "node/12983397520"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13027966708",
+        "beauty": "eyelash;nails;spa",
+        "contact:mobile": "+353 89 498 6899",
+        "name": "Beautilux",
+        "shop": "beauty"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3052042,
+          53.3273469
+        ]
+      },
+      "id": "node/13027966708"
+    }
+  ]
+}

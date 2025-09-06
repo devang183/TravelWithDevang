@@ -1,0 +1,7041 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2025-08-14T06:06:59Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/29714490",
+        "created_by": "Potlatch 0.4b",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0791826,
+          51.462614
+        ]
+      },
+      "id": "node/29714490"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/29714491",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0787634,
+          51.4630978
+        ]
+      },
+      "id": "node/29714491"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/30442275",
+        "leisure": "garden",
+        "name": "Bamboo Garden",
+        "name:ru": "Бамбуковый сад"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3007569,
+          51.4784188
+        ]
+      },
+      "id": "node/30442275"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/30692909",
+        "leisure": "nature_reserve",
+        "name": "Snail Reserve"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2796052,
+          51.483015
+        ]
+      },
+      "id": "node/30692909"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/132565484",
+        "created_by": "Potlatch 0.5d",
+        "leisure": "nature_reserve",
+        "name": "Myrna Close Nature Reserve"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1730821,
+          51.4155623
+        ]
+      },
+      "id": "node/132565484"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/207110707",
+        "leisure": "garden",
+        "name": "Grass Garden",
+        "website": "https://www.kew.org/visit-kew-gardens/explore/attractions/grass-garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.289281,
+          51.4824569
+        ]
+      },
+      "id": "node/207110707"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/207110829",
+        "leisure": "garden",
+        "name": "Secluded Garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2909716,
+          51.482585
+        ]
+      },
+      "id": "node/207110829"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/207111044",
+        "leisure": "garden",
+        "name": "Order Beds"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2892992,
+          51.4810944
+        ]
+      },
+      "id": "node/207111044"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/207111138",
+        "leisure": "garden",
+        "name": "The Duke's Garden",
+        "name:ru": "Герцогский сад"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2890616,
+          51.4828628
+        ]
+      },
+      "id": "node/207111138"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/207113336",
+        "leisure": "garden",
+        "name": "The Queen's Garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.295268,
+          51.484112
+        ]
+      },
+      "id": "node/207113336"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/207126970",
+        "access": "private",
+        "leisure": "garden",
+        "name": "The Director's Garden",
+        "name:ru": "Директорский сад"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2898185,
+          51.4831029
+        ]
+      },
+      "id": "node/207126970"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/207137399",
+        "leisure": "garden",
+        "name": "Rock Garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2898856,
+          51.4815485
+        ]
+      },
+      "id": "node/207137399"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/207138240",
+        "leisure": "garden",
+        "name": "Woodland Garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2904095,
+          51.4804833
+        ]
+      },
+      "id": "node/207138240"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/207139285",
+        "leisure": "garden",
+        "name": "Azalea Garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2975504,
+          51.4790025
+        ]
+      },
+      "id": "node/207139285"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/207141757",
+        "leisure": "garden",
+        "name": "Mediterranean Garden",
+        "name:fr": "Jardin méditerranéen",
+        "name:ru": "Средиземноморский сад"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2952823,
+          51.4768294
+        ]
+      },
+      "id": "node/207141757"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/207141983",
+        "leisure": "garden",
+        "name": "Rose Garden",
+        "name:fr": "Roseraie",
+        "name:ru": "Розарий"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2935425,
+          51.4788768
+        ]
+      },
+      "id": "node/207141983"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/207264486",
+        "leisure": "garden",
+        "name:en": "Seven Sisters",
+        "name:ru": "Семь сестёр"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2940522,
+          51.4807692
+        ]
+      },
+      "id": "node/207264486"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/207272295",
+        "leisure": "garden",
+        "loc_name": "Conservation Area",
+        "name": "Queen's Cottage Grounds"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3046692,
+          51.4732329
+        ]
+      },
+      "id": "node/207272295"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/207513563",
+        "leisure": "garden",
+        "name": "The Cockpit"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1688741,
+          51.5066413
+        ]
+      },
+      "id": "node/207513563"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/249309944",
+        "access": "yes",
+        "created_by": "Potlatch 0.7b",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0592148,
+          51.5063236
+        ]
+      },
+      "id": "node/249309944"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/251880654",
+        "created_by": "Potlatch 0.7b",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3164592,
+          51.6478963
+        ]
+      },
+      "id": "node/251880654"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/255469609",
+        "leisure": "nature_reserve",
+        "name": "Ecology Centre",
+        "wikidata": "Q124425607"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2060134,
+          51.5024281
+        ]
+      },
+      "id": "node/255469609"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/261325952",
+        "created_by": "JOSM",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1259443,
+          51.4809021
+        ]
+      },
+      "id": "node/261325952"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/262311251",
+        "description": "play area of under fives",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.013745,
+          51.526442
+        ]
+      },
+      "id": "node/262311251"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/262362411",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0185808,
+          51.5097015
+        ]
+      },
+      "id": "node/262362411"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/267177617",
+        "created_by": "Potlatch 0.9b",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0873343,
+          51.5585858
+        ]
+      },
+      "id": "node/267177617"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/270420485",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.046808,
+          51.5042527
+        ]
+      },
+      "id": "node/270420485"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/343528685",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0966471,
+          51.5863191
+        ]
+      },
+      "id": "node/343528685"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/362490476",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1423313,
+          51.5263945
+        ]
+      },
+      "id": "node/362490476"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/370195256",
+        "access": "yes",
+        "fee": "no",
+        "leisure": "garden",
+        "name": "Ornamental Garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.123707,
+          51.585262
+        ]
+      },
+      "id": "node/370195256"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/391041064",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0903225,
+          51.4904427
+        ]
+      },
+      "id": "node/391041064"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/392107162",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0930162,
+          51.5263265
+        ]
+      },
+      "id": "node/392107162"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/410715464",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2629539,
+          51.6246089
+        ]
+      },
+      "id": "node/410715464"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/412410543",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0883493,
+          51.4982797
+        ]
+      },
+      "id": "node/412410543"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/415805067",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0630562,
+          51.4816824
+        ]
+      },
+      "id": "node/415805067"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/420783220",
+        "leisure": "garden",
+        "name": "Field of Hope"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0109053,
+          51.4051677
+        ]
+      },
+      "id": "node/420783220"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/426087692",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0757249,
+          51.4759384
+        ]
+      },
+      "id": "node/426087692"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/426087703",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0766173,
+          51.4762281
+        ]
+      },
+      "id": "node/426087703"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/448037429",
+        "leisure": "garden",
+        "name": "Bridge House Gardens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2214463,
+          51.4436723
+        ]
+      },
+      "id": "node/448037429"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/448625827",
+        "leisure": "park",
+        "name": "Enchanted Woodland - Community Woodland",
+        "note": "Owned by the Temple Hill Trust the woodland is open all year round for the community to enjoy this green leisure space - Dartford's only openly accessible woodland.  Entrances in Cornwall Road (cobbled path and football pitch) and Marsh Street.",
+        "operator": "Royal Mail",
+        "ref": "DA1 365",
+        "source": "Debbie Fryer, C.E.O. of the Temple Hill Trust",
+        "website": "www.templehilltrust.org.uk",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2308678,
+          51.4577079
+        ]
+      },
+      "id": "node/448625827"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/448716257",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2242869,
+          51.4591378
+        ]
+      },
+      "id": "node/448716257"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/457564038",
+        "leisure": "nature_reserve",
+        "name": "Downe Bank SSSI",
+        "wikidata": "Q5303084",
+        "wikipedia": "en:Downe Bank"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0636886,
+          51.3297495
+        ]
+      },
+      "id": "node/457564038"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/469789265",
+        "leisure": "playground",
+        "local_ref": "U",
+        "name": "Ducketts Common playground",
+        "naptan:AtcoCode": "490015475U",
+        "naptan:Bearing": "N",
+        "naptan:CommonName": "Turnpike Lane Station U Y",
+        "naptan:Indicator": "Stop U",
+        "naptan:Street": "GREEN LANES",
+        "naptan:verified": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1024832,
+          51.5884868
+        ]
+      },
+      "id": "node/469789265"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/475251875",
+        "leisure": "playground",
+        "name": "Grove Adventure Playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1029348,
+          51.4684223
+        ]
+      },
+      "id": "node/475251875"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/485351956",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1429465,
+          51.5293317
+        ]
+      },
+      "id": "node/485351956"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/511711403",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1868132,
+          51.5177968
+        ]
+      },
+      "id": "node/511711403"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/528226318",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3315011,
+          51.4531056
+        ]
+      },
+      "id": "node/528226318"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/595687523",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2304887,
+          51.5399313
+        ]
+      },
+      "id": "node/595687523"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/597408914",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0127144,
+          51.5876337
+        ]
+      },
+      "id": "node/597408914"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/662244966",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0207887,
+          51.5137776
+        ]
+      },
+      "id": "node/662244966"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/695809641",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0655701,
+          51.4939202
+        ]
+      },
+      "id": "node/695809641"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/697037338",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0756371,
+          51.5099578
+        ]
+      },
+      "id": "node/697037338"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/702318525",
+        "leisure": "garden",
+        "name": "Aquatic Garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2886585,
+          51.482217
+        ]
+      },
+      "id": "node/702318525"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/724364694",
+        "access": "private",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2020648,
+          51.51046
+        ]
+      },
+      "id": "node/724364694"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/724365075",
+        "access": "private",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2029966,
+          51.5102084
+        ]
+      },
+      "id": "node/724365075"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/727367251",
+        "access": "yes",
+        "leisure": "playground",
+        "name": "Sumatra Road Play Area"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1968053,
+          51.549529
+        ]
+      },
+      "id": "node/727367251"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/737848959",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1993875,
+          51.5487146
+        ]
+      },
+      "id": "node/737848959"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/743009740",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.123392,
+          51.5191078
+        ]
+      },
+      "id": "node/743009740"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/759843340",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0778274,
+          51.5676784
+        ]
+      },
+      "id": "node/759843340"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/759843357",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0781733,
+          51.5682437
+        ]
+      },
+      "id": "node/759843357"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/909389039",
+        "leisure": "nature_reserve",
+        "name": "Westbere Copse",
+        "wikidata": "Q16903142",
+        "wikipedia": "en:Westbere Copse"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2065931,
+          51.5530546
+        ]
+      },
+      "id": "node/909389039"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/995065771",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1605993,
+          51.5527257
+        ]
+      },
+      "id": "node/995065771"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1011595862",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1850272,
+          51.5160004
+        ]
+      },
+      "id": "node/1011595862"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1057590450",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.414235,
+          51.6584842
+        ]
+      },
+      "id": "node/1057590450"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1120009215",
+        "description": "Playcentre with large indoor area",
+        "fee": "yes",
+        "leisure": "playground",
+        "name": "Partyman World of Play, Wembley",
+        "website": "https://www.partymanworld.co.uk/location/wembley/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3164302,
+          51.5582304
+        ]
+      },
+      "id": "node/1120009215"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1126026199",
+        "leisure": "playground",
+        "source": "Bing;survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1135055,
+          51.492437
+        ]
+      },
+      "id": "node/1126026199"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1126114881",
+        "leisure": "playground",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.112217,
+          51.494102
+        ]
+      },
+      "id": "node/1126114881"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1129448150",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1025734,
+          51.522906
+        ]
+      },
+      "id": "node/1129448150"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1145233938",
+        "leisure": "playground",
+        "name": "Brunswick Estate Play Area"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1028763,
+          51.5261214
+        ]
+      },
+      "id": "node/1145233938"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1180273833",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1347258,
+          51.5638223
+        ]
+      },
+      "id": "node/1180273833"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1237044496",
+        "leisure": "playground",
+        "source": "survey; Bing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1131822,
+          51.4974232
+        ]
+      },
+      "id": "node/1237044496"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1305571445",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2159851,
+          51.4981755
+        ]
+      },
+      "id": "node/1305571445"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1312974190",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1445201,
+          51.5673544
+        ]
+      },
+      "id": "node/1312974190"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1335567728",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.097305,
+          51.5951045
+        ]
+      },
+      "id": "node/1335567728"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1348978158",
+        "leisure": "garden",
+        "name": "Winter Garden",
+        "name:fr": "Jardin d'hiver",
+        "name:ru": "Зимний сад"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2917295,
+          51.4815315
+        ]
+      },
+      "id": "node/1348978158"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1348978159",
+        "leisure": "garden",
+        "name": "Conservation Area"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3070311,
+          51.4735563
+        ]
+      },
+      "id": "node/1348978159"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1348978160",
+        "leisure": "garden",
+        "name": "Berberis Dell"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2926569,
+          51.4763693
+        ]
+      },
+      "id": "node/1348978160"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1348978161",
+        "leisure": "garden",
+        "name": "Woodland Glade"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2990379,
+          51.4742169
+        ]
+      },
+      "id": "node/1348978161"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1348978162",
+        "leisure": "garden",
+        "name": "Redwood Grove"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3006819,
+          51.4734762
+        ]
+      },
+      "id": "node/1348978162"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1348978163",
+        "leisure": "garden",
+        "name": "Rhododendron Dell",
+        "name:ru": "Участок рододендронов"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3003275,
+          51.4795538
+        ]
+      },
+      "id": "node/1348978163"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1348978164",
+        "leisure": "garden",
+        "name": "Student Vegetable Plots"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2882834,
+          51.4816843
+        ]
+      },
+      "id": "node/1348978164"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1351417902",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0873115,
+          51.4823825
+        ]
+      },
+      "id": "node/1351417902"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1360475630",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1179104,
+          51.5362111
+        ]
+      },
+      "id": "node/1360475630"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1397699607",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1308621,
+          51.5735657
+        ]
+      },
+      "id": "node/1397699607"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1499049189",
+        "access": "yes",
+        "leisure": "playground",
+        "name": "Tree Swing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1430589,
+          51.5875633
+        ]
+      },
+      "id": "node/1499049189"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1584900215",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0073657,
+          51.5609904
+        ]
+      },
+      "id": "node/1584900215"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1648342162",
+        "leisure": "playground",
+        "name": "nature play garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.20702,
+          51.5031219
+        ]
+      },
+      "id": "node/1648342162"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1681568012",
+        "access": "private",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2065146,
+          51.5101151
+        ]
+      },
+      "id": "node/1681568012"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1685281116",
+        "access": "private",
+        "leisure": "playground",
+        "source": "Bing;photographic_survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0918254,
+          51.5192595
+        ]
+      },
+      "id": "node/1685281116"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1735696650",
+        "access": "yes",
+        "leisure": "playground",
+        "name": "Upper Pepys Park Playground",
+        "source": "local_knowledge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0298121,
+          51.4887093
+        ]
+      },
+      "id": "node/1735696650"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1815278863",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0996708,
+          51.4809901
+        ]
+      },
+      "id": "node/1815278863"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1834187282",
+        "leisure": "playground",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0840129,
+          51.6147439
+        ]
+      },
+      "id": "node/1834187282"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1912811933",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3939774,
+          51.3724755
+        ]
+      },
+      "id": "node/1912811933"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1969898292",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4168086,
+          51.4040525
+        ]
+      },
+      "id": "node/1969898292"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1982055860",
+        "leisure": "garden",
+        "name": "Nannies' Lawn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1580207,
+          51.5045297
+        ]
+      },
+      "id": "node/1982055860"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1982085230",
+        "leisure": "garden",
+        "name": "The Meadow"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1662814,
+          51.5107745
+        ]
+      },
+      "id": "node/1982085230"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1982085234",
+        "leisure": "garden",
+        "name": "The Parade Ground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1589965,
+          51.5082101
+        ]
+      },
+      "id": "node/1982085234"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2056088626",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3297737,
+          51.4469256
+        ]
+      },
+      "id": "node/2056088626"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2065712009",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1308586,
+          51.5725947
+        ]
+      },
+      "id": "node/2065712009"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2065712038",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1313363,
+          51.5729869
+        ]
+      },
+      "id": "node/2065712038"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2112680901",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2901032,
+          51.4683041
+        ]
+      },
+      "id": "node/2112680901"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2168835629",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1182606,
+          51.4560608
+        ]
+      },
+      "id": "node/2168835629"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2257593092",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0375915,
+          51.5964953
+        ]
+      },
+      "id": "node/2257593092"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2260371095",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2915911,
+          51.3273815
+        ]
+      },
+      "id": "node/2260371095"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2296485315",
+        "access": "customers",
+        "leisure": "playground",
+        "name": "Badgers Basecamp den building area",
+        "source": "GPS"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3821142,
+          51.3542697
+        ]
+      },
+      "id": "node/2296485315"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2308444310",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0193429,
+          51.523444
+        ]
+      },
+      "id": "node/2308444310"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2341495566",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1019012,
+          51.5766398
+        ]
+      },
+      "id": "node/2341495566"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2344481654",
+        "access": "yes",
+        "leisure": "playground",
+        "name": "Churchfield Gardens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4246608,
+          51.5763073
+        ]
+      },
+      "id": "node/2344481654"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2417949821",
+        "leisure": "playground",
+        "name": "Outdoor climbing wall",
+        "sport": "climbing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0631736,
+          51.4404062
+        ]
+      },
+      "id": "node/2417949821"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2418380275",
+        "access": "yes",
+        "leisure": "playground",
+        "name": "Play Beach",
+        "playground:theme": "ship",
+        "surface": "sand"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3249767,
+          51.4464832
+        ]
+      },
+      "id": "node/2418380275"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2443788233",
+        "access": "yes",
+        "leisure": "playground",
+        "name": "Prize Walk Playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0076766,
+          51.5478596
+        ]
+      },
+      "id": "node/2443788233"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2451299694",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0535961,
+          51.6332222
+        ]
+      },
+      "id": "node/2451299694"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2458261088",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1136026,
+          51.5594681
+        ]
+      },
+      "id": "node/2458261088"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2740703344",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0945873,
+          51.572967
+        ]
+      },
+      "id": "node/2740703344"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2882744805",
+        "leisure": "playground",
+        "sport": "table_tennis"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0693037,
+          51.4742571
+        ]
+      },
+      "id": "node/2882744805"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2916660680",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.065417,
+          51.4764214
+        ]
+      },
+      "id": "node/2916660680"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2916660699",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0652324,
+          51.4769558
+        ]
+      },
+      "id": "node/2916660699"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3243817892",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1032182,
+          51.6358087
+        ]
+      },
+      "id": "node/3243817892"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3624776229",
+        "leisure": "playground",
+        "name": "Swing",
+        "natural": "tree"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0388338,
+          51.660351
+        ]
+      },
+      "id": "node/3624776229"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3637396650",
+        "access": "yes",
+        "leisure": "playground",
+        "name": "The Warren"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1384545,
+          51.5239381
+        ]
+      },
+      "id": "node/3637396650"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3654920629",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0214201,
+          51.5955482
+        ]
+      },
+      "id": "node/3654920629"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3667607273",
+        "leisure": "park"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1029628,
+          51.5005211
+        ]
+      },
+      "id": "node/3667607273"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3707840068",
+        "access": "yes",
+        "fee": "no",
+        "leisure": "playground",
+        "playground": "springy",
+        "source": "survey",
+        "survey:date": "2015-08-17"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3370584,
+          51.5787462
+        ]
+      },
+      "id": "node/3707840068"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3717358335",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1198801,
+          51.5635818
+        ]
+      },
+      "id": "node/3717358335"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3720513795",
+        "access": "private",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1464929,
+          51.5813468
+        ]
+      },
+      "id": "node/3720513795"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3725978141",
+        "fixme": "wildlife garden? Note 20836",
+        "leisure": "garden",
+        "name": "Horniman's Wildlife Garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0629265,
+          51.4408751
+        ]
+      },
+      "id": "node/3725978141"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3736633231",
+        "check_date": "2019-11-17",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1934252,
+          51.5357511
+        ]
+      },
+      "id": "node/3736633231"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3755792140",
+        "leisure": "park"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1026154,
+          51.5002933
+        ]
+      },
+      "id": "node/3755792140"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3762435001",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3343016,
+          51.4846779
+        ]
+      },
+      "id": "node/3762435001"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3811569428",
+        "leisure": "playground",
+        "source": "gps+mapnoter"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0924182,
+          51.5661134
+        ]
+      },
+      "id": "node/3811569428"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3814578486",
+        "leisure": "playground",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0377561,
+          51.5854638
+        ]
+      },
+      "id": "node/3814578486"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3974508542",
+        "access": "yes",
+        "leisure": "playground",
+        "source": "gps+mapnoter"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.099282,
+          51.5511187
+        ]
+      },
+      "id": "node/3974508542"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3975318048",
+        "leisure": "dog_park",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1009815,
+          51.5382575
+        ]
+      },
+      "id": "node/3975318048"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4068378388",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0467617,
+          51.4312736
+        ]
+      },
+      "id": "node/4068378388"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4068510492",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1415133,
+          51.4581235
+        ]
+      },
+      "id": "node/4068510492"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4079895392",
+        "leisure": "nature_reserve",
+        "name": "Preston Hill Nature Reserve"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1961292,
+          51.3489283
+        ]
+      },
+      "id": "node/4079895392"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4104233607",
+        "leisure": "playground",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0283771,
+          51.5764003
+        ]
+      },
+      "id": "node/4104233607"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4213421892",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3211962,
+          51.3403577
+        ]
+      },
+      "id": "node/4213421892"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4265487845",
+        "leisure": "playground",
+        "source": "bing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1048226,
+          51.5700801
+        ]
+      },
+      "id": "node/4265487845"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4314539930",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3280074,
+          51.4709868
+        ]
+      },
+      "id": "node/4314539930"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4331472323",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3035458,
+          51.3404475
+        ]
+      },
+      "id": "node/4331472323"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4331474048",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.299181,
+          51.3404914
+        ]
+      },
+      "id": "node/4331474048"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4345162206",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1112886,
+          51.5635
+        ]
+      },
+      "id": "node/4345162206"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4346552099",
+        "leisure": "playground",
+        "source": "gps+mapnoter"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0492239,
+          51.6297527
+        ]
+      },
+      "id": "node/4346552099"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4351817999",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1138544,
+          51.5631405
+        ]
+      },
+      "id": "node/4351817999"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4362046674",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0784835,
+          51.5565115
+        ]
+      },
+      "id": "node/4362046674"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4393353470",
+        "leisure": "playground",
+        "source": "gps+mapnoter"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1630354,
+          51.5606377
+        ]
+      },
+      "id": "node/4393353470"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4404063174",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0724843,
+          51.540966
+        ]
+      },
+      "id": "node/4404063174"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4413395556",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.014029,
+          51.5720709
+        ]
+      },
+      "id": "node/4413395556"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4438272569",
+        "garden": "rockery",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0615728,
+          51.4575067
+        ]
+      },
+      "id": "node/4438272569"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4441374317",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0564988,
+          51.5054167
+        ]
+      },
+      "id": "node/4441374317"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4455767286",
+        "access": "customers",
+        "leisure": "playground",
+        "source": "gps+mapnoter"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1346248,
+          51.5546483
+        ]
+      },
+      "id": "node/4455767286"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4467731972",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0621005,
+          51.6632131
+        ]
+      },
+      "id": "node/4467731972"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4467731973",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0619664,
+          51.663427
+        ]
+      },
+      "id": "node/4467731973"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4478049868",
+        "description": "play area of over fives",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0135273,
+          51.526504
+        ]
+      },
+      "id": "node/4478049868"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4526674091",
+        "access": "yes",
+        "leisure": "playground",
+        "name": "South Norwood Recreation Ground",
+        "toilets:wheelchair": "no",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0783436,
+          51.39532
+        ]
+      },
+      "id": "node/4526674091"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4561916629",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0006216,
+          51.5916929
+        ]
+      },
+      "id": "node/4561916629"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4567226374",
+        "addr:city": "London",
+        "addr:postcode": "E4 8BJ",
+        "addr:street": "Parade Gardens",
+        "leisure": "garden",
+        "name": "Allotment Gardens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0127881,
+          51.6036167
+        ]
+      },
+      "id": "node/4567226374"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4575506693",
+        "leisure": "playground",
+        "operator": "London & Quadrant",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0152904,
+          51.6034875
+        ]
+      },
+      "id": "node/4575506693"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4643470501",
+        "leisure": "playground",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0039916,
+          51.6076434
+        ]
+      },
+      "id": "node/4643470501"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4678882807",
+        "leisure": "garden",
+        "name": "Hornsey Park Community Garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1108516,
+          51.5893849
+        ]
+      },
+      "id": "node/4678882807"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4700201905",
+        "fixme": "pgtd",
+        "leisure": "playground",
+        "source": "gps+mapnoter"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0380778,
+          51.6418978
+        ]
+      },
+      "id": "node/4700201905"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4721120231",
+        "leisure": "playground",
+        "source": "gps+mapnoter"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.284146,
+          51.6052165
+        ]
+      },
+      "id": "node/4721120231"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4721120244",
+        "leisure": "playground",
+        "source": "gps+mapnoter"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2845931,
+          51.6046715
+        ]
+      },
+      "id": "node/4721120244"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4735367121",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1930311,
+          51.5177461
+        ]
+      },
+      "id": "node/4735367121"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4735866940",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2216298,
+          51.5239603
+        ]
+      },
+      "id": "node/4735866940"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4746119025",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0976842,
+          51.5534226
+        ]
+      },
+      "id": "node/4746119025"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4836642835",
+        "fixme": "resurvey, rough position",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2702901,
+          51.6122345
+        ]
+      },
+      "id": "node/4836642835"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4836980797",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2621508,
+          51.5916261
+        ]
+      },
+      "id": "node/4836980797"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4848974988",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2950758,
+          51.5077128
+        ]
+      },
+      "id": "node/4848974988"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4883636474",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0564756,
+          51.485913
+        ]
+      },
+      "id": "node/4883636474"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4883636477",
+        "barrier": "fence",
+        "leisure": "dog_park"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0560675,
+          51.4856153
+        ]
+      },
+      "id": "node/4883636477"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4951670680",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1258119,
+          51.5040485
+        ]
+      },
+      "id": "node/4951670680"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4972060152",
+        "access": "yes",
+        "leisure": "playground",
+        "source": "gps+mapnoter"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0712419,
+          51.5682317
+        ]
+      },
+      "id": "node/4972060152"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4972061217",
+        "leisure": "nature_reserve",
+        "name": "Wildlife Area",
+        "source": "gps+mapnoter"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.074501,
+          51.5700147
+        ]
+      },
+      "id": "node/4972061217"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4976670149",
+        "leisure": "playground",
+        "operator": "London & Quadrant",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0142004,
+          51.6030529
+        ]
+      },
+      "id": "node/4976670149"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5136533157",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1689711,
+          51.5224714
+        ]
+      },
+      "id": "node/5136533157"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5268882291",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3666907,
+          51.3995161
+        ]
+      },
+      "id": "node/5268882291"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5315174457",
+        "leisure": "playground",
+        "min_age": "12",
+        "operator": "London & Quadrant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0154081,
+          51.6031484
+        ]
+      },
+      "id": "node/5315174457"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5331971723",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0062738,
+          51.571522
+        ]
+      },
+      "id": "node/5331971723"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5353278947",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0664879,
+          51.4967393
+        ]
+      },
+      "id": "node/5353278947"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5364065782",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2262898,
+          51.5908541
+        ]
+      },
+      "id": "node/5364065782"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5370783340",
+        "access": "customers",
+        "indoor": "yes",
+        "leisure": "playground",
+        "name": "Kidspace Romford",
+        "operator": "Kidspace Romford",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1793634,
+          51.5746374
+        ]
+      },
+      "id": "node/5370783340"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5590326343",
+        "leisure": "playground",
+        "name": "Den Arena"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3560588,
+          51.4860742
+        ]
+      },
+      "id": "node/5590326343"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5590326350",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3572184,
+          51.4868995
+        ]
+      },
+      "id": "node/5590326350"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5604640610",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1396519,
+          51.4774606
+        ]
+      },
+      "id": "node/5604640610"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5612658697",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0364942,
+          51.587758
+        ]
+      },
+      "id": "node/5612658697"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5627476566",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1009503,
+          51.4692542
+        ]
+      },
+      "id": "node/5627476566"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5828193788",
+        "check_date": "2024-11-12",
+        "leisure": "playground",
+        "level": "-1",
+        "name": "Woodland Trail"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0079146,
+          51.543939
+        ]
+      },
+      "id": "node/5828193788"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5837200429",
+        "addr:city": "Croydon",
+        "addr:housename": "Colonnades",
+        "addr:housenumber": "619",
+        "addr:postcode": "CR0 4RQ",
+        "addr:street": "Purley Way",
+        "addr:unit": "3",
+        "fhrs:authority": "Croydon",
+        "fhrs:id": "22471",
+        "leisure": "playground",
+        "name": "Kidspace Adventures"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1149063,
+          51.3567012
+        ]
+      },
+      "id": "node/5837200429"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5837200430",
+        "addr:city": "Croydon",
+        "addr:housename": "Colonnades",
+        "addr:housenumber": "619",
+        "addr:postcode": "CR0 4RQ",
+        "addr:street": "Purley Way",
+        "addr:unit": "5B",
+        "fhrs:authority": "Croydon",
+        "fhrs:id": "983390",
+        "indoor": "yes",
+        "leisure": "trampoline_park",
+        "name": "Oxygen Freejumping",
+        "website": "https://oxygenfreejumping.co.uk/locations/croydon/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1144809,
+          51.3567611
+        ]
+      },
+      "id": "node/5837200430"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5837230222",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0838844,
+          51.4702037
+        ]
+      },
+      "id": "node/5837230222"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5838572886",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0667548,
+          51.4798311
+        ]
+      },
+      "id": "node/5838572886"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5838572887",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0665295,
+          51.4809202
+        ]
+      },
+      "id": "node/5838572887"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5846641277",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0557792,
+          51.4801075
+        ]
+      },
+      "id": "node/5846641277"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5861200424",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.067876,
+          51.4813386
+        ]
+      },
+      "id": "node/5861200424"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5868259095",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0815512,
+          51.4719734
+        ]
+      },
+      "id": "node/5868259095"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5868259096",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0818436,
+          51.4719642
+        ]
+      },
+      "id": "node/5868259096"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5871332574",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0829098,
+          51.4726768
+        ]
+      },
+      "id": "node/5871332574"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5907274360",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0130183,
+          51.6036356
+        ]
+      },
+      "id": "node/5907274360"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5914455050",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0434561,
+          51.3700965
+        ]
+      },
+      "id": "node/5914455050"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6066940995",
+        "access": "yes",
+        "leisure": "playground",
+        "max_age": "8",
+        "opening_hours": "09:00-Dusk",
+        "operator": "Wandsworth"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2523521,
+          51.4640037
+        ]
+      },
+      "id": "node/6066940995"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6329682566",
+        "access": "customers",
+        "addr:city": "Sidcup",
+        "addr:postcode": "DA14 5ET",
+        "addr:street": "Water Lane",
+        "fhrs:id": "329266",
+        "leisure": "playground",
+        "name": "Crayzee Barn",
+        "source:addr": "FHRS Open Data"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1398008,
+          51.4328948
+        ]
+      },
+      "id": "node/6329682566"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6476830030",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0917997,
+          51.4800606
+        ]
+      },
+      "id": "node/6476830030"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6501707720",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1744865,
+          51.5246427
+        ]
+      },
+      "id": "node/6501707720"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6566451007",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0396127,
+          51.4900701
+        ]
+      },
+      "id": "node/6566451007"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6566451008",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0381133,
+          51.4914445
+        ]
+      },
+      "id": "node/6566451008"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6571018305",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0515427,
+          51.5116531
+        ]
+      },
+      "id": "node/6571018305"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6582725771",
+        "addr:city": "London",
+        "addr:housename": "Levita House",
+        "addr:postcode": "NW1 1JJ",
+        "addr:street": "Chalton Street",
+        "description": "This area has newly been upgraded for the residents of Levita house to start gardening and growing small vegetables and fruits where possible",
+        "garden:type": "community",
+        "leisure": "garden",
+        "name": "Levita House Plantation",
+        "opening_hours": "24/7",
+        "operator": "Camden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1288306,
+          51.5292528
+        ]
+      },
+      "id": "node/6582725771"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6582894685",
+        "fhrs:id": "585664",
+        "leisure": "playground",
+        "name": "Sindbads",
+        "note": "Tag leisure=indoor_play is not widely used, so using mainstream tagging",
+        "opening_hours": "Mo-Sa 09:00-18:00; Su 09:30-15:00",
+        "phone": "+44 20 8947 7987",
+        "website": "http://www.sindbads.co.uk/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2332248,
+          51.4120062
+        ]
+      },
+      "id": "node/6582894685"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6597353801",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0173157,
+          51.5102037
+        ]
+      },
+      "id": "node/6597353801"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6603369941",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0245737,
+          51.5016699
+        ]
+      },
+      "id": "node/6603369941"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6784120225",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.049769,
+          51.6152128
+        ]
+      },
+      "id": "node/6784120225"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6802562302",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2768553,
+          51.4660589
+        ]
+      },
+      "id": "node/6802562302"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6834471512",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0206722,
+          51.51107
+        ]
+      },
+      "id": "node/6834471512"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7120377647",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3987058,
+          51.5583708
+        ]
+      },
+      "id": "node/7120377647"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7133584273",
+        "addr:street": "New Barn Road",
+        "leisure": "garden",
+        "name": "Footpath Nursery",
+        "survey:date": "2020-01-15"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1833253,
+          51.4043483
+        ]
+      },
+      "id": "node/7133584273"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7257343594",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2109285,
+          51.5241175
+        ]
+      },
+      "id": "node/7257343594"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7295269083",
+        "leisure": "playground",
+        "name": "Poplar Community Scooter Park"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2011415,
+          51.4023398
+        ]
+      },
+      "id": "node/7295269083"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7367260034",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2768041,
+          51.4801042
+        ]
+      },
+      "id": "node/7367260034"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7368656958",
+        "leisure": "playground",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0271735,
+          51.6007315
+        ]
+      },
+      "id": "node/7368656958"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7368736439",
+        "leisure": "playground",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0291207,
+          51.6019261
+        ]
+      },
+      "id": "node/7368736439"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7370227699",
+        "leisure": "dog_park",
+        "name": "Newby Place Dog Park",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0122121,
+          51.5089891
+        ]
+      },
+      "id": "node/7370227699"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7379902913",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3283822,
+          51.5936964
+        ]
+      },
+      "id": "node/7379902913"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7448073659",
+        "access": "yes",
+        "fee": "no",
+        "leisure": "garden",
+        "operator": "Elmbridge Borough Council"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4266415,
+          51.385761
+        ]
+      },
+      "id": "node/7448073659"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7552636680",
+        "description": "Mabley Edible Garden planted 2016 maintained by volunteers. For contact details visit the Facebook page.\n",
+        "leisure": "garden",
+        "name": "Mabley Edible Garden",
+        "opening_hours": "24/7"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0322818,
+          51.5498054
+        ]
+      },
+      "id": "node/7552636680"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7558971697",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.333366,
+          51.6018046
+        ]
+      },
+      "id": "node/7558971697"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7644036590",
+        "leisure": "nature_reserve",
+        "name": "Croydon Ecology Centre",
+        "website": "https://croydon-ecology.org.uk/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0564835,
+          51.3563112
+        ]
+      },
+      "id": "node/7644036590"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7644040345",
+        "leisure": "garden",
+        "name": "Walled Formal Garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0560355,
+          51.3560432
+        ]
+      },
+      "id": "node/7644040345"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7653807998",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.217613,
+          51.3875439
+        ]
+      },
+      "id": "node/7653807998"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7699335839",
+        "access": "yes",
+        "fee": "no",
+        "garden:type": "botanical",
+        "layer": "1",
+        "leisure": "garden",
+        "level": "1",
+        "name": "Brown Hart Gardens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1513347,
+          51.5131688
+        ]
+      },
+      "id": "node/7699335839"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7741984418",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3235348,
+          51.5874148
+        ]
+      },
+      "id": "node/7741984418"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7799521353",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1541422,
+          51.5527116
+        ]
+      },
+      "id": "node/7799521353"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7810378599",
+        "fixme": "Need to map reserve area.",
+        "leisure": "nature_reserve",
+        "name": "Hogsmill STW Nature Reserve",
+        "operator": "Thames Water"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2832211,
+          51.3994251
+        ]
+      },
+      "id": "node/7810378599"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7822741997",
+        "leisure": "playground",
+        "name": "Splash Zone"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2903464,
+          51.4887953
+        ]
+      },
+      "id": "node/7822741997"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7835855591",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1329792,
+          51.51094
+        ]
+      },
+      "id": "node/7835855591"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7841628523",
+        "leisure": "playground",
+        "name": "Russell Nursery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1625124,
+          51.5524613
+        ]
+      },
+      "id": "node/7841628523"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7844629314",
+        "access": "yes",
+        "leisure": "playground",
+        "max_age": "16",
+        "min_age": "3",
+        "name": "The Monkhams Play Area",
+        "operator": "The Monkhams",
+        "playground:theme": "playground",
+        "surface": "unpaved"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0450469,
+          51.6180394
+        ]
+      },
+      "id": "node/7844629314"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7857851261",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2044179,
+          51.5171252
+        ]
+      },
+      "id": "node/7857851261"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7880918270",
+        "leisure": "nature_reserve",
+        "name": "Bug Hotel",
+        "operator": "Cody Dock"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0009216,
+          51.5210896
+        ]
+      },
+      "id": "node/7880918270"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7911128502",
+        "addr:city": "London",
+        "addr:housenumber": "7",
+        "addr:postcode": "SW6 2PY",
+        "addr:street": "Townmead Road",
+        "alt_name": "Gambado Chelsea",
+        "contact:phone": "+44 20 7384 1635",
+        "contact:website": "https://www.gambado.com/locations/chelsea",
+        "leisure": "playground",
+        "name": "Gambado"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1835258,
+          51.474187
+        ]
+      },
+      "id": "node/7911128502"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8080669417",
+        "garden:type": "community",
+        "leisure": "garden",
+        "name": "Core Landscapes",
+        "survey:date": "2020-11-04",
+        "website": "https://www.corearts.co.uk/core-landscapes/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.043493,
+          51.5488085
+        ]
+      },
+      "id": "node/8080669417"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786775",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.083679,
+          51.6206194
+        ]
+      },
+      "id": "node/8171786775"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786776",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.083649,
+          51.6206204
+        ]
+      },
+      "id": "node/8171786776"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786777",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0836182,
+          51.620627
+        ]
+      },
+      "id": "node/8171786777"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786778",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0835884,
+          51.620634
+        ]
+      },
+      "id": "node/8171786778"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786779",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0835568,
+          51.6206406
+        ]
+      },
+      "id": "node/8171786779"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786780",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0837143,
+          51.6206204
+        ]
+      },
+      "id": "node/8171786780"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786781",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.083748,
+          51.6206269
+        ]
+      },
+      "id": "node/8171786781"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786782",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0837844,
+          51.6206349
+        ]
+      },
+      "id": "node/8171786782"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786783",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0836399,
+          51.6207126
+        ]
+      },
+      "id": "node/8171786783"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786784",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0836609,
+          51.6207129
+        ]
+      },
+      "id": "node/8171786784"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786785",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0836834,
+          51.6207129
+        ]
+      },
+      "id": "node/8171786785"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786786",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0835092,
+          51.6206626
+        ]
+      },
+      "id": "node/8171786786"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786787",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0835112,
+          51.6206785
+        ]
+      },
+      "id": "node/8171786787"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786788",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0835156,
+          51.620738
+        ]
+      },
+      "id": "node/8171786788"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786789",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.083539,
+          51.6207381
+        ]
+      },
+      "id": "node/8171786789"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786790",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0835553,
+          51.6207374
+        ]
+      },
+      "id": "node/8171786790"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786791",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0835729,
+          51.6207267
+        ]
+      },
+      "id": "node/8171786791"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786792",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0835846,
+          51.6207159
+        ]
+      },
+      "id": "node/8171786792"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786793",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0835727,
+          51.6207173
+        ]
+      },
+      "id": "node/8171786793"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786794",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0835136,
+          51.6206943
+        ]
+      },
+      "id": "node/8171786794"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786795",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0835727,
+          51.620735
+        ]
+      },
+      "id": "node/8171786795"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786796",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0835147,
+          51.6207248
+        ]
+      },
+      "id": "node/8171786796"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786797",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0835141,
+          51.6207088
+        ]
+      },
+      "id": "node/8171786797"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786798",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0838233,
+          51.6206846
+        ]
+      },
+      "id": "node/8171786798"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786799",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0838152,
+          51.6206978
+        ]
+      },
+      "id": "node/8171786799"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786800",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0838106,
+          51.6207088
+        ]
+      },
+      "id": "node/8171786800"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786801",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0838067,
+          51.6207227
+        ]
+      },
+      "id": "node/8171786801"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786802",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0838276,
+          51.6206689
+        ]
+      },
+      "id": "node/8171786802"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786803",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0838285,
+          51.6207363
+        ]
+      },
+      "id": "node/8171786803"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786804",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0838308,
+          51.6207225
+        ]
+      },
+      "id": "node/8171786804"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786805",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0838398,
+          51.6207055
+        ]
+      },
+      "id": "node/8171786805"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786806",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0838437,
+          51.6206934
+        ]
+      },
+      "id": "node/8171786806"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786807",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0838462,
+          51.6206664
+        ]
+      },
+      "id": "node/8171786807"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786808",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0838462,
+          51.6206832
+        ]
+      },
+      "id": "node/8171786808"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786809",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0834487,
+          51.6207393
+        ]
+      },
+      "id": "node/8171786809"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786810",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0834603,
+          51.6207373
+        ]
+      },
+      "id": "node/8171786810"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8171786811",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0834704,
+          51.6207446
+        ]
+      },
+      "id": "node/8171786811"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8173011378",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0832251,
+          51.6207056
+        ]
+      },
+      "id": "node/8173011378"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8173011379",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0831866,
+          51.6207113
+        ]
+      },
+      "id": "node/8173011379"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8173011380",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0831422,
+          51.6207176
+        ]
+      },
+      "id": "node/8173011380"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8173011381",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0831259,
+          51.6207335
+        ]
+      },
+      "id": "node/8173011381"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8173011382",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.083147,
+          51.6207545
+        ]
+      },
+      "id": "node/8173011382"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8173011383",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0830964,
+          51.6207542
+        ]
+      },
+      "id": "node/8173011383"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8173011384",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0830849,
+          51.6207821
+        ]
+      },
+      "id": "node/8173011384"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8173011385",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0830863,
+          51.6208143
+        ]
+      },
+      "id": "node/8173011385"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8173011386",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0839701,
+          51.6207641
+        ]
+      },
+      "id": "node/8173011386"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8173011387",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0839513,
+          51.6207488
+        ]
+      },
+      "id": "node/8173011387"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8173011388",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0839321,
+          51.6207333
+        ]
+      },
+      "id": "node/8173011388"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8173011389",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0839112,
+          51.6207165
+        ]
+      },
+      "id": "node/8173011389"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8173011390",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0840544,
+          51.6208217
+        ]
+      },
+      "id": "node/8173011390"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8173011391",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0839998,
+          51.6208453
+        ]
+      },
+      "id": "node/8173011391"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8173011392",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0840169,
+          51.6208296
+        ]
+      },
+      "id": "node/8173011392"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8173011393",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0840398,
+          51.6208355
+        ]
+      },
+      "id": "node/8173011393"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8173011394",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0841836,
+          51.6208783
+        ]
+      },
+      "id": "node/8173011394"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8173011395",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.084142,
+          51.6208651
+        ]
+      },
+      "id": "node/8173011395"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8173011396",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0841641,
+          51.6208739
+        ]
+      },
+      "id": "node/8173011396"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8222245571",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0083561,
+          51.4304705
+        ]
+      },
+      "id": "node/8222245571"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8266885112",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0976241,
+          51.589523
+        ]
+      },
+      "id": "node/8266885112"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8281259311",
+        "leisure": "nature_reserve",
+        "name": "Bywood Avenue Bird Sanctury"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.051867,
+          51.3900082
+        ]
+      },
+      "id": "node/8281259311"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8331899225",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1221491,
+          51.4367573
+        ]
+      },
+      "id": "node/8331899225"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8483931387",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1096488,
+          51.5015588
+        ]
+      },
+      "id": "node/8483931387"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8509966450",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3593731,
+          51.4049777
+        ]
+      },
+      "id": "node/8509966450"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8510228259",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.364067,
+          51.4057515
+        ]
+      },
+      "id": "node/8510228259"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8553393302",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.00662,
+          51.5289904
+        ]
+      },
+      "id": "node/8553393302"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8627065857",
+        "access": "private",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3086969,
+          51.4979912
+        ]
+      },
+      "id": "node/8627065857"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8629107745",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.182713,
+          51.4318079
+        ]
+      },
+      "id": "node/8629107745"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8629667751",
+        "access": "customers",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3121961,
+          51.4972377
+        ]
+      },
+      "id": "node/8629667751"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8640312515",
+        "leisure": "playground",
+        "name": "Naseberry Court Play Area"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0038236,
+          51.6109469
+        ]
+      },
+      "id": "node/8640312515"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8657281650",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2181454,
+          51.4487467
+        ]
+      },
+      "id": "node/8657281650"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8693812115",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0270791,
+          51.6090122
+        ]
+      },
+      "id": "node/8693812115"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8693867438",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0288392,
+          51.6078506
+        ]
+      },
+      "id": "node/8693867438"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8718621587",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.187605,
+          51.4345686
+        ]
+      },
+      "id": "node/8718621587"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8718621593",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1873736,
+          51.4348427
+        ]
+      },
+      "id": "node/8718621593"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8747137887",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1942163,
+          51.5514473
+        ]
+      },
+      "id": "node/8747137887"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8833972846",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2524557,
+          51.5010101
+        ]
+      },
+      "id": "node/8833972846"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8869785683",
+        "contact:facebook": "https://www.facebook.com/tootingcommunitygarden/",
+        "leisure": "garden",
+        "name": "Tooting Community Garden",
+        "operator": "Transition Town Tooting"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1418361,
+          51.4299614
+        ]
+      },
+      "id": "node/8869785683"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8883436077",
+        "access": "private",
+        "leisure": "playground",
+        "name": "Small Playground",
+        "operator": "Wellington Mills Estate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1108525,
+          51.4977434
+        ]
+      },
+      "id": "node/8883436077"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8883436078",
+        "access": "private",
+        "leisure": "playground",
+        "name": "Big Playground",
+        "operator": "Wellington Mills Estate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1117279,
+          51.4977065
+        ]
+      },
+      "id": "node/8883436078"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8954753262",
+        "addr:city": "Sidcup",
+        "addr:postcode": "DA15 9BN",
+        "addr:street": "Burnt Oak Lane",
+        "leisure": "park",
+        "name": "Burnt Oak Lane Open Space"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1092937,
+          51.4424214
+        ]
+      },
+      "id": "node/8954753262"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8979004400",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0076285,
+          51.5307161
+        ]
+      },
+      "id": "node/8979004400"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8999414959",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3795617,
+          51.4646549
+        ]
+      },
+      "id": "node/8999414959"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9018024597",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0812119,
+          51.4311285
+        ]
+      },
+      "id": "node/9018024597"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9032789682",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0067844,
+          51.6086128
+        ]
+      },
+      "id": "node/9032789682"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9042067141",
+        "access": "private",
+        "leisure": "playground",
+        "name": "Teletubby Land"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.010823,
+          51.4935138
+        ]
+      },
+      "id": "node/9042067141"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9160395514",
+        "access": "private",
+        "leisure": "playground",
+        "note": "same level as private gardens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0965832,
+          51.5194134
+        ]
+      },
+      "id": "node/9160395514"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9166265095",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.022689,
+          51.5367834
+        ]
+      },
+      "id": "node/9166265095"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9173826866",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2183961,
+          51.4944725
+        ]
+      },
+      "id": "node/9173826866"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9204665733",
+        "leisure": "playground",
+        "name": "Point pocket Park play area"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2154458,
+          51.4673294
+        ]
+      },
+      "id": "node/9204665733"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9278891507",
+        "garden:type": "community",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1049738,
+          51.4632089
+        ]
+      },
+      "id": "node/9278891507"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9284551895",
+        "garden:type": "community",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1003263,
+          51.4605395
+        ]
+      },
+      "id": "node/9284551895"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9284595775",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2212301,
+          51.3768529
+        ]
+      },
+      "id": "node/9284595775"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9349142948",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3337006,
+          51.4089058
+        ]
+      },
+      "id": "node/9349142948"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9423469062",
+        "leisure": "playground",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0284371,
+          51.6015604
+        ]
+      },
+      "id": "node/9423469062"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9428563165",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2279441,
+          51.5456635
+        ]
+      },
+      "id": "node/9428563165"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9428982965",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0837979,
+          51.6207499
+        ]
+      },
+      "id": "node/9428982965"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9442802885",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0012012,
+          51.5895919
+        ]
+      },
+      "id": "node/9442802885"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9483899391",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1072119,
+          51.4571322
+        ]
+      },
+      "id": "node/9483899391"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9494983769",
+        "access": "private",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1692296,
+          51.5332473
+        ]
+      },
+      "id": "node/9494983769"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9524822925",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0739563,
+          51.5124709
+        ]
+      },
+      "id": "node/9524822925"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9589516727",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4238078,
+          51.3832023
+        ]
+      },
+      "id": "node/9589516727"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9590833015",
+        "access": "private",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.002595,
+          51.5465808
+        ]
+      },
+      "id": "node/9590833015"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9590833016",
+        "access": "private",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0027441,
+          51.5467401
+        ]
+      },
+      "id": "node/9590833016"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9590918417",
+        "access": "private",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0030432,
+          51.5469762
+        ]
+      },
+      "id": "node/9590918417"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9657329033",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0689076,
+          51.5878066
+        ]
+      },
+      "id": "node/9657329033"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9675696166",
+        "access": "private",
+        "garden:type": "residential",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.104271,
+          51.5826667
+        ]
+      },
+      "id": "node/9675696166"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9687834484",
+        "garden:type": "community",
+        "leisure": "garden",
+        "name": "OmVed Gardens",
+        "website": "https://omvedgardens.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1465887,
+          51.5717699
+        ]
+      },
+      "id": "node/9687834484"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9893329788",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0007938,
+          51.5821796
+        ]
+      },
+      "id": "node/9893329788"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9906218770",
+        "access": "customers",
+        "leisure": "playground",
+        "name": "Jumping Pillow"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.397891,
+          51.4567262
+        ]
+      },
+      "id": "node/9906218770"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9906218771",
+        "access": "customers",
+        "leisure": "playground",
+        "name": "Mining Village"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.397321,
+          51.4567103
+        ]
+      },
+      "id": "node/9906218771"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9906218772",
+        "access": "customers",
+        "leisure": "playground",
+        "name": "Jumping Pillow"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3968077,
+          51.4566581
+        ]
+      },
+      "id": "node/9906218772"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9913358561",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0152068,
+          51.3781117
+        ]
+      },
+      "id": "node/9913358561"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9955140840",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0401579,
+          51.5164315
+        ]
+      },
+      "id": "node/9955140840"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9993520811",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1973864,
+          51.5555324
+        ]
+      },
+      "id": "node/9993520811"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10004015033",
+        "leisure": "parklet",
+        "outdoor_seating": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3201753,
+          51.5109096
+        ]
+      },
+      "id": "node/10004015033"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10004015034",
+        "leisure": "parklet",
+        "outdoor_seating": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3235135,
+          51.5099389
+        ]
+      },
+      "id": "node/10004015034"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10012367400",
+        "access": "customers",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0560232,
+          51.5185532
+        ]
+      },
+      "id": "node/10012367400"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10143163717",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0598353,
+          51.5291779
+        ]
+      },
+      "id": "node/10143163717"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10186721888",
+        "access": "private",
+        "leisure": "playground",
+        "playground:theme": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0153031,
+          51.4923865
+        ]
+      },
+      "id": "node/10186721888"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10202584230",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2866527,
+          51.4999749
+        ]
+      },
+      "id": "node/10202584230"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10237729160",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0111846,
+          51.522386
+        ]
+      },
+      "id": "node/10237729160"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10245526400",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0082488,
+          51.5185266
+        ]
+      },
+      "id": "node/10245526400"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10264287285",
+        "garden:type": "community",
+        "leisure": "garden",
+        "name": "Forest of Thanks",
+        "operator": "Borough of Barking and Dagenham",
+        "operator:type": "community"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.126934,
+          51.5463476
+        ]
+      },
+      "id": "node/10264287285"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10268709240",
+        "addr:city": "London",
+        "addr:housenumber": "281",
+        "addr:postcode": "E6 1LB",
+        "addr:street": "Barking Road",
+        "brand": "Flip Out",
+        "brand:wikidata": "Q87271194",
+        "fhrs:id": "982296",
+        "leisure": "trampoline_park",
+        "name": "Flip Out",
+        "website": "https://www.flipout.co.uk/locations/london-e6"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.050872,
+          51.5326252
+        ]
+      },
+      "id": "node/10268709240"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10276031371",
+        "barrier": "fence",
+        "garden:type": "residential",
+        "leisure": "garden",
+        "natural": "tree"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1468117,
+          51.483017
+        ]
+      },
+      "id": "node/10276031371"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10294904195",
+        "check_date": "2025-02-18",
+        "leisure": "playground",
+        "level": "1",
+        "name": "Disney Playworld"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0087279,
+          51.5437929
+        ]
+      },
+      "id": "node/10294904195"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10597022957",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2391337,
+          51.5500792
+        ]
+      },
+      "id": "node/10597022957"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10604066000",
+        "check_date": "2023-08-26",
+        "indoor_play": "soft_play",
+        "leisure": "playground",
+        "level": "0",
+        "max_age": "8",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0195508,
+          51.4324298
+        ]
+      },
+      "id": "node/10604066000"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10648071303",
+        "access": "permissive",
+        "leisure": "playground",
+        "name": "Children's Play Area",
+        "operator": "St Andrew's Church",
+        "playground:theme": "playground",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3621586,
+          51.3315624
+        ]
+      },
+      "id": "node/10648071303"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10657262331",
+        "access": "yes",
+        "leisure": "playground",
+        "name": "Clarendon Play Area",
+        "opening_hours": "Mo-Su 09:00-18:00",
+        "operator": "POD Management",
+        "surface": "woodchips"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1119362,
+          51.5920585
+        ]
+      },
+      "id": "node/10657262331"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10699812947",
+        "informal": "yes",
+        "leisure": "playground",
+        "note": "Lines from trees to swing on"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0942652,
+          51.4096921
+        ]
+      },
+      "id": "node/10699812947"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10708191659",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0911632,
+          51.4838022
+        ]
+      },
+      "id": "node/10708191659"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10708191660",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0910494,
+          51.4836144
+        ]
+      },
+      "id": "node/10708191660"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10754526297",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1164749,
+          51.5480428
+        ]
+      },
+      "id": "node/10754526297"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10811534843",
+        "access": "private",
+        "garden:type": "residential",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1155763,
+          51.4865123
+        ]
+      },
+      "id": "node/10811534843"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10811534845",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1371729,
+          51.4812704
+        ]
+      },
+      "id": "node/10811534845"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10811534846",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1361212,
+          51.4813688
+        ]
+      },
+      "id": "node/10811534846"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10864715697",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0700134,
+          51.5533787
+        ]
+      },
+      "id": "node/10864715697"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11083977221",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1721619,
+          51.5026985
+        ]
+      },
+      "id": "node/11083977221"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11164736553",
+        "access": "yes",
+        "leisure": "playground",
+        "name": "Stamford Road Park",
+        "playground:theme": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0655496,
+          51.583276
+        ]
+      },
+      "id": "node/11164736553"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11185865586",
+        "indoor": "yes",
+        "leisure": "playground",
+        "name": "Flip Out Hounslow"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3618844,
+          51.4694424
+        ]
+      },
+      "id": "node/11185865586"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11197989447",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2270275,
+          51.4613237
+        ]
+      },
+      "id": "node/11197989447"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11364175479",
+        "addr:street": "Mill Road",
+        "leisure": "trampoline_park",
+        "name": "Jump In"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3765096,
+          51.3812831
+        ]
+      },
+      "id": "node/11364175479"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11373778050",
+        "leisure": "nature_reserve",
+        "name": "Anthill Yellow Meadow Ants"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1321379,
+          51.5836775
+        ]
+      },
+      "id": "node/11373778050"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11382861063",
+        "leisure": "garden",
+        "name": "Rose Garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0551567,
+          51.3569093
+        ]
+      },
+      "id": "node/11382861063"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11399050249",
+        "leisure": "park",
+        "operator": "FirstPort",
+        "operator:type": "private"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4177856,
+          51.5016853
+        ]
+      },
+      "id": "node/11399050249"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11434865675",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3901359,
+          51.506262
+        ]
+      },
+      "id": "node/11434865675"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11495736614",
+        "leisure": "playground",
+        "playground": "spinner_bowl"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0763656,
+          51.587474
+        ]
+      },
+      "id": "node/11495736614"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11544241894",
+        "access": "permit",
+        "garden:type": "community",
+        "leisure": "garden",
+        "name": "West Wickham Allotments"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0056615,
+          51.3752941
+        ]
+      },
+      "id": "node/11544241894"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11753048107",
+        "leisure": "park",
+        "name": "Laburnum Close Green"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0563023,
+          51.475998
+        ]
+      },
+      "id": "node/11753048107"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11767431361",
+        "leisure": "dog_park",
+        "name": "Bushey Dog Walking Park"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3728739,
+          51.6492889
+        ]
+      },
+      "id": "node/11767431361"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11772130104",
+        "access": "customers",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0475281,
+          51.5041443
+        ]
+      },
+      "id": "node/11772130104"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11777761258",
+        "leisure": "dog_park",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0406525,
+          51.4135106
+        ]
+      },
+      "id": "node/11777761258"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12003386842",
+        "access": "residents",
+        "indoor": "no",
+        "leisure": "playground",
+        "operator": "Homes For Haringey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1075088,
+          51.5789424
+        ]
+      },
+      "id": "node/12003386842"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12057037917",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1404914,
+          51.5515702
+        ]
+      },
+      "id": "node/12057037917"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12068878622",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0777747,
+          51.5332339
+        ]
+      },
+      "id": "node/12068878622"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12070432704",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2901587,
+          51.536129
+        ]
+      },
+      "id": "node/12070432704"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12151828181",
+        "addr:postcode": "WD18 7LG",
+        "addr:street": "Central Ave, Watford",
+        "leisure": "park",
+        "name": "Cassiobury Park",
+        "opening_hours": "24/7",
+        "operator": "Watford borough council",
+        "phone": "01923226400",
+        "website": "https://www.watford.gov.uk/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.41949,
+          51.6605965
+        ]
+      },
+      "id": "node/12151828181"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12156767568",
+        "garden:type": "community",
+        "leisure": "garden",
+        "name": "Onion Garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1370762,
+          51.4979232
+        ]
+      },
+      "id": "node/12156767568"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12222363919",
+        "access": "customers",
+        "email": "wendy@aweandwonder.co.uk",
+        "fee": "yes",
+        "leisure": "playground",
+        "name": "In Awe & Wonder"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.178678,
+          51.4057432
+        ]
+      },
+      "id": "node/12222363919"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12239827558",
+        "leisure": "water_park",
+        "name": "Splash Park Barking",
+        "website": "https://splashparkbarking.co.uk/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0876515,
+          51.5466773
+        ]
+      },
+      "id": "node/12239827558"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12245045552",
+        "access": "customers",
+        "email": "swanleypark@swanleytowncouncil.gov.uk",
+        "fee": "yes",
+        "indoor": "yes",
+        "leisure": "playground",
+        "name": "The Barnyard Soft Play",
+        "operator": "Swanley Town Council",
+        "phone": "+44 1322 668415",
+        "website": "https://swanleypark.co.uk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1772665,
+          51.4056604
+        ]
+      },
+      "id": "node/12245045552"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12327083988",
+        "access": "private",
+        "garden:type": "residential",
+        "leisure": "garden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2711003,
+          51.3490388
+        ]
+      },
+      "id": "node/12327083988"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12426008191",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0248579,
+          51.5011128
+        ]
+      },
+      "id": "node/12426008191"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12471453540",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0065857,
+          51.5161805
+        ]
+      },
+      "id": "node/12471453540"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12509518058",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0108683,
+          51.5112283
+        ]
+      },
+      "id": "node/12509518058"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12578990953",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0247586,
+          51.5007156
+        ]
+      },
+      "id": "node/12578990953"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12596712330",
+        "leisure": "playground",
+        "level": "-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0081527,
+          51.5438799
+        ]
+      },
+      "id": "node/12596712330"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12651935357",
+        "description": "Large area surrounded with fence and gates, open to anyone, used by locals for dog walking.",
+        "leisure": "dog_park",
+        "note": "not officially signed, but used enough to warrant tagging (see Note 3736632)."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1077223,
+          51.4962521
+        ]
+      },
+      "id": "node/12651935357"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12666623047",
+        "leisure": "playground",
+        "max_age": "8",
+        "min_age": "2",
+        "name": "Oscar's Playground",
+        "operator": "Deen City Farm",
+        "surface": "artificial_turf"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1852061,
+          51.4082965
+        ]
+      },
+      "id": "node/12666623047"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12670399272",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0999778,
+          51.6140029
+        ]
+      },
+      "id": "node/12670399272"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12686983560",
+        "access": "permissive",
+        "addr:city": "London",
+        "addr:housename": "Cultivate London @Berrymede Community Gardens",
+        "addr:housenumber": "232",
+        "addr:postcode": "W3 8SN",
+        "addr:street": "Osborne Road",
+        "description": "The beds are located in the playgrounds of the 3 buildings of the Acton Gardens Primary school (formerly Berrymede), the drop-in sessions are outside lessons times: Saturdays 11:30 – 14:30 and Tuesdays 4-6pm (only from April until October).",
+        "door": "gate",
+        "entrance": "community_garden_entrance",
+        "fee": "no",
+        "garden:type": "community",
+        "leisure": "garden",
+        "name": "Cultivate London @Berrymede Community Gardens",
+        "operator": "Cultivate London",
+        "operator:type": "charitable",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2740903,
+          51.5023428
+        ]
+      },
+      "id": "node/12686983560"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12687082730",
+        "access": "permissive",
+        "addr:city": "London",
+        "addr:country": "GB",
+        "addr:housenumber": "689a",
+        "addr:postcode": "TW7 4ES",
+        "addr:street": "London Road",
+        "check_date": "2025-03-21",
+        "description": "Every Wednesday 10 – 4 pm. Drop in, meet some new people. We have strong cohort of regulars and new people joining all the time – no experience necessary, just a can-do attitude!",
+        "fee": "no",
+        "garden:type": "community",
+        "leisure": "garden",
+        "name": "Cultivate London @The Salopian Garden",
+        "operator": "Cultivate London",
+        "operator:type": "charitable",
+        "phone": "+44 208 992 4941"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.348242,
+          51.4721294
+        ]
+      },
+      "id": "node/12687082730"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12687089050",
+        "access": "permissive",
+        "addr:city": "London",
+        "addr:country": "GB",
+        "addr:housename": "Cultivate London @DIG Hanwell",
+        "addr:housenumber": "62",
+        "addr:postcode": "W7 2PB",
+        "addr:street": "Green Ln",
+        "check_date": "2025-03-21",
+        "description": "(Every Monday 10 – 3 pm) Visit us and help Cultivate London build this beautiful green space into a thriving community resource. No experience is necessary, just a willingness to help and you might learn something along the way.",
+        "fee": "no",
+        "garden:type": "community",
+        "leisure": "garden",
+        "name": "Cultivate London @DIG Hanwell",
+        "operator": "Cultivate London",
+        "operator:type": "charitable",
+        "phone": "+44 208 992 4941"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3427219,
+          51.5056246
+        ]
+      },
+      "id": "node/12687089050"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12691168952",
+        "access": "private",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1108496,
+          51.5010671
+        ]
+      },
+      "id": "node/12691168952"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12696333106",
+        "addr:housenumber": "2",
+        "addr:street": "Wicks Place",
+        "description": "Small, well maintained park for young kids. Ideal for 1-5yrs",
+        "leisure": "playground",
+        "name": "Pocket Playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1030198,
+          51.53824
+        ]
+      },
+      "id": "node/12696333106"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12752527367",
+        "access": "yes",
+        "leisure": "playground",
+        "operator": "Haringey Council",
+        "operator:type": "council",
+        "playground": "spinning_disc"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1118106,
+          51.5788567
+        ]
+      },
+      "id": "node/12752527367"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12757239727",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1204143,
+          51.5244174
+        ]
+      },
+      "id": "node/12757239727"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12782018394",
+        "leisure": "playground",
+        "name": "Handyside Gardens Play Area",
+        "phone": "+442076645720"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1229266,
+          51.5367317
+        ]
+      },
+      "id": "node/12782018394"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12812995201",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1775046,
+          51.4661819
+        ]
+      },
+      "id": "node/12812995201"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12823469015",
+        "access": "private",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.214671,
+          51.5421843
+        ]
+      },
+      "id": "node/12823469015"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12905549007",
+        "access": "private",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2050706,
+          51.5120678
+        ]
+      },
+      "id": "node/12905549007"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12909651130",
+        "access": "private",
+        "leisure": "playground",
+        "surface": "grass"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2067192,
+          51.511437
+        ]
+      },
+      "id": "node/12909651130"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12946733633",
+        "access": "yes",
+        "leisure": "playground",
+        "surface": "grass"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1089202,
+          51.4070279
+        ]
+      },
+      "id": "node/12946733633"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12960181081",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0570087,
+          51.5184428
+        ]
+      },
+      "id": "node/12960181081"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12996087601",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.021079,
+          51.478463
+        ]
+      },
+      "id": "node/12996087601"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13014398330",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1028391,
+          51.4953891
+        ]
+      },
+      "id": "node/13014398330"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13037290707",
+        "access": "private",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1937782,
+          51.5254402
+        ]
+      },
+      "id": "node/13037290707"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13046536122",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1751327,
+          51.4396578
+        ]
+      },
+      "id": "node/13046536122"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13058623095",
+        "leisure": "playground",
+        "operator": "London Borough of Camden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1646547,
+          51.5436984
+        ]
+      },
+      "id": "node/13058623095"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13063332118",
+        "fixme": "needs re-surveying",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0916204,
+          51.4114672
+        ]
+      },
+      "id": "node/13063332118"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13069112480",
+        "access": "yes",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1687878,
+          51.4244734
+        ]
+      },
+      "id": "node/13069112480"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13069852290",
+        "access": "private",
+        "leisure": "playground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0622531,
+          51.5490666
+        ]
+      },
+      "id": "node/13069852290"
+    }
+  ]
+}

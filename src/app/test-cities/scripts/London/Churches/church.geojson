@@ -1,0 +1,7555 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2025-08-14T20:43:23Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10806290",
+        "amenity": "place_of_worship",
+        "created_by": "JOSM",
+        "denomination": "evangelical",
+        "name": "Stanley Park Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1616453,
+          51.3509907
+        ]
+      },
+      "id": "node/10806290"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/26422090",
+        "addr:city": "Banstead",
+        "addr:street": "Woodmansterne Lane",
+        "amenity": "place_of_worship",
+        "denomination": "united_reformed",
+        "fhrs:authority": "Reigate and Banstead",
+        "fhrs:id": "30908",
+        "name": "Banstead United Reformed Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.193685,
+          51.3247289
+        ]
+      },
+      "id": "node/26422090"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/26769263",
+        "amenity": "place_of_worship",
+        "denomination": "catholic",
+        "name": "St. Gregory's",
+        "religion": "christian",
+        "source:name": "local knowledge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1911938,
+          51.4440021
+        ]
+      },
+      "id": "node/26769263"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/26992680",
+        "amenity": "place_of_worship",
+        "name": "Malham Christian Centre",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.044571,
+          51.4428978
+        ]
+      },
+      "id": "node/26992680"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/27000982",
+        "addr:city": "London",
+        "addr:postcode": "SE4 1EA",
+        "addr:street": "Huxbear Street",
+        "addr:suburb": "Crofton Park",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "fhrs:id": "516372",
+        "name": "Crofton Park Baptist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0313739,
+          51.4549262
+        ]
+      },
+      "id": "node/27000982"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/31098616",
+        "amenity": "place_of_worship",
+        "created_by": "JOSM",
+        "name": "Romford United Reformed Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.187751,
+          51.5784179
+        ]
+      },
+      "id": "node/31098616"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/31098617",
+        "amenity": "place_of_worship",
+        "check_date": "2025-05-25",
+        "denomination": "baptist",
+        "name": "Romford Baptist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1858882,
+          51.5807925
+        ]
+      },
+      "id": "node/31098617"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/31437647",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "name": "The South Harrow Baptist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3556345,
+          51.5639452
+        ]
+      },
+      "id": "node/31437647"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/33132338",
+        "amenity": "place_of_worship",
+        "name": "St Paul's Centre",
+        "religion": "christian",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0881233,
+          51.6531063
+        ]
+      },
+      "id": "node/33132338"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/33170703",
+        "amenity": "place_of_worship",
+        "denomination": "united_reformed",
+        "name": "St Andrew's United Reformed Church",
+        "religion": "christian",
+        "wikidata": "Q26538575"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2098204,
+          51.3469013
+        ]
+      },
+      "id": "node/33170703"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/33228429",
+        "amenity": "place_of_worship",
+        "created_by": "JOSM",
+        "name": "St John's Mar Thoma Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3826598,
+          51.4665639
+        ]
+      },
+      "id": "node/33228429"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/36216889",
+        "amenity": "place_of_worship",
+        "denomination": "methodist",
+        "name": "South Harrow Methodist Church",
+        "phone": "+44 20 8423 5463",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.372558,
+          51.5610986
+        ]
+      },
+      "id": "node/36216889"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/45282306",
+        "amenity": "place_of_worship",
+        "created_by": "xybot",
+        "denomination": "methodist",
+        "name": "Harold Wood Methodist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2320711,
+          51.594555
+        ]
+      },
+      "id": "node/45282306"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/50453588",
+        "addr:city": "Twickenham",
+        "addr:postcode": "TW2 6JL",
+        "addr:street": "Percy Road",
+        "amenity": "place_of_worship",
+        "fhrs:id": "557842",
+        "name": "Whitton Methodist Church",
+        "religion": "christian",
+        "source:addr": "FHRS Open Data",
+        "wikidata": "Q17053504",
+        "wikipedia": "en:Whitton Methodist Church"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3618948,
+          51.4448806
+        ]
+      },
+      "id": "node/50453588"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/60264263",
+        "amenity": "place_of_worship",
+        "created_by": "Potlatch 0.10b",
+        "denomination": "catholic",
+        "name": "St. Margaret's Catholic Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1627405,
+          51.3530509
+        ]
+      },
+      "id": "node/60264263"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/60471895",
+        "amenity": "place_of_worship",
+        "denomination": "catholic",
+        "name": "Saint Dominics Roman Catholic Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2091264,
+          51.6041823
+        ]
+      },
+      "id": "node/60471895"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/62055863",
+        "amenity": "place_of_worship",
+        "name": "Heston United Reformed Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.38113,
+          51.4828129
+        ]
+      },
+      "id": "node/62055863"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/66816178",
+        "addr:city": "London",
+        "addr:housenumber": "25",
+        "addr:postcode": "EN1 1DJ",
+        "addr:street": "Main Avenue",
+        "amenity": "place_of_worship",
+        "denomination": "united_reformed",
+        "name": "Bush Hill Park URC",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.067622,
+          51.6448705
+        ]
+      },
+      "id": "node/66816178"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/83736897",
+        "addr:city": "South Croydon",
+        "addr:postcode": "CR2 7HH",
+        "addr:street": "Croham Park Avenue",
+        "amenity": "place_of_worship",
+        "denomination": "united_reformed",
+        "name": "St. Paul's United Reformed Church",
+        "religion": "christian",
+        "wikidata": "Q26351537",
+        "wikimedia_commons": "File:St Paul's United Reformed Church, Croham Road, South Croydon (NHLE Code 1079326) (April 2011) (1).jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0836152,
+          51.3603803
+        ]
+      },
+      "id": "node/83736897"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/150569961",
+        "amenity": "place_of_worship",
+        "denomination": "united_reformed",
+        "name": "Lancaster Rd United Reformed Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0822127,
+          51.6641282
+        ]
+      },
+      "id": "node/150569961"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/150569986",
+        "amenity": "place_of_worship",
+        "denomination": "community_of_christ",
+        "name": "Community of Christ Church",
+        "religion": "christian",
+        "url": "http://www.cofchrist.org.uk/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0793431,
+          51.6638777
+        ]
+      },
+      "id": "node/150569986"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/166585101",
+        "amenity": "place_of_worship",
+        "check_date": "2025-02-22",
+        "created_by": "JOSM",
+        "name": "Brentford Free Church",
+        "religion": "christian",
+        "wikidata": "Q26582402"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3071968,
+          51.4856638
+        ]
+      },
+      "id": "node/166585101"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/169130189",
+        "amenity": "place_of_worship",
+        "check_date": "2024-08-15",
+        "denomination": "evangelical",
+        "evangelical": "FIEC",
+        "name": "Trinity Road Chapel",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1667646,
+          51.4422933
+        ]
+      },
+      "id": "node/169130189"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/181817739",
+        "amenity": "place_of_worship",
+        "denomination": "united_reformed",
+        "name": "St John's Church",
+        "religion": "christian",
+        "wikidata": "Q20876328"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1781938,
+          51.6480883
+        ]
+      },
+      "id": "node/181817739"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/183074388",
+        "amenity": "place_of_worship",
+        "check_date": "2024-03-15",
+        "created_by": "Potlatch 0.5d",
+        "name": "Hayes Free Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.004615,
+          51.3800723
+        ]
+      },
+      "id": "node/183074388"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/195919215",
+        "amenity": "place_of_worship",
+        "created_by": "JOSM",
+        "name": "Wallington Christian Centre",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.130809,
+          51.3615251
+        ]
+      },
+      "id": "node/195919215"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/196086880",
+        "amenity": "place_of_worship",
+        "created_by": "JOSM",
+        "denomination": "methodist",
+        "name": "Bandon Hill Methodist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1366176,
+          51.3612903
+        ]
+      },
+      "id": "node/196086880"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/196112437",
+        "amenity": "place_of_worship",
+        "created_by": "JOSM",
+        "name": "Gospel Hall",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1449879,
+          51.360997
+        ]
+      },
+      "id": "node/196112437"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/206144886",
+        "amenity": "place_of_worship",
+        "denomination": "catholic",
+        "name": "St Theodore",
+        "religion": "christian",
+        "wikidata": "Q16900516",
+        "wikipedia": "en:St Theodore's Roman Catholic Church, Hampton"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3688489,
+          51.4157534
+        ]
+      },
+      "id": "node/206144886"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/206149236",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "name": "Hampton Baptist Church",
+        "religion": "christian",
+        "wikidata": "Q16896673",
+        "wikipedia": "en:Hampton Baptist Church"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3713906,
+          51.4143913
+        ]
+      },
+      "id": "node/206149236"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/211649818",
+        "amenity": "place_of_worship",
+        "denomination": "catholic",
+        "email": "kenton@rcdow.org.uk",
+        "name": "All Saints",
+        "note": "Presbytery is at 2a Salehurst Close HA3 0UG.",
+        "phone": "+44 20 8204 3550",
+        "postal_code": "HA3 0UG",
+        "religion": "christian",
+        "service_times": "Su 08:30+,10:00+,11:30+;Sa 18:30+;Mo-Fr 09:15"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2931158,
+          51.5862191
+        ]
+      },
+      "id": "node/211649818"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/239965407",
+        "amenity": "place_of_worship",
+        "check_date": "2024-05-05",
+        "denomination": "methodist;united_reformed",
+        "name": "Trinity Church",
+        "religion": "christian",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3399434,
+          51.5847926
+        ]
+      },
+      "id": "node/239965407"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/242542157",
+        "amenity": "place_of_worship",
+        "name": "Hanworth Gospel Hall",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3921898,
+          51.4351232
+        ]
+      },
+      "id": "node/242542157"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/245097342",
+        "amenity": "place_of_worship",
+        "name": "Sacred Heart Convent",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0007842,
+          51.4632235
+        ]
+      },
+      "id": "node/245097342"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/248478393",
+        "amenity": "place_of_worship",
+        "denomination": "jehovahs_witness",
+        "name": "Kingdom Hall of Jehovah's Witnesses",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3281065,
+          51.4670534
+        ]
+      },
+      "id": "node/248478393"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/248947896",
+        "amenity": "place_of_worship",
+        "created_by": "Potlatch 0.7b",
+        "denomination": "methodist",
+        "name": "Hanworth Methodist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3749264,
+          51.4391407
+        ]
+      },
+      "id": "node/248947896"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/249573060",
+        "amenity": "place_of_worship",
+        "denomination": "christ_scientist",
+        "name": "First Church of Christ, Scientist Chiswick",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2715562,
+          51.492118
+        ]
+      },
+      "id": "node/249573060"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/249573063",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "name": "Gunnersbury Baptist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2727527,
+          51.4903425
+        ]
+      },
+      "id": "node/249573063"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/250746925",
+        "amenity": "place_of_worship",
+        "created_by": "JOSM",
+        "denomination": "catholic",
+        "name": "St. Vincent de Paul",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3477381,
+          51.4766427
+        ]
+      },
+      "id": "node/250746925"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/252783742",
+        "amenity": "place_of_worship",
+        "denomination": "catholic",
+        "name": "St. Christopher's RC Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2137822,
+          51.3579022
+        ]
+      },
+      "id": "node/252783742"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/254364396",
+        "amenity": "place_of_worship",
+        "created_by": "Potlatch 0.8a",
+        "name": "Full Gospel Church Alfan Lane",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1696382,
+          51.4194619
+        ]
+      },
+      "id": "node/254364396"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/254941157",
+        "amenity": "place_of_worship",
+        "created_by": "Potlatch 0.8a",
+        "denomination": "jehovahs_witness",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2358113,
+          51.3430624
+        ]
+      },
+      "id": "node/254941157"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/256341252",
+        "addr:country": "GB",
+        "addr:housenumber": "447",
+        "addr:postcode": "HA4 0EG",
+        "addr:street": "Victoria Road",
+        "amenity": "place_of_worship",
+        "denomination": "catholic",
+        "name": "Saint Gregory The Great",
+        "phone": "+44 20 8845 2186",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3987512,
+          51.5597948
+        ]
+      },
+      "id": "node/256341252"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/256341253",
+        "amenity": "place_of_worship",
+        "created_by": "JOSM",
+        "denomination": "methodist",
+        "name": "Ruislip Manor Methodist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4097047,
+          51.5672413
+        ]
+      },
+      "id": "node/256341253"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/256342452",
+        "amenity": "place_of_worship",
+        "created_by": "Potlatch 0.8a",
+        "denomination": "methodist",
+        "name": "South Ruislip Methodist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3913954,
+          51.5620801
+        ]
+      },
+      "id": "node/256342452"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/256508648",
+        "amenity": "place_of_worship",
+        "created_by": "JOSM",
+        "denomination": "seventh_day_adventist",
+        "name": "Chiswick Seventh Day Adventist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2487883,
+          51.4970506
+        ]
+      },
+      "id": "node/256508648"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/256612242",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "name": "North Road Baptist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2965164,
+          51.4870672
+        ]
+      },
+      "id": "node/256612242"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/257807915",
+        "amenity": "place_of_worship",
+        "created_by": "JOSM",
+        "denomination": "primitive_methodist",
+        "name": "Jubilee Chapel",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3042996,
+          51.4885815
+        ]
+      },
+      "id": "node/257807915"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/257807941",
+        "amenity": "place_of_worship",
+        "denomination": "methodist",
+        "name": "Methodist Chapel",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3070771,
+          51.4871899
+        ]
+      },
+      "id": "node/257807941"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/259247831",
+        "amenity": "place_of_worship",
+        "created_by": "JOSM",
+        "denomination": "baptist",
+        "name": "Ealing Road Baptist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3010694,
+          51.4888859
+        ]
+      },
+      "id": "node/259247831"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/261245961",
+        "amenity": "place_of_worship",
+        "created_by": "JOSM",
+        "name": "Stockwell Spiritist Church and Healing Centre",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1205014,
+          51.4709697
+        ]
+      },
+      "id": "node/261245961"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/262556660",
+        "addr:housenumber": "390b",
+        "addr:postcode": "HA2 8EX",
+        "addr:street": "Northolt Road",
+        "amenity": "place_of_worship",
+        "denomination": "catholic",
+        "name": "Saint Gabriel's Catholic Church",
+        "phone": "+44 20 8864 5455",
+        "postal_code": "HA2 8EX",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3586972,
+          51.5607022
+        ]
+      },
+      "id": "node/262556660"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/262566131",
+        "amenity": "place_of_worship",
+        "name": "Roxeth Community Church",
+        "phone": "+44 20 8864 7037",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3593995,
+          51.5698109
+        ]
+      },
+      "id": "node/262566131"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/263905047",
+        "addr:city": "London",
+        "addr:housenumber": "55",
+        "addr:postcode": "N16 6HJ",
+        "addr:street": "Portland Avenue",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "name": "Stamford Hill United Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0716353,
+          51.5703735
+        ]
+      },
+      "id": "node/263905047"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/265587918",
+        "addr:postcode": "KT18 5AQ",
+        "addr:street": "Ashley Road",
+        "amenity": "place_of_worship",
+        "denomination": "methodist",
+        "fhrs:id": "1000117",
+        "name": "Epsom Methodist Church",
+        "religion": "christian",
+        "source:addr": "FHRS Open Data",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.266484,
+          51.3320124
+        ]
+      },
+      "id": "node/265587918"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/266740389",
+        "addr:city": "Sutton",
+        "addr:street": "Crown Road",
+        "amenity": "place_of_worship",
+        "check_date": "2023-08-03",
+        "name": "Crown Road Baptist Church",
+        "religion": "christian",
+        "wikimedia_commons": "File:Crown Road Baptist Church, Crown Road, Sutton (July 2020) (1).jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1986038,
+          51.3668301
+        ]
+      },
+      "id": "node/266740389"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/266741156",
+        "amenity": "place_of_worship",
+        "created_by": "JOSM",
+        "denomination": "catholic",
+        "name": "Holy Family Catholic Church",
+        "religion": "christian",
+        "source": "photo"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1961348,
+          51.3716037
+        ]
+      },
+      "id": "node/266741156"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/266749420",
+        "amenity": "place_of_worship",
+        "check_date": "2023-12-10",
+        "created_by": "JOSM",
+        "name": "St Matthias",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2355882,
+          51.3754478
+        ]
+      },
+      "id": "node/266749420"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/266891287",
+        "amenity": "place_of_worship",
+        "check_date": "2024-05-29",
+        "denomination": "baptist",
+        "name": "Bromley Baptist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0188053,
+          51.4067736
+        ]
+      },
+      "id": "node/266891287"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/267640647",
+        "addr:city": "London",
+        "addr:postcode": "SW4 6QX",
+        "addr:street": "Jeffreys Road",
+        "amenity": "place_of_worship",
+        "denomination": "methodist",
+        "name": "Stockwell Methodist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1274753,
+          51.4712114
+        ]
+      },
+      "id": "node/267640647"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/269896000",
+        "amenity": "place_of_worship",
+        "check_date": "2023-08-12",
+        "name": "City Hope Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.060524,
+          51.4940518
+        ]
+      },
+      "id": "node/269896000"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/276084617",
+        "amenity": "place_of_worship",
+        "created_by": "JOSM",
+        "denomination": "methodist",
+        "name": "Old Oak Methodist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2531489,
+          51.5171878
+        ]
+      },
+      "id": "node/276084617"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/280131884",
+        "addr:street": "Amyand Park Road",
+        "amenity": "place_of_worship",
+        "check_date": "2024-10-08",
+        "denomination": "baptist",
+        "name": "Amyand Park Chapel",
+        "postal_code": "TW1 3HY",
+        "religion": "christian",
+        "url": "http://www.amyandparkchapel.org/",
+        "wikidata": "Q16987566",
+        "wikipedia": "en:Amyand Park Chapel"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3211921,
+          51.4542201
+        ]
+      },
+      "id": "node/280131884"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/283614060",
+        "addr:city": "London",
+        "addr:country": "GB",
+        "addr:housenumber": "38",
+        "addr:postcode": "SW12 9AH",
+        "addr:street": "Balham High Road",
+        "addr:suburb": "Balham",
+        "amenity": "place_of_worship",
+        "denomination": "salvation_army",
+        "email": "Balham@salvationarmy.org.uk",
+        "name": "Balham Salvation Army Community Church",
+        "phone": "0208 675 3809",
+        "religion": "christian",
+        "website": "https://www.salvationarmy.org.uk/balham",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1489771,
+          51.447777
+        ]
+      },
+      "id": "node/283614060"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/286478778",
+        "amenity": "place_of_worship",
+        "created_by": "Potlatch 0.10b",
+        "name": "Balham Pentecostal Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1478784,
+          51.4467179
+        ]
+      },
+      "id": "node/286478778"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/290017176",
+        "amenity": "place_of_worship",
+        "denomination": "quaker",
+        "name": "Streatham Meeting House (Quakers)",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1225356,
+          51.4468882
+        ]
+      },
+      "id": "node/290017176"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/290973760",
+        "amenity": "place_of_worship",
+        "denomination": "catholic",
+        "name": "Our Lady of the Assumption",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1500355,
+          51.4183135
+        ]
+      },
+      "id": "node/290973760"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/291675486",
+        "amenity": "place_of_worship",
+        "name": "The Holy Redeemer St Marks Mission",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1157681,
+          51.3808754
+        ]
+      },
+      "id": "node/291675486"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/293544382",
+        "amenity": "place_of_worship",
+        "created_by": "xybot",
+        "denomination": "roman_catholic",
+        "name": "St. James RC Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3355639,
+          51.4420659
+        ]
+      },
+      "id": "node/293544382"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/298371235",
+        "amenity": "place_of_worship",
+        "name": "Saint Anselm's Church",
+        "religion": "christian",
+        "wikidata": "Q26676658"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1590884,
+          51.4356841
+        ]
+      },
+      "id": "node/298371235"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/300385521",
+        "amenity": "place_of_worship",
+        "created_by": "Potlatch 0.10c",
+        "name": "Welling Gospel Chapel",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1069579,
+          51.4650913
+        ]
+      },
+      "id": "node/300385521"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/300387058",
+        "amenity": "place_of_worship",
+        "created_by": "Potlatch 0.10c",
+        "name": "Richmond Gospel Hall",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0811402,
+          51.4861741
+        ]
+      },
+      "id": "node/300387058"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/300609365",
+        "amenity": "place_of_worship",
+        "created_by": "Potlatch 0.10c",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0267694,
+          51.4071647
+        ]
+      },
+      "id": "node/300609365"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/301068236",
+        "amenity": "place_of_worship",
+        "denomination": "true_jesus_church",
+        "name": "True Jesus Church",
+        "religion": "christian",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0828566,
+          51.5324661
+        ]
+      },
+      "id": "node/301068236"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/302060189",
+        "addr:postcode": "DA16 3AQ",
+        "addr:street": "Upper Wickham Lane",
+        "amenity": "place_of_worship",
+        "denomination": "evangelical",
+        "name": "Welling Church",
+        "religion": "christian",
+        "service_times": "Su 11:00",
+        "website": "https://wellingchurch.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1107078,
+          51.4671259
+        ]
+      },
+      "id": "node/302060189"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/302060330",
+        "addr:city": "Welling",
+        "addr:postcode": "DA16 1HF",
+        "addr:street": "Axminster Crescent",
+        "amenity": "place_of_worship",
+        "check_date": "2024-05-10",
+        "denomination": "baptist",
+        "name": "The Vine Christian Community Church",
+        "religion": "christian",
+        "service_times": "10:45 - 12:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1213423,
+          51.4719325
+        ]
+      },
+      "id": "node/302060330"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/302063410",
+        "amenity": "place_of_worship",
+        "created_by": "Potlatch 0.10c",
+        "name": "Lyndhurst Chapel",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1590062,
+          51.4605688
+        ]
+      },
+      "id": "node/302063410"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/302173383",
+        "amenity": "place_of_worship",
+        "denomination": "evangelical",
+        "name": "Berrymead Evangelical Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2689663,
+          51.504512
+        ]
+      },
+      "id": "node/302173383"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/302173385",
+        "amenity": "place_of_worship",
+        "name": "Ukrainian Autocephalous Orthodox Church",
+        "note": "Cathedral of the Holy Transfiguration of our Saviour",
+        "phone": "+44 20 8992 4689",
+        "postal_code": "W3 8AJ",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2686264,
+          51.5041342
+        ]
+      },
+      "id": "node/302173385"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/304318228",
+        "amenity": "place_of_worship",
+        "check_date": "2025-05-10",
+        "denomination": "evangelical",
+        "name": "Stonebridge Evangelical Church",
+        "phone": "+44 7404 688800",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2600819,
+          51.5410979
+        ]
+      },
+      "id": "node/304318228"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/304464884",
+        "addr:housenumber": "1",
+        "addr:street": "Bishops Way",
+        "amenity": "place_of_worship",
+        "name": "Elim Pentecostal Church",
+        "note": "This church advertises its address as '1 Bishops Way' but there is no sign of Bishops Way nearby.  Its official address may be 1 Gifford Road.",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2553186,
+          51.5445448
+        ]
+      },
+      "id": "node/304464884"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/305178096",
+        "amenity": "place_of_worship",
+        "name": "St. Patrick's Catholic Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2622023,
+          51.5534692
+        ]
+      },
+      "id": "node/305178096"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/305442663",
+        "addr:city": "Wembley",
+        "addr:country": "GB",
+        "addr:housenumber": "217",
+        "addr:postcode": "HA0 3NG",
+        "addr:street": "East Lane",
+        "amenity": "place_of_worship",
+        "denomination": "seventh_day_adventist",
+        "name": "North Wembley Community Seventh-Day Adventist Church",
+        "phone": "+44 20 8908 1737;+44 20 8908 0744",
+        "religion": "christian",
+        "source": "xybot;survey",
+        "source:addr:postcode": "signage",
+        "survey:date": "2014-08-31"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3061477,
+          51.5624433
+        ]
+      },
+      "id": "node/305442663"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/305758720",
+        "amenity": "place_of_worship",
+        "denomination": "pentecostal",
+        "name": "Lincoln Road Chapel",
+        "religion": "christian",
+        "url": "http://www.lincolnroadchapel.org.uk/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0485989,
+          51.6436784
+        ]
+      },
+      "id": "node/305758720"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/306501359",
+        "amenity": "place_of_worship",
+        "created_by": "Potlatch 0.10e",
+        "name": "Church Of God of Prosperity, House of Bread",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0474501,
+          51.4678386
+        ]
+      },
+      "id": "node/306501359"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/308053696",
+        "addr:city": "Beckenham",
+        "addr:housenumber": "11",
+        "addr:postcode": "BR3 3RG",
+        "addr:street": "Dunbar Avenue",
+        "amenity": "place_of_worship",
+        "denomination": "orthodox",
+        "name": "St John's Coptic Orthodox Church",
+        "religion": "christian",
+        "toilets": "yes",
+        "toilets:access": "customers"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0408727,
+          51.3984767
+        ]
+      },
+      "id": "node/308053696"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/308504988",
+        "amenity": "place_of_worship",
+        "created_by": "Potlatch 0.10e",
+        "denomination": "methodist",
+        "name": "Carpenders Park Methodist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.386531,
+          51.6259229
+        ]
+      },
+      "id": "node/308504988"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/309985384",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "name": "Avenue Baptist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.050633,
+          51.4080609
+        ]
+      },
+      "id": "node/309985384"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/312534081",
+        "addr:city": "Mitcham",
+        "addr:housename": "Gladstone Mission",
+        "addr:postcode": "CR4 3AU",
+        "addr:street": "Love Lane",
+        "amenity": "place_of_worship",
+        "denomination": "pentecostal",
+        "name": "Elim Pentecostal Church",
+        "religion": "christian",
+        "source": "survey;code-point open",
+        "survey:date": "2018-11-02"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1696873,
+          51.4041773
+        ]
+      },
+      "id": "node/312534081"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/312915341",
+        "addr:postcode": "HA1 3BE",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Our Lady & St Thomas of Canterbury",
+        "phone": "+44 20 8422 2513",
+        "religion": "christian",
+        "website": "https://harrowcatholicchurch.org/",
+        "wikidata": "Q26353060"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3403328,
+          51.5765519
+        ]
+      },
+      "id": "node/312915341"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/315889958",
+        "amenity": "place_of_worship",
+        "denomination": "united_reformed",
+        "name": "Grange Park United Reformed Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0122173,
+          51.5640794
+        ]
+      },
+      "id": "node/315889958"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/315889959",
+        "amenity": "place_of_worship",
+        "name": "Redeemed Christian Church of God",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.012851,
+          51.5645607
+        ]
+      },
+      "id": "node/315889959"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/315889960",
+        "amenity": "place_of_worship",
+        "created_by": "xybot",
+        "denomination": "roman_catholic",
+        "name": "St Joseph's",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0144178,
+          51.5652611
+        ]
+      },
+      "id": "node/315889960"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/315889961",
+        "amenity": "place_of_worship",
+        "name": "Bible Faith Holiness Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0145836,
+          51.5654563
+        ]
+      },
+      "id": "node/315889961"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/317421400",
+        "amenity": "place_of_worship",
+        "created_by": "Potlatch 0.10f",
+        "denomination": "methodist",
+        "name": "Chessington Methodist Church",
+        "religion": "christian",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2955152,
+          51.3632497
+        ]
+      },
+      "id": "node/317421400"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/318907452",
+        "addr:housenumber": "153a",
+        "addr:street": "Shrewsbury Road",
+        "amenity": "place_of_worship",
+        "denomination": "spiritualist",
+        "name": "Manor Park Spiritualist Church",
+        "religion": "christian",
+        "website": "https://www.snu.org.uk/manor-park-spiritualist-church"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0418417,
+          51.5442194
+        ]
+      },
+      "id": "node/318907452"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/326122980",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Our Lady of Mt. Carmel and St. George",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0804782,
+          51.649815
+        ]
+      },
+      "id": "node/326122980"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/332311026",
+        "amenity": "place_of_worship",
+        "denomination": "methodist;united_reformed",
+        "image": "http://www.geograph.org.uk/photo/656675",
+        "name": "Trinity Church",
+        "religion": "christian",
+        "url": "http://www.barnetmethodist.co.uk/goldersgreen.htm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1970513,
+          51.5707024
+        ]
+      },
+      "id": "node/332311026"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/343537927",
+        "addr:city": "London",
+        "addr:housenumber": "5",
+        "addr:postcode": "N15 3JS",
+        "addr:street": "Glenwood Road",
+        "amenity": "place_of_worship",
+        "denomination": "jehovahs_witness",
+        "name": "Kingdom Hall of Jehovas Witnesses",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0970519,
+          51.5848551
+        ]
+      },
+      "id": "node/343537927"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/354428764",
+        "amenity": "place_of_worship",
+        "denomination": "greek_orthodox",
+        "name": "Αγιου Ελεθεριου",
+        "name:en": "St Eleftherios Greek Orthodox Church",
+        "religion": "christian",
+        "website": "http://steleftheriosleyton.co.uk/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0111445,
+          51.5568042
+        ]
+      },
+      "id": "node/354428764"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/354838751",
+        "addr:city": "London",
+        "addr:housenumber": "1a",
+        "addr:postcode": "E4 8AT",
+        "addr:street": "Leadale Avenue",
+        "addr:suburb": "Chingford",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "fhrs:id": "514232",
+        "fhrs:local_authority_id": "17847",
+        "fhrs:name": "Chingford Mount Baptist Church Preschool",
+        "name": "Chingford Mount Baptist Church",
+        "religion": "christian",
+        "source:addr": "FHRS Open Data"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0169362,
+          51.6232631
+        ]
+      },
+      "id": "node/354838751"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/364779963",
+        "amenity": "place_of_worship",
+        "name": "Highbury Evangelical Fellowship",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1018394,
+          51.548214
+        ]
+      },
+      "id": "node/364779963"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/367256623",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "name": "Grace Baptist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2771316,
+          51.3258705
+        ]
+      },
+      "id": "node/367256623"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/370093772",
+        "FIXME": "tag as place of worship? not sure. Its gospel choir cummunity type place",
+        "addr:city": "London",
+        "addr:housename": "John Raphael House",
+        "addr:postcode": "N22 6UB",
+        "addr:street": "Coburg Road",
+        "amenity": "place_of_worship",
+        "name": "Faith Miracle Church",
+        "phone": "+44 20 8888 9992",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1149999,
+          51.5935792
+        ]
+      },
+      "id": "node/370093772"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/370187938",
+        "addr:city": "London",
+        "addr:postcode": "N8 7HR",
+        "addr:street": "Priory Road",
+        "amenity": "place_of_worship",
+        "name": "Hornsey Moravian Church",
+        "religion": "christian",
+        "website": "http://www.moravian.org.uk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.131498,
+          51.587506
+        ]
+      },
+      "id": "node/370187938"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/380774800",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "name": "Hatch End Free Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3601605,
+          51.6090393
+        ]
+      },
+      "id": "node/380774800"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/387530409",
+        "amenity": "place_of_worship",
+        "denomination": "greek_orthodox",
+        "name": "The Greek Orthodox Cathedral of the Holy Cross and St Michael",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.201678,
+          51.5739433
+        ]
+      },
+      "id": "node/387530409"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/390213489",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Our Lady of the Angels Roman Catholic Church",
+        "religion": "christian",
+        "source:name": "OS Open Local Important Buildings Layer",
+        "wikidata": "Q106819393"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1628341,
+          51.4773017
+        ]
+      },
+      "id": "node/390213489"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/403850652",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "name": "Honor Oak Baptist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0594061,
+          51.4523859
+        ]
+      },
+      "id": "node/403850652"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/414251893",
+        "amenity": "place_of_worship",
+        "denomination": "methodist",
+        "name": "Sutton at Hone Methodist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2368248,
+          51.4060137
+        ]
+      },
+      "id": "node/414251893"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/415395338",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "name": "Grace Baptist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1493141,
+          51.4544131
+        ]
+      },
+      "id": "node/415395338"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/420364309",
+        "addr:housenumber": "157",
+        "addr:street": "Southlands Road",
+        "amenity": "place_of_worship",
+        "name": "Jubilee Centre",
+        "postal_code": "BR2 9QZ",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.037673,
+          51.3960532
+        ]
+      },
+      "id": "node/420364309"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/420364311",
+        "amenity": "place_of_worship",
+        "denomination": "catholic",
+        "name": "St. Swithun's Catholic Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0356627,
+          51.3956257
+        ]
+      },
+      "id": "node/420364311"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/420771880",
+        "amenity": "place_of_worship",
+        "check_date": "2023-09-17",
+        "denomination": "evangelical",
+        "level": "0",
+        "name": "Bread Of Life Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.01635,
+          51.4070954
+        ]
+      },
+      "id": "node/420771880"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/423213358",
+        "amenity": "place_of_worship",
+        "name": "Court Farm Angelical Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0419799,
+          51.4276169
+        ]
+      },
+      "id": "node/423213358"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/441306444",
+        "amenity": "place_of_worship",
+        "denomination": "seventh_day_adventist",
+        "name": "Seventh Day Adventist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0866766,
+          51.4894656
+        ]
+      },
+      "id": "node/441306444"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/441950767",
+        "amenity": "place_of_worship",
+        "check_date": "2024-03-31",
+        "denomination": "salvation_army",
+        "name": "The Salvation Army International HQ",
+        "name:zh": "救世军国际总部",
+        "religion": "christian",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0982012,
+          51.5116579
+        ]
+      },
+      "id": "node/441950767"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/443606665",
+        "amenity": "place_of_worship",
+        "denomination": "churches_of_god",
+        "name": "Assembly Hall",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.019603,
+          51.3797783
+        ]
+      },
+      "id": "node/443606665"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/444543208",
+        "addr:housename": "Zion Chapel",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "name": "New Cross Road Baptist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.028372,
+          51.4749553
+        ]
+      },
+      "id": "node/444543208"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/448037415",
+        "amenity": "place_of_worship",
+        "name": "St Andrews URC Dartford",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2370526,
+          51.4412837
+        ]
+      },
+      "id": "node/448037415"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/448525764",
+        "amenity": "place_of_worship",
+        "check_date": "2025-07-26",
+        "name": "The Redeemed Christian Church of God, Winners Way",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2133993,
+          51.4452211
+        ]
+      },
+      "id": "node/448525764"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/448525780",
+        "amenity": "place_of_worship",
+        "check_date": "2022-05-14",
+        "denomination": "methodist",
+        "name": "Spital Street Methodist Church",
+        "religion": "christian",
+        "wikidata": "Q26375447"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.214662,
+          51.4450005
+        ]
+      },
+      "id": "node/448525780"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/449216072",
+        "amenity": "place_of_worship",
+        "name": "Icthus Christian Fellowship",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.007872,
+          51.4566961
+        ]
+      },
+      "id": "node/449216072"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/454338556",
+        "amenity": "place_of_worship",
+        "name": "Hayes Town Chapel",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4194746,
+          51.5158107
+        ]
+      },
+      "id": "node/454338556"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/454375323",
+        "amenity": "place_of_worship",
+        "denomination": "exclusive_brethren",
+        "name": "Brethren's Meeting Room",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2125126,
+          51.4465951
+        ]
+      },
+      "id": "node/454375323"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/458749858",
+        "addr:city": "London",
+        "addr:housenumber": "85",
+        "addr:postcode": "E5 9BU",
+        "addr:street": "Upper Clapton Road",
+        "alt_name": "Upper Clapton United Reformed Church",
+        "amenity": "place_of_worship",
+        "denomination": "united_reformed",
+        "fhrs:id": "1264297",
+        "name": "Upper Clapton URC",
+        "old_name": "Upper Clapton Congregational Church",
+        "religion": "christian",
+        "url": "http://www.urc.org.uk/church/view?church_id=1820"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0589468,
+          51.5634377
+        ]
+      },
+      "id": "node/458749858"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/459007219",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "name": "Orpington Baptist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0928723,
+          51.3717527
+        ]
+      },
+      "id": "node/459007219"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/459654489",
+        "amenity": "place_of_worship",
+        "name": "The Redeemed Christian Church of God",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1125483,
+          51.6013284
+        ]
+      },
+      "id": "node/459654489"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/461661248",
+        "amenity": "place_of_worship",
+        "denomination": "methodist",
+        "name": "Chelsfield Methodist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1048905,
+          51.3566344
+        ]
+      },
+      "id": "node/461661248"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/464615813",
+        "amenity": "place_of_worship",
+        "name": "Christ's Day Evangelical Ministry",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0054333,
+          51.3442522
+        ]
+      },
+      "id": "node/464615813"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/470067184",
+        "amenity": "place_of_worship",
+        "denomination": "catholic",
+        "name": "Church of the Most Sacred Heart",
+        "religion": "christian",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4156802,
+          51.5734857
+        ]
+      },
+      "id": "node/470067184"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/472881512",
+        "amenity": "place_of_worship",
+        "denomination": "methodist",
+        "name": "Trinity Methodist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0728648,
+          51.4821585
+        ]
+      },
+      "id": "node/472881512"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/478774596",
+        "amenity": "place_of_worship",
+        "denomination": "seventh_day_adventist",
+        "name": "Balham Seventh Day Adventist Church",
+        "religion": "christian",
+        "source": "local_knowledge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1546467,
+          51.4408315
+        ]
+      },
+      "id": "node/478774596"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/483488265",
+        "amenity": "place_of_worship",
+        "denomination": "methodist",
+        "name": "Upper Tooting Methodist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1579182,
+          51.4373319
+        ]
+      },
+      "id": "node/483488265"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/490575052",
+        "amenity": "place_of_worship",
+        "check_date": "2024-05-20",
+        "denomination": "roman_catholic",
+        "name": "Saints Philip and James Church",
+        "phone": "02072744853",
+        "postal_code": "SE24 0BS",
+        "religion": "christian",
+        "url": "http://www.ssphilipandjames.org.uk/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0983961,
+          51.4611136
+        ]
+      },
+      "id": "node/490575052"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/498230209",
+        "amenity": "place_of_worship",
+        "name": "Riverway Seventh Day Adventist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1362124,
+          51.4264434
+        ]
+      },
+      "id": "node/498230209"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/506426979",
+        "amenity": "place_of_worship",
+        "denomination": "catholic",
+        "name": "St. Ann's Catholic Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2706327,
+          51.428755
+        ]
+      },
+      "id": "node/506426979"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/524171511",
+        "amenity": "place_of_worship",
+        "denomination": "methodist",
+        "name": "Chiswick Methodist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2670568,
+          51.4881179
+        ]
+      },
+      "id": "node/524171511"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/526348248",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "St William of York",
+        "religion": "christian",
+        "wikidata": "Q26672485"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3040343,
+          51.6138179
+        ]
+      },
+      "id": "node/526348248"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/529116465",
+        "addr:city": "London",
+        "addr:postcode": "N17 6QB",
+        "addr:street": "High Road",
+        "addr:suburb": "Tottenham",
+        "amenity": "place_of_worship",
+        "check_date": "2022-12-13",
+        "contact:website": "http://newrivercircuit.org.uk/?page_id=243",
+        "denomination": "methodist",
+        "name": "St Mark's Methodist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0700734,
+          51.5920487
+        ]
+      },
+      "id": "node/529116465"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/536126431",
+        "amenity": "place_of_worship",
+        "denomination": "methodist",
+        "name": "Kenton Methodist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3077102,
+          51.58597
+        ]
+      },
+      "id": "node/536126431"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/541172872",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "name": "Rayners Lane Baptist Church",
+        "religion": "christian",
+        "start_date": "1934",
+        "website": "https://www.rlbc.org.uk/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3675862,
+          51.578187
+        ]
+      },
+      "id": "node/541172872"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/547143035",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Saint John Fisher RC Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3662278,
+          51.5806827
+        ]
+      },
+      "id": "node/547143035"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/566996116",
+        "amenity": "place_of_worship",
+        "denomination": "united_reformed",
+        "name": "Trinity",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0247907,
+          51.4087656
+        ]
+      },
+      "id": "node/566996116"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/568031045",
+        "amenity": "place_of_worship",
+        "denomination": "assyrian",
+        "name": "Assyrian Society",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3063433,
+          51.4986525
+        ]
+      },
+      "id": "node/568031045"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/577268245",
+        "amenity": "place_of_worship",
+        "denomination": "brethren",
+        "name": "Brethren Meeting House",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.193123,
+          51.6045622
+        ]
+      },
+      "id": "node/577268245"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/596544735",
+        "amenity": "place_of_worship",
+        "denomination": "catholic",
+        "name": "Catholic Church of the Holy Family, Dagenham",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1432317,
+          51.5512618
+        ]
+      },
+      "id": "node/596544735"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/596548532",
+        "amenity": "place_of_worship",
+        "denomination": "catholic",
+        "name": "Catholic Church of St Vincent, Becontree",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1220529,
+          51.5592534
+        ]
+      },
+      "id": "node/596548532"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/596552448",
+        "amenity": "place_of_worship",
+        "denomination": "catholic",
+        "name": "Catholic Church of St Mary & St Ethelburga, Barking",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0776784,
+          51.539412
+        ]
+      },
+      "id": "node/596552448"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/597235878",
+        "amenity": "place_of_worship",
+        "denomination": "catholic",
+        "name": "Catholic Church of Our Lady of La Salette, Rainham",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1898438,
+          51.5226194
+        ]
+      },
+      "id": "node/597235878"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/597236981",
+        "amenity": "place_of_worship",
+        "denomination": "catholic",
+        "name": "Catholic Church of Corpus Christi, Collier Row",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1602073,
+          51.5967131
+        ]
+      },
+      "id": "node/597236981"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/602132841",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Catholic Church of St Joseph, Bunhill Row",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0907457,
+          51.5223836
+        ]
+      },
+      "id": "node/602132841"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/617356916",
+        "amenity": "place_of_worship",
+        "name": "Friends Meeting House",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2005007,
+          51.5859001
+        ]
+      },
+      "id": "node/617356916"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/662188642",
+        "addr:city": "London",
+        "addr:postcode": "E16 1JB",
+        "addr:street": "Ruscoe Road",
+        "amenity": "place_of_worship",
+        "contact:phone": "+44 20 7476 2076",
+        "contact:website": "http://www.stlukese16.co.uk/",
+        "denomination": "anglican",
+        "name": "St Luke's Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0138113,
+          51.5134737
+        ]
+      },
+      "id": "node/662188642"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/663037496",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "name": "Enfield Baptist Church",
+        "religion": "christian",
+        "source": "local knowledge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0845498,
+          51.6510099
+        ]
+      },
+      "id": "node/663037496"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/671737531",
+        "amenity": "place_of_worship",
+        "name": "Cherubim and Seraphim Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0406445,
+          51.5703972
+        ]
+      },
+      "id": "node/671737531"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/671737536",
+        "amenity": "place_of_worship",
+        "name": "Christ Apostolic Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0407516,
+          51.5704221
+        ]
+      },
+      "id": "node/671737536"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/671737631",
+        "amenity": "place_of_worship",
+        "name": "Oke-Igbala Cherubim And Seraphim Holy Temple Of Christ Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0412068,
+          51.5697026
+        ]
+      },
+      "id": "node/671737631"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/671737633",
+        "amenity": "place_of_worship",
+        "name": "Celestial Church of Christ",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0414243,
+          51.5695149
+        ]
+      },
+      "id": "node/671737633"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/671737635",
+        "amenity": "place_of_worship",
+        "name": "Deliverance Outreach Ministries",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0419177,
+          51.5704192
+        ]
+      },
+      "id": "node/671737635"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/671741773",
+        "amenity": "place_of_worship",
+        "name": "Cherubim & Seraphim Church Oke Ayo Ona Iwa Mimo",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0411059,
+          51.5706952
+        ]
+      },
+      "id": "node/671741773"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/671741775",
+        "amenity": "place_of_worship",
+        "denomination": "pentecostal",
+        "name": "Christ United Pentecostal Ministries",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0419094,
+          51.5703642
+        ]
+      },
+      "id": "node/671741775"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/677640825",
+        "addr:city": "London",
+        "addr:housenumber": "21-29",
+        "addr:postcode": "SW16 2SS",
+        "addr:street": "Pendennis Road",
+        "amenity": "place_of_worship",
+        "denomination": "pentecostal",
+        "email": "streatham@newcovenant.org.uk",
+        "name": "New Covenant Church Streatham",
+        "opening_hours": "Tu-Su 08:00-15:00; Sa 08:00-12:00",
+        "phone": "+44 20 8696 7337",
+        "religion": "christian",
+        "service_times": "Su 09:00-11:00,11:30-13:30; Tu 18:30-20:30",
+        "url": "https://www.nccstreatham.org.uk/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1257917,
+          51.431867
+        ]
+      },
+      "id": "node/677640825"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/684522148",
+        "amenity": "place_of_worship",
+        "name": "Lewisham Christian centre",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0153709,
+          51.4640773
+        ]
+      },
+      "id": "node/684522148"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/706611730",
+        "addr:city": "London",
+        "addr:housenumber": "401-403",
+        "addr:postcode": "SW15 3BD",
+        "addr:street": "Tildesley Road",
+        "amenity": "place_of_worship",
+        "name": "The Yard",
+        "religion": "christian",
+        "source:addr": "FHRS Open Data"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2290246,
+          51.4551128
+        ]
+      },
+      "id": "node/706611730"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/721134646",
+        "addr:housenumber": "60",
+        "addr:street": "Rylston Road",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "St Thomas of Canterbury",
+        "postal_code": "SW6 7HW",
+        "religion": "christian",
+        "source": "os_street_view;website",
+        "url": "http://stocf.wordpress.com/",
+        "wikidata": "Q17551365"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2060138,
+          51.481714
+        ]
+      },
+      "id": "node/721134646"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/721134650",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "name": "Fulham Baptist Church",
+        "religion": "christian",
+        "source": "os_street_view;http://www.londonbaptist.org.uk/home/35/59-western-district-churches.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2046578,
+          51.4807234
+        ]
+      },
+      "id": "node/721134650"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/724398575",
+        "addr:city": "Barking",
+        "addr:housenumber": "31-35",
+        "addr:postcode": "IG11 8AA",
+        "addr:street": "London Road",
+        "amenity": "place_of_worship",
+        "check_date": "2024-05-29",
+        "denomination": "methodist",
+        "fhrs:id": "553033",
+        "fhrs:local_authority_id": "3797",
+        "name": "Barking Methodist Church",
+        "note": "Partly in same building as Technical Skills Academy",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0776872,
+          51.5377734
+        ]
+      },
+      "id": "node/724398575"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/724398577",
+        "addr:city": "Barking",
+        "addr:country": "GB",
+        "addr:housenumber": "15",
+        "addr:postcode": "IG11 8HE",
+        "addr:street": "Linton Road",
+        "alt_name": "Barking Baptist Tabernacle",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "name": "Barking Baptist Church (Biserica Baptista Genesis)",
+        "religion": "christian",
+        "source": "os_street_view",
+        "website": "https://www.barkingbaptist.org.uk/",
+        "wikidata": "Q26672956"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.078738,
+          51.5391063
+        ]
+      },
+      "id": "node/724398577"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/724398601",
+        "addr:city": "Ilford",
+        "addr:country": "GB",
+        "addr:postcode": "IG1 4JT",
+        "addr:street": "Wellesley Road",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "name": "Cranbrook Baptist Church",
+        "phone": "+44 20 8220 3157",
+        "religion": "christian",
+        "source": "os_street_view",
+        "website": "http://cranbrookbaptistchurch.org.uk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0701627,
+          51.5616538
+        ]
+      },
+      "id": "node/724398601"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/724398602",
+        "addr:city": "Ilford",
+        "addr:country": "GB",
+        "addr:housenumber": "14-16",
+        "addr:postcode": "IG1 4QR",
+        "addr:street": "Coventry Road",
+        "amenity": "place_of_worship",
+        "denomination": "seventh_day_adventist",
+        "name": "Seventh-day Adventist Church",
+        "religion": "christian",
+        "source": "os_street_view"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0701497,
+          51.5632113
+        ]
+      },
+      "id": "node/724398602"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/724398899",
+        "addr:city": "Barking",
+        "addr:country": "GB",
+        "addr:postcode": "IG11 7TA",
+        "addr:street": "King Edward's Road",
+        "alt_name": "Barking Celestial Church of Christ, Princess Hall",
+        "amenity": "place_of_worship",
+        "denomination": "evangelical",
+        "name": "Barking Celestial Church of Christ",
+        "phone": "+44 20 8594 3936",
+        "religion": "christian",
+        "source": "os_street_view"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0846952,
+          51.5338541
+        ]
+      },
+      "id": "node/724398899"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/746268444",
+        "amenity": "place_of_worship",
+        "name": "Oxlow Lane Baptist Church",
+        "religion": "christian",
+        "source": "os_street_view",
+        "source:name": "naptan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1591774,
+          51.5516564
+        ]
+      },
+      "id": "node/746268444"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/746268460",
+        "amenity": "place_of_worship",
+        "name": "Wangey Road Chapel",
+        "religion": "christian",
+        "source": "os_street_view",
+        "source:name": "OS Open Local Important Buildings Layer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1295823,
+          51.5701562
+        ]
+      },
+      "id": "node/746268460"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/746268470",
+        "amenity": "place_of_worship",
+        "name": "London Pentecostal Church",
+        "religion": "christian",
+        "source": "os_street_view",
+        "source:name": "OS Open Local Important Buildings Layer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1212997,
+          51.5683278
+        ]
+      },
+      "id": "node/746268470"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/746268493",
+        "addr:city": "Chadwell Heath, Romford",
+        "addr:housename": "High Road",
+        "addr:postcode": "RM6 6PP",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "name": "Chadwell Heath Baptist Church",
+        "phone": "+44 20 8983 8996",
+        "religion": "christian",
+        "source": "os_street_view",
+        "website": "https://chadbaptist.org.uk/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1340665,
+          51.5711777
+        ]
+      },
+      "id": "node/746268493"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/746991644",
+        "amenity": "place_of_worship",
+        "religion": "christian",
+        "source": "os_street_view"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2198514,
+          51.563168
+        ]
+      },
+      "id": "node/746991644"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/746991645",
+        "addr:housenumber": "13-15",
+        "addr:postcode": "RM11 2JR",
+        "addr:street": "Butts Green Road",
+        "amenity": "place_of_worship",
+        "name": "The Chapel",
+        "old_name": "Emerson Park Evangelical Church",
+        "religion": "christian",
+        "source": "os_street_view"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2193354,
+          51.5693813
+        ]
+      },
+      "id": "node/746991645"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/746991648",
+        "addr:postcode": "RM11 3JA",
+        "amenity": "place_of_worship",
+        "denomination": "united_reformed",
+        "name": "Nelmes United Reformed Church",
+        "religion": "christian",
+        "source": "os_street_view"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2244364,
+          51.5720905
+        ]
+      },
+      "id": "node/746991648"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/747006850",
+        "addr:postcode": "RM1 2RA",
+        "amenity": "place_of_worship",
+        "name": "The Church of God in Romford",
+        "religion": "christian",
+        "source": "os_street_view"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1958518,
+          51.5771072
+        ]
+      },
+      "id": "node/747006850"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/747083672",
+        "amenity": "place_of_worship",
+        "denomination": "methodist",
+        "name": "Havering Road Methodist Church",
+        "religion": "christian",
+        "source": "os_street_view",
+        "source:name": "OS Open Local Important Buildings Layer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1769289,
+          51.5986388
+        ]
+      },
+      "id": "node/747083672"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/747083865",
+        "addr:city": "Romford",
+        "addr:housenumber": "3",
+        "addr:postcode": "RM7 8HD",
+        "addr:street": "Redriff Road",
+        "amenity": "place_of_worship",
+        "name": "The Church of the Good Shepherd",
+        "religion": "christian",
+        "source": "os_street_view"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1661322,
+          51.5905018
+        ]
+      },
+      "id": "node/747083865"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/747083866",
+        "addr:housenumber": "262",
+        "addr:postcode": "RM1 4PJ",
+        "addr:street": "Pettits Lane North",
+        "alt_name": "Rise Park Chapel",
+        "amenity": "place_of_worship",
+        "name": "KingsHeart Church",
+        "religion": "christian",
+        "source": "os_street_view"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.17653,
+          51.5956787
+        ]
+      },
+      "id": "node/747083866"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/747141819",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "St Theresa's",
+        "religion": "christian",
+        "source": "os_street_view",
+        "website": "http://www.stteresasnewbpark.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0947763,
+          51.5755111
+        ]
+      },
+      "id": "node/747141819"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/747142723",
+        "addr:city": "Ilford",
+        "addr:country": "GB",
+        "addr:postcode": "IG3 8NU",
+        "addr:street": "Meads Lane",
+        "addr:suburb": "Seven Kings",
+        "amenity": "place_of_worship",
+        "name": "Seven Kings United Free Church",
+        "religion": "christian",
+        "source": "os_street_view"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0973183,
+          51.5708943
+        ]
+      },
+      "id": "node/747142723"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/776255283",
+        "amenity": "place_of_worship",
+        "denomination": "quaker",
+        "name": "The Religious Society of Friends",
+        "note": "verified to exist -- but could be worship or meeting place",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1042756,
+          51.6353575
+        ]
+      },
+      "id": "node/776255283"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/823702029",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "name": "New Malden Baptist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2647385,
+          51.4003059
+        ]
+      },
+      "id": "node/823702029"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/823703829",
+        "addr:city": "New Malden",
+        "addr:housename": "Methodist Church",
+        "addr:housenumber": "49",
+        "addr:postcode": "KT3 4BY",
+        "addr:street": "High Street",
+        "amenity": "place_of_worship",
+        "denomination": "methodist",
+        "fhrs:id": "1386194",
+        "name": "New Malden Methodist Church",
+        "religion": "christian",
+        "source:addr": "FHRS Open Data"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2565846,
+          51.4022068
+        ]
+      },
+      "id": "node/823703829"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/935908855",
+        "addr:city": "London",
+        "amenity": "place_of_worship",
+        "contact:website": "http://www.crowncourtchurch.org.uk/",
+        "denomination": "presbyterian",
+        "name": "Crown Court",
+        "operator": "Church of Scotland",
+        "religion": "christian",
+        "wikidata": "Q5189342",
+        "wikipedia": "en:Crown Court Church"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1209833,
+          51.513419
+        ]
+      },
+      "id": "node/935908855"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/968663964",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "name": "Palmers Green Baptist Church",
+        "religion": "christian",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1101072,
+          51.6138246
+        ]
+      },
+      "id": "node/968663964"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1012332927",
+        "amenity": "place_of_worship",
+        "denomination": "catholic",
+        "name": "All Saints",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4010095,
+          51.3665839
+        ]
+      },
+      "id": "node/1012332927"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1012754178",
+        "amenity": "place_of_worship",
+        "name": "St Andrew's United Reformed Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4140648,
+          51.3816075
+        ]
+      },
+      "id": "node/1012754178"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1149900668",
+        "amenity": "place_of_worship",
+        "denomination": "methodist",
+        "name": "Archway Methodist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1343913,
+          51.5658697
+        ]
+      },
+      "id": "node/1149900668"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1191178212",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "name": "East Plumstead Baptist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0841067,
+          51.4853995
+        ]
+      },
+      "id": "node/1191178212"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1199260416",
+        "amenity": "place_of_worship",
+        "name": "St Joseph's",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0647055,
+          51.477123
+        ]
+      },
+      "id": "node/1199260416"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1200800710",
+        "amenity": "place_of_worship",
+        "name": "New Covenant Church Charlton",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.02701,
+          51.4869216
+        ]
+      },
+      "id": "node/1200800710"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1207145450",
+        "amenity": "place_of_worship",
+        "denomination": "methodist",
+        "name": "Belvedere Methodist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.151153,
+          51.489325
+        ]
+      },
+      "id": "node/1207145450"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1207176569",
+        "amenity": "place_of_worship",
+        "name": "Belvedere and Erith Congregational Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1489591,
+          51.4863505
+        ]
+      },
+      "id": "node/1207176569"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1272340735",
+        "amenity": "place_of_worship",
+        "check_date": "2024-01-25",
+        "denomination": "baptist",
+        "name": "Derby Road Baptist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3925399,
+          51.6560499
+        ]
+      },
+      "id": "node/1272340735"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315244950",
+        "amenity": "place_of_worship",
+        "check_date": "2024-06-26",
+        "denomination": "baptist",
+        "name": "Oakwood Baptist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1254214,
+          51.6432912
+        ]
+      },
+      "id": "node/1315244950"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1322784296",
+        "addr:city": "London",
+        "addr:housename": "Titmuss Avenue Baptist Church",
+        "addr:postcode": "SE28 8DJ",
+        "addr:street": "Titmuss Avenue",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "name": "Titmuss Avenue Baptist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1147822,
+          51.5063154
+        ]
+      },
+      "id": "node/1322784296"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1341607110",
+        "addr:housenumber": "156-158",
+        "addr:street": "Longley Road",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "name": "Tooting Junction Baptist Church",
+        "phone": "+44 20 8672 4044",
+        "religion": "christian",
+        "service_times": "Su 11:00,18:30"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1637818,
+          51.4201621
+        ]
+      },
+      "id": "node/1341607110"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1638167698",
+        "amenity": "place_of_worship",
+        "denomination": "methodist",
+        "name": "Grange Park Methodist Church",
+        "religion": "christian",
+        "wikidata": "Q60135689",
+        "wikipedia": "en:Grange Park Methodist Church"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0936092,
+          51.6411628
+        ]
+      },
+      "id": "node/1638167698"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1640945746",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Chapel",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1702021,
+          51.3649388
+        ]
+      },
+      "id": "node/1640945746"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1653632327",
+        "addr:postcode": "TW16 5AD",
+        "addr:street": "Staines Road East",
+        "amenity": "place_of_worship",
+        "denomination": "methodist",
+        "name": "Sunbury Methodist Church",
+        "religion": "christian",
+        "website": "http://www.sunbury.tmcc.org.uk/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4110886,
+          51.4185645
+        ]
+      },
+      "id": "node/1653632327"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1658258348",
+        "amenity": "place_of_worship",
+        "denomination": "quaker",
+        "name": "Friends Meeting House",
+        "religion": "christian",
+        "wikidata": "Q17015255",
+        "wikipedia": "en:Friends Meeting House, Richmond"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3080852,
+          51.4596644
+        ]
+      },
+      "id": "node/1658258348"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1779488276",
+        "amenity": "place_of_worship",
+        "denomination": "methodist",
+        "name": "East Molesey Methodist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3542804,
+          51.4012811
+        ]
+      },
+      "id": "node/1779488276"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1779488284",
+        "amenity": "place_of_worship",
+        "note": "Jehovah's Witnesses",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3708533,
+          51.4005054
+        ]
+      },
+      "id": "node/1779488284"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1807548151",
+        "addr:city": "Coulsdon",
+        "addr:housenumber": "83",
+        "addr:postcode": "CR5 2BE",
+        "addr:street": "Brighton Road",
+        "amenity": "place_of_worship",
+        "denomination": "methodist",
+        "name": "Coulsdon Methodist Church",
+        "religion": "christian",
+        "source": "survey;code-point open",
+        "wikidata": "Q26483571"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1341833,
+          51.3233971
+        ]
+      },
+      "id": "node/1807548151"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1830999249",
+        "amenity": "place_of_worship",
+        "check_date": "2025-03-15",
+        "denomination": "quaker",
+        "name": "Friends Meeting House",
+        "religion": "christian",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1462597,
+          51.587008
+        ]
+      },
+      "id": "node/1830999249"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1831089766",
+        "amenity": "place_of_worship",
+        "denomination": "latter_day_saints",
+        "name": "The Church of Jesus Christ of Latter-day Saints",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.098897,
+          51.488107
+        ]
+      },
+      "id": "node/1831089766"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1843990237",
+        "amenity": "place_of_worship",
+        "check_date": "2025-04-04",
+        "denomination": "evangelical",
+        "name": "Power Church International",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0945447,
+          51.4805689
+        ]
+      },
+      "id": "node/1843990237"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1844004961",
+        "amenity": "place_of_worship",
+        "denomination": "evangelical",
+        "name": "Iglesia De Dios Ministerial De Jesucristo Internacional",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0938605,
+          51.4838547
+        ]
+      },
+      "id": "node/1844004961"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1977202060",
+        "amenity": "place_of_worship",
+        "check_date": "2024-12-28",
+        "name": "Harrow International Christian Centre",
+        "note:denomination": "Notice in window says: \"Independent, Christ-centred, Bible-based, Charismatic & non-sectarian\".",
+        "opening_hours": "Tu-Fr 09:30-14:00 \"Office open\"",
+        "phone": "+44 20 8427 4074",
+        "religion": "christian",
+        "service_times": "Su[1] 10:30-12:15 \"Communion\" ;Su[2-5] 09:00-10:30,11:00-12:30; Tu 10:00-12:00 \"Prayer Morning\"; We 19:00-20:00 \"Prayer Meeting\"",
+        "source": "survey;BIng 2012",
+        "website": "https://www.hicc.org/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3325311,
+          51.5849053
+        ]
+      },
+      "id": "node/1977202060"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2028840400",
+        "addr:city": "London",
+        "addr:housename": "Island House Community Centre",
+        "addr:postcode": "E14 3PG",
+        "addr:street": "Roserton Street",
+        "amenity": "place_of_worship",
+        "name": "Quaystone Church",
+        "religion": "christian",
+        "website": "https://www.quaystone.org/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0100917,
+          51.4984332
+        ]
+      },
+      "id": "node/2028840400"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2184044963",
+        "addr:housenumber": "101,103",
+        "addr:street": "Brixton Hill",
+        "amenity": "place_of_worship",
+        "check_date": "2025-07-17",
+        "name": "TAMI Gospel Centre",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1195238,
+          51.4546384
+        ]
+      },
+      "id": "node/2184044963"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2255886126",
+        "addr:city": "Carshalton",
+        "addr:postcode": "SM5 3NL",
+        "addr:street": "Banstead Road",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "fhrs:authority": "Sutton",
+        "fhrs:id": "571066;571068",
+        "name": "Carshalton Beeches Baptist Free Church",
+        "religion": "christian",
+        "source": "survey;fhrs"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1743409,
+          51.3565027
+        ]
+      },
+      "id": "node/2255886126"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2313649166",
+        "amenity": "place_of_worship",
+        "denomination": "evangelical",
+        "name": "UCKG",
+        "note": "upper floor of 12-14 London Road",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1030312,
+          51.3786466
+        ]
+      },
+      "id": "node/2313649166"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2340413543",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "name": "Ashurst Drive Baptist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0755127,
+          51.5762173
+        ]
+      },
+      "id": "node/2340413543"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2340414435",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "St. Augustine Catholic Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0740959,
+          51.5809681
+        ]
+      },
+      "id": "node/2340414435"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2349228867",
+        "amenity": "place_of_worship",
+        "denomination": "methodist",
+        "name": "North Chingford Methodist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0040506,
+          51.6312377
+        ]
+      },
+      "id": "node/2349228867"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2355855721",
+        "addr:housenumber": "2",
+        "addr:postcode": "HA5 3LA",
+        "addr:street": "Elm Park Road",
+        "amenity": "place_of_worship",
+        "denomination": "christian_science",
+        "name": "Christian Science Society Pinner",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3854012,
+          51.5959929
+        ]
+      },
+      "id": "node/2355855721"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2381852177",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "name": "Pawson's Road Baptist Church",
+        "religion": "christian",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0940842,
+          51.3941475
+        ]
+      },
+      "id": "node/2381852177"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2429046881",
+        "amenity": "place_of_worship",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2829622,
+          51.4954454
+        ]
+      },
+      "id": "node/2429046881"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2445372590",
+        "addr:housenumber": "171",
+        "addr:street": "Hertford Road",
+        "amenity": "place_of_worship",
+        "denomination": "pentecostal",
+        "name": "ICC House of Prayer",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0560044,
+          51.6306536
+        ]
+      },
+      "id": "node/2445372590"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2476883222",
+        "addr:housenumber": "1",
+        "addr:postcode": "HA1 4DP",
+        "addr:street": "Vaughan Road",
+        "amenity": "place_of_worship",
+        "denomination": "spiritualist",
+        "email": "lightonthehill@live.co.uk",
+        "name": "Harrow Spiritualist Church",
+        "religion": "christian",
+        "service_times": "Su 19:30;We 19:45",
+        "source:addr:postcode": "code-point_open",
+        "website": "http://www.lightonthehill.moonfruit.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3430946,
+          51.5792275
+        ]
+      },
+      "id": "node/2476883222"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2510307091",
+        "amenity": "place_of_worship",
+        "denomination": "pentecostal",
+        "name": "Calvary Pentecostal Ministries",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1240914,
+          51.4486598
+        ]
+      },
+      "id": "node/2510307091"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2510671513",
+        "addr:city": "London",
+        "addr:housenumber": "235",
+        "addr:postcode": "SW2 1NR",
+        "addr:street": "Brixton Hill",
+        "amenity": "place_of_worship",
+        "denomination": "united_reformed",
+        "name": "Brixton Hill United Reform Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1238237,
+          51.4461793
+        ]
+      },
+      "id": "node/2510671513"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2623167697",
+        "amenity": "place_of_worship",
+        "denomination": "methodist",
+        "name": "Forest Hill Methodist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0460149,
+          51.4372204
+        ]
+      },
+      "id": "node/2623167697"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2714881330",
+        "amenity": "place_of_worship",
+        "denomination": "jehovahs_witness",
+        "name": "Kingdom Halls of Jehovah's Witnesses",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0316747,
+          51.3469053
+        ]
+      },
+      "id": "node/2714881330"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2835821902",
+        "addr:city": "London",
+        "addr:housenumber": "120",
+        "addr:postcode": "SW11 3AF",
+        "addr:street": "Battersea Bridge Road",
+        "amenity": "place_of_worship",
+        "denomination": "evangelical",
+        "name": "The Bridge Battersea Community Church",
+        "religion": "christian",
+        "service_times": "4pm",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.168748,
+          51.476862
+        ]
+      },
+      "id": "node/2835821902"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2950107873",
+        "addr:city": "London",
+        "addr:housenumber": "289",
+        "addr:postcode": "E2 0EL",
+        "addr:street": "Cambridge Heath Road",
+        "amenity": "place_of_worship",
+        "denomination": "pentecostal",
+        "name": "New Life Bible Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.055794,
+          51.526893
+        ]
+      },
+      "id": "node/2950107873"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3094362121",
+        "addr:city": "London",
+        "addr:postcode": "E18 2PU",
+        "addr:street": "Derby Road",
+        "amenity": "place_of_worship",
+        "denomination": "methodist",
+        "name": "Woodford Methodist church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0195111,
+          51.5994756
+        ]
+      },
+      "id": "node/3094362121"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3135613726",
+        "amenity": "place_of_worship",
+        "denomination": "methodist",
+        "name": "Ponders End Methodist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.046869,
+          51.649741
+        ]
+      },
+      "id": "node/3135613726"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3197987525",
+        "amenity": "place_of_worship",
+        "level": "1;2",
+        "name": "Rehoboth Temple",
+        "operator": "Fountain of Life Int. Church of Miracles",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0782594,
+          51.5366682
+        ]
+      },
+      "id": "node/3197987525"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3209999023",
+        "amenity": "place_of_worship",
+        "name": "The Sacraments Church",
+        "note": "Same entrance as Sam's Leather Shoes",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0831184,
+          51.5404774
+        ]
+      },
+      "id": "node/3209999023"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3217293424",
+        "amenity": "place_of_worship",
+        "name": "Dominion Chapel",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3779111,
+          51.5209194
+        ]
+      },
+      "id": "node/3217293424"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3366869568",
+        "amenity": "place_of_worship",
+        "name": "Our Lady of the Crays",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.112693,
+          51.3870862
+        ]
+      },
+      "id": "node/3366869568"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3547717995",
+        "amenity": "place_of_worship",
+        "check_date": "2025-05-10",
+        "name": "New Life Christian Centre",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.269904,
+          51.542796
+        ]
+      },
+      "id": "node/3547717995"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3594168893",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "check_date": "2024-01-24",
+        "denomination": "catholic",
+        "name": "St Gertrude's Catholic Church (South Croydon)",
+        "religion": "christian",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0971001,
+          51.3509194
+        ]
+      },
+      "id": "node/3594168893"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3791258123",
+        "addr:city": "London",
+        "addr:housenumber": "366",
+        "addr:postcode": "E10 7LD",
+        "addr:street": "Lea Bridge Road",
+        "amenity": "place_of_worship",
+        "name": "Potters House",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0250531,
+          51.5701985
+        ]
+      },
+      "id": "node/3791258123"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3796265634",
+        "amenity": "place_of_worship",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0944392,
+          51.4837913
+        ]
+      },
+      "id": "node/3796265634"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3865853875",
+        "amenity": "place_of_worship",
+        "level": "1",
+        "name": "Christ Harvest Centre",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1022159,
+          51.5909245
+        ]
+      },
+      "id": "node/3865853875"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3884136951",
+        "amenity": "place_of_worship",
+        "denomination": "united_reformed",
+        "name": "Christ Church",
+        "religion": "christian",
+        "wikidata": "Q26488608"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0257395,
+          51.4311725
+        ]
+      },
+      "id": "node/3884136951"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3885380748",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "St Mary Magdalen's Roman Catholic Church",
+        "religion": "christian",
+        "source:name": "OS Open Local Important Buildings Layer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0377671,
+          51.4592314
+        ]
+      },
+      "id": "node/3885380748"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3935941798",
+        "amenity": "place_of_worship",
+        "denomination": "methodist",
+        "name": "Springfield Methodist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.131307,
+          51.4760748
+        ]
+      },
+      "id": "node/3935941798"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3956995713",
+        "addr:city": "London",
+        "addr:housenumber": "1",
+        "addr:postcode": "E3 2SP",
+        "addr:street": "Payne Road",
+        "amenity": "place_of_worship",
+        "check_date": "2025-03-29",
+        "denomination": "baptist",
+        "name": "Bow Baptist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0158716,
+          51.5294813
+        ]
+      },
+      "id": "node/3956995713"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4006847317",
+        "addr:city": "kingston",
+        "addr:housenumber": "1",
+        "addr:postcode": "KT2 5JR",
+        "addr:street": "Wyndham Road",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "St Agatha's",
+        "religion": "christian",
+        "wikidata": "Q26354350"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2930998,
+          51.41967
+        ]
+      },
+      "id": "node/4006847317"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4007175971",
+        "amenity": "place_of_worship",
+        "check_date": "2023-03-09",
+        "level": "0",
+        "name": "Holy Cross Catholic Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0134794,
+          51.4426762
+        ]
+      },
+      "id": "node/4007175971"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4052174685",
+        "amenity": "place_of_worship",
+        "name": "Rivergate Church",
+        "religion": "christian",
+        "website": "http://rivergatechurch.weebly.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1085466,
+          51.5208266
+        ]
+      },
+      "id": "node/4052174685"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4070435997",
+        "amenity": "place_of_worship",
+        "name": "The Rockhouse Baptist Church",
+        "religion": "christian",
+        "source": "survey",
+        "website": "www.therockhousecentre.org.uk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0381577,
+          51.5907985
+        ]
+      },
+      "id": "node/4070435997"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4108024896",
+        "addr:country": "GB",
+        "addr:housenumber": "5",
+        "addr:street": "Markhouse Road",
+        "addr:suburb": "Walthamstow",
+        "amenity": "place_of_worship",
+        "name": "South Grove Free Presbyterian Church",
+        "religion": "christian",
+        "source": "survey",
+        "website": "https://www.southgrovefpc.co.uk/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0301681,
+          51.5788001
+        ]
+      },
+      "id": "node/4108024896"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4118984890",
+        "addr:city": "London",
+        "addr:housenumber": "30",
+        "addr:postcode": "W1W 8DJ",
+        "addr:street": "Eastcastle Street",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "denomination": "baptist",
+        "name": "Welsh Church of Central London",
+        "name:cy": "Eglwys Gymraeg Canol Llundain",
+        "opening_hours": "Su 14:00-17:00; We 19:30-22:00",
+        "religion": "christian",
+        "website": "https://www.eglwysgymraegllundain.org/",
+        "wikidata": "Q22313167"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1386144,
+          51.5166337
+        ]
+      },
+      "id": "node/4118984890"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4167188273",
+        "addr:city": "London",
+        "addr:housename": "Bow Wharf",
+        "addr:housenumber": "221",
+        "addr:postcode": "E3 5SN",
+        "addr:street": "Grove Road",
+        "addr:unit": "P1",
+        "amenity": "place_of_worship",
+        "name": "East End Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0424564,
+          51.5319084
+        ]
+      },
+      "id": "node/4167188273"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4221687836",
+        "addr:city": "London",
+        "addr:country": "GB",
+        "addr:housenumber": "174",
+        "addr:postcode": "SE20 8JB",
+        "addr:street": "Maple Road",
+        "addr:suburb": "Penge",
+        "amenity": "place_of_worship",
+        "denomination": "salvation_army",
+        "email": "penge.corps@salvationarmy.org.uk",
+        "name": "Salvation Army",
+        "phone": "020 8659 7321",
+        "religion": "christian",
+        "website": "https://www.salvationarmy.org.uk/penge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0547136,
+          51.4150081
+        ]
+      },
+      "id": "node/4221687836"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4298917555",
+        "addr:city": "Erith, Kent",
+        "addr:street": "Mill Road",
+        "amenity": "place_of_worship",
+        "name": "North Heath Family Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1618777,
+          51.4734741
+        ]
+      },
+      "id": "node/4298917555"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4314952938",
+        "addr:city": "London",
+        "addr:postcode": "SE23 2QL",
+        "addr:street": "Perry Rise",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "baptist",
+        "name": "Perry Rise Baptist Church",
+        "nohousenumber": "yes",
+        "phone": "+44 20 8699 3581",
+        "religion": "christian",
+        "service_times": "Su 11:00",
+        "website": "http://perryrisebaptistchurch.org.uk/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0432021,
+          51.434946
+        ]
+      },
+      "id": "node/4314952938"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4439999089",
+        "addr:housenumber": "121",
+        "addr:street": "Heath Road",
+        "amenity": "place_of_worship",
+        "denomination": "jehovahs_witness",
+        "name": "Kingdom Hall of Jehovah's Witnesses",
+        "name:en": "Kingdom Hall of Jehovah's Witnesses",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.146277,
+          51.4689
+        ]
+      },
+      "id": "node/4439999089"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4450360515",
+        "addr:city": "London",
+        "addr:door": "1",
+        "addr:floor": "3",
+        "addr:housename": "Oxford House",
+        "addr:postcode": "E2 6HG",
+        "addr:street": "Derbyshire Street",
+        "amenity": "place_of_worship",
+        "denomination": "spiritist",
+        "level": "4",
+        "name": "Spiritist Society of London",
+        "religion": "christian",
+        "short_name": "SSL",
+        "website": "https://www.spiritist-society-london.org/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0613797,
+          51.526387
+        ]
+      },
+      "id": "node/4450360515"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4450363867",
+        "addr:city": "London",
+        "addr:housenumber": "269",
+        "addr:postcode": "N1 1EE",
+        "addr:street": "Caledonian Road",
+        "amenity": "place_of_worship",
+        "denomination": "Spiritist",
+        "name": "Sir William Crookes Spiritist Society",
+        "religion": "christian",
+        "short_name": "SWCSS",
+        "website": "http://www.sirwilliam.org/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1170012,
+          51.5398385
+        ]
+      },
+      "id": "node/4450363867"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4510986624",
+        "addr:housenumber": "23-29",
+        "addr:street": "Paragon Road",
+        "amenity": "place_of_worship",
+        "name": "Integrity International Community Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0544283,
+          51.5446699
+        ]
+      },
+      "id": "node/4510986624"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4523226290",
+        "addr:housenumber": "142",
+        "addr:street": "Rodney Road",
+        "amenity": "place_of_worship",
+        "name": "English Martyrs Church Hall",
+        "religion": "christian",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.090849,
+          51.4913833
+        ]
+      },
+      "id": "node/4523226290"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4526740989",
+        "addr:city": "London",
+        "addr:housenumber": "2",
+        "addr:postcode": "SE25 6NR",
+        "addr:street": "Prince Road",
+        "amenity": "place_of_worship",
+        "denomination": "evangelical",
+        "name": "Selhurst Evangelical Church",
+        "religion": "christian",
+        "toilets:wheelchair": "yes",
+        "website": "https://selhurstchurch.org/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.086562,
+          51.3950063
+        ]
+      },
+      "id": "node/4526740989"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4561606224",
+        "addr:city": "London",
+        "addr:housenumber": "33",
+        "addr:postcode": "E14 0FE",
+        "addr:street": "Lanrick Road",
+        "amenity": "place_of_worship",
+        "name": "Victory of Faith Christian Centre",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0019423,
+          51.5144419
+        ]
+      },
+      "id": "node/4561606224"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4638705049",
+        "addr:city": "London",
+        "addr:country": "GB",
+        "addr:housenumber": "339",
+        "addr:postcode": "N9 0NU",
+        "addr:street": "Fore Street",
+        "addr:suburb": "Edmonton",
+        "amenity": "place_of_worship",
+        "denomination": "salvation_army",
+        "email": "edmonton@salvationarmy.org.uk",
+        "name": "Salvation Army",
+        "phone": "020 8345 6687",
+        "religion": "christian",
+        "source": "gps+mapnoter",
+        "website": "https://www.salvationarmy.org.uk/edmonton"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0622246,
+          51.6209742
+        ]
+      },
+      "id": "node/4638705049"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4693286257",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "methodist",
+        "name": "Cannon Lane Methodist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3814131,
+          51.5801818
+        ]
+      },
+      "id": "node/4693286257"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4709481293",
+        "amenity": "place_of_worship",
+        "check_date": "2024-06-22",
+        "denomination": "baptist",
+        "name": "Buckhurst Hill Baptist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0425383,
+          51.6269121
+        ]
+      },
+      "id": "node/4709481293"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4756123397",
+        "amenity": "place_of_worship",
+        "name": "New Testament Church of God",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3827588,
+          51.5775923
+        ]
+      },
+      "id": "node/4756123397"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4790379121",
+        "amenity": "place_of_worship",
+        "denomination": "evangelical",
+        "name": "Chessington Evangelical Church",
+        "opening_hours": "Su-Fr 09:00-18:00",
+        "phone": "+44 20 8391 5522",
+        "religion": "christian",
+        "website": "https://www.thekingscentre.org.uk",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3144434,
+          51.3623104
+        ]
+      },
+      "id": "node/4790379121"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4792432862",
+        "addr:city": "Wallington",
+        "addr:street": "Queens Road",
+        "amenity": "place_of_worship",
+        "name": "Wallington Baptist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1531827,
+          51.3640177
+        ]
+      },
+      "id": "node/4792432862"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4858647540",
+        "amenity": "place_of_worship",
+        "name": "City of Truth Christian Cetnre",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1316259,
+          51.5656962
+        ]
+      },
+      "id": "node/4858647540"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4874202594",
+        "addr:city": "London",
+        "addr:housenumber": "29",
+        "addr:street": "Gerrard Street",
+        "amenity": "place_of_worship",
+        "name": "Emmanuel Chinese Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1315362,
+          51.511456
+        ]
+      },
+      "id": "node/4874202594"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4939214940",
+        "amenity": "place_of_worship",
+        "name": "North Watford Methodist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3972671,
+          51.6727916
+        ]
+      },
+      "id": "node/4939214940"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4942378621",
+        "addr:city": "London",
+        "addr:housenumber": "27",
+        "addr:postcode": "SE23 1JG",
+        "addr:street": "Brockley Rise",
+        "amenity": "place_of_worship",
+        "denomination": "jehovahs_witness",
+        "name": "Kingdom Hall of Jehovah's Witnesses",
+        "name:en": "Kingdom Hall of Jehovah's Witnesses",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0427596,
+          51.4424584
+        ]
+      },
+      "id": "node/4942378621"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5057748652",
+        "addr:housenumber": "204A",
+        "addr:street": "Coldharbour Lane",
+        "amenity": "place_of_worship",
+        "check_date": "2023-09-05",
+        "name": "Celestial Church of Christ",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1018333,
+          51.4662368
+        ]
+      },
+      "id": "node/5057748652"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5134301680",
+        "amenity": "place_of_worship",
+        "name": "Emmanuel Evangelical Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1286885,
+          51.4964681
+        ]
+      },
+      "id": "node/5134301680"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5262256556",
+        "addr:city": "Harrow",
+        "addr:postcode": "HA3 9BS",
+        "addr:street": "Streatfield Road",
+        "amenity": "place_of_worship",
+        "check_date": "2024-04-21",
+        "denomination": "baptist",
+        "name": "Kenton Baptist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3055232,
+          51.5936394
+        ]
+      },
+      "id": "node/5262256556"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5294362746",
+        "addr:city": "London",
+        "addr:housenumber": "11",
+        "addr:postcode": "SE28 8BG",
+        "addr:street": "Arnott Close",
+        "amenity": "place_of_worship",
+        "denomination": "nondenominational",
+        "name": "Christian Life Centre",
+        "name:en": "Christian Life Centre",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1166094,
+          51.5037663
+        ]
+      },
+      "id": "node/5294362746"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5353014667",
+        "amenity": "place_of_worship",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.157885,
+          51.4876134
+        ]
+      },
+      "id": "node/5353014667"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5363970224",
+        "addr:city": "Romford",
+        "addr:housenumber": "1",
+        "addr:postcode": "RM1 4YD",
+        "addr:street": "Moray Way",
+        "amenity": "place_of_worship",
+        "denomination": "methodist",
+        "name": "Havering Road Methodist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1769528,
+          51.5986436
+        ]
+      },
+      "id": "node/5363970224"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5377811649",
+        "addr:city": "Romford",
+        "addr:housenumber": "111-115",
+        "addr:postcode": "RM1 1ES",
+        "addr:street": "North Street",
+        "amenity": "place_of_worship",
+        "name": "Rccg Jubilee House For All Nations Limited",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1769991,
+          51.5813346
+        ]
+      },
+      "id": "node/5377811649"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5514483186",
+        "addr:city": "London",
+        "addr:housename": "West Norwood Salvation Army",
+        "addr:housenumber": "246",
+        "addr:postcode": "SE27 9AW",
+        "addr:street": "Norwood Road",
+        "amenity": "place_of_worship",
+        "denomination": "salvation_army",
+        "name": "The Salvation Army",
+        "note": "Also charity shop",
+        "phone": "+44 20 8761 2425",
+        "religion": "christian",
+        "website": "https://www.salvationarmy.org.uk/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1058281,
+          51.4376974
+        ]
+      },
+      "id": "node/5514483186"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5541463475",
+        "addr:city": "London",
+        "addr:housename": "The Hippodrome",
+        "addr:postcode": "NW11 7RP",
+        "addr:street": "North End Road",
+        "amenity": "place_of_worship",
+        "name": "Hillsong Church North London",
+        "religion": "christian",
+        "website": "https://hillsong.com/uk/north-london/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.193549,
+          51.5716165
+        ]
+      },
+      "id": "node/5541463475"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5554630228",
+        "addr:city": "London",
+        "addr:housenumber": "735",
+        "addr:postcode": "SW17 0PD",
+        "addr:street": "Garratt Lane",
+        "amenity": "place_of_worship",
+        "denomination": "evangelical",
+        "name": "Christ International Christian Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1851604,
+          51.434452
+        ]
+      },
+      "id": "node/5554630228"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5589311757",
+        "amenity": "place_of_worship",
+        "name": "Colier Row Gospel hall",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1546447,
+          51.5980106
+        ]
+      },
+      "id": "node/5589311757"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5630634272",
+        "addr:street": "Windermere Road",
+        "amenity": "place_of_worship",
+        "denomination": "episcopal",
+        "name": "New Birth African Methodist Episcopal Zion Church",
+        "note": "Located to the rear of Coulsdon Methodist Church, but a separate place of worship. Entrance on Windermere Road.",
+        "religion": "christian",
+        "source": "survey",
+        "survey:date": "2018-09-30",
+        "website": "http://amezionuk.org/new-birth-church/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1335537,
+          51.3230903
+        ]
+      },
+      "id": "node/5630634272"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5642582199",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "name": "Croham Road Baptist Church",
+        "religion": "christian",
+        "source": "local knowledge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0916675,
+          51.362016
+        ]
+      },
+      "id": "node/5642582199"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5688517948",
+        "addr:city": "London",
+        "addr:country": "GB",
+        "addr:housename": "Bussey Building",
+        "addr:housenumber": "133",
+        "addr:postcode": "SE15 4ST",
+        "addr:street": "Rye Lane",
+        "addr:unit": "Unit D2.2",
+        "amenity": "place_of_worship",
+        "level": "2",
+        "name": "House of Prayer",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0661688,
+          51.4700857
+        ]
+      },
+      "id": "node/5688517948"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5688517962",
+        "addr:city": "London",
+        "addr:country": "GB",
+        "addr:housename": "Bussey Building",
+        "addr:housenumber": "133",
+        "addr:postcode": "SE15 4ST",
+        "addr:street": "Rye Lane",
+        "addr:unit": "Unit AG1",
+        "amenity": "place_of_worship",
+        "denomination": "pentecostal",
+        "name": "Christ's Gospel Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0674783,
+          51.4698701
+        ]
+      },
+      "id": "node/5688517962"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5752062674",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "The Catholic Church of the Holy Family",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.074501,
+          51.3306049
+        ]
+      },
+      "id": "node/5752062674"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5762497431",
+        "addr:housenumber": "20",
+        "addr:street": "Brenthouse Road",
+        "amenity": "place_of_worship",
+        "check_date": "2025-07-09",
+        "name": "UCKG HelpCentre",
+        "phone": "+44 20 7686 6000",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0540157,
+          51.5431524
+        ]
+      },
+      "id": "node/5762497431"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5828938355",
+        "addr:city": "Croydon",
+        "addr:postcode": "CR0 5LP",
+        "addr:street": "Addiscombe Grove",
+        "amenity": "place_of_worship",
+        "denomination": "united_reformed",
+        "fhrs:authority": "Croydon",
+        "fhrs:id": "674",
+        "name": "Croydon United Reformed Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0901651,
+          51.3742597
+        ]
+      },
+      "id": "node/5828938355"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5842194444",
+        "addr:unit": "Units 9-14",
+        "amenity": "place_of_worship",
+        "email": "christparadisechurch@gmail.com",
+        "name": "Christ Paradise Church",
+        "phone": "+44 20 7635 5799",
+        "religion": "christian",
+        "service_times": "Su 13:00-16:00; Fr 19:30-22:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0582576,
+          51.4812537
+        ]
+      },
+      "id": "node/5842194444"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5842196047",
+        "addr:city": "London",
+        "addr:country": "GB",
+        "addr:housename": "Kingsbury House",
+        "addr:housenumber": "777-787",
+        "addr:postcode": "SE15 1NZ",
+        "addr:street": "Old Kent Road",
+        "addr:unit": "3rd Floor",
+        "amenity": "place_of_worship",
+        "contact:facebook": "https://www.facebook.com/pg/CITLM",
+        "name": "Christ is the Ladder Ministries",
+        "phone": "+44 7950 510273",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0578901,
+          51.480252
+        ]
+      },
+      "id": "node/5842196047"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5846641247",
+        "amenity": "place_of_worship",
+        "email": "idivinepropheticministries@ymail.com",
+        "name": "Divine Prophetic Interdenominational Ministries",
+        "phone": "+44 20 8616 4220",
+        "religion": "christian",
+        "website": "http://www.dpim.org.uk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0571485,
+          51.4799472
+        ]
+      },
+      "id": "node/5846641247"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5872712424",
+        "amenity": "place_of_worship",
+        "name": "Pratt's Bottom Free Church",
+        "religion": "christian",
+        "source:name": "OS Open Local Important Buildings Layer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.112452,
+          51.3393
+        ]
+      },
+      "id": "node/5872712424"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5876974550",
+        "addr:city": "Southall",
+        "addr:country": "GB",
+        "addr:housename": "Road Hall",
+        "addr:postcode": "UB1 2JL",
+        "addr:street": "North Road",
+        "amenity": "place_of_worship",
+        "name": "Southall Seventh-Day Adventist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3715758,
+          51.5128006
+        ]
+      },
+      "id": "node/5876974550"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5892671250",
+        "addr:city": "Croydon",
+        "addr:housenumber": "147",
+        "addr:postcode": "CR0 7EN",
+        "addr:street": "Bingham Road",
+        "addr:village": "Addiscombe",
+        "amenity": "place_of_worship",
+        "check_date": "2024-06-02",
+        "denomination": "catholic",
+        "name": "Our Lady of the Annunciation",
+        "religion": "christian",
+        "source": "website;local knowledge;aerial imagery;streetlevel imagery",
+        "website": "http://www.addiscombecatholicchurch.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0637887,
+          51.3812514
+        ]
+      },
+      "id": "node/5892671250"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6036522906",
+        "addr:city": "Mitcham",
+        "addr:housename": "All Saints Centre",
+        "addr:postcode": "CR4 4JN",
+        "addr:street": "New Road",
+        "amenity": "place_of_worship",
+        "denomination": "apostolic",
+        "name": "Apostolic Church",
+        "note": "This church meets inside the All Saints Centre, which is a multi-use building",
+        "religion": "christian",
+        "source": "survey;code-point open"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1582821,
+          51.3830142
+        ]
+      },
+      "id": "node/6036522906"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6058547449",
+        "amenity": "place_of_worship",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2131097,
+          51.6037989
+        ]
+      },
+      "id": "node/6058547449"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6204443404",
+        "amenity": "place_of_worship",
+        "name": "Eagles Christian Connections Hornchurch (RCCG)",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1994798,
+          51.5510225
+        ]
+      },
+      "id": "node/6204443404"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6327405619",
+        "addr:city": "London",
+        "addr:housenumber": "14-16",
+        "addr:postcode": "SW17 8SA",
+        "addr:street": "Lynwood Road",
+        "amenity": "place_of_worship",
+        "denomination": "church_of_god",
+        "name": "Lynwood Christian Fellowship",
+        "religion": "christian",
+        "source": "survey;website",
+        "website": "https://cogop.org.uk/directory/organization/Church+of+God+of+Prophecy%2C+Lynwood+Christian+Fellowship/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1623587,
+          51.4327823
+        ]
+      },
+      "id": "node/6327405619"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6329067416",
+        "amenity": "place_of_worship",
+        "name": "The Akwaaba Centre",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0273656,
+          51.4816318
+        ]
+      },
+      "id": "node/6329067416"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6400858465",
+        "amenity": "place_of_worship",
+        "check_date": "2024-06-06",
+        "denomination": "Redeemed Christian Church of God",
+        "name": "Redemption House",
+        "phone": "+44 20 7708 8977",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0716564,
+          51.4735483
+        ]
+      },
+      "id": "node/6400858465"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6443732314",
+        "amenity": "place_of_worship",
+        "denomination": "catholic",
+        "name": "St. Francis de Sales Catholic Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1276219,
+          51.4740261
+        ]
+      },
+      "id": "node/6443732314"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6443732393",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "name": "Courland Grove Baptist Chapel",
+        "religion": "christian",
+        "wikidata": "Q27084228"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1319561,
+          51.4727923
+        ]
+      },
+      "id": "node/6443732393"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6448488082",
+        "amenity": "place_of_worship",
+        "name": "St Mary Somerset Tower",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0968496,
+          51.5113843
+        ]
+      },
+      "id": "node/6448488082"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6572910717",
+        "amenity": "place_of_worship",
+        "denomination": "catholic",
+        "name": "Saint John and Saint Elizabeth",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1749046,
+          51.5331838
+        ]
+      },
+      "id": "node/6572910717"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6919746159",
+        "addr:city": "London",
+        "addr:housenumber": "6",
+        "addr:postcode": "SE9 2DN",
+        "addr:street": "Novar Road",
+        "addr:suburb": "New Eltham",
+        "amenity": "place_of_worship",
+        "name": "Novar Christian Fellowship",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.07201,
+          51.43814
+        ]
+      },
+      "id": "node/6919746159"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7072483458",
+        "addr:city": "London",
+        "addr:postcode": "W2 5DX",
+        "amenity": "place_of_worship",
+        "check_date": "2025-03-26",
+        "denomination": "baptist",
+        "name": "Westbourne Park Baptist Church",
+        "religion": "christian",
+        "website": "https://www.wpbc.co/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1891841,
+          51.5186054
+        ]
+      },
+      "id": "node/7072483458"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7141974122",
+        "addr:city": "London",
+        "addr:housename": "The Tab Centre",
+        "addr:housenumber": "3",
+        "addr:postcode": "E2 7NT",
+        "addr:street": "Godfrey Place",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "name": "Shoreditch Tabernacle",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.07578,
+          51.5274332
+        ]
+      },
+      "id": "node/7141974122"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7149734645",
+        "addr:city": "London",
+        "addr:housenumber": "167",
+        "addr:postcode": "SE9 2EX",
+        "addr:street": "Avery Hill Road",
+        "addr:suburb": "New Eltham",
+        "amenity": "place_of_worship",
+        "name": "St James Mar Thoma Church UK, London",
+        "religion": "christian",
+        "website": "https://www.marthomachurch.org.uk/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0795161,
+          51.441766
+        ]
+      },
+      "id": "node/7149734645"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7243560917",
+        "addr:city": "London",
+        "addr:housenumber": "305",
+        "addr:postcode": "E2 9LH",
+        "addr:street": "Cambridge Heath Road",
+        "amenity": "place_of_worship",
+        "name": "Bethnal Green Mission Church",
+        "religion": "christian",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0557068,
+          51.5284851
+        ]
+      },
+      "id": "node/7243560917"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7662535038",
+        "addr:city": "Dartford",
+        "addr:housenumber": "1",
+        "addr:postcode": "DA1 1QE",
+        "addr:street": "Churchill Close",
+        "amenity": "place_of_worship",
+        "denomination": "evangelical",
+        "name": "Winners' Chapel International",
+        "religion": "christian",
+        "website": "https://www.winners-chapel.org.uk/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2369893,
+          51.4360291
+        ]
+      },
+      "id": "node/7662535038"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7673572764",
+        "amenity": "place_of_worship",
+        "denomination": "methodist",
+        "name": "Railton Methodist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1066332,
+          51.4573024
+        ]
+      },
+      "id": "node/7673572764"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7687610862",
+        "addr:housenumber": "150",
+        "addr:street": "Homerton High Street",
+        "amenity": "place_of_worship",
+        "name": "City Revival Church International",
+        "religion": "christian",
+        "website": "http://cityrevivalchurchint.org.uk/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0442412,
+          51.5480182
+        ]
+      },
+      "id": "node/7687610862"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7687610863",
+        "addr:city": "London",
+        "addr:housenumber": "150",
+        "addr:postcode": "E9 6JA",
+        "addr:street": "Homerton High Street",
+        "amenity": "place_of_worship",
+        "facebook": "https://www.facebook.com/gethsemanemiracleministries/",
+        "name": "Gethsemane Miracle Ministries",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.044201,
+          51.5479131
+        ]
+      },
+      "id": "node/7687610863"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7687610879",
+        "addr:housename": "Bison House",
+        "addr:housenumber": "150-164",
+        "addr:street": "Homerton High Street",
+        "amenity": "place_of_worship",
+        "name": "Light House Assembly, Hackney",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0435707,
+          51.547386
+        ]
+      },
+      "id": "node/7687610879"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7942617396",
+        "amenity": "place_of_worship",
+        "denomination": "anglican",
+        "name": "Christ Church Chapel",
+        "religion": "christian",
+        "wikidata": "Q26488608"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0480803,
+          51.438066
+        ]
+      },
+      "id": "node/7942617396"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7950315795",
+        "amenity": "place_of_worship",
+        "denomination": "united",
+        "name": "The Temple United Reformed Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1146765,
+          51.3897951
+        ]
+      },
+      "id": "node/7950315795"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7953856501",
+        "amenity": "place_of_worship",
+        "denomination": "anglican",
+        "name": "St Peter",
+        "religion": "christian",
+        "wikidata": "Q105085401"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2875606,
+          51.6216456
+        ]
+      },
+      "id": "node/7953856501"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7960226860",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Little Oratory Chapel",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1704041,
+          51.4967826
+        ]
+      },
+      "id": "node/7960226860"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7995586701",
+        "amenity": "place_of_worship",
+        "denomination": "evangelical",
+        "name": "The King's Court",
+        "operator": "The Redeemed Christian Church of God",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1842181,
+          51.4318417
+        ]
+      },
+      "id": "node/7995586701"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8006075528",
+        "addr:city": "London",
+        "amenity": "place_of_worship",
+        "architect": "Robert Smirke, George Gilbert Scott",
+        "architect:wikidata": "Q983719;Q681007",
+        "denomination": "anglican",
+        "name": "King's College Chapel",
+        "religion": "christian",
+        "start_date": "1831 / 1864",
+        "wikidata": "Q6410893",
+        "wikipedia": "en:Chapel of King's College London"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1158113,
+          51.5111332
+        ]
+      },
+      "id": "node/8006075528"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8427226585",
+        "addr:city": "Watford",
+        "addr:housenumber": "77",
+        "addr:postcode": "WD19 4DA",
+        "addr:street": "Chalk Hill",
+        "amenity": "place_of_worship",
+        "denomination": "methodist",
+        "name": "Bushey & Oxhey Methodist Church",
+        "religion": "christian",
+        "website": "https://busheyandoxhey-methodist.chessck.co.uk/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.379059,
+          51.6462742
+        ]
+      },
+      "id": "node/8427226585"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8594733250",
+        "amenity": "place_of_worship",
+        "name": "Church of Christ",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0105331,
+          51.5339979
+        ]
+      },
+      "id": "node/8594733250"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8608489384",
+        "amenity": "place_of_worship",
+        "denomination": "methodist",
+        "name": "Tooting Methodist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1650108,
+          51.4289466
+        ]
+      },
+      "id": "node/8608489384"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8660094189",
+        "addr:city": "London",
+        "addr:housenumber": "305",
+        "addr:postcode": "E7 9AE",
+        "addr:street": "Sprowston Mews",
+        "addr:suburb": "Forest Gate",
+        "amenity": "place_of_worship",
+        "denomination": "evangelical",
+        "name": "Sword of the Spirit Evangelical Outreach",
+        "religion": "christian",
+        "source:addr:housenumber": "pattern from survey and neighbouring streets",
+        "website": "https://sseooutreach.org.uk/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0240231,
+          51.5468047
+        ]
+      },
+      "id": "node/8660094189"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8688597874",
+        "amenity": "place_of_worship",
+        "check_date": "2025-04-17",
+        "denomination": "spiritist",
+        "name": "Morden Spiritualist",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1921575,
+          51.4060941
+        ]
+      },
+      "id": "node/8688597874"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8712179049",
+        "amenity": "place_of_worship",
+        "denomination": "evangelical",
+        "level": "2",
+        "name": "The Redeemed Christian Church of God, Center of Joy Parish",
+        "note": "Name is as it is signed on the building with the American spelling 'center'",
+        "operator": "The Redeemed Christian Church of God",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2132588,
+          51.4453729
+        ]
+      },
+      "id": "node/8712179049"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8724351582",
+        "amenity": "place_of_worship",
+        "check_date": "2025-01-16",
+        "denomination": "protestant",
+        "name": "Dynamic Christian Centre",
+        "operator": "Christ Apostolic Church",
+        "religion": "christian",
+        "service_times": "Su 10:00; Tu 12:00; Sa[1,3] 08:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0060857,
+          51.5469142
+        ]
+      },
+      "id": "node/8724351582"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8934320707",
+        "amenity": "place_of_worship",
+        "name": "The Redeemed Christian Church of God",
+        "note": "Appears to be above Barclays",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1466122,
+          51.4566631
+        ]
+      },
+      "id": "node/8934320707"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9133269520",
+        "addr:housenumber": "19",
+        "addr:postcode": "RM11 1TP",
+        "addr:street": "High Street",
+        "amenity": "place_of_worship",
+        "denomination": "methodist",
+        "name": "Hornchurch Methodist Church",
+        "religion": "christian",
+        "source": "os_street_view"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2143863,
+          51.5633131
+        ]
+      },
+      "id": "node/9133269520"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9162750523",
+        "amenity": "place_of_worship",
+        "denomination": "coptic_orthodox",
+        "name": "Coptic Orthodox Patriarchate of St. George and St. Mary",
+        "religion": "christian",
+        "website": "https://www.smasg.org.uk/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0448371,
+          51.5541378
+        ]
+      },
+      "id": "node/9162750523"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9194060742",
+        "amenity": "place_of_worship",
+        "check_date": "2024-06-04",
+        "name": "Christ Family Assembly Outreach",
+        "religion": "christian",
+        "website": "http://www.cfao.co.uk/live-service"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1752169,
+          51.3959172
+        ]
+      },
+      "id": "node/9194060742"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9445532784",
+        "amenity": "place_of_worship",
+        "denomination": "anglican",
+        "name": "St. Jude's Balham",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1599782,
+          51.4424277
+        ]
+      },
+      "id": "node/9445532784"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9556319923",
+        "amenity": "place_of_worship",
+        "denomination": "evangelical",
+        "name": "Fountain of Grace",
+        "operator": "Redeemed Christian Church of God",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0272546,
+          51.5341098
+        ]
+      },
+      "id": "node/9556319923"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9746958949",
+        "amenity": "place_of_worship",
+        "denomination": "pentecostal",
+        "name": "Ministry of Praise",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.058976,
+          51.6014074
+        ]
+      },
+      "id": "node/9746958949"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9922201828",
+        "addr:city": "London",
+        "addr:housenumber": "594",
+        "addr:postcode": "N17 9TA",
+        "addr:street": "High Road",
+        "addr:suburb": "Tottenham",
+        "amenity": "place_of_worship",
+        "contact:website": "https://tottenhamquakers.org.uk/",
+        "denomination": "quaker",
+        "name": "Friends' Meeting House",
+        "religion": "christian",
+        "service_times": "Su 10:30-11:30"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0679175,
+          51.596272
+        ]
+      },
+      "id": "node/9922201828"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9936136590",
+        "addr:city": "London",
+        "addr:housename": "Eagle Heights",
+        "addr:street": "Lebus Street",
+        "addr:unit": "Unit A",
+        "amenity": "place_of_worship",
+        "contact:website": "https://engineroom.org.uk/st-francis",
+        "denomination": "anglican",
+        "diocese": "Diocese of London",
+        "name": "Church of St Francis",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0569979,
+          51.5898801
+        ]
+      },
+      "id": "node/9936136590"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9960292576",
+        "addr:city": "London",
+        "addr:housenumber": "104",
+        "addr:postcode": "E15 4PT",
+        "addr:street": "West Ham Lane",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "name": "West Ham Baptist Tabernacle",
+        "religion": "christian",
+        "source:addr:housenumber": "Survey 2022-12-23",
+        "website": "https://www.westhamtab.org.uk/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0065593,
+          51.536383
+        ]
+      },
+      "id": "node/9960292576"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10075937132",
+        "amenity": "place_of_worship",
+        "name": "Maná Christian Church",
+        "name:pt": "Igreja Maná",
+        "religion": "christian",
+        "service_times": "Th 17:00; Fr 21:00; Sa 15:00; Su 10:30; Su 16:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0234814,
+          51.5266465
+        ]
+      },
+      "id": "node/10075937132"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10234629335",
+        "amenity": "place_of_worship",
+        "denomination": "evangelical",
+        "name": "The People's Christian Fellowship",
+        "religion": "christian",
+        "service_times": "Su 10:30"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0674884,
+          51.5846287
+        ]
+      },
+      "id": "node/10234629335"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10247303778",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Emmanuel Church!",
+        "religion": "christian",
+        "service_times": "9-6.30"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2161945,
+          51.382443
+        ]
+      },
+      "id": "node/10247303778"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10276800204",
+        "addr:city": "London",
+        "addr:housename": "Expressway Studios",
+        "addr:housenumber": "54b",
+        "addr:postcode": "E16 2AA",
+        "addr:street": "North Woolwich Road",
+        "amenity": "place_of_worship",
+        "level": "0",
+        "name": "Horeb of God Parish",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.017806,
+          51.5047858
+        ]
+      },
+      "id": "node/10276800204"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10315887744",
+        "addr:city": "London",
+        "addr:housenumber": "96",
+        "addr:postcode": "SE10 0LE",
+        "addr:street": "Woolwich Road",
+        "amenity": "place_of_worship",
+        "check_date": "2024-10-20",
+        "denomination": "evangelical",
+        "level": "0",
+        "name": "New Life Church",
+        "religion": "christian",
+        "website": "https://www.ichthusnewlife.org.uk/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0166191,
+          51.4861479
+        ]
+      },
+      "id": "node/10315887744"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10618502938",
+        "addr:city": "London",
+        "addr:housenumber": "30",
+        "addr:postcode": "W1W 8DJ",
+        "addr:street": "Eastcastle Street",
+        "amenity": "place_of_worship",
+        "name": "God's Vision Church",
+        "name:ko": "꿈이있는교회",
+        "note": "There is one church building here - the Welsh Church with its Welsh-language name in big letters. But there is also the Korean-language \"God's Vision Church\" - really a separate congregation who also use the building. - spiregrain",
+        "religion": "christian",
+        "website": "https://www.godsvisionchurch.org"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.138637,
+          51.516693
+        ]
+      },
+      "id": "node/10618502938"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10681784079",
+        "addr:city": "London",
+        "addr:housenumber": "48-50",
+        "addr:postcode": "N8 0LD",
+        "addr:street": "Park Ridings",
+        "amenity": "place_of_worship",
+        "contact:website": "https://gracebaptistchurch.org.uk/",
+        "denomination": "baptist",
+        "name": "Grace Baptist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1090854,
+          51.5931426
+        ]
+      },
+      "id": "node/10681784079"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10913173455",
+        "amenity": "place_of_worship",
+        "name": "Emmanuel Chinese Church",
+        "phone": "+44 20 7587 3600",
+        "religion": "christian",
+        "website": "https://www.ecclondon.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1073531,
+          51.4897001
+        ]
+      },
+      "id": "node/10913173455"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10947703009",
+        "addr:housenumber": "182-184",
+        "addr:street": "West Green Road",
+        "amenity": "place_of_worship",
+        "check_date": "2025-01-01",
+        "denomination": "baptist",
+        "name": "West Green Baptist Church",
+        "phone": "+44 20 8800 3393",
+        "religion": "christian",
+        "website": "https://www.westgreenbaptistchurch.org.uk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.083421,
+          51.5857205
+        ]
+      },
+      "id": "node/10947703009"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10951827845",
+        "amenity": "place_of_worship",
+        "name": "The Brook",
+        "operator": "Trinity Chapel",
+        "religion": "christian",
+        "website": "https://www.trinitychapel.org.uk/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0017743,
+          51.5309717
+        ]
+      },
+      "id": "node/10951827845"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10967280371",
+        "addr:city": "Edgware",
+        "addr:housenumber": "94A",
+        "addr:street": "Priory Field Drive",
+        "amenity": "place_of_worship",
+        "denomination": "anglican",
+        "heritage": "2",
+        "heritage:operator": "he",
+        "heritage:website": "https://historicengland.org.uk/listing/the-list/list-entry/1078827",
+        "listed_status": "Grade II",
+        "name": "Edgware Abbey",
+        "official_name": "The Community of St. Mary at the Cross",
+        "ref:GB:nhle": "1078827",
+        "religion": "christian",
+        "website": "https://edgwareabbey.org.uk/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.268548,
+          51.6208922
+        ]
+      },
+      "id": "node/10967280371"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11023373829",
+        "addr:city": "London",
+        "addr:country": "GB",
+        "addr:housenumber": "23-25",
+        "addr:postcode": "SE6 2HE",
+        "addr:street": "Brownhill Road",
+        "addr:suburb": "Catford",
+        "amenity": "place_of_worship",
+        "check_date": "2023-07-03",
+        "denomination": "salvation_army",
+        "level": "0",
+        "name": "The Salvation Army",
+        "operator": "The Salvation Army",
+        "operator:short": "TSA",
+        "operator:wikidata": "Q188307",
+        "phone": "020 8461 2811",
+        "religion": "christian",
+        "source": "survey",
+        "website": "https://www.salvationarmy.org.uk/catford",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0171707,
+          51.4459966
+        ]
+      },
+      "id": "node/11023373829"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11084316886",
+        "addr:city": "London",
+        "addr:postcode": "SE6 1AU",
+        "addr:street": "Brownhill Road",
+        "amenity": "place_of_worship",
+        "check_date": "2023-08-02",
+        "denomination": "baptist",
+        "level": "0",
+        "name": "Brownhill Road Baptist Church",
+        "religion": "christian",
+        "service_times": "Sun 11am",
+        "source": "survey",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0040713,
+          51.4448947
+        ]
+      },
+      "id": "node/11084316886"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11267096109",
+        "amenity": "place_of_worship",
+        "denomination": "baptist",
+        "name": "Forest Baptist Church",
+        "religion": "christian",
+        "service_times": "Su 10:30; 17:00",
+        "website": "https://forestbaptist.org.uk/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0139282,
+          51.5706623
+        ]
+      },
+      "id": "node/11267096109"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11331498412",
+        "amenity": "place_of_worship",
+        "name": "The Believers Mission Church Of God",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0245678,
+          51.4749345
+        ]
+      },
+      "id": "node/11331498412"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11380985017",
+        "addr:city": "Hayes",
+        "addr:housenumber": "4",
+        "addr:postcode": "UB3 4DA",
+        "addr:street": "Station Road",
+        "amenity": "place_of_worship",
+        "denomination": "methodist",
+        "name": "Hayes Methodist Church",
+        "religion": "christian",
+        "website": "https://www.hayesmethodistchurch.co.uk/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.419306,
+          51.5069656
+        ]
+      },
+      "id": "node/11380985017"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11404304977",
+        "addr:city": "Hayes",
+        "addr:country": "GB",
+        "addr:housenumber": "71",
+        "addr:postcode": "UB3 3EE",
+        "addr:street": "Coldharbour Lane",
+        "amenity": "place_of_worship",
+        "check_date": "2024-12-28",
+        "denomination": "salvation_army",
+        "name": "The Salvation Army - Hayes",
+        "phone": "01895 234088",
+        "religion": "christian",
+        "website": "https://www.salvationarmy.org.uk/hayes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4157183,
+          51.5091097
+        ]
+      },
+      "id": "node/11404304977"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11404304978",
+        "addr:city": "Harrow",
+        "addr:country": "GB",
+        "addr:housenumber": "15",
+        "addr:postcode": "HA2 0JY",
+        "addr:street": "Roxeth Hill",
+        "amenity": "place_of_worship",
+        "denomination": "salvation_army",
+        "email": "harrow@salvationarmy.org.uk",
+        "name": "The Salvation Army - Harrow",
+        "phone": "0208 864 5142",
+        "religion": "christian",
+        "website": "https://www.salvationarmy.org.uk/harrow"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3460063,
+          51.569357
+        ]
+      },
+      "id": "node/11404304978"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11404304979",
+        "addr:city": "Harold Hill",
+        "addr:country": "GB",
+        "addr:postcode": "RM3 9PP",
+        "addr:street": "Petersfield Avenue",
+        "amenity": "place_of_worship",
+        "denomination": "salvation_army",
+        "name": "The Salvation Army - Harold Hill",
+        "religion": "christian",
+        "website": "https://www.salvationarmy.org.uk/harold-hill"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2363214,
+          51.6041401
+        ]
+      },
+      "id": "node/11404304979"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11406405270",
+        "addr:city": "London",
+        "addr:country": "GB",
+        "addr:housenumber": "9",
+        "addr:postcode": "N16 7HA",
+        "addr:street": "Abney Park Terrace",
+        "amenity": "place_of_worship",
+        "check_date": "2025-05-29",
+        "denomination": "salvation_army",
+        "email": "stokenewington.corps@salvationarmy.org.uk",
+        "name": "The Salvation Army - Stoke Newington",
+        "religion": "christian",
+        "website": "https://www.salvationarmy.org.uk/stoke-newington"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0725792,
+          51.5638133
+        ]
+      },
+      "id": "node/11406405270"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11442310315",
+        "addr:housenumber": "465",
+        "addr:street": "New Cross Road",
+        "amenity": "place_of_worship",
+        "check_date": "2025-08-01",
+        "name": "Zoe Life Center",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.028809,
+          51.4754857
+        ]
+      },
+      "id": "node/11442310315"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11446979351",
+        "amenity": "place_of_worship",
+        "check_date": "2025-07-08",
+        "name": "Salway Evangelical Church",
+        "religion": "christian",
+        "service_times": "Su 11:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0196984,
+          51.6031549
+        ]
+      },
+      "id": "node/11446979351"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11479357650",
+        "addr:city": "London",
+        "addr:housenumber": "7",
+        "addr:postcode": "E15 1EL",
+        "addr:street": "The Grove",
+        "amenity": "place_of_worship",
+        "denomination": "evangelical",
+        "fhrs:id": "1279479",
+        "name": "UCKG Help Centre",
+        "operator": "Universal Church of the Kingdom of God",
+        "operator:wikidata": "Q958306",
+        "religion": "christian",
+        "source:addr": "FHRS opendata"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0043791,
+          51.5430169
+        ]
+      },
+      "id": "node/11479357650"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11544241893",
+        "amenity": "place_of_worship",
+        "name": "West Wickham Methodist Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0076879,
+          51.375976
+        ]
+      },
+      "id": "node/11544241893"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11747234587",
+        "addr:city": "London",
+        "addr:housename": "Arch 265",
+        "addr:housenumber": "241",
+        "addr:postcode": "SW9 8RR",
+        "addr:street": "Coldharbour Lane",
+        "addr:unit": "265",
+        "amenity": "place_of_worship",
+        "check_date": "2024-05-19",
+        "name": "Celestial Church of Christ - Alafia Parish",
+        "phone": "+447405415187",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1027485,
+          51.4650252
+        ]
+      },
+      "id": "node/11747234587"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11876532659",
+        "amenity": "place_of_worship",
+        "check_date": "2024-05-03",
+        "name": "The Light Of The World Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0818331,
+          51.4916616
+        ]
+      },
+      "id": "node/11876532659"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12598593281",
+        "addr:city": "London",
+        "addr:housenumber": "234",
+        "addr:postcode": "SE10 9ER",
+        "addr:street": "Trafalgar Road",
+        "amenity": "place_of_worship",
+        "email": "info@glgcuk.com",
+        "level": "-1",
+        "name": "Glorious Life Gospel Center",
+        "note:name": "signed as center, not centre",
+        "phone": "07833 204335",
+        "religion": "christian",
+        "short_name": "GLGC",
+        "website": "https://www.glgcuk.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0073796,
+          51.4856144
+        ]
+      },
+      "id": "node/12598593281"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12636487456",
+        "amenity": "place_of_worship",
+        "check_date": "2025-03-04",
+        "name": "Local Christian Assembly",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1009033,
+          51.4646257
+        ]
+      },
+      "id": "node/12636487456"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12647760353",
+        "FIXME": "tag as place of worship? not sure. Its gospel choir cummunity type place",
+        "addr:city": "London",
+        "addr:postcode": "N22 6UB",
+        "addr:street": "Coburg Road",
+        "amenity": "place_of_worship",
+        "name": "Victory International Church",
+        "phone": "+44 20 8888 9992",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1149703,
+          51.5933522
+        ]
+      },
+      "id": "node/12647760353"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12658145491",
+        "addr:city": "London",
+        "addr:housename": "Ashley House",
+        "addr:postcode": "E12 5FD",
+        "addr:street": "Faith Mews",
+        "addr:unit": "1-3",
+        "amenity": "place_of_worship",
+        "check_date": "2025-03-11",
+        "name": "Streams of Joy East London",
+        "religion": "christian",
+        "website": "https://streamsofjoyeastlondon.org/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0453347,
+          51.5504445
+        ]
+      },
+      "id": "node/12658145491"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12658145492",
+        "amenity": "place_of_worship",
+        "check_date": "2025-03-11",
+        "name": "Agape Christian Fellowship",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0452967,
+          51.5502794
+        ]
+      },
+      "id": "node/12658145492"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12678085087",
+        "amenity": "place_of_worship",
+        "check_date": "2025-03-18",
+        "name": "Christ Apostolic Church",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0924338,
+          51.4739437
+        ]
+      },
+      "id": "node/12678085087"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12749878601",
+        "addr:city": "London",
+        "addr:housename": "Church Hall",
+        "addr:housenumber": "60-62",
+        "addr:postcode": "N8 0LJ",
+        "addr:street": "Alexandra Road",
+        "amenity": "place_of_worship",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1082769,
+          51.5921425
+        ]
+      },
+      "id": "node/12749878601"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13041599093",
+        "amenity": "place_of_worship",
+        "check_date": "2025-08-01",
+        "name": "Christ Faith Tabernacle",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.050691,
+          51.4768433
+        ]
+      },
+      "id": "node/13041599093"
+    }
+  ]
+}

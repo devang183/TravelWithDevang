@@ -1,0 +1,2818 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2025-08-14T22:41:00Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/348357932",
+        "air_conditioning": "yes",
+        "amenity": "ice_cream",
+        "brand": "Amorino",
+        "brand:wikidata": "Q2843884",
+        "indoor_seating": "yes",
+        "name": "Amorino",
+        "outdoor_seating": "no",
+        "payment:cash": "no",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "website": "https://www.amorino.com/en/stores/london-islington"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1027358,
+          51.5380254
+        ]
+      },
+      "id": "node/348357932"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/412490731",
+        "addr:city": "Pinner",
+        "addr:housenumber": "377",
+        "addr:postcode": "HA5 4JN",
+        "addr:street": "Uxbridge Road",
+        "amenity": "ice_cream",
+        "brand": "Baskin-Robbins",
+        "brand:wikidata": "Q584601",
+        "brand:wikipedia": "en:Baskin-Robbins",
+        "cuisine": "ice_cream",
+        "fhrs:id": "277436",
+        "indoor_seating": "yes",
+        "level": "0",
+        "name": "Baskin-Robbins",
+        "outdoor_seating": "no",
+        "source:addr": "FHRS Open Data"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3726693,
+          51.607998
+        ]
+      },
+      "id": "node/412490731"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/694824549",
+        "addr:city": "London",
+        "addr:housename": "Tower Place East",
+        "addr:postcode": "EC3R 5BT",
+        "addr:street": "Tower Place",
+        "addr:unit": "Unit 5",
+        "amenity": "ice_cream",
+        "brand": "Ben & Jerry's",
+        "brand:wikidata": "Q816412",
+        "brand:wikipedia": "en:Ben & Jerry's",
+        "cuisine": "ice_cream",
+        "name": "Ben & Jerry's"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0790608,
+          51.5086158
+        ]
+      },
+      "id": "node/694824549"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/847744444",
+        "amenity": "ice_cream",
+        "brand": "Creams",
+        "brand:wikidata": "Q111811895",
+        "cuisine": "ice_cream",
+        "name": "Creams",
+        "note": "Two different entrances to this cafe to the east and west",
+        "website": "https://www.creamscafe.com/our-stores/finsbury-park/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1076508,
+          51.5654803
+        ]
+      },
+      "id": "node/847744444"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/931625791",
+        "addr:city": "London",
+        "addr:housenumber": "237",
+        "addr:postcode": "NW1 7BU",
+        "addr:street": "Camden High Street",
+        "amenity": "ice_cream",
+        "brand": "Amorino",
+        "brand:wikidata": "Q2843884",
+        "brand:wikipedia": "fr:Amorino",
+        "contact:phone": "+44 20 7482 5416",
+        "contact:website": "https://www.amorino.com/en/shop/london-camden.185.html",
+        "fhrs:id": "1049944",
+        "name": "Amorino",
+        "outdoor_seating": "no",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1438733,
+          51.5401058
+        ]
+      },
+      "id": "node/931625791"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1309296809",
+        "addr:housenumber": "38",
+        "addr:street": "Upper Street",
+        "amenity": "ice_cream",
+        "brand": "Pinkberry",
+        "brand:wikidata": "Q2904053",
+        "brand:wikipedia": "en:Pinkberry",
+        "cuisine": "frozen_yogurt",
+        "name": "Pinkberry",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1049698,
+          51.5348037
+        ]
+      },
+      "id": "node/1309296809"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1419213100",
+        "addr:city": "London",
+        "addr:floor": "G",
+        "addr:housenumber": "37",
+        "addr:postcode": "W5 5AH",
+        "addr:street": "New Broadway",
+        "amenity": "ice_cream",
+        "brand": "Creams",
+        "brand:wikidata": "Q111811895",
+        "check_date": "2025-05-18",
+        "cuisine": "ice_cream",
+        "level": "0",
+        "name": "Creams",
+        "website": "https://www.creamscafe.com/our-stores/ealing/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.306476,
+          51.512791
+        ]
+      },
+      "id": "node/1419213100"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1425277800",
+        "addr:housenumber": "42",
+        "addr:street": "Kensington High Street",
+        "amenity": "ice_cream",
+        "check_date:opening_hours": "2024-05-26",
+        "name": "Amorino",
+        "opening_hours:signed": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1898177,
+          51.5022749
+        ]
+      },
+      "id": "node/1425277800"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1964534468",
+        "addr:city": "London",
+        "addr:housenumber": "156",
+        "addr:postcode": "E18 1AY",
+        "addr:street": "George Lane",
+        "amenity": "ice_cream",
+        "contact:phone": "+44 20 8989 6986",
+        "cuisine": "indian",
+        "fhrs:authority": "Redbridge",
+        "fhrs:id": "444216",
+        "fhrs:local_authority_id": "72162",
+        "name": "Cookies & Cream",
+        "phone": "+44 20 3490 1753",
+        "source": "survey",
+        "takeaway": "yes",
+        "website": "http://www.cookiesandcream.net/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0250177,
+          51.5936252
+        ]
+      },
+      "id": "node/1964534468"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2273728569",
+        "addr:city": "London",
+        "addr:housenumber": "41",
+        "addr:postcode": "W1D 6HF",
+        "addr:street": "Old Compton Street",
+        "amenity": "ice_cream",
+        "brand": "Amorino",
+        "brand:wikidata": "Q2843884",
+        "brand:wikipedia": "fr:Amorino",
+        "cuisine": "ice_cream",
+        "fhrs:confidence_management": "10",
+        "fhrs:hygiene": "5",
+        "fhrs:id": "412529",
+        "fhrs:local_authority_id": "00859/0041/0/000",
+        "fhrs:rating": "3",
+        "fhrs:structural": "10",
+        "name": "Amorino",
+        "opening_hours": "Mo-Su 14:00-23:00",
+        "outdoor_seating": "yes",
+        "phone": "+44 20 7494 3300",
+        "postal_code": "W1D 6HF",
+        "source:addr": "FSA Food Hygiene Ratings Database",
+        "source:postcode": "FSA Food Hygiene Ratings Database",
+        "takeaway": "yes",
+        "website": "https://www.amorino.com/en/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1320676,
+          51.5127897
+        ]
+      },
+      "id": "node/2273728569"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2326003088",
+        "addr:city": "London",
+        "addr:housename": "Oddono's Gelati",
+        "addr:housenumber": "14",
+        "addr:postcode": "SW7 3EX",
+        "addr:street": "Bute Street",
+        "air_conditioning": "yes",
+        "amenity": "ice_cream",
+        "check_date": "2024-08-03",
+        "cuisine": "ice_cream",
+        "diet:vegetarian": "yes",
+        "indoor_seating": "yes",
+        "name": "Oddono's Gelati",
+        "opening_hours": "Su-Th 09:30-23:00, Sa 09:30-24:00; Fr 09:30-24:00",
+        "outdoor_seating": "pedestrian_zone",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "website": "http://www.oddonos.com/index.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1762135,
+          51.4936219
+        ]
+      },
+      "id": "node/2326003088"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2462839813",
+        "addr:housenumber": "148",
+        "addr:street": "Westmount Road",
+        "amenity": "ice_cream",
+        "contact:instagram": "bubblesandgelato",
+        "name": "Bubbles & Gelato"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0590938,
+          51.4584987
+        ]
+      },
+      "id": "node/2462839813"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2592530672",
+        "addr:city": "London",
+        "addr:housenumber": "2-4",
+        "addr:postcode": "E1 6AN",
+        "addr:street": "Brushfield Street",
+        "amenity": "ice_cream",
+        "check_date": "2025-05-26",
+        "check_date:opening_hours": "2025-05-26",
+        "check_date:smoking": "2025-05-26",
+        "diet:vegan": "yes",
+        "fhrs:id": "1759560",
+        "indoor_seating": "yes",
+        "name": "Darlish Ice Cream",
+        "opening_hours": "Th-Sa 12:00-22:00; Su-We 12:00-21:00",
+        "outdoor_seating": "no",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "smoking": "no",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0788958,
+          51.518857
+        ]
+      },
+      "id": "node/2592530672"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2627120348",
+        "amenity": "ice_cream",
+        "name": "Fentons"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1937873,
+          51.3646229
+        ]
+      },
+      "id": "node/2627120348"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2645677309",
+        "amenity": "ice_cream",
+        "brand": "Afters",
+        "brand:wikidata": "Q111811913",
+        "name": "Afters Original"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.161405,
+          51.4346262
+        ]
+      },
+      "id": "node/2645677309"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2712539245",
+        "addr:city": "London",
+        "addr:housenumber": "1465-1465a",
+        "addr:postcode": "SW16 4AQ",
+        "addr:street": "London Road",
+        "addr:suburb": "Norbury",
+        "amenity": "ice_cream",
+        "brand": "Creams",
+        "brand:wikidata": "Q111811895",
+        "cuisine": "ice_cream",
+        "fhrs:authority": "Croydon",
+        "fhrs:id": "34643",
+        "name": "Creams"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1227677,
+          51.4102621
+        ]
+      },
+      "id": "node/2712539245"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3041743276",
+        "addr:city": "London",
+        "addr:housenumber": "392-394",
+        "addr:postcode": "SW9 7AW",
+        "addr:street": "Brixton Road",
+        "amenity": "ice_cream",
+        "brand": "Creams",
+        "brand:wikidata": "Q111811895",
+        "check_date": "2025-07-17",
+        "contact:email": "brixton@creamscafe.com",
+        "contact:phone": "0207 738 4002",
+        "contact:website": "https://www.creamscafe.com/our-stores/london-brixton/",
+        "cuisine": "ice_cream",
+        "fhrs:authority": "Lambeth",
+        "fhrs:id": "623105",
+        "name": "Creams",
+        "shop": "ice_cream"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1141301,
+          51.4654859
+        ]
+      },
+      "id": "node/3041743276"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3077496535",
+        "addr:city": "London",
+        "addr:housenumber": "69",
+        "addr:postcode": "SW11 1NP",
+        "addr:street": "Northcote Road",
+        "amenity": "ice_cream",
+        "fhrs:id": "1573080",
+        "name": "Oddono's Gelati",
+        "source:addr": "FHRS Open Data",
+        "website": "http://www.oddonos.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1659906,
+          51.4587609
+        ]
+      },
+      "id": "node/3077496535"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3446766699",
+        "addr:housenumber": "27",
+        "addr:street": "New Row",
+        "amenity": "ice_cream",
+        "cuisine": "ice_cream;coffee",
+        "indoor_seating": "yes",
+        "name": "La Gelatiera",
+        "opening_hours": "Mo 13:00-22:00; Tu-Th, Su 12:00-22:00; Fr, Sa 12:00-23:00",
+        "outdoor_seating": "yes",
+        "payment:cash": "no",
+        "payment:credit_cards": "yes",
+        "takeaway": "yes",
+        "website": "https://www.lagelatiera.co.uk/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1267738,
+          51.5110987
+        ]
+      },
+      "id": "node/3446766699"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3703086368",
+        "addr:city": "London",
+        "addr:housenumber": "51",
+        "addr:postcode": "E8 4PH",
+        "addr:street": "Broadway Market",
+        "amenity": "ice_cream",
+        "check_date": "2025-04-29",
+        "check_date:opening_hours": "2024-04-29",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "indoor_seating": "yes",
+        "name": "Benny's",
+        "opening_hours:signed": "no",
+        "outdoor_seating": "no",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "takeaway": "yes",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0616209,
+          51.5370208
+        ]
+      },
+      "id": "node/3703086368"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3706217491",
+        "amenity": "ice_cream",
+        "level": "0",
+        "name": "Venchi",
+        "payment:american_express": "yes",
+        "website": "https://uk.venchi.com/venchi-chocolate-and-gelato-london-covent-garden",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1225942,
+          51.511988
+        ]
+      },
+      "id": "node/3706217491"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3761737525",
+        "addr:city": "London",
+        "addr:housenumber": "42",
+        "addr:postcode": "N16 0LU",
+        "addr:street": "Stoke Newington Church Street",
+        "addr:suburb": "Hackney",
+        "amenity": "ice_cream",
+        "name": "Oddono's Gelati",
+        "website": "http://www.oddonos.com/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0754299,
+          51.562222
+        ]
+      },
+      "id": "node/3761737525"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4215017591",
+        "amenity": "ice_cream",
+        "check_date": "2024-08-09",
+        "name": "Nardulli",
+        "outdoor_seating": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1405586,
+          51.4630121
+        ]
+      },
+      "id": "node/4215017591"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4237992289",
+        "addr:housenumber": "7",
+        "addr:street": "Garrick Street",
+        "amenity": "ice_cream",
+        "brand": "Amorino",
+        "brand:wikidata": "Q2843884",
+        "brand:wikipedia": "fr:Amorino",
+        "check_date": "2022-06-27",
+        "name": "Amorino",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1258054,
+          51.5113887
+        ]
+      },
+      "id": "node/4237992289"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4365097290",
+        "addr:housenumber": "7",
+        "addr:street": "Archer Street",
+        "amenity": "ice_cream",
+        "name": "Gelupo",
+        "opening_hours": "Mo-Th 11:00-23:00; Fr-Sa 11:00-24:00; Su 12:00-23:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1337003,
+          51.5115864
+        ]
+      },
+      "id": "node/4365097290"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4837714991",
+        "addr:housenumber": "298-300",
+        "addr:street": "Holloway Road",
+        "amenity": "ice_cream",
+        "name": "sensations",
+        "website": "http://www.sensationsuk.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1145049,
+          51.5546647
+        ]
+      },
+      "id": "node/4837714991"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4846261123",
+        "addr:city": "London",
+        "addr:housenumber": "24",
+        "addr:postcode": "W1D 6QJ",
+        "addr:street": "Wardour Street",
+        "amenity": "ice_cream",
+        "fhrs:id": "946313",
+        "name": "bubblewrap waffle",
+        "opening_hours": "Mo-Su 12:30-20:30",
+        "website": "http://www.bubblewrapwaffle.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1318819,
+          51.5112211
+        ]
+      },
+      "id": "node/4846261123"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4855558088",
+        "addr:city": "London",
+        "addr:housenumber": "127",
+        "addr:postcode": "W2 4RH",
+        "addr:street": "Bayswater Road",
+        "amenity": "ice_cream",
+        "check_date": "2023-06-08",
+        "name": "Fentons Ice Cream",
+        "website": "http://www.fentonsicecream.co.uk/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1873148,
+          51.5103871
+        ]
+      },
+      "id": "node/4855558088"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4873544664",
+        "addr:city": "London",
+        "addr:housenumber": "78",
+        "addr:postcode": "SW11 1PT",
+        "addr:street": "St. John's Road",
+        "amenity": "ice_cream",
+        "brand": "Amorino",
+        "brand:wikidata": "Q2843884",
+        "brand:wikipedia": "fr:Amorino",
+        "fhrs:id": "1573305",
+        "name": "Amorino",
+        "source:addr": "FHRS Open Data"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1675809,
+          51.4614933
+        ]
+      },
+      "id": "node/4873544664"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4922741802",
+        "amenity": "ice_cream",
+        "currency:XLT": "BXTP",
+        "fixme": "place not accurate",
+        "name": "Lab G",
+        "payment:cash:XLT-BXTP": "yes",
+        "payment:text:XLT-BXTP": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1116329,
+          51.4622554
+        ]
+      },
+      "id": "node/4922741802"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5052256070",
+        "addr:city": "London",
+        "addr:housenumber": "82",
+        "addr:postcode": "W1D 3SP",
+        "addr:street": "Dean Street",
+        "amenity": "ice_cream",
+        "brand": "Kaspa's",
+        "brand:wikidata": "Q24439133",
+        "check_date": "2025-06-13",
+        "cuisine": "hawaiian",
+        "delivery": "yes",
+        "fhrs:id": "412886",
+        "level": "0",
+        "name": "Kaspa's",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1331754,
+          51.5144557
+        ]
+      },
+      "id": "node/5052256070"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5057389641",
+        "addr:city": "London",
+        "addr:housenumber": "3",
+        "addr:place": "Midland Goods Shed",
+        "addr:postcode": "N1C 4BZ",
+        "addr:street": "Wharf Road",
+        "amenity": "ice_cream",
+        "check_date": "2025-03-07",
+        "delivery": "yes",
+        "diet:vegan": "yes",
+        "name": "Ruby Violet",
+        "opening_hours": "Mo 10:00-19:00; Tu-Su 10:00-22:00",
+        "outdoor_seating": "yes",
+        "website": "https://www.rubyviolet.co.uk/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1233923,
+          51.5357719
+        ]
+      },
+      "id": "node/5057389641"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5110782991",
+        "amenity": "ice_cream",
+        "level": "0",
+        "name": "Morelli's Gelato"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1223219,
+          51.5121106
+        ]
+      },
+      "id": "node/5110782991"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5451273853",
+        "amenity": "ice_cream",
+        "name": "Snowflake",
+        "outdoor_seating": "no",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.134002,
+          51.513693
+        ]
+      },
+      "id": "node/5451273853"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5483374622",
+        "addr:city": "London",
+        "addr:housenumber": "251",
+        "addr:postcode": "E9 5DG",
+        "addr:street": "Wick Road",
+        "amenity": "ice_cream",
+        "level": "0",
+        "name": "Kasey's",
+        "old_name": "cbd-central"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0354856,
+          51.5453459
+        ]
+      },
+      "id": "node/5483374622"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5685721149",
+        "addr:city": "London",
+        "addr:housenumber": "21",
+        "addr:postcode": "W2 4QJ",
+        "addr:street": "Queensway",
+        "amenity": "ice_cream",
+        "brand": "Amorino",
+        "brand:wikidata": "Q2843884",
+        "brand:wikipedia": "fr:Amorino",
+        "name": "Amorino",
+        "phone": "+44 20 3538 5900",
+        "website": "https://www.amorino.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1873847,
+          51.5110287
+        ]
+      },
+      "id": "node/5685721149"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5762034730",
+        "addr:city": "Harrow",
+        "addr:housenumber": "261",
+        "addr:postcode": "HA1 2TB",
+        "addr:street": "Station Road",
+        "amenity": "ice_cream",
+        "brand": "Baskin-Robbins",
+        "brand:wikidata": "Q584601",
+        "brand:wikipedia": "en:Baskin-Robbins",
+        "check_date": "2025-04-27",
+        "cuisine": "ice_cream",
+        "fhrs:id": "864178",
+        "name": "Baskin-Robbins",
+        "source:addr": "FHRS Open Data"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3320777,
+          51.5829608
+        ]
+      },
+      "id": "node/5762034730"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5828117973",
+        "addr:city": "London",
+        "addr:housename": "The Gallery, Westfield Stratford City",
+        "addr:postcode": "E20 1EJ",
+        "addr:street": "Montfichet Road",
+        "addr:unit": "Kiosk 20",
+        "amenity": "ice_cream",
+        "brand": "Pinkberry",
+        "brand:wikidata": "Q2904053",
+        "brand:wikipedia": "en:Pinkberry",
+        "check_date": "2025-02-17",
+        "cuisine": "frozen_yogurt",
+        "fhrs:id": "971783",
+        "fhrs:local_authority_id": "17/00286/FOOD",
+        "level": "0",
+        "name": "Pinkberry",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0065515,
+          51.5433518
+        ]
+      },
+      "id": "node/5828117973"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5828118085",
+        "addr:city": "London",
+        "addr:housename": "Westfield Stratford City",
+        "addr:postcode": "E20 1EL",
+        "addr:street": "Montfichet Road",
+        "addr:unit": "132A The Arcade",
+        "amenity": "ice_cream",
+        "check_date": "2025-02-17",
+        "fhrs:id": "1530600",
+        "level": "0",
+        "name": "Bubblewrap London",
+        "source:addr": "FHRS Open Data"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0055907,
+          51.5434455
+        ]
+      },
+      "id": "node/5828118085"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5960124885",
+        "addr:city": "London",
+        "addr:housenumber": "4",
+        "addr:postcode": "SE1 9AB",
+        "addr:street": "Park Street",
+        "amenity": "ice_cream",
+        "email": "info@gelateria3bis.co.uk",
+        "fhrs:id": "781493",
+        "indoor_seating": "yes",
+        "name": "Gelateria 3 Bis",
+        "outdoor_seating": "yes",
+        "phone": "+44 20 7378 1977",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.gelateria3bis.co.uk/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0915512,
+          51.5054881
+        ]
+      },
+      "id": "node/5960124885"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6076031545",
+        "addr:city": "London",
+        "addr:housenumber": "1-2",
+        "addr:postcode": "E20 1DH",
+        "addr:street": "West Park Walk",
+        "amenity": "ice_cream",
+        "branch": "East Village (E20)",
+        "check_date": "2024-08-10",
+        "contact:email": "info@lagelatiera.co.uk",
+        "contact:facebook": "https://www.facebook.com/LaGelatiera",
+        "contact:instagram": "https://www.instagram.com/lagelatiera",
+        "contact:twitter": "@lagelatiera",
+        "contact:vimeo": "https://vimeo.com/75775894",
+        "contact:website": "http://www.lagelatiera.co.uk",
+        "diet:vegan": "yes",
+        "fhrs:id": "919506",
+        "fhrs:local_authority_id": "16/00392/FOOD",
+        "level": "0",
+        "name": "La Gelateria",
+        "opening_hours": "Mo,Fr 10:00-17:00; Sa,Su 09:00-18:00",
+        "outdoor_seating": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "takeaway": "yes",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0099023,
+          51.5466532
+        ]
+      },
+      "id": "node/6076031545"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6484434997",
+        "amenity": "ice_cream",
+        "brand": "Amorino",
+        "brand:wikidata": "Q2843884",
+        "brand:wikipedia": "fr:Amorino",
+        "check_date": "2024-11-29",
+        "level": "0",
+        "name": "Amorino",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3050972,
+          51.5112494
+        ]
+      },
+      "id": "node/6484434997"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6578556468",
+        "addr:housenumber": "42-44",
+        "addr:street": "Thurloe Street",
+        "amenity": "ice_cream",
+        "check_date": "2025-06-08",
+        "indoor_seating": "yes",
+        "name": "Snowflake",
+        "outdoor_seating": "yes",
+        "phone": "+44 20 7589 9041",
+        "website": "https://snowflakegelato.co.uk/boutique-page/south-kensington/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1744238,
+          51.4942599
+        ]
+      },
+      "id": "node/6578556468"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6616378676",
+        "amenity": "ice_cream",
+        "brand": "Creams",
+        "brand:wikidata": "Q111811895",
+        "cuisine": "ice_cream",
+        "fhrs:id": "818133",
+        "name": "Creams",
+        "website": "https://www.creamscafe.com/our-stores/watford/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4016837,
+          51.6595903
+        ]
+      },
+      "id": "node/6616378676"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6746521551",
+        "amenity": "ice_cream"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1528337,
+          51.4803544
+        ]
+      },
+      "id": "node/6746521551"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6746521554",
+        "amenity": "ice_cream",
+        "name": "Jude’s Icecream"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1512863,
+          51.4797266
+        ]
+      },
+      "id": "node/6746521554"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6851609387",
+        "addr:housenumber": "216",
+        "addr:street": "Shaftesbury Avenue",
+        "amenity": "ice_cream",
+        "name": "Prime Gelato London",
+        "opening_hours": "Mo-Sa 11:30-23:00; Su 12:00-22:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1260766,
+          51.5163785
+        ]
+      },
+      "id": "node/6851609387"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7022220811",
+        "addr:city": "London",
+        "addr:housenumber": "187",
+        "addr:postcode": "N1 1RQ",
+        "addr:street": "Upper Street",
+        "addr:suburb": "Islington",
+        "amenity": "ice_cream",
+        "contact:email": "raj@udderlicious.co.uk",
+        "contact:phone": "+44 20 7359 7777",
+        "diet:gluten_free": "yes",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "only",
+        "fhrs:id": "623415",
+        "indoor_seating": "yes",
+        "name": "Udderlicious",
+        "opening_hours": "Mo-Th 11:00-23:00; Fr-Sa 11:00-00:00; Su 11:00-23:00",
+        "outdoor_seating": "yes",
+        "smoking": "no",
+        "source": "survey",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.udderlicious.co.uk/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1032087,
+          51.5423242
+        ]
+      },
+      "id": "node/7022220811"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7059213744",
+        "addr:housenumber": "58",
+        "addr:street": "Westbourne Grove",
+        "amenity": "ice_cream",
+        "contact:facebook": "https://www.facebook.com/yogland/",
+        "name": "Yogland Fit Frozen Dessert"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1919626,
+          51.515461
+        ]
+      },
+      "id": "node/7059213744"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7123959684",
+        "addr:city": "London",
+        "addr:housenumber": "42",
+        "addr:street": "Notting Hill Gate",
+        "amenity": "ice_cream",
+        "check_date": "2025-06-29",
+        "name": "Badiani Gelato",
+        "phone": "+44 20 7792 2375",
+        "website": "https://www.badiani1932.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1949455,
+          51.5094642
+        ]
+      },
+      "id": "node/7123959684"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7126677042",
+        "addr:housenumber": "22",
+        "addr:street": "Pembridge Road",
+        "amenity": "ice_cream",
+        "name": "Amorino Notting Hill",
+        "phone": "+44 20 7221 2449",
+        "website": "https://www.amorino.com/en/index.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1971297,
+          51.5096797
+        ]
+      },
+      "id": "node/7126677042"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7292418790",
+        "addr:housenumber": "67a",
+        "addr:street": "King's Road",
+        "amenity": "ice_cream",
+        "brand": "Amorino",
+        "brand:wikidata": "Q2843884",
+        "brand:wikipedia": "fr:Amorino",
+        "name": "Amorino",
+        "opening_hours": "Mo-Su 11:00-24:00",
+        "phone": "+44 20 7730 3591",
+        "website": "https://www.amorino.com/en"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1637405,
+          51.4894052
+        ]
+      },
+      "id": "node/7292418790"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8086880069",
+        "addr:housenumber": "13",
+        "addr:street": "Exhibition Road",
+        "amenity": "ice_cream",
+        "check_date": "2024-09-07",
+        "drive_through": "no",
+        "indoor_seating": "yes",
+        "level": "0",
+        "name": "Venchi",
+        "outdoor_seating": "no",
+        "phone": "+44 20 3632 7243",
+        "shop": "chocolate",
+        "source": "survey",
+        "takeaway": "yes",
+        "website": "https://uk.venchi.com/venchi-chocolate-and-gelato-london-south-kensington"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1736941,
+          51.4949494
+        ]
+      },
+      "id": "node/8086880069"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8344765924",
+        "addr:housenumber": "166",
+        "addr:street": "Pavilion Road",
+        "amenity": "ice_cream",
+        "name": "Parlour by the Ice Cream Union",
+        "phone": "+44 20 7237 9042",
+        "website": "http://www.icecreamunion.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1589893,
+          51.4937395
+        ]
+      },
+      "id": "node/8344765924"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8646245126",
+        "addr:housenumber": "190-192",
+        "addr:street": "Uxbridge Road",
+        "amenity": "ice_cream",
+        "brand": "Creams",
+        "brand:wikidata": "Q111811895",
+        "check_date": "2023-12-28",
+        "cuisine": "ice_cream",
+        "name": "Creams",
+        "opening_hours": "PH,Mo-Su 11:00-23:00",
+        "phone": "+44 20 8248 1518",
+        "website": "https://www.creamscafe.com/our-stores/shepherds-bush/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2257354,
+          51.5054572
+        ]
+      },
+      "id": "node/8646245126"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8736136191",
+        "addr:housenumber": "5",
+        "addr:street": "Manor Road",
+        "amenity": "ice_cream",
+        "name": "Kool Cafe"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3211302,
+          51.5139265
+        ]
+      },
+      "id": "node/8736136191"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8830408778",
+        "addr:city": "London",
+        "addr:housename": "Export Building",
+        "addr:housenumber": "1",
+        "addr:postcode": "E14 2BA",
+        "addr:street": "Clove Crescent",
+        "amenity": "ice_cream",
+        "drive_through": "no",
+        "fhrs:id": "1387679",
+        "name": "Gelato a Casa",
+        "opening_hours": "Mo-Su 11:00-21:00",
+        "outdoor_seating": "yes",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes",
+        "website:menu": "https://www.gelatoacasa.co.uk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.003798,
+          51.5096568
+        ]
+      },
+      "id": "node/8830408778"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8840240434",
+        "addr:city": "London",
+        "addr:postcode": "E6 6LG",
+        "addr:street": "Claps Gate Lane",
+        "addr:substreet": "Gateway Retail Park",
+        "addr:suburb": "Beckton",
+        "addr:unit": "4B",
+        "amenity": "ice_cream",
+        "brand": "Creams",
+        "brand:wikidata": "Q111811895",
+        "contact:email": "beckton@creamscafe.com",
+        "contact:phone": "+44 20 3952 5950",
+        "contact:website": "https://www.creamscafe.com/our-stores/london-beckton/",
+        "cuisine": "ice_cream",
+        "fhrs:id": "1031401",
+        "name": "Creams",
+        "opening_hours": "Mo-Su 13:00-21:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0709853,
+          51.5213253
+        ]
+      },
+      "id": "node/8840240434"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8846875485",
+        "addr:city": "Orpington",
+        "addr:housenumber": "334",
+        "addr:postcode": "BR6 8NW",
+        "addr:street": "Crofton Road",
+        "amenity": "ice_cream",
+        "fhrs:id": "1284400",
+        "name": "Love Gelato"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.055893,
+          51.3678313
+        ]
+      },
+      "id": "node/8846875485"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8946352057",
+        "amenity": "ice_cream",
+        "brand": "Afters",
+        "brand:wikidata": "Q111811913",
+        "name": "Afters Original"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1920714,
+          51.3606814
+        ]
+      },
+      "id": "node/8946352057"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8972075041",
+        "addr:city": "Orpington",
+        "addr:postcode": "BR6 0TW",
+        "amenity": "ice_cream",
+        "brand": "Creams",
+        "brand:wikidata": "Q111811895",
+        "cuisine": "ice_cream",
+        "fhrs:id": "1299723",
+        "name": "Creams",
+        "website": "https://www.creamscafe.com/our-stores/orpington/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1009892,
+          51.3764672
+        ]
+      },
+      "id": "node/8972075041"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9176885568",
+        "addr:city": "Hounslow",
+        "addr:housenumber": "7",
+        "addr:postcode": "TW3 1RH",
+        "addr:street": "High Street",
+        "amenity": "ice_cream",
+        "brand": "Creams",
+        "brand:wikidata": "Q111811895",
+        "contact:email": "hounslow@creamscafe.com",
+        "contact:phone": "020 8577 9866",
+        "contact:website": "https://www.creamscafe.com/our-stores/hounslow/",
+        "cuisine": "ice_cream",
+        "fhrs:id": "745459",
+        "name": "Creams",
+        "source:addr": "FHRS Open Data"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3541412,
+          51.4705979
+        ]
+      },
+      "id": "node/9176885568"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9229991028",
+        "addr:city": "London",
+        "addr:housenumber": "23",
+        "addr:postcode": "E16 2PN",
+        "addr:street": "Admiralty Avenue",
+        "amenity": "ice_cream",
+        "branch": "Royal Wharf",
+        "brand": "Creams",
+        "brand:wikidata": "Q111811895",
+        "cuisine": "ice_cream",
+        "fhrs:id": "1420020",
+        "internet_access": "wlan",
+        "name": "Creams",
+        "opening_hours": "Mo-Su 14:00-22:00",
+        "website": "https://www.creamscafe.com/our-stores/royal-wharf/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0307499,
+          51.4996247
+        ]
+      },
+      "id": "node/9229991028"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9332551639",
+        "addr:city": "London",
+        "addr:housenumber": "11-13",
+        "addr:parentstreet": "Green Street",
+        "addr:postcode": "E7 8LH",
+        "addr:street": "Carlton Terrace",
+        "addr:suburb": "Forest Gate",
+        "amenity": "ice_cream",
+        "contact:phone": "+44 20 8472 2600",
+        "fhrs:id": "1300110",
+        "fhrs:local_authority_id": "20/00033/FOOD",
+        "name": "Lahori Kulfi",
+        "source:addr:housenumber": "interpolated"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0337476,
+          51.5384989
+        ]
+      },
+      "id": "node/9332551639"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9334049578",
+        "addr:city": "London",
+        "addr:housenumber": "297",
+        "addr:postcode": "E13 9AR",
+        "addr:street": "Green Street",
+        "amenity": "ice_cream",
+        "delivery": "only",
+        "fhrs:id": "1086032",
+        "name": "Lahori Kulfi Ltd"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0346562,
+          51.5376184
+        ]
+      },
+      "id": "node/9334049578"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9346389825",
+        "addr:city": "London",
+        "addr:housenumber": "8",
+        "addr:parentstreet": "Green Street",
+        "addr:postcode": "E7 8LH",
+        "addr:street": "Carlton Terrace",
+        "addr:suburb": "Forest Gate",
+        "amenity": "ice_cream",
+        "fhrs:id": "640620",
+        "name": "Lahori Kulfi",
+        "source:addr:housenumber": "interpolated"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0336494,
+          51.5388144
+        ]
+      },
+      "id": "node/9346389825"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9429521888",
+        "amenity": "ice_cream",
+        "indoor_seating": "yes",
+        "name": "Flavours Gelato",
+        "outdoor_seating": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0626616,
+          51.4981976
+        ]
+      },
+      "id": "node/9429521888"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9433105261",
+        "addr:city": "London",
+        "addr:country": "GB",
+        "addr:housenumber": "210",
+        "addr:postcode": "NW1 5RT",
+        "addr:street": "Baker Street",
+        "amenity": "ice_cream",
+        "brand": "Baskin-Robbins",
+        "brand:wikidata": "Q584601",
+        "brand:wikipedia": "en:Baskin-Robbins",
+        "cuisine": "ice_cream",
+        "fhrs:id": "413288",
+        "name": "Baskin-Robbins"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1578583,
+          51.5231654
+        ]
+      },
+      "id": "node/9433105261"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9452388401",
+        "addr:city": "Bromley",
+        "addr:housenumber": "12",
+        "addr:postcode": "BR1 1LP",
+        "addr:street": "Elmfield Road",
+        "alt_name": "Creams",
+        "amenity": "ice_cream",
+        "brand": "Creams",
+        "brand:wikidata": "Q111811895",
+        "check_date": "2023-09-17",
+        "contact:email": "bromley@creamscafe.com",
+        "cuisine": "ice_cream",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "level": "0",
+        "name": "Creams",
+        "opening_hours": "Mo-Su 12:00-22:00",
+        "outdoor_seating": "no",
+        "phone": "+44 20 8289 6288",
+        "website": "https://www.creamscafe.com/our-stores/bromley/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0161324,
+          51.4025292
+        ]
+      },
+      "id": "node/9452388401"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9488113990",
+        "addr:city": "London",
+        "addr:housename": "Centurion Tower",
+        "addr:postcode": "E16 1XJ",
+        "addr:street": "Caxton Street North",
+        "addr:suburb": "Canning Town",
+        "addr:unit": "Unit 1",
+        "amenity": "ice_cream",
+        "fhrs:id": "1398410",
+        "fhrs:local_authority_id": "21/00473/FOOD",
+        "name": "Brass Monkey",
+        "website": "http://www.brassmonkeyicecream.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0119311,
+          51.5112899
+        ]
+      },
+      "id": "node/9488113990"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9689217363",
+        "amenity": "ice_cream"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1629342,
+          51.5031433
+        ]
+      },
+      "id": "node/9689217363"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9725508760",
+        "addr:city": "London",
+        "addr:postcode": "SE10 9JH",
+        "addr:street": "King William Walk",
+        "amenity": "ice_cream",
+        "fhrs:id": "695175",
+        "name": "Teapot Alley"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0080586,
+          51.4807563
+        ]
+      },
+      "id": "node/9725508760"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9888022517",
+        "addr:housenumber": "30",
+        "addr:street": "Great Windmill Street",
+        "amenity": "ice_cream",
+        "name": "Bilmonte"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1346969,
+          51.511643
+        ]
+      },
+      "id": "node/9888022517"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9979753903",
+        "addr:city": "West Wickham",
+        "addr:housenumber": "66",
+        "addr:postcode": "BR4 0NH",
+        "addr:street": "High Street",
+        "amenity": "ice_cream",
+        "fhrs:id": "837831",
+        "name": "Bites n Melts",
+        "source:addr": "FHRS Open Data"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0176845,
+          51.3763977
+        ]
+      },
+      "id": "node/9979753903"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10095832952",
+        "addr:city": "London",
+        "addr:housenumber": "127",
+        "addr:postcode": "SE18 6JL",
+        "addr:street": "Powis Street",
+        "amenity": "ice_cream",
+        "brand": "Creams",
+        "brand:wikidata": "Q111811895",
+        "contact:website": "https://www.creamscafe.com/our-stores/woolwich/",
+        "cuisine": "ice_cream",
+        "fhrs:id": "1296528",
+        "name": "Creams"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0633471,
+          51.4922533
+        ]
+      },
+      "id": "node/10095832952"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10103301408",
+        "amenity": "ice_cream",
+        "name": "Milk Train",
+        "takeaway": "yes",
+        "toilets": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1215139,
+          51.5114228
+        ]
+      },
+      "id": "node/10103301408"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10112232483",
+        "amenity": "ice_cream",
+        "check_date": "2024-04-05",
+        "indoor_seating": "yes",
+        "name": "Chilled",
+        "outdoor_seating": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.317069,
+          51.600953
+        ]
+      },
+      "id": "node/10112232483"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10138850147",
+        "addr:city": "London",
+        "addr:housenumber": "132",
+        "addr:postcode": "E2 6DG",
+        "addr:street": "Bethnal Green Road",
+        "amenity": "ice_cream",
+        "branch": "Shoreditch",
+        "fhrs:id": "1537373",
+        "name": "Yole",
+        "outdoor_seating": "no",
+        "website": "https://www.yole.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0710646,
+          51.52501
+        ]
+      },
+      "id": "node/10138850147"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10202506402",
+        "amenity": "ice_cream",
+        "check_date": "2022-11-19",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "drive_through": "no",
+        "level": "-1",
+        "name": "Venchi",
+        "outdoor_seating": "no",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1447516,
+          51.4823582
+        ]
+      },
+      "id": "node/10202506402"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10225863756",
+        "amenity": "ice_cream",
+        "name": "Yoyo's"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0649258,
+          51.492133
+        ]
+      },
+      "id": "node/10225863756"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10266440535",
+        "addr:city": "London",
+        "addr:housenumber": "21",
+        "addr:postcode": "SE10 9JB",
+        "addr:street": "Nelson Road",
+        "amenity": "ice_cream",
+        "fhrs:id": "1383454",
+        "level": "0",
+        "name": "Dark Sugars Ice Cream",
+        "note": "not a duplicate of the one across the street"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.008452,
+          51.4809286
+        ]
+      },
+      "id": "node/10266440535"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10266440591",
+        "addr:city": "London",
+        "addr:housenumber": "36",
+        "addr:postcode": "SE10 9BL",
+        "addr:street": "Greenwich Church Street",
+        "amenity": "ice_cream",
+        "check_date": "2025-08-08",
+        "cuisine": "milkshake",
+        "fhrs:id": "1657269",
+        "name": "SBlended Milkshakes",
+        "opening_hours": "Mo-Su 12:00-20:00",
+        "website": "https://www.sblendedshakes.com/greenwich"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0098497,
+          51.481386
+        ]
+      },
+      "id": "node/10266440591"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10266440593",
+        "addr:city": "London",
+        "addr:housenumber": "40,42",
+        "addr:postcode": "SE10 9BL",
+        "addr:street": "Greenwich Church Street",
+        "amenity": "ice_cream",
+        "branch": "London Greenwich",
+        "brand": "Amorino",
+        "brand:wikidata": "Q2843884",
+        "check_date": "2025-08-08",
+        "fhrs:id": "1653767",
+        "name": "Amorino",
+        "website": "https://www.amorino.com/en/stores/london-greenwich"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0098794,
+          51.4814788
+        ]
+      },
+      "id": "node/10266440593"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10266440625",
+        "addr:city": "London",
+        "addr:housenumber": "8",
+        "addr:postcode": "SE10 9JH",
+        "addr:street": "King William Walk",
+        "air_conditioning": "no",
+        "amenity": "ice_cream",
+        "fhrs:id": "694461",
+        "indoor_seating": "no",
+        "name": "The Kiosk",
+        "opening_hours:signed": "no",
+        "outdoor_seating": "no",
+        "takeaway": "only"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0075181,
+          51.4802646
+        ]
+      },
+      "id": "node/10266440625"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10552875778",
+        "amenity": "ice_cream",
+        "name": "Dezeo's Desserts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.109903,
+          51.5510417
+        ]
+      },
+      "id": "node/10552875778"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10771411826",
+        "addr:city": "Ilford",
+        "addr:housenumber": "265B",
+        "addr:postcode": "IG1 2SD",
+        "addr:street": "Ilford Lane",
+        "amenity": "ice_cream",
+        "brand": "Afters",
+        "brand:wikidata": "Q111811913",
+        "fhrs:id": "443682",
+        "name": "Afters Original"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0749879,
+          51.5504741
+        ]
+      },
+      "id": "node/10771411826"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10783444518",
+        "addr:city": "Ilford",
+        "addr:housenumber": "175",
+        "addr:postcode": "IG6 2AJ",
+        "addr:street": "High Street",
+        "addr:village": "Barkingside",
+        "amenity": "ice_cream",
+        "name": "Sweet Summer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0842044,
+          51.5930874
+        ]
+      },
+      "id": "node/10783444518"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10783444524",
+        "addr:city": "Ilford",
+        "addr:housenumber": "153",
+        "addr:postcode": "IG6 2AJ",
+        "addr:street": "High Street",
+        "addr:village": "Barkingside",
+        "amenity": "ice_cream",
+        "delivery": "yes",
+        "name": "Cookies and Creams",
+        "outdoor_seating": "no",
+        "source": "local knowledge;streetlevel imagery",
+        "takeaway": "yes",
+        "website": "http://cookiesandcream.net"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0838662,
+          51.5926906
+        ]
+      },
+      "id": "node/10783444524"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10783444538",
+        "addr:city": "Ilford",
+        "addr:housenumber": "115-123",
+        "addr:postcode": "IG6 2AJ",
+        "addr:street": "High Street",
+        "addr:village": "Barkingside",
+        "amenity": "ice_cream",
+        "name": "Rossi Bros",
+        "outdoor_seating": "no",
+        "source": "local knowledge;streetlevel imagery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0830781,
+          51.5918078
+        ]
+      },
+      "id": "node/10783444538"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10798047254",
+        "addr:city": "London",
+        "addr:housenumber": "32",
+        "addr:postcode": "SE1 7RG",
+        "addr:street": "Lower Marsh",
+        "amenity": "ice_cream",
+        "name": "Candiero"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1120549,
+          51.5010667
+        ]
+      },
+      "id": "node/10798047254"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10916509729",
+        "addr:street": "Brixton Station Road",
+        "amenity": "ice_cream",
+        "check_date": "2024-11-03",
+        "delivery": "yes",
+        "drive_through": "no",
+        "name": "Jefferson's",
+        "outdoor_seating": "yes",
+        "payment:american_express": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1091325,
+          51.4635416
+        ]
+      },
+      "id": "node/10916509729"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10924079511",
+        "addr:city": "London",
+        "addr:country": "GB",
+        "addr:housenumber": "167",
+        "addr:postcode": "NW9 6LP",
+        "addr:street": "Edgware Road",
+        "amenity": "ice_cream",
+        "brand": "Baskin-Robbins",
+        "brand:wikidata": "Q584601",
+        "cuisine": "ice_cream",
+        "fhrs:id": "533876",
+        "name": "Baskin-Robbins"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2509817,
+          51.5866851
+        ]
+      },
+      "id": "node/10924079511"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11047352457",
+        "amenity": "ice_cream",
+        "name": "Soho Creamery",
+        "website": "https://sohocreamery.co/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1446957,
+          51.5419646
+        ]
+      },
+      "id": "node/11047352457"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11064397504",
+        "addr:city": "Bromley",
+        "addr:country": "GB",
+        "addr:housenumber": "499",
+        "addr:postcode": "BR1 4PQ",
+        "addr:street": "Bromley Road",
+        "amenity": "ice_cream",
+        "fhrs:id": "1600952",
+        "name": "Scoops",
+        "source:addr": "FHRS Open Data"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0030242,
+          51.4235179
+        ]
+      },
+      "id": "node/11064397504"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11237085893",
+        "amenity": "ice_cream",
+        "check_date": "2023-10-03",
+        "level": "0",
+        "name": "Rio Ice cream & Cake"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0073018,
+          51.4619765
+        ]
+      },
+      "id": "node/11237085893"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11273070361",
+        "amenity": "ice_cream",
+        "check_date": "2025-02-17",
+        "fhrs:id": "1522098",
+        "level": "0",
+        "name": "Pan-n-Ice"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0052921,
+          51.543266
+        ]
+      },
+      "id": "node/11273070361"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11371344901",
+        "addr:city": "Kingston upon Thames",
+        "addr:housename": "London House",
+        "addr:housenumber": "107",
+        "addr:postcode": "KT1 1QY",
+        "addr:street": "Clarence Street",
+        "amenity": "ice_cream",
+        "brand": "Creams",
+        "brand:wikidata": "Q111811895",
+        "contact:email": "kingston@creamscafe.com",
+        "contact:phone": "0208 546 6380",
+        "contact:website": "https://www.creamscafe.com/our-stores/kingston/",
+        "cuisine": "ice_cream",
+        "fhrs:id": "1533730",
+        "name": "Creams"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3010364,
+          51.411018
+        ]
+      },
+      "id": "node/11371344901"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11462559112",
+        "amenity": "ice_cream",
+        "check_date": "2023-12-28",
+        "level": "1",
+        "name": "Snowflake",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2218407,
+          51.5079101
+        ]
+      },
+      "id": "node/11462559112"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11492035556",
+        "addr:floor": "G",
+        "addr:housenumber": "2",
+        "addr:street": "Turnham Green Terrace",
+        "amenity": "ice_cream",
+        "check_date": "2024-01-05",
+        "indoor_seating": "yes",
+        "level": "0",
+        "name": "Fouberts",
+        "outdoor_seating": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2551195,
+          51.4930205
+        ]
+      },
+      "id": "node/11492035556"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11493028170",
+        "addr:floor": "G",
+        "addr:housenumber": "286",
+        "addr:street": "Chiswick High Road",
+        "amenity": "ice_cream",
+        "brand": "Amorino",
+        "brand:wikidata": "Q2843884",
+        "check_date": "2024-07-22",
+        "level": "0",
+        "name": "Amorino",
+        "opening_hours": "Mo-Th 12:00-22:30; Fr 12:00-23:00; Sa 11:00-23:00; Su 11:00-22:30"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2600133,
+          51.492621
+        ]
+      },
+      "id": "node/11493028170"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11557826355",
+        "addr:city": "London",
+        "addr:housenumber": "21",
+        "addr:postcode": "SE1 9PA",
+        "addr:street": "Dirty Lane",
+        "amenity": "ice_cream",
+        "branch": "Borough Yards",
+        "brand": "Amorino",
+        "brand:wikidata": "Q2843884",
+        "check_date": "2024-08-07",
+        "contact:website": "https://www.amorino.com/",
+        "fhrs:id": "1623981",
+        "name": "Amorino",
+        "source:addr": "FHRS Open Data"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0921992,
+          51.5061419
+        ]
+      },
+      "id": "node/11557826355"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11610588772",
+        "amenity": "ice_cream",
+        "brand": "Ben & Jerry's",
+        "brand:wikidata": "Q816412",
+        "check_date": "2025-06-21",
+        "cuisine": "ice_cream",
+        "diet:vegan": "yes",
+        "indoor_seating": "no",
+        "level": "1",
+        "name": "Ben & Jerry's",
+        "outdoor_seating": "no",
+        "takeaway": "only"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3390959,
+          51.5814394
+        ]
+      },
+      "id": "node/11610588772"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11684921769",
+        "addr:city": "London",
+        "addr:housenumber": "1",
+        "addr:postcode": "SE16 4RA",
+        "addr:street": "Discovery Business Park, St James Road",
+        "amenity": "ice_cream",
+        "name": "Ice Cream Union Factory",
+        "opening_hours": "Mar-Dec: Sa 09:00-14:00",
+        "website": "https://icecreamunion.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0676227,
+          51.4959096
+        ]
+      },
+      "id": "node/11684921769"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11688096478",
+        "amenity": "ice_cream",
+        "check_date": "2024-03-03",
+        "diet:vegan": "yes",
+        "name": "La Gelatiera",
+        "outdoor_seating": "yes",
+        "payment:cash": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "takeaway": "yes",
+        "toilets": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1085532,
+          51.5084067
+        ]
+      },
+      "id": "node/11688096478"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11739120990",
+        "addr:city": "Borehamwood",
+        "addr:housenumber": "143-145",
+        "addr:postcode": "WD6 1AH",
+        "addr:street": "Shenley Road",
+        "amenity": "ice_cream",
+        "branch": "Borehamwood",
+        "brand": "Creams",
+        "brand:wikidata": "Q111811895",
+        "cuisine": "ice_cream",
+        "fhrs:id": "1080306",
+        "name": "Creams",
+        "source:addr": "FHRS Open Data",
+        "survey:date": "2024-03-15",
+        "website": "https://www.creamscafe.com/our-stores/borehamwood/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2741767,
+          51.6568234
+        ]
+      },
+      "id": "node/11739120990"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11816260848",
+        "addr:street": "Upper St Martin's Lane",
+        "amenity": "ice_cream",
+        "check_date": "2024-04-13",
+        "name": "Anita",
+        "outdoor_seating": "yes",
+        "payment:cash": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1268937,
+          51.5122047
+        ]
+      },
+      "id": "node/11816260848"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11922817735",
+        "addr:city": "London",
+        "addr:housenumber": "15",
+        "addr:postcode": "E14 4QT",
+        "addr:street": "Cabot Square",
+        "amenity": "ice_cream",
+        "fhrs:id": "1720871",
+        "level": "1",
+        "level:ref": "0",
+        "name": "Badiani Gelato"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.021666,
+          51.505131
+        ]
+      },
+      "id": "node/11922817735"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11961180693",
+        "amenity": "ice_cream",
+        "check_date": "2024-06-06",
+        "email": "info@magicfoodsltd.com",
+        "name": "Magic Foods Plc",
+        "phone": "020 8692 6300",
+        "website": "https://magicfoodsltd.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0301809,
+          51.4721895
+        ]
+      },
+      "id": "node/11961180693"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12126360514",
+        "addr:housenumber": "441",
+        "addr:street": "Harrow Road",
+        "amenity": "ice_cream",
+        "check_date": "2025-04-24",
+        "name": "Dr Dessert"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2080319,
+          51.5264493
+        ]
+      },
+      "id": "node/12126360514"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12181723090",
+        "addr:city": "Edgware",
+        "addr:housenumber": "169",
+        "addr:postcode": "HA8 7JX",
+        "addr:street": "Station Road",
+        "amenity": "ice_cream",
+        "brand": "Baskin-Robbins",
+        "brand:wikidata": "Q584601",
+        "cuisine": "ice_cream",
+        "fhrs:id": "757130",
+        "name": "Baskin-Robbins",
+        "source:addr": "FHRS Open Data"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2758833,
+          51.6149505
+        ]
+      },
+      "id": "node/12181723090"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12188856870",
+        "amenity": "ice_cream",
+        "check_date": "2024-10-07",
+        "level": "0",
+        "name": "Cold Stone"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1285639,
+          51.510975
+        ]
+      },
+      "id": "node/12188856870"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12286356675",
+        "addr:city": "London",
+        "addr:housenumber": "60",
+        "addr:postcode": "N14 5PA",
+        "addr:street": "Chase Side",
+        "amenity": "ice_cream",
+        "brand": "Creams",
+        "brand:wikidata": "Q111811895",
+        "check_date": "2024-10-26",
+        "cuisine": "ice_cream",
+        "fhrs:id": "1601262",
+        "name": "Creams"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.129614,
+          51.6330867
+        ]
+      },
+      "id": "node/12286356675"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12438644696",
+        "amenity": "ice_cream",
+        "check_date": "2025-04-02",
+        "name": "O'doe",
+        "outdoor_seating": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0946814,
+          51.4866876
+        ]
+      },
+      "id": "node/12438644696"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12504412966",
+        "addr:housenumber": "3",
+        "addr:street": "Erskine Road",
+        "amenity": "ice_cream",
+        "check_date": "2025-01-15",
+        "name": "Reenies",
+        "opening_hours": "Summer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1574968,
+          51.5419104
+        ]
+      },
+      "id": "node/12504412966"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12678085088",
+        "amenity": "ice_cream",
+        "check_date": "2025-03-18",
+        "name": "Caravaggio"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0923891,
+          51.4739673
+        ]
+      },
+      "id": "node/12678085088"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12691311444",
+        "amenity": "ice_cream",
+        "name": "L'Esperienza del Gelato"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1488854,
+          51.4782269
+        ]
+      },
+      "id": "node/12691311444"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12757688483",
+        "amenity": "ice_cream",
+        "check_date": "2025-04-15",
+        "name": "The Royal Parks Ice-cream",
+        "payment:apple_pay": "yes",
+        "payment:cash": "no",
+        "payment:contactless": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:google_pay": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1301375,
+          51.5022036
+        ]
+      },
+      "id": "node/12757688483"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12779845063",
+        "amenity": "ice_cream",
+        "brand": "Amorino",
+        "brand:wikidata": "Q2843884",
+        "name": "Amorino",
+        "website": "https://www.amorino.com/en/stores/amorino-west-hampstead"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.190996,
+          51.5489018
+        ]
+      },
+      "id": "node/12779845063"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12920922051",
+        "amenity": "ice_cream",
+        "check_date": "2022-08-14",
+        "name": "Udderlicious ice cream",
+        "outdoor_seating": "no",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.127405,
+          51.5136299
+        ]
+      },
+      "id": "node/12920922051"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12944833570",
+        "addr:housenumber": "327",
+        "amenity": "ice_cream",
+        "brand": "Creams",
+        "brand:wikidata": "Q111811895",
+        "fhrs:id": "1334975",
+        "level": "0",
+        "name": "Creams"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1215361,
+          51.5303898
+        ]
+      },
+      "id": "node/12944833570"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12988179260",
+        "addr:housenumber": "53",
+        "addr:street": "Brewer Street",
+        "amenity": "ice_cream",
+        "name": "Four Winters",
+        "website": "http://fourwinters.co/united-kingdom"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1353287,
+          51.5115515
+        ]
+      },
+      "id": "node/12988179260"
+    }
+  ]
+}

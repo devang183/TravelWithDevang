@@ -1,0 +1,2480 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2025-08-14T20:05:15Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/243762168",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0046057,
+          51.4765054
+        ]
+      },
+      "id": "node/243762168"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/248617998",
+        "ele": "9",
+        "man_made": "hill",
+        "name": "Stave Hill",
+        "tourism": "viewpoint",
+        "wikidata": "Q7604796",
+        "wikipedia": "en:Stave Hill"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0404578,
+          51.5010897
+        ]
+      },
+      "id": "node/248617998"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/262289990",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0062931,
+          51.5293038
+        ]
+      },
+      "id": "node/262289990"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/266976402",
+        "man_made": "peak",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3732222,
+          51.5401098
+        ]
+      },
+      "id": "node/266976402"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/301471453",
+        "created_by": "Potlatch 0.10c",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0676187,
+          51.4476878
+        ]
+      },
+      "id": "node/301471453"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/310527489",
+        "created_by": "Potlatch 0.10f",
+        "name": "Millfield",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2356185,
+          51.6226807
+        ]
+      },
+      "id": "node/310527489"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/372784494",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0531852,
+          51.39905
+        ]
+      },
+      "id": "node/372784494"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/372784529",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0522949,
+          51.3991432
+        ]
+      },
+      "id": "node/372784529"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/372784561",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0520742,
+          51.3997722
+        ]
+      },
+      "id": "node/372784561"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/372784585",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0540605,
+          51.3996339
+        ]
+      },
+      "id": "node/372784585"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/402735697",
+        "description": "Protected view to St Paul's Cathedral",
+        "direction": "60",
+        "name": "King Henry VIII's Mound",
+        "tourism": "viewpoint",
+        "wheelchair": "yes",
+        "wikidata": "Q97399728"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2947744,
+          51.4449229
+        ]
+      },
+      "id": "node/402735697"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/459784772",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0592524,
+          51.3630387
+        ]
+      },
+      "id": "node/459784772"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/538090937",
+        "tourism": "viewpoint",
+        "viewpoint": "telescope"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1200415,
+          51.5003582
+        ]
+      },
+      "id": "node/538090937"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/538090938",
+        "fixme": "Is this still here? #surveyme",
+        "tourism": "viewpoint",
+        "viewpoint": "telescope"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1208733,
+          51.496109
+        ]
+      },
+      "id": "node/538090938"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/566604666",
+        "amenity": "viewing_platform",
+        "description": "Thames, London City Airport, North Woolwich",
+        "direction": "292-90",
+        "source": "gps+mapnoter",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0515821,
+          51.4947421
+        ]
+      },
+      "id": "node/566604666"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/569700954",
+        "direction": "130",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1606936,
+          51.5395287
+        ]
+      },
+      "id": "node/569700954"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/600889670",
+        "name": "Kenwood Viewpoint",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1649462,
+          51.5719034
+        ]
+      },
+      "id": "node/600889670"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/641353298",
+        "description": "brick clocktower",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0140128,
+          51.5123883
+        ]
+      },
+      "id": "node/641353298"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/666217159",
+        "name": "Lippitts Hill",
+        "natural": "peak",
+        "tourism": "viewpoint",
+        "wikidata": "Q17184055"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.018626,
+          51.6548657
+        ]
+      },
+      "id": "node/666217159"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/671649864",
+        "ele:local": "66",
+        "name": "Yardley Hill",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.006219,
+          51.644664
+        ]
+      },
+      "id": "node/671649864"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/724401196",
+        "tourism": "viewpoint",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3791554,
+          51.3574152
+        ]
+      },
+      "id": "node/724401196"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/793455823",
+        "direction": "230",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2999432,
+          51.4541617
+        ]
+      },
+      "id": "node/793455823"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/793455839",
+        "direction": "235",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3006673,
+          51.4549652
+        ]
+      },
+      "id": "node/793455839"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/800924567",
+        "amenity": "bench",
+        "ele:local": "90",
+        "name": "Pole Hill",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0015275,
+          51.6362825
+        ]
+      },
+      "id": "node/800924567"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/831200072",
+        "description": "Southeasterly view towards Canary Wharf and across east London",
+        "direction": "E",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1417023,
+          51.5888512
+        ]
+      },
+      "id": "node/831200072"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/910356791",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0010191,
+          51.4799402
+        ]
+      },
+      "id": "node/910356791"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/910356820",
+        "direction": "300-60",
+        "tourism": "viewpoint",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0008981,
+          51.4779255
+        ]
+      },
+      "id": "node/910356820"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1150845588",
+        "direction": "180",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1531168,
+          51.5269979
+        ]
+      },
+      "id": "node/1150845588"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1181132179",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1660107,
+          51.5320587
+        ]
+      },
+      "id": "node/1181132179"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1296248653",
+        "name": "Viewing platform",
+        "tourism": "viewpoint",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1847948,
+          51.4250411
+        ]
+      },
+      "id": "node/1296248653"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1338910653",
+        "tourism": "viewpoint",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2952021,
+          51.4843915
+        ]
+      },
+      "id": "node/1338910653"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1599958679",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1934482,
+          51.6492807
+        ]
+      },
+      "id": "node/1599958679"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1672235731",
+        "name": "Parliament Hill",
+        "tourism": "viewpoint",
+        "wikidata": "Q2036052",
+        "wikipedia": "en:Parliament Hill, London"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1597717,
+          51.5596203
+        ]
+      },
+      "id": "node/1672235731"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1708679342",
+        "name": "View of O2 Arena",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0086859,
+          51.5012434
+        ]
+      },
+      "id": "node/1708679342"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1785641563",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1274636,
+          51.4033703
+        ]
+      },
+      "id": "node/1785641563"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1802869035",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0064099,
+          51.5034082
+        ]
+      },
+      "id": "node/1802869035"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1884435807",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1989662,
+          51.3212189
+        ]
+      },
+      "id": "node/1884435807"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1884435851",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1966651,
+          51.3214065
+        ]
+      },
+      "id": "node/1884435851"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1938700732",
+        "ele": "24",
+        "name": "Gallions Hill",
+        "natural": "peak",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0913705,
+          51.5021336
+        ]
+      },
+      "id": "node/1938700732"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2013879781",
+        "ele": "55",
+        "ele:local": "10",
+        "name": "Greenway",
+        "tourism": "viewpoint",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0140646,
+          51.5355803
+        ]
+      },
+      "id": "node/2013879781"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2214450236",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.202906,
+          51.4353289
+        ]
+      },
+      "id": "node/2214450236"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2295550117",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3265422,
+          51.546994
+        ]
+      },
+      "id": "node/2295550117"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2320536112",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.286322,
+          51.4282937
+        ]
+      },
+      "id": "node/2320536112"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2322568574",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1672075,
+          51.3255439
+        ]
+      },
+      "id": "node/2322568574"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2322582841",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1612725,
+          51.3225249
+        ]
+      },
+      "id": "node/2322582841"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2330413814",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.232575,
+          51.4223024
+        ]
+      },
+      "id": "node/2330413814"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2333041311",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1604049,
+          51.5617022
+        ]
+      },
+      "id": "node/2333041311"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2417098898",
+        "name": "Meridian Line Marker",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3143753,
+          51.4611419
+        ]
+      },
+      "id": "node/2417098898"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2529682908",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0390838,
+          51.6655958
+        ]
+      },
+      "id": "node/2529682908"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2738841246",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0016792,
+          51.4780941
+        ]
+      },
+      "id": "node/2738841246"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2994690260",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2417377,
+          51.5423065
+        ]
+      },
+      "id": "node/2994690260"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3188092644",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.221918,
+          51.473877
+        ]
+      },
+      "id": "node/3188092644"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3272712570",
+        "addr:city": "London",
+        "addr:housenumber": "20",
+        "addr:postcode": "EC3M 3BY",
+        "addr:street": "Fenchurch Street",
+        "description": "Sky Garden viewpoint is accessible to all, and entry is free of charge. Tickets are available to book online on a weekly basis, up to three weeks in advance of your visit.",
+        "fee": "no",
+        "level": "35",
+        "name": "Sky Garden",
+        "name:zh": "天空花园",
+        "opening_hours": "Mo-Fr 10:00-18:00; Sa-Su,PH 11:00-21:00",
+        "tourism": "viewpoint",
+        "website": "https://skygarden.london/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0836023,
+          51.511096
+        ]
+      },
+      "id": "node/3272712570"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3380518966",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0003257,
+          51.672399
+        ]
+      },
+      "id": "node/3380518966"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3408468570",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1494307,
+          51.4856249
+        ]
+      },
+      "id": "node/3408468570"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3414135784",
+        "ele": "50",
+        "ele:local": "5",
+        "tourism": "viewpoint",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0892414,
+          51.5069231
+        ]
+      },
+      "id": "node/3414135784"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3711103674",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.000284,
+          51.646491
+        ]
+      },
+      "id": "node/3711103674"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3711918897",
+        "description": "downhill view over rhw park, William Girling reservoir and Eastern Enfield",
+        "direction": "300-350",
+        "source": "gps+mapnoter",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0139239,
+          51.6274811
+        ]
+      },
+      "id": "node/3711918897"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3760810210",
+        "direction": "300-60",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0002199,
+          51.4777747
+        ]
+      },
+      "id": "node/3760810210"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3796155160",
+        "note": "platform overlooking parkland area",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1232694,
+          51.5740088
+        ]
+      },
+      "id": "node/3796155160"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3807052747",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3203298,
+          51.3522455
+        ]
+      },
+      "id": "node/3807052747"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3916526698",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2003705,
+          51.3215421
+        ]
+      },
+      "id": "node/3916526698"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4181788051",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2296598,
+          51.4891701
+        ]
+      },
+      "id": "node/4181788051"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4181798403",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2184441,
+          51.4940921
+        ]
+      },
+      "id": "node/4181798403"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4181808692",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2273543,
+          51.4943154
+        ]
+      },
+      "id": "node/4181808692"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4181808693",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2259804,
+          51.4947022
+        ]
+      },
+      "id": "node/4181808693"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4216830181",
+        "name": "Epping Forest Field Centre Bird Viewing Point",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0409687,
+          51.6641804
+        ]
+      },
+      "id": "node/4216830181"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4298440051",
+        "name": "Viewing mound",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0585118,
+          51.3942785
+        ]
+      },
+      "id": "node/4298440051"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4319419055",
+        "direction": "160",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1085296,
+          51.528946
+        ]
+      },
+      "id": "node/4319419055"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4323428158",
+        "direction": "30",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0354653,
+          51.4469448
+        ]
+      },
+      "id": "node/4323428158"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4446879383",
+        "source": "gps+mapnoter",
+        "tourism": "viewpoint",
+        "viewpoint": "Towards Greenwich Observatory"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3147533,
+          51.4716551
+        ]
+      },
+      "id": "node/4446879383"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4624336515",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0246543,
+          51.4856213
+        ]
+      },
+      "id": "node/4624336515"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4665798608",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0189105,
+          51.4834994
+        ]
+      },
+      "id": "node/4665798608"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4713302815",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2947096,
+          51.4425924
+        ]
+      },
+      "id": "node/4713302815"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4743071524",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1782,
+          51.549749
+        ]
+      },
+      "id": "node/4743071524"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4783072421",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0899274,
+          51.5067164
+        ]
+      },
+      "id": "node/4783072421"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4802496548",
+        "name": "Lookout Hill",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0910745,
+          51.5036461
+        ]
+      },
+      "id": "node/4802496548"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4880465176",
+        "addr:housenumber": "Tate Modern",
+        "addr:street": "Bankside",
+        "description": "Viewing gallery on outside, lifts and stairs inside building. Bar & toilets on this level.",
+        "level": "10",
+        "name": "Switch House",
+        "tourism": "viewpoint",
+        "wheelchair": "yes",
+        "wheelchair:description": "On level 10. Lifts from all levels, access to outside walkway via automatic sliding doors on 3 sides. Bar has high counter. Toilets at this level marked Accessible, but not checked on this visit."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1002938,
+          51.5071355
+        ]
+      },
+      "id": "node/4880465176"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4990096195",
+        "direction": "NW",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0616126,
+          51.4421936
+        ]
+      },
+      "id": "node/4990096195"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5109498691",
+        "description": "A wide panoramic view from Alexandra Palace in the east to Heathrow in the southwest, and over London to Box Hill in the south",
+        "name": "Wood Farm London Viewpoint",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3096123,
+          51.6269979
+        ]
+      },
+      "id": "node/5109498691"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5317908698",
+        "direction": "NNE",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.09202,
+          51.4258126
+        ]
+      },
+      "id": "node/5317908698"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5352812330",
+        "addr:city": "London",
+        "addr:street": "Tower Bridge",
+        "name": "Tower Bridge",
+        "name:en": "Tower Bridge",
+        "name:zh": "伦敦塔桥",
+        "toilets:wheelchair": "no",
+        "tourism": "viewpoint",
+        "wheelchair": "yes",
+        "wheelchair:description": "Footways step-free via approach roads from Tower Hill to north and Tooley Street on south bank."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0754722,
+          51.5055748
+        ]
+      },
+      "id": "node/5352812330"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5503462764",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0521535,
+          51.5773496
+        ]
+      },
+      "id": "node/5503462764"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5696618681",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0848794,
+          51.6274225
+        ]
+      },
+      "id": "node/5696618681"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5713765502",
+        "description": "Thames, Beckton and Barking",
+        "direction": "247-22",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0826468,
+          51.4992427
+        ]
+      },
+      "id": "node/5713765502"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5754879643",
+        "name": "Henman Hill",
+        "old_name": "Aorangi Terrace",
+        "tourism": "viewpoint",
+        "wikidata": "Q3130291",
+        "wikipedia": "en:Henman Hill"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2160329,
+          51.4355442
+        ]
+      },
+      "id": "node/5754879643"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5840522231",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3381254,
+          51.5741446
+        ]
+      },
+      "id": "node/5840522231"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5926508131",
+        "designation": "Views of wildflower meadow and valley towards Lido",
+        "direction": "W",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4192337,
+          51.5975006
+        ]
+      },
+      "id": "node/5926508131"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6187651385",
+        "name": "View of viaduct",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2030663,
+          51.3685137
+        ]
+      },
+      "id": "node/6187651385"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6284630001",
+        "direction": "180",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3650003,
+          51.3377386
+        ]
+      },
+      "id": "node/6284630001"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6284793459",
+        "access": "permit",
+        "addr:city": "London",
+        "addr:country": "GB",
+        "addr:housenumber": "120",
+        "addr:postcode": "EC3M 5BA",
+        "addr:street": "Fenchurch Street",
+        "direction": "45-270",
+        "fee": "no",
+        "level": "16",
+        "name": "The Garden at 120",
+        "tourism": "viewpoint",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0807811,
+          51.5121424
+        ]
+      },
+      "id": "node/6284793459"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6334373185",
+        "name": "Leopold Stokowski’s grave",
+        "tourism": "viewpoint",
+        "website": "https://www.findagrave.com/memorial/4602/leopold-stokowski"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1826127,
+          51.5903601
+        ]
+      },
+      "id": "node/6334373185"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6336400188",
+        "name": "Leopold Stokowski’s grave",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1825604,
+          51.5904942
+        ]
+      },
+      "id": "node/6336400188"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6395707300",
+        "direction": "340",
+        "fixme": "Not sure if this has an official name. \"One Tree Hill Viewpoint\"?",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0522491,
+          51.4505369
+        ]
+      },
+      "id": "node/6395707300"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6395711964",
+        "description": "Excellent views over Lewisham and the City",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.026526,
+          51.4604224
+        ]
+      },
+      "id": "node/6395711964"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6423541951",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.198139,
+          51.5282226
+        ]
+      },
+      "id": "node/6423541951"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6428197176",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1499111,
+          51.3976658
+        ]
+      },
+      "id": "node/6428197176"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6477955792",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2870071,
+          51.4488295
+        ]
+      },
+      "id": "node/6477955792"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6553343236",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0461036,
+          51.4674253
+        ]
+      },
+      "id": "node/6553343236"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6553343237",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0452466,
+          51.4698835
+        ]
+      },
+      "id": "node/6553343237"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6553372201",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1064742,
+          51.4505896
+        ]
+      },
+      "id": "node/6553372201"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6657918080",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1199916,
+          51.6203771
+        ]
+      },
+      "id": "node/6657918080"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6868199468",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0856858,
+          51.6104684
+        ]
+      },
+      "id": "node/6868199468"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6894060585",
+        "direction": "-105",
+        "name": "viewpoint for Buckingham Palace",
+        "tourism": "viewpoint",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1406744,
+          51.5017382
+        ]
+      },
+      "id": "node/6894060585"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7317754347",
+        "direction": "290",
+        "name": "The Point",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.010969,
+          51.4734553
+        ]
+      },
+      "id": "node/7317754347"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7350874818",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1794363,
+          51.4776313
+        ]
+      },
+      "id": "node/7350874818"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7449071123",
+        "tourism": "viewpoint",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1108742,
+          51.5084036
+        ]
+      },
+      "id": "node/7449071123"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7457649085",
+        "description": "Royal Wharf Pier",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0257559,
+          51.4981597
+        ]
+      },
+      "id": "node/7457649085"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7507572837",
+        "direction": "340",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0562749,
+          51.50102
+        ]
+      },
+      "id": "node/7507572837"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7683572901",
+        "direction": "W",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1301676,
+          51.4891387
+        ]
+      },
+      "id": "node/7683572901"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7730698252",
+        "direction": "Dinosaurs viewpoint",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0674889,
+          51.4177095
+        ]
+      },
+      "id": "node/7730698252"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7747932317",
+        "direction": "W",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2234387,
+          51.4438554
+        ]
+      },
+      "id": "node/7747932317"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7781958972",
+        "direction": "75",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0017415,
+          51.5090309
+        ]
+      },
+      "id": "node/7781958972"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7837378354",
+        "direction": "320",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0150213,
+          51.4946834
+        ]
+      },
+      "id": "node/7837378354"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7862127457",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0783682,
+          51.6321698
+        ]
+      },
+      "id": "node/7862127457"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8008849590",
+        "direction": "39",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0122751,
+          51.4212414
+        ]
+      },
+      "id": "node/8008849590"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8019743721",
+        "direction": "ENE",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0798373,
+          51.507932
+        ]
+      },
+      "id": "node/8019743721"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8373540315",
+        "natural": "peak",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.037455,
+          51.525624
+        ]
+      },
+      "id": "node/8373540315"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8452701068",
+        "direction": "270",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0413048,
+          51.4898452
+        ]
+      },
+      "id": "node/8452701068"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8569050582",
+        "name": "The Platform",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2440907,
+          51.5700674
+        ]
+      },
+      "id": "node/8569050582"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8659056573",
+        "direction": "S-NE",
+        "name": "Gotford's Hill",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2721243,
+          51.57933
+        ]
+      },
+      "id": "node/8659056573"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8756495656",
+        "direction": "280",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3185606,
+          51.4012154
+        ]
+      },
+      "id": "node/8756495656"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8815167897",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3024928,
+          51.5433158
+        ]
+      },
+      "id": "node/8815167897"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9034978177",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1889412,
+          51.4058094
+        ]
+      },
+      "id": "node/9034978177"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9264996529",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0799996,
+          51.3517396
+        ]
+      },
+      "id": "node/9264996529"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9423469057",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0291842,
+          51.60242
+        ]
+      },
+      "id": "node/9423469057"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9680650108",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1814683,
+          51.5963883
+        ]
+      },
+      "id": "node/9680650108"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9710087279",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3242958,
+          51.6523207
+        ]
+      },
+      "id": "node/9710087279"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9857650260",
+        "direction": "135",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4072911,
+          51.6066425
+        ]
+      },
+      "id": "node/9857650260"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9857650578",
+        "direction": "180",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3497859,
+          51.6202693
+        ]
+      },
+      "id": "node/9857650578"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10735233231",
+        "layer": "1",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2431298,
+          51.5745774
+        ]
+      },
+      "id": "node/10735233231"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10798970429",
+        "tourism": "viewpoint",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0806924,
+          51.5196681
+        ]
+      },
+      "id": "node/10798970429"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10827533791",
+        "description": "I like this view anyway!",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1780708,
+          51.5614845
+        ]
+      },
+      "id": "node/10827533791"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10889692637",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0169761,
+          51.5831715
+        ]
+      },
+      "id": "node/10889692637"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10916894558",
+        "direction": "300",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.068086,
+          51.4586974
+        ]
+      },
+      "id": "node/10916894558"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10997092567",
+        "direction": "330",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1806022,
+          51.6164759
+        ]
+      },
+      "id": "node/10997092567"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10997122066",
+        "direction": "320",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1787609,
+          51.616431
+        ]
+      },
+      "id": "node/10997122066"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11137170629",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0281405,
+          51.5056374
+        ]
+      },
+      "id": "node/11137170629"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11139443070",
+        "direction": "180",
+        "level": "0",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0089396,
+          51.4865295
+        ]
+      },
+      "id": "node/11139443070"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11148594121",
+        "description": "The Lookout in 8 Bishopsgate - free, pre booking required",
+        "name": "The Lookout",
+        "tourism": "viewpoint",
+        "website": "https://www.8bishopsgate.com/lookout"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0836015,
+          51.5140131
+        ]
+      },
+      "id": "node/11148594121"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11262672466",
+        "description": "Horizon 22 in 22 Bishopsgate - free, pre-booking required",
+        "ele": "254",
+        "fee": "no",
+        "name": "Horizon 22",
+        "tourism": "viewpoint",
+        "website": "https://horizon22.co.uk/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.083149,
+          51.514367
+        ]
+      },
+      "id": "node/11262672466"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11587627718",
+        "access": "private",
+        "direction": "30",
+        "name": "Aussichtspunkt H&MV Office",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2558411,
+          51.5282018
+        ]
+      },
+      "id": "node/11587627718"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11630868886",
+        "direction": "300",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0723949,
+          51.4760666
+        ]
+      },
+      "id": "node/11630868886"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11663350049",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1485407,
+          51.5027333
+        ]
+      },
+      "id": "node/11663350049"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11768309276",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1592435,
+          51.4822475
+        ]
+      },
+      "id": "node/11768309276"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12546106255",
+        "description": "Bird feeder",
+        "direction": "180",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.230726,
+          51.476943
+        ]
+      },
+      "id": "node/12546106255"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12616497001",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1654896,
+          51.3297092
+        ]
+      },
+      "id": "node/12616497001"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12800967633",
+        "direction": "300-140",
+        "level": "1",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2968669,
+          51.4759913
+        ]
+      },
+      "id": "node/12800967633"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12803093656",
+        "name": "Syon Outlook",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3047507,
+          51.47663
+        ]
+      },
+      "id": "node/12803093656"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12862863160",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.19363,
+          51.6082525
+        ]
+      },
+      "id": "node/12862863160"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12886596706",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0737651,
+          51.5005218
+        ]
+      },
+      "id": "node/12886596706"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12992126099",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0413779,
+          51.5296
+        ]
+      },
+      "id": "node/12992126099"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12992139107",
+        "tourism": "viewpoint"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0404951,
+          51.5294864
+        ]
+      },
+      "id": "node/12992139107"
+    }
+  ]
+}

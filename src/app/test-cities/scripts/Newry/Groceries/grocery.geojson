@@ -1,0 +1,179 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2025-08-12T16:01:45Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1034552358",
+        "brand": "Sainsbury's",
+        "brand:wikidata": "Q152096",
+        "brand:wikipedia": "en:Sainsbury's",
+        "name": "Sainsbury's",
+        "shop": "supermarket",
+        "website": "https://stores.sainsburys.co.uk/0538/newry"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3398572,
+          54.1676769
+        ]
+      },
+      "id": "node/1034552358"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2465255291",
+        "addr:city": "Burren",
+        "addr:housenumber": "71",
+        "addr:postcode": "BT34 3PU",
+        "addr:street": "Milltown Street",
+        "name": "Bumpers Shop",
+        "opening_hours": "07:00-10:00",
+        "phone": "+44 28 4175 4007",
+        "shop": "convenience",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2614203,
+          54.1293266
+        ]
+      },
+      "id": "node/2465255291"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2557595226",
+        "addr:street": "Main Street",
+        "shop": "convenience"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.4108385,
+          54.180188
+        ]
+      },
+      "id": "node/2557595226"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5343780093",
+        "name": "SuperShop",
+        "shop": "convenience"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3890218,
+          54.1224853
+        ]
+      },
+      "id": "node/5343780093"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7624109639",
+        "addr:city": "Newry",
+        "brand": "Centra",
+        "brand:facebook": "https://www.facebook.com/CentraNI/",
+        "brand:instagram": "https://www.instagram.com/centra_ni/",
+        "brand:twitter": "https://twitter.com/CentraNIR",
+        "brand:website": "https://www.centra.co.uk/",
+        "brand:wikidata": "Q747678",
+        "brand:youtube": "https://www.youtube.com/channel/UC_FsVJEXnAaijEnwmO2pvEw",
+        "name": "Centra",
+        "operator": "Larkin's",
+        "shop": "convenience"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3335996,
+          54.1653921
+        ]
+      },
+      "id": "node/7624109639"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7696239063",
+        "addr:city": "Newry",
+        "addr:county": "Down",
+        "addr:housenumber": "3",
+        "addr:postcode": "BT35 6JB",
+        "addr:street": "Canal Street",
+        "brand": "ViVO",
+        "brand:website": "https://henderson-group.com/our-brands/vivo/",
+        "brand:wikidata": "Q115958680",
+        "check_date": "2025-06-08",
+        "fhrs:id": "753224",
+        "fixme:addr:1": "Lisdrumgullion",
+        "name": "Tierney's Vivo",
+        "opening_hours": "Mo-Su 08:00-21:00",
+        "operator": "Tierney's",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "phone": "+442830833935",
+        "shop": "convenience",
+        "website": "https://tierneys-vivo-essentials.business.site/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.337795,
+          54.1788347
+        ]
+      },
+      "id": "node/7696239063"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12649790225",
+        "brand": "Spar",
+        "brand:wikidata": "Q610492",
+        "name": "Spar",
+        "operator": "Spar",
+        "shop": "convenience"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3687499,
+          54.1886123
+        ]
+      },
+      "id": "node/12649790225"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12855835079",
+        "brand": "Mace",
+        "brand:wikidata": "Q75238536",
+        "name": "Mace",
+        "operator": "Mace",
+        "shop": "convenience"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3435948,
+          54.1773086
+        ]
+      },
+      "id": "node/12855835079"
+    }
+  ]
+}

@@ -1,0 +1,446 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2025-08-02T14:05:54Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1966830219",
+        "addr:city": "Nagpur",
+        "addr:country": "IN",
+        "addr:street": "Azamshah Layout",
+        "amenity": "police",
+        "name": "Sakkardara Police Station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.1140716,
+          21.1294212
+        ]
+      },
+      "id": "node/1966830219"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2902128981",
+        "amenity": "police",
+        "name": "Sadar Solan Police Station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.0714018,
+          21.1617741
+        ]
+      },
+      "id": "node/2902128981"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3073148507",
+        "amenity": "police",
+        "name": "Police Control Room Nagpur City"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.0725174,
+          21.1545937
+        ]
+      },
+      "id": "node/3073148507"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3141259553",
+        "addr:city": "Nagpur",
+        "addr:street": "Police LineTakli, Mankapur",
+        "amenity": "police",
+        "name": "Gittikhadan Police Station",
+        "phone": "+91-712-2580127, +91-712-2566757"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.0609179,
+          21.173675
+        ]
+      },
+      "id": "node/3141259553"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3143194649",
+        "addr:city": "Nagpur",
+        "addr:postcode": "440001",
+        "addr:street": "Ravi Nagar Square, Amravati Road,",
+        "amenity": "police",
+        "name": "Ambazari Police Station",
+        "phone": "0712 256 1300",
+        "website": "nagpurpolice.nic.in"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.0553787,
+          21.1485857
+        ]
+      },
+      "id": "node/3143194649"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3151963990",
+        "addr:city": "Nagpur",
+        "addr:postcode": "440003",
+        "addr:street": "Ajni Rd, Ajni",
+        "amenity": "police",
+        "name": "Police Station-Ajni",
+        "phone": "0712 264 6643"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.0854254,
+          21.1233991
+        ]
+      },
+      "id": "node/3151963990"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3259492034",
+        "addr:city": "Nagpur",
+        "addr:street": "1, Wardha Rd, Near Airport, Sonegaon, Nagpur, Mah*",
+        "amenity": "police",
+        "name": "Sonegao Police Station",
+        "phone": "+91-712-2284110, +91-712-2566765"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.0643585,
+          21.0905381
+        ]
+      },
+      "id": "node/3259492034"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3259500254",
+        "addr:city": "Nagpur",
+        "addr:postcode": "440009",
+        "addr:street": "Nandanvan",
+        "amenity": "police",
+        "name": "Nandanvan Police Station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.1221017,
+          21.1304545
+        ]
+      },
+      "id": "node/3259500254"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3259514169",
+        "addr:city": "Nagpur",
+        "addr:street": "Ayachit Rd, Lakdapul Mandir, Mahal",
+        "amenity": "police",
+        "name": "Lakdapul Police Station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.1128324,
+          21.147774
+        ]
+      },
+      "id": "node/3259514169"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3259514751",
+        "addr:city": "Nagpur",
+        "addr:postcode": "440018",
+        "addr:street": "Ganeshpeth",
+        "amenity": "police",
+        "name": "Ganeshpeth Police Station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.1007956,
+          21.1427057
+        ]
+      },
+      "id": "node/3259514751"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3259517632",
+        "addr:city": "Nagpur",
+        "addr:street": "Humpyard Rd, Congress Nagar, Dhantoli",
+        "amenity": "police",
+        "name": "Police Station Dhantoli"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.0853548,
+          21.1373887
+        ]
+      },
+      "id": "node/3259517632"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3259519221",
+        "addr:street": "Veriety Chowk, Over Bridge, Sitabuldi",
+        "amenity": "police",
+        "name": "Police Station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.0835593,
+          21.144064
+        ]
+      },
+      "id": "node/3259519221"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3259520861",
+        "addr:city": "Nagpur",
+        "addr:street": "Wardha Road, Amravati Road, Sitabuldi Variety Squ",
+        "amenity": "police",
+        "name": "Sitabuldi Police Station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.0803378,
+          21.1442992
+        ]
+      },
+      "id": "node/3259520861"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3259541624",
+        "addr:city": "Nagpur",
+        "addr:postcode": "440001",
+        "addr:street": "Golchha Marg, Sadar",
+        "amenity": "police",
+        "name": "Golchha Marg Police Chowky"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.0766871,
+          21.1632235
+        ]
+      },
+      "id": "node/3259541624"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3259546111",
+        "amenity": "police",
+        "name": "Police Station Pachpaoli"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.1027926,
+          21.164244
+        ]
+      },
+      "id": "node/3259546111"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3259548870",
+        "addr:city": "Nagpur",
+        "addr:street": "hindwara By Pass Road, Jaripatka",
+        "amenity": "police",
+        "name": "Jaripatka Police Station",
+        "phone": "+91-712-2640404"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.0918769,
+          21.1886888
+        ]
+      },
+      "id": "node/3259548870"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3259551325",
+        "addr:city": "Nagpur",
+        "addr:street": "Amravati Road Datta Wadi",
+        "amenity": "police",
+        "name": "Wadi Police Station",
+        "phone": "+91-7104-220928, +91-7104-2566765"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.9914947,
+          21.1473628
+        ]
+      },
+      "id": "node/3259551325"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3261284228",
+        "addr:city": "Nagpur",
+        "addr:street": "Plot no - 61 Bhamti, Trimurti Nagar Road",
+        "amenity": "police",
+        "name": "RanaPratapnagar Police Station",
+        "phone": "91-712-2222688, 2566826"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.0398337,
+          21.1155372
+        ]
+      },
+      "id": "node/3261284228"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3261287758",
+        "addr:city": "Nagpur",
+        "addr:street": "Opp. Coca Cola Factory, MIDC",
+        "amenity": "police",
+        "name": "MIDC Police Station",
+        "phone": "+91-7104-237885, +91-7104-237935"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.011034,
+          21.1247647
+        ]
+      },
+      "id": "node/3261287758"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3261307992",
+        "addr:city": "Nagpur",
+        "addr:street": "Yashodhara Nagar,",
+        "amenity": "police",
+        "name": "Yashodhara Nagar Police Station",
+        "phone": "+91-712-2633575, +91-712-2633574"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.1255862,
+          21.1813328
+        ]
+      },
+      "id": "node/3261307992"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3261311871",
+        "addr:street": "Kalumana Market, Bhandara Road",
+        "amenity": "police",
+        "name": "Kalamana Police Station",
+        "phone": "+91-712-2790021, +91-712-2790022"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.1455904,
+          21.1627994
+        ]
+      },
+      "id": "node/3261311871"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3261314468",
+        "addr:street": "Near Dhage Bunglow, Pipla road",
+        "amenity": "police",
+        "name": "Hudkeshwar Police Station",
+        "phone": "+91-712-2702306, +91-712-2702307"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.1171854,
+          21.105796
+        ]
+      },
+      "id": "node/3261314468"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4435465746",
+        "amenity": "police",
+        "name": "Ajni Police Station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.0974758,
+          21.1230263
+        ]
+      },
+      "id": "node/4435465746"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7908231910",
+        "amenity": "police",
+        "name": "Nandanvan Police Station",
+        "operator": "Maharashtra Police"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.1220575,
+          21.136913
+        ]
+      },
+      "id": "node/7908231910"
+    }
+  ]
+}

@@ -1,0 +1,2647 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2025-08-14T21:20:49Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/95213598",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "building": "yes",
+        "name": "Paddy Power",
+        "ref:GB:uprn": "202079163;202150679;202206469;202148751;202148752;202148750;202148755;202148753;202148754;202148748;202191200;202148749;202148746;202150680;202148747;202150681",
+        "shop": "bookmaker",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1995507,
+          51.5428969
+        ]
+      },
+      "id": "way/95213598"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/150563461",
+        "addr:housenumber": "238,240",
+        "addr:street": "North End Road",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "building": "yes",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "source": "Bing;photographic_survey",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2026602,
+          51.4852669
+        ]
+      },
+      "id": "way/150563461"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/152995701",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "building": "yes",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1109935,
+          51.5514123
+        ]
+      },
+      "id": "way/152995701"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/155511341",
+        "addr:city": "London",
+        "addr:country": "GB",
+        "addr:housenumber": "242",
+        "addr:postcode": "W2 1DS",
+        "addr:street": "Edgware Road",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "building": "yes",
+        "check_date": "2023-04-22",
+        "name": "Paddy Power",
+        "ref:GB:uprn": "100023477531",
+        "shop": "bookmaker",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1684701,
+          51.5191179
+        ]
+      },
+      "id": "way/155511341"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/183280963",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "building": "yes",
+        "building:levels": "3",
+        "building:material": "brick",
+        "check_date": "2025-07-04",
+        "name": "Paddy Power",
+        "roof:levels": "1",
+        "shop": "bookmaker",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1689935,
+          51.4632021
+        ]
+      },
+      "id": "way/183280963"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/189514268",
+        "addr:city": "London",
+        "addr:housenumber": "49",
+        "addr:street": "Westow Street",
+        "area": "yes",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "building": "yes",
+        "level": "0",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "source": "photograph",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0819227,
+          51.4179845
+        ]
+      },
+      "id": "way/189514268"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/190701334",
+        "addr:city": "London",
+        "addr:housenumber": "544",
+        "addr:postcode": "E1 0HY",
+        "addr:street": "Commercial Road",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "building": "yes",
+        "building:colour": "brown",
+        "building:levels": "3",
+        "building:material": "brick",
+        "name": "Paddy Power",
+        "roof:colour": "grey",
+        "shop": "bookmaker",
+        "source": "Bing;photograph",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0418428,
+          51.512767
+        ]
+      },
+      "id": "way/190701334"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/196385659",
+        "addr:housenumber": "142",
+        "addr:street": "North End",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "building": "retail",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "source": "survey",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1023668,
+          51.3779978
+        ]
+      },
+      "id": "way/196385659"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/196917807",
+        "addr:city": "London",
+        "addr:country": "GB",
+        "addr:housenumber": "145A",
+        "addr:street": "High Street",
+        "addr:suburb": "Walthamstow",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "building": "yes",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0264423,
+          51.5835124
+        ]
+      },
+      "id": "way/196917807"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/198354792",
+        "addr:city": "Croydon",
+        "addr:housenumber": "37",
+        "addr:postcode": "CR0 1RH",
+        "addr:street": "Church Street",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "building": "retail",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "source": "survey",
+        "survey:date": "2018-10-04",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1024154,
+          51.3732857
+        ]
+      },
+      "id": "way/198354792"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/198678816",
+        "addr:city": "Croydon",
+        "addr:housenumber": "37-39",
+        "addr:postcode": "CR0 1LB",
+        "addr:street": "George Street",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "building": "retail",
+        "building:levels": "3",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0975735,
+          51.3742515
+        ]
+      },
+      "id": "way/198678816"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/199637284",
+        "addr:city": "London",
+        "addr:country": "GB",
+        "addr:housenumber": "66",
+        "addr:street": "High Street",
+        "addr:suburb": "Walthamstow",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "building": "yes",
+        "check_date": "2022-05-23",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "source": "survey",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.029993,
+          51.5821884
+        ]
+      },
+      "id": "way/199637284"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/225726567",
+        "addr:city": "Croydon",
+        "addr:housenumber": "229-231",
+        "addr:postcode": "CR0 2RL",
+        "addr:street": "London Road",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "building": "retail",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "source:postcode": "FSA Food Hygiene Ratings database",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.107747,
+          51.3830834
+        ]
+      },
+      "id": "way/225726567"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/226550978",
+        "addr:housenumber": "339",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "building": "apartments",
+        "building:levels": "3",
+        "building:material": "brick",
+        "check_date": "2025-08-08",
+        "name": "Paddy Power",
+        "opening_hours": "08:00-22:00",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "roof:colour": "grey",
+        "roof:levels": "1",
+        "shop": "bookmaker",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0551498,
+          51.5473618
+        ]
+      },
+      "id": "way/226550978"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/233809107",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "building": "yes",
+        "building:levels": "3",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.117376,
+          51.5587167
+        ]
+      },
+      "id": "way/233809107"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/241808471",
+        "addr:housenumber": "51;53",
+        "addr:postcode": "HA1 2TY",
+        "addr:street": "Station Road",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "building": "apartments",
+        "building:levels": "2",
+        "check_date": "2025-05-09",
+        "name": "Paddy Power",
+        "roof:shape": "flat",
+        "shop": "bookmaker",
+        "website": "https://www.paddypower.com/",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3323931,
+          51.5874022
+        ]
+      },
+      "id": "way/241808471"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/248749059",
+        "addr:city": "Wembley",
+        "addr:housenumber": "389",
+        "addr:postcode": "HA9 6AA",
+        "addr:street": "High Road Wembley",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "building": "yes",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "source": "Bing;photograph",
+        "source:addr:housenumber": "extrapolation",
+        "source:addr:postcode": "code-point_open",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2923146,
+          51.553451
+        ]
+      },
+      "id": "way/248749059"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/258988481",
+        "addr:housenumber": "554",
+        "addr:street": "High Road",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "building": "yes",
+        "building:levels": "2",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "source": "Bing;photograph",
+        "source:addr:housenumber": "extrapolation",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2977984,
+          51.5522911
+        ]
+      },
+      "id": "way/258988481"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/265619712",
+        "addr:city": "London",
+        "addr:postcode": "SW16 4AH",
+        "addr:street": "London Road",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "building": "commercial",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "source:addr:postcode": "code-point_open",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1224116,
+          51.4089865
+        ]
+      },
+      "id": "way/265619712"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/313766974",
+        "addr:housenumber": "51",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "building": "retail",
+        "building:levels": "3",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "website": "https://locator.pponside.com/store/Barking%20East%20Street",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0787724,
+          51.5376293
+        ]
+      },
+      "id": "way/313766974"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/314768740",
+        "addr:city": "Barking",
+        "addr:housenumber": "23",
+        "addr:postcode": "IG11 8ED",
+        "addr:street": "Station Parade",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "building:part": "retail",
+        "gambling": "betting",
+        "level": "0",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "source": "Bing;survey",
+        "source:addr:postcode": "code-point_open",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0801835,
+          51.5386607
+        ]
+      },
+      "id": "way/314768740"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/314934184",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0825224,
+          51.5399895
+        ]
+      },
+      "id": "way/314934184"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/373706262",
+        "addr:city": "London",
+        "addr:housenumber": "39",
+        "addr:street": "Chalk Farm Road",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "building": "yes",
+        "check_date": "2024-01-21",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1482461,
+          51.5429364
+        ]
+      },
+      "id": "way/373706262"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/410949886",
+        "addr:city": "London",
+        "addr:street": "Cricklewood Broadway",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2151126,
+          51.5563995
+        ]
+      },
+      "id": "node/410949886"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/420792034",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0166012,
+          51.4003374
+        ]
+      },
+      "id": "node/420792034"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/422645021",
+        "addr:city": "London",
+        "addr:housenumber": "269",
+        "addr:postcode": "E1 1BY",
+        "addr:street": "Whitechapel Road",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "building": "yes",
+        "building:levels": "4",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.060051,
+          51.5193115
+        ]
+      },
+      "id": "way/422645021"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/444856078",
+        "addr:city": "London",
+        "addr:country": "GB",
+        "addr:housenumber": "575",
+        "addr:street": "Lea Bridge Road",
+        "addr:suburb": "Walthamstow",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "building": "yes",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.013254,
+          51.5753761
+        ]
+      },
+      "id": "way/444856078"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/457644934",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "building": "retail",
+        "building:colour": "brown",
+        "building:levels": "3",
+        "building:material": "brick",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1406999,
+          51.5364969
+        ]
+      },
+      "id": "way/457644934"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/468229902",
+        "addr:city": "London",
+        "addr:country": "GB",
+        "addr:housenumber": "13",
+        "addr:street": "Winchester Road",
+        "addr:suburb": "Chingford",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "building": "retail",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "source": "survey",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0011183,
+          51.6069807
+        ]
+      },
+      "id": "way/468229902"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/497274909",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "historic:amenity": "pub",
+        "name": "Paddy Power",
+        "old_name": "John Evelyn",
+        "shop": "bookmaker",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0316336,
+          51.4839463
+        ]
+      },
+      "id": "way/497274909"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/509649642",
+        "addr:city": "London",
+        "addr:housenumber": "620",
+        "addr:postcode": "E11 3DA",
+        "addr:street": "High Road Leytonstone",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "building": "retail",
+        "building:levels": "3",
+        "building:material": "brick",
+        "name": "Paddy Power",
+        "roof:material": "slate",
+        "shop": "bookmaker",
+        "source:addr": "interpolation",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0109186,
+          51.5671997
+        ]
+      },
+      "id": "way/509649642"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/607809312",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "level": "0",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0335716,
+          51.5251279
+        ]
+      },
+      "id": "way/607809312"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/862065015",
+        "addr:postcode": "EN3 5UL",
+        "addr:street": "Hertford Road",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "building": "retail",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "source": "photo 2020-10-16",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0407935,
+          51.6700471
+        ]
+      },
+      "id": "way/862065015"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/862940578",
+        "addr:postcode": "EN3 4HB",
+        "addr:street": "High Street, Ponders End",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "building": "commercial",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "source": "bing; photo 2020-10-22",
+        "website": "https://locator.pponside.com/store/208/Ponders%20End",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0471944,
+          51.6469776
+        ]
+      },
+      "id": "way/862940578"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/866426753",
+        "addr:postcode": "EN3 5JG",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "building": "retail",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0469238,
+          51.6578322
+        ]
+      },
+      "id": "way/866426753"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/963618527",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "check_date": "2024-01-27",
+        "level": "0",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0035297,
+          51.5431583
+        ]
+      },
+      "id": "way/963618527"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/973057836",
+        "addr:city": "London",
+        "addr:housenumber": "79-81",
+        "addr:postcode": "W12 8EG",
+        "addr:street": "Goldhawk Road",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "name": "Paddy Power",
+        "phone": "+44 800 056 5275",
+        "shop": "bookmaker",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2278044,
+          51.5020393
+        ]
+      },
+      "id": "way/973057836"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/993439437",
+        "addr:city": "London",
+        "addr:housenumber": "40",
+        "addr:street": "Gerrard Street",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "building": "retail",
+        "building:colour": "brown",
+        "building:levels": "4",
+        "building:material": "brick",
+        "name": "Paddy Power",
+        "name:zh": "帕迪鲍尔",
+        "ref:GB:uprn": "10033554792;10033592938;100023472823;10033628769;10033592936;10033534641",
+        "roof:colour": "grey",
+        "shop": "bookmaker",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1305639,
+          51.5118141
+        ]
+      },
+      "id": "way/993439437"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1011102846",
+        "addr:city": "London",
+        "addr:housenumber": "134",
+        "addr:street": "Putney High Street",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "building": "retail",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2167165,
+          51.4622686
+        ]
+      },
+      "id": "way/1011102846"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1149802718",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "check_date": "2025-08-04",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1321659,
+          51.5644953
+        ]
+      },
+      "id": "node/1149802718"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1259082097",
+        "addr:city": "Hounslow",
+        "addr:street": "New Heston Road",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "building": "yes",
+        "building:colour": "ffdeaf",
+        "building:levels": "2",
+        "building:material": "brick",
+        "name": "Paddy Power",
+        "roof:colour": "grey",
+        "shop": "bookmaker",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3740372,
+          51.4852677
+        ]
+      },
+      "id": "way/1259082097"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1322111767",
+        "addr:housenumber": "24",
+        "addr:street": "Broadway",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "check_date": "2023-04-17",
+        "name": "Paddy Power",
+        "opening_hours": "Mo-Sa 07:00-22:00; Su 08:30-22:00",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.000507,
+          51.5404666
+        ]
+      },
+      "id": "node/1322111767"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1389540919",
+        "addr:city": "Wembley",
+        "addr:housenumber": "33-39",
+        "addr:postcode": "HA9 9AG",
+        "addr:street": "Bridge Road",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "building:part": "retail",
+        "level": "0",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.278252,
+          51.5639609
+        ]
+      },
+      "id": "way/1389540919"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1490039259",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "check_date": "2024-12-28",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3338758,
+          51.5805157
+        ]
+      },
+      "id": "node/1490039259"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1634359198",
+        "brand:wikidata": "Q3888718",
+        "check_date": "2025-01-30",
+        "fixme": "Check on ground",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.19966,
+          51.6531345
+        ]
+      },
+      "id": "node/1634359198"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1647906577",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0924531,
+          51.5978908
+        ]
+      },
+      "id": "node/1647906577"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2406756189",
+        "addr:city": "Wembley",
+        "addr:country": "GB",
+        "addr:housenumber": "273",
+        "addr:street": "Preston Road",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "name": "Paddy Power",
+        "opening_hours": "Mo-Sa 08:30-22:00;Su 09:00-22:00",
+        "shop": "bookmaker",
+        "source": "survey;Bing 2012",
+        "survey:date": "2013-08-02"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2948342,
+          51.5726049
+        ]
+      },
+      "id": "node/2406756189"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2437697971",
+        "addr:city": "London",
+        "addr:housenumber": "157",
+        "addr:postcode": "N14 4XA",
+        "addr:street": "Bramley Road",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1301661,
+          51.6483795
+        ]
+      },
+      "id": "node/2437697971"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2445340511",
+        "addr:housenumber": "295",
+        "addr:street": "Hertford Road, Edmonton",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0535316,
+          51.6339532
+        ]
+      },
+      "id": "node/2445340511"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2610004510",
+        "addr:street": "Northolt Road",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3554133,
+          51.5633875
+        ]
+      },
+      "id": "node/2610004510"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2642857072",
+        "addr:city": "London",
+        "addr:housenumber": "124-126",
+        "addr:postcode": "EC4N 6AS",
+        "addr:street": "Cannon Street",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0870349,
+          51.5108433
+        ]
+      },
+      "id": "node/2642857072"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2932988752",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0546375,
+          51.4382042
+        ]
+      },
+      "id": "node/2932988752"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3707757791",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "check_date": "2023-08-15",
+        "name": "Paddy Power",
+        "opening_hours": "Mo-Fr 07:00-22:00; Sa,Su 08:00-22:00",
+        "shop": "bookmaker",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0721701,
+          51.5153667
+        ]
+      },
+      "id": "node/3707757791"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4179477246",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0789966,
+          51.6522474
+        ]
+      },
+      "id": "node/4179477246"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4954373910",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "check_date": "2024-10-25",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0903673,
+          51.5043365
+        ]
+      },
+      "id": "node/4954373910"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5085317320",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "check_date": "2024-08-07",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0963747,
+          51.4889156
+        ]
+      },
+      "id": "node/5085317320"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5657476052",
+        "addr:city": "London",
+        "addr:housenumber": "260",
+        "addr:postcode": "N4 2HY",
+        "addr:street": "Seven Sisters Road",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "name": "Paddy Power",
+        "opening_hours": "Mo-Fr 08:00-22:00; Sa 07:30-22:00; Su 08:00-22:00",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1052919,
+          51.5641717
+        ]
+      },
+      "id": "node/5657476052"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5695229710",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1496656,
+          51.3597819
+        ]
+      },
+      "id": "node/5695229710"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5785125327",
+        "addr:city": "Croydon",
+        "addr:housenumber": "196",
+        "addr:postcode": "CR0 7AA",
+        "addr:street": "Lower Addiscombe Road",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0727589,
+          51.3802395
+        ]
+      },
+      "id": "node/5785125327"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5842529139",
+        "addr:city": "London",
+        "addr:housenumber": "89",
+        "addr:postcode": "SE26 5UA",
+        "addr:street": "Sydenham Road",
+        "addr:suburb": "Sydenham",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.050193,
+          51.4261219
+        ]
+      },
+      "id": "node/5842529139"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5890194995",
+        "addr:city": "Thornton Heath",
+        "addr:housenumber": "104",
+        "addr:postcode": "CR7 8LF",
+        "addr:street": "High Street",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0978624,
+          51.3990046
+        ]
+      },
+      "id": "node/5890194995"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6119525972",
+        "addr:city": "London",
+        "addr:housenumber": "33",
+        "addr:street": "Woodgrange Road",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "level": "0",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0250099,
+          51.5478343
+        ]
+      },
+      "id": "node/6119525972"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6293653596",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "source": "Geograph",
+        "source:geograph:id": "2553937"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0965381,
+          51.6311845
+        ]
+      },
+      "id": "node/6293653596"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6530449111",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0575978,
+          51.5146985
+        ]
+      },
+      "id": "node/6530449111"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6553275299",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "level": "0",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0211617,
+          51.505278
+        ]
+      },
+      "id": "node/6553275299"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6594761646",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "level": "0",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1215594,
+          51.5309378
+        ]
+      },
+      "id": "node/6594761646"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6820244529",
+        "addr:housenumber": "345-347",
+        "addr:street": "Harrow Road",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "website": "https://locator.pponside.com/store/63/Westbourne%20Park"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2013289,
+          51.5239898
+        ]
+      },
+      "id": "node/6820244529"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6952418120",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1770014,
+          51.6175207
+        ]
+      },
+      "id": "node/6952418120"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6968954994",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "check_date": "2025-07-09",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0105437,
+          51.4627931
+        ]
+      },
+      "id": "node/6968954994"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7179078031",
+        "addr:housenumber": "132",
+        "addr:street": "Broadway",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "check_date": "2024-01-28",
+        "level": "0",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3269595,
+          51.5098177
+        ]
+      },
+      "id": "node/7179078031"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7321235372",
+        "addr:housenumber": "131",
+        "addr:street": "Ladbroke Grove",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "name": "Paddy Power",
+        "opening_hours": "Mo-Fr 08:30-22:00; Sa 08:00-22:00; Su 09:00-22:00",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2095204,
+          51.516421
+        ]
+      },
+      "id": "node/7321235372"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7595527706",
+        "addr:city": "London",
+        "addr:street": "High Street North",
+        "addr:suburb": "East Ham",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0519863,
+          51.5366753
+        ]
+      },
+      "id": "node/7595527706"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7688165328",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "check_date": "2024-07-27",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.305571,
+          51.4982745
+        ]
+      },
+      "id": "node/7688165328"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7698684410",
+        "addr:housenumber": "209",
+        "addr:street": "Kensington High Street",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "check_date": "2025-05-10",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1966229,
+          51.4996272
+        ]
+      },
+      "id": "node/7698684410"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8202853195",
+        "addr:housenumber": "500",
+        "addr:street": "King's Road",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "name": "Paddy Power",
+        "phone": "+44 800 056 5275",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1808367,
+          51.4819324
+        ]
+      },
+      "id": "node/8202853195"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8245611532",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3658603,
+          51.4678532
+        ]
+      },
+      "id": "node/8245611532"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8633525028",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1671802,
+          51.4290725
+        ]
+      },
+      "id": "node/8633525028"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8772279435",
+        "addr:city": "London",
+        "addr:housenumber": "2",
+        "addr:postcode": "N14 5PA",
+        "addr:street": "Chase Side",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1275013,
+          51.632755
+        ]
+      },
+      "id": "node/8772279435"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8872309805",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "check_date": "2023-05-23",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3999696,
+          51.6579284
+        ]
+      },
+      "id": "node/8872309805"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9127866365",
+        "addr:city": "London",
+        "addr:housenumber": "14",
+        "addr:street": "Kingsman Parade",
+        "addr:suburb": "Woolwich",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "level": "0",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0556274,
+          51.4924637
+        ]
+      },
+      "id": "node/9127866365"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9255773579",
+        "addr:housenumber": "118",
+        "addr:street": "King Street",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "check_date": "2025-07-26",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2311273,
+          51.492673
+        ]
+      },
+      "id": "node/9255773579"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9328637563",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3006778,
+          51.5142023
+        ]
+      },
+      "id": "node/9328637563"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9399149586",
+        "addr:city": "London",
+        "addr:housename": "Halliwick Court Parade",
+        "addr:housenumber": "6",
+        "addr:postcode": "N12 0NB",
+        "addr:street": "Woodhouse Road",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "gambling": "betting",
+        "min_age": "18",
+        "name": "Paddy Power",
+        "opening_hours": "Mo-Sa 08:00-22:00; Su 09:00-22:00",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1587718,
+          51.6125904
+        ]
+      },
+      "id": "node/9399149586"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9620351983",
+        "addr:city": "London",
+        "addr:street": "High Road",
+        "addr:suburb": "Wood Green",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1046805,
+          51.5914223
+        ]
+      },
+      "id": "node/9620351983"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9787480498",
+        "addr:city": "London",
+        "addr:street": "High Street",
+        "addr:town": "Acton",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "check_date": "2022-12-11",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "website": "https://locator.pponside.com/store/39/Acton",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2714684,
+          51.5072033
+        ]
+      },
+      "id": "node/9787480498"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9960320111",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0644857,
+          51.6133682
+        ]
+      },
+      "id": "node/9960320111"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10084913965",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3609703,
+          51.4692291
+        ]
+      },
+      "id": "node/10084913965"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10140730509",
+        "addr:street": "Green Lanes",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1069155,
+          51.6193014
+        ]
+      },
+      "id": "node/10140730509"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10166945323",
+        "addr:city": "London",
+        "addr:housenumber": "136",
+        "addr:postcode": "E16 1EN",
+        "addr:street": "Barking Road",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0125859,
+          51.517578
+        ]
+      },
+      "id": "node/10166945323"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10171302311",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0214624,
+          51.52202
+        ]
+      },
+      "id": "node/10171302311"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10184476335",
+        "addr:housenumber": "485",
+        "addr:street": "London Road",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "check_date": "2025-02-22",
+        "level": "0",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.338218,
+          51.4749759
+        ]
+      },
+      "id": "node/10184476335"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10206861581",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "check_date": "2025-03-20",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0857178,
+          51.4893736
+        ]
+      },
+      "id": "node/10206861581"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10302325338",
+        "addr:city": "London",
+        "addr:street": "Green Street",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0353546,
+          51.5360106
+        ]
+      },
+      "id": "node/10302325338"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10308926042",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.030459,
+          51.5264625
+        ]
+      },
+      "id": "node/10308926042"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10552783857",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2207363,
+          51.5869
+        ]
+      },
+      "id": "node/10552783857"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10569084922",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1006452,
+          51.5399895
+        ]
+      },
+      "id": "node/10569084922"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10582631414",
+        "addr:city": "Ilford",
+        "addr:street": "Cranbrook Road",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0699013,
+          51.5595851
+        ]
+      },
+      "id": "node/10582631414"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10665106979",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "check_date": "2025-02-22",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3076684,
+          51.483448
+        ]
+      },
+      "id": "node/10665106979"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10724013605",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.038309,
+          51.5414067
+        ]
+      },
+      "id": "node/10724013605"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10751832690",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.071023,
+          51.5583898
+        ]
+      },
+      "id": "node/10751832690"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10771411824",
+        "addr:city": "Ilford",
+        "addr:housenumber": "269",
+        "addr:postcode": "IG1 2SD",
+        "addr:street": "Ilford Lane",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0750784,
+          51.5502985
+        ]
+      },
+      "id": "node/10771411824"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10830893054",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3757098,
+          51.510464
+        ]
+      },
+      "id": "node/10830893054"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10971700017",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "check_date": "2023-06-12",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0683669,
+          51.4905372
+        ]
+      },
+      "id": "node/10971700017"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11020811338",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "check_date": "2023-07-02",
+        "level": "0",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0108516,
+          51.460394
+        ]
+      },
+      "id": "node/11020811338"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11059275027",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "source:shop": "user note 3712234"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0344865,
+          51.5374882
+        ]
+      },
+      "id": "node/11059275027"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11063748414",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1903582,
+          51.6034701
+        ]
+      },
+      "id": "node/11063748414"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11064410915",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "operator": "Paddy Power",
+        "shop": "bookmaker",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0038054,
+          51.4238587
+        ]
+      },
+      "id": "node/11064410915"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11066492211",
+        "brand:wikidata": "Q3888718",
+        "check_date": "2023-09-17",
+        "currency:GBP": "yes",
+        "level": "0",
+        "min_age": "18",
+        "name": "Paddy Power",
+        "opening_hours": "Mo-Sa 08:00-22:00; Su 09:00-22:00",
+        "operator": "Paddy Power",
+        "shop": "bookmaker",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0167812,
+          51.4004383
+        ]
+      },
+      "id": "node/11066492211"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11380087947",
+        "addr:city": "Hayes",
+        "addr:housenumber": "39",
+        "addr:postcode": "UB3 4BE",
+        "addr:street": "Station Road",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "website": "https://locator.pponside.com/store/7/Hayes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4188484,
+          51.505995
+        ]
+      },
+      "id": "node/11380087947"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11414591420",
+        "addr:city": "London",
+        "addr:housenumber": "11-13",
+        "addr:street": "High Street North",
+        "addr:suburb": "East Ham",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0534135,
+          51.5339992
+        ]
+      },
+      "id": "node/11414591420"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11414591425",
+        "addr:city": "London",
+        "addr:street": "High Street North",
+        "addr:suburb": "East Ham",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0539097,
+          51.5337915
+        ]
+      },
+      "id": "node/11414591425"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11739120992",
+        "addr:city": "Borehamwood",
+        "addr:postcode": "WD6 1AH",
+        "addr:street": "Shenley Road",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker",
+        "source:addr:postcode": "code-point_open",
+        "survey:date": "2024-03-15",
+        "website": "https://locator.pponside.com/store/198/Borehamwood"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2745952,
+          51.6566354
+        ]
+      },
+      "id": "node/11739120992"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11942805857",
+        "addr:city": "London",
+        "addr:housenumber": "507",
+        "addr:postcode": "N4 1AL",
+        "addr:street": "Green Lanes",
+        "addr:suburb": "Harringay",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "phone": "+44 800 056 5275",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0997016,
+          51.5813314
+        ]
+      },
+      "id": "node/11942805857"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11945619130",
+        "addr:city": "London",
+        "addr:housenumber": "6",
+        "addr:postcode": "N15 5NN",
+        "addr:street": "West Green Road",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0727355,
+          51.5840238
+        ]
+      },
+      "id": "node/11945619130"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12181708800",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2756039,
+          51.6141336
+        ]
+      },
+      "id": "node/12181708800"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12532965697",
+        "addr:housenumber": "52",
+        "addr:street": "Deptford High Street",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0257174,
+          51.476386
+        ]
+      },
+      "id": "node/12532965697"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12572476224",
+        "addr:city": "London",
+        "addr:country": "GB",
+        "addr:housenumber": "2",
+        "addr:postcode": "SE5 9PR",
+        "addr:street": "Coldharbour Lane",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "brand:wikipedia": "en:Paddy Power",
+        "check_date": "2025-01-09",
+        "name": "Paddy Power",
+        "opening_hours": "Mo-Sa 08:00-22:00; Su 09:00-22:00",
+        "shop": "bookmaker",
+        "website": "https://www.paddypower.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.093314,
+          51.4721183
+        ]
+      },
+      "id": "node/12572476224"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12824885487",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2731507,
+          51.5458728
+        ]
+      },
+      "id": "node/12824885487"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12981420419",
+        "brand": "Paddy Power",
+        "brand:wikidata": "Q3888718",
+        "name": "Paddy Power",
+        "shop": "bookmaker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1090634,
+          51.5967976
+        ]
+      },
+      "id": "node/12981420419"
+    }
+  ]
+}

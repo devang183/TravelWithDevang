@@ -624,7 +624,7 @@ function FilterPanel({ onApplyFilters }) {
               {/* No results message */}
               {neighborhoodSearch && filteredNeighborhoods.length === 0 && (
                 <div className="absolute z-50 w-full bg-white border border-gray-300 rounded-b shadow-lg p-3 mt-1 text-sm text-gray-500">
-                  No neighborhoods found matching "{neighborhoodSearch}"
+                  No neighborhoods found matching {neighborhoodSearch}
                 </div>
               )}
             </div>

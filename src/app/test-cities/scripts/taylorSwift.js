@@ -859,7 +859,7 @@ const TaylorSwiftDashboard = ({cityred}) => {
                 {/* No Results Message */}
                 {showSearchDropdown && searchQuery && searchResults.length === 0 && (
                   <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 p-4 text-center text-gray-500">
-                    No posts found matching "{searchQuery}"
+                    No posts found matching {searchQuery}
                   </div>
                 )}
               </div>

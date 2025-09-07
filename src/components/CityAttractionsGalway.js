@@ -553,7 +553,7 @@ const CityAttractionsGalway = () => {
         <div className="text-center">
           <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-4" />
           <h3 className="text-lg font-medium text-gray-800 mb-2">No attractions found</h3>
-          <p className="text-gray-600">We couldn't find any attractions for {cityName} at the moment.</p>
+          <p className="text-gray-600">We could not find any attractions for {cityName} at the moment.</p>
         </div>
       </div>
     );

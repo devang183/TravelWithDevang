@@ -8,8 +8,9 @@ export async function GET(req) {
     const { searchParams } = new URL(req.url);
     const city = searchParams.get("city") || "Dublin";
     const from = searchParams.get("from") || new Date(Date.now() - 7*24*60*60*1000).toISOString().split('T')[0];
+    const to = searchParams.get("to") || new Date().toISOString().split('T')[0];
 
-    const res = await fetch(`https://newsapi.org/v2/everything?q=${encodeURIComponent(city)}&from=${from}&sortBy=publishedAt&apiKey=${NEWS_API_KEY}`);
+    const res = await fetch(`https://newsapi.org/v2/everything?q=${encodeURIComponent(city)}&from=${from}&to=${to}&sortBy=publishedAt&apiKey=${NEWS_API_KEY}`);
     if (!res.ok) throw new Error(`NewsAPI returned ${res.status}`);
     const data = await res.json();
 

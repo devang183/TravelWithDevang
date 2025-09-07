@@ -59,7 +59,7 @@ const subpageComponents = {
       },
       {
         type: COMPONENT_TYPES.DYNAMIC_IMPORT,
-        component: dynamic(() => import("@/components/maps/DublinLiveBikesMap"), { ssr: false })
+        component: dynamic(() => import("@/components/maps/LazyDublinLiveBikesMap"), { ssr: false })
       }
     ],
     airbnb: [
@@ -88,6 +88,10 @@ const subpageComponents = {
       {
         type: COMPONENT_TYPES.GUESTBOOK_MAP,
         component: DigitalGuestbookMapWrapper
+      },
+      {
+        type: COMPONENT_TYPES.DYNAMIC_IMPORT,
+        component: dynamic(() => import("@/components/maps/LazyDublinLiveBikesMap"), { ssr: false })
       }
     ],
     airbnb: [
@@ -95,42 +99,6 @@ const subpageComponents = {
       //   type: COMPONENT_TYPES.DYNAMIC_IMPORT,
       //   component: dynamic(() => import("@/components/maps/DublinarcGISMap"), { ssr: false })
       // },
-      {
-        type: COMPONENT_TYPES.DYNAMIC_IMPORT,
-        component: dynamic(() => import("@/components/airbnb/London/LondonMap"), { ssr: false })
-      }
-    ],
-  },
-  'london-2025': {
-    explore: [
-      {
-        type: COMPONENT_TYPES.DYNAMIC_IMPORT,
-        component: dynamic(() => import("@/components/maps/DublinDesirabilityMap"), { ssr: false })
-      },
-      {
-        type: COMPONENT_TYPES.GUESTBOOK_MAP,
-        component: DigitalGuestbookMapWrapper
-      }
-    ],
-    travel: [
-      {
-        type: COMPONENT_TYPES.DYNAMIC_IMPORT,
-        component: dynamic(() => import("../LuasLiveData"), { ssr: false })
-      },
-      {
-        type: COMPONENT_TYPES.DYNAMIC_IMPORT,
-        component: dynamic(() => import("@/components/maps/DublinBikesMap"), { ssr: false })
-      },
-      {
-        type: COMPONENT_TYPES.DYNAMIC_IMPORT,
-        component: dynamic(() => import("@/components/maps/DublinLiveBikesMap"), { ssr: false })
-      }
-    ],
-    airbnb: [
-      {
-        type: COMPONENT_TYPES.DYNAMIC_IMPORT,
-        component: dynamic(() => import("@/components/maps/DublinarcGISMap"), { ssr: false })
-      },
       {
         type: COMPONENT_TYPES.DYNAMIC_IMPORT,
         component: dynamic(() => import("@/components/airbnb/London/LondonMap"), { ssr: false })

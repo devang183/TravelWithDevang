@@ -11,7 +11,6 @@ import ManchesterPlacesMap from "./ManchesterPlacesMap";
 import LeedsPlacesMap from "./LeedsPlacesMap";
 import MalahidePlacesMap from "./MalahidePlacesMap";
 import LuasLiveData from "@/app/test-cities/[cityid]/LuasLiveData";
-import DublinBikesMap from "./DublinBikesMap";
 // import more as needed
 
 const cityMapRegistry = {
@@ -25,9 +24,6 @@ const cityMapRegistry = {
   manchester:[ManchesterPlacesMap],
   leeds:[LeedsPlacesMap],
   malahide:[MalahidePlacesMap],
-  'london-2025':[LondonPlacesMap],
-  'dublin-2025-march':[DublinLivingMap],
-  'dublin-2025-april':[DublinArcGISMap],
   rabat:[NagpurPoliceStationsMap],
   raipur:[NagpurPoliceStationsMap],
   delhi:[NagpurPoliceStationsMap],

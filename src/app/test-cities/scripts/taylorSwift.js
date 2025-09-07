@@ -83,7 +83,7 @@ const TaylorSwiftDashboard = ({cityred}) => {
 
   // 🔹 Fetch live subreddit JSON
   useEffect(() => {
-    fetch(`https://www.reddit.com/r/${cityred}/.json`)
+    fetch(`https://www.reddit.com/r/${cityred}/top/.json?t=week&limit=100`)
       .then(res => res.json())
       .then(data => setRedditData(data))
       .catch(err => console.error('Error fetching Reddit data:', err));
@@ -759,7 +759,11 @@ const TaylorSwiftDashboard = ({cityred}) => {
                 Top Posts Engagement
               </h3>
               <ResponsiveContainer width="100%" height={300}>
-                <BarChart data={processedData.engagementData}>
+                <BarChart 
+                  data={processedData.engagementData}
+                  onClick={handleChartClick}
+                  style={{ cursor: 'pointer' }}
+                >
                   <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
                   <XAxis dataKey="title" angle={-30} textAnchor="end" height={80} fontSize={12} />
                   <YAxis />
@@ -769,8 +773,8 @@ const TaylorSwiftDashboard = ({cityred}) => {
                     labelStyle={{color: '#374151'}}
                   />
                   <Legend verticalAlign="top" align="right" height={36} />
-                  <Bar dataKey="score" fill="#1364E8" radius={4} />
-                  <Bar dataKey="comments" fill="#284778" radius={4} />
+                  <Bar dataKey="score" fill="#1364E8" radius={4} style={{ cursor: 'pointer' }} />
+                  <Bar dataKey="comments" fill="#284778" radius={4} style={{ cursor: 'pointer' }} />
                 </BarChart>
               </ResponsiveContainer>
             </div>

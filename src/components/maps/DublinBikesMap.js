@@ -1,26 +1,26 @@
 'use client';
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, memo } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import 'leaflet/dist/leaflet.css';
 
 // Bike icons
 const bikeIcon = L.icon({
-  iconUrl: "/images/mapicons/bike.png",
+  iconUrl: "https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/mapicons/bike.svg",
   iconSize: [30, 30],
   iconAnchor: [15, 30],
   popupAnchor: [0, -30],
 });
 
 const highlightedBikeIcon = L.icon({
-  iconUrl: "/images/mapicons/seat.png",
+  iconUrl: "https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/mapicons/highlightedBikeIcon.svg",
   iconSize: [45, 45],
   iconAnchor: [22, 45],
   popupAnchor: [0, -45],
 });
 
 const selectedStationIcon = L.icon({
-  iconUrl: "/images/mapicons/highlighted-bike.png",
+  iconUrl: "https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/mapicons/selectedStation.svg",
   iconSize: [40, 40],
   iconAnchor: [20, 40],
   popupAnchor: [0, -40],
@@ -35,7 +35,7 @@ function PanTo({ position }) {
   return null;
 }
 
-export default function DublinBikesMap() {
+function DublinBikesMap() {
   const [stations, setStations] = useState([]);
   const [loading, setLoading] = useState(false);
   const [highlightedStation, setHighlightedStation] = useState(null);
@@ -308,158 +308,6 @@ export default function DublinBikesMap() {
   );
 }
 
-// 'use client';
-
-// import { useEffect, useState } from "react";
-// import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
-// import L from "leaflet";
-// import 'leaflet/dist/leaflet.css';
-
-// // Bike icons
-// const bikeIcon = L.icon({
-//   iconUrl: "/images/mapicons/bike.png",
-//   iconSize: [30, 30],
-//   iconAnchor: [15, 30],
-//   popupAnchor: [0, -30],
-// });
-
-// const highlightedBikeIcon = L.icon({
-//   iconUrl: "/images/mapicons/seat.png",
-//   iconSize: [45, 45],
-//   iconAnchor: [22, 45],
-//   popupAnchor: [0, -45],
-// });
-
-// const selectedStationIcon = L.icon({
-//   iconUrl: "/images/mapicons/highlighted-bike.png",
-//   iconSize: [40, 40],
-//   iconAnchor: [20, 40],
-//   popupAnchor: [0, -40],
-// });
-
-// // Component to pan map to a position
-// function PanTo({ position }) {
-//   const map = useMap();
-//   useEffect(() => {
-//     if (position) map.setView(position, 15, { animate: true });
-//   }, [position, map]);
-//   return null;
-// }
-
-// export default function DublinBikesMap() {
-//   const [stations, setStations] = useState([]);
-//   const [loading, setLoading] = useState(false);
-//   const [highlightedStation, setHighlightedStation] = useState(null);
-//   const [searchTerm, setSearchTerm] = useState("");
-//   const [selectedStation, setSelectedStation] = useState(null);
-
-//   const fetchStations = () => {
-//     setLoading(true);
-//     fetch("https://data.smartdublin.ie/mobybikes-api/bikes/dublin_bikes/current/stations.geojson")
-//       .then(res => res.json())
-//       .then(data => {
-//         const features = data.features;
-//         setStations(features);
-
-//         // Highlight station with most bikes
-//         if (features.length > 0) {
-//           const maxBikesStation = features.reduce((prev, curr) => 
-//             curr.properties.num_bikes_available > prev.properties.num_bikes_available ? curr : prev
-//           );
-//           setHighlightedStation(maxBikesStation);
-//         }
-//       })
-//       .catch(err => console.error("Error fetching bikes:", err))
-//       .finally(() => setLoading(false));
-//   };
-
-//   useEffect(() => {
-//     fetchStations();
-//   }, []);
-
-//   // Filter stations by search term
-//   const filteredStations = stations.filter(s => 
-//     s.properties.address.toLowerCase().includes(searchTerm.toLowerCase())
-//   );
-
-//   const handleSelectStation = (station) => {
-//     setSelectedStation(station);
-//     setSearchTerm(""); // clear search after selecting
-
-//     // Automatically remove highlight after 5 seconds
-//     setTimeout(() => {
-//       setSelectedStation(null);
-//     }, 5000);
-//   };
-
-//   return (
-//     <div style={{width: "100%", position: "relative"}}>
-        
-//       {/* Search box */}
-//       <div className="absolute top-4 left-4 z-[1000] w-64">
-//         <input
-//           type="text"
-//           placeholder="Search street..."
-//           value={searchTerm}
-//           onChange={(e) => setSearchTerm(e.target.value)}
-//           className="w-full p-2 rounded border shadow focus:outline-none focus:ring"
-//         />
-//         {searchTerm && filteredStations.length > 0 && (
-//           <ul className="bg-white border rounded shadow max-h-60 overflow-y-auto mt-1">
-//             {filteredStations.map((station) => (
-//               <li
-//                 key={station.properties.station_id}
-//                 onClick={() => handleSelectStation(station)}
-//                 className="p-2 hover:bg-blue-100 cursor-pointer"
-//               >
-//                 {station.properties.address} ({station.properties.num_bikes_available} bikes)
-//               </li>
-//             ))}
-//           </ul>
-//         )}
-//       </div>
-
-//       {/* Refresh Button */}
-//       <button
-//         onClick={fetchStations}
-//         className="absolute top-4 right-4 z-[1000] p-2 bg-blue-600 backdrop-blur-md rounded shadow-lg hover:bg-blue-700"
-//         disabled={loading}
-//       >
-//         {loading ? "Refreshing..." : "Refresh Bikes"}
-//       </button>
-
-//       <MapContainer center={[53.3498, -6.2603]} zoom={14} style={{ height: "90vh", width: "100%" }}>
-//         <TileLayer
-//           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-//           attribution="&copy; OpenStreetMap contributors"
-//         />
-
-//         {stations.map((station, i) => {
-//           const [lng, lat] = station.geometry.coordinates;
-//           const { name, address, num_bikes_available, num_docks_available, capacity, station_id } = station.properties;
-
-//           // Determine icon
-//           let icon = bikeIcon;
-//           if (highlightedStation?.properties.station_id === station_id) icon = highlightedBikeIcon;
-//           if (selectedStation?.properties.station_id === station_id) icon = selectedStationIcon;
-
-//           return (
-//             <Marker key={i} position={[lat, lng]} icon={icon}>
-//               <Popup>
-//                 <b>{name}</b><br/>
-//                 📍 {address}<br/>
-//                 🚲 Bikes Available: {num_bikes_available}<br/>
-//                 🅿️ Free Docks: {num_docks_available}<br/>
-//                 🔢 Capacity: {capacity}
-//               </Popup>
-//             </Marker>
-//           );
-//         })}
-
-//         {/* Pan to selected station or max bikes station */}
-//         {selectedStation && <PanTo position={selectedStation.geometry.coordinates.slice().reverse()} />}
-//         {!selectedStation && highlightedStation && <PanTo position={highlightedStation.geometry.coordinates.slice().reverse()} />}
-//       </MapContainer>
-//     </div>
-//   );
-// }
+// Memoize the component to prevent unnecessary re-renders
+const MemoizedDublinBikesMap = memo(DublinBikesMap);
+export default MemoizedDublinBikesMap;

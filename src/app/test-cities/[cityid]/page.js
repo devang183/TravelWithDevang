@@ -86,6 +86,11 @@ export default function CityPage({ params }) {
             zoom={13}
             name={city.name}
           />
+          
+          {/* Tourist Attractions */}
+          {/* <div className="mt-8">
+            <CityAttractions cityName={city.name} />
+          </div> */}
         </>
       )}
 

@@ -11,14 +11,16 @@ import ManchesterPlacesMap from "./ManchesterPlacesMap";
 import LeedsPlacesMap from "./LeedsPlacesMap";
 import MalahidePlacesMap from "./MalahidePlacesMap";
 import LuasLiveData from "@/app/test-cities/[cityid]/LuasLiveData";
+import CityAttractionsDublin from "@/components/CityAttractionsDublin";
+import CityAttractionsGalway from "@/components/CityAttractionsGalway";
 // import more as needed
 
 const cityMapRegistry = {
   nagpur: [NagpurPoliceStationsMap],
-  dublin: [DublinLivingMap, DublinArcGISMap, LuasLiveData],
+  dublin: [DublinLivingMap, DublinArcGISMap, LuasLiveData,CityAttractionsDublin],
   newry: [NagpurPoliceStationsMap],
   liverpool:[LiverpoolPlacesMap],
-  'london':[LondonPlacesMap],
+  london:[LondonPlacesMap],
   birmingham:[BirminghamPlacesMap],
   belfast:[BelfastPlacesMap],
   manchester:[ManchesterPlacesMap],
@@ -30,6 +32,7 @@ const cityMapRegistry = {
   newyork:[DublinArcGISMap],
   newquay:[DublinArcGISMap],
   chicago:[DublinArcGISMap],
+  galway:[CityAttractionsGalway],
   // more cities...
 };
 

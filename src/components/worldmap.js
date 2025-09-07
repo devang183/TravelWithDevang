@@ -294,7 +294,7 @@ export default function WorldMap() {
   return (
     <div className="w-full flex justify-center">
       <div
-        className="relative"
+        className="relative z-10"
         style={{
           width: '78vw',
           height: '600px',
@@ -304,15 +304,18 @@ export default function WorldMap() {
       >
         <div
           id="map"
+          className="z-10"
           style={{
             width: '100%',
             height: '100%',
             borderRadius: '20px',
+            position: 'relative',
+            zIndex: 10,
           }}
         />
         <button
           ref={recenterBtnRef}
-          className="absolute bottom-5 right-5 px-4 py-2 bg-green-500 text-white font-semibold rounded shadow hover:bg-green-600 z-[1000]"
+          className="absolute bottom-5 right-5 px-4 py-2 bg-green-500 text-white font-semibold rounded shadow hover:bg-green-600 z-20"
         >
           Recenter
         </button>

@@ -1,7 +1,8 @@
 'use client';
 import React, { useState, useMemo, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell, ScatterChart, Legend, Scatter, Area, AreaChart } from 'recharts';
-import { TrendingUp, MessageCircle, Heart, Eye, Clock, Users, Star, Flame } from 'lucide-react';
+import { TrendingUp, MessageCircle, Heart, Eye, Clock, Users, Star, Flame, Search, X } from 'lucide-react';
+import Fuse from 'fuse.js';
 
 const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
@@ -33,6 +34,39 @@ const CustomAreaTooltip = ({ active, payload }) => {
     return null;
   };
 
+// Custom X-Axis Tick component for engagement chart
+const CustomXAxisTick = ({ x, y, payload }) => {
+  const [showFullTitle, setShowFullTitle] = useState(false);
+  
+  return (
+    <g transform={`translate(${x},${y})`}>
+      <text
+        x={0}
+        y={0}
+        dy={16}
+        textAnchor="end"
+        fill="#666"
+        fontSize="12"
+        transform="rotate(-45)"
+        style={{ cursor: 'pointer' }}
+        onMouseEnter={() => setShowFullTitle(true)}
+        onMouseLeave={() => setShowFullTitle(false)}
+      >
+        {payload.value}
+      </text>
+      
+      {/* Tooltip for full title */}
+      {showFullTitle && (
+        <foreignObject x={-100} y={-40} width="200" height="30">
+          <div className="bg-black text-white text-xs p-2 rounded shadow-lg max-w-xs break-words">
+            {payload.payload?.fullTitle || payload.value}
+          </div>
+        </foreignObject>
+      )}
+    </g>
+  );
+};
+
 const TaylorSwiftDashboard = ({cityred}) => {
   const [activeView, setActiveView] = useState('overview');
   const [redditData, setRedditData] = useState(null);
@@ -41,6 +75,9 @@ const TaylorSwiftDashboard = ({cityred}) => {
   const [comments, setComments] = useState([]);
   const [loadingComments, setLoadingComments] = useState(false);
   const [showComments, setShowComments] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+  const [showSearchDropdown, setShowSearchDropdown] = useState(false);
 //   const [summary, setSummary] = useState(null);
 //   const [loadingSummary, setLoadingSummary] = useState(false);
 
@@ -155,7 +192,7 @@ const TaylorSwiftDashboard = ({cityred}) => {
 
     // Engagement metrics
     const engagementData = posts.map(post => ({
-      title: post.title.length > 30 ? post.title.substring(0, 30) + '...' : post.title,
+      title: post.title.length > 20 ? post.title.substring(0, 20) + '...' : post.title,
       fullTitle: post.title, // full title for tooltip
       score: post.score,
       comments: post.num_comments,
@@ -255,6 +292,70 @@ const TaylorSwiftDashboard = ({cityred}) => {
   const totalComments = processedData.posts.reduce((sum, post) => sum + post.num_comments, 0);
   const avgRatio = processedData.posts.reduce((sum, post) => sum + post.upvote_ratio, 0) / processedData.posts.length;
   const subscriberCount = processedData.subscriberCount;
+
+  // Initialize Fuse.js for fuzzy search
+  const fuse = useMemo(() => {
+    if (!processedData.engagementData.length) return null;
+    
+    const options = {
+      keys: ['fullTitle', 'author'],
+      threshold: 0.3, // Lower = more strict, higher = more fuzzy
+      includeScore: true,
+      includeMatches: true,
+      minMatchCharLength: 2,
+    };
+    
+    return new Fuse(processedData.engagementData, options);
+  }, [processedData.engagementData]);
+
+  // Handle search input
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+    
+    if (!query.trim() || !fuse) {
+      setSearchResults([]);
+      setShowSearchDropdown(false);
+      return;
+    }
+
+    const results = fuse.search(query).slice(0, 8); // Limit to 8 results
+    setSearchResults(results);
+    setShowSearchDropdown(true);
+  };
+
+  // Handle search result click
+  const handleSearchResultClick = (post) => {
+    setSelectedPost(post);
+    setIsModalOpen(true);
+    setSearchQuery('');
+    setShowSearchDropdown(false);
+  };
+
+  // Clear search
+  const clearSearch = () => {
+    setSearchQuery('');
+    setSearchResults([]);
+    setShowSearchDropdown(false);
+  };
+
+  // Function to highlight matching text
+  const highlightText = (text, query) => {
+    if (!query.trim()) return text;
+    
+    const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+    const parts = text.split(regex);
+    
+    return parts.map((part, index) => {
+      if (regex.test(part)) {
+        return (
+          <span key={index} className="bg-yellow-200 text-yellow-900 font-medium px-1 rounded">
+            {part}
+          </span>
+        );
+      }
+      return part;
+    });
+  };
 
   // Modal component for displaying Reddit post
   const PostModal = ({ post, isOpen, onClose }) => {
@@ -684,6 +785,84 @@ const TaylorSwiftDashboard = ({cityred}) => {
                 Upvote Ratios by Post
                 <span className="text-sm font-normal text-blue-500 ml-2">(Click points to view post details)</span>
               </h3>
+              
+              {/* Search Bar */}
+              <div className="relative mb-6">
+                <div className="relative">
+                  {/* <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" /> */}
+                  <input
+                    type="text"
+                    placeholder=" Search posts by title or author..."
+                    value={searchQuery}
+                    onChange={(e) => handleSearch(e.target.value)}
+                    onFocus={() => searchQuery && setShowSearchDropdown(true)}
+                    className="w-full pl-10 pr-10 py-3 focus:outline-none rounded-lg transition-all duration-200"
+                  />
+                  {searchQuery && (
+                    <button
+                      onClick={clearSearch}
+                      className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+                    >
+                      <X className="w-5 h-5" />
+                    </button>
+                  )}
+                </div>
+                
+                {/* Search Results Dropdown */}
+                {showSearchDropdown && searchResults.length > 0 && (
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 max-h-80 overflow-y-auto">
+                    {searchResults.map((result, index) => {
+                      const post = result.item;
+                      const matches = result.matches || [];
+                      
+                      return (
+                        <div
+                          key={post.permalink || index}
+                          onClick={() => handleSearchResultClick(post)}
+                          className="p-4 hover:bg-blue-50 cursor-pointer border-b border-gray-100 last:border-b-0 transition-colors duration-150"
+                        >
+                          <div className="flex items-start justify-between">
+                            <div className="flex-1 min-w-0">
+                              <h4 className="font-medium text-gray-900 mb-1 leading-relaxed">
+                                {highlightText(post.fullTitle, searchQuery)}
+                              </h4>
+                              <div className="flex items-center space-x-4 text-sm text-gray-500">
+                                <span>by u/{highlightText(post.author, searchQuery)}</span>
+                                <span className="flex items-center">
+                                  <Heart className="w-3 h-3 mr-1" />
+                                  {post.score}
+                                </span>
+                                <span className="flex items-center">
+                                  <MessageCircle className="w-3 h-3 mr-1" />
+                                  {post.comments}
+                                </span>
+                                <span className="text-green-600">
+                                  {(post.ratio * 100).toFixed(1)}% upvoted
+                                </span>
+                              </div>
+                              {matches.length > 0 && (
+                                <div className="mt-2 text-xs text-blue-600">
+                                  Matched: {matches.map(match => match.key).join(', ')}
+                                </div>
+                              )}
+                            </div>
+                            <div className="ml-4 text-xs text-gray-400">
+                              Score: {(1 - result.score).toFixed(2)}
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+                
+                {/* No Results Message */}
+                {showSearchDropdown && searchQuery && searchResults.length === 0 && (
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 p-4 text-center text-gray-500">
+                    No posts found matching "{searchQuery}"
+                  </div>
+                )}
+              </div>
               <ResponsiveContainer width="100%" height={300}>
                 <AreaChart 
                   data={processedData.engagementData}
@@ -693,10 +872,8 @@ const TaylorSwiftDashboard = ({cityred}) => {
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis 
                     dataKey="title" 
-                    tick={{ fontSize: 12 }}
+                    tick={<CustomXAxisTick />}
                     interval={0}
-                    angle={-45}
-                    textAnchor="end"
                     height={80}
                   />
                   <YAxis domain={[0.8, 1]} />

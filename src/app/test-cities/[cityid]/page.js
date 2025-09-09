@@ -176,7 +176,7 @@ export default function CityPage({ params }) {
       ) : (
         <div className="p-4 sm:p-6 text-center text-gray-100 bg-black/30 backdrop-blur-sm rounded-lg">
           <h2 className="text-lg sm:text-xl font-semibold mb-2">Maps Coming Soon</h2>
-          <p className="text-sm sm:text-base">We're working on adding more maps for this city!</p>
+          <p className="text-sm sm:text-base">We are working on adding more maps for this city!</p>
         </div>
       )}
 

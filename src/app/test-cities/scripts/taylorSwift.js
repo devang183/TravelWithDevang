@@ -183,7 +183,7 @@ const TaylorSwiftDashboard = ({cityred}) => {
 
   // Process the data for visualizations
   const processedData = useMemo(() => {
-    if (!redditData) return { engagementData: [], flairData: [], timeData: [], posts: [] };
+    if (!redditData?.data?.children) return { engagementData: [], flairData: [], timeData: [], posts: [], isLoading: !redditData };
 
     const posts = redditData.data.children.map(child => child.data);
 

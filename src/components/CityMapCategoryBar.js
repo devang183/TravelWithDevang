@@ -14,6 +14,7 @@ const CityMapCategoryBar = ({
   const scrollRef = useRef(null);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   // Category emojis mapping
   const categoryEmojis = {
@@ -50,6 +51,17 @@ const CityMapCategoryBar = ({
     fuelgas: "⛽",
   };
 
+  // Check if mobile device
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+    
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
 
   // Helper function to normalize categories
   const normalizeCategories = (categories) => {
@@ -92,11 +104,13 @@ const CityMapCategoryBar = ({
     return availableCategories;
   }, [availableCategories]);
 
-  // Calculate container width
-  const emojiButtonWidth = 48;
-  const visibleEmojisCount = 8;
-  const scrollContainerWidth = emojiButtonWidth * visibleEmojisCount;
-
+  // Responsive calculations
+  const emojiButtonWidth = isMobile ? 52 : 56; // Slightly larger touch targets on mobile
+  const visibleEmojisCount = 6; // Fixed at 6 as requested
+  const gap = isMobile ? 8 : 10;
+  const totalGaps = (visibleEmojisCount - 1) * gap;
+  const scrollContainerWidth = (emojiButtonWidth * visibleEmojisCount) + totalGaps;
+  const arrowSize = isMobile ? 20 : 16;
 
   // Enhanced scroll arrows visibility
   const checkScrollArrows = useCallback(() => {
@@ -117,23 +131,27 @@ const CityMapCategoryBar = ({
       window.addEventListener("resize", checkScrollArrows, { passive: true });
       
       return () => {
-        scrollContainer.removeEventListener("scroll", checkScrollArrows);
+        if (scrollContainer) {
+          scrollContainer.removeEventListener("scroll", checkScrollArrows);
+        }
         window.removeEventListener("resize", checkScrollArrows);
       };
     }
   }, [availableCategories, checkScrollArrows]);
 
+  const scrollDistance = isMobile ? emojiButtonWidth * 2 : emojiButtonWidth * 1.5;
+
   const scrollLeft = useCallback(() => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -120, behavior: "smooth" });
+      scrollRef.current.scrollBy({ left: -scrollDistance, behavior: "smooth" });
     }
-  }, []);
+  }, [scrollDistance]);
 
   const scrollRight = useCallback(() => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 120, behavior: "smooth" });
+      scrollRef.current.scrollBy({ left: scrollDistance, behavior: "smooth" });
     }
-  }, []);
+  }, [scrollDistance]);
 
   const getCategoryTitle = (key) => {
     const titles = {
@@ -187,108 +205,156 @@ const CityMapCategoryBar = ({
     );
   }
 
+  const containerStyles = {
+    position: "relative",
+    margin: isMobile ? "16px auto" : "20px auto",
+    width: "100%",
+    maxWidth: `${scrollContainerWidth + (isMobile ? 80 : 60)}px`,
+    padding: isMobile ? "0 10px" : "0"
+  };
+
+  const scrollContainerStyles = {
+    display: "flex",
+    gap: `${gap}px`,
+    padding: isMobile ? "12px 40px" : "8px 30px",
+    overflowX: "auto",
+    borderRadius: "12px",
+    marginBottom: "16px",
+    alignItems: "center",
+    flexWrap: "nowrap",
+    scrollbarWidth: "none",
+    msOverflowStyle: "none",
+    userSelect: "none",
+    justifyContent: "flex-start",
+    width: "100%",
+    position: "relative"
+  };
+
+  const arrowButtonStyles = {
+    position: "absolute",
+    zIndex: 20,
+    borderRadius: "50%",
+    padding: isMobile ? "12px" : "10px",
+    cursor: "pointer",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+    backgroundColor: "rgba(255,255,255,0.95)",
+    border: "1px solid rgba(0,0,0,0.1)",
+    top: "50%",
+    transform: "translateY(-50%)",
+    transition: "all 0.2s ease"
+  };
+
+  // Keyframes for the shine effect
+  const shineKeyframes = `
+    @keyframes shine {
+      0% { filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)); }
+      50% { filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.9)) scale(1.1); }
+      100% { filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)); }
+    }
+  `;
+
+  const categoryButtonStyles = (isActive) => ({
+    fontSize: isMobile ? "1.6rem" : "1.4rem",
+    padding: isMobile ? "10px 12px" : "8px 10px",
+    cursor: "pointer",
+    borderRadius: "12px",
+    background: isActive ? "rgba(255, 255, 255, 0.2)" : "transparent",
+    backdropFilter: isActive ? "blur(16px)" : "blur(0px)",
+    transition: "all 0.3s ease",
+    flexShrink: 0,
+    position: "relative",
+    minWidth: `${emojiButtonWidth}px`,
+    height: `${emojiButtonWidth}px`,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    '&:hover': {
+      transform: isActive ? 'scale(1.1)' : 'scale(1.05)'
+    },
+    '&:active': {
+      transform: 'scale(0.98)'
+    }
+  });
+
+  const actionButtonStyles = {
+    fontSize: isMobile ? "0.9rem" : "1rem",
+    padding: isMobile ? "10px 16px" : "8px 12px",
+    cursor: "pointer",
+    borderRadius: "12px",
+    background: "rgba(255,255,255,0.9)",
+    color: "#374151",
+    border: "1px solid rgba(0,0,0,0.1)",
+    userSelect: "none",
+    transition: "all 0.2s ease",
+    fontWeight: "500",
+    boxShadow: "0 2px 8px rgba(0,0,0,0.1)"
+  };
+
   return (
-    <div style={{ position: "relative", margin: "20px auto", width: scrollContainerWidth + 60 }}>
+    <div style={containerStyles}>
+      <style>{shineKeyframes}</style>
       {/* Category Icons Bar */}
       <div
         ref={scrollRef}
-        style={{
-          display: "flex",
-          gap: "10px",
-          padding: "8px 20px",
-          overflowX: "auto",
-          borderRadius: "8px",
-          marginBottom: "12px",
-          alignItems: "center",
-          flexWrap: "nowrap",
-          scrollbarWidth: "none",
-          msOverflowStyle: "none",
-          userSelect: "none",
-          justifyContent: "flex-start",
-          width: "100%",
-        }}
+        style={scrollContainerStyles}
         className="category-scroll-container"
       >
-
-        {/* Scroll arrows */}
-        {showLeftArrow && (
-          <button
-            onClick={scrollLeft}
-            style={{
-              position: "absolute",
-              left: "80px",
-              top:"50px",
-              zIndex: 20,
-              borderRadius: "50%",
-              padding: "8px",
-              cursor: "pointer",
-              boxShadow: "0 2px 4px rgba(0,0,0,0.1)"
-            }}
-            aria-label="Scroll left"
-          >
-            <ChevronLeft size={8} />
-          </button>
-        )}
-
-        {showRightArrow && (
-          <button
-            onClick={scrollRight}
-            style={{
-              position: "absolute",
-              right: "80px",
-              top:"50px",
-              zIndex: 20,
-              borderRadius: "50%",
-              padding: "8px",
-              cursor: "pointer",
-              boxShadow: "0 2px 4px rgba(0,0,0,0.1)"
-            }}
-            aria-label="Scroll right"
-          >
-            <ChevronRight size={8} />
-          </button>
-        )}
+        
 
         {/* Category buttons */}
         {mainCategories.map((key) => {
+          const isActive = activeCategories.includes(key);
           return (
             <button
               key={key}
               onClick={() => onCategoryToggle(key)}
               title={getCategoryTitle(key)}
               style={{
-                fontSize: "1.4rem",
-                padding: "6px 10px",
-                cursor: "pointer",
-                borderRadius: "8px",
-                background: activeCategories.includes(key) ? "#dbeafe" : "transparent",
-                backdropFilter: activeCategories.includes(key) ? "blur(5px)" : "none",
-                transition: "transform 0.2s, border-color 0.3s, background-color 0.3s, backdrop-filter 0.3s",
-                border: "none",
-                flexShrink: 0,
-                position: "relative"
+                ...categoryButtonStyles(isActive),
+                animation: isActive ? 'shine 2s infinite ease-in-out' : 'none',
+                transform: isActive ? 'scale(1.1)' : 'scale(1)',
+                transition: 'all 0.3s ease, transform 0.2s ease',
               }}
-              onMouseEnter={(e) => { e.currentTarget.style.transform = "scale(1.2)"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.transform = "scale(1)"; }}
-              aria-label={`Filter by ${key}`}
+              onMouseEnter={(e) => { 
+                if (!isMobile && !isActive) {
+                  e.currentTarget.style.transform = 'scale(1.1)';
+                }
+              }}
+              onMouseLeave={(e) => { 
+                if (!isMobile && !isActive) {
+                  e.currentTarget.style.transform = 'scale(1)';
+                }
+              }}
+              aria-label={`Filter by ${getCategoryTitle(key)}`}
             >
-              {categoryEmojis[key]}
+              <span style={{
+                display: 'inline-block',
+                transform: isActive ? 'scale(1.1)' : 'scale(1)',
+                transition: 'transform 0.3s ease',
+                filter: isActive ? 'drop-shadow(0 0 8px rgba(255, 255, 255, 0.8))' : 'none'
+              }}>
+                {categoryEmojis[key]}
+              </span>
               {/* Count badge */}
               {categoryCounts[key] > 0 && (
                 <span style={{
                   position: "absolute",
-                  top: "-8px",
-                  right: "-8px",
-                  background: "linear-gradient(135deg, #10b981, #059669)",
+                  top: "-6px",
+                  right: "-6px",
+                  background: isActive 
+                    ? "linear-gradient(135deg, #ef4444, #dc2626)" 
+                    : "linear-gradient(135deg, #10b981, #059669)",
                   color: "white",
                   borderRadius: "50%",
-                  width: "20px",
-                  height: "20px",
-                  fontSize: "0.5rem",
+                  width: isMobile ? "22px" : "20px",
+                  height: isMobile ? "22px" : "20px",
+                  fontSize: isMobile ? "0.6rem" : "0.5rem",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  fontWeight: "bold"
+                  fontWeight: "bold",
+                  boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
+                  transition: "all 0.2s ease"
                 }}>
                   {categoryCounts[key]}
                 </span>
@@ -299,82 +365,67 @@ const CityMapCategoryBar = ({
       </div>
       
       {/* Button Container */}
-<div
-  style={{
-    display: "flex",
-    justifyContent: "center", // center both buttons horizontally
-    alignItems: "center", // align vertically if needed
-    gap: "20px", // space between buttons
-    marginTop: "20px", // optional top spacing
-    marginBottom:"20px"
-  }}
->
-  {/* Show/Hide Markers Button */}
-  <button
-    onClick={onToggleMarkersVisibility}
-    style={{
-      fontSize: "1rem",
-      padding: "6px 12px",
-      cursor: "pointer",
-      borderRadius: "8px",
-      background: "rgba(255,255,255,0.3)",
-      color: "black",
-      border: "none",
-      userSelect: "none",
-      transition: "transform 0.2s, border-color 0.3s, background-color 0.3s",
-    }}
-    onMouseEnter={(e) => {
-      e.currentTarget.style.transform = "scale(1.1)";
-    }}
-    onMouseLeave={(e) => {
-      e.currentTarget.style.transform = "scale(1)";
-    }}
-    aria-label="Toggle markers visibility"
-  >
-    {markersVisible ? "Hide Markers" : "Show Markers"}
-  </button>
+      <div style={{
+        display: "flex",
+        // flexDirection: isMobile ? "row" : "row",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: isMobile ? "12px" : "20px",
+        marginTop: "16px",
+        marginBottom: "20px",
+        padding: isMobile ? "0 20px" : "0"
+      }}>
+        {/* Show/Hide Markers Button */}
+        <button
+          onClick={onToggleMarkersVisibility}
+          style={actionButtonStyles}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = "translateY(-2px)";
+            e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.15)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "translateY(0)";
+            e.currentTarget.style.boxShadow = "0 2px 8px rgba(0,0,0,0.1)";
+          }}
+          aria-label="Toggle markers visibility"
+        >
+          {markersVisible ? "Hide Markers" : "Show Markers"}
+        </button>
 
-  {/* Clear All Button */}
-  <button
-    onClick={onClearCategories}
-    style={{
-      fontSize: "1rem",
-      padding: "6px 12px",
-      cursor: "pointer",
-      borderRadius: "8px",
-      background: "rgba(255,255,255,0.3)",
-      color: "black",
-      border: "none",
-      userSelect: "none",
-      transition:
-        "transform 0.2s, border-color 0.3s, background-color 0.3s, backdrop-filter 0.3s",
-      flexShrink: 0,
-    }}
-    onMouseEnter={(e) => {
-      e.currentTarget.style.transform = "scale(1.1)";
-    }}
-    onMouseLeave={(e) => {
-      e.currentTarget.style.transform = "scale(1)";
-    }}
-    aria-label="Clear all filters"
-  >
-    Clear Items
-  </button>
-</div>
-    
+        {/* Clear All Button */}
+        <button
+          onClick={onClearCategories}
+          style={actionButtonStyles}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = "translateY(-2px)";
+            e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.15)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "translateY(0)";
+            e.currentTarget.style.boxShadow = "0 2px 8px rgba(0,0,0,0.1)";
+          }}
+          aria-label="Clear all filters"
+        >
+          Clear Items
+        </button>
+      </div>
+      
       {/* Active categories indicator */}
       {activeCategories.length > 0 && (
         <div style={{
           position: "absolute",
-          bottom: "40px",
+          bottom: isMobile ? "-30px" : "-25px",
           left: "50%",
           transform: "translateX(-50%)",
-          fontSize: "0.4rem",
+          fontSize: isMobile ? "0.75rem" : "0.7rem",
           color: "#1e40af",
-          background: "rgba(219, 234, 254, 0.8)",
-          padding: "4px 12px",
-          borderRadius: "12px",
-          backdropFilter: "blur(5px)"
+          background: "rgba(219, 234, 254, 0.9)",
+          padding: isMobile ? "6px 14px" : "4px 12px",
+          borderRadius: "16px",
+          backdropFilter: "blur(8px)",
+          fontWeight: "500",
+          whiteSpace: "nowrap",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.1)"
         }}>
           🔍 {activeCategories.length} filter{activeCategories.length !== 1 ? "s" : ""} active
         </div>

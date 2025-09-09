@@ -18,7 +18,9 @@ export async function GET(request, context) {
       category: pin.category,
       keywords: pin.keywords || [],
       url: pin.url || '#',
-      videoId: pin.videoId || null
+      videoId: pin.videoId || null,
+      phone: pin.phone || null,
+      website: pin.website || null
     }));
 
     return Response.json(transformedPins);

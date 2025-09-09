@@ -180,7 +180,7 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
 
         const newMarkerRefs = [];
         
-        markers.forEach(({ url, coords, name, description, categories, category, videoId }, index) => {
+        markers.forEach(({ url, coords, name, description, categories, category, videoId, phone, website }, index) => {
           // Handle both old 'category' field and new 'categories' field
           const markerCategories = categories || category;
           const normalizedCategories = normalizeCategories(markerCategories);
@@ -204,52 +204,71 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
           popupDiv.style.wordWrap = "break-word";
         
           popupDiv.innerHTML = `
-            <p><strong>${categoryDisplay} ${name}</strong></p>
-            <p style="font-size:0.85em">${description}</p>
-            ${normalizedCategories.length > 1 ? 
-              `<p style="font-size:0.75em; color: #666;">Categories: ${normalizedCategories.join(', ')}</p>` : ''}
-            ${videoEmbed}
-            <a href="${url}" target="_blank" style="
-              display:inline-block;margin-top:8px;padding:4px 8px;font-weight:bold;
-              color:white;background:#1e40af;border-radius:6px;text-decoration:none;
-            ">More info</a>
-            <div style="margin-top: 8px; display:flex; gap:5px;">
-              <button class="set-source-btn" 
-                style="
-                  flex:1; 
-                  padding:4px; 
-                  font-size:0.8em; 
-                  border-radius:4px; 
-                  border:none; 
-                  background:#10b981; 
-                  color:white; 
-                  cursor:pointer;
-                  transition: transform 0.2s, border-color 0.3s, background-color 0.3s, backdrop-filter 0.3s;
-                "
-                onmouseenter="this.style.transform='scale(1.1)';"
-                onmouseleave="this.style.transform='scale(1)';"
-              >
-                Set as Source
-              </button>
-              <button class="set-dest-btn" 
-                style="
-                  flex:1; 
-                  padding:4px; 
-                  font-size:0.8em; 
-                  border-radius:4px; 
-                  border:none; 
-                  background:#f59e0b; 
-                  color:white; 
-                  cursor:pointer;
-                  transition: transform 0.2s, border-color 0.3s, background-color 0.3s, backdrop-filter 0.3s;
-                "
-                onmouseenter="this.style.transform='scale(1.1)';"
-                onmouseleave="this.style.transform='scale(1)';"
-              >
-                Set as Destination
-              </button>
-            </div>
-          `;
+  <p><strong>${categoryDisplay} ${name}</strong></p>
+  <p style="font-size:0.85em">${description}</p>
+
+  ${phone ? `<p style="font-size:0.8em;"><strong>Phone:</strong> ${phone}</p>` : ''}
+  ${website ? `<p style="font-size:0.8em;">
+    <strong>Website:</strong> 
+    <a href="${website}" target="_blank" rel="noopener noreferrer" style="color:blue; text-decoration:underline;">
+      ${website}
+    </a>
+  </p>` : ''}
+  ${normalizedCategories.length > 1 ? 
+    `<p style="font-size:0.75em; color: #666;">Categories: ${normalizedCategories.join(', ')}</p>` : ''}
+
+  ${videoEmbed}
+
+  <a href="${url}" target="_blank" style="
+    display:inline-block;
+    margin-top:8px;
+    padding:4px 8px;
+    font-weight:bold;
+    color:white;
+    background:#1e40af;
+    border-radius:6px;
+    text-decoration:none;
+  ">
+    More info
+  </a>
+
+  <div style="margin-top: 8px; display:flex; gap:5px;">
+    <button class="set-source-btn" 
+      style="
+        flex:1; 
+        padding:4px; 
+        font-size:0.8em; 
+        border-radius:4px; 
+        border:none; 
+        background:#10b981; 
+        color:white; 
+        cursor:pointer;
+        transition: transform 0.2s, border-color 0.3s, background-color 0.3s, backdrop-filter 0.3s;
+      "
+      onmouseenter="this.style.transform='scale(1.1)';"
+      onmouseleave="this.style.transform='scale(1)';"
+    >
+      Set as Source
+    </button>
+    <button class="set-dest-btn" 
+      style="
+        flex:1; 
+        padding:4px; 
+        font-size:0.8em; 
+        border-radius:4px; 
+        border:none; 
+        background:#f59e0b; 
+        color:white; 
+        cursor:pointer;
+        transition: transform 0.2s, border-color 0.3s, background-color 0.3s, backdrop-filter 0.3s;
+      "
+      onmouseenter="this.style.transform='scale(1.1)';"
+      onmouseleave="this.style.transform='scale(1)';"
+    >
+      Set as Destination
+    </button>
+  </div>
+`;
         
           const marker = L.marker(coords, {
             icon: L.icon({
@@ -706,15 +725,18 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
     }
   };
 
-  const highlightText = (text="", highlight) => {
+  const highlightText = (text, highlight) => {
+    if (!text) return '';  // Return empty string if text is null/undefined
     if (!highlight) return text;
+    
     const regex = new RegExp(`(${highlight})`, "gi");
     const parts = text.split(regex);
+    
     return (
       <>
         {parts.map((part, i) =>
-          part.toLowerCase() === highlight.toLowerCase() ? (
-            <mark key={i} style={{ backgroundColor: "#fffb91" }}>
+          regex.test(part) ? (
+            <mark key={i} className="bg-yellow-200">
               {part}
             </mark>
           ) : (

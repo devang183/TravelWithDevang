@@ -29,11 +29,31 @@ const DigitalGuestbookMapWrapper = React.memo(({ cityid, city }) => {
 
 DigitalGuestbookMapWrapper.displayName = 'DigitalGuestbookMapWrapper';
 
+const TaylorSwiftDashboardWrapper = React.memo(({ cityid }) => {
+  const TaylorSwiftDashboard = dynamic(() => import("@/app/test-cities/scripts/taylorSwift"), { 
+    ssr: false,
+    loading: () => <div>Loading Reddit data for {cityid}...</div>
+  });
+
+  // Add error boundary and loading state
+  return (
+    <div className="p-4">
+      <TaylorSwiftDashboard 
+        cityred={cityid} 
+        key={cityid} // Force re-render when city changes
+      />
+    </div>
+  );
+});
+
 // 🔹 Create component type constants to avoid recreating functions
 const COMPONENT_TYPES = {
+  TAYLOR_SWIFT_DASHBOARD: 'TAYLOR_SWIFT_DASHBOARD',
   GUESTBOOK_MAP: 'GUESTBOOK_MAP',
   DYNAMIC_IMPORT: 'DYNAMIC_IMPORT'
 };
+
+TaylorSwiftDashboardWrapper.displayName = 'TaylorSwiftDashboardWrapper';
 
 // 🔹 Register subpage components here with stable references
 const subpageComponents = {
@@ -72,8 +92,34 @@ const subpageComponents = {
         component: dynamic(() => import("@/components/airbnb/Dublin/DublinMap"), { ssr: false })
       }
     ],
+    attractions:[
+      {
+        type: COMPONENT_TYPES.DYNAMIC_IMPORT,
+        component: dynamic(()=>import("@/components/CityAttractionsDublin"),{ssr:false})
+      }
+    ],
+    reddit:[
+      {
+        type: COMPONENT_TYPES.TAYLOR_SWIFT_DASHBOARD,
+        component: (props) => <TaylorSwiftDashboardWrapper {...props} cityid={cities.dublin.name} />
+      }
+    ]
   },
-  'london': {
+  galway:{
+    attractions:[
+      {
+        type: COMPONENT_TYPES.DYNAMIC_IMPORT,
+        component: dynamic(()=>import("@/components/CityAttractionsGalway"),{ssr:false})
+      }
+    ],
+    reddit:[
+      {
+        type: COMPONENT_TYPES.TAYLOR_SWIFT_DASHBOARD,
+        component: (props) => <TaylorSwiftDashboardWrapper {...props} cityid={cities.galway.name} />
+      }
+    ]
+  },
+  london: {
     explore: [
       {
         type: COMPONENT_TYPES.DYNAMIC_IMPORT,
@@ -104,12 +150,24 @@ const subpageComponents = {
         component: dynamic(() => import("@/components/airbnb/London/LondonMap"), { ssr: false })
       }
     ],
+    reddit:[
+      {
+        type: COMPONENT_TYPES.TAYLOR_SWIFT_DASHBOARD,
+        component: (props) => <TaylorSwiftDashboardWrapper {...props} cityid={cities.london.name} />
+      }
+    ]
   },
   manchester:{
     airbnb:[
       {
         type: COMPONENT_TYPES.DYNAMIC_IMPORT,
         component: dynamic(()=>import("@/components/airbnb/Manchester/ManchesterMap"),{ssr:false})
+      }
+    ],
+    reddit:[
+      {
+        type: COMPONENT_TYPES.TAYLOR_SWIFT_DASHBOARD,
+        component: (props) => <TaylorSwiftDashboardWrapper {...props} cityid={cities.manchester.name} />
       }
     ]
   },
@@ -118,6 +176,12 @@ const subpageComponents = {
       {
         type: COMPONENT_TYPES.DYNAMIC_IMPORT,
         component: dynamic(()=>import("@/components/airbnb/NewYork/NewyorkMap"),{ssr:false})
+      }
+    ],
+    reddit:[
+      {
+        type: COMPONENT_TYPES.TAYLOR_SWIFT_DASHBOARD,
+        component: (props) => <TaylorSwiftDashboardWrapper {...props} cityid={cities.newyork.name} />
       }
     ]
   },
@@ -130,6 +194,12 @@ const subpageComponents = {
       {
         type:COMPONENT_TYPES.DYNAMIC_IMPORT,
         component:dynamic(()=>import("@/components/airbnb/Dublin/DublinMap"),{ssr:false})
+      }
+    ],
+    reddit:[
+      {
+        type: COMPONENT_TYPES.TAYLOR_SWIFT_DASHBOARD,
+        component: (props) => <TaylorSwiftDashboardWrapper {...props} cityid={cities.chicago.name} />
       }
     ]
   },

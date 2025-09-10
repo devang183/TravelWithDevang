@@ -116,75 +116,97 @@ export default function LuasLiveData() {
   }, [stopId]);
 
   return (
-    <section className="p-2 mt-6 w-full rounded-2xl shadow-2xl overflow-hidden backdrop-blur-md bg-white/10">
-  <h2 className="text-xl font-semibold mb-2 text-center">Live LUAS Stop Data</h2>
+    <section className="p-3 sm:p-4 mt-4 sm:mt-6 w-full max-w-4xl mx-auto rounded-2xl shadow-2xl overflow-hidden backdrop-blur-md bg-white/10">
+      <h2 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-center">Live LUAS Stop Data</h2>
 
-  <div className="flex justify-center gap-6 mb-4">
-    {/* Red Line dropdown */}
-    <select
-      className="p-2 rounded bg-white/30 focus:outline-none text-white hover:scale-105 transform transition-all duration-300 hover:bg-gray-600 disabled:opacity-50"
-      value={stopId}
-      onChange={(e) => {
-        const selectedId = parseInt(e.target.value, 10);
-        // Only update if the selected stop is on the Red Line
-        if (LUAS_STOPS.red.some((stop) => stop.id === selectedId)) {
-          setStopId(selectedId);
-        }
-      }}
-    >
-      <option value="">Select Red Line Stop</option>
-      {LUAS_STOPS.red.map((stop) => (
-        <option key={stop.id} value={stop.id}>
-          {stop.name}
-        </option>
-      ))}
-    </select>
+      <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-4">
+        {/* Red Line dropdown */}
+        <div className="w-full sm:w-1/3">
+          <label htmlFor="red-line-select" className="block text-sm font-medium text-white/80 mb-1">Red Line</label>
+          <select
+            id="red-line-select"
+            className="w-full p-2 sm:p-2.5 rounded bg-white/20 focus:outline-none text-white hover:scale-[1.02] transform transition-all duration-200 hover:bg-gray-600/50 disabled:opacity-50 text-sm sm:text-base"
+            value={stopId}
+            onChange={(e) => {
+              const selectedId = parseInt(e.target.value, 10);
+              if (LUAS_STOPS.red.some((stop) => stop.id === selectedId)) {
+                setStopId(selectedId);
+              }
+            }}
+          >
+            <option value="">Select Stop</option>
+            {LUAS_STOPS.red.map((stop) => (
+              <option key={stop.id} value={stop.id}>
+                {stop.name}
+              </option>
+            ))}
+          </select>
+        </div>
 
-    {/* Green Line dropdown */}
-    <select
-      className="p-2 rounded bg-white/30 text-white focus:outline-none hover:scale-105 transform transition-all duration-300 hover:bg-green-700 disabled:opacity-50"
-      value={stopId}
-      onChange={(e) => {
-        const selectedId = parseInt(e.target.value, 10);
-        // Only update if the selected stop is on the Green Line
-        if (LUAS_STOPS.green.some((stop) => stop.id === selectedId)) {
-          setStopId(selectedId);
-        }
-      }}
-    >
-      <option value="">Select Green Line Stop</option>
-      {LUAS_STOPS.green.map((stop) => (
-        <option key={stop.id} value={stop.id}>
-          {stop.name}
-        </option>
-      ))}
-    </select>
+        {/* Green Line dropdown */}
+        <div className="w-full sm:w-1/3">
+          <label htmlFor="green-line-select" className="block text-sm font-medium text-white/80 mb-1">Green Line</label>
+          <select
+            id="green-line-select"
+            className="w-full p-2 sm:p-2.5 rounded bg-white/20 focus:outline-none text-white hover:scale-[1.02] transform transition-all duration-200 hover:bg-green-700/50 disabled:opacity-50 text-sm sm:text-base"
+            value={stopId}
+            onChange={(e) => {
+              const selectedId = parseInt(e.target.value, 10);
+              if (LUAS_STOPS.green.some((stop) => stop.id === selectedId)) {
+                setStopId(selectedId);
+              }
+            }}
+          >
+            <option value="">Select Stop</option>
+            {LUAS_STOPS.green.map((stop) => (
+              <option key={stop.id} value={stop.id}>
+                {stop.name}
+              </option>
+            ))}
+          </select>
+        </div>
 
-    <button
-      onClick={refreshLuasData}
-      disabled={loading}
-      className="px-4 py-2 bg-blue-600 text-white rounded hover:scale-105 transform transition-all duration-300 hover:bg-blue-700 disabled:opacity-50"
-    >
-      {loading ? 'Refreshing...' : 'Refresh LUAS Data'}
-    </button>
-  </div>
+        <div className="w-full sm:w-auto flex items-end">
+          <button
+            onClick={refreshLuasData}
+            disabled={loading}
+            className="w-full sm:w-auto px-4 py-2.5 sm:py-2 bg-blue-600 text-white rounded hover:scale-[1.02] transform transition-all duration-200 hover:bg-blue-700 disabled:opacity-50 text-sm sm:text-base"
+          >
+            {loading ? 'Refreshing...' : 'Refresh'}
+          </button>
+        </div>
+      </div>
 
-  {error && <p className="text-red-600 mb-2">{error}</p>}
+      {error && <p className="text-red-400 text-sm sm:text-base mb-3 text-center">{error}</p>}
 
-  {luasData ? (
-    <ul className="text-sm max-h-80 overflow-auto bg-white/30 rounded-lg p-4 font-mono" style={{ color: '#FFBF00' }}>
-      {luasData.tableData.slice(0, 5).map((row, idx) => (
-        <li key={idx} className="border-b border-black text-white py-1 flex justify-between">
-          <span>{row[0] || '—'}</span>
-          <span>{row[1] || '—'}</span>
-          <span>{row[2] || 'Due'}</span>
-        </li>
-      ))}
-    </ul>
-  ) : (
-    !loading && <p>No LUAS data available.</p>
-  )}
-</section>
+      {luasData ? (
+        <div className="overflow-hidden rounded-lg">
+          <div className="grid grid-cols-3 gap-2 text-xs sm:text-sm font-medium text-white/80 mb-2 px-1">
+            <div>Destination</div>
+            <div className="text-center">Due In</div>
+            <div className="text-right">Status</div>
+          </div>
+          <ul className="max-h-80 overflow-y-auto bg-white/20 rounded-lg p-2 sm:p-3 font-mono text-sm">
+            {luasData.tableData.slice(0, 5).map((row, idx) => {
+              const [destination, dueIn, status] = row;
+              const isLast = idx === luasData.tableData.length - 1;
+              return (
+                <li 
+                  key={idx} 
+                  className={`py-2 ${!isLast ? 'border-b border-white/10' : ''} grid grid-cols-3 gap-2 items-center`}
+                >
+                  <span className="truncate" title={destination || '—'}>{destination || '—'}</span>
+                  <span className="text-center">{dueIn || '—'}</span>
+                  <span className="text-right">{status || 'Due'}</span>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      ) : (
+        !loading && <p className="text-center text-white/70 py-4">No LUAS data available</p>
+      )}
+    </section>
   );
 }
 

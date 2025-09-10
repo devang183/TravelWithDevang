@@ -190,26 +190,28 @@ const TaylorSwiftDashboard = ({cityred}) => {
     // Subscriber count (from any post, since it's subreddit-wide)
     const subscriberCount = posts.length > 0 ? posts[0].subreddit_subscribers : 0;
 
-    // Engagement metrics
-    const engagementData = posts.map(post => ({
-      title: post.title.length > 20 ? post.title.substring(0, 20) + '...' : post.title,
-      fullTitle: post.title, // full title for tooltip
-      score: post.score,
-      comments: post.num_comments,
-      ratio: post.upvote_ratio,
-      engagement: (post.score + post.num_comments) / 2,
-      author: post.author,
-      permalink: post.permalink, // Add permalink for clicking
-      url: post.url, // Add URL if needed
-      selftext: post.selftext, // Post content
-      created_utc: post.created_utc, // Creation time
-      subreddit: post.subreddit,
-      ups: post.ups,
-      downs: post.downs || 0,
-      is_video: post.is_video, // Video detection
-      media: post.media, // Media content
-      preview: post.preview, // Preview images
-    }));
+    // Engagement metrics - sort by most recent posts first
+    const engagementData = posts
+      .map(post => ({
+        title: post.title.length > 20 ? post.title.substring(0, 20) + '...' : post.title,
+        fullTitle: post.title, // full title for tooltip
+        score: post.score,
+        comments: post.num_comments,
+        ratio: post.upvote_ratio,
+        engagement: (post.score + post.num_comments) / 2,
+        author: post.author,
+        permalink: post.permalink, // Add permalink for clicking
+        url: post.url, // Add URL if needed
+        selftext: post.selftext, // Post content
+        created_utc: post.created_utc, // Creation time
+        subreddit: post.subreddit,
+        ups: post.ups,
+        downs: post.downs || 0,
+        is_video: post.is_video, // Video detection
+        media: post.media, // Media content
+        preview: post.preview, // Preview images
+      }))
+      .sort((a, b) => b.created_utc - a.created_utc); // Sort by newest first
 
     // Flair distribution
     const flairCounts = {};
@@ -357,6 +359,54 @@ const TaylorSwiftDashboard = ({cityred}) => {
     });
   };
 
+  // State for tracking current post index
+  const [currentPostIndex, setCurrentPostIndex] = useState(0);
+  
+  // Effect to update current post index when selectedPost changes
+  useEffect(() => {
+    if (selectedPost && processedData.engagementData.length > 0) {
+      const index = processedData.engagementData.findIndex(p => p.permalink === selectedPost.permalink);
+      if (index !== -1) {
+        setCurrentPostIndex(index);
+      }
+    }
+  }, [selectedPost, processedData.engagementData]);
+
+  // Function to navigate to next/previous post
+  const navigatePost = (direction) => {
+    if (!processedData.engagementData.length) return;
+    
+    let newIndex;
+    if (direction === 'next') {
+      newIndex = (currentPostIndex + 1) % processedData.engagementData.length;
+    } else {
+      newIndex = (currentPostIndex - 1 + processedData.engagementData.length) % processedData.engagementData.length;
+    }
+    
+    setSelectedPost(processedData.engagementData[newIndex]);
+    setCurrentPostIndex(newIndex);
+    setShowComments(false);
+    setComments([]);
+  };
+
+  // Handle keyboard navigation
+  useEffect(() => {
+    if (!isModalOpen) return;
+    
+    const handleKeyDown = (e) => {
+      if (e.key === 'ArrowRight') {
+        navigatePost('next');
+      } else if (e.key === 'ArrowLeft') {
+        navigatePost('prev');
+      } else if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+    
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isModalOpen, currentPostIndex, processedData.engagementData]);
+
   // Modal component for displaying Reddit post
   const PostModal = ({ post, isOpen, onClose }) => {
     if (!isOpen || !post) return null;
@@ -441,12 +491,46 @@ const TaylorSwiftDashboard = ({cityred}) => {
         onClick={onClose}
       >
         <div 
-          className="bg-white rounded-2xl shadow-2xl max-w-4xl max-h-[100vh] w-full overflow-hidden transform transition-all duration-300 animate-slideUp"
+          className="relative bg-white rounded-2xl shadow-2xl max-w-4xl max-h-[100vh] w-full overflow-hidden transform transition-all duration-300 animate-slideUp"
           style={{
             animation: 'slideUp 0.3s ease-out'
           }}
           onClick={e => e.stopPropagation()}
         >
+          {/* Navigation Arrows */}
+          {processedData.engagementData.length > 1 && (
+            <>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  navigatePost('prev');
+                }}
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white/80 hover:bg-white text-gray-800 rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                aria-label="Previous post"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  navigatePost('next');
+                }}
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white/80 hover:bg-white text-gray-800 rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                aria-label="Next post"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+              
+              {/* Post counter */}
+              <div className="absolute top-4 right-4 bg-black/60 text-white text-xs px-2 py-1 rounded-full z-10">
+                {currentPostIndex + 1} / {processedData.engagementData.length}
+              </div>
+            </>
+          )}
           {/* Modal Header */}
           <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-6">
             <div className="flex justify-between items-start">

@@ -48,6 +48,7 @@ const CityMapCategoryBar = ({
     health: "🏥",
     police: "👮",
     dentist: "🦷",
+    casino: "🎰",
     fuelgas: "⛽",
   };
 

@@ -38,6 +38,7 @@ const CATEGORY_EMOJIS = {
   police: "👮",
   dentist: "🦷",
   fuelgas: "⛽",
+  casino: "🎰",
 };
 
 export default function CityMap({ cityId, coords, zoom = 20, name = "this city" }) {
@@ -174,7 +175,7 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
         const map = L.map(mapRef.current).setView(coords, zoom);
         mapInstance.current = map;
 
-        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {
           attribution: '&copy; OpenStreetMap contributors',
         }).addTo(map);
 
@@ -515,6 +516,13 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
       popupAnchor: [0, -40]
     });
 
+    // Define route styles for different transport modes
+    const routeStyles = {
+      driving: { color: '#0C84ED', weight: 8, opacity: 0.7, dashArray: null },
+      foot: { color: '#10B981', weight: 6, opacity: 0.8, dashArray: '5, 10' },
+      bike: { color: '#F59E0B', weight: 6, opacity: 0.8, dashArray: null }
+    };
+
     const newRoutingControl = LRM.control({
       waypoints: [
         L.latLng(startMarker.coords[0], startMarker.coords[1]),
@@ -524,11 +532,14 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
       addWaypoints: false,
       createMarker: function() { return null; },
       lineOptions: {
-        styles: [{ color: '#0C84ED', weight: 8, opacity: 0.7 }]
+        styles: [routeStyles[transportMode] || routeStyles.driving],
+        extendToWaypoints: true,
+        missingRouteTolerance: 1
       },
       router: L.Routing.osrmv1({
         serviceUrl: "https://router.project-osrm.org/route/v1",
-        profile: transportMode
+        profile: transportMode,
+        timeout: 30000 // 30 second timeout
       })
     }).on('routesfound', function(e) {
       const routes = e.routes;
@@ -537,6 +548,19 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
       let duration = summary.totalTime;
       let hours = Math.floor(duration / 3600);
       let minutes = Math.floor((duration % 3600) / 60);
+      
+      // Adjust time display based on transport mode
+      if (transportMode === 'foot') {
+        // Walking is typically slower, so we'll adjust the time to be more realistic
+        duration = duration * 2.5; // Add 30% more time for walking
+        hours = Math.floor(duration / 3600);
+        minutes = Math.floor((duration % 3600) / 60);
+      } else if (transportMode === 'bike') {
+        // Cycling is typically faster than walking but depends on terrain
+        duration = duration * 0.7; // 30% faster than walking
+        hours = Math.floor(duration / 3600);
+        minutes = Math.floor((duration % 3600) / 60);
+      }
       let timeStr = hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`;
       setRouteDistance(distance);
       setRouteTime(timeStr);
@@ -645,6 +669,8 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
         return 'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/mapicons/dentist.svg'
       case 'fuelgas':
         return 'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/mapicons/fuelgas.svg'      
+      case 'casino':
+        return 'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/mapicons/casino.svg'      
       // case 'underground':
       //   return 'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/mapicons/underground.png'
       // default:
@@ -976,15 +1002,26 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
         
         <div className="mb-3">
           <label className="block text-white mb-1">Travel Mode</label>
-          <select
-            value={transportMode}
-            onChange={(e) => setTransportMode(e.target.value)}
-            className="w-full p-2 rounded-lg bg-white/20 text-white border border-white/30 focus:outline-none"
-          >
-            <option value="driving">🚗 Driving</option>
-            <option value="foot">🚶 Walking</option>
-            <option value="bike">🚴 Cycling</option>
-          </select>
+          <div className="flex space-x-2">
+            <button 
+              onClick={() => setTransportMode('driving')}
+              className={`flex-1 p-2 rounded-lg border ${transportMode === 'driving' ? 'bg-blue-600/80 border-blue-400' : 'bg-white/10 border-white/30'} text-white transition-colors`}
+            >
+              🚗 Driving
+            </button>
+            <button 
+              onClick={() => setTransportMode('foot')}
+              className={`flex-1 p-2 rounded-lg border ${transportMode === 'foot' ? 'bg-green-600/80 border-green-400' : 'bg-white/10 border-white/30'} text-white transition-colors`}
+            >
+              🚶 Walking
+            </button>
+            <button 
+              onClick={() => setTransportMode('bike')}
+              className={`flex-1 p-2 rounded-lg border ${transportMode === 'bike' ? 'bg-yellow-600/80 border-yellow-400' : 'bg-white/10 border-white/30'} text-white transition-colors`}
+            >
+              🚴 Cycling
+            </button>
+          </div>
         </div>
         
         <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>

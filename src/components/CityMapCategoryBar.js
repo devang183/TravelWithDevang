@@ -36,7 +36,7 @@ const CityMapCategoryBar = ({
     bookstore: "📚",
     grocery: "🛒",
     hospital: "🩺",
-    paddypower: "🟩",
+    bookmaker: "🟩",
     pharmacy: "💊",
     Red: "🔴",
     Green: "🟢",
@@ -48,8 +48,8 @@ const CityMapCategoryBar = ({
     health: "🏥",
     police: "👮",
     dentist: "🦷",
-    casino: "🎰",
     fuelgas: "⛽",
+    casino: "🎰",
   };
 
   // Check if mobile device
@@ -174,7 +174,7 @@ const CityMapCategoryBar = ({
       bookstore: "Bookstore",
       grocery: "Groceries",
       hospital: "Hospital",
-      paddypower: "Paddy Power Betfair",
+      bookmaker: "Bookies",
       pharmacy: "Pharmacy",
       Red: "Red Luas",
       Green: "Green Luas",
@@ -245,23 +245,15 @@ const CityMapCategoryBar = ({
     transition: "all 0.2s ease"
   };
 
-  // Keyframes for the shine effect
-  const shineKeyframes = `
-    @keyframes shine {
-      0% { filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)); }
-      50% { filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.9)) scale(1.1); }
-      100% { filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)); }
-    }
-  `;
-
   const categoryButtonStyles = (isActive) => ({
     fontSize: isMobile ? "1.6rem" : "1.4rem",
     padding: isMobile ? "10px 12px" : "8px 10px",
     cursor: "pointer",
     borderRadius: "12px",
-    background: isActive ? "rgba(255, 255, 255, 0.2)" : "transparent",
+    background: isActive ? "bg-white/30 backdrop-blur-md" : "bg-transparent backdrop-blur-0", // when not selected,
     backdropFilter: isActive ? "blur(16px)" : "blur(0px)",
     transition: "all 0.3s ease",
+    // border: isActive ? "2px solid rgba(59, 130, 246, 0.3)" : "2px solid transparent",
     flexShrink: 0,
     position: "relative",
     minWidth: `${emojiButtonWidth}px`,
@@ -269,12 +261,7 @@ const CityMapCategoryBar = ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    '&:hover': {
-      transform: isActive ? 'scale(1.1)' : 'scale(1.05)'
-    },
-    '&:active': {
-      transform: 'scale(0.98)'
-    }
+    // boxShadow: isActive ? "0 4px 12px rgba(59, 130, 246, 0.2)" : ""
   });
 
   const actionButtonStyles = {
@@ -293,7 +280,6 @@ const CityMapCategoryBar = ({
 
   return (
     <div style={containerStyles}>
-      <style>{shineKeyframes}</style>
       {/* Category Icons Bar */}
       <div
         ref={scrollRef}
@@ -310,32 +296,20 @@ const CityMapCategoryBar = ({
               key={key}
               onClick={() => onCategoryToggle(key)}
               title={getCategoryTitle(key)}
-              style={{
-                ...categoryButtonStyles(isActive),
-                animation: isActive ? 'shine 2s infinite ease-in-out' : 'none',
-                transform: isActive ? 'scale(1.1)' : 'scale(1)',
-                transition: 'all 0.3s ease, transform 0.2s ease',
-              }}
+              style={categoryButtonStyles(isActive)}
               onMouseEnter={(e) => { 
-                if (!isMobile && !isActive) {
-                  e.currentTarget.style.transform = 'scale(1.1)';
+                if (!isMobile) {
+                  e.currentTarget.style.transform = "scale(1.1)"; 
                 }
               }}
               onMouseLeave={(e) => { 
-                if (!isMobile && !isActive) {
-                  e.currentTarget.style.transform = 'scale(1)';
+                if (!isMobile) {
+                  e.currentTarget.style.transform = "scale(1)"; 
                 }
               }}
               aria-label={`Filter by ${getCategoryTitle(key)}`}
             >
-              <span style={{
-                display: 'inline-block',
-                transform: isActive ? 'scale(1.1)' : 'scale(1)',
-                transition: 'transform 0.3s ease',
-                filter: isActive ? 'drop-shadow(0 0 8px rgba(255, 255, 255, 0.8))' : 'none'
-              }}>
-                {categoryEmojis[key]}
-              </span>
+              {categoryEmojis[key]}
               {/* Count badge */}
               {categoryCounts[key] > 0 && (
                 <span style={{

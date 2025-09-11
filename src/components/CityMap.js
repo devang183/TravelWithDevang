@@ -25,7 +25,7 @@ const CATEGORY_EMOJIS = {
   bookstore: "📚",
   grocery: "🛒",
   hospital: "🩺",
-  paddypower: "🟩",
+  bookmaker: "🟩",
   pharmacy: "💊",
   Red: "🔴",
   Green: "🟢",
@@ -58,6 +58,10 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
   const [legendOpen, setLegendOpen] = useState(false);
   const [startMarkerRef, setStartMarkerRef] = useState(null);
   const [endMarkerRef, setEndMarkerRef] = useState(null);
+  
+  // Add refs to prevent infinite loops
+  const isUpdatingMarkers = useRef(false);
+  const lastBounds = useRef(null);
   
   // Routing states
   const [routingControl, setRoutingControl] = useState(null);
@@ -99,6 +103,12 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
     return activeCategories.some(activeCat => normalized.includes(activeCat));
   };
 
+  // Helper function to compare bounds
+  const boundsEqual = (bounds1, bounds2) => {
+    if (!bounds1 || !bounds2) return false;
+    return bounds1.toBBoxString() === bounds2.toBBoxString();
+  };
+
   // Fetch data from MongoDB
   useEffect(() => {
     const fetchPins = async () => {
@@ -120,12 +130,10 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
         setLoading(false);
       }
     };
-
     if (cityId) {
       fetchPins();
     }
   }, [cityId]);
-
 
   // Debounce hook
   const useDebounce = (value, delay) => {
@@ -151,12 +159,11 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
     }
   };
 
-
   // Load map and create markers from MongoDB data
   useEffect(() => {
     const loadMap = async () => {
       if (loading || markers.length === 0) return;
-
+      
       const L = await import("leaflet");
       await import("leaflet/dist/leaflet.css");
       
@@ -172,11 +179,20 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
       });
 
       if (mapRef.current && !mapRef.current._leaflet_map) {
-        const map = L.map(mapRef.current).setView(coords, zoom);
+        const map = L.map(mapRef.current, {
+          // Add map options to prevent infinite world
+          worldCopyJump: false,
+          maxBounds: [[-90, -180], [90, 180]],
+          maxBoundsViscosity: 1.0
+        }).setView(coords, zoom);
+        
         mapInstance.current = map;
 
         L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {
           attribution: '&copy; OpenStreetMap contributors',
+          // Add tile layer options to prevent wrapping
+          noWrap: true,
+          bounds: [[-90, -180], [90, 180]]
         }).addTo(map);
 
         const newMarkerRefs = [];
@@ -207,7 +223,6 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
           popupDiv.innerHTML = `
   <p><strong>${categoryDisplay} ${name}</strong></p>
   <p style="font-size:0.85em">${description}</p>
-
   ${phone ? `<p style="font-size:0.8em;"><strong>Phone:</strong> ${phone}</p>` : ''}
   ${website ? `<p style="font-size:0.8em;">
     <strong>Website:</strong> 
@@ -217,9 +232,7 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
   </p>` : ''}
   ${normalizedCategories.length > 1 ? 
     `<p style="font-size:0.75em; color: #666;">Categories: ${normalizedCategories.join(', ')}</p>` : ''}
-
   ${videoEmbed}
-
   <a href="${url}" target="_blank" style="
     display:inline-block;
     margin-top:8px;
@@ -232,7 +245,6 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
   ">
     More info
   </a>
-
   <div style="margin-top: 8px; display:flex; gap:5px;">
     <button class="set-source-btn" 
       style="
@@ -309,59 +321,90 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
         mapRef.current._leaflet_map = map;
       }
     };
-
     loadMap();
   }, [markers, loading, coords, zoom]);
 
-  // Modified function to handle multiple categories
-  function addMarkersInView() {
+  // Fixed function to handle multiple categories with bounds checking
+  const addMarkersInView = useCallback(() => {
     const map = mapInstance.current;
-    if (!map) return;
+    if (!map || isUpdatingMarkers.current) return;
   
     const bounds = map.getBounds();
-    markerRefs.current.forEach((marker, index) => {
-      if (!marker) return;
-  
-      const markerData = markers[index];
-      if (!markerData) return;
-  
-      const inBounds = bounds.contains(marker.getLatLng());
-      const markerCategories = markerData.categories || markerData.category;
-      const categoryMatch = markerMatchesCategories(markerCategories, activeCategories);
-  
-      if (markersVisible && inBounds && categoryMatch) {
-        if (!map.hasLayer(marker)) {
-          const primaryCategory = getPrimaryCategory(markerCategories);
-          const iconUrl = getDefaultIconUrlByCategory(primaryCategory);
-          marker.setIcon(
-            new (window.L || globalThis.L).Icon({
-              iconUrl,
-              iconSize: [25, 41],
-              iconAnchor: [12, 41],
-              popupAnchor: [1, -34],
-              shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
-              shadowSize: [41, 41],
-            })
-          );
-          marker.addTo(map);
+    
+    // Check if bounds have actually changed to prevent unnecessary updates
+    if (lastBounds.current && boundsEqual(bounds, lastBounds.current)) {
+      return;
+    }
+    
+    lastBounds.current = bounds;
+    isUpdatingMarkers.current = true;
+
+    try {
+      markerRefs.current.forEach((marker, index) => {
+        if (!marker) return;
+
+        const markerData = markers[index];
+        if (!markerData) return;
+
+        const inBounds = bounds.contains(marker.getLatLng());
+        const markerCategories = markerData.categories || markerData.category;
+        const categoryMatch = markerMatchesCategories(markerCategories, activeCategories);
+
+        if (markersVisible && inBounds && categoryMatch) {
+          if (!map.hasLayer(marker)) {
+            const primaryCategory = getPrimaryCategory(markerCategories);
+            const iconUrl = getDefaultIconUrlByCategory(primaryCategory);
+            marker.setIcon(
+              new (window.L || globalThis.L).Icon({
+                iconUrl,
+                iconSize: [25, 41],
+                iconAnchor: [12, 41],
+                popupAnchor: [1, -34],
+                shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+                shadowSize: [41, 41],
+              })
+            );
+            marker.addTo(map);
+          }
+        } else {
+          if (map.hasLayer(marker)) map.removeLayer(marker);
         }
-      } else {
-        if (map.hasLayer(marker)) map.removeLayer(marker);
-      }
-    });
-  }
+      });
+    } finally {
+      isUpdatingMarkers.current = false;
+    }
+  }, [selectedMarkerIndex, activeCategories, markersVisible, markers]);
+
+  // Debounced version of addMarkersInView to prevent rapid firing
+  const debouncedAddMarkersInView = useCallback(
+    (() => {
+      let timeoutId;
+      return () => {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(addMarkersInView, 100);
+      };
+    })(),
+    [addMarkersInView]
+  );
 
   useEffect(() => {
     const map = mapInstance.current;
     if (!map) return;
 
+    // Use debounced version and add proper event cleanup
+    const handleMoveEnd = () => {
+      debouncedAddMarkersInView();
+    };
+
     addMarkersInView();
-    map.on("moveend", addMarkersInView);
+    map.on("moveend", handleMoveEnd);
+    map.on("zoomend", handleMoveEnd);
 
     return () => {
-      map.off("moveend", addMarkersInView);
+      map.off("moveend", handleMoveEnd);
+      map.off("zoomend", handleMoveEnd);
     };
-  }, [selectedMarkerIndex, activeCategories, markersVisible, markers]);
+  }, [selectedMarkerIndex, activeCategories, markersVisible, markers, debouncedAddMarkersInView]);
 
   const handleRecenter = () => {
     const map = mapRef.current._leaflet_map;
@@ -503,14 +546,14 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
     const LRM = window.L.Routing;
     
     const startIcon = L.icon({
-      iconUrl: '/images/mapicons/start.png',
+      iconUrl: 'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/mapicons/A.svg',
       iconSize: [40, 40],
       iconAnchor: [20, 40],
       popupAnchor: [0, -40]
     });
     
     const endIcon = L.icon({
-      iconUrl: '/images/mapicons/end.png',
+      iconUrl: 'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/mapicons/B.svg',
       iconSize: [40, 40],
       iconAnchor: [20, 40],
       popupAnchor: [0, -40]
@@ -561,6 +604,7 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
         hours = Math.floor(duration / 3600);
         minutes = Math.floor((duration % 3600) / 60);
       }
+
       let timeStr = hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`;
       setRouteDistance(distance);
       setRouteTime(timeStr);
@@ -641,7 +685,7 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
         return 'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/mapicons/grocery.svg'
       case 'hospital':
         return 'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/mapicons/hospital.svg'
-      case 'paddypower':
+      case 'bookmaker':
         return 'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/mapicons/bet.png'
       case 'pharmacy':
         return 'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/mapicons/pharmacy.svg'
@@ -671,10 +715,8 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
         return 'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/mapicons/fuelgas.svg'      
       case 'casino':
         return 'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/mapicons/casino.svg'      
-      // case 'underground':
-      //   return 'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/mapicons/underground.png'
-      // default:
-      //   return "https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/mapicons/cricket.png";
+      default:
+        return "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png";
     }
   }
 
@@ -682,7 +724,7 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
   useEffect(() => {
     const map = mapInstance.current;
     if (!map) return;
-  
+
     markerRefs.current.forEach((marker, index) => {
       const markerData = markers[index];
       if (!markerData) return;
@@ -691,7 +733,7 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
       const primaryCategory = getPrimaryCategory(markerCategories);
       const isSelected = selectedMarkerIndex === index;
       const isFiltered = markerMatchesCategories(markerCategories, activeCategories);
-  
+
       if (map.hasLayer(marker)) {
         marker.setIcon(
           new (window.L || globalThis.L).Icon({
@@ -733,7 +775,6 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
 
   const onKeyDown = (e) => {
     if (filteredMarkers.length === 0) return;
-
     if (e.key === "ArrowDown") {
       e.preventDefault();
       setHighlightedIndex((prev) => (prev === null || prev === filteredMarkers.length - 1 ? 0 : prev + 1));
@@ -780,43 +821,6 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
     return markersVisible && categoryMatch;
   }).length;
 
-  // const categoryEmojis = {
-  //   fishandchips: "🐟",
-  //   racecourse: "🏇",
-  //   park: "🌳",
-  //   pint: "🍺",
-  //   bakerloo: "🚇",
-  //   atm:'🏧',
-  //   historic: "🏰",
-  //   museum: "🖼️",
-  //   beach: "🏖️",
-  //   cafe: "☕",
-  //   restaurant: "🍽️",
-  //   viewpoint: "🔭",
-  //   college: '🎓',
-  //   church: '⛪',
-  //   art: '🎨',
-  //   cricket:'🏏',
-  //   bookstore:'📚',
-  //   grocery:'🛒',
-  //   hospital: '🩺',
-  //   paddypower:'🟩',
-  //   pharmacy:'💊',
-  //   Red: '🔴',
-  //   Green: '🟢',
-  //   icecream:'🍦',
-  //   womenbeauty:'💇‍♀️',
-  //   leisure:'🎭',
-  //   retailshops: '🛍️',
-  //   hospitality:'🏨',
-  //   health:'🏥',
-  //   police:'👮',
-  //   dentist:'🦷',
-  //   fuelgas:'⛽',
-  //   // underground: '🚇'
-  // };
-
-
   const handleCategoryToggle = (category) => {
     setActiveCategories(prev => {
       if (prev.includes(category)) {
@@ -845,7 +849,6 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
         onToggleMarkersVisibility={() => setMarkersVisible(!markersVisible)}
         loading={loading}
       />
-
       
       {/* Map */}
       <div
@@ -897,9 +900,11 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
             />
             {showStartResults && startSearchResults.length > 0 && (
               <div style={{
+                position: "absolute",
                 top: "100%",
                 left: 0,
                 right: 0,
+                backgroundColor: "white",
                 borderTop: "none",
                 borderRadius: "0 0 6px 6px",
                 maxHeight: "150px",
@@ -958,6 +963,7 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
             />
             {showEndResults && endSearchResults.length > 0 && (
               <div style={{
+                position: "absolute",
                 top: "100%",
                 left: 0,
                 right: 0,

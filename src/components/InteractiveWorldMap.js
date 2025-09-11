@@ -20,7 +20,7 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
   const markersRef = useRef({});
   const mapContainerRef = useRef(null);
   const originalCenter = [30, 0];
-  const originalZoom = 2.2;
+  const originalZoom = 2.5;
 
   // Function to create a custom marker icon
   const createCustomIcon = (isSelected = false) => {

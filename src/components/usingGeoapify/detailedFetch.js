@@ -7,7 +7,7 @@ const COLLECTION_NAME = "dublin";
 const GEOAPIFY_API_KEY = "59a8c6ca8ade47f2abe3fc77830c3711";
 
 // Step 1: Search for nearby place to get place_id
-async function fetchPlaceId(lat, lon, category = "catering.cafe") {
+async function fetchPlaceId(lat, lon, category = "service.bookmaker") {
   const url = `https://api.geoapify.com/v2/places?categories=${category}&filter=circle:${lon},${lat},50&limit=1&apiKey=${GEOAPIFY_API_KEY}`;
 
   const res = await fetch(url);
@@ -55,7 +55,7 @@ async function enrichFuelStations() {
 
     // Fetch only documents that haven't been updated yet
     const pins = await collection.find({ 
-      category: "cafe",
+      category: "paddypower",
       $or: [
         { updated: { $exists: false } },  // Either 'updated' field doesn't exist
         { updated: false }                // Or 'updated' is explicitly false
@@ -69,7 +69,7 @@ async function enrichFuelStations() {
       console.log(`\nProcessing: ${pin.name} at [${lat}, ${lon}]`);
 
       // 1. Get place_id
-      const placeData = await fetchPlaceId(lat, lon, "catering.cafe");
+      const placeData = await fetchPlaceId(lat, lon, "service.bookmaker");
       if (!placeData) continue;
 
       console.log(`Found place_id: ${placeData.place_id} (${placeData.name})`);

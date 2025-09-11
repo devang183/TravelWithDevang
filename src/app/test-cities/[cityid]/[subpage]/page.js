@@ -100,8 +100,20 @@ const subpageComponents = {
     ],
     reddit:[
       {
+        type: COMPONENT_TYPES.DYNAMIC_IMPORT,
+        component: dynamic(() => import("@/components/DublinEvents"), { ssr: false })
+      },
+      {
         type: COMPONENT_TYPES.TAYLOR_SWIFT_DASHBOARD,
         component: (props) => <TaylorSwiftDashboardWrapper {...props} cityid={cities.dublin.name} />
+      }
+    ]
+  },
+  newry: {
+    reddit:[
+      {
+        type: COMPONENT_TYPES.TAYLOR_SWIFT_DASHBOARD,
+        component: (props) => <TaylorSwiftDashboardWrapper {...props} cityid={cities.newry.name} />
       }
     ]
   },

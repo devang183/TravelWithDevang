@@ -13,11 +13,13 @@ import MalahidePlacesMap from "./MalahidePlacesMap";
 import LuasLiveData from "@/app/test-cities/[cityid]/LuasLiveData";
 import CityAttractionsDublin from "@/components/CityAttractionsDublin";
 import CityAttractionsGalway from "@/components/CityAttractionsGalway";
+import EventsComponent from "@/components/DublinEvents";
 // import more as needed
 
 const cityMapRegistry = {
   nagpur: [NagpurPoliceStationsMap],
-  dublin: [DublinLivingMap, DublinArcGISMap, LuasLiveData,CityAttractionsDublin],
+  dublin: [DublinLivingMap, DublinArcGISMap],
+  //dublin: [DublinLivingMap, DublinArcGISMap, LuasLiveData,CityAttractionsDublin, EventsComt],
   newry: [NagpurPoliceStationsMap],
   liverpool:[LiverpoolPlacesMap],
   london:[LondonPlacesMap],

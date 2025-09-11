@@ -37,7 +37,18 @@ export default function MusicSection({ embedUrl }) {
         loading="lazy"
         style={{ borderRadius: '8px' }}
       ></iframe>
-
+      {/* <iframe 
+        width="100%" 
+        height="352" 
+        src="https://lookerstudio.google.com/embed/reporting/c014a45c-9f75-430e-9143-32ddcf576df2/page/9TqXF" 
+        frameBorder="0" 
+        style={{ borderRadius: '8px' }} 
+        allowFullScreen
+        loading="lazy"
+        sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+      </iframe> */}
+      
+      
       {/* Search Bar */}
       <div className="flex flex-col gap-2">
         <label className="font-semibold">Search Spotify:</label>

@@ -17,6 +17,11 @@ export const photos={
             "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin13.jpg",
             "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin14.jpg",
             "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin15.jpg",
+            "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin16.jpg",
+            "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin17.jpg",
+            "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin18.jpg",
+            "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin19.jpg",
+            "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin20.jpg",
         ],
     },
     newry:{

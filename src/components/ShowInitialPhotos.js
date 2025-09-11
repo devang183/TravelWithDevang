@@ -1,9 +1,9 @@
 export default function FourPhotosGrid() {
     const photos=[
-      'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/dublin/dublin29.jpg',
-      'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/dublin/dublin29.jpg',
-      'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/dublin/dublin29.jpg',
-      'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/dublin/dublin29.jpg',
+      'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/dublin/dublin25.jpg',
+      'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/dublin/dublin28.jpg',
+      'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/dublin/dublin27.jpg',
+      'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/dublin/dublin26.jpg',
     ];
     return (
       <div className="grid grid-cols-4 gap-4 rounded-lg mb-4 w-full">

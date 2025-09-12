@@ -1,3 +1,4 @@
+'use client';
 // app/test-cities/[cityid]/page.js
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
@@ -14,6 +15,7 @@ import { photos } from '../CityPhotos';
 import TaylorSwiftDashboard from '../scripts/taylorSwift';
 import React from "react";
 import { Compass, Plane, Home } from 'lucide-react';
+
 
 export default function CityPage({ params }) {
   // const cityid = params.cityid.toLowerCase();
@@ -189,7 +191,7 @@ export default function CityPage({ params }) {
       <br />
 
       {/* <TaylorSwiftDashboard cityred={cityid} /> */}
-
+      {/* <AccommodationDisplay /> */}
       <Link
         href={`/test-cities`}
         className="mt-6 inline-block p-4 rounded-2xl text-white shadow-2xl backdrop-blur-md bg-white/10 hover:bg-white/30"

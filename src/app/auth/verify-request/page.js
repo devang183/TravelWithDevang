@@ -20,7 +20,7 @@ export default function VerifyRequest() {
             </p>
           </div>
           <p className="text-sm text-gray-500">
-            You can close this page once you've clicked the link.
+            You can close this page once you have clicked the link.
           </p>
         </div>
       </div>

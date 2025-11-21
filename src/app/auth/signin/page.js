@@ -37,7 +37,7 @@ export default function SignIn() {
               Check your email
             </h2>
             <p className="text-gray-600 mb-4">
-              We sent a magic link to <strong>{email}</strong>
+            I have sent a magic link to <strong>{email}</strong>
             </p>
             <p className="text-sm text-gray-500">
               Click the link in the email to sign in. You can close this page.
@@ -87,7 +87,7 @@ export default function SignIn() {
         </form>
 
         <p className="mt-6 text-center text-sm text-gray-500">
-          We'll send you a magic link to sign in. No password required!
+          I will send you a magic link to sign in. No password required!
         </p>
       </div>
     </div>

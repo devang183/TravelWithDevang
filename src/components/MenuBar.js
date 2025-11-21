@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react'
-import { Home, MapPin, Menu, X } from "lucide-react"
+import { Home, MapPin, Menu, X, BarChart3 } from "lucide-react"
 import Link from 'next/link'
 
 const menuItems = [
@@ -14,6 +14,21 @@ const menuItems = [
     url: "/test-cities",
     icon: MapPin,
   },
+  {
+    title: "Flutter",
+    url: "/flutter-presentation",
+    icon: MapPin,
+  },
+  {
+    title: "Performance Analysis",
+    url: "/analytics",
+    icon: BarChart3,
+  },
+  {
+    title: "Regulatory Data Analysis",
+    url: "/regulatory-data-analysis",
+    icon: BarChart3,
+  }
   // Add more menu items as needed
 ]
 

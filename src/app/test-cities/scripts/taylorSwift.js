@@ -320,7 +320,7 @@ const TaylorSwiftDashboard = ({cityred}) => {
       return;
     }
 
-    const results = fuse.search(query).slice(0, 8); // Limit to 8 results
+    const results = fuse.search(query).slice(0, 100); // Limit to 100 results
     setSearchResults(results);
     setShowSearchDropdown(true);
   };

@@ -117,6 +117,10 @@ const subpageComponents = {
     ],
     attractions:[
       {
+        //CityAttractionsDublin is used in dynamic routing contexts
+        //it's conditionally rendered via dynamic import to disable SSR (server-side rendering), 
+        //which is required because it uses browser-only APIs like fetch and useState.
+        //This ensures the component only loads on the client side, avoiding hydration mismatches.
         type: COMPONENT_TYPES.DYNAMIC_IMPORT,
         component: dynamic(()=>import("@/components/CityAttractionsDublin"),{ssr:false})
       }

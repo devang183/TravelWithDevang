@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { MapPin, Clock, Phone, Globe, Star, Users, ChevronRight, ExternalLink, Calendar, Euro, Tag, Search, X } from 'lucide-react';
 
+//Functional component using arrow function
 const CityAttractionsDublin = () => {
   const [attractions, setAttractions] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -17,7 +18,15 @@ const CityAttractionsDublin = () => {
         setLoading(true);
         const response = await fetch(`/api/attractions?city=Dublin&limit=200`);
         const data = await response.json();
-        
+        //data:
+        //Scope: Local to fetchAttractions function
+        // Type: Object (parsed JSON)
+        // Expected shape:
+          // {
+          //   "success": boolean,
+          //   "attractions": Array<Object>,
+          //   "error": string (optional)
+          // }
         if (data.success) {
           setAttractions(data.attractions);
         } else {
@@ -32,9 +41,13 @@ const CityAttractionsDublin = () => {
     };
 
     fetchAttractions(); // Always fetch for Dublin
-  }, []); // Empty dependency array since we're not using any props
+  }, []); // Empty dependency array since we're not using any props 
+//Side effects: Fetches data from /api/attractions?city=Dublin&limit=200 on mount
 
   // Get all unique tags from attractions
+  //allTags: React state variable derived using useMemo to efficiently compute all unique tags across the attractions array. 
+  // It is recalculated only when attractions changes, ensuring performance in large datasets.
+  
   const allTags = useMemo(() => {
     const tagSet = new Set();
     attractions.forEach(attraction => {

@@ -143,7 +143,99 @@ const scrollContainerRef = useRef(null);
     }
   };
 
+  // Fetch pins from MongoDB
+  const fetchPinsFromDB = async () => {
+    try {
+      const cityId = cityName.toLowerCase();
+      const response = await fetch(`/api/guestbook/${cityId}`);
+
+      if (response.ok) {
+        const dbPins = await response.json();
+
+        // Transform MongoDB pins to match the component's format
+        const transformedPins = dbPins.map(pin => ({
+          id: pin.id,
+          lat: pin.lat,
+          lng: pin.lng,
+          title: pin.title,
+          note: pin.note,
+          author: pin.author,
+          createdAt: new Date(pin.timestamp).toISOString(),
+          likes: pin.likes || 0,
+          category: pin.category || 'general',
+          image: pin.image || null,
+          isDefault: false,
+          fromDB: true
+        }));
+
+        return transformedPins;
+      } else {
+        console.error('Failed to fetch pins from database');
+        return [];
+      }
+    } catch (error) {
+      console.error('Error fetching pins from database:', error);
+      return [];
+    }
+  };
+
+  // Save pin to MongoDB
+  const savePinToDB = async (pin) => {
+    try {
+      const cityId = cityName.toLowerCase();
+      const response = await fetch(`/api/guestbook/${cityId}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          lat: pin.lat,
+          lng: pin.lng,
+          title: pin.title,
+          note: pin.note,
+          author: pin.author,
+          timestamp: Date.now(),
+          likes: pin.likes || 0,
+          category: pin.category || 'general',
+          image: pin.image || null
+        })
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        return result.pin;
+      } else {
+        console.error('Failed to save pin to database');
+        return null;
+      }
+    } catch (error) {
+      console.error('Error saving pin to database:', error);
+      return null;
+    }
+  };
+
+  // Delete pin from MongoDB
+  const deletePinFromDB = async (pinId) => {
+    try {
+      const cityId = cityName.toLowerCase();
+      const response = await fetch(`/api/guestbook/${cityId}?pinId=${pinId}`, {
+        method: 'DELETE'
+      });
+
+      if (response.ok) {
+        return true;
+      } else {
+        console.error('Failed to delete pin from database');
+        return false;
+      }
+    } catch (error) {
+      console.error('Error deleting pin from database:', error);
+      return false;
+    }
+  };
+
   const [pins, setPins] = useState(loadPinsFromStorage);
+  const [isLoadingPins, setIsLoadingPins] = useState(true);
   const [showAddForm, setShowAddForm] = useState(false);
   const [selectedPin, setSelectedPin] = useState(null);
   const [clickPosition, setClickPosition] = useState(null);
@@ -207,6 +299,22 @@ const scrollContainerRef = useRef(null);
     };
     loadLeaflet();
   }, []);
+
+  // Load pins from MongoDB on component mount
+  useEffect(() => {
+    const loadPins = async () => {
+      setIsLoadingPins(true);
+      const dbPins = await fetchPinsFromDB();
+      const defaultPins = getDefaultPins();
+
+      // Combine default pins with database pins
+      const allPins = [...defaultPins, ...dbPins];
+      setPins(allPins);
+      setIsLoadingPins(false);
+    };
+
+    loadPins();
+  }, [cityName]);
 
   // Initialize map
   useEffect(() => {
@@ -313,7 +421,7 @@ const scrollContainerRef = useRef(null);
     savePinsToStorage(pins);
   }, [pins]);
 
-  const handleAddPin = () => {
+  const handleAddPin = async () => {
     if (!newPin.title || !newPin.note || !newPin.author || !clickPosition) return;
 
     const pin = {
@@ -323,15 +431,39 @@ const scrollContainerRef = useRef(null);
       title: newPin.title,
       note: newPin.note,
       author: newPin.author,
-    //   timestamp: "Just now",
-    createdAt: new Date().toISOString(),
+      createdAt: new Date().toISOString(),
       likes: 0,
       category: newPin.category,
       image: newPin.image,
-      isDefault: false // Mark as user-created
+      isDefault: false,
+      fromDB: true
     };
 
-    setPins([...pins, pin]);
+    // Save to MongoDB
+    const savedPin = await savePinToDB(pin);
+
+    if (savedPin) {
+      // Use the pin returned from database with proper ID
+      const dbPin = {
+        id: savedPin.id,
+        lat: savedPin.lat,
+        lng: savedPin.lng,
+        title: savedPin.title,
+        note: savedPin.note,
+        author: savedPin.author,
+        createdAt: new Date(savedPin.timestamp).toISOString(),
+        likes: savedPin.likes || 0,
+        category: savedPin.category || 'general',
+        image: savedPin.image || null,
+        isDefault: false,
+        fromDB: true
+      };
+      setPins([...pins, dbPin]);
+    } else {
+      // Fallback to local storage if DB save fails
+      setPins([...pins, pin]);
+    }
+
     setShowAddForm(false);
     setClickPosition(null);
     setNewPin({ title: '', note: '', author: '', category: 'general', image: null });
@@ -344,8 +476,19 @@ const scrollContainerRef = useRef(null);
     }
   };
 
-  const confirmDeletePin = () => {
+  const confirmDeletePin = async () => {
     if (deleteConfirmText.toLowerCase() === 'delete' && showDeleteConfirm) {
+      const pinToDelete = pins.find(p => p.id === showDeleteConfirm);
+
+      // If pin is from database, delete from MongoDB
+      if (pinToDelete && pinToDelete.fromDB) {
+        const deleted = await deletePinFromDB(showDeleteConfirm);
+        if (!deleted) {
+          console.error('Failed to delete pin from database, but will remove from UI');
+        }
+      }
+
+      // Remove from local state
       setPins(pins.filter(pin => pin.id !== showDeleteConfirm));
       setShowDeleteConfirm(null);
       setDeleteConfirmText('');

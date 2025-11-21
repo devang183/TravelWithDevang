@@ -1,7 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-import { MenuBar } from "@/components/MenuBar"
+import { MenuBar } from "@/components/MenuBar";
+import { Providers } from "@/components/Providers";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -27,18 +28,20 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <MenuBar />
-        <div className="min-h-screen pt-16 p-4" 
-          style={{
-            backgroundImage: "url('https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/dublin/dublin29.jpg')",
-            backgroundAttachment: 'fixed', // enables parallax
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-          }}
-        >
-          {children}
-        </div>
+        <Providers>
+          <MenuBar />
+          <div className="min-h-screen pt-16 p-4"
+            style={{
+              backgroundImage: "url('https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/dublin/dublin29.jpg')",
+              backgroundAttachment: 'fixed', // enables parallax
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'cover',
+            }}
+          >
+            {children}
+          </div>
+        </Providers>
       </body>
     </html>
   );

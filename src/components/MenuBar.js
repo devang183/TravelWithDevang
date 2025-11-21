@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react'
 import { Home, MapPin, Menu, X } from "lucide-react"
 import Link from 'next/link'
+import { AuthButton } from './AuthButton'
 
 const menuItems = [
   {
@@ -66,8 +67,8 @@ export function MenuBar() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+          <div className="hidden md:flex items-center gap-4">
+            <div className="flex items-baseline space-x-4">
               {menuItems.map((item) => (
                 <Link
                   key={item.title}
@@ -80,6 +81,7 @@ export function MenuBar() {
                 </Link>
               ))}
             </div>
+            <AuthButton />
           </div>
 
           {/* Mobile menu button */}

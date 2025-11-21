@@ -15,11 +15,6 @@ const menuItems = [
     icon: MapPin,
   },
   {
-    title: "Flutter",
-    url: "/flutter-presentation",
-    icon: MapPin,
-  },
-  {
     title: "Performance Analysis",
     url: "/analytics",
     icon: BarChart3,

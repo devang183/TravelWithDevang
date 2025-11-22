@@ -142,7 +142,7 @@ export async function DELETE(request, context) {
     if (pin.userId !== session.user.id) {
       return Response.json({
         error: 'Forbidden',
-        message: 'You can only delete your own pins'
+        message: "Stop messing with other people's pins"
       }, { status: 403 });
     }
 

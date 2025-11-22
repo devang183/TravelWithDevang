@@ -278,6 +278,14 @@ const subpageComponents = {
       }
     ]
   },
+  nagpur: {
+    explore: [
+      {
+        type: COMPONENT_TYPES.GUESTBOOK_MAP,
+        component: DigitalGuestbookMapWrapper
+      }
+    ]
+  },
 };
 
 export default function CitySubPage({ params }) {

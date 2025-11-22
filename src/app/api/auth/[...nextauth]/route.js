@@ -1,11 +1,51 @@
 import NextAuth from "next-auth";
 import EmailProvider from "next-auth/providers/email";
+import CredentialsProvider from "next-auth/providers/credentials";
 import { MongoDBAdapter } from "@auth/mongodb-adapter";
 import clientPromise from "@/lib/mongodb";
+import bcrypt from "bcryptjs";
 
 export const authOptions = {
   adapter: MongoDBAdapter(clientPromise),
   providers: [
+    CredentialsProvider({
+      name: "Credentials",
+      credentials: {
+        email: { label: "Email", type: "email" },
+        password: { label: "Password", type: "password" }
+      },
+      async authorize(credentials) {
+        if (!credentials?.email || !credentials?.password) {
+          throw new Error("Email and password are required");
+        }
+
+        const client = await clientPromise;
+        const db = client.db('hello');
+        const usersCollection = db.collection('users');
+
+        // Find user by email
+        const user = await usersCollection.findOne({ email: credentials.email });
+
+        if (!user || !user.password) {
+          throw new Error("Invalid email or password");
+        }
+
+        // Verify password
+        const isPasswordValid = await bcrypt.compare(credentials.password, user.password);
+
+        if (!isPasswordValid) {
+          throw new Error("Invalid email or password");
+        }
+
+        // Return user object (without password)
+        return {
+          id: user._id.toString(),
+          email: user.email,
+          name: user.name,
+          image: user.image,
+        };
+      }
+    }),
     EmailProvider({
       server: {
         host: process.env.EMAIL_SERVER_HOST,
@@ -24,13 +64,23 @@ export const authOptions = {
     error: '/auth/error',
   },
   callbacks: {
-    async session({ session, user }) {
+    async jwt({ token, user }) {
+      // Add user id to JWT token on sign in
+      if (user) {
+        token.id = user.id;
+      }
+      return token;
+    },
+    async session({ session, token, user }) {
       // Add user id to session
       if (session?.user) {
-        session.user.id = user.id;
+        session.user.id = token?.id || user?.id;
       }
       return session;
     },
+  },
+  session: {
+    strategy: "jwt", // Use JWT for credentials provider
   },
   secret: process.env.NEXTAUTH_SECRET,
 };

@@ -1,7 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MapPin, Camera, Heart, MessageCircle, Star, X, Plus, Send, User, Clock, Trash2, AlertTriangle } from 'lucide-react';
 import { ChevronLeft, ChevronRight, Search } from 'lucide-react';
+import { useSession } from 'next-auth/react';
 const DigitalGuestbookMap = ({ cityName = "Dublin", cityCoords = { lat: 53.3498, lng: -6.2603 } }) => {
+  // Get current user session for ownership checks
+  const { data: session } = useSession();
+
   // Create storage key based on city
   const getStorageKey = (key) => `guestbook_${cityName.toLowerCase()}_${key}`;
   const [searchQuery, setSearchQuery] = useState('');
@@ -135,9 +139,10 @@ const scrollContainerRef = useRef(null);
 
   const savePinsToStorage = (newPins) => {
     try {
-      // Only save user-created pins (not default ones)
-      const userPins = newPins.filter(pin => !pin.isDefault);
-      localStorage.setItem(getStorageKey('pins'), JSON.stringify(userPins));
+      // Only save legacy local pins (not default ones, not DB pins)
+      // DB pins are already saved in MongoDB, no need to duplicate in localStorage
+      const localPins = newPins.filter(pin => !pin.isDefault && !pin.fromDB);
+      localStorage.setItem(getStorageKey('pins'), JSON.stringify(localPins));
     } catch (error) {
       console.error('Error saving pins to storage:', error);
     }
@@ -222,15 +227,26 @@ const scrollContainerRef = useRef(null);
         method: 'DELETE'
       });
 
+      const data = await response.json();
+
       if (response.ok) {
-        return true;
+        return { success: true, data };
       } else {
-        console.error('Failed to delete pin from database');
-        return false;
+        // Return error details from API
+        return {
+          success: false,
+          error: data.error,
+          message: data.message,
+          status: response.status
+        };
       }
     } catch (error) {
       console.error('Error deleting pin from database:', error);
-      return false;
+      return {
+        success: false,
+        error: 'Network error',
+        message: error.message
+      };
     }
   };
 
@@ -341,6 +357,10 @@ const scrollContainerRef = useRef(null);
             lat: e.latlng.lat,
             lng: e.latlng.lng
           });
+          // Auto-fill author name if user is logged in
+          if (session?.user?.name) {
+            setNewPin(prev => ({ ...prev, author: session.user.name }));
+          }
           setShowAddForm(true);
         };
 
@@ -416,10 +436,10 @@ const scrollContainerRef = useRef(null);
     }
   }, [map, pins, L, activeCategories]); // Added activeCategories as dependency
 
-  // Save pins whenever they change
-  useEffect(() => {
-    savePinsToStorage(pins);
-  }, [pins]);
+  // Note: We removed the automatic localStorage save effect because:
+  // - DB pins are saved via API to MongoDB (no need for localStorage)
+  // - Only legacy local pins need localStorage, and they're saved when modified
+  // - This prevents QuotaExceededError when many pins are loaded from DB
 
   const handleAddPin = async () => {
     if (!newPin.title || !newPin.note || !newPin.author || !clickPosition) return;
@@ -476,19 +496,49 @@ const scrollContainerRef = useRef(null);
     }
   };
 
+  // Check if the current user can delete a pin
+  const canDeletePin = (pin) => {
+    // Default pins cannot be deleted
+    if (pin.isDefault) return false;
+
+    // Non-database pins can be deleted (legacy local storage pins)
+    if (!pin.fromDB) return true;
+
+    // For database pins, check if the current user is the owner
+    if (session?.user?.id && pin.userId) {
+      return session.user.id === pin.userId;
+    }
+
+    // If no session or no userId on pin, allow deletion (for backward compatibility)
+    return true;
+  };
+
   const confirmDeletePin = async () => {
     if (deleteConfirmText.toLowerCase() === 'delete' && showDeleteConfirm) {
       const pinToDelete = pins.find(p => p.id === showDeleteConfirm);
 
       // If pin is from database, delete from MongoDB
       if (pinToDelete && pinToDelete.fromDB) {
-        const deleted = await deletePinFromDB(showDeleteConfirm);
-        if (!deleted) {
-          console.error('Failed to delete pin from database, but will remove from UI');
+        const result = await deletePinFromDB(showDeleteConfirm);
+
+        if (!result.success) {
+          // Check if it's a forbidden error (trying to delete someone else's pin)
+          if (result.status === 403) {
+            alert("Stop messing with other people's pins! You can only delete your own pins.");
+          } else if (result.status === 401) {
+            alert("You must be signed in to delete pins.");
+          } else {
+            alert(`Failed to delete pin: ${result.message || 'Unknown error'}`);
+          }
+
+          // Close the delete dialog but don't remove from UI
+          setShowDeleteConfirm(null);
+          setDeleteConfirmText('');
+          return;
         }
       }
 
-      // Remove from local state
+      // Only remove from local state if deletion succeeded or it's a non-DB pin
       setPins(pins.filter(pin => pin.id !== showDeleteConfirm));
       setShowDeleteConfirm(null);
       setDeleteConfirmText('');
@@ -509,6 +559,22 @@ const scrollContainerRef = useRef(null);
         setNewPin({ ...newPin, image: e.target.result });
       };
       reader.readAsDataURL(file);
+    }
+  };
+
+  // Fly to pin location on map with smooth animation
+  const handleFlyToPin = (pin) => {
+    if (map && pin.lat && pin.lng) {
+      // Smooth fly animation to pin location with higher zoom
+      map.flyTo([pin.lat, pin.lng], 16, {
+        duration: 1.5, // Animation duration in seconds
+        easeLinearity: 0.25 // Smoothness of animation (0-1, lower is smoother)
+      });
+
+      // Set selected pin to show details after a short delay
+      setTimeout(() => {
+        setSelectedPin(pin);
+      }, 800); // Show details halfway through animation
     }
   };
 
@@ -726,6 +792,10 @@ useEffect(() => {
             const lng = parseFloat(place.lon);
             map.setView([lat, lng], 16); // Center map on the result
             setClickPosition({ lat, lng });
+            // Auto-fill author name if user is logged in
+            if (session?.user?.name) {
+              setNewPin(prev => ({ ...prev, author: session.user.name }));
+            }
             setShowAddForm(true); // Open pin form
           } else {
             alert("Place not found!");
@@ -798,9 +868,13 @@ useEffect(() => {
                 <input
                   type="text"
                   placeholder="e.g., Alex T."
-                  className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className={`w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                    session?.user?.name ? 'bg-gray-100 cursor-not-allowed' : ''
+                  }`}
                   value={newPin.author}
                   onChange={(e) => setNewPin({ ...newPin, author: e.target.value })}
+                  readOnly={!!session?.user?.name}
+                  title={session?.user?.name ? 'Name is auto-filled from your account' : ''}
                 />
               </div>
               <div>
@@ -876,7 +950,7 @@ useEffect(() => {
                 </div>
               </div>
               <div className="flex gap-2">
-                {!selectedPin.isDefault && (
+                {canDeletePin(selectedPin) && (
                   <button
                     onClick={() => handleDeletePin(selectedPin.id)}
                     className="p-1 hover:bg-red-100 rounded text-red-600"
@@ -1056,9 +1130,9 @@ useEffect(() => {
                 ? "#22c55e"
                 : "#6b7280",
           }}
-          onClick={() => setSelectedPin(pin)}
+          onClick={() => handleFlyToPin(pin)}
         >
-          {!pin.isDefault && (
+          {canDeletePin(pin) && (
             <button
               onClick={(e) => {
                 e.stopPropagation();
@@ -1129,9 +1203,9 @@ useEffect(() => {
                                           getCategoryColor(pin.category).replace('bg-', '').replace('-500', '') === 'pink' ? '#ec4899' :
                                           getCategoryColor(pin.category).replace('bg-', '').replace('-500', '') === 'yellow' ? '#eab308' :
                                           getCategoryColor(pin.category).replace('bg-', '').replace('-500', '') === 'green' ? '#22c55e' : '#6b7280' }}
-                onClick={() => setSelectedPin(pin)}
+                onClick={() => handleFlyToPin(pin)}
               >
-                {!pin.isDefault && (
+                {canDeletePin(pin) && (
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
@@ -1146,7 +1220,7 @@ useEffect(() => {
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-lg">{getCategoryIcon(pin.category)}</span>
                   <h4 className="font-semibold truncate">{pin.title}</h4>
-                  {!pin.isDefault && (
+                  {canDeletePin(pin) && (
                     <span className="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-auto">
                       Your Pin
                     </span>

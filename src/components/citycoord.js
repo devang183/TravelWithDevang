@@ -162,6 +162,14 @@ export const cities = {
     highlights: ['Titanic Museum', 'Peace walls', 'Crown Liquor Saloon'],
     timezone: 'Asia/Kolkata',
   },
+  bengaluru: {
+    name: 'Bengaluru',
+    coords: [12.9629, 77.5775],
+    image: '/images/bengaluru.jpg',
+    description: 'The Silicon Valley of India, known for its thriving tech industry, pleasant climate, and vibrant culture.',
+    highlights: ['Lalbagh Botanical Garden', 'Bengaluru Palace', 'Vidhana Soudha'],
+    timezone: 'Asia/Kolkata',
+  },
   newquay: {
     name: 'Newquay',
     coords: [50.4155, -5.0737],

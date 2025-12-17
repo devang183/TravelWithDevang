@@ -205,6 +205,31 @@ export const photos={
             "https://cityphotoscity.s3.amazonaws.com/images/nagpur/nagpur12.jpg",
         ],
     },
+    bengaluru:{
+        name:'bengaluru',
+        images:[
+            "https://cityphotoscity.s3.amazonaws.com/images/bengaluru/bengaluru.jpg",
+            "https://cityphotoscity.s3.amazonaws.com/images/bengaluru/bengaluru2.jpg",
+            "https://cityphotoscity.s3.amazonaws.com/images/bengaluru/bengaluru3.jpg",
+            "https://cityphotoscity.s3.amazonaws.com/images/bengaluru/bengaluru4.jpg",
+            "https://cityphotoscity.s3.amazonaws.com/images/bengaluru/bengaluru5.jpg",
+            "https://cityphotoscity.s3.amazonaws.com/images/bengaluru/bengaluru6.jpg",
+            "https://cityphotoscity.s3.amazonaws.com/images/bengaluru/bengaluru7.jpg",
+            "https://cityphotoscity.s3.amazonaws.com/images/bengaluru/bengaluru8.jpg",
+            "https://cityphotoscity.s3.amazonaws.com/images/bengaluru/bengaluru9.jpg",
+            "https://cityphotoscity.s3.amazonaws.com/images/bengaluru/bengaluru10.jpg",
+            "https://cityphotoscity.s3.amazonaws.com/images/bengaluru/bengaluru11.jpg",
+            "https://cityphotoscity.s3.amazonaws.com/images/bengaluru/bengaluru12.jpg",
+            "https://cityphotoscity.s3.amazonaws.com/images/bengaluru/bengaluru13.jpg",
+            "https://cityphotoscity.s3.amazonaws.com/images/bengaluru/bengaluru14.jpg",
+            "https://cityphotoscity.s3.amazonaws.com/images/bengaluru/bengaluru15.jpg",
+            "https://cityphotoscity.s3.amazonaws.com/images/bengaluru/bengaluru16.jpg",
+            "https://cityphotoscity.s3.amazonaws.com/images/bengaluru/bengaluru17.jpg",
+            "https://cityphotoscity.s3.amazonaws.com/images/bengaluru/bengaluru18.jpg",
+            "https://cityphotoscity.s3.amazonaws.com/images/bengaluru/bengaluru19.jpg",
+            
+        ],
+    },
     rabat:{
         name:'rabat',
         images:[

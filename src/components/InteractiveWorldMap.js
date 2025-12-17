@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import 'leaflet.fullscreen';
 import 'leaflet.fullscreen/Control.FullScreen.css';
 import { photos } from '@/app/test-cities/CityPhotos';
 
@@ -281,87 +282,75 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
 
   // Initialize the map
   useEffect(() => {
-    // Load the fullscreen control script
-    const script = document.createElement('script');
-    script.src = 'https://unpkg.com/leaflet.fullscreen/Control.FullScreen.js';
-    script.async = true;
-    
-    script.onload = () => {
-      if (!mapRef.current && mapContainerRef.current) {
-        // Define world bounds to prevent infinite scrolling
-        const worldBounds = [
-          [-90, -180], // Southwest coordinates
-          [90, 180]    // Northeast coordinates
-        ];
+    if (!mapRef.current && mapContainerRef.current) {
+      // Define world bounds to prevent infinite scrolling
+      const worldBounds = [
+        [-90, -180], // Southwest coordinates
+        [90, 180]    // Northeast coordinates
+      ];
 
-        // Initialize the map
-        mapRef.current = L.map(mapContainerRef.current, {
-          fullscreenControl: true,
-          fullscreenControlOptions: { position: 'topright' },
-          worldCopyJump: false,
-          maxBounds: worldBounds,
-          maxBoundsViscosity: 1.0,
-          minZoom: 1,
-          maxZoom: 18,
-          zoomSnap: 0.1,
-          zoomDelta: 0.1
-        }).setView(originalCenter, originalZoom);
+      // Initialize the map
+      mapRef.current = L.map(mapContainerRef.current, {
+        fullscreenControl: true,
+        fullscreenControlOptions: { position: 'topright' },
+        worldCopyJump: false,
+        maxBounds: worldBounds,
+        maxBoundsViscosity: 1.0,
+        minZoom: 1,
+        maxZoom: 18,
+        zoomSnap: 0.1,
+        zoomDelta: 0.1
+      }).setView(originalCenter, originalZoom);
 
-        // Add the base map layer
-        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-          attribution: '&copy; OpenStreetMap contributors',
-          maxZoom: 18,
-          minZoom: 1,
-          noWrap: true,
-          bounds: worldBounds
-        }).addTo(mapRef.current);
+      // Add the base map layer
+      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        attribution: '&copy; OpenStreetMap contributors',
+        maxZoom: 18,
+        minZoom: 1,
+        noWrap: true,
+        bounds: worldBounds
+      }).addTo(mapRef.current);
 
-        // Add city markers
-        cities.forEach(city => {
-          if (city.coords && city.coords.length === 2) {
-            const marker = addCityMarker(city);
-            if (marker) {
-              markersRef.current[city.name] = marker;
-            }
+      // Add city markers
+      cities.forEach(city => {
+        if (city.coords && city.coords.length === 2) {
+          const marker = addCityMarker(city);
+          if (marker) {
+            markersRef.current[city.name] = marker;
           }
-        });
-
-        // Add event listeners
-        mapRef.current.on('zoomend', () => {
-          if (mapRef.current.getZoom() < 1) {
-            mapRef.current.setZoom(1);
-          }
-        });
-
-        mapRef.current.on('moveend', () => {
-          const center = mapRef.current.getCenter();
-          
-          // Prevent wrapping around the world
-          if (center.lng > 180 || center.lng < -180) {
-            let newLng = center.lng;
-            while (newLng > 180) newLng -= 360;
-            while (newLng < -180) newLng += 360;
-            mapRef.current.panTo([center.lat, newLng]);
-          }
-        });
-
-        // If there's a selected city, center on it
-        if (selectedCity) {
-          handleCitySelect(selectedCity);
         }
-      }
-    };
+      });
 
-    document.body.appendChild(script);
+      // Add event listeners
+      mapRef.current.on('zoomend', () => {
+        if (mapRef.current.getZoom() < 1) {
+          mapRef.current.setZoom(1);
+        }
+      });
+
+      mapRef.current.on('moveend', () => {
+        const center = mapRef.current.getCenter();
+
+        // Prevent wrapping around the world
+        if (center.lng > 180 || center.lng < -180) {
+          let newLng = center.lng;
+          while (newLng > 180) newLng -= 360;
+          while (newLng < -180) newLng += 360;
+          mapRef.current.panTo([center.lat, newLng]);
+        }
+      });
+
+      // If there's a selected city, center on it
+      if (selectedCity) {
+        handleCitySelect(selectedCity);
+      }
+    }
 
     // Cleanup function
     return () => {
       if (mapRef.current) {
         mapRef.current.remove();
         mapRef.current = null;
-      }
-      if (script.parentNode) {
-        document.body.removeChild(script);
       }
     };
   }, []); // Empty dependency array means this runs once on mount

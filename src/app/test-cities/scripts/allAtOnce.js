@@ -8,15 +8,15 @@ const dbName = "hello";
 
 // 1️⃣ Define cities
 // const cities = ["Newry", "Dublin"]; // Add more cities as needed
- //const cities=[""]
-const cities=["Dublin","London","Belfast","Liverpool","Birmingham", "Manchester","Leeds","Rabat","Raipur","Delhi","Malahide","Naas","Maynooth","Newquay"]
+ const cities=["Bengaluru"]
+//const cities=["Dublin","London","Belfast","Liverpool","Birmingham", "Manchester","Leeds","Rabat","Raipur","Delhi","Malahide","Naas","Maynooth","Newquay"]
 
 // 2️⃣ Categories → OSM Tags mapping
 const categories = {
 //   paddypower: {emoji:"🟩", query:'shop="bookmaker"'}
-//   bookstore: { emoji: "📚", query: 'shop="books"' },
+ //  bookstore: { emoji: "📚", query: 'shop="books"' },
   // racecourse: { emoji: "🏇", query: 'leisure="racecourse"' },
- //  park: { emoji: "🌳", query: 'leisure="park"' },
+   park: { emoji: "🌳", query: 'leisure="park"' },
 //   pint: { emoji: "🍺", query: 'amenity="pub"' },
 //   atm: { emoji: "🏧", query: 'amenity="atm"' },
 //   historic: { emoji: "🏰", query: 'historic' },
@@ -35,7 +35,7 @@ const categories = {
 //   pharmacy: { emoji: "💊", query: 'amenity="pharmacy"' },
 //   icecream: { emoji: "🍦", query: 'amenity="ice_cream"' },
   //womenbeauty: { emoji: "💇‍♀️", query: 'shop="beauty"' },
-  fuelgas: { emoji: "⛽", query: 'amenity="fuel"' },
+  //fuelgas: { emoji: "⛽", query: 'amenity="fuel"' },
 // //   leisure: { emoji: "🎭", query: 'leisure' },
 // //   retailshops: { emoji: "🛍️", query: 'shop' },
 //   hospitality: { emoji: "🏨", query: 'tourism="hotel"' },

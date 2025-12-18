@@ -1,18 +1,26 @@
 'use client';
 
 import { signIn } from 'next-auth/react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Mail, Lock, User as UserIcon } from 'lucide-react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 export default function SignIn() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [mode, setMode] = useState('signin'); // 'signin' or 'signup'
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
+  const [callbackUrl, setCallbackUrl] = useState('/');
+
+  // Get the callback URL from query params
+  useEffect(() => {
+    const callback = searchParams.get('callbackUrl') || '/';
+    setCallbackUrl(callback);
+  }, [searchParams]);
 
   const handleCredentialsSubmit = async (e) => {
     e.preventDefault();
@@ -44,7 +52,7 @@ export default function SignIn() {
         if (result?.error) {
           setError('Account created but sign-in failed. Please try signing in manually.');
         } else {
-          router.push('/test-cities/dublin/explore');
+          router.push(callbackUrl);
         }
       } else {
         // Sign in existing user
@@ -57,7 +65,7 @@ export default function SignIn() {
         if (result?.error) {
           setError('Invalid email or password');
         } else {
-          router.push('/test-cities/dublin/explore');
+          router.push(callbackUrl);
         }
       }
     } catch (err) {

@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { MapPin, Camera, Heart, MessageCircle, Star, X, Plus, Send, User, Clock, Trash2, AlertTriangle } from 'lucide-react';
+import { MapPin, Camera, Heart, MessageCircle, Star, X, Plus, Send, User, Clock, Trash2, AlertTriangle, PawPrint } from 'lucide-react';
 import { ChevronLeft, ChevronRight, Search } from 'lucide-react';
 import { useSession } from 'next-auth/react';
 const DigitalGuestbookMap = ({ cityName = "Dublin", cityCoords = { lat: 53.3498, lng: -6.2603 } }) => {
@@ -807,6 +807,33 @@ useEffect(() => {
     }}
   />
 </div>
+
+        {/* Recenter Button */}
+        <button
+          onClick={() => {
+            if (map) {
+              map.setView([cityCoords.lat, cityCoords.lng], 13);
+            }
+          }}
+          style={{
+            position: "absolute",
+            top: "90px",
+            right: "10px",
+            zIndex: 1000,
+            backgroundColor: "rgba(255, 255, 255, 0.3)",
+            padding: "6px 10px",
+            borderRadius: "8px",
+            fontSize: "0.9rem",
+            cursor: "pointer",
+            color: "#86efac",
+            transition: "transform 0.2s, border-color 0.3s, background-color 0.3s",
+          }}
+          onMouseEnter={(e) => { e.currentTarget.style.transform = "scale(1.2)"; }}
+          onMouseLeave={(e) => { e.currentTarget.style.transform = "scale(1)"; }}
+          aria-label="Recenter map"
+        >
+          <PawPrint size={20} />
+        </button>
 
         {/* Loading/Error state */}
         {!L ? (

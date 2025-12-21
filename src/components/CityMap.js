@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState, useCallback } from "react";
-import { PawPrint, Navigation, X } from "lucide-react";
+import { PawPrint, Navigation, X, Calendar, MapPin, Plus, Trash2, Download, FileText } from "lucide-react";
 import Fuse from "fuse.js";
 import CityMapCategoryBar from "./CityMapCategoryBar";
 import { useQuery } from '@tanstack/react-query';
@@ -82,6 +82,31 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
   const [showEndResults, setShowEndResults] = useState(false);
   const [startHighlighted, setStartHighlighted] = useState(-1);
   const [endHighlighted, setEndHighlighted] = useState(-1);
+
+  // Trip planning states
+  const [showTripPlanner, setShowTripPlanner] = useState(false);
+  const [tripItinerary, setTripItinerary] = useState([]);
+  const [tripPolylines, setTripPolylines] = useState([]);
+  const [tripMarkersRefs, setTripMarkersRefs] = useState([]);
+
+  // Day-wise trip planning states
+  const [tripMode, setTripMode] = useState("single"); // "single" or "daywise"
+  const [numberOfDays, setNumberOfDays] = useState(3);
+  const [dayWiseItinerary, setDayWiseItinerary] = useState({});
+  const [selectedDay, setSelectedDay] = useState(1);
+
+  // Refs to hold current values for closures
+  const tripModeRef = useRef(tripMode);
+  const selectedDayRef = useRef(selectedDay);
+
+  // Update refs when values change
+  useEffect(() => {
+    tripModeRef.current = tripMode;
+  }, [tripMode]);
+
+  useEffect(() => {
+    selectedDayRef.current = selectedDay;
+  }, [selectedDay]);
 
   // Helper function to normalize categories - handles both single category and array
   const normalizeCategories = (categories) => {
@@ -253,15 +278,15 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
     More info
   </a>
   <div style="margin-top: 8px; display:flex; gap:5px;">
-    <button class="set-source-btn" 
+    <button class="set-source-btn"
       style="
-        flex:1; 
-        padding:4px; 
-        font-size:0.8em; 
-        border-radius:4px; 
-        border:none; 
-        background:#10b981; 
-        color:white; 
+        flex:1;
+        padding:4px;
+        font-size:0.8em;
+        border-radius:4px;
+        border:none;
+        background:#10b981;
+        color:white;
         cursor:pointer;
         transition: transform 0.2s, border-color 0.3s, background-color 0.3s, backdrop-filter 0.3s;
       "
@@ -270,15 +295,15 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
     >
       Set as Source
     </button>
-    <button class="set-dest-btn" 
+    <button class="set-dest-btn"
       style="
-        flex:1; 
-        padding:4px; 
-        font-size:0.8em; 
-        border-radius:4px; 
-        border:none; 
-        background:#f59e0b; 
-        color:white; 
+        flex:1;
+        padding:4px;
+        font-size:0.8em;
+        border-radius:4px;
+        border:none;
+        background:#f59e0b;
+        color:white;
         cursor:pointer;
         transition: transform 0.2s, border-color 0.3s, background-color 0.3s, backdrop-filter 0.3s;
       "
@@ -286,6 +311,26 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
       onmouseleave="this.style.transform='scale(1)';"
     >
       Set as Destination
+    </button>
+  </div>
+  <div style="margin-top: 5px;">
+    <button class="add-to-trip-btn"
+      style="
+        width: 100%;
+        padding:6px;
+        font-size:0.8em;
+        border-radius:4px;
+        border:none;
+        background:#8b5cf6;
+        color:white;
+        cursor:pointer;
+        font-weight: bold;
+        transition: transform 0.2s, border-color 0.3s, background-color 0.3s, backdrop-filter 0.3s;
+      "
+      onmouseenter="this.style.transform='scale(1.05)';"
+      onmouseleave="this.style.transform='scale(1)';"
+    >
+      + Add to Trip Plan
     </button>
   </div>
 `;
@@ -313,6 +358,36 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
             popupEl.querySelector(".set-dest-btn").onclick = () => {
               setEndPoint(name);
               setEndSearchTerm(name);
+            };
+            popupEl.querySelector(".add-to-trip-btn").onclick = () => {
+              const placeData = markers[index];
+              const currentMode = tripModeRef.current;
+              const currentDay = selectedDayRef.current;
+
+              if (currentMode === "single") {
+                setTripItinerary(prev => {
+                  // Check if place already exists
+                  if (prev.some(p => p.name === placeData.name)) {
+                    return prev;
+                  }
+                  return [...prev, placeData];
+                });
+              } else {
+                // Day-wise mode
+                setDayWiseItinerary(prev => {
+                  const currentDayPlaces = prev[currentDay] || [];
+                  // Check if place already exists in the current day
+                  if (currentDayPlaces.some(p => p.name === placeData.name)) {
+                    return prev;
+                  }
+                  return {
+                    ...prev,
+                    [currentDay]: [...currentDayPlaces, placeData]
+                  };
+                });
+              }
+
+              setShowTripPlanner(true);
             };
           });
         
@@ -471,6 +546,140 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
     setEndSearchResults(searchLocations(endSearchTerm));
   }, [endSearchTerm, markers]);
 
+  // Draw trip itinerary polyline
+  useEffect(() => {
+    if (!mapInstance.current) return;
+
+    const drawTripRoute = async () => {
+      const L = await import('leaflet');
+
+      // Clear existing trip polylines and markers
+      tripPolylines.forEach(line => {
+        if (mapInstance.current.hasLayer(line)) {
+          mapInstance.current.removeLayer(line);
+        }
+      });
+      tripMarkersRefs.forEach(marker => {
+        if (mapInstance.current.hasLayer(marker)) {
+          mapInstance.current.removeLayer(marker);
+        }
+      });
+
+      const newTripMarkers = [];
+      const newPolylines = [];
+
+      if (tripMode === "single") {
+        // Single day itinerary mode
+        if (tripItinerary.length < 2) {
+          setTripPolylines([]);
+          setTripMarkersRefs([]);
+          return;
+        }
+
+        // Draw numbered markers for trip places
+        tripItinerary.forEach((place, index) => {
+          const icon = L.divIcon({
+            className: 'trip-marker',
+            html: `
+              <div style="
+                background-color: #8b5cf6;
+                color: white;
+                border: 2px solid white;
+                border-radius: 50%;
+                width: 28px;
+                height: 28px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: bold;
+                font-size: 12px;
+                box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+              ">
+                ${index + 1}
+              </div>
+            `,
+            iconSize: [28, 28],
+            iconAnchor: [14, 14],
+          });
+
+          const marker = L.marker(place.coords, { icon }).addTo(mapInstance.current);
+          marker.bindPopup(`<strong>${index + 1}. ${place.name}</strong>`);
+          newTripMarkers.push(marker);
+        });
+
+        // Draw polyline
+        const coords = tripItinerary.map(p => p.coords);
+        const polyline = L.polyline(coords, {
+          color: '#8b5cf6',
+          weight: 4,
+          opacity: 0.8,
+          dashArray: '10, 10',
+          lineJoin: 'round',
+        }).addTo(mapInstance.current);
+        newPolylines.push(polyline);
+      } else {
+        // Day-wise itinerary mode
+        const dayColors = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'];
+
+        Object.entries(dayWiseItinerary).forEach(([day, places]) => {
+          if (!places || places.length === 0) return;
+
+          const dayNum = parseInt(day);
+          const color = dayColors[(dayNum - 1) % dayColors.length];
+
+          // Draw numbered markers for each day
+          places.forEach((place, index) => {
+            const icon = L.divIcon({
+              className: 'trip-marker',
+              html: `
+                <div style="
+                  background-color: ${color};
+                  color: white;
+                  border: 2px solid white;
+                  border-radius: 50%;
+                  width: 32px;
+                  height: 32px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: bold;
+                  font-size: 11px;
+                  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+                ">
+                  D${dayNum}-${index + 1}
+                </div>
+              `,
+              iconSize: [32, 32],
+              iconAnchor: [16, 16],
+            });
+
+            const marker = L.marker(place.coords, { icon }).addTo(mapInstance.current);
+            marker.bindPopup(`<strong>Day ${dayNum} - Stop ${index + 1}</strong><br/>${place.name}`);
+            newTripMarkers.push(marker);
+          });
+
+          // Draw polyline for each day
+          if (places.length >= 2) {
+            const coords = places.map(p => p.coords);
+            const polyline = L.polyline(coords, {
+              color: color,
+              weight: 4,
+              opacity: 0.8,
+              dashArray: '10, 10',
+              lineJoin: 'round',
+            }).addTo(mapInstance.current);
+            newPolylines.push(polyline);
+          }
+        });
+      }
+
+      setTripPolylines(newPolylines);
+      setTripMarkersRefs(newTripMarkers);
+    };
+
+    drawTripRoute();
+  }, [tripItinerary, dayWiseItinerary, tripMode]);
+
   const handleStartSearch = (value) => {
     setStartSearchTerm(value);
     setShowStartResults(value.length > 0);
@@ -523,15 +732,15 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
 
   const handleEndKeyDown = (e) => {
     if (!showEndResults || endSearchResults.length === 0) return;
-    
+
     if (e.key === "ArrowDown") {
       e.preventDefault();
-      setEndHighlighted(prev => 
+      setEndHighlighted(prev =>
         prev < endSearchResults.length - 1 ? prev + 1 : 0
       );
     } else if (e.key === "ArrowUp") {
       e.preventDefault();
-      setEndHighlighted(prev => 
+      setEndHighlighted(prev =>
         prev > 0 ? prev - 1 : endSearchResults.length - 1
       );
     } else if (e.key === "Enter") {
@@ -543,6 +752,150 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
       setShowEndResults(false);
       setEndHighlighted(-1);
     }
+  };
+
+  // Export itinerary as PDF
+  const exportToPDF = async () => {
+    const { jsPDF } = await import('jspdf');
+    const doc = new jsPDF();
+
+    const pageWidth = doc.internal.pageSize.width;
+    const pageHeight = doc.internal.pageSize.height;
+    const margin = 15;
+    let yPos = margin;
+
+    // Title
+    doc.setFontSize(22);
+    doc.setFont(undefined, 'bold');
+    doc.text(`Trip Itinerary - ${name}`, pageWidth / 2, yPos, { align: 'center' });
+    yPos += 15;
+
+    // Date
+    doc.setFontSize(10);
+    doc.setFont(undefined, 'normal');
+    doc.text(`Generated: ${new Date().toLocaleDateString()}`, pageWidth / 2, yPos, { align: 'center' });
+    yPos += 15;
+
+    if (tripMode === "single") {
+      // Single day itinerary
+      doc.setFontSize(14);
+      doc.setFont(undefined, 'bold');
+      doc.text('Single Day Trip', margin, yPos);
+      yPos += 10;
+
+      doc.setFontSize(11);
+      doc.setFont(undefined, 'normal');
+
+      tripItinerary.forEach((place, index) => {
+        if (yPos > pageHeight - 30) {
+          doc.addPage();
+          yPos = margin;
+        }
+
+        doc.setFont(undefined, 'bold');
+        doc.text(`${index + 1}. ${place.name}`, margin + 5, yPos);
+        yPos += 7;
+
+        if (place.description) {
+          doc.setFont(undefined, 'normal');
+          doc.setFontSize(9);
+          const splitDesc = doc.splitTextToSize(place.description, pageWidth - margin * 2 - 10);
+          doc.text(splitDesc, margin + 10, yPos);
+          yPos += splitDesc.length * 5 + 5;
+        } else {
+          yPos += 5;
+        }
+      });
+
+      // Total places
+      yPos += 5;
+      doc.setFont(undefined, 'bold');
+      doc.setFontSize(11);
+      doc.text(`Total Places: ${tripItinerary.length}`, margin, yPos);
+    } else {
+      // Day-wise itinerary
+      doc.setFontSize(14);
+      doc.setFont(undefined, 'bold');
+      doc.text(`${numberOfDays}-Day Trip`, margin, yPos);
+      yPos += 12;
+
+      for (let day = 1; day <= numberOfDays; day++) {
+        const places = dayWiseItinerary[day] || [];
+
+        if (yPos > pageHeight - 40) {
+          doc.addPage();
+          yPos = margin;
+        }
+
+        // Day header
+        doc.setFontSize(13);
+        doc.setFont(undefined, 'bold');
+        doc.setFillColor(59, 130, 246);
+        doc.rect(margin, yPos - 6, pageWidth - margin * 2, 10, 'F');
+        doc.setTextColor(255, 255, 255);
+        doc.text(`Day ${day}`, margin + 5, yPos);
+        doc.setTextColor(0, 0, 0);
+        yPos += 12;
+
+        if (places.length === 0) {
+          doc.setFontSize(10);
+          doc.setFont(undefined, 'italic');
+          doc.text('No places added yet', margin + 10, yPos);
+          yPos += 8;
+        } else {
+          doc.setFontSize(11);
+          doc.setFont(undefined, 'normal');
+
+          places.forEach((place, index) => {
+            if (yPos > pageHeight - 30) {
+              doc.addPage();
+              yPos = margin;
+            }
+
+            doc.setFont(undefined, 'bold');
+            doc.text(`  ${index + 1}. ${place.name}`, margin + 5, yPos);
+            yPos += 7;
+
+            if (place.description) {
+              doc.setFont(undefined, 'normal');
+              doc.setFontSize(9);
+              const splitDesc = doc.splitTextToSize(place.description, pageWidth - margin * 2 - 15);
+              doc.text(splitDesc, margin + 15, yPos);
+              yPos += splitDesc.length * 5 + 3;
+            } else {
+              yPos += 3;
+            }
+          });
+
+          yPos += 3;
+          doc.setFont(undefined, 'italic');
+          doc.setFontSize(9);
+          doc.text(`Day ${day} - ${places.length} place(s)`, margin + 10, yPos);
+        }
+
+        yPos += 12;
+      }
+
+      // Total summary
+      const totalPlaces = Object.values(dayWiseItinerary).reduce((sum, places) => sum + (places?.length || 0), 0);
+      if (yPos > pageHeight - 20) {
+        doc.addPage();
+        yPos = margin;
+      }
+      doc.setFont(undefined, 'bold');
+      doc.setFontSize(11);
+      doc.text(`Total: ${totalPlaces} places across ${numberOfDays} days`, margin, yPos);
+    }
+
+    // Footer on last page
+    doc.setFontSize(8);
+    doc.setFont(undefined, 'italic');
+    doc.setTextColor(128, 128, 128);
+    doc.text('Generated by TravelWithDevang', pageWidth / 2, pageHeight - 10, { align: 'center' });
+
+    // Save PDF
+    const fileName = `${name.replace(/\s+/g, '_')}_Itinerary_${new Date().toISOString().split('T')[0]}.pdf`;
+    doc.save(fileName);
   };
 
   const showRoute = () => {
@@ -1124,6 +1477,258 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
             </div>
           )}
         </div>
+      </div>
+
+      {/* Trip Planning Section */}
+      <div style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "10px",
+        marginTop: "15px",
+        padding: "15px",
+        borderRadius: "10px",
+        backdropFilter: "blur(5px)",
+        zIndex: 50,
+        fontFamily: '"Playfair Display", serif'
+      }}>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <h4 style={{ margin: 0, color: "#ffffff" }} className="text-3xl font-bold text-center p-2">
+            <Calendar size={16} style={{ marginRight: "5px", verticalAlign: "middle" }} />
+            Plan Your Trip
+          </h4>
+          <button
+            onClick={() => setShowTripPlanner(!showTripPlanner)}
+            className="px-4 py-2 bg-purple-500 text-white font-semibold rounded shadow hover:bg-purple-600 transition-colors"
+          >
+            {showTripPlanner ? "Hide Planner" : "Show Planner"}
+          </button>
+        </div>
+
+        {showTripPlanner && (
+          <div className="bg-white/10 rounded-lg p-4 space-y-4">
+            {/* Mode Selection */}
+            <div className="flex gap-3 mb-4">
+              <button
+                onClick={() => {
+                  setTripMode("single");
+                  setDayWiseItinerary({});
+                }}
+                className={`flex-1 px-4 py-2 rounded-lg font-semibold transition-all ${
+                  tripMode === "single"
+                    ? "bg-purple-500 text-white shadow-lg"
+                    : "bg-white/20 text-white hover:bg-white/30"
+                }`}
+              >
+                Single Day Trip
+              </button>
+              <button
+                onClick={() => {
+                  setTripMode("daywise");
+                  setTripItinerary([]);
+                  // Initialize empty days
+                  const initDays = {};
+                  for (let i = 1; i <= numberOfDays; i++) {
+                    initDays[i] = [];
+                  }
+                  setDayWiseItinerary(initDays);
+                }}
+                className={`flex-1 px-4 py-2 rounded-lg font-semibold transition-all ${
+                  tripMode === "daywise"
+                    ? "bg-blue-500 text-white shadow-lg"
+                    : "bg-white/20 text-white hover:bg-white/30"
+                }`}
+              >
+                Multi-Day Trip
+              </button>
+            </div>
+
+            {/* Day-wise Configuration */}
+            {tripMode === "daywise" && (
+              <div className="bg-white/10 rounded-lg p-3 space-y-3">
+                <label className="text-white font-semibold text-sm">Number of Days:</label>
+                <div className="flex gap-2">
+                  {[1, 2, 3, 4, 5, 6, 7].map((num) => (
+                    <button
+                      key={num}
+                      onClick={() => {
+                        setNumberOfDays(num);
+                        const newDays = {};
+                        for (let i = 1; i <= num; i++) {
+                          newDays[i] = dayWiseItinerary[i] || [];
+                        }
+                        setDayWiseItinerary(newDays);
+                        if (selectedDay > num) setSelectedDay(1);
+                      }}
+                      className={`px-3 py-1 rounded font-semibold transition-all ${
+                        numberOfDays === num
+                          ? "bg-blue-500 text-white"
+                          : "bg-white/20 text-white hover:bg-white/30"
+                      }`}
+                    >
+                      {num}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Day Tabs */}
+                <div className="flex gap-2 overflow-x-auto pb-2">
+                  {Array.from({ length: numberOfDays }, (_, i) => i + 1).map((day) => (
+                    <button
+                      key={day}
+                      onClick={() => setSelectedDay(day)}
+                      className={`px-4 py-2 rounded-lg font-semibold whitespace-nowrap transition-all ${
+                        selectedDay === day
+                          ? "bg-blue-500 text-white shadow-lg"
+                          : "bg-white/20 text-white hover:bg-white/30"
+                      }`}
+                    >
+                      Day {day} ({dayWiseItinerary[day]?.length || 0})
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <p className="text-white text-sm">
+              {tripMode === "single"
+                ? "Click on places from the map to add them to your single-day trip itinerary."
+                : `Click on places to add them to Day ${selectedDay}. Switch between days using the tabs above.`}
+            </p>
+
+            {/* Export Button */}
+            {((tripMode === "single" && tripItinerary.length > 0) ||
+              (tripMode === "daywise" &&
+                Object.values(dayWiseItinerary).some((places) => places && places.length > 0))) && (
+              <div className="flex gap-2">
+                <button
+                  onClick={exportToPDF}
+                  className="flex-1 px-4 py-2 bg-green-500 text-white font-semibold rounded shadow hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
+                >
+                  <Download size={16} />
+                  Export to PDF
+                </button>
+                <button
+                  onClick={() => {
+                    if (tripMode === "single") {
+                      setTripItinerary([]);
+                    } else {
+                      setDayWiseItinerary(
+                        Object.keys(dayWiseItinerary).reduce((acc, day) => {
+                          acc[day] = [];
+                          return acc;
+                        }, {})
+                      );
+                    }
+                    if (mapInstance.current) {
+                      tripPolylines.forEach((line) => mapInstance.current.removeLayer(line));
+                      tripMarkersRefs.forEach((marker) => mapInstance.current.removeLayer(marker));
+                    }
+                    setTripPolylines([]);
+                    setTripMarkersRefs([]);
+                  }}
+                  className="px-4 py-2 bg-red-500 text-white font-semibold rounded shadow hover:bg-red-600 transition-colors flex items-center gap-2"
+                >
+                  <Trash2 size={16} />
+                  Clear All
+                </button>
+              </div>
+            )}
+
+            {/* Single Day Itinerary Display */}
+            {tripMode === "single" && (
+              <>
+                {tripItinerary.length > 0 && (
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <h5 className="text-white font-semibold">Your Itinerary ({tripItinerary.length} places)</h5>
+                    </div>
+
+                    <div className="max-h-60 overflow-y-auto space-y-2">
+                      {tripItinerary.map((place, index) => (
+                        <div key={index} className="flex items-center gap-2 bg-white/20 rounded p-2">
+                          <span className="w-6 h-6 rounded-full bg-purple-500 text-white flex items-center justify-center text-xs font-bold">
+                            {index + 1}
+                          </span>
+                          <span className="flex-1 text-white text-sm">{place.name}</span>
+                          <button
+                            onClick={() => {
+                              const newItinerary = tripItinerary.filter((_, i) => i !== index);
+                              setTripItinerary(newItinerary);
+                            }}
+                            className="p-1 hover:bg-red-500 rounded transition-colors"
+                          >
+                            <X size={14} className="text-white" />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {tripItinerary.length === 0 && (
+                  <p className="text-white/70 text-sm italic text-center py-4">
+                    No places added yet. Click on any place marker on the map to add it to your trip!
+                  </p>
+                )}
+              </>
+            )}
+
+            {/* Day-wise Itinerary Display */}
+            {tripMode === "daywise" && (
+              <>
+                {dayWiseItinerary[selectedDay]?.length > 0 && (
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <h5 className="text-white font-semibold">
+                        Day {selectedDay} ({dayWiseItinerary[selectedDay].length} places)
+                      </h5>
+                      <button
+                        onClick={() => {
+                          setDayWiseItinerary({
+                            ...dayWiseItinerary,
+                            [selectedDay]: [],
+                          });
+                        }}
+                        className="px-2 py-1 bg-red-500 text-white text-xs rounded hover:bg-red-600 flex items-center gap-1"
+                      >
+                        <Trash2 size={12} />
+                        Clear Day
+                      </button>
+                    </div>
+
+                    <div className="max-h-60 overflow-y-auto space-y-2">
+                      {dayWiseItinerary[selectedDay].map((place, index) => (
+                        <div key={index} className="flex items-center gap-2 bg-white/20 rounded p-2">
+                          <span className="w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold">
+                            {index + 1}
+                          </span>
+                          <span className="flex-1 text-white text-sm">{place.name}</span>
+                          <button
+                            onClick={() => {
+                              setDayWiseItinerary({
+                                ...dayWiseItinerary,
+                                [selectedDay]: dayWiseItinerary[selectedDay].filter((_, i) => i !== index),
+                              });
+                            }}
+                            className="p-1 hover:bg-red-500 rounded transition-colors"
+                          >
+                            <X size={14} className="text-white" />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {(!dayWiseItinerary[selectedDay] || dayWiseItinerary[selectedDay].length === 0) && (
+                  <p className="text-white/70 text-sm italic text-center py-4">
+                    No places added to Day {selectedDay} yet. Click on any place marker on the map!
+                  </p>
+                )}
+              </>
+            )}
+          </div>
+        )}
       </div>
 
       {/* Recenter Button */}

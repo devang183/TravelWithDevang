@@ -30,7 +30,7 @@ const cities = {
     { id: 'delhi', name: 'Delhi', image: 'https://cityphotoscity.s3.amazonaws.com/images/delhi/delhi.jpg', description: 'The capital of Northern Ireland, known for its maritime history.', highlights: ['Titanic Museum', 'Peace walls', 'Crown Liquor Saloon'] },
     { id: 'raipur', name: 'Raipur', image: 'https://cityphotoscity.s3.amazonaws.com/images/raipur/raipur.jpg', description: 'The capital of Northern Ireland, known for its maritime history.', highlights: ['Titanic Museum', 'Peace walls', 'Crown Liquor Saloon'] },
     { id: 'nagpur', name: 'Nagpur', image: 'https://cityphotoscity.s3.amazonaws.com/images/raipur/raipur2.jpg', description: 'The capital of Northern Ireland, known for its maritime history.', highlights: ['Titanic Museum', 'Peace walls', 'Crown Liquor Saloon'] },
-    { id: 'bengaluru', name: 'Bengaluru', image: 'https://cityphotoscity.s3.amazonaws.com/images/bengaluru/bengaluru.jpg', description: 'The Silicon Valley of India, known for its thriving tech industry, pleasant climate, and vibrant culture.', highlights: ['Lalbagh Botanical Garden', 'Bengaluru Palace', 'Vidhana Soudha'] },
+    { id: 'bengaluru', name: 'Bengaluru', image: 'https://cityphotoscity.s3.amazonaws.com/images/bengaluru/bengaluru.jpeg', description: 'The Silicon Valley of India, known for its thriving tech industry, pleasant climate, and vibrant culture.', highlights: ['Lalbagh Botanical Garden', 'Bengaluru Palace', 'Vidhana Soudha'] },
     { id: 'newquay', name: 'Newquay, Cornwall', image: 'https://cityphotoscity.s3.amazonaws.com/images/manchester/manchester.jpg', description: 'The capital of Northern Ireland, known for its maritime history.', highlights: ['Titanic Museum', 'Peace walls', 'Crown Liquor Saloon'] },
   ]
 };

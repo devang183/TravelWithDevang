@@ -34,7 +34,8 @@ export default function HomePage() {
   const isSidebarCollapsed = true;
 
   // Convert cities object to array and add any missing properties
-  const cities = Object.values(cityData).map(city => ({
+  const cities = Object.entries(cityData).map(([id, city]) => ({
+    id: id,
     name: city.name,
     coords: city.coords || [0, 0],
     country: city.country || '',
@@ -53,23 +54,12 @@ export default function HomePage() {
         {/* <VideoTextPage collapsed={isSidebarCollapsed} /> */}
         
         {/* World Map Section */}
-        <div className="relative w-full h-[600px] bg-gray-50 rounded-xl overflow-hidden shadow-lg mb-6">
-          <InteractiveWorldMap 
+        <div className="relative w-full h-[700px] bg-gray-50 rounded-xl overflow-hidden shadow-lg mb-6">
+          <InteractiveWorldMap
             cities={cities}
             selectedCity={selectedCity}
             onCitySelect={handleCitySelect}
           />
-        </div>
-
-        {/* City List Section */}
-        <div className="px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <CityList 
-              cities={cities} 
-              onCitySelect={handleCitySelect}
-              selectedCity={selectedCity}
-            />
-          </div>
         </div>
       </div>
     </main>

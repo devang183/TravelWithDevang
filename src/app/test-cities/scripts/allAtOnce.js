@@ -28,11 +28,11 @@ const categories = {
  //  college: { emoji: "🎓", query: 'amenity="college"' },
  //  church: { emoji: "⛪", query: 'amenity="place_of_worship"' },
  //  art: { emoji: "🎨", query: 'tourism="gallery"' },
-   cricket: { emoji: "🏏", query: 'sport="cricket"' },
+//   cricket: { emoji: "🏏", query: 'sport="cricket"' },
 //   bookstore: { emoji: "📚", query: 'shop="books"' },
-   grocery: { emoji: "🛒", query: 'shop="supermarket"' },
-   hospital: { emoji: "🩺", query: 'amenity="hospital"' },
-   pharmacy: { emoji: "💊", query: 'amenity="pharmacy"' },
+//   grocery: { emoji: "🛒", query: 'shop="supermarket"' },
+//   hospital: { emoji: "🩺", query: 'amenity="hospital"' },
+//   pharmacy: { emoji: "💊", query: 'amenity="pharmacy"' },
 //   icecream: { emoji: "🍦", query: 'amenity="ice_cream"' },
   //womenbeauty: { emoji: "💇‍♀️", query: 'shop="beauty"' },
   //fuelgas: { emoji: "⛽", query: 'amenity="fuel"' },
@@ -40,9 +40,9 @@ const categories = {
 // //   retailshops: { emoji: "🛍️", query: 'shop' },
 //   hospitality: { emoji: "🏨", query: 'tourism="hotel"' },
 //   health: { emoji: "🏥", query: 'amenity="clinic"' },
-//   police: { emoji: "👮", query: 'amenity="police"' },
-    //  dentist: {emoji: "🦷", query:'amenity="dentist"'},
-   // sports:{emoji:"🏆",query:'sport~"football|rugby|tennis|badminton"'}
+   police: { emoji: "👮", query: 'amenity="police"' },
+      dentist: {emoji: "🦷", query:'amenity="dentist"'},
+    sports:{emoji:"🏆",query:'sport~"football|rugby|tennis|badminton"'}
 };
 
 // 3️⃣ Build Overpass query

@@ -20,6 +20,8 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
   const mapRef = useRef(null);
   const markersRef = useRef({});
   const mapContainerRef = useRef(null);
+  const cityListScrollRef = useRef(null);
+  const cityButtonRefs = useRef({});
   const originalCenter = [30, 0];
   const originalZoom = 2.5;
 
@@ -60,42 +62,42 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
   // Function to create image carousel HTML
   const createImageCarousel = (city) => {
     const cityPhotos = photos[city.name.toLowerCase()]?.images || [];
-    const cityId = city.name.toLowerCase().replace(/\s+/g, '-');
-    
+    const cityId = city.id || city.name.toLowerCase().replace(/\s+/g, '-');
+
     if (cityPhotos.length === 0) return '';
-    
+
     const sliderId = `slider-${cityId}`;
     const slides = cityPhotos.map((img, idx) => `
       <div class="popup-slide" style="display: ${idx === 0 ? 'block' : 'none'}; width: 100%;">
         <img src="${img}" alt="${city.name} ${idx + 1}" class="w-full h-40 object-cover rounded-t-lg">
       </div>
     `).join('');
-    
+
     const dots = cityPhotos.map((_, idx) => `
-      <div 
-        id="bar-${cityId}-${idx}" 
-        class="h-1 flex-1 mx-0.5 rounded-full ${idx === 0 ? 'bg-blue-500' : 'bg-gray-300'}" 
+      <div
+        id="bar-${cityId}-${idx}"
+        class="h-1 flex-1 mx-0.5 rounded-full ${idx === 0 ? 'bg-blue-500' : 'bg-gray-300'}"
         style="cursor: pointer;"
-        onclick="window.showNext('${cityId}')"
+        onclick="window.showNext('${sliderId}')"
       ></div>
     `).join('');
-    
+
     // Only show arrows if there's more than one image
     const arrows = cityPhotos.length > 1 ? `
-      <div 
+      <div
         class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full w-8 h-8 flex items-center justify-center z-10 cursor-pointer hover:bg-opacity-75"
         onclick="event.stopPropagation(); const sliderId = this.closest('[id^=slider-]').id; window.showPrev(sliderId);"
       >
         &larr;
       </div>
-      <div 
+      <div
         class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full w-8 h-8 flex items-center justify-center z-10 cursor-pointer hover:bg-opacity-75"
         onclick="event.stopPropagation(); const sliderId = this.closest('[id^=slider-]').id; window.showNext(sliderId);"
       >
         &rarr;
       </div>
     ` : '';
-    
+
     return `
       <div id="${sliderId}" class="w-64">
         <div class="relative group">
@@ -112,9 +114,6 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
             ${city.date ? `<p class="text-sm text-gray-500">${city.date}</p>` : ''}
             ${city.food ? `<div class="mt-1"><p class="text-sm font-medium">Best Food:</p><p class="text-sm">${city.food}</p></div>` : ''}
           </div>
-          <button class="view-city-button w-full mt-2 bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium py-2 px-4 rounded-md transition-colors">
-            View City Details →
-          </button>
         </div>
       </div>
     `;
@@ -155,23 +154,7 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
     marker.on('click', (e) => {
       handleCitySelect(city, e);
     });
-    
-    // Add click handler for popup content
-    marker.on('popupopen', () => {
-      const popup = marker.getPopup();
-      const popupElement = popup.getElement();
-      if (popupElement) {
-        const viewCityButton = popupElement.querySelector('.view-city-button');
-        if (viewCityButton) {
-          viewCityButton.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const cityId = city.name.toLowerCase().replace(/\s+/g, '-');
-            router.push(`/test-cities/${cityId}`);
-          });
-        }
-      }
-    });
-    
+
     return marker;
   };
 
@@ -183,33 +166,74 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
     }
 
     if (city && city.coords && mapRef.current) {
-      // Just open the popup and center the map, don't navigate
-      if (!event || event.type === 'click') {
-        mapRef.current.flyTo(city.coords, 12, {
-          duration: 1.5,
-          easeLinearity: 0.5
+      const currentZoom = mapRef.current.getZoom();
+      const isAlreadyZoomedIn = currentZoom > 8;
+
+      // If we're already zoomed in on a city, zoom out first
+      if (isAlreadyZoomedIn) {
+        // Step 1: Fly out (zoom out to see the globe)
+        mapRef.current.flyTo(originalCenter, 2, {
+          duration: 1.8,
+          easeLinearity: 0.15
         });
-        return;
-      }
-      
-      // Fly to the selected city
-      mapRef.current.flyTo(city.coords, 12, {
-        duration: 1.5,
-        easeLinearity: 0.5
-      });
-      
-      // Highlight the selected marker
-      Object.entries(markersRef.current).forEach(([name, marker]) => {
-        if (marker) {
-          const isSelected = name === city.name;
-          marker.setIcon(createCustomIcon(isSelected));
-          
-          if (isSelected) {
-            marker.openPopup();
+
+        // Step 2: After flying out, fly in to the new city
+        setTimeout(() => {
+          mapRef.current.flyTo(city.coords, 12, {
+            duration: 2.0,
+            easeLinearity: 0.2
+          });
+
+          // Highlight the selected marker after flying in
+          Object.entries(markersRef.current).forEach(([name, marker]) => {
+            if (marker) {
+              const isSelected = name === city.name;
+              marker.setIcon(createCustomIcon(isSelected));
+
+              if (isSelected) {
+                marker.openPopup();
+              }
+            }
+          });
+        }, 1800);
+      } else {
+        // If not zoomed in, just fly directly to the city
+        mapRef.current.flyTo(city.coords, 12, {
+          duration: 2.2,
+          easeLinearity: 0.2
+        });
+
+        // Highlight the selected marker
+        Object.entries(markersRef.current).forEach(([name, marker]) => {
+          if (marker) {
+            const isSelected = name === city.name;
+            marker.setIcon(createCustomIcon(isSelected));
+
+            if (isSelected) {
+              marker.openPopup();
+            }
           }
-        }
-      });
-      
+        });
+      }
+
+      // Scroll the city into center view in the horizontal list
+      if (cityListScrollRef.current && cityButtonRefs.current[city.name]) {
+        const container = cityListScrollRef.current;
+        const button = cityButtonRefs.current[city.name];
+
+        const containerWidth = container.offsetWidth;
+        const buttonLeft = button.offsetLeft;
+        const buttonWidth = button.offsetWidth;
+
+        // Calculate scroll position to center the button
+        const scrollTo = buttonLeft - (containerWidth / 2) + (buttonWidth / 2);
+
+        container.scrollTo({
+          left: scrollTo,
+          behavior: 'smooth'
+        });
+      }
+
       // Call the onCitySelect prop if provided
       if (onCitySelect) {
         onCitySelect(city);
@@ -362,24 +386,29 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
     }
   }, [selectedCity]);
 
+  // Sort cities alphabetically by name
+  const sortedCities = [...cities].sort((a, b) => a.name.localeCompare(b.name));
+
   return (
     <div className="w-full flex justify-center">
       <div
         className="relative z-10"
         style={{
           width: '100%',
-          height: '600px',
+          height: '700px',
           borderRadius: '20px',
         }}
       >
-        <div 
-          ref={mapContainerRef} 
+        <div
+          ref={mapContainerRef}
           className="w-full h-full rounded-lg"
           style={{
             position: 'relative',
             zIndex: 10,
           }}
         />
+
+        {/* Recenter Button */}
         <button
           onClick={() => {
             if (mapRef.current) {
@@ -389,10 +418,84 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
               });
             }
           }}
-          className="absolute bottom-5 right-5 px-4 py-2 bg-green-500 text-white font-semibold rounded shadow hover:bg-green-600 z-20"
+          className="absolute bottom-24 right-5 px-4 py-2 bg-green-500 text-white font-semibold rounded shadow hover:bg-green-600 z-30"
         >
           Recenter
         </button>
+
+        {/* Horizontal Scrollable City List Overlay */}
+        <div className="absolute bottom-0 left-0 right-0 z-20">
+          <div
+            ref={cityListScrollRef}
+            className="overflow-x-auto overflow-y-hidden px-4 py-3"
+            style={{
+              height: '100px',
+              scrollbarWidth: 'thin',
+              scrollbarColor: '#3b82f6 rgba(0,0,0,0.1)'
+            }}
+          >
+            <style jsx>{`
+              div::-webkit-scrollbar {
+                height: 6px;
+              }
+              div::-webkit-scrollbar-track {
+                background: rgba(0,0,0,0.1);
+                border-radius: 3px;
+              }
+              div::-webkit-scrollbar-thumb {
+                background: #3b82f6;
+                border-radius: 3px;
+              }
+              div::-webkit-scrollbar-thumb:hover {
+                background: #2563eb;
+              }
+            `}</style>
+            <div className="flex gap-3 h-full items-center">
+              {sortedCities.map((city) => (
+                <div
+                  key={city.name}
+                  ref={(el) => {
+                    if (el) cityButtonRefs.current[city.name] = el;
+                  }}
+                  className={`
+                    flex-shrink-0 rounded-xl min-w-[160px]
+                    flex flex-col backdrop-blur-md transition-all duration-300
+                    ${
+                      selectedCity?.name === city.name
+                        ? 'bg-blue-500/90 text-white shadow-2xl scale-110 border-2 border-white'
+                        : 'bg-black/20 text-white shadow-lg hover:scale-105'
+                    }
+                  `}
+                >
+                  <button
+                    onClick={() => handleCitySelect(city)}
+                    className="w-full px-5 py-2 flex flex-col items-center justify-center hover:bg-white/5 transition-colors rounded-t-xl"
+                  >
+                    <span className="font-bold text-base text-center leading-tight">
+                      {city.name}
+                    </span>
+                    {city.country && (
+                      <span className="text-xs opacity-90 mt-1 text-center">
+                        {city.country}
+                      </span>
+                    )}
+                  </button>
+                  {city.id && (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        router.push(`/test-cities/${city.id}`);
+                      }}
+                      className="w-full px-3 py-1 text-xs border-t border-white/20 hover:bg-white/10 transition-colors rounded-b-xl"
+                    >
+                      View Details →
+                    </button>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -22,6 +22,7 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
   const mapContainerRef = useRef(null);
   const cityListScrollRef = useRef(null);
   const cityButtonRefs = useRef({});
+  const previousCityRef = useRef(null);
   const originalCenter = [30, 0];
   const originalZoom = 2.5;
 
@@ -168,6 +169,38 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
     if (city && city.coords && mapRef.current) {
       const currentZoom = mapRef.current.getZoom();
       const isAlreadyZoomedIn = currentZoom > 8;
+      const isSameCity = previousCityRef.current?.name === city.name;
+
+      // If clicking the same city, just ensure it's centered and popup is open
+      if (isSameCity && isAlreadyZoomedIn) {
+        // Just make sure the popup is open
+        const marker = markersRef.current[city.name];
+        if (marker && !marker.isPopupOpen()) {
+          marker.openPopup();
+        }
+
+        // Scroll the city into center view in the horizontal list
+        if (cityListScrollRef.current && cityButtonRefs.current[city.name]) {
+          const container = cityListScrollRef.current;
+          const button = cityButtonRefs.current[city.name];
+
+          const containerWidth = container.offsetWidth;
+          const buttonLeft = button.offsetLeft;
+          const buttonWidth = button.offsetWidth;
+
+          const scrollTo = buttonLeft - (containerWidth / 2) + (buttonWidth / 2);
+
+          container.scrollTo({
+            left: scrollTo,
+            behavior: 'smooth'
+          });
+        }
+
+        return;
+      }
+
+      // Update previous city reference
+      previousCityRef.current = city;
 
       // If we're already zoomed in on a city, zoom out first
       if (isAlreadyZoomedIn) {

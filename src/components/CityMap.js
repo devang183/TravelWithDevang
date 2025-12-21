@@ -3,6 +3,7 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { PawPrint, Navigation, X } from "lucide-react";
 import Fuse from "fuse.js";
 import CityMapCategoryBar from "./CityMapCategoryBar";
+import { useQuery } from '@tanstack/react-query';
 
 // Category emojis - single source of truth
 const CATEGORY_EMOJIS = {
@@ -109,31 +110,36 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
     return bounds1.toBBoxString() === bounds2.toBBoxString();
   };
 
-  // Fetch data from MongoDB
-  useEffect(() => {
-    const fetchPins = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch(`/api/pins/${cityId}`);
-        
-        if (!response.ok) {
-          throw new Error(`Failed to fetch pins: ${response.statusText}`);
-        }
-        
-        const pinsData = await response.json();
-        setMarkers(pinsData);
-      } catch (err) {
-        console.error('Error fetching pins:', err);
-        setError(err.message);
-        setMarkers([]);
-      } finally {
-        setLoading(false);
+  // Fetch data from MongoDB using React Query
+  const { data: pinsData, isLoading, isError, error: queryError } = useQuery({
+    queryKey: ['pins', cityId],
+    queryFn: async () => {
+      const response = await fetch(`/api/pins/${cityId}`);
+      if (!response.ok) {
+        throw new Error(`Failed to fetch pins: ${response.statusText}`);
       }
-    };
-    if (cityId) {
-      fetchPins();
+      return response.json();
+    },
+    enabled: !!cityId,
+    staleTime: 5 * 60 * 1000, // 5 minutes
+    cacheTime: 10 * 60 * 1000, // 10 minutes
+  });
+
+  // Update markers when data changes
+  useEffect(() => {
+    if (pinsData) {
+      setMarkers(pinsData);
+      setLoading(false);
+      setError(null);
+    } else if (isError) {
+      console.error('Error fetching pins:', queryError);
+      setError(queryError.message);
+      setMarkers([]);
+      setLoading(false);
+    } else if (isLoading) {
+      setLoading(true);
     }
-  }, [cityId]);
+  }, [pinsData, isLoading, isError, queryError]);
 
   // Debounce hook
   const useDebounce = (value, delay) => {
@@ -326,17 +332,18 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
   }, [markers, loading, coords, zoom]);
 
   // Fixed function to handle multiple categories with bounds checking
-  const addMarkersInView = useCallback(() => {
+  const addMarkersInView = useCallback((forceUpdate = false) => {
     const map = mapInstance.current;
     if (!map || isUpdatingMarkers.current) return;
-  
+
     const bounds = map.getBounds();
-    
+
     // Check if bounds have actually changed to prevent unnecessary updates
-    if (lastBounds.current && boundsEqual(bounds, lastBounds.current)) {
+    // Skip this check if forceUpdate is true (e.g., when toggling markers visibility)
+    if (!forceUpdate && lastBounds.current && boundsEqual(bounds, lastBounds.current)) {
       return;
     }
-    
+
     lastBounds.current = bounds;
     isUpdatingMarkers.current = true;
 
@@ -388,6 +395,9 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
     [addMarkersInView]
   );
 
+  // Track previous markersVisible state to detect changes
+  const prevMarkersVisible = useRef(markersVisible);
+
   useEffect(() => {
     const map = mapInstance.current;
     if (!map) return;
@@ -397,7 +407,11 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
       debouncedAddMarkersInView();
     };
 
-    addMarkersInView();
+    // Force update if markersVisible changed
+    const shouldForceUpdate = prevMarkersVisible.current !== markersVisible;
+    prevMarkersVisible.current = markersVisible;
+
+    addMarkersInView(shouldForceUpdate);
     map.on("moveend", handleMoveEnd);
     map.on("zoomend", handleMoveEnd);
 
@@ -405,7 +419,7 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
       map.off("moveend", handleMoveEnd);
       map.off("zoomend", handleMoveEnd);
     };
-  }, [selectedMarkerIndex, activeCategories, markersVisible, markers, debouncedAddMarkersInView]);
+  }, [selectedMarkerIndex, activeCategories, markersVisible, markers, debouncedAddMarkersInView, addMarkersInView]);
 
   const handleRecenter = () => {
     const map = mapRef.current._leaflet_map;
@@ -837,6 +851,31 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
     setActiveCategories([]);
     setSelectedMarkerIndex(null);
   };
+
+  // Loading skeleton component
+  if (loading && markers.length === 0) {
+    return (
+      <div style={{ position: "relative" }}>
+        <div style={{
+          height: "500px",
+          backgroundColor: "#f0f0f0",
+          borderRadius: "8px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "column",
+          gap: "16px"
+        }}>
+          <div className="animate-pulse flex flex-col items-center gap-4">
+            <div className="h-12 w-12 bg-blue-400 rounded-full"></div>
+            <div className="h-4 w-48 bg-gray-300 rounded"></div>
+            <div className="h-3 w-32 bg-gray-200 rounded"></div>
+          </div>
+          <p style={{ color: "#666", fontSize: "14px" }}>Loading map for {name}...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div style={{ position: "relative" }}>

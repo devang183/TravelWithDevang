@@ -30,16 +30,25 @@ const DigitalGuestbookMapWrapper = React.memo(({ cityid, city }) => {
 DigitalGuestbookMapWrapper.displayName = 'DigitalGuestbookMapWrapper';
 
 const TaylorSwiftDashboardWrapper = React.memo(({ cityid }) => {
-  const TaylorSwiftDashboard = dynamic(() => import("@/app/test-cities/scripts/taylorSwift"), { 
+  const TaylorSwiftDashboard = dynamic(() => import("@/app/test-cities/scripts/taylorSwift"), {
     ssr: false,
     loading: () => <div>Loading Reddit data for {cityid}...</div>
   });
 
+  // Map city names to their Reddit subreddit names
+  const subredditMap = {
+    'Bengaluru': 'bangalore',
+    // Add more mappings here if needed
+  };
+
+  // Get the subreddit name, using the mapping if available
+  const subredditName = subredditMap[cityid] || cityid;
+
   // Add error boundary and loading state
   return (
     <div className="p-4">
-      <TaylorSwiftDashboard 
-        cityred={cityid} 
+      <TaylorSwiftDashboard
+        cityred={subredditName}
         key={cityid} // Force re-render when city changes
       />
     </div>
@@ -92,14 +101,14 @@ const subpageComponents = {
         type: COMPONENT_TYPES.DYNAMIC_IMPORT,
         component: dynamic(() => import("../LuasLiveData"), { ssr: false })
       },
-      {
-        type: COMPONENT_TYPES.DYNAMIC_IMPORT,
-        component: dynamic(() => import("@/components/maps/DublinBikesMap"), { ssr: false })
-      },
-      {
-        type: COMPONENT_TYPES.DYNAMIC_IMPORT,
-        component: dynamic(() => import("@/components/maps/LazyDublinLiveBikesMap"), { ssr: false })
-      }
+      // {
+      //   type: COMPONENT_TYPES.DYNAMIC_IMPORT,
+      //   component: dynamic(() => import("@/components/maps/DublinBikesMap"), { ssr: false })
+      // },
+      // {
+      //   type: COMPONENT_TYPES.DYNAMIC_IMPORT,
+      //   component: dynamic(() => import("@/components/maps/LazyDublinLiveBikesMap"), { ssr: false })
+      // }
     ],
     airbnb: [
       {
@@ -291,6 +300,16 @@ const subpageComponents = {
       {
         type: COMPONENT_TYPES.GUESTBOOK_MAP,
         component: DigitalGuestbookMapWrapper
+      }
+    ],
+    reddit: [
+      {
+        type: COMPONENT_TYPES.DYNAMIC_IMPORT,
+        component: dynamic(() => import("@/components/BengaluruEvents"), { ssr: false })
+      },
+      {
+        type: COMPONENT_TYPES.TAYLOR_SWIFT_DASHBOARD,
+        component: (props) => <TaylorSwiftDashboardWrapper {...props} cityid={cities.bengaluru.name} />
       }
     ]
   },

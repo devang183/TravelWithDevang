@@ -74,6 +74,9 @@ web_modules/
 .cache
 .parcel-cache
 
+# Custom cache directory for events database
+.cache/
+
 # Next.js build output
 .next
 out

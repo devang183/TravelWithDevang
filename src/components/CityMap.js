@@ -1255,257 +1255,249 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
         }}
       />
       
-      {/* Routing Controls */}
+
+      {/* Trip Planning Section - Left Slide-out Panel */}
       <div style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "10px",
-        marginTop: "15px",
-        padding: "15px",
-        borderRadius: "10px",
-        backdropFilter: "blur(5px)",
-        zIndex: 50,
+        position: "fixed",
+        left: showTripPlanner ? "0" : "-420px",
+        top: "0",
+        height: "100vh",
+        width: "400px",
+        backgroundColor: "rgba(15, 23, 42, 0.98)",
+        backdropFilter: "blur(10px)",
+        zIndex: 10000,
+        transition: "left 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+        boxShadow: showTripPlanner ? "4px 0 20px rgba(0, 0, 0, 0.3)" : "none",
+        overflowY: "auto",
         fontFamily: '"Playfair Display", serif'
       }}>
-        <h4 style={{ margin: 0, color: "#ffffff" }} className="text-3xl font-bold text-center p-2 ">
-          <Navigation size={16} style={{ marginRight: "5px", verticalAlign: "middle" }} />
-          Route Planner
-        </h4>
-        
-        <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", color:"white"}}>
-          <div style={{ flex: 1, minWidth: "150px", position: "relative" }}>
-            <label style={{ fontSize: "0.9rem", marginBottom: "5px", display: "block" }}>From:</label>
-            <input
-              type="text"
-              value={startSearchTerm}
-              onChange={(e) => handleStartSearch(e.target.value)}
-              onKeyDown={handleStartKeyDown}
-              onFocus={() => setShowStartResults(startSearchTerm.length > 0)}
-              onBlur={() => setTimeout(() => setShowStartResults(false), 200)}
-              placeholder="Search start location..."
-              style={{
-                width: "100%",
-                padding: "8px",
-                borderRadius: "6px",
-                fontSize: "0.9rem"
-              }}
-              className="focus:outline-none"
-            />
-            {showStartResults && startSearchResults.length > 0 && (
-              <div style={{
-                position: "absolute",
-                top: "100%",
-                left: 0,
-                right: 0,
-                backgroundColor: "white",
-                borderTop: "none",
-                borderRadius: "0 0 6px 6px",
-                maxHeight: "150px",
-                overflowY: "auto",
-                zIndex: 1000,
-                boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
-                color:"black",
-              }}>
-                {startSearchResults.map((location, index) => {
-                  const locationCategories = normalizeCategories(location.categories || location.category);
-                  const primaryEmoji = CATEGORY_EMOJIS[locationCategories[0]] || "📍";
-                  return (
-                    <div
-                      key={index}
-                      onClick={() => selectStartLocation(location)}
-                      style={{
-                        padding: "8px 12px",
-                        cursor: "pointer",
-                        backgroundColor: index === startHighlighted ? "#f0f9ff" : "white",
-                        fontSize: "0.9rem",
-                        borderBottom: index < startSearchResults.length - 1 ? "1px solid #eee" : "none"
-                      }}
-                      onMouseEnter={() => setStartHighlighted(index)}
-                    >
-                      <span style={{ marginRight: "8px" }}>{primaryEmoji}</span>
-                      {location.name}
-                      {locationCategories.length > 1 && (
-                        <span style={{ fontSize: "0.7rem", color: "#666", marginLeft: "4px" }}>
-                          (+{locationCategories.length - 1})
-                        </span>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            )}
-          </div>
-          
-          <div style={{ flex: 1, minWidth: "150px", position: "relative" }}>
-            <label style={{ fontSize: "0.9rem", marginBottom: "5px", display: "block" }}>To:</label>
-            <input
-              type="text"
-              value={endSearchTerm}
-              onChange={(e) => handleEndSearch(e.target.value)}
-              onKeyDown={handleEndKeyDown}
-              onFocus={() => setShowEndResults(endSearchTerm.length > 0)}
-              onBlur={() => setTimeout(() => setShowEndResults(false), 200)}
-              placeholder="Search destination..."
-              className='focus:outline-none'
-              style={{
-                width: "100%",
-                padding: "8px",
-                borderRadius: "6px",
-                fontSize: "0.9rem",
-              }}
-            />
-            {showEndResults && endSearchResults.length > 0 && (
-              <div style={{
-                position: "absolute",
-                top: "100%",
-                left: 0,
-                right: 0,
-                backgroundColor: "white",
-                borderTop: "none",
-                borderRadius: "0 0 6px 6px",
-                maxHeight: "150px",
-                overflowY: "auto",
-                zIndex: 1000,
-                color:"black",
-              }}>
-                {endSearchResults.map((location, index) => {
-                  const locationCategories = normalizeCategories(location.categories || location.category);
-                  const primaryEmoji = CATEGORY_EMOJIS[locationCategories[0]] || "📍";
-                  return (
-                    <div
-                      key={index}
-                      onClick={() => selectEndLocation(location)}
-                      style={{
-                        padding: "8px 12px",
-                        cursor: "pointer",
-                        backgroundColor: index === endHighlighted ? "#f0f9ff" : "white",
-                        fontSize: "0.9rem",
-                        borderBottom: index < endSearchResults.length - 1 ? "1px solid #eee" : "none"
-                      }}
-                      onMouseEnter={() => setEndHighlighted(index)}
-                    >
-                      <span style={{ marginRight: "8px" }}>{primaryEmoji}</span>
-                      {location.name}
-                      {locationCategories.length > 1 && (
-                        <span style={{ fontSize: "0.7rem", color: "#666", marginLeft: "4px" }}>
-                          (+{locationCategories.length - 1})
-                        </span>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            )}
-          </div>
-        </div>
-        
-        <div className="mb-3">
-          <label className="block text-white mb-1">Travel Mode</label>
-          <div className="flex space-x-2">
-            <button 
-              onClick={() => setTransportMode('driving')}
-              className={`flex-1 p-2 rounded-lg border ${transportMode === 'driving' ? 'bg-blue-600/80 border-blue-400' : 'bg-white/10 border-white/30'} text-white transition-colors`}
-            >
-              🚗 Driving
-            </button>
-            <button 
-              onClick={() => setTransportMode('foot')}
-              className={`flex-1 p-2 rounded-lg border ${transportMode === 'foot' ? 'bg-green-600/80 border-green-400' : 'bg-white/10 border-white/30'} text-white transition-colors`}
-            >
-              🚶 Walking
-            </button>
-            <button 
-              onClick={() => setTransportMode('bike')}
-              className={`flex-1 p-2 rounded-lg border ${transportMode === 'bike' ? 'bg-yellow-600/80 border-yellow-400' : 'bg-white/10 border-white/30'} text-white transition-colors`}
-            >
-              🚴 Cycling
-            </button>
-          </div>
-        </div>
-        
-        <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-          <button
-            onClick={showRoute}
-            disabled={!startPoint || !endPoint}
-            style={{
-              padding: "8px 16px",
-              backgroundColor: (!startPoint || !endPoint) ? "#ccc" : "#1e40af",
-              color: "white",
-              border: "none",
-              borderRadius: "6px",
-              cursor: (!startPoint || !endPoint) ? "not-allowed" : "pointer",
-              fontSize: "0.9rem",
-              transition: "transform 0.2s, border-color 0.3s, background-color 0.3s",
-            }}
-            onMouseEnter={(e) => { e.currentTarget.style.transform = "scale(1.1)"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.transform = "scale(1)"; }}
-          >
-            Show Route
-          </button>
-          
-          {showRouting && (
+        {/* Panel Header */}
+        <div style={{
+          position: "sticky",
+          top: 0,
+          backgroundColor: "rgba(15, 23, 42, 0.98)",
+          padding: "20px",
+          borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
+          zIndex: 10001
+        }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+            <h4 style={{ margin: 0, color: "#ffffff", fontSize: "1.5rem", fontWeight: "bold", display: "flex", alignItems: "center", gap: "10px" }}>
+              <Calendar size={24} />
+              Plan Your Trip
+            </h4>
             <button
-              onClick={clearRoute}
-              style={{
-                padding: "8px 16px",
-                backgroundColor: "#27ADF5",
-                color: "white",
-                border: "none",
-                borderRadius: "6px",
-                cursor: "pointer",
-                fontSize: "0.9rem",
-                display: "flex",
-                alignItems: "center",
-                gap: "5px"
-              }}
+              onClick={() => setShowTripPlanner(false)}
+              className="p-2 hover:bg-white/10 rounded-lg transition-colors"
+              style={{ color: "white" }}
+              aria-label="Close trip planner"
             >
-              <X size={14} />
-              Clear Route
+              <X size={24} />
             </button>
-          )}
-          
-          {routeDistance && routeTime && (
-            <div style={{
-              padding: "8px 12px",
-              backgroundColor: "#10b981",
-              color: "white",
-              borderRadius: "6px",
-              fontSize: "0.9rem",
-              fontWeight: "bold"
-            }}>
-              Distance: {routeDistance} km | Time: {routeTime}
+          </div>
+        </div>
+
+        {/* Panel Content */}
+        <div style={{ padding: "20px" }}>
+          {/* Route Planner Section */}
+          <div className="bg-white/10 rounded-lg p-4 space-y-4 mb-6">
+            <h5 style={{ margin: 0, color: "#ffffff", fontSize: "1.2rem", fontWeight: "bold", display: "flex", alignItems: "center", gap: "8px" }}>
+              <Navigation size={20} />
+              Route Planner
+            </h5>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+              <div style={{ position: "relative" }}>
+                <label style={{ fontSize: "0.85rem", marginBottom: "5px", display: "block", color: "white" }}>From:</label>
+                <input
+                  type="text"
+                  value={startSearchTerm}
+                  onChange={(e) => handleStartSearch(e.target.value)}
+                  onKeyDown={handleStartKeyDown}
+                  onFocus={() => setShowStartResults(startSearchTerm.length > 0)}
+                  onBlur={() => setTimeout(() => setShowStartResults(false), 200)}
+                  placeholder="Search start location..."
+                  style={{
+                    width: "100%",
+                    padding: "8px",
+                    borderRadius: "6px",
+                    fontSize: "0.85rem",
+                    backgroundColor: "rgba(255, 255, 255, 0.9)",
+                    border: "none"
+                  }}
+                  className="focus:outline-none"
+                />
+                {showStartResults && startSearchResults.length > 0 && (
+                  <div style={{
+                    position: "absolute",
+                    top: "100%",
+                    left: 0,
+                    right: 0,
+                    backgroundColor: "white",
+                    borderRadius: "0 0 6px 6px",
+                    maxHeight: "150px",
+                    overflowY: "auto",
+                    zIndex: 10002,
+                    boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+                    marginTop: "2px"
+                  }}>
+                    {startSearchResults.map((location, index) => {
+                      const locationCategories = normalizeCategories(location.categories || location.category);
+                      const primaryEmoji = CATEGORY_EMOJIS[locationCategories[0]] || "📍";
+                      return (
+                        <div
+                          key={index}
+                          onClick={() => selectStartLocation(location)}
+                          style={{
+                            padding: "8px 12px",
+                            cursor: "pointer",
+                            backgroundColor: index === startHighlighted ? "#f0f9ff" : "white",
+                            fontSize: "0.85rem",
+                            borderBottom: index < startSearchResults.length - 1 ? "1px solid #eee" : "none"
+                          }}
+                          onMouseEnter={() => setStartHighlighted(index)}
+                        >
+                          <span style={{ marginRight: "8px" }}>{primaryEmoji}</span>
+                          {location.name}
+                          {locationCategories.length > 1 && (
+                            <span style={{ fontSize: "0.7rem", color: "#666", marginLeft: "4px" }}>
+                              (+{locationCategories.length - 1})
+                            </span>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+
+              <div style={{ position: "relative" }}>
+                <label style={{ fontSize: "0.85rem", marginBottom: "5px", display: "block", color: "white" }}>To:</label>
+                <input
+                  type="text"
+                  value={endSearchTerm}
+                  onChange={(e) => handleEndSearch(e.target.value)}
+                  onKeyDown={handleEndKeyDown}
+                  onFocus={() => setShowEndResults(endSearchTerm.length > 0)}
+                  onBlur={() => setTimeout(() => setShowEndResults(false), 200)}
+                  placeholder="Search destination..."
+                  className='focus:outline-none'
+                  style={{
+                    width: "100%",
+                    padding: "8px",
+                    borderRadius: "6px",
+                    fontSize: "0.85rem",
+                    backgroundColor: "rgba(255, 255, 255, 0.9)",
+                    border: "none"
+                  }}
+                />
+                {showEndResults && endSearchResults.length > 0 && (
+                  <div style={{
+                    position: "absolute",
+                    top: "100%",
+                    left: 0,
+                    right: 0,
+                    backgroundColor: "white",
+                    borderRadius: "0 0 6px 6px",
+                    maxHeight: "150px",
+                    overflowY: "auto",
+                    zIndex: 10002,
+                    boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+                    marginTop: "2px"
+                  }}>
+                    {endSearchResults.map((location, index) => {
+                      const locationCategories = normalizeCategories(location.categories || location.category);
+                      const primaryEmoji = CATEGORY_EMOJIS[locationCategories[0]] || "📍";
+                      return (
+                        <div
+                          key={index}
+                          onClick={() => selectEndLocation(location)}
+                          style={{
+                            padding: "8px 12px",
+                            cursor: "pointer",
+                            backgroundColor: index === endHighlighted ? "#f0f9ff" : "white",
+                            fontSize: "0.85rem",
+                            borderBottom: index < endSearchResults.length - 1 ? "1px solid #eee" : "none"
+                          }}
+                          onMouseEnter={() => setEndHighlighted(index)}
+                        >
+                          <span style={{ marginRight: "8px" }}>{primaryEmoji}</span>
+                          {location.name}
+                          {locationCategories.length > 1 && (
+                            <span style={{ fontSize: "0.7rem", color: "#666", marginLeft: "4px" }}>
+                              (+{locationCategories.length - 1})
+                            </span>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
             </div>
-          )}
-        </div>
-      </div>
 
-      {/* Trip Planning Section */}
-      <div style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "10px",
-        marginTop: "15px",
-        padding: "15px",
-        borderRadius: "10px",
-        backdropFilter: "blur(5px)",
-        zIndex: 50,
-        fontFamily: '"Playfair Display", serif'
-      }}>
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <h4 style={{ margin: 0, color: "#ffffff" }} className="text-3xl font-bold text-center p-2">
-            <Calendar size={16} style={{ marginRight: "5px", verticalAlign: "middle" }} />
-            Plan Your Trip
-          </h4>
-          <button
-            onClick={() => setShowTripPlanner(!showTripPlanner)}
-            className="px-4 py-2 bg-purple-500 text-white font-semibold rounded shadow hover:bg-purple-600 transition-colors"
-          >
-            {showTripPlanner ? "Hide Planner" : "Show Planner"}
-          </button>
-        </div>
+            <div>
+              <label className="block text-white mb-2 text-sm">Travel Mode</label>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => setTransportMode('driving')}
+                  className={`flex-1 p-2 rounded-lg text-xs border ${transportMode === 'driving' ? 'bg-blue-600/80 border-blue-400' : 'bg-white/10 border-white/30'} text-white transition-colors`}
+                >
+                  🚗 Drive
+                </button>
+                <button
+                  onClick={() => setTransportMode('foot')}
+                  className={`flex-1 p-2 rounded-lg text-xs border ${transportMode === 'foot' ? 'bg-green-600/80 border-green-400' : 'bg-white/10 border-white/30'} text-white transition-colors`}
+                >
+                  🚶 Walk
+                </button>
+                <button
+                  onClick={() => setTransportMode('bike')}
+                  className={`flex-1 p-2 rounded-lg text-xs border ${transportMode === 'bike' ? 'bg-yellow-600/80 border-yellow-400' : 'bg-white/10 border-white/30'} text-white transition-colors`}
+                >
+                  🚴 Bike
+                </button>
+              </div>
+            </div>
 
-        {showTripPlanner && (
+            <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+              <button
+                onClick={showRoute}
+                disabled={!startPoint || !endPoint}
+                className={`w-full px-4 py-2 rounded-lg font-semibold transition-all ${
+                  !startPoint || !endPoint
+                    ? "bg-gray-400 cursor-not-allowed"
+                    : "bg-blue-600 hover:bg-blue-700"
+                } text-white`}
+              >
+                Show Route
+              </button>
+
+              {showRouting && (
+                <button
+                  onClick={clearRoute}
+                  className="w-full px-4 py-2 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-colors flex items-center justify-center gap-2"
+                >
+                  <X size={14} />
+                  Clear Route
+                </button>
+              )}
+
+              {routeDistance && routeTime && (
+                <div className="p-3 bg-green-600 text-white rounded-lg text-center text-sm font-semibold">
+                  {routeDistance} km • {routeTime}
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Trip Planner Section */}
+          {(
           <div className="bg-white/10 rounded-lg p-4 space-y-4">
+            <h5 style={{ margin: 0, color: "#ffffff", fontSize: "1.2rem", fontWeight: "bold", display: "flex", alignItems: "center", gap: "8px", marginBottom: "12px" }}>
+              <Calendar size={20} />
+              Trip Planner
+            </h5>
+
             {/* Mode Selection */}
             <div className="flex gap-3 mb-4">
               <button
@@ -1728,8 +1720,55 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
               </>
             )}
           </div>
-        )}
+          )}
+        </div>
       </div>
+
+      {/* Floating Toggle Button for Trip Planner */}
+      <button
+        onClick={() => setShowTripPlanner(!showTripPlanner)}
+        style={{
+          position: "fixed",
+          left: showTripPlanner ? "410px" : "20px",
+          top: "50%",
+          transform: "translateY(-50%)",
+          zIndex: 9999,
+          backgroundColor: "#8b5cf6",
+          color: "white",
+          border: "none",
+          borderRadius: showTripPlanner ? "0 50px 50px 0" : "50px",
+          padding: showTripPlanner ? "12px 16px 12px 8px" : "12px 16px",
+          cursor: "pointer",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.3)",
+          transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+          display: "flex",
+          alignItems: "center",
+          gap: "8px",
+          fontWeight: "600",
+          fontSize: "0.9rem"
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.backgroundColor = "#7c3aed";
+          e.currentTarget.style.transform = "translateY(-50%) scale(1.05)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.backgroundColor = "#8b5cf6";
+          e.currentTarget.style.transform = "translateY(-50%) scale(1)";
+        }}
+        aria-label={showTripPlanner ? "Hide trip planner" : "Show trip planner"}
+      >
+        {showTripPlanner ? (
+          <>
+            <X size={18} />
+            <span>Hide</span>
+          </>
+        ) : (
+          <>
+            <Calendar size={18} />
+            <span>Plan Trip</span>
+          </>
+        )}
+      </button>
 
       {/* Recenter Button */}
       <button

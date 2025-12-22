@@ -70,7 +70,7 @@ export default function WeatherInfo({ coords }) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: -30 }}
             transition={{ duration: 0.3 }}
-            className="fixed top-4 right-4 max-w-md bg-white/30 backdrop-blur-md rounded-lg shadow-2xl p-6 z-50 text-sm"
+            className="fixed top-20 right-4 max-w-md bg-white/30 backdrop-blur-md rounded-lg shadow-2xl p-6 z-40 text-sm"
           >
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-xl font-semibold">Current Weather</h3>
@@ -125,7 +125,7 @@ export default function WeatherInfo({ coords }) {
             transition={{ duration: 0.3 }}
             onClick={() => setExpanded(true)}
             aria-label="Expand weather widget"
-            className="fixed top-4 right-4 z-50 w-6 h-6 rounded-full bg-[#8ba6ab] hover:bg-[#6c8185] text-white shadow-lg flex items-center justify-center transition"
+            className="fixed top-20 right-4 z-40 w-10 h-10 rounded-full bg-[#8ba6ab] hover:bg-[#6c8185] text-white shadow-lg flex items-center justify-center transition"
           >
             &#9728;
           </motion.button>

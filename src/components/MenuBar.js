@@ -90,7 +90,7 @@ export function MenuBar() {
                 <Link
                   key={item.title}
                   href={item.url}
-                  className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium text-white/90 hover:text-white hover:bg-white/20 transition-colors duration-200"
+                  className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:text-black hover:bg-white/20 transition-colors duration-200"
                   style={{ fontFamily: '"Playfair Display", serif' }}
                 >
                   <item.icon className="w-4 h-4" />
@@ -125,7 +125,7 @@ export function MenuBar() {
               <Link
                 key={item.title}
                 href={item.url}
-                className="flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium text-white/90 hover:text-white hover:bg-white/20 transition-colors duration-200"
+                className="flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-black hover:bg-white/20 transition-colors duration-200"
                 style={{ fontFamily: '"Playfair Display", serif' }}
                 onClick={() => setIsOpen(false)}
               >

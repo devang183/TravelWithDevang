@@ -1528,7 +1528,6 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
               <button
                 onClick={() => {
                   setTripMode("single");
-                  setDayWiseItinerary({});
                 }}
                 className={`flex-1 px-4 py-2 rounded-lg font-semibold transition-all ${
                   tripMode === "single"
@@ -1536,18 +1535,28 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
                     : "bg-white/20 text-white hover:bg-white/30"
                 }`}
               >
-                Single Day Trip
+                <div className="flex flex-col items-center">
+                  <span>Single Day Trip</span>
+                  {tripItinerary.length > 0 && (
+                    <span className={`text-xs mt-1 ${
+                      tripMode === "single" ? "text-purple-100" : "text-white/60"
+                    }`}>
+                      {tripItinerary.length} place{tripItinerary.length !== 1 ? 's' : ''}
+                    </span>
+                  )}
+                </div>
               </button>
               <button
                 onClick={() => {
                   setTripMode("daywise");
-                  setTripItinerary([]);
-                  // Initialize empty days
-                  const initDays = {};
-                  for (let i = 1; i <= numberOfDays; i++) {
-                    initDays[i] = [];
+                  // Initialize empty days only if dayWiseItinerary is empty
+                  if (Object.keys(dayWiseItinerary).length === 0) {
+                    const initDays = {};
+                    for (let i = 1; i <= numberOfDays; i++) {
+                      initDays[i] = [];
+                    }
+                    setDayWiseItinerary(initDays);
                   }
-                  setDayWiseItinerary(initDays);
                 }}
                 className={`flex-1 px-4 py-2 rounded-lg font-semibold transition-all ${
                   tripMode === "daywise"
@@ -1555,7 +1564,16 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
                     : "bg-white/20 text-white hover:bg-white/30"
                 }`}
               >
-                Multi-Day Trip
+                <div className="flex flex-col items-center">
+                  <span>Multi-Day Trip</span>
+                  {Object.values(dayWiseItinerary).some((places) => places && places.length > 0) && (
+                    <span className={`text-xs mt-1 ${
+                      tripMode === "daywise" ? "text-blue-100" : "text-white/60"
+                    }`}>
+                      {Object.values(dayWiseItinerary).reduce((sum, places) => sum + (places?.length || 0), 0)} place{Object.values(dayWiseItinerary).reduce((sum, places) => sum + (places?.length || 0), 0) !== 1 ? 's' : ''}
+                    </span>
+                  )}
+                </div>
               </button>
             </div>
 
@@ -1828,33 +1846,20 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
       {/* Floating Toggle Button for Trip Planner */}
       <button
         onClick={() => setShowTripPlanner(!showTripPlanner)}
+        className="fixed z-[9999] bg-purple-600 text-white border-none cursor-pointer shadow-lg flex items-center gap-2 font-semibold text-sm transition-all duration-300"
         style={{
-          position: "fixed",
-          left: showTripPlanner ? "410px" : "20px",
-          top: "50%",
-          transform: "translateY(-50%)",
-          zIndex: 9999,
-          backgroundColor: "#8b5cf6",
-          color: "white",
-          border: "none",
+          left: showTripPlanner ? "min(410px, calc(100vw - 100px))" : "20px",
+          bottom: "120px",
           borderRadius: showTripPlanner ? "0 50px 50px 0" : "50px",
           padding: showTripPlanner ? "12px 16px 12px 8px" : "12px 16px",
-          cursor: "pointer",
-          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.3)",
-          transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-          display: "flex",
-          alignItems: "center",
-          gap: "8px",
-          fontWeight: "600",
-          fontSize: "0.9rem"
         }}
         onMouseEnter={(e) => {
           e.currentTarget.style.backgroundColor = "#7c3aed";
-          e.currentTarget.style.transform = "translateY(-50%) scale(1.05)";
+          e.currentTarget.style.transform = "scale(1.05)";
         }}
         onMouseLeave={(e) => {
           e.currentTarget.style.backgroundColor = "#8b5cf6";
-          e.currentTarget.style.transform = "translateY(-50%) scale(1)";
+          e.currentTarget.style.transform = "scale(1)";
         }}
         aria-label={showTripPlanner ? "Hide trip planner" : "Show trip planner"}
       >

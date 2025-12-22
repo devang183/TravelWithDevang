@@ -674,35 +674,35 @@ useEffect(() => {
 }, []);
 
   return (
-    <div className="w-full max-w-6xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden">
+    <div className="w-full max-w-6xl mx-auto bg-white rounded-none sm:rounded-2xl shadow-2xl overflow-hidden">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6">
-        <h2 className="text-3xl font-bold mb-2">Digital Guestbook</h2>
-        <p className="text-blue-100">Share your favorite discoveries in {cityName}</p>
+      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 sm:p-6">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-1 sm:mb-2">Digital Guestbook</h2>
+        <p className="text-sm sm:text-base text-blue-100">Share your favorite discoveries in {cityName}</p>
       </div>
 
       {/* Category Filter Slider */}
-      <div className="bg-white border-b p-4">
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="text-lg font-semibold text-gray-800">Filter by Category</h3>
+      <div className="bg-white border-b p-3 sm:p-4">
+        <div className="flex items-center justify-between mb-3 sm:mb-4">
+          <h3 className="text-base sm:text-lg font-semibold text-gray-800">Filter by Category</h3>
           <div className="flex gap-2">
             <button
               onClick={selectAllCategories}
-              className="px-3 py-1 text-xs bg-blue-100 text-blue-700 rounded-full hover:bg-blue-200 transition-colors"
+              className="px-2 sm:px-3 py-1 text-xs bg-blue-100 text-blue-700 rounded-full hover:bg-blue-200 transition-colors"
             >
               All
             </button>
             <button
               onClick={clearAllCategories}
-              className="px-3 py-1 text-xs bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition-colors"
+              className="px-2 sm:px-3 py-1 text-xs bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition-colors"
             >
               None
             </button>
           </div>
         </div>
-        
-        {/* Category Pills */}
-        <div className="flex flex-wrap gap-2 mb-2">
+
+        {/* Category Pills - Horizontal scroll on mobile */}
+        <div className="flex sm:flex-wrap gap-2 mb-2 overflow-x-auto sm:overflow-x-visible pb-2 -mx-3 px-3 sm:mx-0 sm:px-0 scrollbar-hide">
           {getAllCategories().map((category) => {
             const isActive = activeCategories.has(category.key);
             const count = getCategoryCounts()[category.key];
@@ -712,19 +712,19 @@ useEffect(() => {
                 key={category.key}
                 onClick={() => toggleCategory(category.key)}
                 className={`
-                  flex items-center gap-2 px-4 py-2 rounded-full border-2 transition-all duration-200 transform hover:scale-105
-                  ${isActive 
-                    ? `${category.color} text-white border-transparent shadow-lg` 
+                  flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 rounded-full border-2 transition-all duration-200 transform hover:scale-105 flex-shrink-0
+                  ${isActive
+                    ? `${category.color} text-white border-transparent shadow-lg`
                     : 'bg-gray-100 text-gray-700 border-gray-200 hover:border-gray-300'
                   }
                 `}
               >
-                <span className="text-lg">{category.icon}</span>
-                <span className="font-medium text-sm">{category.label}</span>
+                <span className="text-base sm:text-lg">{category.icon}</span>
+                <span className="font-medium text-xs sm:text-sm whitespace-nowrap">{category.label}</span>
                 <span className={`
-                  text-xs px-2 py-0.5 rounded-full font-bold
-                  ${isActive 
-                    ? 'bg-white/20 text-white' 
+                  text-xs px-1.5 sm:px-2 py-0.5 rounded-full font-bold
+                  ${isActive
+                    ? 'bg-white/20 text-white'
                     : 'bg-gray-200 text-gray-600'
                   }
                 `}>
@@ -736,8 +736,8 @@ useEffect(() => {
         </div>
         
         {/* Active Filter Summary */}
-        <div className="flex items-center justify-between text-sm text-gray-600">
-          <span>
+        <div className="flex items-center justify-between text-xs sm:text-sm text-gray-600">
+          <span className="line-clamp-2">
             Showing {filteredPins.length} of {pins.length} discoveries in {cityName}
             {activeCategories.size === 0 && " (select categories to view discoveries)"}
           </span>
@@ -855,10 +855,10 @@ useEffect(() => {
 
       {/* Add Pin Form */}
       {showAddForm && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[10000] p-4">
-          <div className="bg-white rounded-2xl p-6 max-w-md w-full max-h-[90vh] overflow-y-auto">
-            <div className="flex justify-between items-center mb-4">
-              <h3 className="text-xl font-bold">Share Your Discovery</h3>
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[10000] p-3 sm:p-4">
+          <div className="bg-white rounded-2xl p-4 sm:p-6 max-w-md w-full max-h-[90vh] overflow-y-auto">
+            <div className="flex justify-between items-center mb-3 sm:mb-4">
+              <h3 className="text-lg sm:text-xl font-bold">Share Your Discovery</h3>
               <button
                 onClick={() => {
                   setShowAddForm(false);
@@ -869,33 +869,33 @@ useEffect(() => {
                 <X size={20} />
               </button>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               <div>
-                <label className="block text-sm font-medium mb-1">Place Name *</label>
+                <label className="block text-xs sm:text-sm font-medium mb-1">Place Name *</label>
                 <input
                   type="text"
                   placeholder="e.g., Hidden Garden Cafe"
-                  className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full p-2.5 sm:p-3 text-sm sm:text-base border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   value={newPin.title}
                   onChange={(e) => setNewPin({ ...newPin, title: e.target.value })}
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium mb-1">Your Discovery *</label>
+                <label className="block text-xs sm:text-sm font-medium mb-1">Your Discovery *</label>
                 <textarea
                   placeholder="Tell others why this place is special..."
                   rows={3}
-                  className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full p-2.5 sm:p-3 text-sm sm:text-base border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   value={newPin.note}
                   onChange={(e) => setNewPin({ ...newPin, note: e.target.value })}
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium mb-1">Your Name *</label>
+                <label className="block text-xs sm:text-sm font-medium mb-1">Your Name *</label>
                 <input
                   type="text"
                   placeholder="e.g., Alex T."
-                  className={`w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                  className={`w-full p-2.5 sm:p-3 text-sm sm:text-base border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
                     session?.user?.name ? 'bg-gray-100 cursor-not-allowed' : ''
                   }`}
                   value={newPin.author}
@@ -905,9 +905,9 @@ useEffect(() => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium mb-1">Category</label>
+                <label className="block text-xs sm:text-sm font-medium mb-1">Category</label>
                 <select
-                  className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full p-2.5 sm:p-3 text-sm sm:text-base border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   value={newPin.category}
                   onChange={(e) => setNewPin({ ...newPin, category: e.target.value })}
                 >
@@ -921,7 +921,7 @@ useEffect(() => {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium mb-1">Add Photo (Optional)</label>
+                <label className="block text-xs sm:text-sm font-medium mb-1">Add Photo (Optional)</label>
                 <input
                   ref={fileInputRef}
                   type="file"
@@ -931,23 +931,23 @@ useEffect(() => {
                 />
                 <button
                   onClick={() => fileInputRef.current?.click()}
-                  className="w-full p-3 border-2 border-dashed border-gray-300 rounded-lg hover:border-blue-400 flex items-center justify-center gap-2 text-gray-600"
+                  className="w-full p-2.5 sm:p-3 border-2 border-dashed border-gray-300 rounded-lg hover:border-blue-400 flex items-center justify-center gap-2 text-gray-600 text-sm sm:text-base"
                 >
-                  <Camera size={20} />
+                  <Camera size={18} className="sm:w-5 sm:h-5" />
                   {newPin.image ? 'Photo Added ✓' : 'Upload Photo'}
                 </button>
               </div>
               {clickPosition && (
-                <div className="text-sm text-gray-600 bg-blue-50 p-3 rounded-lg">
+                <div className="text-xs sm:text-sm text-gray-600 bg-blue-50 p-2.5 sm:p-3 rounded-lg">
                   📍 Location: {clickPosition.lat.toFixed(4)}, {clickPosition.lng.toFixed(4)}
                 </div>
               )}
               <button
                 onClick={handleAddPin}
                 disabled={!newPin.title || !newPin.note || !newPin.author}
-                className="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 disabled:bg-gray-300 disabled:cursor-not-allowed flex items-center justify-center gap-2 font-medium"
+                className="w-full bg-blue-500 text-white py-2.5 sm:py-3 text-sm sm:text-base rounded-lg hover:bg-blue-600 disabled:bg-gray-300 disabled:cursor-not-allowed flex items-center justify-center gap-2 font-medium"
               >
-                <Send size={18} />
+                <Send size={16} className="sm:w-[18px] sm:h-[18px]" />
                 Share Discovery
               </button>
             </div>
@@ -1076,32 +1076,32 @@ useEffect(() => {
       )}
 
       {/* Recent Discoveries Sidebar */}
-      <div className="p-6 border-t bg-gray-50">
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="text-lg font-bold">Recent Discoveries in {cityName}</h3>
-          <span className="text-sm text-gray-500">
+      <div className="p-3 sm:p-6 border-t bg-gray-50">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-3 sm:mb-4 gap-2">
+          <h3 className="text-base sm:text-lg font-bold">Recent Discoveries in {cityName}</h3>
+          <span className="text-xs sm:text-sm text-gray-500">
             {activeCategories.size === 7 ? 'All categories' : `${activeCategories.size} categories selected`}
           </span>
         </div>
         {/* Search Bar */}
-        <div className="flex items-center mb-4 p-2 border rounded-lg bg-white shadow-sm">
-            <Search className="w-5 h-5 text-gray-500 mr-2" />
+        <div className="flex items-center mb-3 sm:mb-4 p-2 border rounded-lg bg-white shadow-sm">
+            <Search className="w-4 h-4 sm:w-5 sm:h-5 text-gray-500 mr-2 flex-shrink-0" />
             <input
             type="text"
             placeholder="Search discoveries..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full outline-none bg-transparent"
+            className="w-full outline-none bg-transparent text-sm sm:text-base"
             />
         </div>
         {filteredPins.length > 0 ? (
     <div className="relative">
-      {/* Left Scroll Button */}
+      {/* Left Scroll Button - Hidden on mobile */}
       <button
         onClick={() =>
           scrollContainerRef.current.scrollBy({ left: -200, behavior: 'smooth' })
         }
-        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md rounded-full p-2 hover:bg-gray-100"
+        className="hidden sm:block absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md rounded-full p-2 hover:bg-gray-100"
       >
         <ChevronLeft className="w-6 h-6" />
       </button>
@@ -1109,7 +1109,7 @@ useEffect(() => {
       {/* Scrollable Row */}
       <div
   ref={scrollContainerRef}
-  className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth pb-4 px-10"
+  className="flex gap-3 sm:gap-4 overflow-x-auto scrollbar-hide scroll-smooth pb-3 sm:pb-4 px-1 sm:px-10"
 >
   {filteredPins
     .filter((pin) => {
@@ -1140,7 +1140,7 @@ useEffect(() => {
       return (
         <div
           key={pin.id}
-          className="min-w-[250px] bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer border-l-4 relative group"
+          className="min-w-[220px] sm:min-w-[250px] bg-white p-3 sm:p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer border-l-4 relative group flex-shrink-0"
           style={{
             borderLeftColor:
               getCategoryColor(pin.category).includes("orange")
@@ -1193,20 +1193,20 @@ useEffect(() => {
     })}
 </div>
 
-      {/* Right Scroll Button */}
+      {/* Right Scroll Button - Hidden on mobile */}
       <button
         onClick={() =>
           scrollContainerRef.current.scrollBy({ left: 200, behavior: 'smooth' })
         }
-        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md rounded-full p-2 hover:bg-gray-100"
+        className="hidden sm:block absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md rounded-full p-2 hover:bg-gray-100"
       >
         <ChevronRight className="w-6 h-6" />
       </button>
     </div>
   ) : (
-    <div className="text-center py-8">
-      <div className="text-4xl mb-2">🔍</div>
-      <p className="text-gray-600 mb-2">
+    <div className="text-center py-6 sm:py-8">
+      <div className="text-3xl sm:text-4xl mb-2">🔍</div>
+      <p className="text-gray-600 mb-2 text-sm sm:text-base px-4">
         No discoveries match your selected categories in {cityName}
       </p>
       <button

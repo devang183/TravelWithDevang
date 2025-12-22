@@ -31,9 +31,9 @@ export default function CityPage({ params }) {
 
   return (
     <main
-      className="min-h-screen w-full mx-auto px-4 py-6 sm:p-8 bg-cover bg-center bg-no-repeat"
+      className="min-h-screen w-full mx-auto px-4 pt-20 pb-6 sm:p-8 sm:pt-20 bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage: "url('https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/dublin/dublin29.jpg')",
+        backgroundImage: backgroundImage ? `url('${backgroundImage}')` : "url('https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/dublin/dublin29.jpg')",
         backgroundAttachment: 'fixed',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

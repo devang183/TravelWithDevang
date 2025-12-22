@@ -30,17 +30,7 @@ export default function RootLayout({ children }) {
       >
         <Providers>
           <MenuBar />
-          <div className="min-h-screen pt-16 p-4"
-            style={{
-              backgroundImage: "url('https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/dublin/dublin29.jpg')",
-              backgroundAttachment: 'fixed', // enables parallax
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'cover',
-            }}
-          >
-            {children}
-          </div>
+          {children}
         </Providers>
       </body>
     </html>

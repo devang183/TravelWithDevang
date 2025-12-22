@@ -176,8 +176,13 @@ export default function CityExplorer() {
   };
 
   return (
-    <div className="min-h-screen max-w-20xl mx-auto overflow-y-auto" style={{
+    <div className="min-h-screen max-w-20xl mx-auto overflow-y-auto pt-16" style={{
       fontFamily: '"Playfair Display", serif',
+      backgroundImage: "url('https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/dublin/dublin29.jpg')",
+      backgroundAttachment: 'fixed',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
     }}>
       <h1 className="text-5xl mt-0 font-bold mb-8 text-center text-[8vw] uppercase tracking-widest text-[#3e4a4c]">
         {"City Explorer".split("").map((char, idx) => (

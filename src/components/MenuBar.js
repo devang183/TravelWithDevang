@@ -21,36 +21,53 @@ const menuItems = [
 export function MenuBar() {
   const [isOpen, setIsOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
-
-  // Auto-hide menu bar after 5 seconds
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(false)
-    }, 5000)
-
-    return () => clearTimeout(timer)
-  }, [])
-
-  // Show menu bar when hovering near the top
-  const handleMouseMove = (e) => {
-    if (e.clientY <= 50) { // Show when mouse is within 50px of top
-      setIsVisible(true)
-    } else if (e.clientY > 80) { // Hide when mouse moves away from top area
-      setIsVisible(false)
-    }
-  }
+  const [lastScrollY, setLastScrollY] = useState(0)
+  const [isAtTop, setIsAtTop] = useState(true)
 
   useEffect(() => {
-    document.addEventListener('mousemove', handleMouseMove)
-    return () => document.removeEventListener('mousemove', handleMouseMove)
-  }, [])
+    let ticking = false;
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+
+          // Check if at top of page
+          if (currentScrollY < 10) {
+            setIsAtTop(true);
+            setIsVisible(true);
+          } else {
+            setIsAtTop(false);
+
+            // Show on scroll up, hide on scroll down
+            if (currentScrollY < lastScrollY) {
+              setIsVisible(true);
+            } else if (currentScrollY > lastScrollY && currentScrollY > 80) {
+              setIsVisible(false);
+              setIsOpen(false); // Close mobile menu on scroll down
+            }
+          }
+
+          setLastScrollY(currentScrollY);
+          ticking = false;
+        });
+
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY])
 
   return (
     <>
-      <nav 
-        className={`fixed top-0 left-0 right-0 z-50 bg-white/20 backdrop-blur-lg border-b border-white/20 shadow-lg transition-all duration-500 ${
-          isVisible ? 'translate-y-0' : '-translate-y-full'
-        }`}
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
+        } ${
+          isAtTop ? 'bg-white/10 backdrop-blur-sm shadow-sm' : 'bg-white/30 backdrop-blur-md shadow-lg'
+        } border-b border-white/10`}
       >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">

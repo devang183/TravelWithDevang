@@ -49,7 +49,16 @@ export default function HomePage() {
   };
 
   return (
-    <main className="bg-white/10">
+    <main
+      className="min-h-screen pt-16"
+      style={{
+        backgroundImage: "url('https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/dublin/dublin29.jpg')",
+        backgroundAttachment: 'fixed',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+      }}
+    >
       <div className="min-h-screen max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* <VideoTextPage collapsed={isSidebarCollapsed} /> */}
         

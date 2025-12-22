@@ -1,6 +1,7 @@
 export const photos={
     dublin:{
         name:'dublin',
+        backgroundImage: 'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/dublin/dublin29.jpg',
         images:[
             "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin.jpg",
             "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin2.jpg",
@@ -26,6 +27,7 @@ export const photos={
     },
     newry:{
         name:'newry',
+        backgroundImage: 'https://cityphotoscity.s3.amazonaws.com/images/newry/newry.jpg',
         images:[
             "https://cityphotoscity.s3.amazonaws.com/images/newry/newry.jpg",
             "https://cityphotoscity.s3.amazonaws.com/images/newry/newry2.jpg",
@@ -43,6 +45,7 @@ export const photos={
     },
     'london':{
         name:'london',
+        backgroundImage: 'https://cityphotoscity.s3.amazonaws.com/images/london/london.jpg',
         images:[
             "https://cityphotoscity.s3.amazonaws.com/images/london/london.jpg",
             "https://cityphotoscity.s3.amazonaws.com/images/london/london2.jpg",
@@ -67,6 +70,7 @@ export const photos={
     },
     belfast:{
         name:'belfast',
+        backgroundImage: 'https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast.jpg',
         images:[
             "https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast.jpg",
             "https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast2.jpg",
@@ -86,6 +90,7 @@ export const photos={
     },
     liverpool:{
         name:'liverpool',
+        backgroundImage: 'https://cityphotoscity.s3.amazonaws.com/images/liverpool/liverpool-header.jpg',
         images:
         [
             "https://cityphotoscity.s3.amazonaws.com/images/liverpool/liverpool-header.jpg",
@@ -102,6 +107,7 @@ export const photos={
     },
     birmingham:{
         name:'birmingham',
+        backgroundImage: 'https://cityphotoscity.s3.amazonaws.com/images/birmingham/birmingham.jpg',
         images:
         [
               "https://cityphotoscity.s3.amazonaws.com/images/birmingham/birmingham.jpg",
@@ -116,6 +122,7 @@ export const photos={
     },
     manchester:{
         name:'manchester',
+        backgroundImage: 'https://cityphotoscity.s3.amazonaws.com/images/manchester/manchester.jpg',
         images:[
             "https://cityphotoscity.s3.amazonaws.com/images/manchester/manchester.jpg",
             "https://cityphotoscity.s3.amazonaws.com/images/manchester/manchester2.jpg",
@@ -148,6 +155,7 @@ export const photos={
     },
     leeds:{
         name:'leeds',
+        backgroundImage: 'https://cityphotoscity.s3.amazonaws.com/images/leeds/leeds.jpg',
         images:
             [
               "https://cityphotoscity.s3.amazonaws.com/images/leeds/leeds.jpg",
@@ -173,6 +181,7 @@ export const photos={
     },
     malahide:{
         name:'malahide',
+        backgroundImage: 'https://cityphotoscity.s3.amazonaws.com/images/malahide/malahide.jpg',
         images:[
             "https://cityphotoscity.s3.amazonaws.com/images/malahide/malahide.jpg",
             "https://cityphotoscity.s3.amazonaws.com/images/malahide/malahide2.jpg",
@@ -190,6 +199,7 @@ export const photos={
     },
     nagpur:{
         name:'nagpur',
+        backgroundImage: 'https://cityphotoscity.s3.amazonaws.com/images/nagpur/nagpur.jpg',
         images:[
             "https://cityphotoscity.s3.amazonaws.com/images/nagpur/nagpur.jpg",
             "https://cityphotoscity.s3.amazonaws.com/images/nagpur/nagpur2.jpg",
@@ -207,6 +217,7 @@ export const photos={
     },
     bengaluru:{
         name:'bengaluru',
+        backgroundImage: 'https://cityphotoscity.s3.amazonaws.com/images/bengaluru/bengaluru.jpeg',
         images:[
             "https://cityphotoscity.s3.amazonaws.com/images/bengaluru/bengaluru.jpeg",
             "https://cityphotoscity.s3.amazonaws.com/images/bengaluru/bengaluru2.jpeg",
@@ -232,6 +243,7 @@ export const photos={
     },
     rabat:{
         name:'rabat',
+        backgroundImage: 'https://cityphotoscity.s3.amazonaws.com/images/rabat/rabat-header.jpg',
         images:[
             "https://cityphotoscity.s3.amazonaws.com/images/rabat/rabat-header.jpg",
             "https://cityphotoscity.s3.amazonaws.com/images/rabat/rabat.jpg",
@@ -267,6 +279,7 @@ export const photos={
     },
     raipur:{
         name:'raipur',
+        backgroundImage: 'https://cityphotoscity.s3.amazonaws.com/images/raipur/raipur.jpg',
         images:[
             "https://cityphotoscity.s3.amazonaws.com/images/raipur/raipur.jpg",
             "https://cityphotoscity.s3.amazonaws.com/images/raipur/raipur2.jpg",
@@ -281,6 +294,7 @@ export const photos={
     },
     delhi:{
         name:'delhi',
+        backgroundImage: 'https://cityphotoscity.s3.amazonaws.com/images/delhi/delhi.jpg',
         images:[
             "https://cityphotoscity.s3.amazonaws.com/images/delhi/delhi.jpg",
             "https://cityphotoscity.s3.amazonaws.com/images/delhi/delhi2.jpg",
@@ -301,6 +315,7 @@ export const photos={
     },
     galway:{
         name:'galway',
+        backgroundImage: 'https://cityphotoscity.s3.amazonaws.com/images/galway/galway.jpg',
         images:[
             "https://cityphotoscity.s3.amazonaws.com/images/galway/galway.jpg",
             "https://cityphotoscity.s3.amazonaws.com/images/galway/galway2.jpg",
@@ -323,6 +338,7 @@ export const photos={
     },
     naas:{
         name:'naas',
+        backgroundImage: 'https://cityphotoscity.s3.amazonaws.com/images/naas/naas.jpg',
         images:[
             "https://cityphotoscity.s3.amazonaws.com/images/naas/naas.jpg",
             "https://cityphotoscity.s3.amazonaws.com/images/naas/naas2.jpg",
@@ -334,6 +350,7 @@ export const photos={
     },
     newyork:{
         name:'newyork',
+        backgroundImage: 'https://cityphotoscity.s3.amazonaws.com/images/galway/galway.jpg',
         images:[
             "https://cityphotoscity.s3.amazonaws.com/images/galway/galway.jpg",
             "https://cityphotoscity.s3.amazonaws.com/images/galway/galway2.jpg",
@@ -355,6 +372,7 @@ export const photos={
     },
     chicago:{
         name:'chicago',
+        backgroundImage: 'https://cityphotoscity.s3.amazonaws.com/images/galway/galway.jpg',
         images:[
             "https://cityphotoscity.s3.amazonaws.com/images/galway/galway.jpg",
             "https://cityphotoscity.s3.amazonaws.com/images/galway/galway2.jpg",
@@ -376,6 +394,7 @@ export const photos={
     },
     newquay:{
         name:'newquay',
+        backgroundImage: 'https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay.jpg',
         images:[
             "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay.jpg",
             "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay2.jpg",

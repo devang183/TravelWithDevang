@@ -1,9 +1,10 @@
 "use client";
 import { useEffect, useRef, useState, useCallback } from "react";
-import { PawPrint, Navigation, X, Calendar, MapPin, Plus, Trash2, Download, FileText } from "lucide-react";
+import { PawPrint, Navigation, X, Calendar, MapPin, Plus, Trash2, Download, FileText, GripVertical } from "lucide-react";
 import Fuse from "fuse.js";
 import CityMapCategoryBar from "./CityMapCategoryBar";
 import { useQuery } from '@tanstack/react-query';
+import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
 
 // Category emojis - single source of truth
 const CATEGORY_EMOJIS = {
@@ -133,6 +134,30 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
   const boundsEqual = (bounds1, bounds2) => {
     if (!bounds1 || !bounds2) return false;
     return bounds1.toBBoxString() === bounds2.toBBoxString();
+  };
+
+  // Drag and drop handlers for trip itinerary
+  const handleDragEnd = (result) => {
+    if (!result.destination) return;
+
+    const { source, destination } = result;
+
+    if (tripMode === "single") {
+      // Reorder single-day itinerary
+      const items = Array.from(tripItinerary);
+      const [reorderedItem] = items.splice(source.index, 1);
+      items.splice(destination.index, 0, reorderedItem);
+      setTripItinerary(items);
+    } else if (tripMode === "daywise") {
+      // Reorder day-wise itinerary
+      const items = Array.from(dayWiseItinerary[selectedDay] || []);
+      const [reorderedItem] = items.splice(source.index, 1);
+      items.splice(destination.index, 0, reorderedItem);
+      setDayWiseItinerary({
+        ...dayWiseItinerary,
+        [selectedDay]: items,
+      });
+    }
   };
 
   // Fetch data from MongoDB using React Query
@@ -1633,27 +1658,64 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
                       <h5 className="text-white font-semibold">Your Itinerary ({tripItinerary.length} places)</h5>
+                      <span className="text-white/70 text-xs">Drag to reorder</span>
                     </div>
 
-                    <div className="max-h-60 overflow-y-auto space-y-2">
-                      {tripItinerary.map((place, index) => (
-                        <div key={index} className="flex items-center gap-2 bg-white/20 rounded p-2">
-                          <span className="w-6 h-6 rounded-full bg-purple-500 text-white flex items-center justify-center text-xs font-bold">
-                            {index + 1}
-                          </span>
-                          <span className="flex-1 text-white text-sm">{place.name}</span>
-                          <button
-                            onClick={() => {
-                              const newItinerary = tripItinerary.filter((_, i) => i !== index);
-                              setTripItinerary(newItinerary);
-                            }}
-                            className="p-1 hover:bg-red-500 rounded transition-colors"
+                    <DragDropContext onDragEnd={handleDragEnd}>
+                      <Droppable droppableId="single-trip-itinerary">
+                        {(provided, snapshot) => (
+                          <div
+                            className={`max-h-60 overflow-y-auto space-y-2 rounded-lg p-2 transition-all ${
+                              snapshot.isDraggingOver ? 'bg-purple-500/20 ring-2 ring-purple-400' : 'bg-transparent'
+                            }`}
+                            {...provided.droppableProps}
+                            ref={provided.innerRef}
                           >
-                            <X size={14} className="text-white" />
-                          </button>
-                        </div>
-                      ))}
-                    </div>
+                            {tripItinerary.map((place, index) => {
+                              const uniqueId = `${place.name}-${place.coords[0]}-${place.coords[1]}`;
+                              return (
+                                <Draggable key={uniqueId} draggableId={uniqueId} index={index}>
+                                  {(provided, snapshot) => (
+                                    <div
+                                      ref={provided.innerRef}
+                                      {...provided.draggableProps}
+                                      className={`flex items-center gap-2 rounded p-2 transition-all duration-200 ${
+                                        snapshot.isDragging
+                                          ? 'bg-purple-500/60 shadow-2xl scale-105 rotate-1 ring-2 ring-purple-300 z-50'
+                                          : 'bg-white/20 hover:bg-white/30'
+                                      }`}
+                                      style={{
+                                        ...provided.draggableProps.style,
+                                      }}
+                                    >
+                                      <div {...provided.dragHandleProps} className="cursor-grab active:cursor-grabbing hover:scale-110 transition-transform">
+                                        <GripVertical size={16} className={`transition-colors ${snapshot.isDragging ? 'text-white' : 'text-white/70'}`} />
+                                      </div>
+                                      <span className={`w-6 h-6 rounded-full bg-purple-500 text-white flex items-center justify-center text-xs font-bold transition-all ${
+                                        snapshot.isDragging ? 'ring-2 ring-white' : ''
+                                      }`}>
+                                        {index + 1}
+                                      </span>
+                                      <span className="flex-1 text-white text-sm">{place.name}</span>
+                                      <button
+                                        onClick={() => {
+                                          const newItinerary = tripItinerary.filter((_, i) => i !== index);
+                                          setTripItinerary(newItinerary);
+                                        }}
+                                        className="p-1 hover:bg-red-500 rounded transition-colors"
+                                      >
+                                        <X size={14} className="text-white" />
+                                      </button>
+                                    </div>
+                                  )}
+                                </Draggable>
+                              );
+                            })}
+                            {provided.placeholder}
+                          </div>
+                        )}
+                      </Droppable>
+                    </DragDropContext>
                   </div>
                 )}
 
@@ -1674,41 +1736,80 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
                       <h5 className="text-white font-semibold">
                         Day {selectedDay} ({dayWiseItinerary[selectedDay].length} places)
                       </h5>
-                      <button
-                        onClick={() => {
-                          setDayWiseItinerary({
-                            ...dayWiseItinerary,
-                            [selectedDay]: [],
-                          });
-                        }}
-                        className="px-2 py-1 bg-red-500 text-white text-xs rounded hover:bg-red-600 flex items-center gap-1"
-                      >
-                        <Trash2 size={12} />
-                        Clear Day
-                      </button>
+                      <div className="flex items-center gap-2">
+                        <span className="text-white/70 text-xs">Drag to reorder</span>
+                        <button
+                          onClick={() => {
+                            setDayWiseItinerary({
+                              ...dayWiseItinerary,
+                              [selectedDay]: [],
+                            });
+                          }}
+                          className="px-2 py-1 bg-red-500 text-white text-xs rounded hover:bg-red-600 flex items-center gap-1"
+                        >
+                          <Trash2 size={12} />
+                          Clear Day
+                        </button>
+                      </div>
                     </div>
 
-                    <div className="max-h-60 overflow-y-auto space-y-2">
-                      {dayWiseItinerary[selectedDay].map((place, index) => (
-                        <div key={index} className="flex items-center gap-2 bg-white/20 rounded p-2">
-                          <span className="w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold">
-                            {index + 1}
-                          </span>
-                          <span className="flex-1 text-white text-sm">{place.name}</span>
-                          <button
-                            onClick={() => {
-                              setDayWiseItinerary({
-                                ...dayWiseItinerary,
-                                [selectedDay]: dayWiseItinerary[selectedDay].filter((_, i) => i !== index),
-                              });
-                            }}
-                            className="p-1 hover:bg-red-500 rounded transition-colors"
+                    <DragDropContext onDragEnd={handleDragEnd}>
+                      <Droppable droppableId={`day-${selectedDay}-itinerary`}>
+                        {(provided, snapshot) => (
+                          <div
+                            className={`max-h-60 overflow-y-auto space-y-2 rounded-lg p-2 transition-all ${
+                              snapshot.isDraggingOver ? 'bg-blue-500/20 ring-2 ring-blue-400' : 'bg-transparent'
+                            }`}
+                            {...provided.droppableProps}
+                            ref={provided.innerRef}
                           >
-                            <X size={14} className="text-white" />
-                          </button>
-                        </div>
-                      ))}
-                    </div>
+                            {dayWiseItinerary[selectedDay].map((place, index) => {
+                              const uniqueId = `day${selectedDay}-${place.name}-${place.coords[0]}-${place.coords[1]}`;
+                              return (
+                                <Draggable key={uniqueId} draggableId={uniqueId} index={index}>
+                                  {(provided, snapshot) => (
+                                    <div
+                                      ref={provided.innerRef}
+                                      {...provided.draggableProps}
+                                      className={`flex items-center gap-2 rounded p-2 transition-all duration-200 ${
+                                        snapshot.isDragging
+                                          ? 'bg-blue-500/60 shadow-2xl scale-105 rotate-1 ring-2 ring-blue-300 z-50'
+                                          : 'bg-white/20 hover:bg-white/30'
+                                      }`}
+                                      style={{
+                                        ...provided.draggableProps.style,
+                                      }}
+                                    >
+                                      <div {...provided.dragHandleProps} className="cursor-grab active:cursor-grabbing hover:scale-110 transition-transform">
+                                        <GripVertical size={16} className={`transition-colors ${snapshot.isDragging ? 'text-white' : 'text-white/70'}`} />
+                                      </div>
+                                      <span className={`w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold transition-all ${
+                                        snapshot.isDragging ? 'ring-2 ring-white' : ''
+                                      }`}>
+                                        {index + 1}
+                                      </span>
+                                      <span className="flex-1 text-white text-sm">{place.name}</span>
+                                      <button
+                                        onClick={() => {
+                                          setDayWiseItinerary({
+                                            ...dayWiseItinerary,
+                                            [selectedDay]: dayWiseItinerary[selectedDay].filter((_, i) => i !== index),
+                                          });
+                                        }}
+                                        className="p-1 hover:bg-red-500 rounded transition-colors"
+                                      >
+                                        <X size={14} className="text-white" />
+                                      </button>
+                                    </div>
+                                  )}
+                                </Draggable>
+                              );
+                            })}
+                            {provided.placeholder}
+                          </div>
+                        )}
+                      </Droppable>
+                    </DragDropContext>
                   </div>
                 )}
 

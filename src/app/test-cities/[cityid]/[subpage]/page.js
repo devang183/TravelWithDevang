@@ -2,10 +2,11 @@
 "use client";
 import React, { useMemo } from "react";
 import dynamic from "next/dynamic";
-import FourPhotosGrid from "@/components/ShowInitialPhotos";
+// import FourPhotosGrid from "@/components/ShowInitialPhotos";
 import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
 import { cities } from "@/components/citycoord";
+import { photos } from '../../CityPhotos';
 
 // 🔹 Create a stable wrapper component that passes city data to DigitalGuestbookMap
 const DigitalGuestbookMapWrapper = React.memo(({ cityid, city }) => {
@@ -319,14 +320,26 @@ export default function CitySubPage({ params }) {
   // ✅ unwrap params promise
   const { cityid, subpage } = React.use(params);
   const city = cities[cityid.toLowerCase()];
-  
+
   // ✅ look up component
   const CityComponents = subpageComponents[cityid]?.[subpage];
 
+  // Get background image from photos
+  const { backgroundImage } = photos[cityid] || {};
+
   return (
-    <div className="p-4">
+    <main
+      className="min-h-screen w-full mx-auto px-4 pt-20 pb-6 sm:p-8 sm:pt-20 bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: backgroundImage ? `url('${backgroundImage}')` : "url('https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/dublin/dublin29.jpg')",
+        backgroundAttachment: 'fixed',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+      }}
+    >
       <Breadcrumb cityid={cityid} city={city} subpage={subpage} />
-      <h1 className="text-xl text-center font-extrabold capitalize">
+      <h1 className="text-xl text-center font-extrabold capitalize text-white drop-shadow-lg mb-6">
         {cityid} – {subpage}
       </h1>
       
@@ -349,13 +362,13 @@ export default function CitySubPage({ params }) {
           <p className="text-gray-600">Content not found</p>
         )}
       </div>
-      
-      <br/>
-      <FourPhotosGrid />
+
+      {/* <br/>
+      <FourPhotosGrid /> */}
       <Link href={`/test-cities/${cityid}`} className="text-blue-600 hover:underline mb-4 block">
         ← Back to {cityid}
       </Link>
-    </div>
+    </main>
   );
 }
 

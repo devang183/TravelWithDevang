@@ -5,8 +5,8 @@ import Breadcrumb from '@/components/Breadcrumb';
 import { cities } from '@/components/citycoord';
 import CityMap from "@/components/CityMap";
 import WeatherInfo from "@/components/WeatherInfo";
-import ShowPhotos from '@/components/ShowMorePhotos';
-import FourPhotosGrid from '@/components/ShowInitialPhotos';
+// import ShowPhotos from '@/components/ShowMorePhotos';
+// import FourPhotosGrid from '@/components/ShowInitialPhotos';
 import CityTextSlideshow from '@/components/CityNameSlideShowText';
 import MusicSection from '@/components/MusicSection';
 import NewsCard from '@/components/CityNews';
@@ -147,14 +147,14 @@ export default function CityPage({ params }) {
         <MusicSection embedUrl={city.spotifyEmbedURL} />
       )}
 
-      <br />
-      <FourPhotosGrid />
+      {/* <br />
+      <FourPhotosGrid /> */}
       {/* Photo gallery */}
-      {images.length > 0 ? (
+      {/* {images.length > 0 ? (
         <ShowPhotos images={images} />
       ) : (
         <p className="text-gray-500 italic">No photos available for this city.</p>
-      )}
+      )} */}
 
       {/* Extra map components from registry */}
       {CityMapComponents.length > 0 ? (

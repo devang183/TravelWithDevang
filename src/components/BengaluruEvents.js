@@ -89,20 +89,6 @@ export default function BengaluruEvents() {
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
           Bengaluru Events
         </h1>
-        <p className="text-gray-600">
-          Discover upcoming events in Bengaluru. Data from{' '}
-          <a
-            href="https://blr.today"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 hover:underline"
-          >
-            blr.today
-          </a>
-        </p>
-        <p className="text-sm text-gray-500 mt-1">
-          Database automatically synced from the latest blr.today dataset (updated every 6 hours)
-        </p>
       </div>
 
       {/* Search */}
@@ -243,34 +229,6 @@ export default function BengaluruEvents() {
           </div>
         </div>
       )}
-
-      {/* Attribution */}
-      <div className="mt-8 p-4 bg-gray-50 rounded-lg text-sm text-gray-600">
-        <p className="mb-2">
-          <strong>Data Source:</strong> This data is from the{' '}
-          <a
-            href="https://github.com/blr-today/dataset"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 hover:underline"
-          >
-            blr.today dataset
-          </a>
-          {' '}and is made available under the{' '}
-          <a
-            href="https://opendatacommons.org/licenses/odbl/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 hover:underline"
-          >
-            Open Database License
-          </a>
-          .
-        </p>
-        <p className="text-xs">
-          Individual contents are licensed under the Database Contents License.
-        </p>
-      </div>
     </div>
   );
 }

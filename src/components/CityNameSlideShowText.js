@@ -74,7 +74,7 @@ export default function CityTextSlideshow({ cityName, imageUrls, collapsed = fal
         <div
           className={`city-name-text ${
             collapsed ? 'text-[24vw]' : 'text-[18vw]'
-          } font-extrabold lowercase leading-none w-full max-w-none transition-all duration-700`}
+          } font-extrabold lowercase leading-none w-full max-w-none transition-all duration-700 whitespace-nowrap`}
           style={{
             fontFamily: '"Playfair Display", serif',
             backgroundImage: `url(${imageUrls[index]})`,

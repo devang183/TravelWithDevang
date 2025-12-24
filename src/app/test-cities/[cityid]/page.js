@@ -53,75 +53,55 @@ export default function CityPage({ params }) {
 
       {/* Explore links */}
       {/* <h2 className="text-2xl font-semibold mb-4">Explore more:</h2> */}
-      <div className="flex justify-center gap-2 sm:gap-3 mb-8 max-w-6xl mx-auto">
+      <div className="flex justify-center gap-4 sm:gap-6 mb-8 max-w-6xl mx-auto">
   {/* Existing Explore Card */}
-  <Link 
-    href={`/test-cities/${cityid}/explore`} 
-    className="group bg-white/10 backdrop-blur-sm rounded-full p-2 sm:p-3 shadow-sm hover:shadow-md transition-all duration-200 w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center"
+  <Link
+    href={`/test-cities/${cityid}/explore`}
+    className="group transition-transform duration-200 hover:scale-110"
+    aria-label="Explore"
   >
-    <div className="flex flex-col items-center justify-center h-full">
-      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/80 flex items-center justify-center group-hover:bg-white transition-colors">
-        <Compass className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
-      </div>
-      <p className="text-[10px] mt-1 text-center text-gray-800 font-medium">Explore</p>
-    </div>
+    <Compass className="w-8 h-8 sm:w-10 sm:h-10 text-blue-600 drop-shadow-lg hover:drop-shadow-2xl transition-all" />
   </Link>
 
   {/* Existing Travel Card */}
-  <Link 
+  <Link
     href={`/test-cities/${cityid}/travel`}
-    className="group bg-white/10 backdrop-blur-sm rounded-full p-2 sm:p-3 shadow-sm hover:shadow-md transition-all duration-200 w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center"
+    className="group transition-transform duration-200 hover:scale-110"
+    aria-label="Travel"
   >
-    <div className="flex flex-col items-center justify-center h-full">
-      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/80 flex items-center justify-center group-hover:bg-white transition-colors">
-        <Plane className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
-      </div>
-      <p className="text-[10px] mt-1 text-center text-gray-800 font-medium">Travel</p>
-    </div>
+    <Plane className="w-8 h-8 sm:w-10 sm:h-10 text-green-600 drop-shadow-lg hover:drop-shadow-2xl transition-all" />
   </Link>
 
   {/* Existing Stays Card */}
-  <Link 
+  <Link
     href={`/test-cities/${cityid}/airbnb`}
-    className="group bg-white/10 backdrop-blur-sm rounded-full p-2 sm:p-3 shadow-sm hover:shadow-md transition-all duration-200 w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center"
+    className="group transition-transform duration-200 hover:scale-110"
+    aria-label="Stays"
   >
-    <div className="flex flex-col items-center justify-center h-full">
-      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/80 flex items-center justify-center group-hover:bg-white transition-colors">
-        <Home className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600" />
-      </div>
-      <p className="text-[10px] mt-1 text-center text-gray-800 font-medium">Stays</p>
-    </div>
+    <Home className="w-8 h-8 sm:w-10 sm:h-10 text-purple-600 drop-shadow-lg hover:drop-shadow-2xl transition-all" />
   </Link>
 
   {/* New Reddit Card */}
-  <Link 
+  <Link
     href={`/test-cities/${cityid}/reddit`}
-    className="group bg-white/10 backdrop-blur-sm rounded-full p-2 sm:p-3 shadow-sm hover:shadow-md transition-all duration-200 w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center"
+    className="group transition-transform duration-200 hover:scale-110"
+    aria-label="What's happening"
   >
-    <div className="flex flex-col items-center justify-center h-full">
-      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/80 flex items-center justify-center group-hover:bg-white transition-colors">
-        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-orange-600" viewBox="0 0 20 20" fill="currentColor">
-          <path d="M10 0C4.48 0 0 4.48 0 10c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.8-.22 1.65-.33 2.5-.33.85 0 1.7.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.93.69 1.88V19c0 .27.16.59.67.5C17.14 18.16 20 14.42 20 10c0-5.52-4.48-10-10-10z"/>
-        </svg>
-      </div>
-      <p className="text-[10px] mt-1 text-center text-gray-800 font-medium">What&apos;s happening?</p>
-    </div>
+    <svg className="w-8 h-8 sm:w-10 sm:h-10 text-orange-600 drop-shadow-lg hover:drop-shadow-2xl transition-all" viewBox="0 0 20 20" fill="currentColor">
+      <path d="M10 0C4.48 0 0 4.48 0 10c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.8-.22 1.65-.33 2.5-.33.85 0 1.7.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.93.69 1.88V19c0 .27.16.59.67.5C17.14 18.16 20 14.42 20 10c0-5.52-4.48-10-10-10z"/>
+    </svg>
   </Link>
 
   {/* New Attractions Card */}
-  <Link 
+  <Link
     href={`/test-cities/${cityid}/attractions`}
-    className="group bg-white/10 backdrop-blur-sm rounded-full p-2 sm:p-3 shadow-sm hover:shadow-md transition-all duration-200 w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center"
+    className="group transition-transform duration-200 hover:scale-110"
+    aria-label="Places"
   >
-    <div className="flex flex-col items-center justify-center h-full">
-      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/80 flex items-center justify-center group-hover:bg-white transition-colors">
-        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-      </div>
-      <p className="text-[10px] mt-1 text-center text-gray-800 font-medium">Places</p>
-    </div>
+    <svg className="w-8 h-8 sm:w-10 sm:h-10 text-pink-600 drop-shadow-lg hover:drop-shadow-2xl transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+    </svg>
   </Link>
 </div>
       {/* <ul className="list-disc list-inside space-y-2">

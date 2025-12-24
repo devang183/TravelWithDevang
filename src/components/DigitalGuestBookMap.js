@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { MapPin, Camera, Heart, MessageCircle, Star, X, Plus, Send, User, Clock, Trash2, AlertTriangle, PawPrint } from 'lucide-react';
+import { Camera, Heart, MessageCircle, Star, X, Plus, Send, User, Clock, Trash2, AlertTriangle, PawPrint } from 'lucide-react';
 import { ChevronLeft, ChevronRight, Search } from 'lucide-react';
 import { useSession } from 'next-auth/react';
 const DigitalGuestbookMap = ({ cityName = "Dublin", cityCoords = { lat: 53.3498, lng: -6.2603 } }) => {
@@ -675,16 +675,9 @@ useEffect(() => {
 
   return (
     <div className="w-full max-w-6xl mx-auto bg-white rounded-none sm:rounded-2xl shadow-2xl overflow-hidden">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 sm:p-6">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-1 sm:mb-2">Digital Guestbook</h2>
-        <p className="text-sm sm:text-base text-blue-100">Share your favorite discoveries in {cityName}</p>
-      </div>
-
       {/* Category Filter Slider */}
       <div className="bg-white border-b p-3 sm:p-4">
-        <div className="flex items-center justify-between mb-3 sm:mb-4">
-          <h3 className="text-base sm:text-lg font-semibold text-gray-800">Filter by Category</h3>
+        <div className="flex items-center justify-end mb-3 sm:mb-4">
           <div className="flex gap-2">
             <button
               onClick={selectAllCategories}
@@ -750,33 +743,20 @@ useEffect(() => {
         </div>
       </div>
 
-      {/* Map Container */}
-      <div className="relative h-96 bg-gray-100">
-        <div 
+      {/* Map Container - Square on mobile, taller on desktop */}
+      <div className="relative aspect-square sm:aspect-auto sm:h-96 bg-gray-100">
+        <div
           ref={mapRef}
           className="w-full h-full z-0"
-          style={{ minHeight: '400px' }}
+          style={{ minHeight: '300px' }}
         />
-        
-        {/* Instructions overlay */}
-        <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-lg p-3 shadow-lg z-[1000]">
-          <p className="text-sm text-gray-700 flex items-center gap-2">
-            <MapPin size={16} className="text-blue-500" />
-            Click anywhere on the map to add your discovery!
-          </p>
-          {activeCategories.size === 0 && (
-            <p className="text-xs text-orange-600 mt-1 flex items-center gap-1">
-              ⚠️ Select categories above to see discoveries
-            </p>
-          )}
-        </div>
 
-        {/* Map Search */}
-<div className="absolute top-4 right-4 z-[1000] bg-white/95 backdrop-blur-sm rounded-lg p-2 shadow-lg flex items-center gap-2">
+        {/* Map Search - Responsive */}
+<div className="absolute top-2 right-2 sm:top-4 sm:right-4 z-[1000] bg-white/95 backdrop-blur-sm rounded-lg p-1.5 sm:p-2 shadow-lg flex items-center gap-1.5 sm:gap-2 max-w-[calc(100%-1rem)] sm:max-w-none">
   <input
     type="text"
     placeholder="Search for a place..."
-    className="p-2 border rounded-lg w-64 focus:outline-none focus:ring-2 focus:ring-blue-500"
+    className="p-1.5 sm:p-2 border rounded-lg w-32 sm:w-64 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
     value={MsearchQuery}
     onChange={(e) => MsetSearchQuery(e.target.value)}
     onKeyDown={async (e) => {
@@ -808,31 +788,17 @@ useEffect(() => {
   />
 </div>
 
-        {/* Recenter Button */}
+        {/* Recenter Button - Responsive */}
         <button
           onClick={() => {
             if (map) {
               map.setView([cityCoords.lat, cityCoords.lng], 13);
             }
           }}
-          style={{
-            position: "absolute",
-            top: "90px",
-            right: "10px",
-            zIndex: 1000,
-            backgroundColor: "rgba(255, 255, 255, 0.3)",
-            padding: "6px 10px",
-            borderRadius: "8px",
-            fontSize: "0.9rem",
-            cursor: "pointer",
-            color: "#86efac",
-            transition: "transform 0.2s, border-color 0.3s, background-color 0.3s",
-          }}
-          onMouseEnter={(e) => { e.currentTarget.style.transform = "scale(1.2)"; }}
-          onMouseLeave={(e) => { e.currentTarget.style.transform = "scale(1)"; }}
+          className="absolute top-[60px] sm:top-[90px] right-2 sm:right-[10px] z-[1000] bg-white/30 backdrop-blur-sm p-1.5 sm:p-2 rounded-lg cursor-pointer text-green-300 transition-transform hover:scale-110 active:scale-95 shadow-lg"
           aria-label="Recenter map"
         >
-          <PawPrint size={20} />
+          <PawPrint size={16} className="sm:w-5 sm:h-5" />
         </button>
 
         {/* Loading/Error state */}
@@ -1277,17 +1243,6 @@ useEffect(() => {
           </div>
         )} */}
         
-        {/* Storage Info */}
-        <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-          <div className="flex items-center gap-2 mb-2">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span className="text-sm font-medium text-blue-900">Auto-saved</span>
-          </div>
-          <p className="text-xs text-blue-700">
-            Your discoveries are automatically saved and will persist between sessions. 
-            Only you can delete the pins you create.
-          </p>
-        </div>
       </div>
     </div>
   );

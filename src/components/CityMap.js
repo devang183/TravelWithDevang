@@ -1271,8 +1271,9 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
       {/* Map */}
       <div
         ref={mapRef}
+        className="aspect-square sm:aspect-auto"
         style={{
-          height: "600px",
+          height: window.innerWidth < 640 ? "auto" : "600px",
           width: "100%",
           borderRadius: "50px",
           marginBottom: "1.5rem",
@@ -1850,8 +1851,8 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
         style={{
           left: showTripPlanner ? "min(410px, calc(100vw - 100px))" : "20px",
           bottom: "120px",
-          borderRadius: showTripPlanner ? "0 50px 50px 0" : "50px",
-          padding: showTripPlanner ? "12px 16px 12px 8px" : "12px 16px",
+          borderRadius: "50px",
+          padding: "12px",
         }}
         onMouseEnter={(e) => {
           e.currentTarget.style.backgroundColor = "#7c3aed";
@@ -1864,15 +1865,9 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
         aria-label={showTripPlanner ? "Hide trip planner" : "Show trip planner"}
       >
         {showTripPlanner ? (
-          <>
-            <X size={18} />
-            <span>Hide</span>
-          </>
+          <X size={20} />
         ) : (
-          <>
-            <Calendar size={18} />
-            <span>Plan Trip</span>
-          </>
+          <Calendar size={20} />
         )}
       </button>
 

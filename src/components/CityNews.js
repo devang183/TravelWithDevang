@@ -55,7 +55,7 @@ export default function NewsCard({cityName='Dublin'}) {
   return (
     
     <section className="mt-6 w-full rounded-2xl shadow-2xl overflow-hidden backdrop-blur-md bg-white/10" style={{fontFamily: '"Playfair Display", serif'}}>
-      <h2 className="text-3xl font-bold text-center p-2">
+      <h2 className="text-xl sm:text-3xl font-bold text-center p-2 whitespace-nowrap overflow-hidden text-ellipsis">
         {cityName} News Highlights
       </h2>
 

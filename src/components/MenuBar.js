@@ -133,6 +133,9 @@ export function MenuBar() {
                 <span>{item.title}</span>
               </Link>
             ))}
+            <div className="px-3 py-2">
+              <AuthButton />
+            </div>
           </div>
         </div>
       )}

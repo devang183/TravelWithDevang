@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState, useCallback } from "react";
-import { PawPrint, Navigation, X, Calendar, MapPin, Plus, Trash2, Download, FileText, GripVertical } from "lucide-react";
+import { PawPrint, Navigation, X, Calendar, MapPin, Plus, Trash2, Download, FileText, GripVertical, ChevronDown, ChevronUp } from "lucide-react";
 import Fuse from "fuse.js";
 import CityMapCategoryBar from "./CityMapCategoryBar";
 import { useQuery } from '@tanstack/react-query';
@@ -95,6 +95,10 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
   const [numberOfDays, setNumberOfDays] = useState(3);
   const [dayWiseItinerary, setDayWiseItinerary] = useState({});
   const [selectedDay, setSelectedDay] = useState(1);
+
+  // Collapse states for sections
+  const [isRoutePlannerCollapsed, setIsRoutePlannerCollapsed] = useState(false);
+  const [isTripPlannerCollapsed, setIsTripPlannerCollapsed] = useState(false);
 
   // Refs to hold current values for closures
   const tripModeRef = useRef(tripMode);
@@ -1326,11 +1330,23 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
         <div style={{ padding: "20px" }}>
           {/* Route Planner Section */}
           <div className="bg-white/10 rounded-lg p-4 space-y-4 mb-6">
-            <h5 style={{ margin: 0, color: "#ffffff", fontSize: "1.2rem", fontWeight: "bold", display: "flex", alignItems: "center", gap: "8px" }}>
-              <Navigation size={20} />
-              Route Planner
-            </h5>
+            <div
+              className="flex items-center justify-between cursor-pointer hover:bg-white/10 rounded-lg p-2 -mx-2 -mt-2 transition-colors"
+              onClick={() => setIsRoutePlannerCollapsed(!isRoutePlannerCollapsed)}
+            >
+              <h5 style={{ margin: 0, color: "#ffffff", fontSize: "1.2rem", fontWeight: "bold", display: "flex", alignItems: "center", gap: "8px" }}>
+                <Navigation size={20} />
+                Route Planner
+              </h5>
+              {isRoutePlannerCollapsed ? (
+                <ChevronDown size={20} className="text-white" />
+              ) : (
+                <ChevronUp size={20} className="text-white" />
+              )}
+            </div>
 
+            {!isRoutePlannerCollapsed && (
+            <>
             <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
               <div style={{ position: "relative" }}>
                 <label style={{ fontSize: "0.85rem", marginBottom: "5px", display: "block", color: "white" }}>From:</label>
@@ -1514,16 +1530,31 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
                 </div>
               )}
             </div>
+            </>
+            )}
           </div>
 
           {/* Trip Planner Section */}
           {(
           <div className="bg-white/10 rounded-lg p-4 space-y-4">
-            <h5 style={{ margin: 0, color: "#ffffff", fontSize: "1.2rem", fontWeight: "bold", display: "flex", alignItems: "center", gap: "8px", marginBottom: "12px" }}>
-              <Calendar size={20} />
-              Trip Planner
-            </h5>
+            <div
+              className="flex items-center justify-between cursor-pointer hover:bg-white/10 rounded-lg p-2 -mx-2 -mt-2 transition-colors"
+              onClick={() => setIsTripPlannerCollapsed(!isTripPlannerCollapsed)}
+              style={{ marginBottom: "12px" }}
+            >
+              <h5 style={{ margin: 0, color: "#ffffff", fontSize: "1.2rem", fontWeight: "bold", display: "flex", alignItems: "center", gap: "8px" }}>
+                <Calendar size={20} />
+                Trip Planner
+              </h5>
+              {isTripPlannerCollapsed ? (
+                <ChevronDown size={20} className="text-white" />
+              ) : (
+                <ChevronUp size={20} className="text-white" />
+              )}
+            </div>
 
+            {!isTripPlannerCollapsed && (
+            <>
             {/* Mode Selection */}
             <div className="flex gap-3 mb-4">
               <button
@@ -1838,6 +1869,8 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
                   </p>
                 )}
               </>
+            )}
+            </>
             )}
           </div>
           )}

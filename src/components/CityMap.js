@@ -73,6 +73,7 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
   const [routeDistance, setRouteDistance] = useState(null);
   const [transportMode, setTransportMode] = useState("driving");
   const [routeTime, setRouteTime] = useState(null);
+  const [directionsCollapsed, setDirectionsCollapsed] = useState(false);
   
   // Search states for routing
   const [startSearchTerm, setStartSearchTerm] = useState("");
@@ -625,6 +626,24 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
     if (map) map.setView(coords, zoom);
   };
 
+  // Zoom level presets
+  const zoomLevels = [
+    { name: 'Foot', emoji: '🚶', zoom: 18 },
+    { name: 'Bee', emoji: '🐝', zoom: 16 },
+    { name: 'Bird', emoji: '🐦', zoom: 14 },
+    { name: 'Helicopter', emoji: '🚁', zoom: 12 },
+    { name: 'Airplane', emoji: '✈️', zoom: 10 },
+    { name: 'Satellite', emoji: '🛰️', zoom: 7 },
+    { name: 'Rocket', emoji: '🚀', zoom: 4 }
+  ];
+
+  const handleZoomLevel = (zoomLevel) => {
+    const map = mapInstance.current;
+    if (map) {
+      map.setZoom(zoomLevel);
+    }
+  };
+
   const focusOnMarker = (index) => {
     const marker = markerRefs.current[index];
     const map = mapInstance.current;
@@ -887,6 +906,24 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
       }
     });
   }, [showNearbyPlaces, activeNearbyCategories]);
+
+  // Handle directions panel collapse/expand
+  useEffect(() => {
+    const routingAlt = document.querySelector('.leaflet-routing-alt');
+    const collapseBtn = document.querySelector('.directions-collapse-btn');
+
+    if (routingAlt && collapseBtn) {
+      if (directionsCollapsed) {
+        routingAlt.style.display = 'none';
+        collapseBtn.innerHTML = '▶';
+        collapseBtn.style.transform = 'rotate(180deg)';
+      } else {
+        routingAlt.style.display = 'block';
+        collapseBtn.innerHTML = '▼';
+        collapseBtn.style.transform = 'rotate(0deg)';
+      }
+    }
+  }, [directionsCollapsed]);
 
   const handleStartSearch = (value) => {
     setStartSearchTerm(value);
@@ -1712,6 +1749,38 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
 
     setRoutingControl(newRoutingControl);
     setShowRouting(true);
+
+    // Add collapse button to routing container after a short delay
+    setTimeout(() => {
+      const routingContainer = document.querySelector('.leaflet-routing-container');
+      if (routingContainer && !routingContainer.querySelector('.directions-collapse-btn')) {
+        const collapseBtn = document.createElement('button');
+        collapseBtn.className = 'directions-collapse-btn';
+        collapseBtn.innerHTML = '▼';
+        collapseBtn.style.cssText = `
+          position: absolute;
+          top: 5px;
+          right: 5px;
+          background: rgba(255, 255, 255, 0.9);
+          border: none;
+          border-radius: 4px;
+          width: 24px;
+          height: 24px;
+          cursor: pointer;
+          font-size: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 1000;
+          transition: transform 0.3s;
+        `;
+        collapseBtn.onclick = () => {
+          setDirectionsCollapsed(prev => !prev);
+        };
+        routingContainer.style.position = 'relative';
+        routingContainer.insertBefore(collapseBtn, routingContainer.firstChild);
+      }
+    }, 500);
 
     const startMarkerObj = L.marker([startMarker.coords[0], startMarker.coords[1]], { icon: startIcon })
       .addTo(mapInstance.current)
@@ -2854,6 +2923,114 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
       >
         <PawPrint size={20} />
       </button>
+
+      {/* Zoom Level Controls */}
+      <div
+        className="zoom-controls"
+        style={{
+          position: "absolute",
+          top: "50%",
+          right: "10px",
+          transform: "translateY(-50%)",
+          zIndex: 1000,
+          display: "flex",
+          flexDirection: "column",
+          gap: "4px",
+        }}
+      >
+        {zoomLevels.map((level) => (
+          <button
+            key={level.name}
+            onClick={() => handleZoomLevel(level.zoom)}
+            className="zoom-level-btn"
+            style={{
+              backgroundColor: "rgba(255, 255, 255, 0.3)",
+              backdropFilter: "blur(10px)",
+              padding: "6px 8px",
+              borderRadius: "8px",
+              fontSize: "1rem",
+              cursor: "pointer",
+              border: "none",
+              transition: "all 0.2s",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              minWidth: "32px",
+              minHeight: "32px",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.15)";
+              e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
+              e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.3)";
+            }}
+            title={`${level.name} view (zoom ${level.zoom})`}
+            aria-label={`Zoom to ${level.name} level`}
+          >
+            {level.emoji}
+          </button>
+        ))}
+      </div>
+      <style jsx>{`
+        /* Zoom controls responsive styles */
+        @media (max-width: 640px) {
+          .zoom-controls {
+            right: 5px !important;
+            gap: 3px !important;
+          }
+          .zoom-level-btn {
+            padding: 4px 6px !important;
+            min-width: 28px !important;
+            min-height: 28px !important;
+            border-radius: 6px !important;
+            font-size: 0.85rem !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .zoom-controls {
+            right: 3px !important;
+            gap: 2px !important;
+          }
+          .zoom-level-btn {
+            padding: 3px 5px !important;
+            min-width: 24px !important;
+            min-height: 24px !important;
+            border-radius: 5px !important;
+            font-size: 0.75rem !important;
+          }
+        }
+
+        /* Leaflet Routing Machine directions panel - mobile responsive */
+        @media (max-width: 768px) {
+          :global(.leaflet-routing-container) {
+            max-width: 250px !important;
+            font-size: 0.8rem !important;
+          }
+          :global(.leaflet-routing-alt) {
+            padding: 8px !important;
+          }
+          :global(.leaflet-routing-alt table) {
+            font-size: 0.75rem !important;
+          }
+        }
+        @media (max-width: 480px) {
+          :global(.leaflet-routing-container) {
+            max-width: 200px !important;
+            font-size: 0.7rem !important;
+          }
+          :global(.leaflet-routing-alt) {
+            padding: 6px !important;
+          }
+          :global(.leaflet-routing-alt table) {
+            font-size: 0.65rem !important;
+          }
+          :global(.leaflet-routing-geocoder) {
+            display: none !important;
+          }
+        }
+      `}</style>
 
       {/* Legend/Search Panel */}
       {markers.length > 0 && (

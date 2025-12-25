@@ -95,6 +95,7 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
   const [numberOfDays, setNumberOfDays] = useState(3);
   const [dayWiseItinerary, setDayWiseItinerary] = useState({});
   const [selectedDay, setSelectedDay] = useState(1);
+  const [viewMode, setViewMode] = useState("all"); // "all" or specific day number for viewing routes
 
   // Collapse states for sections
   const [isRoutePlannerCollapsed, setIsRoutePlannerCollapsed] = useState(false);
@@ -771,6 +772,10 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
           if (!places || places.length === 0) return;
 
           const dayNum = parseInt(day);
+
+          // Only show markers/routes for selected day view or all
+          if (viewMode !== "all" && viewMode !== dayNum) return;
+
           const color = dayColors[(dayNum - 1) % dayColors.length];
 
           // Draw numbered markers for each day
@@ -857,7 +862,7 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
     };
 
     drawTripRoute();
-  }, [tripItinerary, dayWiseItinerary, tripMode]);
+  }, [tripItinerary, dayWiseItinerary, tripMode, viewMode]);
 
   const handleStartSearch = (value) => {
     setStartSearchTerm(value);
@@ -937,14 +942,20 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
   const captureMapImage = async (bounds) => {
     return new Promise(async (resolve) => {
       if (!mapInstance.current || !mapRef.current) {
+        console.log('Map not ready for capture');
         resolve(null);
         return;
       }
 
+      let originalCenter = null;
+      let originalZoom = null;
+
       try {
         // Save original view
-        const originalCenter = mapInstance.current.getCenter();
-        const originalZoom = mapInstance.current.getZoom();
+        originalCenter = mapInstance.current.getCenter();
+        originalZoom = mapInstance.current.getZoom();
+
+        console.log('Capturing map image...');
 
         // Fit bounds if provided with generous padding to ensure all markers are visible
         if (bounds) {
@@ -957,30 +968,143 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
           });
         }
 
+        // Force map to invalidate size and redraw
+        mapInstance.current.invalidateSize();
+
         // Wait longer for map to fully render with all markers and polylines
-        await new Promise(r => setTimeout(r, 1200)); // Increased from 800ms to 1200ms
+        await new Promise(r => setTimeout(r, 2500)); // Increased to 2500ms for better reliability
 
-        // Import html2canvas
+        // Import dependencies
         const html2canvas = (await import('html2canvas')).default;
+        const domtoimage = await import('dom-to-image-more');
 
-        // Capture the map container
+        // Try using dom-to-image-more which handles SVG better than html2canvas
+        try {
+          console.log('Attempting capture with dom-to-image...');
+          const dataUrl = await domtoimage.toPng(mapRef.current, {
+            quality: 0.95,
+            width: mapRef.current.offsetWidth,
+            height: mapRef.current.offsetHeight,
+            style: {
+              transform: 'scale(1)',
+              transformOrigin: 'top left'
+            }
+          });
+
+          console.log('Map captured successfully with dom-to-image');
+
+          // Restore original view
+          if (originalCenter && originalZoom) {
+            mapInstance.current.setView(originalCenter, originalZoom);
+          }
+
+          resolve(dataUrl);
+          return;
+        } catch (domImageError) {
+          console.warn('dom-to-image failed, falling back to html2canvas:', domImageError);
+        }
+
+        // Fallback to html2canvas
         const canvas = await html2canvas(mapRef.current, {
           useCORS: true,
           allowTaint: true,
           backgroundColor: '#f0f0f0',
-          scale: 1.5, // Increased scale for better quality
+          scale: 2, // Increased scale for better quality
           logging: false, // Disable logging for cleaner output
+          foreignObjectRendering: false, // Keep disabled for LAB color compatibility
+          ignoreElements: (element) => {
+            // Skip control elements but keep map layers
+            if (element.classList && element.classList.contains('leaflet-control')) {
+              return true;
+            }
+            return false;
+          },
+          onclone: (clonedDoc) => {
+            // Fix any LAB colors or other unsupported CSS in the cloned document
+            try {
+              // Remove stylesheets that might contain LAB colors
+              const styleSheets = clonedDoc.querySelectorAll('style, link[rel="stylesheet"]');
+              styleSheets.forEach(sheet => {
+                try {
+                  if (sheet.textContent && (sheet.textContent.includes('lab(') || sheet.textContent.includes('lch(') || sheet.textContent.includes('oklab('))) {
+                    sheet.remove();
+                  }
+                } catch (e) {
+                  // Ignore
+                }
+              });
+
+              const allElements = clonedDoc.querySelectorAll('*');
+              allElements.forEach((el) => {
+                try {
+                  // Remove inline styles with LAB colors
+                  const inlineStyle = el.getAttribute('style');
+                  if (inlineStyle && (inlineStyle.includes('lab(') || inlineStyle.includes('lch(') || inlineStyle.includes('oklab('))) {
+                    el.removeAttribute('style');
+                  }
+
+                  // Set safe colors with important flag
+                  const computedStyle = window.getComputedStyle(el);
+
+                  // Fix background color
+                  const bgColor = computedStyle.backgroundColor;
+                  if (bgColor && (bgColor.includes('lab') || bgColor.includes('lch') || bgColor.includes('oklab'))) {
+                    el.style.setProperty('background-color', 'transparent', 'important');
+                  }
+
+                  // Fix text color
+                  const textColor = computedStyle.color;
+                  if (textColor && (textColor.includes('lab') || textColor.includes('lch') || textColor.includes('oklab'))) {
+                    el.style.setProperty('color', '#000000', 'important');
+                  }
+
+                  // Fix border color
+                  const borderColor = computedStyle.borderColor;
+                  if (borderColor && (borderColor.includes('lab') || borderColor.includes('lch') || borderColor.includes('oklab'))) {
+                    el.style.setProperty('border-color', '#cccccc', 'important');
+                  }
+                } catch (e) {
+                  // Ignore individual element errors
+                }
+              });
+
+              // Ensure SVG elements are properly positioned
+              const svgElements = clonedDoc.querySelectorAll('svg');
+              svgElements.forEach(svg => {
+                try {
+                  // Reset any problematic transforms
+                  const paths = svg.querySelectorAll('path');
+                  paths.forEach(path => {
+                    // Ensure paths are visible
+                    if (path.getAttribute('stroke-opacity')) {
+                      path.setAttribute('stroke-opacity', '0.8');
+                    }
+                  });
+                } catch (e) {
+                  // Ignore
+                }
+              });
+            } catch (e) {
+              console.warn('Error processing cloned document:', e);
+            }
+          }
         });
 
+        console.log('Map captured successfully');
+
         // Restore original view
-        mapInstance.current.setView(originalCenter, originalZoom);
+        if (originalCenter && originalZoom) {
+          mapInstance.current.setView(originalCenter, originalZoom);
+        }
 
         // Return base64 image
-        resolve(canvas.toDataURL('image/png', 0.9)); // Added quality parameter
+        const imageData = canvas.toDataURL('image/png', 0.9);
+        console.log('Image data length:', imageData.length);
+        resolve(imageData);
       } catch (error) {
         console.error('Error capturing map:', error);
         // Still restore view even on error
-        if (mapInstance.current) {
+        if (mapInstance.current && originalCenter && originalZoom) {
           try {
             mapInstance.current.setView(originalCenter, originalZoom);
           } catch (e) {
@@ -990,6 +1114,87 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
         resolve(null);
       }
     });
+  };
+
+  // Helper function to clean HTML and decode entities from description
+  const cleanDescription = (description) => {
+    if (!description) return '';
+
+    try {
+      let cleanText = String(description);
+
+      // First, convert <br> tags to newlines before processing
+      cleanText = cleanText.replace(/<br\s*\/?>/gi, '\n');
+
+      // Decode numeric HTML entities (&#123; or &#xAB;)
+      cleanText = cleanText.replace(/&#(\d+);/g, (match, dec) => String.fromCharCode(dec));
+      cleanText = cleanText.replace(/&#x([0-9A-Fa-f]+);/g, (match, hex) => String.fromCharCode(parseInt(hex, 16)));
+
+      // Create a temporary div to decode HTML entities and strip tags
+      const temp = document.createElement('div');
+      temp.innerHTML = cleanText;
+
+      // Get text content (strips all HTML tags)
+      cleanText = temp.textContent || temp.innerText || '';
+
+      // Decode common HTML entities manually as fallback
+      cleanText = cleanText
+        .replace(/&nbsp;/g, ' ')
+        .replace(/&amp;/g, '&')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&quot;/g, '"')
+        .replace(/&#39;/g, "'")
+        .replace(/&apos;/g, "'");
+
+      // Remove phone symbols that appear as Ø (Unicode phone/fax symbols)
+      cleanText = cleanText.replace(/[\u260E\u260F\u2706\u2121\u2706]/g, '');
+
+      // Remove email symbols
+      cleanText = cleanText.replace(/[\u2709\u2709]/g, '');
+
+      // Remove other problematic symbols and combining marks
+      cleanText = cleanText.replace(/[\u0300-\u036F]/g, ''); // Combining diacritical marks
+      cleanText = cleanText.replace(/[\u2000-\u206F]/g, ' '); // General punctuation
+      cleanText = cleanText.replace(/[\uFFF0-\uFFFF]/g, ''); // Specials
+
+      // Remove URLs which often cause encoding issues
+      cleanText = cleanText.replace(/https?:\/\/[^\s]+/g, '');
+
+      // Fix the spaced character pattern (e.g., "H o u s e" -> "House")
+      // This pattern catches single chars followed by spaces
+      cleanText = cleanText.replace(/\b(\w)\s+(?=\w\s+|\w$)/g, '$1');
+
+      // Remove any remaining HTML-like patterns
+      cleanText = cleanText.replace(/<[^>]*>/g, '');
+
+      // Remove any control characters and non-printable characters
+      cleanText = cleanText.replace(/[\x00-\x1F\x7F-\x9F]/g, '');
+
+      // Keep only safe printable ASCII and common extended characters
+      cleanText = cleanText.split('').map(char => {
+        const code = char.charCodeAt(0);
+        // Allow: space, printable ASCII, common Latin extended
+        if ((code >= 32 && code <= 126) || (code >= 160 && code <= 255) || code === 10) {
+          return char;
+        }
+        return ' ';
+      }).join('');
+
+      // Normalize whitespace but preserve newlines
+      cleanText = cleanText.split('\n').map(line =>
+        line.replace(/\s+/g, ' ').trim()
+      ).join('\n');
+
+      // Remove excessive blank lines
+      cleanText = cleanText.replace(/\n{3,}/g, '\n\n');
+
+      return cleanText.trim();
+    } catch (e) {
+      console.error('Error cleaning description:', e);
+      // If all else fails, just return basic cleaned text
+      return String(description).replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+    }
   };
 
   // Export itinerary as PDF
@@ -1024,9 +1229,11 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
       // Capture map image for single day trip
       let mapImageData = null;
       if (tripItinerary.length > 0) {
+        console.log('Attempting to capture single day trip map...');
         const L = await import('leaflet');
         const bounds = L.latLngBounds(tripItinerary.map(p => p.coords));
         mapImageData = await captureMapImage(bounds);
+        console.log('Single day map captured:', mapImageData ? 'SUCCESS' : 'FAILED');
       }
 
       doc.setFontSize(11);
@@ -1045,9 +1252,14 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
         if (place.description) {
           doc.setFont(undefined, 'normal');
           doc.setFontSize(9);
-          const splitDesc = doc.splitTextToSize(place.description, pageWidth - margin * 2 - 10);
-          doc.text(splitDesc, margin + 10, yPos);
-          yPos += splitDesc.length * 5 + 5;
+          const cleanedDesc = cleanDescription(place.description);
+          if (cleanedDesc) {
+            const splitDesc = doc.splitTextToSize(cleanedDesc, pageWidth - margin * 2 - 10);
+            doc.text(splitDesc, margin + 10, yPos);
+            yPos += splitDesc.length * 5 + 5;
+          } else {
+            yPos += 5;
+          }
         } else {
           yPos += 5;
         }
@@ -1074,6 +1286,7 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
 
       // Add map image if captured
       if (mapImageData) {
+        console.log('Adding single day map to PDF...');
         if (yPos > pageHeight - 100) {
           doc.addPage();
           yPos = margin;
@@ -1087,8 +1300,15 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
         // Add map image (landscape, centered)
         const imgWidth = pageWidth - margin * 2;
         const imgHeight = 80;
-        doc.addImage(mapImageData, 'PNG', margin, yPos, imgWidth, imgHeight);
+        try {
+          doc.addImage(mapImageData, 'PNG', margin, yPos, imgWidth, imgHeight);
+          console.log('Single day map added to PDF successfully');
+        } catch (err) {
+          console.error('Error adding single day map to PDF:', err);
+        }
         yPos += imgHeight + 10;
+      } else {
+        console.log('No map image data for single day trip');
       }
     } else {
       // Day-wise itinerary
@@ -1099,14 +1319,6 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
 
       for (let day = 1; day <= numberOfDays; day++) {
         const places = dayWiseItinerary[day] || [];
-
-        // Capture map image for this day if there are places
-        let dayMapImageData = null;
-        if (places.length > 0) {
-          const L = await import('leaflet');
-          const bounds = L.latLngBounds(places.map(p => p.coords));
-          dayMapImageData = await captureMapImage(bounds);
-        }
 
         if (yPos > pageHeight - 40) {
           doc.addPage();
@@ -1145,9 +1357,14 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
             if (place.description) {
               doc.setFont(undefined, 'normal');
               doc.setFontSize(9);
-              const splitDesc = doc.splitTextToSize(place.description, pageWidth - margin * 2 - 15);
-              doc.text(splitDesc, margin + 15, yPos);
-              yPos += splitDesc.length * 5 + 3;
+              const cleanedDesc = cleanDescription(place.description);
+              if (cleanedDesc) {
+                const splitDesc = doc.splitTextToSize(cleanedDesc, pageWidth - margin * 2 - 15);
+                doc.text(splitDesc, margin + 15, yPos);
+                yPos += splitDesc.length * 5 + 3;
+              } else {
+                yPos += 3;
+              }
             } else {
               yPos += 3;
             }
@@ -1171,8 +1388,16 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
           doc.text(`Day ${day} - ${places.length} place(s)`, margin + 10, yPos);
           yPos += 10;
 
+          // Now capture map image for this day's places
+          console.log(`Attempting to capture Day ${day} map...`);
+          const L = await import('leaflet');
+          const bounds = L.latLngBounds(places.map(p => p.coords));
+          const dayMapImageData = await captureMapImage(bounds);
+          console.log(`Day ${day} map captured:`, dayMapImageData ? 'SUCCESS' : 'FAILED');
+
           // Add map image for this day if captured
           if (dayMapImageData) {
+            console.log(`Adding Day ${day} map to PDF...`);
             if (yPos > pageHeight - 90) {
               doc.addPage();
               yPos = margin;
@@ -1187,8 +1412,15 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
             // Add map image (smaller for multi-day)
             const imgWidth = pageWidth - margin * 2;
             const imgHeight = 70;
-            doc.addImage(dayMapImageData, 'PNG', margin, yPos, imgWidth, imgHeight);
+            try {
+              doc.addImage(dayMapImageData, 'PNG', margin, yPos, imgWidth, imgHeight);
+              console.log(`Day ${day} map added to PDF successfully`);
+            } catch (err) {
+              console.error(`Error adding Day ${day} map to PDF:`, err);
+            }
             yPos += imgHeight + 5;
+          } else {
+            console.log(`No map image data for Day ${day}`);
           }
         }
 
@@ -1871,6 +2103,7 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
               <button
                 onClick={() => {
                   setTripMode("daywise");
+                  setViewMode("all"); // Start with "All Days" view when switching to daywise mode
                   // Initialize empty days only if dayWiseItinerary is empty
                   if (Object.keys(dayWiseItinerary).length === 0) {
                     const initDays = {};
@@ -1914,7 +2147,10 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
                           newDays[i] = dayWiseItinerary[i] || [];
                         }
                         setDayWiseItinerary(newDays);
-                        if (selectedDay > num) setSelectedDay(1);
+                        if (selectedDay > num) {
+                          setSelectedDay(1);
+                          setViewMode(1);
+                        }
                       }}
                       className={`px-3 py-1 rounded font-semibold transition-all ${
                         numberOfDays === num
@@ -1929,12 +2165,27 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
 
                 {/* Day Tabs */}
                 <div className="flex gap-2 overflow-x-auto pb-2">
+                  <button
+                    onClick={() => {
+                      setViewMode("all");
+                    }}
+                    className={`px-4 py-2 rounded-lg font-semibold whitespace-nowrap transition-all ${
+                      viewMode === "all"
+                        ? "bg-purple-500 text-white shadow-lg"
+                        : "bg-white/20 text-white hover:bg-white/30"
+                    }`}
+                  >
+                    All Days
+                  </button>
                   {Array.from({ length: numberOfDays }, (_, i) => i + 1).map((day) => (
                     <button
                       key={day}
-                      onClick={() => setSelectedDay(day)}
+                      onClick={() => {
+                        setSelectedDay(day);
+                        setViewMode(day);
+                      }}
                       className={`px-4 py-2 rounded-lg font-semibold whitespace-nowrap transition-all ${
-                        selectedDay === day
+                        viewMode === day
                           ? "bg-blue-500 text-white shadow-lg"
                           : "bg-white/20 text-white hover:bg-white/30"
                       }`}
@@ -2086,109 +2337,181 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
             {/* Day-wise Itinerary Display */}
             {tripMode === "daywise" && (
               <>
-                {dayWiseItinerary[selectedDay]?.length > 0 && (
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <h5 className="text-white font-semibold">
-                        Day {selectedDay} ({dayWiseItinerary[selectedDay].length} places)
-                      </h5>
-                      <div className="flex items-center gap-2">
-                        <span className="text-white/70 text-xs">Drag to reorder</span>
-                        <button
-                          onClick={() => {
-                            setDayWiseItinerary({
-                              ...dayWiseItinerary,
-                              [selectedDay]: [],
-                            });
-                          }}
-                          className="px-2 py-1 bg-red-500 text-white text-xs rounded hover:bg-red-600 flex items-center gap-1"
-                        >
-                          <Trash2 size={12} />
-                          Clear Day
-                        </button>
-                      </div>
-                    </div>
+                {viewMode === "all" ? (
+                  /* Show all days when "All Days" is selected */
+                  <div className="space-y-4">
+                    {Array.from({ length: numberOfDays }, (_, i) => i + 1).map((day) => {
+                      const dayPlaces = dayWiseItinerary[day] || [];
+                      const dayColors = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'];
+                      const color = dayColors[(day - 1) % dayColors.length];
 
-                    <DragDropContext onDragEnd={handleDragEnd}>
-                      <Droppable droppableId={`day-${selectedDay}-itinerary`}>
-                        {(provided, snapshot) => (
-                          <div
-                            className={`max-h-60 overflow-y-auto space-y-2 rounded-lg p-2 transition-all ${
-                              snapshot.isDraggingOver ? 'bg-blue-500/20 ring-2 ring-blue-400' : 'bg-transparent'
-                            }`}
-                            {...provided.droppableProps}
-                            ref={provided.innerRef}
-                          >
-                            {dayWiseItinerary[selectedDay].map((place, index) => {
-                              const uniqueId = `day${selectedDay}-${place.name}-${place.coords[0]}-${place.coords[1]}`;
-                              const nextPlace = dayWiseItinerary[selectedDay][index + 1];
+                      if (dayPlaces.length === 0) return null;
+
+                      return (
+                        <div key={day} className="space-y-2 border-l-4 pl-3" style={{ borderColor: color }}>
+                          <div className="flex items-center justify-between">
+                            <h5 className="text-white font-semibold">
+                              Day {day} ({dayPlaces.length} places)
+                            </h5>
+                            <button
+                              onClick={() => {
+                                setSelectedDay(day);
+                                setViewMode(day);
+                              }}
+                              className="px-2 py-1 bg-white/20 text-white text-xs rounded hover:bg-white/30 transition-colors"
+                            >
+                              View/Edit
+                            </button>
+                          </div>
+
+                          <div className="space-y-2 bg-white/5 rounded-lg p-2">
+                            {dayPlaces.map((place, index) => {
+                              const nextPlace = dayPlaces[index + 1];
                               const distance = nextPlace ? calculateDistance(place.coords, nextPlace.coords) : null;
 
                               return (
-                                <React.Fragment key={uniqueId}>
-                                  <Draggable draggableId={uniqueId} index={index}>
-                                    {(provided, snapshot) => (
-                                      <div
-                                        ref={provided.innerRef}
-                                        {...provided.draggableProps}
-                                        className={`flex items-center gap-2 rounded p-2 transition-all duration-200 ${
-                                          snapshot.isDragging
-                                            ? 'bg-blue-500/60 shadow-2xl scale-105 rotate-1 ring-2 ring-blue-300 z-50'
-                                            : 'bg-white/20 hover:bg-white/30'
-                                        }`}
-                                        style={{
-                                          ...provided.draggableProps.style,
-                                        }}
-                                      >
-                                        <div {...provided.dragHandleProps} className="cursor-grab active:cursor-grabbing hover:scale-110 transition-transform">
-                                          <GripVertical size={16} className={`transition-colors ${snapshot.isDragging ? 'text-white' : 'text-white/70'}`} />
-                                        </div>
-                                        <span className={`w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold transition-all ${
-                                          snapshot.isDragging ? 'ring-2 ring-white' : ''
-                                        }`}>
-                                          {index + 1}
-                                        </span>
-                                        <span className="flex-1 text-white text-sm">{place.name}</span>
-                                        <button
-                                          onClick={() => {
-                                            setDayWiseItinerary({
-                                              ...dayWiseItinerary,
-                                              [selectedDay]: dayWiseItinerary[selectedDay].filter((_, i) => i !== index),
-                                            });
-                                          }}
-                                          className="p-1 hover:bg-red-500 rounded transition-colors"
-                                        >
-                                          <X size={14} className="text-white" />
-                                        </button>
-                                      </div>
-                                    )}
-                                  </Draggable>
+                                <React.Fragment key={`${day}-${place.name}-${index}`}>
+                                  <div className="flex items-center gap-2 rounded p-2 bg-white/10">
+                                    <span
+                                      className="w-6 h-6 rounded-full text-white flex items-center justify-center text-xs font-bold"
+                                      style={{ backgroundColor: color }}
+                                    >
+                                      {index + 1}
+                                    </span>
+                                    <span className="flex-1 text-white text-sm">{place.name}</span>
+                                  </div>
                                   {distance && (
                                     <div className="flex items-center justify-center py-1">
                                       <div className="flex items-center gap-2 text-white/80 text-xs">
-                                        <div className="h-4 border-l-2 border-dashed border-blue-400"></div>
-                                        <span className="bg-blue-500/40 px-2 py-0.5 rounded-full font-semibold">
+                                        <div className="h-4 border-l-2 border-dashed" style={{ borderColor: color }}></div>
+                                        <span className="px-2 py-0.5 rounded-full font-semibold" style={{ backgroundColor: `${color}66` }}>
                                           {formatDistance(distance)}
                                         </span>
-                                        <div className="h-4 border-l-2 border-dashed border-blue-400"></div>
+                                        <div className="h-4 border-l-2 border-dashed" style={{ borderColor: color }}></div>
                                       </div>
                                     </div>
                                   )}
                                 </React.Fragment>
                               );
                             })}
-                            {provided.placeholder}
                           </div>
-                        )}
-                      </Droppable>
-                    </DragDropContext>
+                        </div>
+                      );
+                    })}
+                    {Object.values(dayWiseItinerary).every((places) => !places || places.length === 0) && (
+                      <p className="text-white/70 text-sm italic text-center py-4">
+                        No places added yet. Click on any place marker on the map!
+                      </p>
+                    )}
                   </div>
-                )}
+                ) : (
+                  /* Show only selected day */
+                  <>
+                    {dayWiseItinerary[selectedDay]?.length > 0 && (
+                      <div className="space-y-2">
+                        <div className="flex items-center justify-between">
+                          <h5 className="text-white font-semibold">
+                            Day {selectedDay} ({dayWiseItinerary[selectedDay].length} places)
+                          </h5>
+                          <div className="flex items-center gap-2">
+                            <span className="text-white/70 text-xs">Drag to reorder</span>
+                            <button
+                              onClick={() => {
+                                setDayWiseItinerary({
+                                  ...dayWiseItinerary,
+                                  [selectedDay]: [],
+                                });
+                              }}
+                              className="px-2 py-1 bg-red-500 text-white text-xs rounded hover:bg-red-600 flex items-center gap-1"
+                            >
+                              <Trash2 size={12} />
+                              Clear Day
+                            </button>
+                          </div>
+                        </div>
 
-                {(!dayWiseItinerary[selectedDay] || dayWiseItinerary[selectedDay].length === 0) && (
-                  <p className="text-white/70 text-sm italic text-center py-4">
-                    No places added to Day {selectedDay} yet. Click on any place marker on the map!
-                  </p>
+                        <DragDropContext onDragEnd={handleDragEnd}>
+                          <Droppable droppableId={`day-${selectedDay}-itinerary`}>
+                            {(provided, snapshot) => (
+                              <div
+                                className={`max-h-60 overflow-y-auto space-y-2 rounded-lg p-2 transition-all ${
+                                  snapshot.isDraggingOver ? 'bg-blue-500/20 ring-2 ring-blue-400' : 'bg-transparent'
+                                }`}
+                                {...provided.droppableProps}
+                                ref={provided.innerRef}
+                              >
+                                {dayWiseItinerary[selectedDay].map((place, index) => {
+                                  const uniqueId = `day${selectedDay}-${place.name}-${place.coords[0]}-${place.coords[1]}`;
+                                  const nextPlace = dayWiseItinerary[selectedDay][index + 1];
+                                  const distance = nextPlace ? calculateDistance(place.coords, nextPlace.coords) : null;
+
+                                  return (
+                                    <React.Fragment key={uniqueId}>
+                                      <Draggable draggableId={uniqueId} index={index}>
+                                        {(provided, snapshot) => (
+                                          <div
+                                            ref={provided.innerRef}
+                                            {...provided.draggableProps}
+                                            className={`flex items-center gap-2 rounded p-2 transition-all duration-200 ${
+                                              snapshot.isDragging
+                                                ? 'bg-blue-500/60 shadow-2xl scale-105 rotate-1 ring-2 ring-blue-300 z-50'
+                                                : 'bg-white/20 hover:bg-white/30'
+                                            }`}
+                                            style={{
+                                              ...provided.draggableProps.style,
+                                            }}
+                                          >
+                                            <div {...provided.dragHandleProps} className="cursor-grab active:cursor-grabbing hover:scale-110 transition-transform">
+                                              <GripVertical size={16} className={`transition-colors ${snapshot.isDragging ? 'text-white' : 'text-white/70'}`} />
+                                            </div>
+                                            <span className={`w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold transition-all ${
+                                              snapshot.isDragging ? 'ring-2 ring-white' : ''
+                                            }`}>
+                                              {index + 1}
+                                            </span>
+                                            <span className="flex-1 text-white text-sm">{place.name}</span>
+                                            <button
+                                              onClick={() => {
+                                                setDayWiseItinerary({
+                                                  ...dayWiseItinerary,
+                                                  [selectedDay]: dayWiseItinerary[selectedDay].filter((_, i) => i !== index),
+                                                });
+                                              }}
+                                              className="p-1 hover:bg-red-500 rounded transition-colors"
+                                            >
+                                              <X size={14} className="text-white" />
+                                            </button>
+                                          </div>
+                                        )}
+                                      </Draggable>
+                                      {distance && (
+                                        <div className="flex items-center justify-center py-1">
+                                          <div className="flex items-center gap-2 text-white/80 text-xs">
+                                            <div className="h-4 border-l-2 border-dashed border-blue-400"></div>
+                                            <span className="bg-blue-500/40 px-2 py-0.5 rounded-full font-semibold">
+                                              {formatDistance(distance)}
+                                            </span>
+                                            <div className="h-4 border-l-2 border-dashed border-blue-400"></div>
+                                          </div>
+                                        </div>
+                                      )}
+                                    </React.Fragment>
+                                  );
+                                })}
+                                {provided.placeholder}
+                              </div>
+                            )}
+                          </Droppable>
+                        </DragDropContext>
+                      </div>
+                    )}
+
+                    {(!dayWiseItinerary[selectedDay] || dayWiseItinerary[selectedDay].length === 0) && (
+                      <p className="text-white/70 text-sm italic text-center py-4">
+                        No places added to Day {selectedDay} yet. Click on any place marker on the map!
+                      </p>
+                    )}
+                  </>
                 )}
               </>
             )}

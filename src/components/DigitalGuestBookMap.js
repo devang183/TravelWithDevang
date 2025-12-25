@@ -338,17 +338,28 @@ const scrollContainerRef = useRef(null);
       try {
         console.log('Initializing map with coordinates:', cityCoords);
         
+        // Define world bounds to prevent infinite scrolling
+        const worldBounds = L.latLngBounds(
+          L.latLng(-90, -180), // Southwest coordinates
+          L.latLng(90, 180)    // Northeast coordinates
+        );
+
         const mapObj = L.map(mapRef.current, {
           zoomControl: true,
           scrollWheelZoom: true,
           doubleClickZoom: false,
           center: [cityCoords.lat, cityCoords.lng],
-          zoom: 13
+          zoom: 13,
+          maxBounds: worldBounds,
+          maxBoundsViscosity: 1.0, // Makes bounds "solid" - prevents dragging beyond bounds
+          worldCopyJump: false, // Prevents map from wrapping horizontally
+          minZoom: 2 // Prevents zooming out too far where bounds don't work well
         });
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
           attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-          maxZoom: 19
+          maxZoom: 19,
+          noWrap: true // Prevents tile layer from repeating infinitely
         }).addTo(mapObj);
 
         const handleMapClick = (e) => {

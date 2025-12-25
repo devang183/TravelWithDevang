@@ -84,6 +84,16 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
   const [startHighlighted, setStartHighlighted] = useState(-1);
   const [endHighlighted, setEndHighlighted] = useState(-1);
 
+  // Nearby places along route
+  const [nearbyPlacesMarkers, setNearbyPlacesMarkers] = useState([]);
+  const [showNearbyPlaces, setShowNearbyPlaces] = useState(true);
+  const [activeNearbyCategories, setActiveNearbyCategories] = useState({
+    restaurant: true,
+    cafe: true,
+    pharmacy: true,
+    grocery: true
+  });
+
   // Trip planning states
   const [showTripPlanner, setShowTripPlanner] = useState(false);
   const [tripItinerary, setTripItinerary] = useState([]);
@@ -864,6 +874,20 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
     drawTripRoute();
   }, [tripItinerary, dayWiseItinerary, tripMode, viewMode]);
 
+  // Toggle nearby places visibility and filter by category
+  useEffect(() => {
+    nearbyPlacesMarkers.forEach(marker => {
+      if (mapInstance.current) {
+        const categoryActive = activeNearbyCategories[marker.nearbyCategory];
+        if (showNearbyPlaces && categoryActive) {
+          marker.addTo(mapInstance.current);
+        } else {
+          mapInstance.current.removeLayer(marker);
+        }
+      }
+    });
+  }, [showNearbyPlaces, activeNearbyCategories]);
+
   const handleStartSearch = (value) => {
     setStartSearchTerm(value);
     setShowStartResults(value.length > 0);
@@ -1449,6 +1473,156 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
     doc.save(fileName);
   };
 
+  // Function to find nearby places along the route
+  const findNearbyPlacesAlongRoute = (routeCoordinates) => {
+    console.log('=== Finding nearby places along route ===');
+    console.log('Route coordinates count:', routeCoordinates.length);
+    console.log('Total markers available:', markers.length);
+
+    // Debug: Check sample marker structure
+    if (markers.length > 0) {
+      console.log('Sample marker structure:', {
+        name: markers[0].name,
+        categories: markers[0].categories,
+        category: markers[0].category,
+        coords: markers[0].coords
+      });
+    }
+
+    // Clear existing nearby places markers
+    nearbyPlacesMarkers.forEach(marker => {
+      if (mapInstance.current) {
+        mapInstance.current.removeLayer(marker);
+      }
+    });
+
+    const L = window.L || globalThis.L;
+    const radiusKm = 1; // 1 km radius
+    const newNearbyMarkers = [];
+
+    // Categories to look for with their colors
+    const categories = {
+      restaurant: { color: '#EF4444', emoji: '🍽️', label: 'Restaurant' }, // Red
+      cafe: { color: '#F59E0B', emoji: '☕', label: 'Cafe' }, // Orange
+      pharmacy: { color: '#10B981', emoji: '💊', label: 'Pharmacy' }, // Green
+      grocery: { color: '#3B82F6', emoji: '🛒', label: 'Grocery' } // Blue
+    };
+
+    // Find places near the route
+    const foundPlaces = new Set(); // To avoid duplicate markers
+    const categoryCount = { restaurant: 0, cafe: 0, pharmacy: 0, grocery: 0 };
+
+    // Sample route points every ~200 meters to avoid checking thousands of points
+    // This makes the search more efficient while still catching nearby places
+    const sampledPoints = [];
+    let lastSampledPoint = null;
+    const minSampleDistance = 0.2; // 200 meters in km
+
+    for (let i = 0; i < routeCoordinates.length; i++) {
+      const point = routeCoordinates[i];
+
+      if (!lastSampledPoint) {
+        // Always include first point
+        sampledPoints.push(point);
+        lastSampledPoint = point;
+      } else {
+        // Check if we've traveled at least 200m from last sampled point
+        const dist = calculateDistance(
+          [lastSampledPoint.lat, lastSampledPoint.lng],
+          [point.lat, point.lng]
+        );
+
+        if (dist >= minSampleDistance) {
+          sampledPoints.push(point);
+          lastSampledPoint = point;
+        }
+      }
+    }
+
+    // Always include last point
+    if (routeCoordinates.length > 0 &&
+        sampledPoints[sampledPoints.length - 1] !== routeCoordinates[routeCoordinates.length - 1]) {
+      sampledPoints.push(routeCoordinates[routeCoordinates.length - 1]);
+    }
+
+    console.log(`Sampled ${sampledPoints.length} points from ${routeCoordinates.length} total route points`);
+
+    // Iterate through sampled route points
+    sampledPoints.forEach(point => {
+      const routeLat = point.lat;
+      const routeLng = point.lng;
+
+      // Check all markers for nearby places
+      markers.forEach(marker => {
+        // Get the marker's categories (handle both old 'category' and new 'categories' fields)
+        const markerCategories = marker.categories || marker.category;
+        const category = getPrimaryCategory(markerCategories);
+
+        // Debug: log first few categories found
+        if (categories[category] && !foundPlaces.has(`${marker.name}-${category}`)) {
+          console.log('Found potential place:', marker.name, 'Category:', category);
+        }
+
+        // Only process if it's one of our target categories
+        if (!categories[category]) return;
+
+        // Check if already added
+        const placeKey = `${marker.name}-${category}`;
+        if (foundPlaces.has(placeKey)) return;
+
+        const markerLat = marker.coords[0];
+        const markerLng = marker.coords[1];
+
+        // Calculate distance from this route point to marker
+        const distance = calculateDistance([routeLat, routeLng], [markerLat, markerLng]);
+
+        // If within 1km of ANY point on the route
+        if (distance <= radiusKm) {
+          foundPlaces.add(placeKey);
+          categoryCount[category]++;
+
+          console.log(`Adding ${category}: ${marker.name} (${distance.toFixed(2)} km from route)`);
+
+          // Create a small colored circle marker
+          const circleMarker = L.circleMarker([markerLat, markerLng], {
+            radius: 8,
+            fillColor: categories[category].color,
+            color: '#ffffff',
+            weight: 2,
+            opacity: 1,
+            fillOpacity: 0.8
+          });
+
+          // Store category on the marker for filtering later
+          circleMarker.nearbyCategory = category;
+
+          // Add popup with place info
+          const popupContent = `
+            <div style="min-width: 150px;">
+              <div style="font-weight: bold; margin-bottom: 4px;">
+                ${categories[category].emoji} ${marker.name}
+              </div>
+              <div style="color: ${categories[category].color}; font-size: 12px; margin-bottom: 4px;">
+                ${categories[category].label}
+              </div>
+              <div style="font-size: 11px; color: #666;">
+                ${distance.toFixed(2)} km from route
+              </div>
+            </div>
+          `;
+
+          circleMarker.bindPopup(popupContent);
+          circleMarker.addTo(mapInstance.current);
+          newNearbyMarkers.push(circleMarker);
+        }
+      });
+    });
+
+    console.log('Category counts:', categoryCount);
+    console.log('Total nearby places found:', newNearbyMarkers.length);
+    setNearbyPlacesMarkers(newNearbyMarkers);
+  };
+
   const showRoute = () => {
     if (!startPoint || !endPoint || !mapInstance.current) return;
     
@@ -1504,13 +1678,15 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
         timeout: 30000 // 30 second timeout
       })
     }).on('routesfound', function(e) {
+      console.log('Route found event triggered!');
       const routes = e.routes;
       const summary = routes[0].summary;
       const distance = (summary.totalDistance / 1000).toFixed(2);
       let duration = summary.totalTime;
+      console.log('Route coordinates:', routes[0].coordinates);
       let hours = Math.floor(duration / 3600);
       let minutes = Math.floor((duration % 3600) / 60);
-      
+
       // Adjust time display based on transport mode
       if (transportMode === 'foot') {
         // Walking is typically slower, so we'll adjust the time to be more realistic
@@ -1527,6 +1703,11 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
       let timeStr = hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`;
       setRouteDistance(distance);
       setRouteTime(timeStr);
+
+      // Find nearby places along the route
+      if (showNearbyPlaces && routes[0].coordinates) {
+        findNearbyPlacesAlongRoute(routes[0].coordinates);
+      }
     }).addTo(mapInstance.current);
 
     setRoutingControl(newRoutingControl);
@@ -1558,6 +1739,14 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
         mapInstance.current.removeLayer(endMarkerRef);
         setEndMarkerRef(null);
       }
+
+      // Clear nearby places markers
+      nearbyPlacesMarkers.forEach(marker => {
+        if (mapInstance.current) {
+          mapInstance.current.removeLayer(marker);
+        }
+      });
+      setNearbyPlacesMarkers([]);
 
       setStartPoint("");
       setEndPoint("");
@@ -2049,6 +2238,100 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
               {routeDistance && routeTime && (
                 <div className="p-3 bg-green-600 text-white rounded-lg text-center text-sm font-semibold">
                   {routeDistance} km • {routeTime}
+                </div>
+              )}
+
+              {showRouting && (
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between p-2 bg-white/10 rounded-lg">
+                    <span className="text-white text-xs font-semibold">Nearby Places</span>
+                    <button
+                      onClick={() => setShowNearbyPlaces(!showNearbyPlaces)}
+                      className={`px-3 py-1 rounded text-xs font-semibold transition-colors ${
+                        showNearbyPlaces ? 'bg-green-500 text-white' : 'bg-gray-500 text-white'
+                      }`}
+                    >
+                      {showNearbyPlaces ? 'ON' : 'OFF'}
+                    </button>
+                  </div>
+
+                  {showNearbyPlaces && nearbyPlacesMarkers.length > 0 && (
+                    <div className="p-2 bg-white/5 rounded-lg space-y-2">
+                      <div className="text-white text-xs font-semibold mb-2">
+                        Filter {nearbyPlacesMarkers.length} places within 1km:
+                      </div>
+                      <div className="grid grid-cols-2 gap-2 text-xs">
+                        <button
+                          onClick={() => setActiveNearbyCategories(prev => ({...prev, restaurant: !prev.restaurant}))}
+                          className="flex items-center gap-2 cursor-pointer hover:bg-white/10 p-1.5 rounded transition"
+                        >
+                          <div
+                            className="w-5 h-5 rounded-full transition-all duration-200 flex items-center justify-center"
+                            style={{
+                              backgroundColor: activeNearbyCategories.restaurant ? '#EF4444' : 'transparent',
+                              border: '2px solid #EF4444',
+                              opacity: activeNearbyCategories.restaurant ? 1 : 0.4,
+                              transform: activeNearbyCategories.restaurant ? 'scale(1)' : 'scale(0.85)'
+                            }}
+                          >
+                            {activeNearbyCategories.restaurant && <span className="text-white text-xs">✓</span>}
+                          </div>
+                          <span className="text-white">🍽️ Restaurants</span>
+                        </button>
+                        <button
+                          onClick={() => setActiveNearbyCategories(prev => ({...prev, cafe: !prev.cafe}))}
+                          className="flex items-center gap-2 cursor-pointer hover:bg-white/10 p-1.5 rounded transition"
+                        >
+                          <div
+                            className="w-5 h-5 rounded-full transition-all duration-200 flex items-center justify-center"
+                            style={{
+                              backgroundColor: activeNearbyCategories.cafe ? '#F59E0B' : 'transparent',
+                              border: '2px solid #F59E0B',
+                              opacity: activeNearbyCategories.cafe ? 1 : 0.4,
+                              transform: activeNearbyCategories.cafe ? 'scale(1)' : 'scale(0.85)'
+                            }}
+                          >
+                            {activeNearbyCategories.cafe && <span className="text-white text-xs">✓</span>}
+                          </div>
+                          <span className="text-white">☕ Cafes</span>
+                        </button>
+                        <button
+                          onClick={() => setActiveNearbyCategories(prev => ({...prev, pharmacy: !prev.pharmacy}))}
+                          className="flex items-center gap-2 cursor-pointer hover:bg-white/10 p-1.5 rounded transition"
+                        >
+                          <div
+                            className="w-5 h-5 rounded-full transition-all duration-200 flex items-center justify-center"
+                            style={{
+                              backgroundColor: activeNearbyCategories.pharmacy ? '#10B981' : 'transparent',
+                              border: '2px solid #10B981',
+                              opacity: activeNearbyCategories.pharmacy ? 1 : 0.4,
+                              transform: activeNearbyCategories.pharmacy ? 'scale(1)' : 'scale(0.85)'
+                            }}
+                          >
+                            {activeNearbyCategories.pharmacy && <span className="text-white text-xs">✓</span>}
+                          </div>
+                          <span className="text-white">💊 Pharmacies</span>
+                        </button>
+                        <button
+                          onClick={() => setActiveNearbyCategories(prev => ({...prev, grocery: !prev.grocery}))}
+                          className="flex items-center gap-2 cursor-pointer hover:bg-white/10 p-1.5 rounded transition"
+                        >
+                          <div
+                            className="w-5 h-5 rounded-full transition-all duration-200 flex items-center justify-center"
+                            style={{
+                              backgroundColor: activeNearbyCategories.grocery ? '#3B82F6' : 'transparent',
+                              border: '2px solid #3B82F6',
+                              opacity: activeNearbyCategories.grocery ? 1 : 0.4,
+                              transform: activeNearbyCategories.grocery ? 'scale(1)' : 'scale(0.85)'
+                            }}
+                          >
+                            {activeNearbyCategories.grocery && <span className="text-white text-xs">✓</span>}
+                          </div>
+                          <span className="text-white">🛒 Groceries</span>
+                        </button>
+                      </div>
+                    </div>
+                  )}
                 </div>
               )}
             </div>

@@ -405,11 +405,47 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
           // Add event listeners when popup opens
           marker.on("popupopen", () => {
             const popupEl = marker.getPopup().getElement();
-            popupEl.querySelector(".set-source-btn").onclick = () => {
+            popupEl.querySelector(".set-source-btn").onclick = (e) => {
+              const btn = e.target;
+
+              // Check if source is changing
+              if (startPoint !== name) {
+                // Happy animation
+                btn.style.transform = 'scale(1.2)';
+                btn.style.background = '#059669';
+                btn.innerHTML = '✓ Source Set!';
+
+                setTimeout(() => {
+                  btn.style.transform = 'scale(1)';
+                  setTimeout(() => {
+                    btn.innerHTML = 'Set as Source';
+                    btn.style.background = '#10b981';
+                  }, 200);
+                }, 600);
+              }
+
               setStartPoint(name);
               setStartSearchTerm(name);
             };
-            popupEl.querySelector(".set-dest-btn").onclick = () => {
+            popupEl.querySelector(".set-dest-btn").onclick = (e) => {
+              const btn = e.target;
+
+              // Check if destination is changing
+              if (endPoint !== name) {
+                // Happy animation
+                btn.style.transform = 'scale(1.2)';
+                btn.style.background = '#d97706';
+                btn.innerHTML = '✓ Destination Set!';
+
+                setTimeout(() => {
+                  btn.style.transform = 'scale(1)';
+                  setTimeout(() => {
+                    btn.innerHTML = 'Set as Destination';
+                    btn.style.background = '#f59e0b';
+                  }, 200);
+                }, 600);
+              }
+
               setEndPoint(name);
               setEndSearchTerm(name);
             };

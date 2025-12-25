@@ -897,6 +897,65 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
     }
   };
 
+  // Helper function to capture map as image
+  const captureMapImage = async (bounds) => {
+    return new Promise(async (resolve) => {
+      if (!mapInstance.current || !mapRef.current) {
+        resolve(null);
+        return;
+      }
+
+      try {
+        // Save original view
+        const originalCenter = mapInstance.current.getCenter();
+        const originalZoom = mapInstance.current.getZoom();
+
+        // Fit bounds if provided with generous padding to ensure all markers are visible
+        if (bounds) {
+          // Use larger padding to ensure all points are visible
+          // padding: [top, right, bottom, left] or [vertical, horizontal]
+          mapInstance.current.fitBounds(bounds, {
+            padding: [80, 80], // Increased padding from 50 to 80
+            maxZoom: 15, // Prevent zooming in too close
+            animate: false // Disable animation for faster rendering
+          });
+        }
+
+        // Wait longer for map to fully render with all markers and polylines
+        await new Promise(r => setTimeout(r, 1200)); // Increased from 800ms to 1200ms
+
+        // Import html2canvas
+        const html2canvas = (await import('html2canvas')).default;
+
+        // Capture the map container
+        const canvas = await html2canvas(mapRef.current, {
+          useCORS: true,
+          allowTaint: true,
+          backgroundColor: '#f0f0f0',
+          scale: 1.5, // Increased scale for better quality
+          logging: false, // Disable logging for cleaner output
+        });
+
+        // Restore original view
+        mapInstance.current.setView(originalCenter, originalZoom);
+
+        // Return base64 image
+        resolve(canvas.toDataURL('image/png', 0.9)); // Added quality parameter
+      } catch (error) {
+        console.error('Error capturing map:', error);
+        // Still restore view even on error
+        if (mapInstance.current) {
+          try {
+            mapInstance.current.setView(originalCenter, originalZoom);
+          } catch (e) {
+            console.error('Error restoring view:', e);
+          }
+        }
+        resolve(null);
+      }
+    });
+  };
+
   // Export itinerary as PDF
   const exportToPDF = async () => {
     const { jsPDF } = await import('jspdf');
@@ -925,6 +984,14 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
       doc.setFont(undefined, 'bold');
       doc.text('Single Day Trip', margin, yPos);
       yPos += 10;
+
+      // Capture map image for single day trip
+      let mapImageData = null;
+      if (tripItinerary.length > 0) {
+        const L = await import('leaflet');
+        const bounds = L.latLngBounds(tripItinerary.map(p => p.coords));
+        mapImageData = await captureMapImage(bounds);
+      }
 
       doc.setFontSize(11);
       doc.setFont(undefined, 'normal');
@@ -967,6 +1034,26 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
       doc.setFont(undefined, 'bold');
       doc.setFontSize(11);
       doc.text(`Total Places: ${tripItinerary.length}`, margin, yPos);
+      yPos += 15;
+
+      // Add map image if captured
+      if (mapImageData) {
+        if (yPos > pageHeight - 100) {
+          doc.addPage();
+          yPos = margin;
+        }
+
+        doc.setFontSize(12);
+        doc.setFont(undefined, 'bold');
+        doc.text('Route Map', margin, yPos);
+        yPos += 8;
+
+        // Add map image (landscape, centered)
+        const imgWidth = pageWidth - margin * 2;
+        const imgHeight = 80;
+        doc.addImage(mapImageData, 'PNG', margin, yPos, imgWidth, imgHeight);
+        yPos += imgHeight + 10;
+      }
     } else {
       // Day-wise itinerary
       doc.setFontSize(14);
@@ -976,6 +1063,14 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
 
       for (let day = 1; day <= numberOfDays; day++) {
         const places = dayWiseItinerary[day] || [];
+
+        // Capture map image for this day if there are places
+        let dayMapImageData = null;
+        if (places.length > 0) {
+          const L = await import('leaflet');
+          const bounds = L.latLngBounds(places.map(p => p.coords));
+          dayMapImageData = await captureMapImage(bounds);
+        }
 
         if (yPos > pageHeight - 40) {
           doc.addPage();
@@ -1038,6 +1133,27 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
           doc.setFont(undefined, 'italic');
           doc.setFontSize(9);
           doc.text(`Day ${day} - ${places.length} place(s)`, margin + 10, yPos);
+          yPos += 10;
+
+          // Add map image for this day if captured
+          if (dayMapImageData) {
+            if (yPos > pageHeight - 90) {
+              doc.addPage();
+              yPos = margin;
+            }
+
+            doc.setFontSize(11);
+            doc.setFont(undefined, 'bold');
+            doc.setTextColor(0, 0, 0);
+            doc.text(`Day ${day} Route Map`, margin + 10, yPos);
+            yPos += 6;
+
+            // Add map image (smaller for multi-day)
+            const imgWidth = pageWidth - margin * 2;
+            const imgHeight = 70;
+            doc.addImage(dayMapImageData, 'PNG', margin, yPos, imgWidth, imgHeight);
+            yPos += imgHeight + 5;
+          }
         }
 
         yPos += 12;

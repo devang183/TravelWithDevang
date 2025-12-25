@@ -674,9 +674,9 @@ useEffect(() => {
 }, []);
 
   return (
-    <div className="w-full max-w-6xl mx-auto bg-white rounded-none sm:rounded-2xl shadow-2xl overflow-hidden">
+    <div className="w-full max-w-6xl mx-auto bg-white/10 backdrop-blur-md rounded-none sm:rounded-2xl shadow-2xl overflow-hidden">
       {/* Category Filter Slider */}
-      <div className="bg-white border-b p-3 sm:p-4">
+      <div className="bg-white/20 backdrop-blur-lg border-b border-white/30 p-3 sm:p-4">
         <div className="flex items-center justify-end mb-3 sm:mb-4">
           <div className="flex gap-2">
             <button
@@ -1042,7 +1042,7 @@ useEffect(() => {
       )}
 
       {/* Recent Discoveries Sidebar */}
-      <div className="p-3 sm:p-6 border-t bg-gray-50">
+      <div className="p-3 sm:p-6 border-t border-white/30 bg-white/20 backdrop-blur-lg">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-3 sm:mb-4 gap-2">
           <h3 className="text-base sm:text-lg font-bold">Recent Discoveries in {cityName}</h3>
           <span className="text-xs sm:text-sm text-gray-500">
@@ -1050,7 +1050,7 @@ useEffect(() => {
           </span>
         </div>
         {/* Search Bar */}
-        <div className="flex items-center mb-3 sm:mb-4 p-2 border rounded-lg bg-white shadow-sm">
+        <div className="flex items-center mb-3 sm:mb-4 p-2 border border-white/30 rounded-lg bg-white/30 backdrop-blur-sm shadow-sm">
             <Search className="w-4 h-4 sm:w-5 sm:h-5 text-gray-500 mr-2 flex-shrink-0" />
             <input
             type="text"

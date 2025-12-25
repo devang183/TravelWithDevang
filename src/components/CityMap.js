@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState, useCallback } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import { PawPrint, Navigation, X, Calendar, MapPin, Plus, Trash2, Download, FileText, GripVertical, ChevronDown, ChevronUp } from "lucide-react";
 import Fuse from "fuse.js";
 import CityMapCategoryBar from "./CityMapCategoryBar";
@@ -138,6 +138,31 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
   const boundsEqual = (bounds1, bounds2) => {
     if (!bounds1 || !bounds2) return false;
     return bounds1.toBBoxString() === bounds2.toBBoxString();
+  };
+
+  // Helper function to calculate distance between two coordinates (Haversine formula)
+  const calculateDistance = (coords1, coords2) => {
+    const R = 6371; // Earth's radius in kilometers
+    const lat1 = coords1[0] * Math.PI / 180;
+    const lat2 = coords2[0] * Math.PI / 180;
+    const deltaLat = (coords2[0] - coords1[0]) * Math.PI / 180;
+    const deltaLon = (coords2[1] - coords1[1]) * Math.PI / 180;
+
+    const a = Math.sin(deltaLat / 2) * Math.sin(deltaLat / 2) +
+              Math.cos(lat1) * Math.cos(lat2) *
+              Math.sin(deltaLon / 2) * Math.sin(deltaLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    const distance = R * c;
+
+    return distance; // Returns distance in kilometers
+  };
+
+  // Helper function to format distance
+  const formatDistance = (distanceKm) => {
+    if (distanceKm < 1) {
+      return `${Math.round(distanceKm * 1000)}m`;
+    }
+    return `${distanceKm.toFixed(2)}km`;
   };
 
   // Drag and drop handlers for trip itinerary
@@ -388,14 +413,38 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
               setEndPoint(name);
               setEndSearchTerm(name);
             };
-            popupEl.querySelector(".add-to-trip-btn").onclick = () => {
+            popupEl.querySelector(".add-to-trip-btn").onclick = (e) => {
+              const btn = e.target;
               const placeData = markers[index];
               const currentMode = tripModeRef.current;
               const currentDay = selectedDayRef.current;
 
+              // Check if already exists before animation
+              let alreadyExists = false;
+              if (currentMode === "single") {
+                alreadyExists = tripItinerary.some(p => p.name === placeData.name);
+              } else {
+                const currentDayPlaces = dayWiseItinerary[currentDay] || [];
+                alreadyExists = currentDayPlaces.some(p => p.name === placeData.name);
+              }
+
+              if (!alreadyExists) {
+                // Happy animation
+                btn.style.transform = 'scale(1.2)';
+                btn.style.background = '#10b981';
+                btn.innerHTML = '✓ Added!';
+
+                setTimeout(() => {
+                  btn.style.transform = 'scale(1)';
+                  setTimeout(() => {
+                    btn.innerHTML = '+ Add to Trip Plan';
+                    btn.style.background = '#8b5cf6';
+                  }, 200);
+                }, 600);
+              }
+
               if (currentMode === "single") {
                 setTripItinerary(prev => {
-                  // Check if place already exists
                   if (prev.some(p => p.name === placeData.name)) {
                     return prev;
                   }
@@ -405,7 +454,6 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
                 // Day-wise mode
                 setDayWiseItinerary(prev => {
                   const currentDayPlaces = prev[currentDay] || [];
-                  // Check if place already exists in the current day
                   if (currentDayPlaces.some(p => p.name === placeData.name)) {
                     return prev;
                   }
@@ -646,6 +694,39 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
           lineJoin: 'round',
         }).addTo(mapInstance.current);
         newPolylines.push(polyline);
+
+        // Add distance labels on each segment
+        for (let i = 0; i < tripItinerary.length - 1; i++) {
+          const place1 = tripItinerary[i];
+          const place2 = tripItinerary[i + 1];
+          const distance = calculateDistance(place1.coords, place2.coords);
+          const midLat = (place1.coords[0] + place2.coords[0]) / 2;
+          const midLng = (place1.coords[1] + place2.coords[1]) / 2;
+
+          const distanceIcon = L.divIcon({
+            className: 'distance-label',
+            html: `
+              <div style="
+                background: #8b5cf6;
+                color: white;
+                padding: 2px 8px;
+                border-radius: 12px;
+                font-size: 11px;
+                font-weight: bold;
+                white-space: nowrap;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+                border: 2px solid white;
+              ">
+                ${formatDistance(distance)}
+              </div>
+            `,
+            iconSize: [60, 20],
+            iconAnchor: [30, 10],
+          });
+
+          const distanceMarker = L.marker([midLat, midLng], { icon: distanceIcon }).addTo(mapInstance.current);
+          newTripMarkers.push(distanceMarker);
+        }
       } else {
         // Day-wise itinerary mode
         const dayColors = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'];
@@ -698,6 +779,39 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
               lineJoin: 'round',
             }).addTo(mapInstance.current);
             newPolylines.push(polyline);
+
+            // Add distance labels on each segment for this day
+            for (let i = 0; i < places.length - 1; i++) {
+              const place1 = places[i];
+              const place2 = places[i + 1];
+              const distance = calculateDistance(place1.coords, place2.coords);
+              const midLat = (place1.coords[0] + place2.coords[0]) / 2;
+              const midLng = (place1.coords[1] + place2.coords[1]) / 2;
+
+              const distanceIcon = L.divIcon({
+                className: 'distance-label',
+                html: `
+                  <div style="
+                    background: ${color};
+                    color: white;
+                    padding: 2px 8px;
+                    border-radius: 12px;
+                    font-size: 11px;
+                    font-weight: bold;
+                    white-space: nowrap;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+                    border: 2px solid white;
+                  ">
+                    ${formatDistance(distance)}
+                  </div>
+                `,
+                iconSize: [60, 20],
+                iconAnchor: [30, 10],
+              });
+
+              const distanceMarker = L.marker([midLat, midLng], { icon: distanceIcon }).addTo(mapInstance.current);
+              newTripMarkers.push(distanceMarker);
+            }
           }
         });
       }
@@ -834,6 +948,18 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
         } else {
           yPos += 5;
         }
+
+        // Add distance to next place
+        if (index < tripItinerary.length - 1) {
+          const nextPlace = tripItinerary[index + 1];
+          const distance = calculateDistance(place.coords, nextPlace.coords);
+          doc.setFont(undefined, 'italic');
+          doc.setFontSize(9);
+          doc.setTextColor(100, 100, 100);
+          doc.text(`    ↓ ${formatDistance(distance)} to next stop`, margin + 5, yPos);
+          doc.setTextColor(0, 0, 0);
+          yPos += 6;
+        }
       });
 
       // Total places
@@ -893,6 +1019,18 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
               yPos += splitDesc.length * 5 + 3;
             } else {
               yPos += 3;
+            }
+
+            // Add distance to next place
+            if (index < places.length - 1) {
+              const nextPlace = places[index + 1];
+              const distance = calculateDistance(place.coords, nextPlace.coords);
+              doc.setFont(undefined, 'italic');
+              doc.setFontSize(9);
+              doc.setTextColor(100, 100, 100);
+              doc.text(`      ↓ ${formatDistance(distance)} to next stop`, margin + 5, yPos);
+              doc.setTextColor(0, 0, 0);
+              yPos += 6;
             }
           });
 
@@ -1723,42 +1861,58 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
                           >
                             {tripItinerary.map((place, index) => {
                               const uniqueId = `${place.name}-${place.coords[0]}-${place.coords[1]}`;
+                              const nextPlace = tripItinerary[index + 1];
+                              const distance = nextPlace ? calculateDistance(place.coords, nextPlace.coords) : null;
+
                               return (
-                                <Draggable key={uniqueId} draggableId={uniqueId} index={index}>
-                                  {(provided, snapshot) => (
-                                    <div
-                                      ref={provided.innerRef}
-                                      {...provided.draggableProps}
-                                      className={`flex items-center gap-2 rounded p-2 transition-all duration-200 ${
-                                        snapshot.isDragging
-                                          ? 'bg-purple-500/60 shadow-2xl scale-105 rotate-1 ring-2 ring-purple-300 z-50'
-                                          : 'bg-white/20 hover:bg-white/30'
-                                      }`}
-                                      style={{
-                                        ...provided.draggableProps.style,
-                                      }}
-                                    >
-                                      <div {...provided.dragHandleProps} className="cursor-grab active:cursor-grabbing hover:scale-110 transition-transform">
-                                        <GripVertical size={16} className={`transition-colors ${snapshot.isDragging ? 'text-white' : 'text-white/70'}`} />
-                                      </div>
-                                      <span className={`w-6 h-6 rounded-full bg-purple-500 text-white flex items-center justify-center text-xs font-bold transition-all ${
-                                        snapshot.isDragging ? 'ring-2 ring-white' : ''
-                                      }`}>
-                                        {index + 1}
-                                      </span>
-                                      <span className="flex-1 text-white text-sm">{place.name}</span>
-                                      <button
-                                        onClick={() => {
-                                          const newItinerary = tripItinerary.filter((_, i) => i !== index);
-                                          setTripItinerary(newItinerary);
+                                <React.Fragment key={uniqueId}>
+                                  <Draggable draggableId={uniqueId} index={index}>
+                                    {(provided, snapshot) => (
+                                      <div
+                                        ref={provided.innerRef}
+                                        {...provided.draggableProps}
+                                        className={`flex items-center gap-2 rounded p-2 transition-all duration-200 ${
+                                          snapshot.isDragging
+                                            ? 'bg-purple-500/60 shadow-2xl scale-105 rotate-1 ring-2 ring-purple-300 z-50'
+                                            : 'bg-white/20 hover:bg-white/30'
+                                        }`}
+                                        style={{
+                                          ...provided.draggableProps.style,
                                         }}
-                                        className="p-1 hover:bg-red-500 rounded transition-colors"
                                       >
-                                        <X size={14} className="text-white" />
-                                      </button>
+                                        <div {...provided.dragHandleProps} className="cursor-grab active:cursor-grabbing hover:scale-110 transition-transform">
+                                          <GripVertical size={16} className={`transition-colors ${snapshot.isDragging ? 'text-white' : 'text-white/70'}`} />
+                                        </div>
+                                        <span className={`w-6 h-6 rounded-full bg-purple-500 text-white flex items-center justify-center text-xs font-bold transition-all ${
+                                          snapshot.isDragging ? 'ring-2 ring-white' : ''
+                                        }`}>
+                                          {index + 1}
+                                        </span>
+                                        <span className="flex-1 text-white text-sm">{place.name}</span>
+                                        <button
+                                          onClick={() => {
+                                            const newItinerary = tripItinerary.filter((_, i) => i !== index);
+                                            setTripItinerary(newItinerary);
+                                          }}
+                                          className="p-1 hover:bg-red-500 rounded transition-colors"
+                                        >
+                                          <X size={14} className="text-white" />
+                                        </button>
+                                      </div>
+                                    )}
+                                  </Draggable>
+                                  {distance && (
+                                    <div className="flex items-center justify-center py-1">
+                                      <div className="flex items-center gap-2 text-white/80 text-xs">
+                                        <div className="h-4 border-l-2 border-dashed border-purple-400"></div>
+                                        <span className="bg-purple-500/40 px-2 py-0.5 rounded-full font-semibold">
+                                          {formatDistance(distance)}
+                                        </span>
+                                        <div className="h-4 border-l-2 border-dashed border-purple-400"></div>
+                                      </div>
                                     </div>
                                   )}
-                                </Draggable>
+                                </React.Fragment>
                               );
                             })}
                             {provided.placeholder}
@@ -1815,44 +1969,60 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
                           >
                             {dayWiseItinerary[selectedDay].map((place, index) => {
                               const uniqueId = `day${selectedDay}-${place.name}-${place.coords[0]}-${place.coords[1]}`;
+                              const nextPlace = dayWiseItinerary[selectedDay][index + 1];
+                              const distance = nextPlace ? calculateDistance(place.coords, nextPlace.coords) : null;
+
                               return (
-                                <Draggable key={uniqueId} draggableId={uniqueId} index={index}>
-                                  {(provided, snapshot) => (
-                                    <div
-                                      ref={provided.innerRef}
-                                      {...provided.draggableProps}
-                                      className={`flex items-center gap-2 rounded p-2 transition-all duration-200 ${
-                                        snapshot.isDragging
-                                          ? 'bg-blue-500/60 shadow-2xl scale-105 rotate-1 ring-2 ring-blue-300 z-50'
-                                          : 'bg-white/20 hover:bg-white/30'
-                                      }`}
-                                      style={{
-                                        ...provided.draggableProps.style,
-                                      }}
-                                    >
-                                      <div {...provided.dragHandleProps} className="cursor-grab active:cursor-grabbing hover:scale-110 transition-transform">
-                                        <GripVertical size={16} className={`transition-colors ${snapshot.isDragging ? 'text-white' : 'text-white/70'}`} />
-                                      </div>
-                                      <span className={`w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold transition-all ${
-                                        snapshot.isDragging ? 'ring-2 ring-white' : ''
-                                      }`}>
-                                        {index + 1}
-                                      </span>
-                                      <span className="flex-1 text-white text-sm">{place.name}</span>
-                                      <button
-                                        onClick={() => {
-                                          setDayWiseItinerary({
-                                            ...dayWiseItinerary,
-                                            [selectedDay]: dayWiseItinerary[selectedDay].filter((_, i) => i !== index),
-                                          });
+                                <React.Fragment key={uniqueId}>
+                                  <Draggable draggableId={uniqueId} index={index}>
+                                    {(provided, snapshot) => (
+                                      <div
+                                        ref={provided.innerRef}
+                                        {...provided.draggableProps}
+                                        className={`flex items-center gap-2 rounded p-2 transition-all duration-200 ${
+                                          snapshot.isDragging
+                                            ? 'bg-blue-500/60 shadow-2xl scale-105 rotate-1 ring-2 ring-blue-300 z-50'
+                                            : 'bg-white/20 hover:bg-white/30'
+                                        }`}
+                                        style={{
+                                          ...provided.draggableProps.style,
                                         }}
-                                        className="p-1 hover:bg-red-500 rounded transition-colors"
                                       >
-                                        <X size={14} className="text-white" />
-                                      </button>
+                                        <div {...provided.dragHandleProps} className="cursor-grab active:cursor-grabbing hover:scale-110 transition-transform">
+                                          <GripVertical size={16} className={`transition-colors ${snapshot.isDragging ? 'text-white' : 'text-white/70'}`} />
+                                        </div>
+                                        <span className={`w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold transition-all ${
+                                          snapshot.isDragging ? 'ring-2 ring-white' : ''
+                                        }`}>
+                                          {index + 1}
+                                        </span>
+                                        <span className="flex-1 text-white text-sm">{place.name}</span>
+                                        <button
+                                          onClick={() => {
+                                            setDayWiseItinerary({
+                                              ...dayWiseItinerary,
+                                              [selectedDay]: dayWiseItinerary[selectedDay].filter((_, i) => i !== index),
+                                            });
+                                          }}
+                                          className="p-1 hover:bg-red-500 rounded transition-colors"
+                                        >
+                                          <X size={14} className="text-white" />
+                                        </button>
+                                      </div>
+                                    )}
+                                  </Draggable>
+                                  {distance && (
+                                    <div className="flex items-center justify-center py-1">
+                                      <div className="flex items-center gap-2 text-white/80 text-xs">
+                                        <div className="h-4 border-l-2 border-dashed border-blue-400"></div>
+                                        <span className="bg-blue-500/40 px-2 py-0.5 rounded-full font-semibold">
+                                          {formatDistance(distance)}
+                                        </span>
+                                        <div className="h-4 border-l-2 border-dashed border-blue-400"></div>
+                                      </div>
                                     </div>
                                   )}
-                                </Draggable>
+                                </React.Fragment>
                               );
                             })}
                             {provided.placeholder}

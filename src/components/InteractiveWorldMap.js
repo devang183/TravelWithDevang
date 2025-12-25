@@ -26,6 +26,12 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
   const originalCenter = [30, 0];
   const originalZoom = 2.5;
 
+  // State for lightbox
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxImages, setLightboxImages] = useState([]);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [lightboxCityName, setLightboxCityName] = useState('');
+
   // Function to create a custom marker icon
   const createCustomIcon = (isSelected = false) => {
     const color = isSelected ? '#ef4444' : '#3b82f6';
@@ -70,7 +76,12 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
     const sliderId = `slider-${cityId}`;
     const slides = cityPhotos.map((img, idx) => `
       <div class="popup-slide" style="display: ${idx === 0 ? 'block' : 'none'}; width: 100%;">
-        <img src="${img}" alt="${city.name} ${idx + 1}" class="w-full h-40 object-cover rounded-t-lg">
+        <img
+          src="${img}"
+          alt="${city.name} ${idx + 1}"
+          class="w-full h-40 object-cover rounded-t-lg cursor-pointer hover:opacity-90 transition-opacity"
+          onclick="window.openLightbox('${city.name}', ${idx})"
+        >
       </div>
     `).join('');
 
@@ -274,25 +285,25 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
     }
   };
 
-  // Global functions for image slider
+  // Global functions for image slider and lightbox
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const updateSlider = (sliderId, current, next) => {
         const slider = document.getElementById(sliderId);
         if (!slider) return;
-        
+
         const slides = slider.querySelectorAll('.popup-slide');
         const cityId = sliderId.replace('slider-', '');
         const bars = slider.querySelectorAll(`[id^='bar-${cityId}-']`);
-        
+
         if (!slides.length) return;
-        
+
         // Hide current slide
         if (current >= 0 && current < slides.length) {
           slides[current].style.display = 'none';
           if (bars[current]) bars[current].style.background = '#ccc';
         }
-        
+
         // Show next slide
         if (next >= 0 && next < slides.length) {
           slides[next].style.display = 'block';
@@ -303,11 +314,11 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
       window.showNext = (sliderId) => {
         const slider = document.getElementById(sliderId);
         if (!slider) return;
-        
+
         const slides = slider.querySelectorAll('.popup-slide');
         if (!slides.length) return;
-        
-        const current = [...slides].findIndex(slide => 
+
+        const current = [...slides].findIndex(slide =>
           window.getComputedStyle(slide).display === 'block'
         );
         const next = (current + 1) % slides.length;
@@ -317,15 +328,26 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
       window.showPrev = (sliderId) => {
         const slider = document.getElementById(sliderId);
         if (!slider) return;
-        
+
         const slides = slider.querySelectorAll('.popup-slide');
         if (!slides.length) return;
-        
-        const current = [...slides].findIndex(slide => 
+
+        const current = [...slides].findIndex(slide =>
           window.getComputedStyle(slide).display === 'block'
         );
         const prev = (current - 1 + slides.length) % slides.length;
         updateSlider(sliderId, current, prev);
+      };
+
+      // Lightbox open function
+      window.openLightbox = (cityName, imageIndex) => {
+        const cityPhotos = photos[cityName.toLowerCase()]?.images || [];
+        if (cityPhotos.length > 0) {
+          setLightboxImages(cityPhotos);
+          setLightboxIndex(imageIndex);
+          setLightboxCityName(cityName);
+          setLightboxOpen(true);
+        }
       };
     }
 
@@ -333,9 +355,28 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
       if (typeof window !== 'undefined') {
         delete window.showNext;
         delete window.showPrev;
+        delete window.openLightbox;
       }
     };
   }, []);
+
+  // Keyboard navigation for lightbox
+  useEffect(() => {
+    if (!lightboxOpen) return;
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setLightboxOpen(false);
+      } else if (e.key === 'ArrowRight') {
+        setLightboxIndex((prev) => (prev + 1) % lightboxImages.length);
+      } else if (e.key === 'ArrowLeft') {
+        setLightboxIndex((prev) => (prev - 1 + lightboxImages.length) % lightboxImages.length);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxOpen, lightboxImages.length]);
 
   // Initialize the map
   useEffect(() => {
@@ -530,6 +571,70 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
           </div>
         </div>
       </div>
+
+      {/* Lightbox Modal */}
+      {lightboxOpen && (
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-90"
+          onClick={() => setLightboxOpen(false)}
+        >
+          <div className="relative w-full h-full flex items-center justify-center p-4">
+            {/* Close button */}
+            <button
+              onClick={() => setLightboxOpen(false)}
+              className="absolute top-4 right-4 text-white text-4xl font-bold hover:text-gray-300 transition-colors z-10"
+              aria-label="Close"
+            >
+              ×
+            </button>
+
+            {/* Previous button */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setLightboxIndex((prev) => (prev - 1 + lightboxImages.length) % lightboxImages.length);
+              }}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl hover:bg-opacity-75 transition-all z-10"
+              aria-label="Previous image"
+            >
+              ←
+            </button>
+
+            {/* Image */}
+            <div
+              className="relative max-w-6xl max-h-[90vh] flex flex-col items-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={lightboxImages[lightboxIndex]}
+                alt={`${lightboxCityName} ${lightboxIndex + 1}`}
+                className="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl"
+              />
+              <div className="mt-4 text-white text-center">
+                <p className="text-lg font-semibold">{lightboxCityName}</p>
+                <p className="text-sm opacity-75">
+                  {lightboxIndex + 1} / {lightboxImages.length}
+                </p>
+                <p className="text-xs opacity-50 mt-2">
+                  Use arrow keys or click arrows to navigate • Press ESC to close
+                </p>
+              </div>
+            </div>
+
+            {/* Next button */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setLightboxIndex((prev) => (prev + 1) % lightboxImages.length);
+              }}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl hover:bg-opacity-75 transition-all z-10"
+              aria-label="Next image"
+            >
+              →
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

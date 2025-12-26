@@ -45,7 +45,13 @@ const CategoryEmojiBar = ({
     hospitality: "🏨",
     health: "🏥",
     police: "👮",
-    dentist: "🦷"
+    dentist: "🦷",
+    cafe_wifi: "☕📶",
+    cafe_power: "☕🔌",
+    restaurant_wifi: "🍽️📶",
+    restaurant_power: "🍽️🔌",
+    library_wifi: "📚📶",
+    coworking: "💼",
   };
 
 

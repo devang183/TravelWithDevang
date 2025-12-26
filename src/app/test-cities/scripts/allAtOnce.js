@@ -8,41 +8,23 @@ const dbName = "hello";
 
 // 1️⃣ Define cities
 // const cities = ["Newry", "Dublin"]; // Add more cities as needed
- const cities=["Bengaluru"]
-//const cities=["Dublin","London","Belfast","Liverpool","Birmingham", "Manchester","Leeds","Rabat","Raipur","Delhi","Malahide","Naas","Maynooth","Newquay"]
+// const cities=["Bengaluru"]
+const cities=["Dublin","London","Belfast","Liverpool","Birmingham", "Manchester","Leeds","Rabat","Raipur","Delhi","Malahide","Naas","Maynooth","Newquay","Bengaluru"]
 
 // 2️⃣ Categories → OSM Tags mapping
 const categories = {
-//   paddypower: {emoji:"🟩", query:'shop="bookmaker"'}
- //  bookstore: { emoji: "📚", query: 'shop="books"' },
-  // racecourse: { emoji: "🏇", query: 'leisure="racecourse"' },
-  // park: { emoji: "🌳", query: 'leisure="park"' },
-  // pint: { emoji: "🍺", query: 'amenity="pub"' },
- //  atm: { emoji: "🏧", query: 'amenity="atm"' },
- //  historic: { emoji: "🏰", query: 'historic' },
- //  museum: { emoji: "🖼️", query: 'tourism="museum"' },
-  // beach: { emoji: "🏖️", query: 'natural="beach"' },
- //  cafe: { emoji: "☕", query: 'amenity="cafe"' },
- //  restaurant: { emoji: "🍽️", query: 'amenity="restaurant"' },
- //  viewpoint: { emoji: "🔭", query: 'tourism="viewpoint"' },
- //  college: { emoji: "🎓", query: 'amenity="college"' },
- //  church: { emoji: "⛪", query: 'amenity="place_of_worship"' },
- //  art: { emoji: "🎨", query: 'tourism="gallery"' },
-//   cricket: { emoji: "🏏", query: 'sport="cricket"' },
-//   bookstore: { emoji: "📚", query: 'shop="books"' },
-//   grocery: { emoji: "🛒", query: 'shop="supermarket"' },
-//   hospital: { emoji: "🩺", query: 'amenity="hospital"' },
-//   pharmacy: { emoji: "💊", query: 'amenity="pharmacy"' },
-//   icecream: { emoji: "🍦", query: 'amenity="ice_cream"' },
-  //womenbeauty: { emoji: "💇‍♀️", query: 'shop="beauty"' },
-  //fuelgas: { emoji: "⛽", query: 'amenity="fuel"' },
-// //   leisure: { emoji: "🎭", query: 'leisure' },
-// //   retailshops: { emoji: "🛍️", query: 'shop' },
-//   hospitality: { emoji: "🏨", query: 'tourism="hotel"' },
-//   health: { emoji: "🏥", query: 'amenity="clinic"' },
-   police: { emoji: "👮", query: 'amenity="police"' },
-      dentist: {emoji: "🦷", query:'amenity="dentist"'},
-    sports:{emoji:"🏆",query:'sport~"football|rugby|tennis|badminton"'}
+  // Work-Friendly Venues (WiFi + Power Outlets)
+  cafe_wifi: { emoji: "☕📶", query: 'amenity="cafe"]["internet_access"~"wlan|yes"' },
+  cafe_power: { emoji: "☕🔌", query: 'amenity="cafe"]["socket"' },
+  restaurant_wifi: { emoji: "🍽️📶", query: 'amenity="restaurant"]["internet_access"~"wlan|yes"' },
+  restaurant_power: { emoji: "🍽️🔌", query: 'amenity="restaurant"]["socket"' },
+  library_wifi: { emoji: "📚📶", query: 'amenity="library"]["internet_access"~"wlan|yes"' },
+  coworking: { emoji: "💼", query: 'amenity="coworking_space"' },
+
+  // Other categories (commented out for now, uncomment as needed)
+  // police: { emoji: "👮", query: 'amenity="police"' },
+  // dentist: {emoji: "🦷", query:'amenity="dentist"'},
+  // sports:{emoji:"🏆",query:'sport~"football|rugby|tennis|badminton"'}
 };
 
 // 3️⃣ Build Overpass query
@@ -94,18 +76,34 @@ function buildQuery(query, cityName) {
 // 4️⃣ Build description
 function buildDescription(tags) {
   const parts = [];
+
+  // Work-friendly amenities (priority display)
+  if (tags["internet_access"] === "wlan" || tags["internet_access"] === "yes") {
+    const feeInfo = tags["internet_access:fee"] === "no" ? " (Free)" : "";
+    parts.push(`📶 WiFi Available${feeInfo}`);
+  }
+  if (tags["socket"] || tags["socket:usb"] || tags["socket:eu"] || tags["socket:us"]) {
+    parts.push(`🔌 Power Outlets Available`);
+  }
+
+  // Address info
   if (tags["addr:housenumber"]) parts.push(`House No: ${tags["addr:housenumber"]}`);
   if (tags["addr:street"]) parts.push(`Street: ${tags["addr:street"]}`);
   if (tags["addr:city"]) parts.push(`City: ${tags["addr:city"]}`);
   if (tags["addr:postcode"]) parts.push(`Postcode: ${tags["addr:postcode"]}`);
+
+  // Contact & hours
   if (tags["phone"]) parts.push(`📞 ${tags["phone"]}`);
   if (tags["website"]) parts.push(`🌐 <a href="${tags["website"]}" target="_blank">${tags["website"]}</a>`);
   if (tags["opening_hours"]) parts.push(`🕒 Hours: ${tags["opening_hours"]}`);
+
+  // Additional details
   if (tags["cuisine"]) parts.push(`🍴 Cuisine: ${tags["cuisine"]}`);
   if (tags["operator"]) parts.push(`Managed by: ${tags["operator"]}`);
   if (tags["tourism"]) parts.push(`Tourism: ${tags["tourism"]}`);
   if (tags["historic"]) parts.push(`Historic: ${tags["historic"]}`);
   if (tags["surface"]) parts.push(`Surface: ${tags["surface"]}`);
+
   return parts.join("<br>") || "No additional info available";
 }
 
@@ -135,6 +133,22 @@ async function fetchCategory(catName, cfg, cityName) {
           category: catName,
           keywords: Object.values(tags).slice(0, 10),
           osmId: e.id,
+          // Store work-friendly metadata
+          tags: {
+            internet_access: tags.internet_access,
+            'internet_access:fee': tags['internet_access:fee'],
+            socket: tags.socket,
+            'socket:usb': tags['socket:usb'],
+            'socket:eu': tags['socket:eu'],
+            'socket:us': tags['socket:us'],
+            opening_hours: tags.opening_hours,
+            website: tags.website,
+            phone: tags.phone,
+            cuisine: tags.cuisine,
+            amenity: tags.amenity,
+          },
+          website: tags.website,
+          phone: tags.phone,
         };
       })
       .filter((s) => s.coords !== null);

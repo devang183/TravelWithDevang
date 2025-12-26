@@ -6,6 +6,29 @@ import CityMapCategoryBar from "./CityMapCategoryBar";
 import { useQuery } from '@tanstack/react-query';
 import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
 
+// Add keyframe animations for the performance warning modal
+if (typeof document !== 'undefined') {
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes cityMapFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes cityMapSlideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes cityMapPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+  `;
+  if (!document.head.querySelector('#citymap-animations')) {
+    style.id = 'citymap-animations';
+    document.head.appendChild(style);
+  }
+}
+
 // Category emojis - single source of truth
 const CATEGORY_EMOJIS = {
   fishandchips: "🐟",
@@ -41,6 +64,13 @@ const CATEGORY_EMOJIS = {
   dentist: "🦷",
   fuelgas: "⛽",
   casino: "🎰",
+  // Work-friendly venues (WiFi + Power)
+  cafe_wifi: "☕📶",
+  cafe_power: "☕🔌",
+  restaurant_wifi: "🍽️📶",
+  restaurant_power: "🍽️🔌",
+  library_wifi: "📚📶",
+  coworking: "💼",
 };
 
 export default function CityMap({ cityId, coords, zoom = 20, name = "this city" }) {
@@ -58,6 +88,9 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
   const [activeCategories, setActiveCategories] = useState([]);
   const [markersVisible, setMarkersVisible] = useState(false);
   const [legendOpen, setLegendOpen] = useState(false);
+  const [showPerformanceWarning, setShowPerformanceWarning] = useState(false);
+  const [pendingMarkersVisible, setPendingMarkersVisible] = useState(false);
+
   const [startMarkerRef, setStartMarkerRef] = useState(null);
   const [endMarkerRef, setEndMarkerRef] = useState(null);
   
@@ -151,6 +184,33 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
     if (!bounds1 || !bounds2) return false;
     return bounds1.toBBoxString() === bounds2.toBBoxString();
   };
+
+  // Handler for toggling markers visibility with performance warning
+  const handleToggleMarkers = () => {
+    const newVisibility = !markersVisible;
+
+    // If trying to show markers without any category filter, show warning
+    if (newVisibility && activeCategories.length === 0 && markers.length > 100) {
+      setPendingMarkersVisible(newVisibility);
+      setShowPerformanceWarning(true);
+    } else {
+      setMarkersVisible(newVisibility);
+    }
+  };
+
+  // Confirm showing all markers
+  const handleConfirmShowAllMarkers = () => {
+    setMarkersVisible(pendingMarkersVisible);
+    setShowPerformanceWarning(false);
+    setPendingMarkersVisible(false);
+  };
+
+  // Cancel showing all markers
+  const handleCancelShowAllMarkers = () => {
+    setShowPerformanceWarning(false);
+    setPendingMarkersVisible(false);
+  };
+
 
   // Helper function to calculate distance between two coordinates (Haversine formula)
   const calculateDistance = (coords1, coords2) => {
@@ -317,18 +377,18 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
           const popupDiv = document.createElement("div");
           popupDiv.style.maxWidth = "200px";
           popupDiv.style.wordWrap = "break-word";
-        
+
           popupDiv.innerHTML = `
   <p><strong>${categoryDisplay} ${name}</strong></p>
   <p style="font-size:0.85em">${description}</p>
   ${phone ? `<p style="font-size:0.8em;"><strong>Phone:</strong> ${phone}</p>` : ''}
   ${website ? `<p style="font-size:0.8em;">
-    <strong>Website:</strong> 
+    <strong>Website:</strong>
     <a href="${website}" target="_blank" rel="noopener noreferrer" style="color:blue; text-decoration:underline;">
       ${website}
     </a>
   </p>` : ''}
-  ${normalizedCategories.length > 1 ? 
+  ${normalizedCategories.length > 1 ?
     `<p style="font-size:0.75em; color: #666;">Categories: ${normalizedCategories.join(', ')}</p>` : ''}
   ${videoEmbed}
   <a href="${url}" target="_blank" style="
@@ -2048,10 +2108,10 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
         onCategoryToggle={handleCategoryToggle}
         onClearCategories={handleClearCategories}
         markersVisible={markersVisible}
-        onToggleMarkersVisibility={() => setMarkersVisible(!markersVisible)}
+        onToggleMarkersVisibility={handleToggleMarkers}
         loading={loading}
       />
-      
+
       {/* Map */}
       <div
         ref={mapRef}
@@ -3158,6 +3218,190 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
               )}
             </div>
           )}
+        </div>
+      )}
+
+      {/* Performance Warning Modal */}
+      {showPerformanceWarning && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "rgba(0, 0, 0, 0.75)",
+            backdropFilter: "blur(8px)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 99999,
+            padding: "20px",
+            animation: "cityMapFadeIn 0.2s ease-out",
+          }}
+          onClick={handleCancelShowAllMarkers}
+        >
+          <div
+            style={{
+              backgroundColor: "#1e293b",
+              borderRadius: "24px",
+              padding: "32px",
+              maxWidth: "500px",
+              width: "100%",
+              boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)",
+              border: "1px solid rgba(251, 191, 36, 0.3)",
+              position: "relative",
+              animation: "cityMapSlideUp 0.3s ease-out",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Warning Icon */}
+            <div
+              style={{
+                width: "80px",
+                height: "80px",
+                margin: "0 auto 20px",
+                background: "linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)",
+                borderRadius: "50%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "48px",
+                animation: "cityMapPulse 2s ease-in-out infinite",
+              }}
+            >
+              ⚠️
+            </div>
+
+            {/* Title */}
+            <h3
+              style={{
+                margin: "0 0 16px 0",
+                fontSize: "1.75rem",
+                fontWeight: "bold",
+                color: "#fbbf24",
+                textAlign: "center",
+                fontFamily: '"Playfair Display", serif',
+              }}
+            >
+              Performance Warning
+            </h3>
+
+            {/* Message */}
+            <p
+              style={{
+                margin: "0 0 24px 0",
+                fontSize: "1rem",
+                color: "#e2e8f0",
+                textAlign: "center",
+                lineHeight: "1.6",
+              }}
+            >
+              You're about to display{" "}
+              <strong
+                style={{
+                  color: "#fbbf24",
+                  fontSize: "1.2rem",
+                  fontWeight: "bold",
+                }}
+              >
+                {markers.length.toLocaleString()}
+              </strong>{" "}
+              markers on the map without any category filter.
+              <br />
+              <br />
+              This might cause performance issues and slow down your browser.
+            </p>
+
+            {/* Suggestion */}
+            <div
+              style={{
+                backgroundColor: "rgba(59, 130, 246, 0.1)",
+                border: "1px solid rgba(59, 130, 246, 0.3)",
+                borderRadius: "12px",
+                padding: "16px",
+                marginBottom: "24px",
+              }}
+            >
+              <p
+                style={{
+                  margin: 0,
+                  fontSize: "0.9rem",
+                  color: "#93c5fd",
+                  textAlign: "center",
+                }}
+              >
+                💡 <strong>Tip:</strong> Try selecting specific categories from
+                the filter bar to improve performance
+              </p>
+            </div>
+
+            {/* Action Buttons */}
+            <div
+              style={{
+                display: "flex",
+                gap: "12px",
+                marginTop: "24px",
+              }}
+            >
+              <button
+                onClick={handleCancelShowAllMarkers}
+                style={{
+                  flex: 1,
+                  padding: "14px 24px",
+                  borderRadius: "12px",
+                  border: "2px solid rgba(148, 163, 184, 0.3)",
+                  background: "rgba(51, 65, 85, 0.5)",
+                  color: "#cbd5e1",
+                  fontSize: "1rem",
+                  fontWeight: "600",
+                  cursor: "pointer",
+                  transition: "all 0.2s",
+                  fontFamily: '"Playfair Display", serif',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = "rgba(51, 65, 85, 0.8)";
+                  e.currentTarget.style.borderColor = "rgba(148, 163, 184, 0.5)";
+                  e.currentTarget.style.transform = "translateY(-2px)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = "rgba(51, 65, 85, 0.5)";
+                  e.currentTarget.style.borderColor = "rgba(148, 163, 184, 0.3)";
+                  e.currentTarget.style.transform = "translateY(0)";
+                }}
+              >
+                ← Go Back
+              </button>
+
+              <button
+                onClick={handleConfirmShowAllMarkers}
+                style={{
+                  flex: 1,
+                  padding: "14px 24px",
+                  borderRadius: "12px",
+                  border: "none",
+                  background: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
+                  color: "white",
+                  fontSize: "1rem",
+                  fontWeight: "700",
+                  cursor: "pointer",
+                  transition: "all 0.2s",
+                  boxShadow: "0 4px 12px rgba(245, 158, 11, 0.4)",
+                  fontFamily: '"Playfair Display", serif',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-2px) scale(1.02)";
+                  e.currentTarget.style.boxShadow = "0 6px 20px rgba(245, 158, 11, 0.6)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0) scale(1)";
+                  e.currentTarget.style.boxShadow = "0 4px 12px rgba(245, 158, 11, 0.4)";
+                }}
+              >
+                Show Anyway →
+              </button>
+            </div>
+          </div>
         </div>
       )}
     </div>

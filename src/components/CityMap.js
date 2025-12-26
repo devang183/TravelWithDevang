@@ -3297,7 +3297,7 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
                 lineHeight: "1.6",
               }}
             >
-              You're about to display{" "}
+              You are about to display{" "}
               <strong
                 style={{
                   color: "#fbbf24",

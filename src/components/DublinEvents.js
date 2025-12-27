@@ -29,6 +29,7 @@ const EventsComponent = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [priceFilter, setPriceFilter] = useState('all');
   const [sortBy, setSortBy] = useState('date');
+  const [selectedDate, setSelectedDate] = useState('');
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const modalRef = useRef(null);
@@ -71,7 +72,7 @@ const EventsComponent = () => {
 
   useEffect(() => {
     filterAndSortEvents();
-  }, [events, searchTerm, priceFilter, sortBy]);
+  }, [events, searchTerm, priceFilter, sortBy, selectedDate]);
 
   // Clean up event listeners for modal
   useEffect(() => {
@@ -103,6 +104,55 @@ const EventsComponent = () => {
   const filterAndSortEvents = () => {
     let filtered = events;
 
+    // Date filter - filter by specific date if selected (do this first)
+    if (selectedDate) {
+      // Parse selected date as YYYY-MM-DD format
+      const [year, month, day] = selectedDate.split('-').map(Number);
+
+      filtered = filtered.filter(event => {
+        // Check if event has a schedule
+        if (event.eventSchedule && event.eventSchedule.length > 0) {
+          // Check if any schedule date matches the selected date
+          return event.eventSchedule.some(schedule => {
+            const dateStr = schedule.startDate || schedule.endDate;
+            const scheduleDate = new Date(dateStr);
+            return scheduleDate.getFullYear() === year &&
+                   scheduleDate.getMonth() === month - 1 &&
+                   scheduleDate.getDate() === day;
+          });
+        }
+
+        // If no schedule, check the main event dates
+        const dateStr = event.startDate || event.endDate;
+        const eventDate = new Date(dateStr);
+        return eventDate.getFullYear() === year &&
+               eventDate.getMonth() === month - 1 &&
+               eventDate.getDate() === day;
+      });
+    } else {
+      // Only filter out past events if no specific date is selected
+      const now = new Date();
+      now.setHours(0, 0, 0, 0);
+
+      filtered = filtered.filter(event => {
+        // Check if event has a schedule
+        if (event.eventSchedule && event.eventSchedule.length > 0) {
+          // Check if any schedule date is today or in the future
+          const hasFutureSchedule = event.eventSchedule.some(schedule => {
+            const scheduleDate = new Date(schedule.startDate || schedule.endDate);
+            scheduleDate.setHours(0, 0, 0, 0);
+            return scheduleDate >= now;
+          });
+          return hasFutureSchedule;
+        }
+
+        // If no schedule, check the main event dates
+        const eventEndDate = new Date(event.endDate || event.startDate);
+        eventEndDate.setHours(0, 0, 0, 0);
+        return eventEndDate >= now;
+      });
+    }
+
     // Search filter
     if (searchTerm) {
       filtered = filtered.filter(event =>
@@ -122,10 +172,22 @@ const EventsComponent = () => {
     // Sort events
     filtered.sort((a, b) => {
       if (sortBy === 'date') {
-        return new Date(a.startDate) - new Date(b.startDate);
+        // Use getNextScheduleDate to get the next occurring date for each event
+        const dateA = new Date(getNextScheduleDate(a));
+        const dateB = new Date(getNextScheduleDate(b));
+        return dateA - dateB;
       } else if (sortBy === 'name') {
         return (a.name || '').localeCompare(b.name || '');
       } else if (sortBy === 'price') {
+        // Handle free events (put them first when sorting by price)
+        const isFreeA = a.isAccessibleForFree === true;
+        const isFreeB = b.isAccessibleForFree === true;
+
+        // If one is free and the other isn't, free comes first
+        if (isFreeA && !isFreeB) return -1;
+        if (!isFreeA && isFreeB) return 1;
+
+        // Both free or both paid - compare prices
         const priceA = parseFloat(a.offers?.price || 0);
         const priceB = parseFloat(b.offers?.price || 0);
         return priceA - priceB;
@@ -165,15 +227,28 @@ const EventsComponent = () => {
 
   const getNextScheduleDate = (event) => {
     if (!event.eventSchedule || event.eventSchedule.length === 0) {
-      return event.startDate;
+      return event.startDate || event.endDate;
     }
-    
+
     const now = new Date();
+    // Set time to start of day for fair comparison
+    now.setHours(0, 0, 0, 0);
+
     const futureSchedules = event.eventSchedule
-      .filter(schedule => new Date(schedule.startDate) > now)
-      .sort((a, b) => new Date(a.startDate) - new Date(b.startDate));
-    
-    return futureSchedules.length > 0 ? futureSchedules[0].startDate : event.startDate;
+      .filter(schedule => {
+        const scheduleDate = new Date(schedule.startDate || schedule.endDate);
+        scheduleDate.setHours(0, 0, 0, 0);
+        return scheduleDate >= now; // Include today's events
+      })
+      .sort((a, b) => {
+        const dateA = new Date(a.startDate || a.endDate);
+        const dateB = new Date(b.startDate || b.endDate);
+        return dateA - dateB;
+      });
+
+    return futureSchedules.length > 0
+      ? (futureSchedules[0].startDate || futureSchedules[0].endDate)
+      : (event.startDate || event.endDate);
   };
 
   if (loading) {
@@ -404,7 +479,7 @@ const EventsComponent = () => {
 
       {/* Filters */}
       <div className="bg-white rounded-lg shadow-sm border p-6 mb-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="relative">
             <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
             <input
@@ -415,7 +490,28 @@ const EventsComponent = () => {
               className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
             />
           </div>
-          
+
+          <div className="relative">
+            <Calendar className="absolute left-3 top-3 h-4 w-4 text-gray-400 pointer-events-none" />
+            <input
+              type="date"
+              value={selectedDate}
+              onChange={(e) => setSelectedDate(e.target.value)}
+              min={new Date().toISOString().split('T')[0]}
+              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent cursor-pointer"
+              placeholder="Filter by date"
+            />
+            {selectedDate && (
+              <button
+                onClick={() => setSelectedDate('')}
+                className="absolute right-3 top-3 text-gray-400 hover:text-gray-600"
+                aria-label="Clear date filter"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            )}
+          </div>
+
           <select
             value={priceFilter}
             onChange={(e) => setPriceFilter(e.target.value)}
@@ -425,7 +521,7 @@ const EventsComponent = () => {
             <option value="free">Free Events</option>
             <option value="paid">Paid Events</option>
           </select>
-          
+
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
@@ -436,6 +532,56 @@ const EventsComponent = () => {
             <option value="price">Sort by Price</option>
           </select>
         </div>
+
+        {/* Active filters display */}
+        {(searchTerm || selectedDate || priceFilter !== 'all') && (
+          <div className="mt-4 flex flex-wrap gap-2 items-center">
+            <span className="text-sm text-gray-600 font-medium">Active filters:</span>
+            {searchTerm && (
+              <span className="inline-flex items-center gap-1 px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
+                Search: "{searchTerm}"
+                <button
+                  onClick={() => setSearchTerm('')}
+                  className="hover:bg-green-200 rounded-full p-0.5"
+                >
+                  <X className="h-3 w-3" />
+                </button>
+              </span>
+            )}
+            {selectedDate && (
+              <span className="inline-flex items-center gap-1 px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
+                Date: {new Date(selectedDate).toLocaleDateString('en-IE', { weekday: 'short', month: 'short', day: 'numeric' })}
+                <button
+                  onClick={() => setSelectedDate('')}
+                  className="hover:bg-blue-200 rounded-full p-0.5"
+                >
+                  <X className="h-3 w-3" />
+                </button>
+              </span>
+            )}
+            {priceFilter !== 'all' && (
+              <span className="inline-flex items-center gap-1 px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">
+                {priceFilter === 'free' ? 'Free Events' : 'Paid Events'}
+                <button
+                  onClick={() => setPriceFilter('all')}
+                  className="hover:bg-purple-200 rounded-full p-0.5"
+                >
+                  <X className="h-3 w-3" />
+                </button>
+              </span>
+            )}
+            <button
+              onClick={() => {
+                setSearchTerm('');
+                setSelectedDate('');
+                setPriceFilter('all');
+              }}
+              className="text-sm text-red-600 hover:text-red-800 font-medium ml-2"
+            >
+              Clear all
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Results count */}

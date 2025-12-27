@@ -130,7 +130,7 @@ const NammaMetroSyncDashboard = () => {
         <h4 className="font-semibold text-blue-900 mb-2">ℹ️ How It Works</h4>
         <ul className="text-sm text-blue-800 space-y-1">
           <li>• <strong>Source:</strong> GitHub repository updates 3x daily (07:33, 12:07, 17:22 UTC)</li>
-          <li>• <strong>Automated Sync:</strong> Runs 3x daily at 08:30, 13:30, 18:30 UTC via GitHub Actions</li>
+          <li>• <strong>Automated Sync:</strong> GitHub Actions runs 3x daily (08:30, 13:30, 18:30 UTC) + Vercel Cron daily at 18:00 UTC</li>
           <li>• <strong>Manual Sync:</strong> Click &quot;Sync Now&quot; to fetch latest data immediately</li>
           <li>• <strong>Database:</strong> Stores in MongoDB collection <code className="bg-blue-100 px-1 rounded">dailyNammaMetro</code></li>
         </ul>

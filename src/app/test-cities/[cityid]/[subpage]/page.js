@@ -306,6 +306,10 @@ const subpageComponents = {
     reddit: [
       {
         type: COMPONENT_TYPES.DYNAMIC_IMPORT,
+        component: dynamic(() => import("@/components/NammaMetroAnalysis"), { ssr: false })
+      },
+      {
+        type: COMPONENT_TYPES.DYNAMIC_IMPORT,
         component: dynamic(() => import("@/components/BengaluruEvents"), { ssr: false })
       },
       {

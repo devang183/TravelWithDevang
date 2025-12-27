@@ -135,18 +135,21 @@ const EventsComponent = () => {
       now.setHours(0, 0, 0, 0);
 
       filtered = filtered.filter(event => {
-        // Check if event has a schedule
+        // For events with schedules, check if the event is currently happening or upcoming
         if (event.eventSchedule && event.eventSchedule.length > 0) {
-          // Check if any schedule date is today or in the future
-          const hasFutureSchedule = event.eventSchedule.some(schedule => {
+          // Get the earliest future or current schedule date
+          const relevantSchedules = event.eventSchedule.filter(schedule => {
             const scheduleDate = new Date(schedule.startDate || schedule.endDate);
             scheduleDate.setHours(0, 0, 0, 0);
             return scheduleDate >= now;
           });
-          return hasFutureSchedule;
+
+          // Only show if there are upcoming schedules
+          return relevantSchedules.length > 0;
         }
 
-        // If no schedule, check the main event dates
+        // For events without schedules, check main event dates
+        // Show if event hasn't ended yet (endDate >= now) or if no endDate, check startDate
         const eventEndDate = new Date(event.endDate || event.startDate);
         eventEndDate.setHours(0, 0, 0, 0);
         return eventEndDate >= now;
@@ -497,7 +500,6 @@ const EventsComponent = () => {
               type="date"
               value={selectedDate}
               onChange={(e) => setSelectedDate(e.target.value)}
-              min={new Date().toISOString().split('T')[0]}
               className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent cursor-pointer"
               placeholder="Filter by date"
             />

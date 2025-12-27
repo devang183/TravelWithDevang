@@ -539,7 +539,7 @@ const EventsComponent = () => {
             <span className="text-sm text-gray-600 font-medium">Active filters:</span>
             {searchTerm && (
               <span className="inline-flex items-center gap-1 px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
-                Search: "{searchTerm}"
+                Search: {searchTerm}
                 <button
                   onClick={() => setSearchTerm('')}
                   className="hover:bg-green-200 rounded-full p-0.5"

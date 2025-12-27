@@ -5,7 +5,7 @@ export async function GET(request) {
   try {
     const client = await clientPromise;
     const db = client.db('hello');
-    const collection = db.collection('nammaMetro');
+    const collection = db.collection('dailyNammaMetro');
 
     // Fetch all records, sorted by date (newest first)
     const metroData = await collection.find({}).sort({ 'Record Date': -1 }).toArray();

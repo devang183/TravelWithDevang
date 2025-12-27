@@ -1,0 +1,38 @@
+name: Sync Namma Metro Data
+
+on:
+  schedule:
+    # Run 3 times daily at 08:30, 13:30, 18:30 UTC
+    # (30 minutes after GitHub source updates at 07:33, 12:07, 17:22 UTC)
+    - cron: '30 8,13,18 * * *'
+
+  workflow_dispatch: # Allow manual trigger from Actions tab
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Sync Namma Metro Data
+        run: |
+          echo "Triggering Namma Metro data sync..."
+
+          RESPONSE=$(curl -s -w "\n%{http_code}" https://travel-with-devang.vercel.app/api/cron/sync-namma-metro)
+          HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
+          BODY=$(echo "$RESPONSE" | head -n-1)
+
+          echo "HTTP Status: $HTTP_CODE"
+          echo "Response: $BODY"
+
+          if [ "$HTTP_CODE" -ne 200 ]; then
+            echo "❌ Sync failed with status $HTTP_CODE"
+            exit 1
+          fi
+
+          echo "✅ Sync completed successfully"
+          echo "$BODY" | jq .
+
+      - name: Notify on Failure
+        if: failure()
+        run: |
+          echo "::error::Namma Metro sync failed. Check the logs above for details."

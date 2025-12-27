@@ -9,6 +9,7 @@ import {
   TrendingUp, Users, CreditCard, Ticket, QrCode, Calendar,
   Clock, Activity, Award, ArrowUp, ArrowDown, Minus, Zap, Target
 } from 'lucide-react';
+import NammaMetroSyncDashboard from './NammaMetroSyncDashboard';
 
 const NammaMetroAnalysis = () => {
   // State management
@@ -641,6 +642,10 @@ const NammaMetroAnalysis = () => {
       `}</style>
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 py-8 px-4">
         <div className="max-w-7xl mx-auto">
+
+        {/* Sync Dashboard */}
+        <NammaMetroSyncDashboard />
+
         {/* Header */}
         <header className="mb-8 text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-2">

@@ -14,7 +14,7 @@ import cityMapRegistry from '@/components/maps/MapRegistry';
 import { photos } from '../CityPhotos';
 import TaylorSwiftDashboard from '../scripts/taylorSwift';
 import React from "react";
-import { Compass, Plane, Home, Newspaper } from 'lucide-react';
+import { Compass, Plane, Home, Newspaper, Calendar } from 'lucide-react';
 
 
 export default function CityPage({ params }) {
@@ -112,6 +112,17 @@ export default function CityPage({ params }) {
   >
     <Newspaper className="w-8 h-8 sm:w-10 sm:h-10 text-indigo-600 drop-shadow-lg hover:drop-shadow-2xl transition-all" />
   </Link>
+
+  {/* Indian cities - Recent Events Card */}
+  {['bengaluru', 'delhi', 'nagpur', 'raipur'].includes(cityid.toLowerCase()) && (
+    <Link
+      href={`/test-cities/${cityid}/events`}
+      className="group transition-transform duration-200 hover:scale-110"
+      aria-label="Recent Events"
+    >
+      <Calendar className="w-8 h-8 sm:w-10 sm:h-10 text-red-600 drop-shadow-lg hover:drop-shadow-2xl transition-all" />
+    </Link>
+  )}
 </div>
       {/* <ul className="list-disc list-inside space-y-2">
         <li>

@@ -190,6 +190,186 @@ const subpageComponents = {
       }
     ]
   },
+  belfast: {
+    explore:[
+      {
+        type: COMPONENT_TYPES.GUESTBOOK_MAP,
+        component: DigitalGuestbookMapWrapper
+      }
+    ],
+    reddit:[
+      {
+        type: COMPONENT_TYPES.TAYLOR_SWIFT_DASHBOARD,
+        component: (props) => <TaylorSwiftDashboardWrapper {...props} cityid={cities.belfast.name} />
+      }
+    ],
+    news: [
+      {
+        type: COMPONENT_TYPES.CITY_NEWS,
+        component: (props) => <CityNewsWrapper {...props} cityid={cities.belfast.name} />
+      }
+    ]
+  },
+  liverpool: {
+    explore:[
+      {
+        type: COMPONENT_TYPES.GUESTBOOK_MAP,
+        component: DigitalGuestbookMapWrapper
+      }
+    ],
+    reddit:[
+      {
+        type: COMPONENT_TYPES.TAYLOR_SWIFT_DASHBOARD,
+        component: (props) => <TaylorSwiftDashboardWrapper {...props} cityid={cities.liverpool.name} />
+      }
+    ],
+    news: [
+      {
+        type: COMPONENT_TYPES.CITY_NEWS,
+        component: (props) => <CityNewsWrapper {...props} cityid={cities.liverpool.name} />
+      }
+    ]
+  },
+  birmingham: {
+    explore:[
+      {
+        type: COMPONENT_TYPES.GUESTBOOK_MAP,
+        component: DigitalGuestbookMapWrapper
+      }
+    ],
+    reddit:[
+      {
+        type: COMPONENT_TYPES.TAYLOR_SWIFT_DASHBOARD,
+        component: (props) => <TaylorSwiftDashboardWrapper {...props} cityid={cities.birmingham.name} />
+      }
+    ],
+    news: [
+      {
+        type: COMPONENT_TYPES.CITY_NEWS,
+        component: (props) => <CityNewsWrapper {...props} cityid={cities.birmingham.name} />
+      }
+    ]
+  },
+  leeds: {
+    explore:[
+      {
+        type: COMPONENT_TYPES.GUESTBOOK_MAP,
+        component: DigitalGuestbookMapWrapper
+      }
+    ],
+    reddit:[
+      {
+        type: COMPONENT_TYPES.TAYLOR_SWIFT_DASHBOARD,
+        component: (props) => <TaylorSwiftDashboardWrapper {...props} cityid={cities.leeds.name} />
+      }
+    ],
+    news: [
+      {
+        type: COMPONENT_TYPES.CITY_NEWS,
+        component: (props) => <CityNewsWrapper {...props} cityid={cities.leeds.name} />
+      }
+    ]
+  },
+  malahide: {
+    explore:[
+      {
+        type: COMPONENT_TYPES.GUESTBOOK_MAP,
+        component: DigitalGuestbookMapWrapper
+      }
+    ],
+    reddit:[
+      {
+        type: COMPONENT_TYPES.TAYLOR_SWIFT_DASHBOARD,
+        component: (props) => <TaylorSwiftDashboardWrapper {...props} cityid={cities.malahide.name} />
+      }
+    ],
+    news: [
+      {
+        type: COMPONENT_TYPES.CITY_NEWS,
+        component: (props) => <CityNewsWrapper {...props} cityid={cities.malahide.name} />
+      }
+    ]
+  },
+  naas: {
+    explore:[
+      {
+        type: COMPONENT_TYPES.GUESTBOOK_MAP,
+        component: DigitalGuestbookMapWrapper
+      }
+    ],
+    reddit:[
+      {
+        type: COMPONENT_TYPES.TAYLOR_SWIFT_DASHBOARD,
+        component: (props) => <TaylorSwiftDashboardWrapper {...props} cityid={cities.naas.name} />
+      }
+    ],
+    news: [
+      {
+        type: COMPONENT_TYPES.CITY_NEWS,
+        component: (props) => <CityNewsWrapper {...props} cityid={cities.naas.name} />
+      }
+    ]
+  },
+  maynooth: {
+    explore:[
+      {
+        type: COMPONENT_TYPES.GUESTBOOK_MAP,
+        component: DigitalGuestbookMapWrapper
+      }
+    ],
+    reddit:[
+      {
+        type: COMPONENT_TYPES.TAYLOR_SWIFT_DASHBOARD,
+        component: (props) => <TaylorSwiftDashboardWrapper {...props} cityid={cities.maynooth.name} />
+      }
+    ],
+    news: [
+      {
+        type: COMPONENT_TYPES.CITY_NEWS,
+        component: (props) => <CityNewsWrapper {...props} cityid={cities.maynooth.name} />
+      }
+    ]
+  },
+  rabat: {
+    explore:[
+      {
+        type: COMPONENT_TYPES.GUESTBOOK_MAP,
+        component: DigitalGuestbookMapWrapper
+      }
+    ],
+    reddit:[
+      {
+        type: COMPONENT_TYPES.TAYLOR_SWIFT_DASHBOARD,
+        component: (props) => <TaylorSwiftDashboardWrapper {...props} cityid={cities.rabat.name} />
+      }
+    ],
+    news: [
+      {
+        type: COMPONENT_TYPES.CITY_NEWS,
+        component: (props) => <CityNewsWrapper {...props} cityid={cities.rabat.name} />
+      }
+    ]
+  },
+  muharraq: {
+    explore:[
+      {
+        type: COMPONENT_TYPES.GUESTBOOK_MAP,
+        component: DigitalGuestbookMapWrapper
+      }
+    ],
+    reddit:[
+      {
+        type: COMPONENT_TYPES.TAYLOR_SWIFT_DASHBOARD,
+        component: (props) => <TaylorSwiftDashboardWrapper {...props} cityid={cities.muharraq.name} />
+      }
+    ],
+    news: [
+      {
+        type: COMPONENT_TYPES.CITY_NEWS,
+        component: (props) => <CityNewsWrapper {...props} cityid={cities.muharraq.name} />
+      }
+    ]
+  },
   galway:{
     attractions:[
       {
@@ -355,10 +535,76 @@ const subpageComponents = {
         component: DigitalGuestbookMapWrapper
       }
     ],
+    reddit:[
+      {
+        type: COMPONENT_TYPES.TAYLOR_SWIFT_DASHBOARD,
+        component: (props) => <TaylorSwiftDashboardWrapper {...props} cityid={cities.nagpur.name} />
+      }
+    ],
     news: [
       {
         type: COMPONENT_TYPES.CITY_NEWS,
         component: (props) => <CityNewsWrapper {...props} cityid={cities.nagpur.name} />
+      }
+    ]
+  },
+  delhi: {
+    explore: [
+      {
+        type: COMPONENT_TYPES.GUESTBOOK_MAP,
+        component: DigitalGuestbookMapWrapper
+      }
+    ],
+    reddit:[
+      {
+        type: COMPONENT_TYPES.TAYLOR_SWIFT_DASHBOARD,
+        component: (props) => <TaylorSwiftDashboardWrapper {...props} cityid={cities.delhi.name} />
+      }
+    ],
+    news: [
+      {
+        type: COMPONENT_TYPES.CITY_NEWS,
+        component: (props) => <CityNewsWrapper {...props} cityid={cities.delhi.name} />
+      }
+    ]
+  },
+  raipur: {
+    explore: [
+      {
+        type: COMPONENT_TYPES.GUESTBOOK_MAP,
+        component: DigitalGuestbookMapWrapper
+      }
+    ],
+    reddit:[
+      {
+        type: COMPONENT_TYPES.TAYLOR_SWIFT_DASHBOARD,
+        component: (props) => <TaylorSwiftDashboardWrapper {...props} cityid={cities.raipur.name} />
+      }
+    ],
+    news: [
+      {
+        type: COMPONENT_TYPES.CITY_NEWS,
+        component: (props) => <CityNewsWrapper {...props} cityid={cities.raipur.name} />
+      }
+    ]
+  },
+  newquay: {
+    explore: [
+      {
+        type: COMPONENT_TYPES.GUESTBOOK_MAP,
+        component: DigitalGuestbookMapWrapper
+      }
+    ],
+    reddit:[
+      {
+        type: COMPONENT_TYPES.TAYLOR_SWIFT_DASHBOARD,
+        component: (props) => <TaylorSwiftDashboardWrapper {...props} cityid={cities.newquay.name} />
+      }
+    ],
+    news: [
+      {
+        type: COMPONENT_TYPES.CITY_NEWS,
+        component: (props) => <CityNewsWrapper {...props} cityid={cities.newquay.name} />
       }
     ]
   },
@@ -387,6 +633,12 @@ const subpageComponents = {
       {
         type: COMPONENT_TYPES.CITY_NEWS,
         component: (props) => <CityNewsWrapper {...props} cityid={cities.bengaluru.name} />
+      }
+    ],
+    events: [
+      {
+        type: COMPONENT_TYPES.DYNAMIC_IMPORT,
+        component: dynamic(() => import("@/components/IndigoFiasco2025Dashboard"), { ssr: false })
       }
     ]
   },

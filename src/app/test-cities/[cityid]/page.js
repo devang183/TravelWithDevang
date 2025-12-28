@@ -14,7 +14,7 @@ import cityMapRegistry from '@/components/maps/MapRegistry';
 import { photos } from '../CityPhotos';
 import TaylorSwiftDashboard from '../scripts/taylorSwift';
 import React from "react";
-import { Compass, Plane, Home } from 'lucide-react';
+import { Compass, Plane, Home, Newspaper } from 'lucide-react';
 
 
 export default function CityPage({ params }) {
@@ -103,6 +103,15 @@ export default function CityPage({ params }) {
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
     </svg>
   </Link>
+
+  {/* New News Card */}
+  <Link
+    href={`/test-cities/${cityid}/news`}
+    className="group transition-transform duration-200 hover:scale-110"
+    aria-label="News"
+  >
+    <Newspaper className="w-8 h-8 sm:w-10 sm:h-10 text-indigo-600 drop-shadow-lg hover:drop-shadow-2xl transition-all" />
+  </Link>
 </div>
       {/* <ul className="list-disc list-inside space-y-2">
         <li>
@@ -122,7 +131,7 @@ export default function CityPage({ params }) {
         </li>
       </ul> */}
 
-      <NewsCard cityName={city.name} />
+      {/* <NewsCard cityName={city.name} /> */}
 
       {/* Weather + base city map */}
       {city.coords && (
@@ -168,7 +177,7 @@ export default function CityPage({ params }) {
         </div>
       )}
 
-      <br />
+      {/* News moved to dedicated /news tab */}
 
       {/* <TaylorSwiftDashboard cityred={cityid} /> */}
       {/* <AccommodationDisplay /> */}

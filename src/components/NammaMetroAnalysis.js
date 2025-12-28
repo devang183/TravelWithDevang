@@ -7,7 +7,7 @@ import {
 } from 'recharts';
 import {
   TrendingUp, Users, CreditCard, Ticket, QrCode, Calendar,
-  Clock, Activity, Award, ArrowUp, ArrowDown, Minus, Zap, Target
+  Clock, Activity, Award, ArrowUp, ArrowDown, Minus, Zap, Target, Newspaper
 } from 'lucide-react';
 import NammaMetroSyncDashboard from './NammaMetroSyncDashboard';
 
@@ -622,7 +622,8 @@ const NammaMetroAnalysis = () => {
         { id: 'payment', label: 'Payment Methods', icon: CreditCard },
         { id: 'patterns', label: 'Daily Patterns', icon: Activity },
         { id: 'predictions', label: 'Predictions', icon: Zap },
-        { id: 'insights', label: 'Insights', icon: Award }
+        { id: 'insights', label: 'Insights', icon: Award },
+        { id: 'news', label: 'News', icon: Newspaper }
       ].map(({ id, label, icon: Icon }) => (
         <button
           key={id}
@@ -945,30 +946,30 @@ const NammaMetroAnalysis = () => {
 
                 return (
                   <div
-                    className="mt-4 p-4 rounded-lg transition-all duration-300 animate-fadeIn"
+                    className="mt-3 p-3 rounded-lg transition-all duration-300 animate-fadeIn"
                     style={{
-                      backgroundColor: `${context.color}15`,
-                      borderLeft: `4px solid ${context.color}`
+                      backgroundColor: `${context.color}10`,
+                      borderLeft: `3px solid ${context.color}`
                     }}
                   >
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="font-bold text-lg" style={{ color: context.color }}>
+                    <div className="flex items-center justify-between mb-1.5">
+                      <h3 className="font-semibold text-base" style={{ color: context.color }}>
                         {context.title}
                       </h3>
                       {pinnedMonth && (
-                        <span className="text-xs px-2 py-1 rounded-full bg-gray-200 text-gray-700">
-                          📌 Pinned
+                        <span className="text-xs px-1.5 py-0.5 rounded-full bg-white bg-opacity-60 text-gray-700 font-medium">
+                          📌
                         </span>
                       )}
                     </div>
-                    <p className="text-gray-700 text-sm mb-3">
+                    <p className="text-gray-600 text-xs mb-2 leading-relaxed">
                       {context.description}
                     </p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-1.5">
                       {context.highlights.map((highlight, idx) => (
-                        <div key={idx} className="flex items-start space-x-2">
-                          <span className="text-xs mt-0.5" style={{ color: context.color }}>▪</span>
-                          <span className="text-xs text-gray-600">{highlight}</span>
+                        <div key={idx} className="flex items-start space-x-1.5">
+                          <span className="text-xs mt-0.5 opacity-60" style={{ color: context.color }}>•</span>
+                          <span className="text-xs text-gray-600 leading-snug">{highlight}</span>
                         </div>
                       ))}
                     </div>

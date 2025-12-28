@@ -57,7 +57,7 @@ const TaylorSwiftDashboardWrapper = React.memo(({ cityid }) => {
 });
 
 const IrelandAccommodationWrapper = React.memo(({ cityid }) => {
-  const IrelandAccommodation = dynamic(() => import("@/components/IrelandAccommodation"), { 
+  const IrelandAccommodation = dynamic(() => import("@/components/IrelandAccommodation"), {
     ssr: false,
     loading: () => <div>Loading Accomodation data for {cityid}...</div>
   });
@@ -65,8 +65,24 @@ const IrelandAccommodationWrapper = React.memo(({ cityid }) => {
   // Add error boundary and loading state
   return (
     <div className="p-4">
-      <IrelandAccommodation 
-        city={cityid} 
+      <IrelandAccommodation
+        city={cityid}
+        key={cityid} // Force re-render when city changes
+      />
+    </div>
+  );
+});
+
+const CityNewsWrapper = React.memo(({ cityid }) => {
+  const CityNews = dynamic(() => import("@/components/CityNews"), {
+    ssr: false,
+    loading: () => <div>Loading news for {cityid}...</div>
+  });
+
+  return (
+    <div className="p-4">
+      <CityNews
+        cityName={cityid}
         key={cityid} // Force re-render when city changes
       />
     </div>
@@ -78,11 +94,13 @@ const COMPONENT_TYPES = {
   TAYLOR_SWIFT_DASHBOARD: 'TAYLOR_SWIFT_DASHBOARD',
   GUESTBOOK_MAP: 'GUESTBOOK_MAP',
   DYNAMIC_IMPORT: 'DYNAMIC_IMPORT',
-  IRELAND_ACCOMMODATION: 'IRELAND_ACCOMMODATION'
+  IRELAND_ACCOMMODATION: 'IRELAND_ACCOMMODATION',
+  CITY_NEWS: 'CITY_NEWS'
 };
 
 TaylorSwiftDashboardWrapper.displayName = 'TaylorSwiftDashboardWrapper';
 IrelandAccommodationWrapper.displayName = 'IrelandAccommodationWrapper';
+CityNewsWrapper.displayName = 'CityNewsWrapper';
 
 // 🔹 Register subpage components here with stable references
 const subpageComponents = {
@@ -128,7 +146,7 @@ const subpageComponents = {
     attractions:[
       {
         //CityAttractionsDublin is used in dynamic routing contexts
-        //it's conditionally rendered via dynamic import to disable SSR (server-side rendering), 
+        //it's conditionally rendered via dynamic import to disable SSR (server-side rendering),
         //which is required because it uses browser-only APIs like fetch and useState.
         //This ensures the component only loads on the client side, avoiding hydration mismatches.
         type: COMPONENT_TYPES.DYNAMIC_IMPORT,
@@ -144,6 +162,12 @@ const subpageComponents = {
         type: COMPONENT_TYPES.TAYLOR_SWIFT_DASHBOARD,
         component: (props) => <TaylorSwiftDashboardWrapper {...props} cityid={cities.dublin.name} />
       }
+    ],
+    news: [
+      {
+        type: COMPONENT_TYPES.CITY_NEWS,
+        component: (props) => <CityNewsWrapper {...props} cityid={cities.dublin.name} />
+      }
     ]
   },
   newry: {
@@ -157,6 +181,12 @@ const subpageComponents = {
       {
         type: COMPONENT_TYPES.TAYLOR_SWIFT_DASHBOARD,
         component: (props) => <TaylorSwiftDashboardWrapper {...props} cityid={cities.newry.name} />
+      }
+    ],
+    news: [
+      {
+        type: COMPONENT_TYPES.CITY_NEWS,
+        component: (props) => <CityNewsWrapper {...props} cityid={cities.newry.name} />
       }
     ]
   },
@@ -183,6 +213,12 @@ const subpageComponents = {
       {
         type: COMPONENT_TYPES.DUBLIN_ACCOMMODATION,
         component: (props) => <IrelandAccommodationWrapper {...props} cityid={cities.galway.name} />
+      }
+    ],
+    news: [
+      {
+        type: COMPONENT_TYPES.CITY_NEWS,
+        component: (props) => <CityNewsWrapper {...props} cityid={cities.galway.name} />
       }
     ]
   },
@@ -222,6 +258,12 @@ const subpageComponents = {
         type: COMPONENT_TYPES.TAYLOR_SWIFT_DASHBOARD,
         component: (props) => <TaylorSwiftDashboardWrapper {...props} cityid={cities.london.name} />
       }
+    ],
+    news: [
+      {
+        type: COMPONENT_TYPES.CITY_NEWS,
+        component: (props) => <CityNewsWrapper {...props} cityid={cities.london.name} />
+      }
     ]
   },
   manchester:{
@@ -242,6 +284,12 @@ const subpageComponents = {
         type: COMPONENT_TYPES.TAYLOR_SWIFT_DASHBOARD,
         component: (props) => <TaylorSwiftDashboardWrapper {...props} cityid={cities.manchester.name} />
       }
+    ],
+    news: [
+      {
+        type: COMPONENT_TYPES.CITY_NEWS,
+        component: (props) => <CityNewsWrapper {...props} cityid={cities.manchester.name} />
+      }
     ]
   },
   newyork:{
@@ -261,6 +309,12 @@ const subpageComponents = {
       {
         type: COMPONENT_TYPES.TAYLOR_SWIFT_DASHBOARD,
         component: (props) => <TaylorSwiftDashboardWrapper {...props} cityid={cities.newyork.name} />
+      }
+    ],
+    news: [
+      {
+        type: COMPONENT_TYPES.CITY_NEWS,
+        component: (props) => <CityNewsWrapper {...props} cityid={cities.newyork.name} />
       }
     ]
   },
@@ -286,6 +340,12 @@ const subpageComponents = {
         type: COMPONENT_TYPES.TAYLOR_SWIFT_DASHBOARD,
         component: (props) => <TaylorSwiftDashboardWrapper {...props} cityid={cities.chicago.name} />
       }
+    ],
+    news: [
+      {
+        type: COMPONENT_TYPES.CITY_NEWS,
+        component: (props) => <CityNewsWrapper {...props} cityid={cities.chicago.name} />
+      }
     ]
   },
   nagpur: {
@@ -293,6 +353,12 @@ const subpageComponents = {
       {
         type: COMPONENT_TYPES.GUESTBOOK_MAP,
         component: DigitalGuestbookMapWrapper
+      }
+    ],
+    news: [
+      {
+        type: COMPONENT_TYPES.CITY_NEWS,
+        component: (props) => <CityNewsWrapper {...props} cityid={cities.nagpur.name} />
       }
     ]
   },
@@ -315,6 +381,12 @@ const subpageComponents = {
       {
         type: COMPONENT_TYPES.TAYLOR_SWIFT_DASHBOARD,
         component: (props) => <TaylorSwiftDashboardWrapper {...props} cityid={cities.bengaluru.name} />
+      }
+    ],
+    news: [
+      {
+        type: COMPONENT_TYPES.CITY_NEWS,
+        component: (props) => <CityNewsWrapper {...props} cityid={cities.bengaluru.name} />
       }
     ]
   },
@@ -340,6 +412,9 @@ export default function CitySubPage({ params }) {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
+        willChange: 'transform',
+        transform: 'translateZ(0)',
+        backfaceVisibility: 'hidden',
       }}
     >
       <Breadcrumb cityid={cityid} city={city} subpage={subpage} />

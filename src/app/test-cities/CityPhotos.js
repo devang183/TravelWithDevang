@@ -45,7 +45,7 @@ export const photos={
     },
     'london':{
         name:'london',
-        backgroundImage: 'https://cityphotoscity.s3.amazonaws.com/images/london/london.jpg',
+        backgroundImage: 'https://cityphotoscity.s3.amazonaws.com/images/london/londonBG.jpg',
         images:[
             "https://cityphotoscity.s3.amazonaws.com/images/london/london.jpg",
             "https://cityphotoscity.s3.amazonaws.com/images/london/london2.jpg",
@@ -276,7 +276,7 @@ export const photos={
     },
     nagpur:{
         name:'nagpur',
-        backgroundImage: 'https://cityphotoscity.s3.amazonaws.com/images/nagpur/nagpur.jpg',
+        backgroundImage: 'https://cityphotoscity.s3.amazonaws.com/images/nagpur/nagpurBG.jpg',
         images:[
             "https://cityphotoscity.s3.amazonaws.com/images/nagpur/nagpur.jpg",
             "https://cityphotoscity.s3.amazonaws.com/images/nagpur/nagpur2.jpg",
@@ -289,7 +289,7 @@ export const photos={
     },
     bengaluru:{
         name:'bengaluru',
-        backgroundImage: 'https://cityphotoscity.s3.amazonaws.com/images/bengaluru/bengaluru.jpeg',
+        backgroundImage: 'https://cityphotoscity.s3.amazonaws.com/images/bengaluru/bengaluruBG2.jpg',
         images:[
             "https://cityphotoscity.s3.amazonaws.com/images/bengaluru/bengaluru.jpeg",
             "https://cityphotoscity.s3.amazonaws.com/images/bengaluru/bengaluru2.jpeg",

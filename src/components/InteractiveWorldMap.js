@@ -74,16 +74,28 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
     if (cityPhotos.length === 0) return '';
 
     const sliderId = `slider-${cityId}`;
-    const slides = cityPhotos.map((img, idx) => `
+    const slides = cityPhotos.map((img, idx) => {
+      // Support both old format (string) and new format (object with credits)
+      const imageUrl = typeof img === 'string' ? img : img.url;
+      const photographer = typeof img === 'object' ? img.photographer : null;
+      const instagram = typeof img === 'object' ? img.instagram : null;
+
+      return `
       <div class="popup-slide" style="display: ${idx === 0 ? 'block' : 'none'}; width: 100%;">
         <img
-          src="${img}"
+          src="${imageUrl}"
           alt="${city.name} ${idx + 1}"
           class="w-full h-40 object-cover rounded-t-lg cursor-pointer hover:opacity-90 transition-opacity"
           onclick="window.openLightbox('${city.name}', ${idx})"
         >
+        ${photographer && instagram ? `
+          <div class="px-3 py-2 mb-2 text-xs text-gray-600 bg-gray-50 rounded-b-lg">
+            Photo by <a href="https://instagram.com/${instagram}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 hover:underline font-medium" onclick="event.stopPropagation();">@${instagram}</a>
+          </div>
+        ` : ''}
       </div>
-    `).join('');
+    `;
+    }).join('');
 
     const dots = cityPhotos.map((_, idx) => `
       <div

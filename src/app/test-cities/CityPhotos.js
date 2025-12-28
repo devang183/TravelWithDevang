@@ -3,26 +3,106 @@ export const photos={
         name:'dublin',
         backgroundImage: 'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/dublin/dublin29.jpg',
         images:[
-            "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin2.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin3.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin4.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin5.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin6.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin7.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin8.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin9.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin10.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin11.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin12.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin13.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin14.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin15.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin16.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin17.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin18.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin19.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin20.jpg",
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin.jpg",
+                photographer: "Devang Kankaria",
+                instagram: "meghanakankaria"
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin2.jpg",
+                photographer: "Devang Kankaria",
+                instagram: "devangkankaria"
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin3.jpg",
+                photographer: "Devang Kankaria",
+                instagram: "devangkankaria"
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin4.jpg",
+                photographer: "Devang Kankaria",
+                instagram: "devangkankaria"
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin5.jpg",
+                photographer: "Devang Kankaria",
+                instagram: "devangkankaria"
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin6.jpg",
+                photographer: "Devang Kankaria",
+                instagram: "devangkankaria"
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin7.jpg",
+                photographer: "Devang Kankaria",
+                instagram: "devangkankaria"
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin8.jpg",
+                photographer: "Devang Kankaria",
+                instagram: "devangkankaria"
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin9.jpg",
+                photographer: "Devang Kankaria",
+                instagram: "devangkankaria"
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin10.jpg",
+                photographer: "Devang Kankaria",
+                instagram: "devangkankaria"
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin11.jpg",
+                photographer: "Devang Kankaria",
+                instagram: "devangkankaria"
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin12.jpg",
+                photographer: "Devang Kankaria",
+                instagram: "devangkankaria"
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin13.jpg",
+                photographer: "Devang Kankaria",
+                instagram: "devangkankaria"
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin14.jpg",
+                photographer: "Devang Kankaria",
+                instagram: "devangkankaria"
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin15.jpg",
+                photographer: "Devang Kankaria",
+                instagram: "devangkankaria"
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin16.jpg",
+                photographer: "Devang Kankaria",
+                instagram: "devangkankaria"
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin17.jpg",
+                photographer: "Devang Kankaria",
+                instagram: "devangkankaria"
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin18.jpg",
+                photographer: "Devang Kankaria",
+                instagram: "devangkankaria"
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin19.jpg",
+                photographer: "Devang Kankaria",
+                instagram: "devangkankaria"
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin20.jpg",
+                photographer: "Devang Kankaria",
+                instagram: "devangkankaria"
+            },
         ],
     },
     newry:{

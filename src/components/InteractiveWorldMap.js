@@ -66,6 +66,25 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
     });
   };
 
+  // City introductions
+  const cityIntroductions = {
+    'Dublin': 'Deeply rooted in history but currently vibing at the center of Europe\'s tech soul. Come for the literary legends, stay for the unmatched craic and riverside aesthetic.',
+    'London': 'A global mood board where royal tradition meets underground subcultures. It\'s a 24/7 fever dream of high fashion, iconic red buses, and infinite hidden gems.',
+    'Belfast': 'A city with a gritty past and a glowing future, blending industrial cool with a legendary arts scene. It\'s raw, authentic, and serves major cinematic energy.',
+    'Liverpool': 'Where the legacy of pop royalty meets a modern, high-gloss waterfront. It\'s a city that breathes music and walks with a confidence you can\'t help but match.',
+    'Birmingham': 'The UK\'s best-kept secret, featuring more canals than Venice and a streetwear scene that\'s constantly ahead of the curve. Industrial heritage, but make it fashion.',
+    'Manchester': 'The undisputed capital of the North, where football passion meets an iconic indie spirit. It\'s the ultimate destination for those who live for music, culture, and rain-slicked neon streets.',
+    'Leeds': 'A sleek blend of Victorian architecture and a high-voltage nightlife scene. Perfectly curated for the shopaholics and the late-night socialites alike.',
+    'Malahide': 'Coastal chic at its finest, where seaside strolls meet a sophisticated village atmosphere. It\'s giving "quiet luxury" with a side of salty Atlantic air.',
+    'Naas': 'The perfect mix of equestrian elegance and modern boutique living. A sophisticated escape that\'s always on the pulse of the contemporary Irish lifestyle.',
+    'Maynooth': 'A vibrant university town where historic campus vibes meet a fresh, youthful energy. It\'s smart, spirited, and perfectly tucked away in the heart of Kildare.',
+    'Newquay': 'The surf capital of the North, where the lifestyle is centered around the tide and the sunset. Pure coastal escapism for the dreamers and the thrill-seekers.',
+    'Rabat': 'A sun-drenched fusion of Atlantic breezes and ancient architectural grandeur. It\'s Morocco\'s quiet flex—refined, historic, and effortlessly cool.',
+    'Raipur': 'A rising urban powerhouse where tradition gets a sleek, modern upgrade. It\'s the hidden heartbeat of Central India, evolving at the speed of light.',
+    'Delhi': 'A maximalist masterpiece where Mughal history meets a high-speed, metropolitan future. From street food tiers to luxury lounges, it\'s a sensory overload in the best way.',
+    'Bengaluru': 'The Silicon Valley of the East, where garden city greenery meets a high-octane startup hustle. It\'s a city of pub crawls, filter coffee, and the brightest minds in the game.'
+  };
+
   // Function to create image carousel HTML
   const createImageCarousel = (city) => {
     const cityPhotos = photos[city.name.toLowerCase()]?.images || [];
@@ -77,20 +96,37 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
     const slides = cityPhotos.map((img, idx) => {
       // Support both old format (string) and new format (object with credits)
       const imageUrl = typeof img === 'string' ? img : img.url;
-      const photographer = typeof img === 'object' ? img.photographer : null;
-      const instagram = typeof img === 'object' ? img.instagram : null;
+      const photographer = typeof img === 'object' && img.photographer ? img.photographer : null;
+      const instagram = typeof img === 'object' && img.instagram ? img.instagram : null;
+
+      const instagramForUrl = instagram;
 
       return `
       <div class="popup-slide" style="display: ${idx === 0 ? 'block' : 'none'}; width: 100%;">
         <img
           src="${imageUrl}"
           alt="${city.name} ${idx + 1}"
-          class="w-full h-40 object-cover rounded-t-lg cursor-pointer hover:opacity-90 transition-opacity"
+          class="w-full h-40 object-cover ${photographer && instagram ? 'rounded-t-lg' : 'rounded-lg'} cursor-pointer hover:opacity-90 transition-opacity"
           onclick="window.openLightbox('${city.name}', ${idx})"
         >
         ${photographer && instagram ? `
-          <div class="px-3 py-2 mb-2 text-xs text-gray-600 bg-gray-50 rounded-b-lg">
-            Photo by <a href="https://instagram.com/${instagram}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 hover:underline font-medium" onclick="event.stopPropagation();">@${instagram}</a>
+          <div class="px-2.5 py-1.5 mb-2 bg-gradient-to-r from-gray-50 to-blue-50 rounded-b-lg border-t border-gray-200/50">
+            <a href="https://instagram.com/${instagram}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 hover:opacity-75 transition-all group" onclick="event.stopPropagation();">
+              <img
+                src="https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/igHandles/IG${instagramForUrl}.jpg"
+                alt="${photographer}"
+                class="w-5 h-5 rounded-full object-cover border border-blue-400/60 shadow-sm flex-shrink-0"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <div class="w-5 h-5 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-white font-bold text-[10px] border border-blue-400/60 shadow-sm flex-shrink-0" style="display: none;">
+                ${photographer.charAt(0).toUpperCase()}
+              </div>
+              <span class="text-[10px] text-gray-500 flex-shrink-0">📸</span>
+              <span class="text-xs font-medium text-blue-600 group-hover:text-blue-700 truncate flex-1 min-w-0">@${instagram}</span>
+              <svg class="w-3.5 h-3.5 text-pink-500 flex-shrink-0 opacity-80" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
           </div>
         ` : ''}
       </div>
@@ -131,12 +167,13 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
             ${dots}
           </div>
         </div>
-        <div class="p-3 space-y-2">
+        <div class="p-2.5 space-y-1.5">
           <div>
-            <h3 class="font-bold text-lg">${city.name}</h3>
-            ${city.country ? `<p class="text-gray-600">${city.country}</p>` : ''}
-            ${city.date ? `<p class="text-sm text-gray-500">${city.date}</p>` : ''}
-            ${city.food ? `<div class="mt-1"><p class="text-sm font-medium">Best Food:</p><p class="text-sm">${city.food}</p></div>` : ''}
+            <h3 class="font-bold text-base">${city.name}</h3>
+            ${cityIntroductions[city.name] ? `<p class="text-[11px] text-gray-600 leading-snug mt-1 italic">${cityIntroductions[city.name]}</p>` : ''}
+            ${city.country ? `<p class="text-sm text-gray-600 ${cityIntroductions[city.name] ? 'mt-1.5' : ''}">${city.country}</p>` : ''}
+            ${city.date ? `<p class="text-xs text-gray-500">${city.date}</p>` : ''}
+            ${city.food ? `<div class="mt-1"><p class="text-xs font-medium">Best Food:</p><p class="text-xs">${city.food}</p></div>` : ''}
           </div>
         </div>
       </div>
@@ -618,7 +655,7 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
               onClick={(e) => e.stopPropagation()}
             >
               <img
-                src={lightboxImages[lightboxIndex]}
+                src={typeof lightboxImages[lightboxIndex] === 'string' ? lightboxImages[lightboxIndex] : lightboxImages[lightboxIndex]?.url}
                 alt={`${lightboxCityName} ${lightboxIndex + 1}`}
                 className="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl"
               />
@@ -627,6 +664,11 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
                 <p className="text-sm opacity-75">
                   {lightboxIndex + 1} / {lightboxImages.length}
                 </p>
+                {typeof lightboxImages[lightboxIndex] === 'object' && lightboxImages[lightboxIndex]?.photographer && lightboxImages[lightboxIndex]?.instagram && (
+                  <p className="text-sm opacity-90 mt-2">
+                    📸 Photo by <a href={`https://instagram.com/${lightboxImages[lightboxIndex].instagram}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">@{lightboxImages[lightboxIndex].instagram}</a>
+                  </p>
+                )}
                 <p className="text-xs opacity-50 mt-2">
                   Use arrow keys or click arrows to navigate • Press ESC to close
                 </p>

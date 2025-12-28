@@ -588,35 +588,35 @@ const NammaMetroAnalysis = () => {
     };
 
     return (
-      <div className={`bg-gradient-to-br ${colorClasses[color]} rounded-xl p-6 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}>
-        <div className="flex items-center justify-between mb-4">
-          <div className="bg-white/20 rounded-lg p-3">
-            <Icon className="h-6 w-6" />
+      <div className={`bg-gradient-to-br ${colorClasses[color]} rounded-lg sm:rounded-xl p-3 sm:p-6 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 min-w-[280px] flex-shrink-0 snap-start md:min-w-0`}>
+        <div className="flex items-center justify-between mb-2 sm:mb-4">
+          <div className="bg-white/20 rounded-lg p-1.5 sm:p-3">
+            <Icon className="h-4 w-4 sm:h-6 sm:w-6" />
           </div>
           {trend !== undefined && (
-            <div className="flex items-center space-x-1">
+            <div className="flex items-center space-x-0.5 sm:space-x-1">
               {trend > 0 ? (
-                <ArrowUp className="h-4 w-4" />
+                <ArrowUp className="h-3 w-3 sm:h-4 sm:w-4" />
               ) : trend < 0 ? (
-                <ArrowDown className="h-4 w-4" />
+                <ArrowDown className="h-3 w-3 sm:h-4 sm:w-4" />
               ) : (
-                <Minus className="h-4 w-4" />
+                <Minus className="h-3 w-3 sm:h-4 sm:w-4" />
               )}
-              <span className="text-sm font-semibold">
+              <span className="text-xs sm:text-sm font-semibold">
                 {Math.abs(trend).toFixed(1)}%
               </span>
             </div>
           )}
         </div>
-        <h3 className="text-sm font-medium opacity-90 mb-1">{title}</h3>
-        <p className="text-3xl font-bold">{value}</p>
+        <h3 className="text-xs sm:text-sm font-medium opacity-90 mb-0.5 sm:mb-1">{title}</h3>
+        <p className="text-xl sm:text-3xl font-bold">{value}</p>
       </div>
     );
   };
 
   // View Selector Component
   const ViewSelector = () => (
-    <div className="flex justify-center space-x-2 mb-8 flex-wrap gap-2">
+    <div className="flex justify-center space-x-1 sm:space-x-2 mb-4 sm:mb-8 flex-wrap gap-1 sm:gap-2">
       {[
         { id: 'overview', label: 'Overview', icon: TrendingUp },
         { id: 'payment', label: 'Payment Methods', icon: CreditCard },
@@ -628,13 +628,13 @@ const NammaMetroAnalysis = () => {
         <button
           key={id}
           onClick={() => setActiveView(id)}
-          className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-semibold transition-all duration-200 ${
+          className={`flex items-center space-x-1 sm:space-x-2 px-2 sm:px-6 py-1.5 sm:py-3 rounded-md sm:rounded-lg text-xs sm:text-base font-semibold transition-all duration-200 ${
             activeView === id
               ? 'bg-blue-500 text-white shadow-lg'
               : 'bg-white text-gray-600 hover:bg-gray-50'
           }`}
         >
-          <Icon className="h-5 w-5" />
+          <Icon className="h-3 w-3 sm:h-5 sm:w-5" />
           <span>{label}</span>
         </button>
       ))}
@@ -690,27 +690,34 @@ const NammaMetroAnalysis = () => {
         .animate-fadeIn {
           animation: fadeIn 0.3s ease-in-out;
         }
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
       `}</style>
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 py-8 px-4">
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 py-3 sm:py-8 px-2 sm:px-4">
         <div className="max-w-7xl mx-auto">
 
         {/* Sync Dashboard */}
         <NammaMetroSyncDashboard />
 
         {/* Header */}
-        <header className="mb-8 text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">
+        <header className="mb-4 sm:mb-8 text-center">
+          <h1 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-1 sm:mb-2">
             Tracking the Pulse of Bangalore City
           </h1>
-          <p className="text-xl text-gray-600">
+          <p className="text-sm sm:text-xl text-gray-600">
             Daily Metro Ridership Patterns Unveiled
           </p>
-          <div className="mt-4 flex justify-center items-center space-x-4">
-            <Calendar className="h-5 w-5 text-blue-600" />
+          <div className="mt-2 sm:mt-4 flex justify-center items-center space-x-2 sm:space-x-4">
+            <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" />
             <select
               value={dateRange}
               onChange={(e) => setDateRange(e.target.value)}
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="px-2 sm:px-4 py-1 sm:py-2 text-xs sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
               <option value="7">Last 7 Days</option>
               <option value="14">Last 14 Days</option>
@@ -731,9 +738,9 @@ const NammaMetroAnalysis = () => {
 
         {/* Overview Tab */}
         {activeView === 'overview' && (
-          <div className="space-y-8">
+          <div className="space-y-4 sm:space-y-8">
             {/* Key Metrics */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="flex overflow-x-auto gap-3 pb-2 snap-x snap-mandatory md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-6 scrollbar-hide">
               <StatCard
                 title="Total Ridership"
                 value={analytics.totalRidership.toLocaleString()}
@@ -763,27 +770,27 @@ const NammaMetroAnalysis = () => {
             </div>
 
             {/* Daily Ridership Trend with Monthly Context */}
-            <div className="bg-white rounded-xl shadow-lg p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            <div className="bg-white rounded-lg sm:rounded-xl shadow-lg p-3 sm:p-6">
+              <h2 className="text-lg sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-4">
                 {(dateRange === 'overall' && !pinnedMonth && !hoveredMonth)
                   ? 'Weekly Average Ridership Trend'
                   : 'Daily Ridership Trend'}
               </h2>
-              <p className="text-sm text-gray-600 mb-4">
+              <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-4">
                 {(dateRange === 'overall' && !pinnedMonth && !hoveredMonth)
                   ? 'Overall Journey shows weekly averages. Click on a month badge for daily details.'
                   : 'Click on a month badge to pin it, or hover over segments to explore Namma Metro\'s journey'}
               </p>
 
               {/* Monthly Legend */}
-              <div className="flex flex-wrap gap-2 mb-4">
+              <div className="flex flex-wrap gap-1 sm:gap-2 mb-2 sm:mb-4">
                 {/* Overall Button */}
                 <button
                   onClick={() => {
                     setPinnedMonth(null);
                     setHoveredMonth(null);
                   }}
-                  className={`px-4 py-1 rounded-full text-xs font-semibold transition-all duration-200 ${
+                  className={`px-2 sm:px-4 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-semibold transition-all duration-200 ${
                     !pinnedMonth && !hoveredMonth
                       ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg scale-105'
                       : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
@@ -807,7 +814,7 @@ const NammaMetroAnalysis = () => {
                         onClick={() => setPinnedMonth(isPinned ? null : monthKey)}
                         onMouseEnter={() => !pinnedMonth && setHoveredMonth(monthKey)}
                         onMouseLeave={() => !pinnedMonth && setHoveredMonth(null)}
-                        className={`px-3 py-1 rounded-full text-xs font-medium transition-all duration-200 ${
+                        className={`px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium transition-all duration-200 ${
                           isActive
                             ? 'shadow-lg scale-105'
                             : 'opacity-70 hover:opacity-100'
@@ -826,7 +833,7 @@ const NammaMetroAnalysis = () => {
                   })}
               </div>
 
-              <ResponsiveContainer width="100%" height={400}>
+              <ResponsiveContainer width="100%" height={250} className="sm:h-[400px]">
                 <AreaChart
                   data={analytics.dailyTrends}
                   onMouseMove={(e) => {
@@ -858,7 +865,9 @@ const NammaMetroAnalysis = () => {
                     textAnchor="end"
                     height={80}
                   />
-                  <YAxis />
+                  <YAxis
+                    tickFormatter={(value) => `${(value / 100000).toFixed(1)}L`}
+                  />
                   <Tooltip
                     content={({ active, payload }) => {
                       if (active && payload && payload.length) {
@@ -946,30 +955,30 @@ const NammaMetroAnalysis = () => {
 
                 return (
                   <div
-                    className="mt-3 p-3 rounded-lg transition-all duration-300 animate-fadeIn"
+                    className="mt-2 sm:mt-3 p-2 sm:p-3 rounded-lg transition-all duration-300 animate-fadeIn"
                     style={{
                       backgroundColor: `${context.color}10`,
                       borderLeft: `3px solid ${context.color}`
                     }}
                   >
-                    <div className="flex items-center justify-between mb-1.5">
-                      <h3 className="font-semibold text-base" style={{ color: context.color }}>
+                    <div className="flex items-center justify-between mb-1 sm:mb-1.5">
+                      <h3 className="font-semibold text-sm sm:text-base" style={{ color: context.color }}>
                         {context.title}
                       </h3>
                       {pinnedMonth && (
-                        <span className="text-xs px-1.5 py-0.5 rounded-full bg-white bg-opacity-60 text-gray-700 font-medium">
+                        <span className="text-[10px] sm:text-xs px-1 sm:px-1.5 py-0.5 rounded-full bg-white bg-opacity-60 text-gray-700 font-medium">
                           📌
                         </span>
                       )}
                     </div>
-                    <p className="text-gray-600 text-xs mb-2 leading-relaxed">
+                    <p className="text-gray-600 text-[11px] sm:text-xs mb-1 sm:mb-2 leading-relaxed">
                       {context.description}
                     </p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-1.5">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-1 sm:gap-1.5">
                       {context.highlights.map((highlight, idx) => (
-                        <div key={idx} className="flex items-start space-x-1.5">
-                          <span className="text-xs mt-0.5 opacity-60" style={{ color: context.color }}>•</span>
-                          <span className="text-xs text-gray-600 leading-snug">{highlight}</span>
+                        <div key={idx} className="flex items-start space-x-1 sm:space-x-1.5">
+                          <span className="text-[10px] sm:text-xs mt-0.5 opacity-60" style={{ color: context.color }}>•</span>
+                          <span className="text-[10px] sm:text-xs text-gray-600 leading-snug">{highlight}</span>
                         </div>
                       ))}
                     </div>
@@ -979,23 +988,23 @@ const NammaMetroAnalysis = () => {
             </div>
 
             {/* Peak and Lowest Days */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl p-6 text-white shadow-lg">
-                <div className="flex items-center space-x-3 mb-4">
-                  <TrendingUp className="h-8 w-8" />
-                  <h3 className="text-xl font-bold">Highest Ridership Day</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6">
+              <div className="bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg sm:rounded-xl p-3 sm:p-6 text-white shadow-lg">
+                <div className="flex items-center space-x-2 sm:space-x-3 mb-2 sm:mb-4">
+                  <TrendingUp className="h-5 w-5 sm:h-8 sm:w-8" />
+                  <h3 className="text-sm sm:text-xl font-bold">Highest Ridership Day</h3>
                 </div>
-                <p className="text-3xl font-bold mb-2">{analytics.peakDay.date}</p>
-                <p className="text-lg opacity-90">{analytics.peakDay.total.toLocaleString()} passengers</p>
+                <p className="text-xl sm:text-3xl font-bold mb-1 sm:mb-2">{analytics.peakDay.date}</p>
+                <p className="text-sm sm:text-lg opacity-90">{analytics.peakDay.total.toLocaleString()} passengers</p>
               </div>
 
-              <div className="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl p-6 text-white shadow-lg">
-                <div className="flex items-center space-x-3 mb-4">
-                  <Activity className="h-8 w-8" />
-                  <h3 className="text-xl font-bold">Lowest Ridership Day</h3>
+              <div className="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg sm:rounded-xl p-3 sm:p-6 text-white shadow-lg">
+                <div className="flex items-center space-x-2 sm:space-x-3 mb-2 sm:mb-4">
+                  <Activity className="h-5 w-5 sm:h-8 sm:w-8" />
+                  <h3 className="text-sm sm:text-xl font-bold">Lowest Ridership Day</h3>
                 </div>
-                <p className="text-3xl font-bold mb-2">{analytics.lowestDay.date}</p>
-                <p className="text-lg opacity-90">{analytics.lowestDay.total.toLocaleString()} passengers</p>
+                <p className="text-xl sm:text-3xl font-bold mb-1 sm:mb-2">{analytics.lowestDay.date}</p>
+                <p className="text-sm sm:text-lg opacity-90">{analytics.lowestDay.total.toLocaleString()} passengers</p>
               </div>
             </div>
           </div>
@@ -1003,12 +1012,12 @@ const NammaMetroAnalysis = () => {
 
         {/* Payment Methods Tab */}
         {activeView === 'payment' && (
-          <div className="space-y-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="space-y-4 sm:space-y-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-8">
               {/* Pie Chart */}
-              <div className="bg-white rounded-xl shadow-lg p-6">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">Payment Method Distribution</h2>
-                <ResponsiveContainer width="100%" height={400}>
+              <div className="bg-white rounded-lg sm:rounded-xl shadow-lg p-3 sm:p-6">
+                <h2 className="text-lg sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-4">Payment Method Distribution</h2>
+                <ResponsiveContainer width="100%" height={250} className="sm:h-[400px]">
                   <PieChart>
                     <Pie
                       data={analytics.paymentDistribution}
@@ -1016,7 +1025,8 @@ const NammaMetroAnalysis = () => {
                       cy="50%"
                       labelLine={false}
                       label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(1)}%`}
-                      outerRadius={120}
+                      outerRadius={80}
+                      className="sm:outerRadius-[120px]"
                       fill="#8884d8"
                       dataKey="value"
                     >
@@ -1030,21 +1040,21 @@ const NammaMetroAnalysis = () => {
               </div>
 
               {/* Payment Stats */}
-              <div className="bg-white rounded-xl shadow-lg p-6">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Payment Breakdown</h2>
-                <div className="space-y-4">
+              <div className="bg-white rounded-lg sm:rounded-xl shadow-lg p-3 sm:p-6">
+                <h2 className="text-lg sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-6">Payment Breakdown</h2>
+                <div className="space-y-2 sm:space-y-4">
                   {analytics.paymentDistribution.map((method, index) => (
-                    <div key={index} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                      <div className="flex items-center space-x-3">
+                    <div key={index} className="flex items-center justify-between p-2 sm:p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                      <div className="flex items-center space-x-2 sm:space-x-3">
                         <div
-                          className="w-4 h-4 rounded-full"
+                          className="w-3 h-3 sm:w-4 sm:h-4 rounded-full"
                           style={{ backgroundColor: method.color }}
                         ></div>
-                        <span className="font-semibold text-gray-900">{method.name}</span>
+                        <span className="font-semibold text-xs sm:text-base text-gray-900">{method.name}</span>
                       </div>
                       <div className="text-right">
-                        <p className="text-xl font-bold text-gray-900">{method.value.toLocaleString()}</p>
-                        <p className="text-sm text-gray-500">
+                        <p className="text-sm sm:text-xl font-bold text-gray-900">{method.value.toLocaleString()}</p>
+                        <p className="text-xs sm:text-sm text-gray-500">
                           {((method.value / analytics.totalRidership) * 100).toFixed(1)}%
                         </p>
                       </div>
@@ -1055,9 +1065,9 @@ const NammaMetroAnalysis = () => {
             </div>
 
             {/* Daily Payment Trends */}
-            <div className="bg-white rounded-xl shadow-lg p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Daily Payment Method Trends</h2>
-              <ResponsiveContainer width="100%" height={400}>
+            <div className="bg-white rounded-lg sm:rounded-xl shadow-lg p-3 sm:p-6">
+              <h2 className="text-lg sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-4">Daily Payment Method Trends</h2>
+              <ResponsiveContainer width="100%" height={250} className="sm:h-[400px]">
                 <LineChart data={analytics.dailyTrends}>
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis
@@ -1066,7 +1076,9 @@ const NammaMetroAnalysis = () => {
                     textAnchor="end"
                     height={80}
                   />
-                  <YAxis />
+                  <YAxis
+                    tickFormatter={(value) => `${(value / 100000).toFixed(1)}L`}
+                  />
                   <Tooltip content={<CustomTooltip />} />
                   <Legend />
                   <Line type="monotone" dataKey="smartCards" stroke="#3B82F6" name="Smart Cards" strokeWidth={2} />
@@ -1081,15 +1093,17 @@ const NammaMetroAnalysis = () => {
 
         {/* Daily Patterns Tab */}
         {activeView === 'patterns' && (
-          <div className="space-y-8">
+          <div className="space-y-4 sm:space-y-8">
             {/* Weekday Pattern */}
-            <div className="bg-white rounded-xl shadow-lg p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Average Ridership by Day of Week</h2>
-              <ResponsiveContainer width="100%" height={400}>
+            <div className="bg-white rounded-lg sm:rounded-xl shadow-lg p-3 sm:p-6">
+              <h2 className="text-lg sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-4">Average Ridership by Day of Week</h2>
+              <ResponsiveContainer width="100%" height={250} className="sm:h-[400px]">
                 <BarChart data={analytics.weekdayPattern}>
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="day" />
-                  <YAxis />
+                  <YAxis
+                    tickFormatter={(value) => `${(value / 100000).toFixed(1)}L`}
+                  />
                   <Tooltip content={<CustomTooltip />} />
                   <Bar dataKey="average" fill="#3B82F6" name="Avg Ridership" />
                 </BarChart>

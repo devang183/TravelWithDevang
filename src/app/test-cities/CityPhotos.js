@@ -5,103 +5,89 @@ export const photos={
         images:[
             {
                 url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin.jpg",
-                photographer: "Devang Kankaria",
+                photographer: "Meghana Kankaria",
                 instagram: "meghanakankaria"
             },
             {
                 url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin2.jpg",
                 photographer: "Devang Kankaria",
-                instagram: "devangkankaria"
+                instagram: "devang.183"
             },
             {
                 url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin3.jpg",
                 photographer: "Devang Kankaria",
-                instagram: "devangkankaria"
+                instagram: "_sambit.sourav_"
             },
             {
                 url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin4.jpg",
-                photographer: "Devang Kankaria",
-                instagram: "devangkankaria"
+                
             },
             {
                 url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin5.jpg",
-                photographer: "Devang Kankaria",
-                instagram: "devangkankaria"
+                photographer: "Meghana Kankaria",
+                instagram: "meghanakankaria"
             },
             {
                 url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin6.jpg",
-                photographer: "Devang Kankaria",
-                instagram: "devangkankaria"
+                
             },
             {
                 url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin7.jpg",
-                photographer: "Devang Kankaria",
-                instagram: "devangkankaria"
+                
             },
             {
                 url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin8.jpg",
-                photographer: "Devang Kankaria",
-                instagram: "devangkankaria"
+                
             },
             {
                 url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin9.jpg",
-                photographer: "Devang Kankaria",
-                instagram: "devangkankaria"
+                
             },
             {
                 url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin10.jpg",
-                photographer: "Devang Kankaria",
-                instagram: "devangkankaria"
+                
             },
             {
                 url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin11.jpg",
-                photographer: "Devang Kankaria",
-                instagram: "devangkankaria"
+                
             },
             {
                 url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin12.jpg",
-                photographer: "Devang Kankaria",
-                instagram: "devangkankaria"
+                photographer: "Meghana Kankaria",
+                instagram: "meghanakankaria"
             },
             {
                 url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin13.jpg",
-                photographer: "Devang Kankaria",
-                instagram: "devangkankaria"
+                
             },
             {
                 url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin14.jpg",
-                photographer: "Devang Kankaria",
-                instagram: "devangkankaria"
+                
             },
             {
                 url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin15.jpg",
-                photographer: "Devang Kankaria",
-                instagram: "devangkankaria"
+                
             },
             {
                 url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin16.jpg",
-                photographer: "Devang Kankaria",
-                instagram: "devangkankaria"
+                
             },
             {
                 url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin17.jpg",
-                photographer: "Devang Kankaria",
-                instagram: "devangkankaria"
+                
             },
             {
                 url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin18.jpg",
-                photographer: "Devang Kankaria",
-                instagram: "devangkankaria"
+                
             },
             {
                 url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin19.jpg",
-                photographer: "Devang Kankaria",
-                instagram: "devangkankaria"
+                
             },
             {
                 url: "https://cityphotoscity.s3.amazonaws.com/images/dublin/dublin20.jpg",
-                photographer: "Devang Kankaria",
-                instagram: "devangkankaria"
+                photographer: "Meghana Kankaria",
+                instagram: "meghanakankaria"
             },
         ],
     },
@@ -126,123 +112,166 @@ export const photos={
     'london':{
         name:'london',
         backgroundImage: 'https://cityphotoscity.s3.amazonaws.com/images/london/londonBG.jpg',
-        images:[
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london2.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london3.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london4.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london5.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london6.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london7.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london8.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london9.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london10.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london11.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london12.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london13.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london14.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london15.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london16.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london17.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london18.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london19.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london20.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london21.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london22.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london23.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london24.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london25.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london26.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london27.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london28.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london29.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london30.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london31.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london32.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london33.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london34.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london35.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london36.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london37.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london38.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london39.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london40.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london41.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london42.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london43.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london44.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london45.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london46.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london47.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london48.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london49.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london50.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london51.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london52.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london53.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london54.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london55.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london56.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london57.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london58.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london59.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london60.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london61.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london62.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london63.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london64.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london65.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london66.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london67.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london68.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london69.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london70.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london71.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london72.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london73.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london74.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london75.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london76.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london77.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london78.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london79.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london80.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london81.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london82.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london83.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london84.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london85.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london86.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london87.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london88.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london89.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london90.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london91.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london92.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london93.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london94.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/london/london95.jpg",
-            
+        images: [
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london2.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london3.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london4.jpg", photographer: "Kushal Pillewan", instagram: "the_bamboozled_ambivert" },
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london5.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london6.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london7.jpg", photographer: "Ayushi Sawaimul", instagram: "ayushi_sawaimul" },
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london8.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london9.jpg", photographer: "Ayushi Sawaimul", instagram: "ayushi_sawaimul" },
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london10.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london11.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london12.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london13.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london14.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london15.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london16.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london17.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london18.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london19.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london20.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london21.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london22.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london23.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london24.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london25.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london26.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london27.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london28.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london29.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london30.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london31.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london32.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london33.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london34.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london35.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london36.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london37.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london38.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london39.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london40.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london41.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london42.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london43.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london44.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london45.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london46.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london47.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london48.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london49.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london50.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london51.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london52.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london53.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london54.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london55.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london56.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london57.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london58.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london59.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london60.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london61.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london62.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london63.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london64.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london65.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london66.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london67.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london68.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london69.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london70.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london71.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london72.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london73.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london74.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london75.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london76.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london77.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london78.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london79.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london80.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london81.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london82.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london83.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london84.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london85.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london86.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london87.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london88.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london89.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london90.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london91.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london92.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london93.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london94.jpg"},
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/london/london95.jpg"}
         ]
     },
     belfast:{
         name:'belfast',
         backgroundImage: 'https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast.jpg',
         images:[
-            "https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast2.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast3.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast4.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast5.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast6.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast7.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast8.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast9.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast10.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast11.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast12.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast13.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast14.jpg",
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast.jpg",
+                
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast2.jpg",
+                
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast3.jpg",
+                
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast4.jpg",
+                
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast5.jpg",
+                
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast6.jpg",
+                
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast7.jpg",
+                
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast8.jpg",
+                
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast9.jpg",
+                
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast10.jpg",
+                
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast11.jpg",
+                
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast12.jpg",
+                
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast13.jpg",
+                photographer: "Kushal Pillewan",
+                instagram: "the_bamboozled_ambivert"
+            },
+            {
+                url: "https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast14.jpg",
+                photographer: "Kushal Pillewan",
+                instagram: "the_bamboozled_ambivert"
+            }
         ]
     },
     liverpool:{
@@ -542,16 +571,31 @@ export const photos={
         name:'newquay',
         backgroundImage: 'https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay.jpg',
         images:[
-            "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay2.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay3.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay4.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay5.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay6.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay7.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay8.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay9.jpg",
-            "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay10.jpg",
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay.jpg" },
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay2.jpg" },
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay3.jpg", photographer: "Kushal Pillewan", instagram: "the_bamboozled_ambivert" },
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay4.jpg" },
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay5.jpg" },
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay6.jpg" },
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay7.jpg" },
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay8.jpg" },
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay9.jpg" },
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay10.jpg" },
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay11.jpg", photographer: "Kushal Pillewan", instagram: "the_bamboozled_ambivert" },
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay12.jpg", photographer: "Kushal Pillewan", instagram: "the_bamboozled_ambivert" },
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay13.jpg", photographer: "Kushal Pillewan", instagram: "the_bamboozled_ambivert" },
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay14.jpg", photographer: "Kushal Pillewan", instagram: "the_bamboozled_ambivert" },
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay15.jpg", photographer: "Kushal Pillewan", instagram: "the_bamboozled_ambivert" },
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay16.jpg", photographer: "Kushal Pillewan", instagram: "the_bamboozled_ambivert" },
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay17.jpg", photographer: "Kushal Pillewan", instagram: "the_bamboozled_ambivert" },
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay18.jpg", photographer: "Kushal Pillewan", instagram: "the_bamboozled_ambivert" },
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay19.jpg", photographer: "Kushal Pillewan", instagram: "the_bamboozled_ambivert" },
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay20.jpg", photographer: "Kushal Pillewan", instagram: "the_bamboozled_ambivert" },
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay21.jpg", photographer: "Kushal Pillewan", instagram: "the_bamboozled_ambivert" },
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay22.jpg", photographer: "Kushal Pillewan", instagram: "the_bamboozled_ambivert" },
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay23.jpg", photographer: "Kushal Pillewan", instagram: "the_bamboozled_ambivert" },
+            { url: "https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay24.jpg", photographer: "Kushal Pillewan", instagram: "the_bamboozled_ambivert" },
+            
         ]
     }
 }

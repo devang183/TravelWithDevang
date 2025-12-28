@@ -17,7 +17,7 @@ const NammaMetroAnalysis = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [activeView, setActiveView] = useState('overview');
-  const [dateRange, setDateRange] = useState('30'); // Last 30 days by default
+  const [dateRange, setDateRange] = useState('overall'); // Show all data by default
   const [forecastDays, setForecastDays] = useState('30'); // Prediction range
   const [hoveredMonth, setHoveredMonth] = useState(null); // Track hovered month segment
   const [pinnedMonth, setPinnedMonth] = useState(null); // Track clicked/pinned month
@@ -242,9 +242,11 @@ const NammaMetroAnalysis = () => {
     if (dateRange === 'overall') {
       // Show all data
       filteredData = sortedData;
+      console.log('Showing overall data:', filteredData.length, 'records');
     } else {
       // Take the last N days
       filteredData = sortedData.slice(-parseInt(dateRange));
+      console.log(`Showing last ${dateRange} days:`, filteredData.length, 'records');
     }
 
     // Calculate totals and averages
@@ -283,7 +285,7 @@ const NammaMetroAnalysis = () => {
     ].filter(item => item.value > 0);
 
     // Daily trends with month grouping
-    const dailyTrends = filteredData.map(record => {
+    const dailyTrendsRaw = filteredData.map(record => {
       const date = parseDate(record['Record Date']);
       const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
 
@@ -305,13 +307,61 @@ const NammaMetroAnalysis = () => {
       };
     });
 
+    // Aggregate by week for overall view (reduces 307 points to ~44 weekly points)
+    const weeklyAggregated = {};
+    dailyTrendsRaw.forEach(record => {
+      const date = parseDate(record.date);
+      // Get the start of the week (Sunday)
+      const weekStart = new Date(date);
+      weekStart.setDate(date.getDate() - date.getDay());
+      const weekKey = `${weekStart.getFullYear()}-${String(weekStart.getMonth() + 1).padStart(2, '0')}-${String(weekStart.getDate()).padStart(2, '0')}`;
+
+      if (!weeklyAggregated[weekKey]) {
+        weeklyAggregated[weekKey] = {
+          weekKey,
+          weekStart: new Date(weekStart),
+          monthKey: record.monthKey,
+          count: 0,
+          smartCards: 0,
+          tokens: 0,
+          ncmc: 0,
+          qr: 0,
+          total: 0
+        };
+      }
+      weeklyAggregated[weekKey].count++;
+      weeklyAggregated[weekKey].smartCards += record.smartCards;
+      weeklyAggregated[weekKey].tokens += record.tokens;
+      weeklyAggregated[weekKey].ncmc += record.ncmc;
+      weeklyAggregated[weekKey].qr += record.qr;
+      weeklyAggregated[weekKey].total += record.total;
+    });
+
+    // Convert to array and calculate averages
+    const weeklyTrends = Object.values(weeklyAggregated)
+      .sort((a, b) => a.weekStart - b.weekStart)
+      .map(week => ({
+        date: week.weekStart.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        monthKey: week.monthKey,
+        smartCards: Math.round(week.smartCards / week.count),
+        tokens: Math.round(week.tokens / week.count),
+        ncmc: Math.round(week.ncmc / week.count),
+        qr: Math.round(week.qr / week.count),
+        total: Math.round(week.total / week.count)
+      }));
+
+    // Use weekly data for overall view, daily for specific ranges and pinned months
+    const dailyTrends = (dateRange === 'overall' && !pinnedMonth && !hoveredMonth)
+      ? weeklyTrends
+      : dailyTrendsRaw;
+
     // Calculate growth trends
-    const recentAvg = dailyTrends.slice(-7).reduce((sum, d) => sum + d.total, 0) / 7;
-    const previousAvg = dailyTrends.slice(-14, -7).reduce((sum, d) => sum + d.total, 0) / 7;
+    const recentAvg = dailyTrendsRaw.slice(-7).reduce((sum, d) => sum + d.total, 0) / 7;
+    const previousAvg = dailyTrendsRaw.slice(-14, -7).reduce((sum, d) => sum + d.total, 0) / 7;
     const growthRate = ((recentAvg - previousAvg) / previousAvg) * 100;
 
-    // Peak and lowest ridership days
-    const sortedByRidership = [...dailyTrends].sort((a, b) => b.total - a.total);
+    // Peak and lowest ridership days (use daily data for accuracy)
+    const sortedByRidership = [...dailyTrendsRaw].sort((a, b) => b.total - a.total);
     const peakDay = sortedByRidership[0];
     const lowestDay = sortedByRidership[sortedByRidership.length - 1];
 
@@ -713,11 +763,36 @@ const NammaMetroAnalysis = () => {
 
             {/* Daily Ridership Trend with Monthly Context */}
             <div className="bg-white rounded-xl shadow-lg p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Daily Ridership Trend</h2>
-              <p className="text-sm text-gray-600 mb-4">Click on a month badge to pin it, or hover over segments to explore Namma Metro&rsquo;s journey</p>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                {(dateRange === 'overall' && !pinnedMonth && !hoveredMonth)
+                  ? 'Weekly Average Ridership Trend'
+                  : 'Daily Ridership Trend'}
+              </h2>
+              <p className="text-sm text-gray-600 mb-4">
+                {(dateRange === 'overall' && !pinnedMonth && !hoveredMonth)
+                  ? 'Overall Journey shows weekly averages. Click on a month badge for daily details.'
+                  : 'Click on a month badge to pin it, or hover over segments to explore Namma Metro\'s journey'}
+              </p>
 
               {/* Monthly Legend */}
               <div className="flex flex-wrap gap-2 mb-4">
+                {/* Overall Button */}
+                <button
+                  onClick={() => {
+                    setPinnedMonth(null);
+                    setHoveredMonth(null);
+                  }}
+                  className={`px-4 py-1 rounded-full text-xs font-semibold transition-all duration-200 ${
+                    !pinnedMonth && !hoveredMonth
+                      ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg scale-105'
+                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                  }`}
+                >
+                  {!pinnedMonth && !hoveredMonth && '🌐 '}
+                  Overall Journey
+                </button>
+
+                {/* Month Badges */}
                 {Object.keys(monthlyContext)
                   .filter((monthKey) => analytics.dailyTrends.some(d => d.monthKey === monthKey))
                   .map((monthKey) => {
@@ -788,11 +863,12 @@ const NammaMetroAnalysis = () => {
                       if (active && payload && payload.length) {
                         const data = payload[0].payload;
                         const context = getMonthContext(data.monthKey);
+                        const isWeeklyView = dateRange === 'overall' && !pinnedMonth && !hoveredMonth;
                         return (
                           <div className="bg-white p-3 rounded-lg shadow-xl border-2" style={{ borderColor: context.color }}>
                             <p className="font-bold text-gray-900 mb-1">{data.date}</p>
                             <p className="text-lg font-semibold" style={{ color: context.color }}>
-                              {data.total.toLocaleString()} riders
+                              {data.total.toLocaleString()} {isWeeklyView ? 'avg daily riders' : 'riders'}
                             </p>
                           </div>
                         );

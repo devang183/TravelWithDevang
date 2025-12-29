@@ -264,13 +264,14 @@ export default function ContributorsPage() {
             Share your travel photography and join our community of amazing contributors!
             Your unique perspective could inspire thousands of travelers.
           </p>
-          <motion.button
+          <motion.a
+            href="mailto:kankariadevang@gmail.com?subject=I'd like to contribute to TravelWithDevang&body=Hi Devang,%0D%0A%0D%0AI would like to contribute my travel photography to your website.%0D%0A%0D%0A"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-white text-purple-600 px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition-all"
+            className="inline-block bg-white text-purple-600 px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition-all"
           >
             Get In Touch
-          </motion.button>
+          </motion.a>
         </motion.div>
       </div>
     </div>

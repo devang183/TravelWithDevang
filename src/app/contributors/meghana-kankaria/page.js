@@ -131,7 +131,7 @@ export default function MeghanaKankariaProfile() {
       contributions: Object.values(cityContributions),
       totalPhotos: total
     };
-  }, []);
+  }, [cityToCountry]);
 
   const skills = [
     { name: 'Architectural Design', icon: Building2, color: 'from-purple-500 to-pink-500' },
@@ -346,12 +346,12 @@ export default function MeghanaKankariaProfile() {
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
               Architect in training, here to lay the groundwork for creativity and connection—without cutting corners!
-              As a Bachelor of Architecture student at the University of Houston, I'm designing my path while inspiring
-              future builders as a <span className="font-semibold text-purple-600">Student Ambassador</span>, troubleshooting tech like it's my blueprint as an
+              As a Bachelor of Architecture student at the University of Houston, I&apos;m designing my path while inspiring
+              future builders as a <span className="font-semibold text-purple-600">Student Ambassador</span>, troubleshooting tech like it&apos;s my blueprint as an
               <span className="font-semibold text-purple-600"> Audio Visual Technician</span>, and helping new students find their footing (and maybe a good drafting table)
-              as a <span className="font-semibold text-purple-600">Peer Advisor</span>. When I'm not drafting designs, I'm volunteering at beach cleanups, campus food
+              as a <span className="font-semibold text-purple-600">Peer Advisor</span>. When I&apos;m not drafting designs, I&apos;m volunteering at beach cleanups, campus food
               pantries, earthquake relief, and beyond—because making an impact goes beyond the walls we build.
-              In short, I'm all about bringing ideas to life with <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">energy and heart!</span>
+              In short, I&apos;m all about bringing ideas to life with <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">energy and heart!</span>
             </p>
           </motion.div>
         </motion.div>
@@ -505,7 +505,7 @@ export default function MeghanaKankariaProfile() {
                 <div>
                   <h3 className="text-2xl font-bold text-white mb-2">Architecture Portfolio</h3>
                   <p className="text-white/90 text-lg">
-                    Explore Meghana's professional architectural work and creative projects
+                    Explore Meghana&apos;s professional architectural work and creative projects
                   </p>
                 </div>
                 <div className="flex gap-3">
@@ -540,7 +540,7 @@ export default function MeghanaKankariaProfile() {
                 />
               </div>
               <p className="text-center text-gray-600 mt-4 text-sm">
-                Can't view the portfolio? <a
+                Can&apos;t view the portfolio? <a
                   href="https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/contributors/MeghanaKankaria/PortfolioMeghanaKankaria.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -594,7 +594,7 @@ export default function MeghanaKankariaProfile() {
                 </motion.div>
 
                 <p className="text-sm text-gray-500 mt-4 text-center italic">
-                  Point your camera at the QR code to access Meghana's profile
+                  Point your camera at the QR code to access Meghana&apos;s profile
                 </p>
               </motion.div>
 
@@ -693,7 +693,7 @@ export default function MeghanaKankariaProfile() {
           <h2 className="text-4xl font-bold mb-4">Thank You, Meghana!</h2>
           <p className="text-xl text-white/90 max-w-2xl mx-auto">
             Your contributions have brought life, color, and architectural beauty to this website.
-            Your eye for design shines through every photograph. We're grateful to have you as our first contributor!
+            Your eye for design shines through every photograph. We&apos;re grateful to have you as our first contributor!
           </p>
         </motion.div>
       </div>

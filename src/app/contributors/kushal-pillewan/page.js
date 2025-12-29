@@ -349,7 +349,7 @@ export default function KushalPillewanProfile() {
               <span className="font-semibold text-blue-600">Project Support professional</span> with 2 years of experience supporting programme delivery,
               project coordination, customer service, and data management across local government, start-up, and charity sectors. My work involves
               coordinating complex administrative workflows, handling sensitive customer cases, and managing communication across cross-functional
-              teams including academic staff, finance teams, project leads, and external partners. Beyond my professional life, I'm passionate about
+              teams including academic staff, finance teams, project leads, and external partners. Beyond my professional life, I&apos;m passionate about
               traveling and exploring diverse cultures, having visited beautiful places like{' '}
               <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600">
                 Zagreb, Netherlands, Sarajevo, Newquay, and Penzance

@@ -7,7 +7,7 @@ import {
 } from 'recharts';
 import {
   TrendingUp, Users, CreditCard, Ticket, QrCode, Calendar,
-  Clock, Activity, Award, ArrowUp, ArrowDown, Minus, Zap, Target, Newspaper
+  Clock, Activity, Award, ArrowUp, ArrowDown, Minus, Zap, Target, Newspaper, RefreshCw
 } from 'lucide-react';
 import NammaMetroSyncDashboard from './NammaMetroSyncDashboard';
 
@@ -21,6 +21,7 @@ const NammaMetroAnalysis = () => {
   const [forecastDays, setForecastDays] = useState('30'); // Prediction range
   const [hoveredMonth, setHoveredMonth] = useState(null); // Track hovered month segment
   const [pinnedMonth, setPinnedMonth] = useState(null); // Track clicked/pinned month
+  const [syncing, setSyncing] = useState(false); // Sync button state
 
   // Historical context for each month
   const monthlyContext = {
@@ -198,6 +199,23 @@ const NammaMetroAnalysis = () => {
       console.error('Error fetching metro data:', err);
       setError(err.message);
       setLoading(false);
+    }
+  };
+
+  const handleSync = async () => {
+    try {
+      setSyncing(true);
+      const response = await fetch('/api/namma-metro/sync');
+      const data = await response.json();
+
+      if (data.success) {
+        // Refresh the data after successful sync
+        await fetchMetroData();
+      }
+    } catch (err) {
+      console.error('Sync failed:', err);
+    } finally {
+      setSyncing(false);
     }
   };
 
@@ -701,8 +719,8 @@ const NammaMetroAnalysis = () => {
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 py-3 sm:py-8 px-2 sm:px-4">
         <div className="max-w-7xl mx-auto">
 
-        {/* Sync Dashboard */}
-        <NammaMetroSyncDashboard />
+        {/* Sync Dashboard - Commented Out */}
+        {/* <NammaMetroSyncDashboard /> */}
 
         {/* Header */}
         <header className="mb-4 sm:mb-8 text-center">
@@ -712,6 +730,23 @@ const NammaMetroAnalysis = () => {
           <p className="text-sm sm:text-xl text-gray-600">
             Daily Metro Ridership Patterns Unveiled
           </p>
+
+          {/* Sync Button */}
+          <div className="mt-3 sm:mt-4 flex justify-center">
+            <button
+              onClick={handleSync}
+              disabled={syncing}
+              className={`flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-3 rounded-lg font-semibold transition-all duration-200 text-sm sm:text-base ${
+                syncing
+                  ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                  : 'bg-blue-600 text-white hover:bg-blue-700 shadow-md hover:shadow-lg'
+              }`}
+            >
+              <RefreshCw className={`h-4 w-4 sm:h-5 sm:w-5 ${syncing ? 'animate-spin' : ''}`} />
+              {syncing ? 'Syncing...' : 'Sync Now'}
+            </button>
+          </div>
+
           <div className="mt-2 sm:mt-4 flex justify-center items-center space-x-2 sm:space-x-4">
             <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" />
             <select
@@ -790,9 +825,9 @@ const NammaMetroAnalysis = () => {
                     setPinnedMonth(null);
                     setHoveredMonth(null);
                   }}
-                  className={`px-2 sm:px-4 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-semibold transition-all duration-200 ${
+                  className={`px-2 sm:px-4 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-semibold transition-colors duration-150 ${
                     !pinnedMonth && !hoveredMonth
-                      ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg scale-105'
+                      ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md'
                       : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                   }`}
                 >
@@ -814,16 +849,16 @@ const NammaMetroAnalysis = () => {
                         onClick={() => setPinnedMonth(isPinned ? null : monthKey)}
                         onMouseEnter={() => !pinnedMonth && setHoveredMonth(monthKey)}
                         onMouseLeave={() => !pinnedMonth && setHoveredMonth(null)}
-                        className={`px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium transition-all duration-200 ${
+                        className={`px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium transition-colors duration-150 ${
                           isActive
-                            ? 'shadow-lg scale-105'
+                            ? 'shadow-md'
                             : 'opacity-70 hover:opacity-100'
-                        } ${isPinned ? 'ring-2 ring-offset-2' : ''}`}
+                        } ${isPinned ? 'ring-2 ring-offset-1' : ''}`}
                         style={{
                           backgroundColor: isActive ? context.color : `${context.color}40`,
                           color: isActive ? 'white' : context.color,
                           border: `2px solid ${context.color}`,
-                          ringColor: isPinned ? context.color : undefined
+                          ...(isPinned && { '--tw-ring-color': context.color })
                         }}
                       >
                         {isPinned && '📌 '}
@@ -839,7 +874,10 @@ const NammaMetroAnalysis = () => {
                   onMouseMove={(e) => {
                     if (!pinnedMonth && e && e.activePayload && e.activePayload[0]) {
                       const monthKey = e.activePayload[0].payload.monthKey;
-                      setHoveredMonth(monthKey);
+                      // Only update if the month has actually changed
+                      if (monthKey !== hoveredMonth) {
+                        setHoveredMonth(monthKey);
+                      }
                     }
                   }}
                   onMouseLeave={() => !pinnedMonth && setHoveredMonth(null)}

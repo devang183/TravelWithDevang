@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import { Camera, Heart, Users, Sparkles, ArrowRight, Award } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { photos } from '../test-cities/CityPhotos';
 import { useMemo } from 'react';
 
@@ -37,6 +36,7 @@ export default function ContributorsPage() {
     };
 
     const meghanaStats = calculateContributions('Meghana Kankaria');
+    const kushalStats = calculateContributions('Kushal Pillewan');
 
     return [
       {
@@ -49,6 +49,17 @@ export default function ContributorsPage() {
         badge: 'Star Contributor',
         gradient: 'from-purple-600 via-pink-600 to-rose-500',
         description: 'Bringing architectural vision and creative energy to every photograph'
+      },
+      {
+        id: 'kushal-pillewan',
+        name: 'Kushal Pillewan',
+        title: 'Benefits Officer & Project Support Professional',
+        location: 'United Kingdom',
+        photoCount: kushalStats.photoCount,
+        cities: kushalStats.cities,
+        badge: 'Global Explorer',
+        gradient: 'from-blue-600 via-cyan-600 to-indigo-600',
+        description: 'Capturing moments from travels across Europe and beyond with a keen eye for detail'
       }
       // Add more contributors here as they join
     ];

@@ -56,9 +56,6 @@ export default function CityTextSlideshow({ cityName, imageUrls, collapsed = fal
         .city-name-text {
           -webkit-text-stroke: 3px rgba(255, 255, 255, 0.9);
           text-stroke: 3px rgba(255, 255, 255, 0.9);
-          filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.9))
-                  drop-shadow(0 8px 16px rgba(0, 0, 0, 0.7))
-                  drop-shadow(0 12px 24px rgba(0, 0, 0, 0.5));
         }
 
         .letter-hover {

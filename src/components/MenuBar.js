@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react'
-import { Home, MapPin, Menu, X } from "lucide-react"
+import { Home, MapPin, Menu, X, Heart } from "lucide-react"
 import Link from 'next/link'
 import { AuthButton } from './AuthButton'
 
@@ -14,6 +14,11 @@ const menuItems = [
     title: "City Explorer",
     url: "/test-cities",
     icon: MapPin,
+  },
+  {
+    title: "Contributors",
+    url: "/contributors",
+    icon: Heart,
   }
   // Add more menu items as needed
 ]

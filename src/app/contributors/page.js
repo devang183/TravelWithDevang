@@ -99,13 +99,13 @@ export default function ContributorsPage() {
         />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 py-12 sm:py-20">
+      <div className="relative max-w-7xl mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-20">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
           <motion.div
             animate={{
@@ -117,20 +117,20 @@ export default function ContributorsPage() {
               repeat: Infinity,
               repeatDelay: 2
             }}
-            className="inline-block mb-6"
+            className="inline-block mb-4 sm:mb-6"
           >
-            <div className="flex items-center justify-center space-x-4">
-              <Sparkles className="h-12 w-12 text-purple-600" />
-              <Heart className="h-16 w-16 text-pink-600 fill-current" />
-              <Sparkles className="h-12 w-12 text-purple-600" />
+            <div className="flex items-center justify-center space-x-2 sm:space-x-4">
+              <Sparkles className="h-8 w-8 sm:h-12 sm:w-12 text-purple-600" />
+              <Heart className="h-10 w-10 sm:h-16 sm:w-16 text-pink-600 fill-current" />
+              <Sparkles className="h-8 w-8 sm:h-12 sm:w-12 text-purple-600" />
             </div>
           </motion.div>
 
-          <h1 className="text-5xl sm:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-rose-500 mb-6">
+          <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-rose-500 mb-4 sm:mb-6 px-2">
             Our Amazing Contributors
           </h1>
 
-          <p className="text-xl sm:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-xl lg:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed px-4">
             These wonderful photographers have shared their unique perspectives and captured the beauty of cities around the world.
             Their contributions bring this website to life!
           </p>
@@ -140,32 +140,32 @@ export default function ContributorsPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="mt-12 flex flex-wrap justify-center gap-8"
+            className="mt-6 sm:mt-8 lg:mt-12 flex flex-wrap justify-center gap-3 sm:gap-4 lg:gap-8 px-2"
           >
-            <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-6 shadow-xl min-w-[200px]">
-              <Users className="h-8 w-8 text-purple-600 mx-auto mb-2" />
-              <div className="text-4xl font-bold text-purple-600">{contributors.length}</div>
-              <div className="text-gray-600 font-semibold">Contributors</div>
+            <div className="bg-white/80 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-xl min-w-[140px] sm:min-w-[180px] lg:min-w-[200px] flex-1 max-w-[160px] sm:max-w-none">
+              <Users className="h-6 w-6 sm:h-8 sm:w-8 text-purple-600 mx-auto mb-1 sm:mb-2" />
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-purple-600">{contributors.length}</div>
+              <div className="text-gray-600 font-semibold text-xs sm:text-sm lg:text-base">Contributors</div>
             </div>
-            <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-6 shadow-xl min-w-[200px]">
-              <Camera className="h-8 w-8 text-pink-600 mx-auto mb-2" />
-              <div className="text-4xl font-bold text-pink-600">
+            <div className="bg-white/80 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-xl min-w-[140px] sm:min-w-[180px] lg:min-w-[200px] flex-1 max-w-[160px] sm:max-w-none">
+              <Camera className="h-6 w-6 sm:h-8 sm:w-8 text-pink-600 mx-auto mb-1 sm:mb-2" />
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-pink-600">
                 {contributors.reduce((sum, c) => sum + c.photoCount, 0)}
               </div>
-              <div className="text-gray-600 font-semibold">Total Photos</div>
+              <div className="text-gray-600 font-semibold text-xs sm:text-sm lg:text-base">Total Photos</div>
             </div>
-            <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-6 shadow-xl min-w-[200px]">
-              <Award className="h-8 w-8 text-amber-600 mx-auto mb-2" />
-              <div className="text-4xl font-bold text-amber-600">
+            <div className="bg-white/80 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-xl min-w-[140px] sm:min-w-[180px] lg:min-w-[200px] flex-1 max-w-[160px] sm:max-w-none">
+              <Award className="h-6 w-6 sm:h-8 sm:w-8 text-amber-600 mx-auto mb-1 sm:mb-2" />
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-amber-600">
                 {contributors.reduce((sum, c) => sum + c.cities, 0)}
               </div>
-              <div className="text-gray-600 font-semibold">Cities Covered</div>
+              <div className="text-gray-600 font-semibold text-xs sm:text-sm lg:text-base">Cities Covered</div>
             </div>
           </motion.div>
         </motion.div>
 
         {/* Contributors Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
           {contributors.map((contributor, index) => (
             <motion.div
               key={contributor.id}
@@ -177,10 +177,10 @@ export default function ContributorsPage() {
                 <motion.div
                   whileHover={{ scale: 1.02, y: -8 }}
                   whileTap={{ scale: 0.98 }}
-                  className="bg-white/80 backdrop-blur-lg rounded-3xl shadow-2xl overflow-hidden cursor-pointer group"
+                  className="bg-white/80 backdrop-blur-lg rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden cursor-pointer group"
                 >
                   {/* Gradient Header */}
-                  <div className={`bg-gradient-to-r ${contributor.gradient} p-8 relative overflow-hidden`}>
+                  <div className={`bg-gradient-to-r ${contributor.gradient} p-4 sm:p-6 lg:p-8 relative overflow-hidden`}>
                     <div className="absolute inset-0 bg-black/10"></div>
                     <motion.div
                       className="absolute -top-20 -right-20 w-64 h-64 bg-white/20 rounded-full filter blur-3xl"
@@ -196,42 +196,42 @@ export default function ContributorsPage() {
 
                     <div className="relative z-10">
                       {/* Badge */}
-                      <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-4">
-                        <Award className="h-5 w-5 text-yellow-300" />
-                        <span className="text-white font-semibold">{contributor.badge}</span>
+                      <div className="inline-flex items-center space-x-1.5 sm:space-x-2 bg-white/20 backdrop-blur-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full mb-3 sm:mb-4">
+                        <Award className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-300" />
+                        <span className="text-white font-semibold text-xs sm:text-sm">{contributor.badge}</span>
                       </div>
 
-                      <h2 className="text-3xl font-bold text-white mb-2">{contributor.name}</h2>
-                      <p className="text-white/90 text-lg mb-1">{contributor.title}</p>
-                      <p className="text-white/80">{contributor.location}</p>
+                      <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1 sm:mb-2">{contributor.name}</h2>
+                      <p className="text-white/90 text-sm sm:text-base lg:text-lg mb-0.5 sm:mb-1">{contributor.title}</p>
+                      <p className="text-white/80 text-xs sm:text-sm lg:text-base">{contributor.location}</p>
                     </div>
                   </div>
 
                   {/* Content */}
-                  <div className="p-8">
-                    <p className="text-gray-700 text-lg mb-6 leading-relaxed">
+                  <div className="p-4 sm:p-6 lg:p-8">
+                    <p className="text-gray-700 text-sm sm:text-base lg:text-lg mb-4 sm:mb-6 leading-relaxed">
                       {contributor.description}
                     </p>
 
                     {/* Stats */}
-                    <div className="grid grid-cols-2 gap-4 mb-6">
-                      <div className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-xl p-4">
-                        <div className="text-3xl font-bold text-purple-600">{contributor.photoCount}</div>
-                        <div className="text-gray-600 text-sm font-semibold">Photos</div>
+                    <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6">
+                      <div className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-lg sm:rounded-xl p-3 sm:p-4">
+                        <div className="text-2xl sm:text-3xl font-bold text-purple-600">{contributor.photoCount}</div>
+                        <div className="text-gray-600 text-xs sm:text-sm font-semibold">Photos</div>
                       </div>
-                      <div className="bg-gradient-to-br from-blue-100 to-cyan-100 rounded-xl p-4">
-                        <div className="text-3xl font-bold text-blue-600">{contributor.cities}</div>
-                        <div className="text-gray-600 text-sm font-semibold">Cities</div>
+                      <div className="bg-gradient-to-br from-blue-100 to-cyan-100 rounded-lg sm:rounded-xl p-3 sm:p-4">
+                        <div className="text-2xl sm:text-3xl font-bold text-blue-600">{contributor.cities}</div>
+                        <div className="text-gray-600 text-xs sm:text-sm font-semibold">Cities</div>
                       </div>
                     </div>
 
                     {/* View Profile Button */}
                     <motion.div
                       whileHover={{ x: 10 }}
-                      className={`flex items-center justify-between bg-gradient-to-r ${contributor.gradient} text-white px-6 py-4 rounded-xl font-semibold`}
+                      className={`flex items-center justify-between bg-gradient-to-r ${contributor.gradient} text-white px-4 py-3 sm:px-6 sm:py-4 rounded-lg sm:rounded-xl font-semibold text-sm sm:text-base`}
                     >
                       <span>View Full Profile</span>
-                      <ArrowRight className="h-5 w-5 group-hover:translate-x-2 transition-transform" />
+                      <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-2 transition-transform" />
                     </motion.div>
                   </div>
                 </motion.div>
@@ -245,7 +245,7 @@ export default function ContributorsPage() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.0, duration: 0.8 }}
-          className="mt-16 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-500 rounded-3xl p-12 text-center text-white shadow-2xl"
+          className="mt-8 sm:mt-12 lg:mt-16 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-500 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 text-center text-white shadow-2xl"
         >
           <motion.div
             animate={{
@@ -257,10 +257,10 @@ export default function ContributorsPage() {
               repeatDelay: 1
             }}
           >
-            <Camera className="h-16 w-16 mx-auto mb-6" />
+            <Camera className="h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16 mx-auto mb-4 sm:mb-6" />
           </motion.div>
-          <h2 className="text-4xl font-bold mb-4">Want to Contribute?</h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 px-2">Want to Contribute?</h2>
+          <p className="text-base sm:text-lg lg:text-xl text-white/90 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
             Share your travel photography and join our community of amazing contributors!
             Your unique perspective could inspire thousands of travelers.
           </p>
@@ -268,7 +268,7 @@ export default function ContributorsPage() {
             href="mailto:kankariadevang@gmail.com?subject=I'd like to contribute to TravelWithDevang&body=Hi Devang,%0D%0A%0D%0AI would like to contribute my travel photography to your website.%0D%0A%0D%0A"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-block bg-white text-purple-600 px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition-all"
+            className="inline-block bg-white text-purple-600 px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all"
           >
             Get In Touch
           </motion.a>

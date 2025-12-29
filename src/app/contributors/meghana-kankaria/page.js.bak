@@ -201,7 +201,7 @@ export default function MeghanaKankariaProfile() {
         />
       </div>
 
-      <div className="relative max-w-6xl mx-auto px-3 sm:px-4 py-12 sm:py-16 lg:py-20">
+      <div className="relative max-w-6xl mx-auto px-3 sm:px-4 py-6 sm:py-12 lg:py-20">
         {/* Back Button */}
         <Link href="/contributors">
           <motion.button
@@ -228,9 +228,9 @@ export default function MeghanaKankariaProfile() {
               <AnimatePresence initial={false}>
                 <motion.div
                   key={currentImageIndex}
-                  initial={{ opacity: 0, scale: 1.1 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
                   transition={{ duration: 1.2, ease: "easeInOut" }}
                   className="absolute inset-0"
                 >
@@ -238,7 +238,7 @@ export default function MeghanaKankariaProfile() {
                     src={headerImages[currentImageIndex]}
                     alt={`Meghana Kankaria ${currentImageIndex + 1}`}
                     fill
-                    className="object-contain"
+                    className="object-cover"
                     priority={currentImageIndex === 0}
                   />
                 </motion.div>
@@ -246,28 +246,41 @@ export default function MeghanaKankariaProfile() {
 
               {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-[1]"></div>
+
+              {/* Carousel Indicators */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-[2]">
+                {headerImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      index === currentImageIndex
+                        ? 'bg-white w-8'
+                        : 'bg-white/50 hover:bg-white/75'
+                    }`}
+                    aria-label={`Go to image ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
 
-            {/* Name Overlay - Top Center */}
-            <div className="absolute top-4 sm:top-6 lg:top-8 left-0 right-0 z-10">
+            {/* Content Overlay */}
+            <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 lg:p-12 z-10">
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
-                className="text-center"
+                className="mb-3 sm:mb-4"
               >
-                <div className="flex items-center justify-center space-x-2 sm:space-x-3">
+                <div className="flex items-center space-x-2 sm:space-x-3 mb-1 sm:mb-2">
                   <Sparkles className="h-4 w-4 sm:h-6 sm:w-6 lg:h-8 lg:w-8 text-yellow-300 animate-pulse" />
-                  <h1 className="text-lg sm:text-2xl md:text-3xl lg:text-5xl font-bold text-white drop-shadow-2xl">
+                  <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white drop-shadow-2xl">
                     Ms. Meghana Kankaria
                   </h1>
                   <Sparkles className="h-4 w-4 sm:h-6 sm:w-6 lg:h-8 lg:w-8 text-yellow-300 animate-pulse" />
                 </div>
               </motion.div>
-            </div>
 
-            {/* Content Overlay - Bottom */}
-            <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 lg:p-12 z-10">
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -327,7 +340,7 @@ export default function MeghanaKankariaProfile() {
             transition={{ delay: 0.9 }}
             className="p-4 sm:p-6 lg:p-12"
           >
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 flex items-center space-x-2 sm:space-x-3">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 flex items-center space-x-2 sm:space-x-3">
               <Sparkles className="h-6 w-6 sm:h-8 sm:w-8 text-purple-600" />
               <span>About</span>
             </h2>
@@ -350,7 +363,7 @@ export default function MeghanaKankariaProfile() {
           transition={{ delay: 1.1, duration: 0.8 }}
           className="mb-6 sm:mb-8 lg:mb-12"
         >
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 flex items-center space-x-2 sm:space-x-3">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 flex items-center space-x-2 sm:space-x-3">
             <Award className="h-6 w-6 sm:h-8 sm:w-8 text-amber-500" />
             <span>Achievements</span>
           </h2>
@@ -364,88 +377,81 @@ export default function MeghanaKankariaProfile() {
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="bg-white/80 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-purple-100"
               >
-                <div className="text-3xl sm:text-4xl lg:text-5xl mb-4">{achievement.icon}</div>
-                <h3 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900 mb-2">{achievement.title}</h3>
+                <div className="text-5xl mb-4">{achievement.icon}</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{achievement.title}</h3>
                 <p className="text-gray-600">{achievement.description}</p>
               </motion.div>
             ))}
           </div>
         </motion.div>
 
-        {/* Skills & Languages Section - Combined in Row */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8 lg:mb-12">
-          {/* Skills Section */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 1.5, duration: 0.8 }}
-          >
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 flex items-center space-x-2 sm:space-x-3">
-              <Briefcase className="h-6 w-6 sm:h-8 sm:w-8 text-blue-600" />
-              <span>Skills & Expertise</span>
-            </h2>
-            {/* Mobile: Horizontal scroll, Desktop: Grid */}
-            <div className="overflow-x-auto pb-4 -mx-3 px-3 sm:mx-0 sm:px-0 lg:overflow-visible">
-              <div className="flex lg:grid lg:grid-cols-2 gap-3 sm:gap-4 min-w-max lg:min-w-0">
-                {skills.map((skill, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 1.7 + index * 0.05 }}
-                    whileHover={{ scale: 1.05 }}
-                    className={`bg-gradient-to-br ${skill.color} p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-lg text-white min-w-[160px] lg:min-w-0`}
-                  >
-                    <skill.icon className="h-5 w-5 sm:h-6 sm:w-6 lg:h-8 lg:w-8 mb-2 sm:mb-3" />
-                    <h3 className="text-sm sm:text-base lg:text-lg font-bold whitespace-nowrap lg:whitespace-normal">{skill.name}</h3>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
+        {/* Skills Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.5, duration: 0.8 }}
+          className="mb-12"
+        >
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center space-x-3">
+            <Briefcase className="h-8 w-8 text-blue-600" />
+            <span>Skills & Expertise</span>
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {skills.map((skill, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1.7 + index * 0.05 }}
+                whileHover={{ scale: 1.05 }}
+                className={`bg-gradient-to-br ${skill.color} p-6 rounded-2xl shadow-lg text-white`}
+              >
+                <skill.icon className="h-8 w-8 mb-3" />
+                <h3 className="text-xl font-bold">{skill.name}</h3>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
 
-          {/* Languages Section */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 1.7, duration: 0.8 }}
-          >
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 flex items-center space-x-2 sm:space-x-3">
-              <Languages className="h-6 w-6 sm:h-8 sm:w-8 text-green-600" />
-              <span>Languages</span>
-            </h2>
-            <div className="bg-white/80 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-xl">
-              {/* Mobile: Horizontal scroll, Desktop: Grid */}
-              <div className="overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 lg:overflow-visible">
-                <div className="flex sm:grid sm:grid-cols-3 gap-4 sm:gap-6 min-w-max sm:min-w-0">
-                  {languages.map((language, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, scale: 0 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 1.9 + index * 0.1, type: "spring" }}
-                      className="text-center min-w-[100px] sm:min-w-0"
-                    >
-                      <div className="text-2xl sm:text-3xl lg:text-4xl mb-2">{language.flag}</div>
-                      <h3 className="text-xs sm:text-sm lg:text-base font-bold text-gray-900">{language.name}</h3>
-                      <p className="text-xs text-gray-600">{language.level}</p>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
+        {/* Languages Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.9, duration: 0.8 }}
+          className="mb-12"
+        >
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center space-x-3">
+            <Languages className="h-8 w-8 text-green-600" />
+            <span>Languages</span>
+          </h2>
+          <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-8 shadow-xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+              {languages.map((language, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 2.1 + index * 0.1, type: "spring" }}
+                  className="text-center"
+                >
+                  <div className="text-5xl mb-3">{language.flag}</div>
+                  <h3 className="text-lg font-bold text-gray-900">{language.name}</h3>
+                  <p className="text-sm text-gray-600">{language.level}</p>
+                </motion.div>
+              ))}
             </div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
 
         {/* Photo Contributions Section */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 2.3, duration: 0.8 }}
-          className="mb-6 sm:mb-8 lg:mb-12"
+          className="mb-12"
         >
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 flex items-center space-x-3">
-            <Camera className="h-6 w-6 sm:h-8 sm:w-8 text-pink-600" />
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center space-x-3">
+            <Camera className="h-8 w-8 text-pink-600" />
             <span>Photo Contributions</span>
           </h2>
           <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-8 shadow-xl">
@@ -456,10 +462,10 @@ export default function MeghanaKankariaProfile() {
                 transition={{ delay: 2.5, type: "spring", stiffness: 200 }}
                 className="inline-block"
               >
-                <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
+                <div className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
                   {totalPhotos}
                 </div>
-                <p className="text-base sm:text-lg lg:text-xl text-gray-600 mt-2">Total Photos Contributed</p>
+                <p className="text-xl text-gray-600 mt-2">Total Photos Contributed</p>
               </motion.div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -472,8 +478,8 @@ export default function MeghanaKankariaProfile() {
                   className="bg-gradient-to-br from-purple-100 to-pink-100 p-6 rounded-xl"
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900">{contribution.city}</h3>
-                    <span className="text-xl sm:text-2xl font-bold text-purple-600">{contribution.count}</span>
+                    <h3 className="text-xl font-bold text-gray-900">{contribution.city}</h3>
+                    <span className="text-2xl font-bold text-purple-600">{contribution.count}</span>
                   </div>
                   <p className="text-gray-600 text-sm">{contribution.country}</p>
                 </motion.div>
@@ -487,17 +493,17 @@ export default function MeghanaKankariaProfile() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 2.7, duration: 0.8 }}
-          className="mb-6 sm:mb-8 lg:mb-12"
+          className="mb-12"
         >
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 flex items-center space-x-3">
-            <FileText className="h-6 w-6 sm:h-8 sm:w-8 text-purple-600" />
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center space-x-3">
+            <FileText className="h-8 w-8 text-purple-600" />
             <span>Professional Portfolio</span>
           </h2>
           <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden">
             <div className="bg-gradient-to-r from-purple-600 via-pink-600 to-rose-500 p-8">
               <div className="flex items-center justify-between flex-wrap gap-4">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">Architecture Portfolio</h3>
+                  <h3 className="text-2xl font-bold text-white mb-2">Architecture Portfolio</h3>
                   <p className="text-white/90 text-lg">
                     Explore Meghana&apos;s professional architectural work and creative projects
                   </p>
@@ -531,10 +537,10 @@ export default function MeghanaKankariaProfile() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 2.9, duration: 0.8 }}
-          className="mb-6 sm:mb-8 lg:mb-12"
+          className="mb-12"
         >
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 flex items-center space-x-3">
-            <Share2 className="h-6 w-6 sm:h-8 sm:w-8 text-blue-600" />
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center space-x-3">
+            <Share2 className="h-8 w-8 text-blue-600" />
             <span>Connect</span>
           </h2>
           <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden">
@@ -548,7 +554,7 @@ export default function MeghanaKankariaProfile() {
               >
                 <div className="mb-6 text-center">
                   <QrCode className="h-12 w-12 text-purple-600 mx-auto mb-3" />
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Scan to Connect</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Scan to Connect</h3>
                   <p className="text-gray-600">
                     Scan this QR code to learn more about Meghana and connect with her
                   </p>
@@ -579,7 +585,7 @@ export default function MeghanaKankariaProfile() {
                 className="flex flex-col justify-center space-y-6"
               >
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Get in Touch</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Get in Touch</h3>
                   <p className="text-gray-700 mb-6">
                     Connect with Meghana to collaborate on architectural projects, photography,
                     or to learn more about her creative journey.
@@ -663,8 +669,8 @@ export default function MeghanaKankariaProfile() {
           >
             ❤️
           </motion.div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">Thank You, Meghana!</h2>
-          <p className="text-base sm:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold mb-4">Thank You, Meghana!</h2>
+          <p className="text-xl text-white/90 max-w-2xl mx-auto">
             Your contributions have brought life, color, and architectural beauty to this website.
             Your eye for design shines through every photograph. We&apos;re grateful to have you as our first contributor!
           </p>

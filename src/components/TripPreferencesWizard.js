@@ -235,6 +235,9 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
     let usedAttractions = new Set();
     let usedFoodPlaces = new Set();
 
+    // Check if foodie preference is selected
+    const isFoodieTrip = selectedPreferences.includes('foodie');
+
     for (let day = 1; day <= selectedDuration; day++) {
       const daySchedule = [];
       let currentLocation = cityCenter;
@@ -249,8 +252,8 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
         currentLocation = breakfastPlace.coords || currentLocation;
       }
 
-      // MORNING ACTIVITIES (9 AM - 12 PM) - 2 attractions
-      const morningSlots = 2;
+      // MORNING ACTIVITIES (9 AM - 12 PM) - 2 attractions (or 1 if foodie)
+      const morningSlots = isFoodieTrip ? 1 : 2;
       for (let i = 0; i < morningSlots; i++) {
         const availableAttractions = scoredAttractions.filter(p => !usedAttractions.has(p.name));
         const nextAttraction = findNearestPlace(currentLocation, availableAttractions);
@@ -262,6 +265,16 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
         }
       }
 
+      // MID-MORNING SNACK (10:30 AM) - Only for foodie trips
+      if (isFoodieTrip) {
+        const snackPlace = findNearestPlace(currentLocation, [...cafes, ...restaurants].filter(p => !usedFoodPlaces.has(p.name)));
+        if (snackPlace) {
+          daySchedule.push({ ...snackPlace, mealType: 'Mid-Morning Snack', time: '10:30 AM' });
+          usedFoodPlaces.add(snackPlace.name);
+          currentLocation = snackPlace.coords || currentLocation;
+        }
+      }
+
       // LUNCH (12:30 - 1:30 PM) - Near last visited place (restaurants only)
       const lunchPlace = findNearestPlace(currentLocation, restaurants.filter(p => !usedFoodPlaces.has(p.name)));
       if (lunchPlace) {
@@ -270,8 +283,8 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
         currentLocation = lunchPlace.coords || currentLocation;
       }
 
-      // AFTERNOON ACTIVITIES (2 PM - 5 PM) - 2 attractions
-      const afternoonSlots = 2;
+      // AFTERNOON ACTIVITIES (2 PM - 5 PM) - 2 attractions (or 1 if foodie)
+      const afternoonSlots = isFoodieTrip ? 1 : 2;
       for (let i = 0; i < afternoonSlots; i++) {
         const availableAttractions = scoredAttractions.filter(p => !usedAttractions.has(p.name));
         const nextAttraction = findNearestPlace(currentLocation, availableAttractions);
@@ -280,6 +293,16 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
           daySchedule.push({ ...nextAttraction, time: i === 0 ? '2:00 PM' : '3:30 PM' });
           usedAttractions.add(nextAttraction.name);
           currentLocation = nextAttraction.coords || currentLocation;
+        }
+      }
+
+      // AFTERNOON SNACK (4:00 PM) - Only for foodie trips
+      if (isFoodieTrip) {
+        const afternoonSnack = findNearestPlace(currentLocation, cafes.filter(p => !usedFoodPlaces.has(p.name)));
+        if (afternoonSnack) {
+          daySchedule.push({ ...afternoonSnack, mealType: 'Afternoon Snack', time: '4:00 PM' });
+          usedFoodPlaces.add(afternoonSnack.name);
+          currentLocation = afternoonSnack.coords || currentLocation;
         }
       }
 
@@ -300,11 +323,31 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
         currentLocation = eveningAttraction.coords || currentLocation;
       }
 
+      // PRE-DINNER APPETIZER (7:30 PM) - Only for foodie trips
+      if (isFoodieTrip) {
+        const predinnerPlace = findNearestPlace(currentLocation, [...restaurants, ...cafes].filter(p => !usedFoodPlaces.has(p.name)));
+        if (predinnerPlace) {
+          daySchedule.push({ ...predinnerPlace, mealType: 'Pre-Dinner Appetizer', time: '7:30 PM' });
+          usedFoodPlaces.add(predinnerPlace.name);
+          currentLocation = predinnerPlace.coords || currentLocation;
+        }
+      }
+
       // DINNER (8:00 PM) - Near last visited place (restaurants only)
       const dinnerPlace = findNearestPlace(currentLocation, restaurants.filter(p => !usedFoodPlaces.has(p.name)));
       if (dinnerPlace) {
-        daySchedule.push({ ...dinnerPlace, mealType: 'Dinner', time: '8:00 PM' });
+        daySchedule.push({ ...dinnerPlace, mealType: 'Dinner', time: isFoodieTrip ? '8:30 PM' : '8:00 PM' });
         usedFoodPlaces.add(dinnerPlace.name);
+        currentLocation = dinnerPlace.coords || currentLocation;
+      }
+
+      // DESSERT (9:30 PM) - Only for foodie trips
+      if (isFoodieTrip) {
+        const dessertPlace = findNearestPlace(currentLocation, cafes.filter(p => !usedFoodPlaces.has(p.name)));
+        if (dessertPlace) {
+          daySchedule.push({ ...dessertPlace, mealType: 'Dessert', time: '9:30 PM' });
+          usedFoodPlaces.add(dessertPlace.name);
+        }
       }
 
       if (daySchedule.length > 0) {
@@ -844,14 +887,24 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
                                               {place.mealType && (
                                                 <span className={`inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-full font-semibold ${
                                                   place.mealType === 'Breakfast' ? 'bg-amber-100 text-amber-700' :
+                                                  place.mealType === 'Mid-Morning Snack' ? 'bg-yellow-100 text-yellow-700' :
                                                   place.mealType === 'Lunch' ? 'bg-green-100 text-green-700' :
+                                                  place.mealType === 'Afternoon Snack' ? 'bg-orange-100 text-orange-700' :
                                                   place.mealType === 'Evening Beverage' ? 'bg-pink-100 text-pink-700' :
-                                                  'bg-purple-100 text-purple-700'
+                                                  place.mealType === 'Pre-Dinner Appetizer' ? 'bg-red-100 text-red-700' :
+                                                  place.mealType === 'Dinner' ? 'bg-purple-100 text-purple-700' :
+                                                  place.mealType === 'Dessert' ? 'bg-rose-100 text-rose-700' :
+                                                  'bg-blue-100 text-blue-700'
                                                 }`}>
                                                   {place.mealType === 'Breakfast' && '☕'}
+                                                  {place.mealType === 'Mid-Morning Snack' && '🥐'}
                                                   {place.mealType === 'Lunch' && '🍽️'}
+                                                  {place.mealType === 'Afternoon Snack' && '🍰'}
                                                   {place.mealType === 'Evening Beverage' && '🍹'}
+                                                  {place.mealType === 'Pre-Dinner Appetizer' && '🍤'}
                                                   {place.mealType === 'Dinner' && '🍷'}
+                                                  {place.mealType === 'Dessert' && '🍨'}
+                                                  {place.mealType}
                                                 </span>
                                               )}
                                             </div>

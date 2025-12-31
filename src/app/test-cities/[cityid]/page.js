@@ -17,6 +17,7 @@ import React from "react";
 import { Compass, Plane, Home, Newspaper, Calendar } from 'lucide-react';
 import DublinTipsCarousel from '@/components/DublinTipsCarousel';
 import BengaluruTipsCarousel from '@/components/BengaluruTipsCarousel';
+import CityQuestionBox from '@/components/CityQuestionBox';
 
 
 export default function CityPage({ params }) {
@@ -156,6 +157,11 @@ export default function CityPage({ params }) {
             zoom={13}
             name={city.name}
           />
+
+          {/* AI-Powered Q&A Box */}
+          {['dublin', 'bengaluru'].includes(cityid.toLowerCase()) && (
+            <CityQuestionBox cityId={cityid} cityName={city.name} />
+          )}
 
           {/* Dublin Tips Carousel - Only for Dublin */}
           {cityid.toLowerCase() === 'dublin' && (

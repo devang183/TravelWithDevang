@@ -124,6 +124,26 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
   const generateTrip = () => {
     if (selectedPreferences.length === 0 || !selectedDuration) return;
 
+    // Helper: Get city center from city coordinates database
+    const getCityCenter = () => {
+      // Try to get city center from cities database first
+      if (cityId && cities[cityId] && cities[cityId].coords) {
+        return cities[cityId].coords;
+      }
+
+      // Fallback: calculate average of all marker coordinates
+      const placesWithCoords = markers.filter(m => m.coords);
+      if (placesWithCoords.length === 0) return null;
+
+      const avgLat = placesWithCoords.reduce((sum, p) => sum + p.coords[0], 0) / placesWithCoords.length;
+      const avgLon = placesWithCoords.reduce((sum, p) => sum + p.coords[1], 0) / placesWithCoords.length;
+
+      return [avgLat, avgLon];
+    };
+
+    // Get city center first (needed for filtering breakfast cafes)
+    const cityCenter = getCityCenter();
+
     // Separate food/drink places from other attractions
     const foodKeywords = ['restaurant', 'cafe', 'food', 'pint', 'pub', 'bar', 'dining', 'eat', 'breakfast', 'lunch', 'dinner', 'coffee', 'tea'];
 
@@ -132,11 +152,23 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
       return foodKeywords.some(keyword => markerText.includes(keyword));
     });
 
-    // Separate cafes and restaurants for specific meal types (shuffled for variety)
-    const cafes = shuffleArray(foodPlaces.filter(place => {
+    // Separate cafes - filter for those within 1km of city center for breakfast variety
+    const allCafes = foodPlaces.filter(place => {
       const placeText = `${place.name} ${place.description || ''} ${place.categories || place.category || ''}`.toLowerCase();
       return placeText.includes('cafe') || placeText.includes('coffee') || placeText.includes('tea');
-    }));
+    });
+
+    // Filter cafes within 1km of city center for breakfast options
+    const breakfastCafes = cityCenter
+      ? allCafes.filter(cafe => {
+          if (!cafe.coords) return true; // Include cafes without coords as fallback
+          const distance = calculateDistance(cityCenter, cafe.coords);
+          return distance <= 1; // Within 1km
+        })
+      : allCafes;
+
+    // Shuffle cafes - prioritize breakfast cafes within 1km, then all cafes
+    const cafes = shuffleArray([...breakfastCafes, ...allCafes.filter(c => !breakfastCafes.includes(c))]);
 
     const restaurants = shuffleArray(foodPlaces.filter(place => {
       const placeText = `${place.name} ${place.description || ''} ${place.categories || place.category || ''}`.toLowerCase();
@@ -198,25 +230,6 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
       return nearest || availablePlaces.find(p => !p.coords) || availablePlaces[0];
     };
 
-    // Helper: Get city center from city coordinates database
-    const getCityCenter = () => {
-      // Try to get city center from cities database first
-      if (cityId && cities[cityId] && cities[cityId].coords) {
-        return cities[cityId].coords;
-      }
-
-      // Fallback: calculate average of all marker coordinates
-      const placesWithCoords = markers.filter(m => m.coords);
-      if (placesWithCoords.length === 0) return null;
-
-      const avgLat = placesWithCoords.reduce((sum, p) => sum + p.coords[0], 0) / placesWithCoords.length;
-      const avgLon = placesWithCoords.reduce((sum, p) => sum + p.coords[1], 0) / placesWithCoords.length;
-
-      return [avgLat, avgLon];
-    };
-
-    const cityCenter = getCityCenter();
-
     // Generate day-wise itinerary with meal structure
     const itinerary = [];
     let usedAttractions = new Set();
@@ -226,8 +239,10 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
       const daySchedule = [];
       let currentLocation = cityCenter;
 
-      // BREAKFAST (8-9 AM) - Start from city center (cafes only)
-      const breakfastPlace = findNearestPlace(cityCenter, cafes.filter(p => !usedFoodPlaces.has(p.name)));
+      // BREAKFAST (8-9 AM) - Pick from shuffled breakfast cafes (within 1km of city center)
+      // Use first available from shuffled list instead of nearest for variety
+      const availableBreakfastCafes = cafes.filter(p => !usedFoodPlaces.has(p.name));
+      const breakfastPlace = availableBreakfastCafes.length > 0 ? availableBreakfastCafes[0] : null;
       if (breakfastPlace) {
         daySchedule.push({ ...breakfastPlace, mealType: 'Breakfast', time: '8:00 AM' });
         usedFoodPlaces.add(breakfastPlace.name);

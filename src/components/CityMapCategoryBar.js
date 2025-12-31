@@ -2,14 +2,16 @@
 import { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const CityMapCategoryBar = ({ 
-  markers = [], 
-  activeCategories = [], 
-  onCategoryToggle, 
+const CityMapCategoryBar = ({
+  markers = [],
+  activeCategories = [],
+  onCategoryToggle,
   onClearCategories,
   markersVisible,
   onToggleMarkersVisibility,
-  loading = false 
+  showLabels = true,
+  onToggleLabels,
+  loading = false
 }) => {
   const scrollRef = useRef(null);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
@@ -389,6 +391,30 @@ const CityMapCategoryBar = ({
         >
           Clear Items
         </button>
+
+        {/* Toggle Labels Button */}
+        {onToggleLabels && (
+          <button
+            onClick={onToggleLabels}
+            style={{
+              ...actionButtonStyles,
+              background: showLabels
+                ? "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+                : "linear-gradient(135deg, #6b7280 0%, #4b5563 100%)"
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-2px)";
+              e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.15)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow = "0 2px 8px rgba(0,0,0,0.1)";
+            }}
+            aria-label="Toggle place name labels"
+          >
+            {showLabels ? "🏷️ Hide Labels" : "🏷️ Show Labels"}
+          </button>
+        )}
       </div>
       
       {/* Active categories indicator */}

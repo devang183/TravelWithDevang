@@ -22,6 +22,25 @@ if (typeof document !== 'undefined') {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.05); }
     }
+
+    /* Permanent map label styles */
+    .city-map-label {
+      background: rgba(255, 255, 255, 0.95) !important;
+      border: 2px solid rgba(99, 102, 241, 0.8) !important;
+      border-radius: 8px !important;
+      padding: 4px 8px !important;
+      font-weight: 600 !important;
+      font-size: 12px !important;
+      color: #1e293b !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+      white-space: nowrap !important;
+      pointer-events: none !important;
+      backdrop-filter: blur(8px) !important;
+    }
+
+    .city-map-label::before {
+      display: none !important;
+    }
   `;
   if (!document.head.querySelector('#citymap-animations')) {
     style.id = 'citymap-animations';
@@ -90,6 +109,7 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
   const [legendOpen, setLegendOpen] = useState(false);
   const [showPerformanceWarning, setShowPerformanceWarning] = useState(false);
   const [pendingMarkersVisible, setPendingMarkersVisible] = useState(false);
+  const [showLabels, setShowLabels] = useState(true); // Toggle for permanent labels
 
   const [startMarkerRef, setStartMarkerRef] = useState(null);
   const [endMarkerRef, setEndMarkerRef] = useState(null);
@@ -471,8 +491,17 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
               shadowSize: [41, 41],
             }),
           });
-        
+
           marker.bindPopup(popupDiv);
+
+          // Add permanent tooltip label showing the place name
+          marker.bindTooltip(name, {
+            permanent: showLabels,
+            direction: 'top',
+            offset: [0, -40],
+            className: 'city-map-label',
+            opacity: 0.9
+          });
         
           // Add event listeners when popup opens
           marker.on("popupopen", () => {
@@ -591,6 +620,26 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
     loadMap();
   }, [markers, loading, coords, zoom]);
 
+  // Effect to toggle label visibility when showLabels state changes
+  useEffect(() => {
+    if (markerRefs.current && markerRefs.current.length > 0) {
+      markerRefs.current.forEach((marker) => {
+        if (marker && marker.getTooltip()) {
+          const tooltip = marker.getTooltip();
+          if (showLabels) {
+            tooltip.options.permanent = true;
+            if (mapInstance.current && mapInstance.current.hasLayer(marker)) {
+              marker.openTooltip();
+            }
+          } else {
+            tooltip.options.permanent = false;
+            marker.closeTooltip();
+          }
+        }
+      });
+    }
+  }, [showLabels]);
+
   // Fixed function to handle multiple categories with bounds checking
   const addMarkersInView = useCallback((forceUpdate = false) => {
     const map = mapInstance.current;
@@ -633,6 +682,17 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
               })
             );
             marker.addTo(map);
+
+            // Respect current label visibility state
+            if (marker.getTooltip()) {
+              const tooltip = marker.getTooltip();
+              tooltip.options.permanent = showLabels;
+              if (showLabels) {
+                marker.openTooltip();
+              } else {
+                marker.closeTooltip();
+              }
+            }
           }
         } else {
           if (map.hasLayer(marker)) map.removeLayer(marker);
@@ -641,7 +701,7 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
     } finally {
       isUpdatingMarkers.current = false;
     }
-  }, [selectedMarkerIndex, activeCategories, markersVisible, markers]);
+  }, [selectedMarkerIndex, activeCategories, markersVisible, markers, showLabels]);
 
   // Debounced version of addMarkersInView to prevent rapid firing
   const debouncedAddMarkersInView = useCallback(
@@ -2109,6 +2169,8 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
         onClearCategories={handleClearCategories}
         markersVisible={markersVisible}
         onToggleMarkersVisibility={handleToggleMarkers}
+        showLabels={showLabels}
+        onToggleLabels={() => setShowLabels(!showLabels)}
         loading={loading}
       />
 

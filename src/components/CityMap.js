@@ -67,7 +67,6 @@ const CATEGORY_EMOJIS = {
   art: "🎨",
   cricket: "🏏",
   bookstore: "📚",
-  grocery: "🛒",
   hospital: "🩺",
   bookmaker: "🟩",
   pharmacy: "💊",
@@ -144,8 +143,7 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
   const [activeNearbyCategories, setActiveNearbyCategories] = useState({
     restaurant: true,
     cafe: true,
-    pharmacy: true,
-    grocery: true
+    pharmacy: true
   });
 
   // Trip planning states
@@ -1662,12 +1660,11 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
       restaurant: { color: '#EF4444', emoji: '🍽️', label: 'Restaurant' }, // Red
       cafe: { color: '#F59E0B', emoji: '☕', label: 'Cafe' }, // Orange
       pharmacy: { color: '#10B981', emoji: '💊', label: 'Pharmacy' }, // Green
-      grocery: { color: '#3B82F6', emoji: '🛒', label: 'Grocery' } // Blue
     };
 
     // Find places near the route
     const foundPlaces = new Set(); // To avoid duplicate markers
-    const categoryCount = { restaurant: 0, cafe: 0, pharmacy: 0, grocery: 0 };
+    const categoryCount = { restaurant: 0, cafe: 0, pharmacy: 0 };
 
     // Sample route points every ~200 meters to avoid checking thousands of points
     // This makes the search more efficient while still catching nearby places
@@ -1978,8 +1975,6 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
         return 'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/mapicons/cricket.svg'
       case 'bookstore':
         return 'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/mapicons/bookstore.svg'
-      case 'grocery':
-        return 'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/mapicons/grocery.svg'
       case 'hospital':
         return 'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/mapicons/hospital.svg'
       case 'bookmaker':
@@ -2502,23 +2497,6 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
                             {activeNearbyCategories.pharmacy && <span className="text-white text-xs">✓</span>}
                           </div>
                           <span className="text-white">💊 Pharmacies</span>
-                        </button>
-                        <button
-                          onClick={() => setActiveNearbyCategories(prev => ({...prev, grocery: !prev.grocery}))}
-                          className="flex items-center gap-2 cursor-pointer hover:bg-white/10 p-1.5 rounded transition"
-                        >
-                          <div
-                            className="w-5 h-5 rounded-full transition-all duration-200 flex items-center justify-center"
-                            style={{
-                              backgroundColor: activeNearbyCategories.grocery ? '#3B82F6' : 'transparent',
-                              border: '2px solid #3B82F6',
-                              opacity: activeNearbyCategories.grocery ? 1 : 0.4,
-                              transform: activeNearbyCategories.grocery ? 'scale(1)' : 'scale(0.85)'
-                            }}
-                          >
-                            {activeNearbyCategories.grocery && <span className="text-white text-xs">✓</span>}
-                          </div>
-                          <span className="text-white">🛒 Groceries</span>
                         </button>
                       </div>
                     </div>

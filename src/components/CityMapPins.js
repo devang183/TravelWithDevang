@@ -10,7 +10,6 @@ import londoncitypins from '@/app/test-cities/scripts/London/data_half_restauran
 import { m } from "framer-motion";
 import malahidecitypins from "@/app/test-cities/scripts/Malahide/sample";
 import { luasStops } from '@/app/test-cities/scripts/luasdetails/luasStops';
-import { DublinCityGroceryData } from '@/app/test-cities/scripts/Dublin/Groceries/DublinCityGroceryData';
 import { DublinCityATMData } from '@/app/test-cities/scripts/Dublin/DublinATMs/DublinCityATMData';
 import { DublinCityBookstoreData } from '@/app/test-cities/scripts/Dublin/Bookstores/DublinCityBookstoreData';
 import { DublinCityCafeData } from '@/app/test-cities/scripts/Dublin/Cafes/DublinCityCafeData';
@@ -28,7 +27,6 @@ import dublinretail from '@/app/test-cities/scripts/Dublin/Valuations/Retail/dub
 import { DublinCityWomenBeautyMDBData } from '@/app/test-cities/scripts/Dublin/WomenBeauty/DublinCityWomenBeautyMDBData';
 import { NewryCityATMData } from '@/app/test-cities/scripts/Newry/ATMs/NewryCityATMData';
 import { NewryCityCafeData } from '@/app/test-cities/scripts/Newry/Cafes/NewryCityCafeData';
-import { NewryCityGroceryData } from '@/app/test-cities/scripts/Newry/Groceries/NewryCityGroceryData';
 import newrycitypins from '@/app/test-cities/scripts/Newry/sample.json'
 import newrypolicepins from '@/app/test-cities/scripts/Newry/Polices/newry-police-pins.json'
 import newryparkpins from '@/app/test-cities/scripts/Newry/Parks/newry-park-pins.json'
@@ -51,7 +49,6 @@ export const cityMapData =
     [
       ...dublincitypins,
       ...luasStops,
-      ...DublinCityGroceryData.dublin,
       ...DublinCityATMData.dublin,
       ...DublinCityBookstoreData.dublin,
       ...DublinCityCafeData.dublin,
@@ -73,7 +70,6 @@ export const cityMapData =
       ...newrycitypins,
       ...NewryCityATMData.newry,
       ...NewryCityCafeData.newry,
-      ...NewryCityGroceryData.newry,
       ...newrypolicepins,
       ...newryparkpins,
 

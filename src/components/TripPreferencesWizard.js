@@ -18,6 +18,7 @@ import {
   Route,
   Download
 } from 'lucide-react';
+import { cities } from './citycoord';
 
 const TRIP_PREFERENCES = {
   popular: {
@@ -75,7 +76,7 @@ const DURATION_OPTIONS = [
 export default function TripPreferencesWizard({ cityId, cityName, markers: propMarkers = [], onGenerateTrip }) {
   const [isOpen, setIsOpen] = useState(false);
   const [step, setStep] = useState(1); // 1: Preferences, 2: Duration, 3: Generated
-  const [selectedPreference, setSelectedPreference] = useState(null);
+  const [selectedPreferences, setSelectedPreferences] = useState([]); // Changed to array for multiple selection
   const [selectedDuration, setSelectedDuration] = useState(null);
   const [generatedTrip, setGeneratedTrip] = useState(null);
   const [activeTab, setActiveTab] = useState('overview'); // 'overview' or 'itinerary'
@@ -96,17 +97,32 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
   const markers = apiMarkers.length > 0 ? apiMarkers : propMarkers;
 
   const handlePreferenceSelect = (preferenceKey) => {
-    setSelectedPreference(preferenceKey);
+    // Toggle preference in array (allow multiple selections)
+    setSelectedPreferences(prev => {
+      if (prev.includes(preferenceKey)) {
+        return prev.filter(key => key !== preferenceKey);
+      } else {
+        return [...prev, preferenceKey];
+      }
+    });
   };
 
   const handleDurationSelect = (days) => {
     setSelectedDuration(days);
   };
 
-  const generateTrip = () => {
-    if (!selectedPreference || !selectedDuration) return;
+  // Helper function to shuffle an array
+  const shuffleArray = (array) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
 
-    const preference = TRIP_PREFERENCES[selectedPreference];
+  const generateTrip = () => {
+    if (selectedPreferences.length === 0 || !selectedDuration) return;
 
     // Separate food/drink places from other attractions
     const foodKeywords = ['restaurant', 'cafe', 'food', 'pint', 'pub', 'bar', 'dining', 'eat', 'breakfast', 'lunch', 'dinner', 'coffee', 'tea'];
@@ -116,24 +132,39 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
       return foodKeywords.some(keyword => markerText.includes(keyword));
     });
 
+    // Separate cafes and restaurants for specific meal types (shuffled for variety)
+    const cafes = shuffleArray(foodPlaces.filter(place => {
+      const placeText = `${place.name} ${place.description || ''} ${place.categories || place.category || ''}`.toLowerCase();
+      return placeText.includes('cafe') || placeText.includes('coffee') || placeText.includes('tea');
+    }));
+
+    const restaurants = shuffleArray(foodPlaces.filter(place => {
+      const placeText = `${place.name} ${place.description || ''} ${place.categories || place.category || ''}`.toLowerCase();
+      return placeText.includes('restaurant') || placeText.includes('dining');
+    }));
+
+    // Collect all keywords from selected preferences
+    const allKeywords = selectedPreferences.flatMap(prefKey => {
+      if (prefKey === 'popular') {
+        return ['art', 'bookstore', 'church', 'historic', 'museum', 'park', 'pint', 'viewpoint'];
+      }
+      return TRIP_PREFERENCES[prefKey].keywords;
+    });
+
     const attractionPlaces = markers.filter(marker => {
       const markerText = `${marker.name} ${marker.description || ''} ${marker.categories || marker.category || ''}`.toLowerCase();
       const isFood = foodKeywords.some(keyword => markerText.includes(keyword));
 
-      // For 'Popular' preference, include all non-food places
-      if (selectedPreference === 'popular') {
-        return !isFood;
-      }
-
-      // For other preferences, match keywords
-      const matchesPreference = preference.keywords.some(keyword => markerText.includes(keyword));
-      return !isFood && matchesPreference;
+      // Match against any keyword from selected preferences
+      const matchesAnyPreference = allKeywords.some(keyword => markerText.includes(keyword));
+      return !isFood && matchesAnyPreference;
     });
 
-    // Score and sort attractions by relevance
-    const scoredAttractions = attractionPlaces.map(place => {
+    // Score and sort attractions by relevance (shuffle before scoring for variety)
+    const shuffledAttractions = shuffleArray(attractionPlaces);
+    const scoredAttractions = shuffledAttractions.map(place => {
       const placeText = `${place.name} ${place.description || ''} ${place.categories || place.category || ''}`.toLowerCase();
-      const score = preference.keywords.reduce((acc, keyword) => {
+      const score = allKeywords.reduce((acc, keyword) => {
         return acc + (placeText.includes(keyword) ? 1 : 0);
       }, 0);
       return { ...place, score };
@@ -167,8 +198,14 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
       return nearest || availablePlaces.find(p => !p.coords) || availablePlaces[0];
     };
 
-    // Helper: Find city center (average of all coordinates)
+    // Helper: Get city center from city coordinates database
     const getCityCenter = () => {
+      // Try to get city center from cities database first
+      if (cityId && cities[cityId] && cities[cityId].coords) {
+        return cities[cityId].coords;
+      }
+
+      // Fallback: calculate average of all marker coordinates
       const placesWithCoords = markers.filter(m => m.coords);
       if (placesWithCoords.length === 0) return null;
 
@@ -189,8 +226,8 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
       const daySchedule = [];
       let currentLocation = cityCenter;
 
-      // BREAKFAST (8-9 AM) - Start from city center
-      const breakfastPlace = findNearestPlace(cityCenter, foodPlaces.filter(p => !usedFoodPlaces.has(p.name)));
+      // BREAKFAST (8-9 AM) - Start from city center (cafes only)
+      const breakfastPlace = findNearestPlace(cityCenter, cafes.filter(p => !usedFoodPlaces.has(p.name)));
       if (breakfastPlace) {
         daySchedule.push({ ...breakfastPlace, mealType: 'Breakfast', time: '8:00 AM' });
         usedFoodPlaces.add(breakfastPlace.name);
@@ -210,8 +247,8 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
         }
       }
 
-      // LUNCH (12:30 - 1:30 PM) - Near last visited place
-      const lunchPlace = findNearestPlace(currentLocation, foodPlaces.filter(p => !usedFoodPlaces.has(p.name)));
+      // LUNCH (12:30 - 1:30 PM) - Near last visited place (restaurants only)
+      const lunchPlace = findNearestPlace(currentLocation, restaurants.filter(p => !usedFoodPlaces.has(p.name)));
       if (lunchPlace) {
         daySchedule.push({ ...lunchPlace, mealType: 'Lunch', time: '12:30 PM' });
         usedFoodPlaces.add(lunchPlace.name);
@@ -231,8 +268,8 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
         }
       }
 
-      // EVENING BEVERAGE (5:30 PM) - Near last visited place (cafe/bar)
-      const beveragePlace = findNearestPlace(currentLocation, foodPlaces.filter(p => !usedFoodPlaces.has(p.name)));
+      // EVENING BEVERAGE (5:30 PM) - Near last visited place (cafes only)
+      const beveragePlace = findNearestPlace(currentLocation, cafes.filter(p => !usedFoodPlaces.has(p.name)));
       if (beveragePlace) {
         daySchedule.push({ ...beveragePlace, mealType: 'Evening Beverage', time: '5:30 PM' });
         usedFoodPlaces.add(beveragePlace.name);
@@ -248,8 +285,8 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
         currentLocation = eveningAttraction.coords || currentLocation;
       }
 
-      // DINNER (8:00 PM) - Near last visited place
-      const dinnerPlace = findNearestPlace(currentLocation, foodPlaces.filter(p => !usedFoodPlaces.has(p.name)));
+      // DINNER (8:00 PM) - Near last visited place (restaurants only)
+      const dinnerPlace = findNearestPlace(currentLocation, restaurants.filter(p => !usedFoodPlaces.has(p.name)));
       if (dinnerPlace) {
         daySchedule.push({ ...dinnerPlace, mealType: 'Dinner', time: '8:00 PM' });
         usedFoodPlaces.add(dinnerPlace.name);
@@ -270,7 +307,7 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
       id: Date.now(),
       cityId,
       cityName,
-      preference: selectedPreference,
+      preferences: selectedPreferences, // Changed to array
       duration: selectedDuration,
       itinerary,
       totalPlaces,
@@ -361,7 +398,8 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
       // Title
       doc.setFontSize(22);
       doc.setFont(undefined, 'bold');
-      doc.text(`${generatedTrip.duration}-Day ${TRIP_PREFERENCES[generatedTrip.preference].label} Trip`, pageWidth / 2, yPos, { align: 'center' });
+      const preferencesLabel = generatedTrip.preferences.map(p => TRIP_PREFERENCES[p].label).join(' & ');
+      doc.text(`${generatedTrip.duration}-Day ${preferencesLabel} Trip`, pageWidth / 2, yPos, { align: 'center' });
       yPos += 10;
 
       doc.setFontSize(18);
@@ -479,7 +517,8 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
       }
 
       // Save PDF
-      const filename = `${cityName}_${generatedTrip.duration}day_${TRIP_PREFERENCES[generatedTrip.preference].label}_trip.pdf`;
+      const preferencesFilename = generatedTrip.preferences.map(p => TRIP_PREFERENCES[p].label).join('_');
+      const filename = `${cityName}_${generatedTrip.duration}day_${preferencesFilename}_trip.pdf`;
       doc.save(filename);
     } catch (error) {
       console.error('Error generating PDF:', error);
@@ -488,7 +527,7 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
   };
 
   const handleNext = () => {
-    if (step === 1 && selectedPreference) {
+    if (step === 1 && selectedPreferences.length > 0) {
       setStep(2);
     } else if (step === 2 && selectedDuration) {
       generateTrip();
@@ -505,7 +544,7 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
 
   const handleReset = () => {
     setStep(1);
-    setSelectedPreference(null);
+    setSelectedPreferences([]);
     setSelectedDuration(null);
     setGeneratedTrip(null);
     setActiveTab('overview');
@@ -561,16 +600,16 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
                 </div>
 
                 {/* Progress Steps */}
-                <div className="flex items-center gap-2 mt-6">
+                <div className="flex items-center w-full mt-6">
                   {[1, 2, 3].map((s) => (
                     <div key={s} className="flex items-center flex-1">
-                      <div className={`flex items-center justify-center w-8 h-8 rounded-full font-bold ${
+                      <div className={`flex items-center justify-center w-10 h-10 rounded-full font-bold text-sm ${
                         s <= step ? 'bg-white text-purple-600' : 'bg-purple-400 text-purple-200'
                       }`}>
                         {s}
                       </div>
                       {s < 3 && (
-                        <div className={`flex-1 h-1 mx-2 rounded ${
+                        <div className={`flex-1 h-1 mx-3 rounded ${
                           s < step ? 'bg-white' : 'bg-purple-400'
                         }`} />
                       )}
@@ -588,7 +627,7 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
                     animate={{ opacity: 1, x: 0 }}
                   >
                     <h3 className="text-xl font-bold text-gray-800 mb-2">What&apos;s your trip about?</h3>
-                    <p className="text-gray-600 mb-4">Choose a theme for your perfect itinerary</p>
+                    <p className="text-gray-600 mb-4">Choose one or more themes for your perfect itinerary</p>
 
                     {markersLoading && (
                       <div className="flex items-center gap-2 mb-4 text-purple-600">
@@ -606,7 +645,7 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                       {Object.entries(TRIP_PREFERENCES).map(([key, pref]) => {
                         const Icon = pref.icon;
-                        const isSelected = selectedPreference === key;
+                        const isSelected = selectedPreferences.includes(key);
 
                         return (
                           <motion.button
@@ -676,10 +715,10 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
                     animate={{ opacity: 1, x: 0 }}
                   >
                     {/* Tab Navigation */}
-                    <div className="flex gap-2 mb-6 border-b">
+                    <div className="flex justify-center gap-2 mb-6 border-b">
                       <button
                         onClick={() => setActiveTab('overview')}
-                        className={`px-4 py-2 font-semibold transition-all ${
+                        className={`px-6 py-2 font-semibold transition-all ${
                           activeTab === 'overview'
                             ? 'text-purple-600 border-b-2 border-purple-600'
                             : 'text-gray-600 hover:text-purple-600'
@@ -692,7 +731,7 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
                       </button>
                       <button
                         onClick={() => setActiveTab('itinerary')}
-                        className={`px-4 py-2 font-semibold transition-all ${
+                        className={`px-6 py-2 font-semibold transition-all ${
                           activeTab === 'itinerary'
                             ? 'text-purple-600 border-b-2 border-purple-600'
                             : 'text-gray-600 hover:text-purple-600'
@@ -710,7 +749,7 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
                       <div className="space-y-6">
                         <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6">
                           <h3 className="text-2xl font-bold text-gray-800 mb-4">
-                            Your {TRIP_PREFERENCES[generatedTrip.preference].label} Adventure
+                            Your {generatedTrip.preferences.map(p => TRIP_PREFERENCES[p].label).join(' & ')} Adventure
                           </h3>
 
                           <div className="grid grid-cols-2 gap-4 mb-4">
@@ -725,7 +764,7 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
                           </div>
 
                           <p className="text-gray-700">
-                            {TRIP_PREFERENCES[generatedTrip.preference].description}
+                            {generatedTrip.preferences.map(p => TRIP_PREFERENCES[p].description).join(' • ')}
                           </p>
                         </div>
 
@@ -751,78 +790,86 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
 
                     {/* Itinerary Tab */}
                     {activeTab === 'itinerary' && (
-                      <div className="space-y-6">
+                      <div className="space-y-8">
                         {generatedTrip.itinerary.map((dayInfo) => (
-                          <div key={dayInfo.day} className="border-l-4 border-purple-600 pl-4">
-                            <h4 className="text-xl font-bold text-gray-800 mb-4">
+                          <div key={dayInfo.day}>
+                            <h4 className="text-xl font-bold text-gray-800 mb-6 pb-2 border-b-2 border-purple-600">
                               Day {dayInfo.day} - {dayInfo.theme}
                             </h4>
 
-                            <div className="space-y-4">
-                              {dayInfo.places.map((place, idx) => (
-                                <motion.div
-                                  key={idx}
-                                  initial={{ opacity: 0, y: 10 }}
-                                  animate={{ opacity: 1, y: 0 }}
-                                  transition={{ delay: idx * 0.1 }}
-                                  className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-lg transition-shadow"
-                                >
-                                  <div className="flex items-start gap-3">
-                                    <div className="flex-shrink-0 w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
-                                      <MapPin className="w-4 h-4 text-purple-600" />
-                                    </div>
-                                    <div className="flex-1">
-                                      <div className="flex items-center gap-2 mb-2">
-                                        <h5 className="font-bold text-gray-800">{place.name}</h5>
-                                        {place.time && (
-                                          <span className="text-xs px-2 py-1 bg-blue-100 text-blue-700 rounded-full font-semibold">
-                                            {place.time}
-                                          </span>
-                                        )}
+                            <div className="space-y-0">
+                              {dayInfo.places.map((place, idx) => {
+                                const nextPlace = dayInfo.places[idx + 1];
+                                const distance = nextPlace && place.coords && nextPlace.coords
+                                  ? calculateDistance(place.coords, nextPlace.coords)
+                                  : null;
+
+                                return (
+                                  <div key={idx}>
+                                    {/* Place Card - Compact */}
+                                    <motion.div
+                                      initial={{ opacity: 0, x: -20 }}
+                                      animate={{ opacity: 1, x: 0 }}
+                                      transition={{ delay: idx * 0.05 }}
+                                      className="bg-white border-2 border-gray-200 rounded-lg p-3 hover:border-purple-400 transition-all"
+                                    >
+                                      <div className="flex items-center justify-between">
+                                        <div className="flex items-center gap-3 flex-1">
+                                          <div className="flex-shrink-0 w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                                            <MapPin className="w-4 h-4 text-purple-600" />
+                                          </div>
+                                          <div className="flex-1">
+                                            <div className="flex items-center gap-2 flex-wrap">
+                                              <h5 className="font-bold text-gray-800 text-sm">{place.name}</h5>
+                                              {place.time && (
+                                                <span className="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded-full font-semibold">
+                                                  {place.time}
+                                                </span>
+                                              )}
+                                              {place.mealType && (
+                                                <span className={`inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-full font-semibold ${
+                                                  place.mealType === 'Breakfast' ? 'bg-amber-100 text-amber-700' :
+                                                  place.mealType === 'Lunch' ? 'bg-green-100 text-green-700' :
+                                                  place.mealType === 'Evening Beverage' ? 'bg-pink-100 text-pink-700' :
+                                                  'bg-purple-100 text-purple-700'
+                                                }`}>
+                                                  {place.mealType === 'Breakfast' && '☕'}
+                                                  {place.mealType === 'Lunch' && '🍽️'}
+                                                  {place.mealType === 'Evening Beverage' && '🍹'}
+                                                  {place.mealType === 'Dinner' && '🍷'}
+                                                </span>
+                                              )}
+                                            </div>
+                                            {place.categories && (
+                                              <div className="flex flex-wrap gap-1 mt-1">
+                                                {(Array.isArray(place.categories) ? place.categories : [place.categories]).slice(0, 3).map((cat, i) => (
+                                                  <span key={i} className="text-xs px-1.5 py-0.5 bg-purple-50 text-purple-600 rounded">
+                                                    {cat}
+                                                  </span>
+                                                ))}
+                                              </div>
+                                            )}
+                                          </div>
+                                        </div>
                                       </div>
-                                      {place.mealType && (
-                                        <div className="mb-2">
-                                          <span className={`inline-flex items-center gap-1 text-sm px-3 py-1 rounded-full font-semibold ${
-                                            place.mealType === 'Breakfast' ? 'bg-amber-100 text-amber-700' :
-                                            place.mealType === 'Lunch' ? 'bg-green-100 text-green-700' :
-                                            place.mealType === 'Evening Beverage' ? 'bg-pink-100 text-pink-700' :
-                                            'bg-purple-100 text-purple-700'
-                                          }`}>
-                                            {place.mealType === 'Breakfast' && '☕'}
-                                            {place.mealType === 'Lunch' && '🍽️'}
-                                            {place.mealType === 'Evening Beverage' && '🍹'}
-                                            {place.mealType === 'Dinner' && '🍷'}
-                                            {place.mealType}
-                                          </span>
-                                        </div>
-                                      )}
-                                      {place.description && (
-                                        <div
-                                          className="text-sm text-gray-600 mb-2 prose prose-sm max-w-none"
-                                          dangerouslySetInnerHTML={{
-                                            __html: place.description
-                                              .replace(/<br\s*\/?>/gi, '<br/>')
-                                              .replace(/House No:/g, '<strong>House No:</strong>')
-                                              .replace(/Street:/g, '<strong>Street:</strong>')
-                                              .replace(/City:/g, '<strong>City:</strong>')
-                                              .replace(/Postcode:/g, '<strong>Postcode:</strong>')
-                                              .replace(/Managed by:/g, '<strong>Managed by:</strong>')
-                                          }}
-                                        />
-                                      )}
-                                      {place.categories && (
-                                        <div className="flex flex-wrap gap-1">
-                                          {(Array.isArray(place.categories) ? place.categories : [place.categories]).map((cat, i) => (
-                                            <span key={i} className="text-xs px-2 py-1 bg-purple-100 text-purple-700 rounded-full">
-                                              {cat}
+                                    </motion.div>
+
+                                    {/* Arrow with Distance */}
+                                    {nextPlace && (
+                                      <div className="flex flex-col items-center py-2">
+                                        <div className="text-center">
+                                          {distance && (
+                                            <span className="text-xs font-semibold text-gray-500 bg-gray-100 px-2 py-1 rounded">
+                                              {formatDistance(distance)}
                                             </span>
-                                          ))}
+                                          )}
                                         </div>
-                                      )}
-                                    </div>
+                                        <div className="text-purple-500 text-2xl font-bold">↓</div>
+                                      </div>
+                                    )}
                                   </div>
-                                </motion.div>
-                              ))}
+                                );
+                              })}
                             </div>
                           </div>
                         ))}
@@ -867,11 +914,11 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
                     <button
                       onClick={handleNext}
                       disabled={
-                        (step === 1 && !selectedPreference) ||
+                        (step === 1 && selectedPreferences.length === 0) ||
                         (step === 2 && !selectedDuration)
                       }
                       className={`px-6 py-2 rounded-lg font-semibold flex items-center gap-2 transition-all ${
-                        ((step === 1 && selectedPreference) || (step === 2 && selectedDuration))
+                        ((step === 1 && selectedPreferences.length > 0) || (step === 2 && selectedDuration))
                           ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:shadow-lg'
                           : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                       }`}

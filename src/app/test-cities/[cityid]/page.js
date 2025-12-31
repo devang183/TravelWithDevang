@@ -18,6 +18,7 @@ import { Compass, Plane, Home, Newspaper, Calendar } from 'lucide-react';
 import DublinTipsCarousel from '@/components/DublinTipsCarousel';
 import BengaluruTipsCarousel from '@/components/BengaluruTipsCarousel';
 import CityQuestionBox from '@/components/CityQuestionBox';
+import TripPreferencesWizard from '@/components/TripPreferencesWizard';
 
 
 export default function CityPage({ params }) {
@@ -210,6 +211,15 @@ export default function CityPage({ params }) {
 
       {/* <TaylorSwiftDashboard cityred={cityid} /> */}
       {/* <AccommodationDisplay /> */}
+
+      {/* Trip Preferences Wizard - Floating Button */}
+      {city.coords && (
+        <TripPreferencesWizard
+          cityId={cityid}
+          cityName={city.name}
+        />
+      )}
+
       <Link
         href={`/test-cities`}
         className="mt-6 inline-block p-4 rounded-2xl text-white shadow-2xl backdrop-blur-md bg-white/10 hover:bg-white/30"

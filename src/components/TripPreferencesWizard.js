@@ -119,6 +119,13 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
     const attractionPlaces = markers.filter(marker => {
       const markerText = `${marker.name} ${marker.description || ''} ${marker.categories || marker.category || ''}`.toLowerCase();
       const isFood = foodKeywords.some(keyword => markerText.includes(keyword));
+
+      // For 'Popular' preference, include all non-food places
+      if (selectedPreference === 'popular') {
+        return !isFood;
+      }
+
+      // For other preferences, match keywords
       const matchesPreference = preference.keywords.some(keyword => markerText.includes(keyword));
       return !isFood && matchesPreference;
     });
@@ -133,23 +140,31 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
     }).sort((a, b) => b.score - a.score);
 
     // Helper: Find nearest place to given coordinates
-    const findNearestPlace = (coords, availablePlaces, maxDistanceKm = 5) => {
-      if (!coords || availablePlaces.length === 0) return null;
+    const findNearestPlace = (coords, availablePlaces, maxDistanceKm = 10) => {
+      if (availablePlaces.length === 0) return null;
+      if (!coords) return availablePlaces[0]; // Fallback to first available if no coords
 
       let nearest = null;
       let minDistance = Infinity;
 
+      // First try to find within max distance
       availablePlaces.forEach(place => {
         if (place.coords) {
           const distance = calculateDistance(coords, place.coords);
-          if (distance < minDistance && distance <= maxDistanceKm) {
+          if (distance < minDistance) {
             minDistance = distance;
             nearest = place;
           }
         }
       });
 
-      return nearest;
+      // If found within distance or no coords available, return it
+      if (nearest && (minDistance <= maxDistanceKm || !nearest.coords)) {
+        return nearest;
+      }
+
+      // Fallback: return nearest even if beyond max distance, or first place with no coords
+      return nearest || availablePlaces.find(p => !p.coords) || availablePlaces[0];
     };
 
     // Helper: Find city center (average of all coordinates)
@@ -185,13 +200,13 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
       // MORNING ACTIVITIES (9 AM - 12 PM) - 2 attractions
       const morningSlots = 2;
       for (let i = 0; i < morningSlots; i++) {
-        const availableAttractions = scoredAttractions.filter(p => !usedAttractions.has(p.name) && p.coords);
+        const availableAttractions = scoredAttractions.filter(p => !usedAttractions.has(p.name));
         const nextAttraction = findNearestPlace(currentLocation, availableAttractions);
 
         if (nextAttraction) {
           daySchedule.push({ ...nextAttraction, time: i === 0 ? '9:30 AM' : '11:00 AM' });
           usedAttractions.add(nextAttraction.name);
-          currentLocation = nextAttraction.coords;
+          currentLocation = nextAttraction.coords || currentLocation;
         }
       }
 
@@ -206,13 +221,13 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
       // AFTERNOON ACTIVITIES (2 PM - 5 PM) - 2 attractions
       const afternoonSlots = 2;
       for (let i = 0; i < afternoonSlots; i++) {
-        const availableAttractions = scoredAttractions.filter(p => !usedAttractions.has(p.name) && p.coords);
+        const availableAttractions = scoredAttractions.filter(p => !usedAttractions.has(p.name));
         const nextAttraction = findNearestPlace(currentLocation, availableAttractions);
 
         if (nextAttraction) {
           daySchedule.push({ ...nextAttraction, time: i === 0 ? '2:00 PM' : '3:30 PM' });
           usedAttractions.add(nextAttraction.name);
-          currentLocation = nextAttraction.coords;
+          currentLocation = nextAttraction.coords || currentLocation;
         }
       }
 
@@ -225,12 +240,12 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
       }
 
       // EVENING ACTIVITY (6:30 PM) - 1 final attraction
-      const availableAttractions = scoredAttractions.filter(p => !usedAttractions.has(p.name) && p.coords);
+      const availableAttractions = scoredAttractions.filter(p => !usedAttractions.has(p.name));
       const eveningAttraction = findNearestPlace(currentLocation, availableAttractions);
       if (eveningAttraction) {
         daySchedule.push({ ...eveningAttraction, time: '6:30 PM' });
         usedAttractions.add(eveningAttraction.name);
-        currentLocation = eveningAttraction.coords;
+        currentLocation = eveningAttraction.coords || currentLocation;
       }
 
       // DINNER (8:00 PM) - Near last visited place

@@ -108,14 +108,23 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
 
     const preference = TRIP_PREFERENCES[selectedPreference];
 
-    // Filter markers based on preference keywords
-    const matchingPlaces = markers.filter(marker => {
+    // Separate food/drink places from other attractions
+    const foodKeywords = ['restaurant', 'cafe', 'food', 'pint', 'pub', 'bar', 'dining', 'eat', 'breakfast', 'lunch', 'dinner', 'coffee', 'tea'];
+
+    const foodPlaces = markers.filter(marker => {
       const markerText = `${marker.name} ${marker.description || ''} ${marker.categories || marker.category || ''}`.toLowerCase();
-      return preference.keywords.some(keyword => markerText.includes(keyword));
+      return foodKeywords.some(keyword => markerText.includes(keyword));
     });
 
-    // Sort by relevance (simple scoring based on keyword matches)
-    const scoredPlaces = matchingPlaces.map(place => {
+    const attractionPlaces = markers.filter(marker => {
+      const markerText = `${marker.name} ${marker.description || ''} ${marker.categories || marker.category || ''}`.toLowerCase();
+      const isFood = foodKeywords.some(keyword => markerText.includes(keyword));
+      const matchesPreference = preference.keywords.some(keyword => markerText.includes(keyword));
+      return !isFood && matchesPreference;
+    });
+
+    // Score and sort attractions by relevance
+    const scoredAttractions = attractionPlaces.map(place => {
       const placeText = `${place.name} ${place.description || ''} ${place.categories || place.category || ''}`.toLowerCase();
       const score = preference.keywords.reduce((acc, keyword) => {
         return acc + (placeText.includes(keyword) ? 1 : 0);
@@ -123,35 +132,124 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
       return { ...place, score };
     }).sort((a, b) => b.score - a.score);
 
-    // Generate day-wise itinerary
-    const placesPerDay = Math.ceil(scoredPlaces.length / selectedDuration);
-    const minPlacesPerDay = 3;
-    const maxPlacesPerDay = 6;
-    const targetPlacesPerDay = Math.max(minPlacesPerDay, Math.min(maxPlacesPerDay, placesPerDay));
+    // Helper: Find nearest place to given coordinates
+    const findNearestPlace = (coords, availablePlaces, maxDistanceKm = 5) => {
+      if (!coords || availablePlaces.length === 0) return null;
 
+      let nearest = null;
+      let minDistance = Infinity;
+
+      availablePlaces.forEach(place => {
+        if (place.coords) {
+          const distance = calculateDistance(coords, place.coords);
+          if (distance < minDistance && distance <= maxDistanceKm) {
+            minDistance = distance;
+            nearest = place;
+          }
+        }
+      });
+
+      return nearest;
+    };
+
+    // Helper: Find city center (average of all coordinates)
+    const getCityCenter = () => {
+      const placesWithCoords = markers.filter(m => m.coords);
+      if (placesWithCoords.length === 0) return null;
+
+      const avgLat = placesWithCoords.reduce((sum, p) => sum + p.coords[0], 0) / placesWithCoords.length;
+      const avgLon = placesWithCoords.reduce((sum, p) => sum + p.coords[1], 0) / placesWithCoords.length;
+
+      return [avgLat, avgLon];
+    };
+
+    const cityCenter = getCityCenter();
+
+    // Generate day-wise itinerary with meal structure
     const itinerary = [];
-    let placeIndex = 0;
+    let usedAttractions = new Set();
+    let usedFoodPlaces = new Set();
 
     for (let day = 1; day <= selectedDuration; day++) {
-      const dayPlaces = [];
-      const numPlacesThisDay = Math.min(
-        targetPlacesPerDay,
-        scoredPlaces.length - placeIndex
-      );
+      const daySchedule = [];
+      let currentLocation = cityCenter;
 
-      for (let i = 0; i < numPlacesThisDay && placeIndex < scoredPlaces.length; i++) {
-        dayPlaces.push(scoredPlaces[placeIndex]);
-        placeIndex++;
+      // BREAKFAST (8-9 AM) - Start from city center
+      const breakfastPlace = findNearestPlace(cityCenter, foodPlaces.filter(p => !usedFoodPlaces.has(p.name)));
+      if (breakfastPlace) {
+        daySchedule.push({ ...breakfastPlace, mealType: 'Breakfast', time: '8:00 AM' });
+        usedFoodPlaces.add(breakfastPlace.name);
+        currentLocation = breakfastPlace.coords || currentLocation;
       }
 
-      if (dayPlaces.length > 0) {
+      // MORNING ACTIVITIES (9 AM - 12 PM) - 2 attractions
+      const morningSlots = 2;
+      for (let i = 0; i < morningSlots; i++) {
+        const availableAttractions = scoredAttractions.filter(p => !usedAttractions.has(p.name) && p.coords);
+        const nextAttraction = findNearestPlace(currentLocation, availableAttractions);
+
+        if (nextAttraction) {
+          daySchedule.push({ ...nextAttraction, time: i === 0 ? '9:30 AM' : '11:00 AM' });
+          usedAttractions.add(nextAttraction.name);
+          currentLocation = nextAttraction.coords;
+        }
+      }
+
+      // LUNCH (12:30 - 1:30 PM) - Near last visited place
+      const lunchPlace = findNearestPlace(currentLocation, foodPlaces.filter(p => !usedFoodPlaces.has(p.name)));
+      if (lunchPlace) {
+        daySchedule.push({ ...lunchPlace, mealType: 'Lunch', time: '12:30 PM' });
+        usedFoodPlaces.add(lunchPlace.name);
+        currentLocation = lunchPlace.coords || currentLocation;
+      }
+
+      // AFTERNOON ACTIVITIES (2 PM - 5 PM) - 2 attractions
+      const afternoonSlots = 2;
+      for (let i = 0; i < afternoonSlots; i++) {
+        const availableAttractions = scoredAttractions.filter(p => !usedAttractions.has(p.name) && p.coords);
+        const nextAttraction = findNearestPlace(currentLocation, availableAttractions);
+
+        if (nextAttraction) {
+          daySchedule.push({ ...nextAttraction, time: i === 0 ? '2:00 PM' : '3:30 PM' });
+          usedAttractions.add(nextAttraction.name);
+          currentLocation = nextAttraction.coords;
+        }
+      }
+
+      // EVENING BEVERAGE (5:30 PM) - Near last visited place (cafe/bar)
+      const beveragePlace = findNearestPlace(currentLocation, foodPlaces.filter(p => !usedFoodPlaces.has(p.name)));
+      if (beveragePlace) {
+        daySchedule.push({ ...beveragePlace, mealType: 'Evening Beverage', time: '5:30 PM' });
+        usedFoodPlaces.add(beveragePlace.name);
+        currentLocation = beveragePlace.coords || currentLocation;
+      }
+
+      // EVENING ACTIVITY (6:30 PM) - 1 final attraction
+      const availableAttractions = scoredAttractions.filter(p => !usedAttractions.has(p.name) && p.coords);
+      const eveningAttraction = findNearestPlace(currentLocation, availableAttractions);
+      if (eveningAttraction) {
+        daySchedule.push({ ...eveningAttraction, time: '6:30 PM' });
+        usedAttractions.add(eveningAttraction.name);
+        currentLocation = eveningAttraction.coords;
+      }
+
+      // DINNER (8:00 PM) - Near last visited place
+      const dinnerPlace = findNearestPlace(currentLocation, foodPlaces.filter(p => !usedFoodPlaces.has(p.name)));
+      if (dinnerPlace) {
+        daySchedule.push({ ...dinnerPlace, mealType: 'Dinner', time: '8:00 PM' });
+        usedFoodPlaces.add(dinnerPlace.name);
+      }
+
+      if (daySchedule.length > 0) {
         itinerary.push({
           day,
-          places: dayPlaces,
+          places: daySchedule,
           theme: day === 1 ? 'Introduction' : day === selectedDuration ? 'Finale' : 'Exploration'
         });
       }
     }
+
+    const totalPlaces = itinerary.reduce((sum, day) => sum + day.places.length, 0);
 
     const trip = {
       id: Date.now(),
@@ -160,7 +258,7 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
       preference: selectedPreference,
       duration: selectedDuration,
       itinerary,
-      totalPlaces: scoredPlaces.length,
+      totalPlaces,
       createdAt: new Date().toISOString()
     };
 
@@ -474,7 +572,7 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                   >
-                    <h3 className="text-xl font-bold text-gray-800 mb-2">What's your trip about?</h3>
+                    <h3 className="text-xl font-bold text-gray-800 mb-2">What&apos;s your trip about?</h3>
                     <p className="text-gray-600 mb-4">Choose a theme for your perfect itinerary</p>
 
                     {markersLoading && (
@@ -659,7 +757,30 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
                                       <MapPin className="w-4 h-4 text-purple-600" />
                                     </div>
                                     <div className="flex-1">
-                                      <h5 className="font-bold text-gray-800 mb-1">{place.name}</h5>
+                                      <div className="flex items-center gap-2 mb-2">
+                                        <h5 className="font-bold text-gray-800">{place.name}</h5>
+                                        {place.time && (
+                                          <span className="text-xs px-2 py-1 bg-blue-100 text-blue-700 rounded-full font-semibold">
+                                            {place.time}
+                                          </span>
+                                        )}
+                                      </div>
+                                      {place.mealType && (
+                                        <div className="mb-2">
+                                          <span className={`inline-flex items-center gap-1 text-sm px-3 py-1 rounded-full font-semibold ${
+                                            place.mealType === 'Breakfast' ? 'bg-amber-100 text-amber-700' :
+                                            place.mealType === 'Lunch' ? 'bg-green-100 text-green-700' :
+                                            place.mealType === 'Evening Beverage' ? 'bg-pink-100 text-pink-700' :
+                                            'bg-purple-100 text-purple-700'
+                                          }`}>
+                                            {place.mealType === 'Breakfast' && '☕'}
+                                            {place.mealType === 'Lunch' && '🍽️'}
+                                            {place.mealType === 'Evening Beverage' && '🍹'}
+                                            {place.mealType === 'Dinner' && '🍷'}
+                                            {place.mealType}
+                                          </span>
+                                        </div>
+                                      )}
                                       {place.description && (
                                         <div
                                           className="text-sm text-gray-600 mb-2 prose prose-sm max-w-none"

@@ -26,7 +26,7 @@ export default function EventsPage({ params }) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-indigo-50 p-8">
         <div className="max-w-4xl mx-auto">
-          <Breadcrumb cityid={cityid} city={city} />
+          <Breadcrumb cityid={cityid} city={city} subpage="events" />
           <div className="mt-8 bg-white rounded-xl shadow-lg p-8 text-center">
             <h1 className="text-3xl font-bold text-gray-900 mb-4">Events Coming Soon</h1>
             <p className="text-gray-600 mb-6">
@@ -58,7 +58,7 @@ export default function EventsPage({ params }) {
       }}
     >
       <div className="max-w-7xl mx-auto">
-        <Breadcrumb cityid={cityid} city={city} />
+        <Breadcrumb cityid={cityid} city={city} subpage="events" />
 
         <div className="mt-4 mb-6">
           <Link

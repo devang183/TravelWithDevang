@@ -15,6 +15,8 @@ import { photos } from '../CityPhotos';
 import TaylorSwiftDashboard from '../scripts/taylorSwift';
 import React from "react";
 import { Compass, Plane, Home, Newspaper, Calendar } from 'lucide-react';
+import DublinTipsCarousel from '@/components/DublinTipsCarousel';
+import BengaluruTipsCarousel from '@/components/BengaluruTipsCarousel';
 
 
 export default function CityPage({ params }) {
@@ -154,6 +156,16 @@ export default function CityPage({ params }) {
             zoom={13}
             name={city.name}
           />
+
+          {/* Dublin Tips Carousel - Only for Dublin */}
+          {cityid.toLowerCase() === 'dublin' && (
+            <DublinTipsCarousel />
+          )}
+
+          {/* Bengaluru Tips Carousel - Only for Bengaluru */}
+          {cityid.toLowerCase() === 'bengaluru' && (
+            <BengaluruTipsCarousel />
+          )}
 
           {/* Tourist Attractions */}
           {/* <div className="mt-8">

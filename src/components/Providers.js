@@ -8,8 +8,9 @@ export function Providers({ children }) {
   const [queryClient] = useState(() => new QueryClient({
     defaultOptions: {
       queries: {
-        staleTime: 5 * 60 * 1000, // 5 minutes
-        cacheTime: 10 * 60 * 1000, // 10 minutes
+        staleTime: 30 * 60 * 1000, // 30 minutes - data stays fresh longer
+        gcTime: 60 * 60 * 1000, // 60 minutes (1 hour) - cache kept for 1 hour
+        cacheTime: 60 * 60 * 1000, // 60 minutes (backwards compatibility)
         refetchOnWindowFocus: false,
         refetchOnMount: false,
         retry: 1,

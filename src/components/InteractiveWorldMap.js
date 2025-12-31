@@ -23,6 +23,8 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
   const cityListScrollRef = useRef(null);
   const cityButtonRefs = useRef({});
   const previousCityRef = useRef(null);
+  const flyTimeoutRef = useRef(null);
+  const isMountedRef = useRef(true);
   const originalCenter = [30, 0];
   const originalZoom = 2.5;
 
@@ -226,6 +228,12 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
       return;
     }
 
+    // Clear any pending fly animations
+    if (flyTimeoutRef.current) {
+      clearTimeout(flyTimeoutRef.current);
+      flyTimeoutRef.current = null;
+    }
+
     if (city && city.coords && mapRef.current) {
       const currentZoom = mapRef.current.getZoom();
       const isAlreadyZoomedIn = currentZoom > 8;
@@ -264,17 +272,24 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
 
       // If we're already zoomed in on a city, zoom out first
       if (isAlreadyZoomedIn) {
-        // Step 1: Fly out (zoom out to see the globe)
+        // Step 1: Fly out (zoom out to see the globe) - faster and smoother
         mapRef.current.flyTo(originalCenter, 2, {
-          duration: 1.8,
-          easeLinearity: 0.15
+          duration: 1.2,
+          easeLinearity: 0.25,
+          animate: true
         });
 
         // Step 2: After flying out, fly in to the new city
-        setTimeout(() => {
+        flyTimeoutRef.current = setTimeout(() => {
+          // Check if component is still mounted before continuing animation
+          if (!isMountedRef.current || !mapRef.current) {
+            return;
+          }
+
           mapRef.current.flyTo(city.coords, 12, {
-            duration: 2.0,
-            easeLinearity: 0.2
+            duration: 1.5,
+            easeLinearity: 0.25,
+            animate: true
           });
 
           // Highlight the selected marker after flying in
@@ -288,12 +303,15 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
               }
             }
           });
-        }, 1800);
+
+          flyTimeoutRef.current = null;
+        }, 1200);
       } else {
-        // If not zoomed in, just fly directly to the city
+        // If not zoomed in, just fly directly to the city - faster and smoother
         mapRef.current.flyTo(city.coords, 12, {
-          duration: 2.2,
-          easeLinearity: 0.2
+          duration: 1.8,
+          easeLinearity: 0.25,
+          animate: true
         });
 
         // Highlight the selected marker
@@ -429,6 +447,8 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
 
   // Initialize the map
   useEffect(() => {
+    isMountedRef.current = true;
+
     if (!mapRef.current && mapContainerRef.current) {
       // Define world bounds to prevent infinite scrolling
       const worldBounds = [
@@ -436,7 +456,7 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
         [90, 180]    // Northeast coordinates
       ];
 
-      // Initialize the map
+      // Initialize the map with performance optimizations
       mapRef.current = L.map(mapContainerRef.current, {
         fullscreenControl: true,
         fullscreenControlOptions: { position: 'topright' },
@@ -446,16 +466,26 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
         minZoom: 1,
         maxZoom: 18,
         zoomSnap: 0.1,
-        zoomDelta: 0.1
+        zoomDelta: 0.1,
+        preferCanvas: true, // Use canvas for better performance
+        renderer: L.canvas({ tolerance: 5 }), // Canvas renderer with optimized tolerance
+        zoomAnimation: true,
+        fadeAnimation: true,
+        markerZoomAnimation: true
       }).setView(originalCenter, originalZoom);
 
-      // Add the base map layer
+      // Add the base map layer with optimized settings
       L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
         attribution: '&copy; OpenStreetMap contributors',
         maxZoom: 18,
         minZoom: 1,
         noWrap: true,
-        bounds: worldBounds
+        bounds: worldBounds,
+        updateWhenIdle: false, // Update tiles during panning
+        updateWhenZooming: true, // Update tiles while zooming
+        keepBuffer: 2, // Keep more tiles in buffer for smoother panning
+        crossOrigin: true,
+        fadeAnimation: true
       }).addTo(mapRef.current);
 
       // Add city markers
@@ -495,10 +525,23 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
 
     // Cleanup function
     return () => {
+      isMountedRef.current = false;
+
+      // Clear any pending fly animations
+      if (flyTimeoutRef.current) {
+        clearTimeout(flyTimeoutRef.current);
+        flyTimeoutRef.current = null;
+      }
+
+      // Stop any ongoing map animations
       if (mapRef.current) {
+        mapRef.current.stop();
         mapRef.current.remove();
         mapRef.current = null;
       }
+
+      // Clear all markers
+      markersRef.current = {};
     };
   }, []); // Empty dependency array means this runs once on mount
 
@@ -514,6 +557,42 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
 
   return (
     <div className="w-full flex justify-center">
+      <style jsx global>{`
+        .leaflet-tile-container {
+          transition: opacity 200ms ease-in-out;
+        }
+        .leaflet-tile {
+          transition: opacity 200ms ease-in-out;
+          will-change: opacity;
+        }
+        .leaflet-zoom-animated {
+          transition: transform 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .leaflet-fade-anim .leaflet-tile {
+          will-change: opacity;
+        }
+        .leaflet-fade-anim .leaflet-popup {
+          opacity: 1;
+          transition: opacity 0.2s linear;
+        }
+        .leaflet-map-pane {
+          will-change: transform;
+        }
+        .city-list-scroll::-webkit-scrollbar {
+          height: 6px;
+        }
+        .city-list-scroll::-webkit-scrollbar-track {
+          background: rgba(0,0,0,0.1);
+          border-radius: 3px;
+        }
+        .city-list-scroll::-webkit-scrollbar-thumb {
+          background: #3b82f6;
+          border-radius: 3px;
+        }
+        .city-list-scroll::-webkit-scrollbar-thumb:hover {
+          background: #2563eb;
+        }
+      `}</style>
       <div
         className="relative z-10"
         style={{
@@ -528,6 +607,7 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
           style={{
             position: 'relative',
             zIndex: 10,
+            backgroundColor: '#1a1a2e', // Dark background while tiles load
           }}
         />
 
@@ -535,13 +615,20 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
         <button
           onClick={() => {
             if (mapRef.current) {
+              // Clear any pending animations before recentering
+              if (flyTimeoutRef.current) {
+                clearTimeout(flyTimeoutRef.current);
+                flyTimeoutRef.current = null;
+              }
+
               mapRef.current.flyTo(originalCenter, originalZoom, {
-                duration: 1,
-                easeLinearity: 0.5
+                duration: 1.5,
+                easeLinearity: 0.25,
+                animate: true
               });
             }
           }}
-          className="absolute bottom-24 right-5 px-4 py-2 bg-green-500 text-white font-semibold rounded shadow hover:bg-green-600 z-30"
+          className="absolute bottom-24 right-5 px-4 py-2 bg-green-500 text-white font-semibold rounded shadow hover:bg-green-600 z-30 transition-all duration-200"
         >
           Recenter
         </button>
@@ -550,29 +637,13 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
         <div className="absolute bottom-0 left-0 right-0 z-20">
           <div
             ref={cityListScrollRef}
-            className="overflow-x-auto overflow-y-hidden px-4 py-3"
+            className="city-list-scroll overflow-x-auto overflow-y-hidden px-4 py-3"
             style={{
               height: '100px',
               scrollbarWidth: 'thin',
               scrollbarColor: '#3b82f6 rgba(0,0,0,0.1)'
             }}
           >
-            <style jsx>{`
-              div::-webkit-scrollbar {
-                height: 6px;
-              }
-              div::-webkit-scrollbar-track {
-                background: rgba(0,0,0,0.1);
-                border-radius: 3px;
-              }
-              div::-webkit-scrollbar-thumb {
-                background: #3b82f6;
-                border-radius: 3px;
-              }
-              div::-webkit-scrollbar-thumb:hover {
-                background: #2563eb;
-              }
-            `}</style>
             <div className="flex gap-3 h-full items-center">
               {sortedCities.map((city) => (
                 <div

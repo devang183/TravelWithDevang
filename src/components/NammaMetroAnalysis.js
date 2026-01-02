@@ -175,6 +175,16 @@ const NammaMetroAnalysis = () => {
         'Mass transit system matured',
         '3 operational lines serving city'
       ]
+    },
+    '2026-01': {
+      color: '#0EA5E9',
+      title: 'January 2026: Continuing Growth',
+      description: 'Strong start to 2026 with consistent ridership patterns. Metro system continues to serve as the backbone of Bengaluru\'s public transportation network.',
+      highlights: [
+        'Sustained 1M+ daily ridership',
+        'Reliable service across 3 lines',
+        'Network operating at capacity'
+      ]
     }
   };
 
@@ -338,7 +348,7 @@ const NammaMetroAnalysis = () => {
         weeklyAggregated[weekKey] = {
           weekKey,
           weekStart: new Date(weekStart),
-          monthKey: record.monthKey,
+          monthKeys: new Set(), // Track all months that appear in this week
           count: 0,
           smartCards: 0,
           tokens: 0,
@@ -347,6 +357,8 @@ const NammaMetroAnalysis = () => {
           total: 0
         };
       }
+      // Add this record's monthKey to the set (handles weeks that span multiple months)
+      weeklyAggregated[weekKey].monthKeys.add(record.monthKey);
       weeklyAggregated[weekKey].count++;
       weeklyAggregated[weekKey].smartCards += record.smartCards;
       weeklyAggregated[weekKey].tokens += record.tokens;
@@ -356,17 +368,24 @@ const NammaMetroAnalysis = () => {
     });
 
     // Convert to array and calculate averages
+    // For weeks that span multiple months, create entries for each month
     const weeklyTrends = Object.values(weeklyAggregated)
       .sort((a, b) => a.weekStart - b.weekStart)
-      .map(week => ({
-        date: week.weekStart.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
-        monthKey: week.monthKey,
-        smartCards: Math.round(week.smartCards / week.count),
-        tokens: Math.round(week.tokens / week.count),
-        ncmc: Math.round(week.ncmc / week.count),
-        qr: Math.round(week.qr / week.count),
-        total: Math.round(week.total / week.count)
-      }));
+      .flatMap(week => {
+        const baseWeek = {
+          date: week.weekStart.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+          smartCards: Math.round(week.smartCards / week.count),
+          tokens: Math.round(week.tokens / week.count),
+          ncmc: Math.round(week.ncmc / week.count),
+          qr: Math.round(week.qr / week.count),
+          total: Math.round(week.total / week.count)
+        };
+        // Create a copy for each month this week spans
+        return Array.from(week.monthKeys).map(monthKey => ({
+          ...baseWeek,
+          monthKey
+        }));
+      });
 
     // Use weekly data for overall view, daily for specific ranges and pinned months
     const dailyTrends = (dateRange === 'overall' && !pinnedMonth && !hoveredMonth)

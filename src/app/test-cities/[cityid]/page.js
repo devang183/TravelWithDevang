@@ -5,14 +5,9 @@ import Breadcrumb from '@/components/Breadcrumb';
 import { cities } from '@/components/citycoord';
 import CityMap from "@/components/CityMap";
 import WeatherInfo from "@/components/WeatherInfo";
-// import ShowPhotos from '@/components/ShowMorePhotos';
-// import FourPhotosGrid from '@/components/ShowInitialPhotos';
-import CityTextSlideshow from '@/components/CityNameSlideShowText';
+import CityParallaxHero from '@/components/CityParallaxHero';
 import MusicSection from '@/components/MusicSection';
-import NewsCard from '@/components/CityNews';
 import cityMapRegistry from '@/components/maps/MapRegistry';
-import { photos } from '../CityPhotos';
-import TaylorSwiftDashboard from '../scripts/taylorSwift';
 import React from "react";
 import { Compass, Plane, Home, Newspaper, Calendar } from 'lucide-react';
 import DublinTipsCarousel from '@/components/DublinTipsCarousel';
@@ -31,22 +26,12 @@ export default function CityPage({ params }) {
     return <p className="p-6 text-center text-red-600">City not found</p>;
   }
 
-  const { name, images = [], backgroundImage } = photos[cityid] || {};
-
   return (
-    <main
-      className="min-h-screen w-full mx-auto px-4 pt-20 pb-6 sm:p-8 sm:pt-20 bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage: backgroundImage ? `url('${backgroundImage}')` : "url('https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/dublin/dublin29.jpg')",
-        backgroundAttachment: 'fixed',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-      }}
-    >
-      <Breadcrumb cityid={cityid} city={city} />
+    <main className="min-h-screen w-full mx-auto">
+      <CityParallaxHero cityName={city.name} />
 
-      <CityTextSlideshow cityName={name} imageUrls={images} />
+      <div className="relative px-4 pt-8 pb-6 sm:px-8 sm:pt-8">
+        <Breadcrumb cityid={cityid} city={city} />
 
       {/* Animated city description */}
       <div className="max-w-4xl mx-auto mb-8 px-2 sm:px-0">
@@ -220,12 +205,13 @@ export default function CityPage({ params }) {
         />
       )}
 
-      <Link
-        href={`/test-cities`}
-        className="mt-6 inline-block p-4 rounded-2xl text-white shadow-2xl backdrop-blur-md bg-white/10 hover:bg-white/30"
-      >
-        ← Back to all cities
-      </Link>
+        <Link
+          href={`/test-cities`}
+          className="mt-6 inline-block p-4 rounded-2xl text-white shadow-2xl backdrop-blur-md bg-white/10 hover:bg-white/30"
+        >
+          ← Back to all cities
+        </Link>
+      </div>
     </main>
   );
 }

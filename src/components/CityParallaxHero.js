@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import styles from './CityParallaxHero.module.css';
+import Breadcrumb from '@/components/Breadcrumb';
 
-export default function CityParallaxHero({ cityName, cityImage }) {
+export default function CityParallaxHero({ cityName, cityid, city }) {
   const [scrollY, setScrollY] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -60,6 +61,11 @@ export default function CityParallaxHero({ cityName, cityImage }) {
         <li className={styles.layer} style={{ transform: layer5Transform }}></li>
         <li className={styles.layer} style={{ transform: layer6Transform }}></li>
       </ul>
+
+      {/* Breadcrumb - Top Left */}
+      <div className={styles.breadcrumbContainer}>
+        <Breadcrumb cityid={cityid} city={city} />
+      </div>
 
       {/* City Name Overlay */}
       <div

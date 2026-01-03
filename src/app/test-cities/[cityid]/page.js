@@ -12,7 +12,7 @@ import React from "react";
 import { Compass, Plane, Home, Newspaper, Calendar } from 'lucide-react';
 import DublinTipsCarousel from '@/components/DublinTipsCarousel';
 import BengaluruTipsCarousel from '@/components/BengaluruTipsCarousel';
-import CityQuestionBox from '@/components/CityQuestionBox';
+// import CityQuestionBox from '@/components/CityQuestionBox';
 import TripPreferencesWizard from '@/components/TripPreferencesWizard';
 
 
@@ -28,18 +28,9 @@ export default function CityPage({ params }) {
 
   return (
     <main className="min-h-screen w-full mx-auto">
-      <CityParallaxHero cityName={city.name} />
+      <CityParallaxHero cityName={city.name} cityid={cityid} city={city} />
 
       <div className="relative px-4 pt-8 pb-6 sm:px-8 sm:pt-8">
-        <Breadcrumb cityid={cityid} city={city} />
-
-      {/* Animated city description */}
-      <div className="max-w-4xl mx-auto mb-8 px-2 sm:px-0">
-        <p className="text-sm sm:text-base md:text-lg text-center text-gray-100 leading-relaxed bg-black/30 backdrop-blur-sm p-4 rounded-lg">
-          {city.description}
-        </p>
-      </div>
-
       {/* Explore links */}
       {/* <h2 className="text-2xl font-semibold mb-4">Explore more:</h2> */}
       <div className="flex justify-center gap-4 sm:gap-6 mb-8 max-w-6xl mx-auto">
@@ -145,9 +136,9 @@ export default function CityPage({ params }) {
           />
 
           {/* AI-Powered Q&A Box */}
-          {['dublin', 'bengaluru'].includes(cityid.toLowerCase()) && (
+          {/* {['dublin', 'bengaluru'].includes(cityid.toLowerCase()) && (
             <CityQuestionBox cityId={cityid} cityName={city.name} />
-          )}
+          )} */}
 
           {/* Dublin Tips Carousel - Only for Dublin */}
           {cityid.toLowerCase() === 'dublin' && (

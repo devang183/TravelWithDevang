@@ -89,6 +89,22 @@
   transform: translate3d(0, 0, 0);
 }
 
+/* Breadcrumb Container - Top Left */
+.breadcrumbContainer {
+  position: absolute;
+  top: 6rem;
+  left: 1.5rem;
+  z-index: 20;
+  pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  .breadcrumbContainer {
+    top: 5rem;
+    left: 1rem;
+  }
+}
+
 /* City Name Overlay */
 .cityNameOverlay {
   position: absolute;

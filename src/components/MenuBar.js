@@ -12,7 +12,7 @@ const menuItems = [
   },
   {
     title: "City Explorer",
-    url: "/test-cities",
+    url: "/explore",
     icon: MapPin,
   },
   {

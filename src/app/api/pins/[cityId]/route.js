@@ -1,4 +1,5 @@
 import clientPromise from "@/lib/mongodb";
+import clientPromise2 from "@/lib/mongodb2";
 import { NextResponse } from 'next/server';
 
 // In-memory cache with TTL
@@ -44,9 +45,20 @@ export async function GET(request, context) {
 
     console.log(`Cache MISS for ${cityId} - fetching from DB`);
 
-    const client = await clientPromise;
-    const db = client.db('hello');
-    const collection = db.collection(cityId);
+    // Determine which database to use based on cityId
+    let client, db, collection;
+
+    if (cityId.toLowerCase() === 'newyork') {
+      // Use hello2 database for New York
+      client = await clientPromise2;
+      db = client.db('hello2');
+      collection = db.collection('newyork');
+    } else {
+      // Use hello database for all other cities
+      client = await clientPromise;
+      db = client.db('hello');
+      collection = db.collection(cityId);
+    }
 
     const pins = await collection.find({}).toArray();
 

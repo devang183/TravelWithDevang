@@ -38,7 +38,7 @@ export default function Breadcrumb({ cityid, city, subpage }) {
       </Link>
       <span className="mx-2 text-purple-600 font-bold">/</span>
       <Link
-        href="/test-cities"
+        href="/explore"
         className="font-semibold text-gray-900 hover:text-purple-700 transition-colors duration-200 hover:underline decoration-2 underline-offset-2"
       >
         Cities

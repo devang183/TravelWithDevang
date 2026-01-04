@@ -580,16 +580,18 @@ function FilterPanel({ onApplyFilters }) {
                 className="w-full border border-gray-300 p-2 rounded focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm"
                 aria-label="Search for neighborhoods"
                 aria-expanded={showNeighborhoodDropdown && filteredNeighborhoods.length > 0}
+                aria-controls="neighborhood-listbox"
                 aria-haspopup="listbox"
                 aria-activedescendant={focusedNeighborhoodIndex >= 0 ? `neighborhood-${focusedNeighborhoodIndex}` : undefined}
                 role="combobox"
                 autoComplete="off"
               />
-              
+
               {/* Dropdown */}
               {showNeighborhoodDropdown && neighborhoodSearch && filteredNeighborhoods.length > 0 && (
-                <ul 
+                <ul
                   ref={neighborhoodDropdownRef}
+                  id="neighborhood-listbox"
                   className="absolute z-50 w-full bg-white border border-gray-300 rounded-b shadow-lg max-h-40 overflow-y-auto mt-1"
                   role="listbox"
                   aria-label="Neighborhood search results"
@@ -871,9 +873,9 @@ export default function NewYorkMap() {
       </div>
 
       {/* Map */}
-      <MapContainer 
-        center={[53.3498, -6.2603]} 
-        zoom={12} 
+      <MapContainer
+        center={[40.7128, -74.0060]}
+        zoom={11}
         style={{ height: "100vh", width: "100%" }}
         className="z-0"
       >

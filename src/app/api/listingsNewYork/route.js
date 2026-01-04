@@ -1,9 +1,9 @@
-import clientPromise from "@/lib/mongodb"; // your MongoDB connection helper
+import clientPromise from "@/lib/mongodb2"; // your MongoDB connection helper
 
 export async function GET() {
   try {
     const client = await clientPromise;
-    const db = client.db("hello");
+    const db = client.db("hello2");
     const listings = await db.collection("newyorkAirbnb")
       .find({})
       //.limit(500) // optional limit

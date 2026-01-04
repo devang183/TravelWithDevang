@@ -1,28 +1,44 @@
-// lib/mongodb.js - MongoDB connection utility
+// lib/mongodb.js - MongoDB connection utility with KMS encryption
 import { MongoClient } from 'mongodb';
+import { getDecryptedMongoURI } from './kms';
 
-const uri = process.env.MONGODB_URI;
 const options = {};
 
-let client;
 let clientPromise;
 
-if (!process.env.MONGODB_URI) {
-  throw new Error('Add Mongo URI to .env.local');
+// Check if encrypted URI is available, otherwise fall back to plain URI
+const useEncryption = !!process.env.ENCRYPTED_MONGODB_URI;
+
+if (!process.env.ENCRYPTED_MONGODB_URI && !process.env.MONGODB_URI) {
+  throw new Error('Add ENCRYPTED_MONGODB_URI (recommended) or MONGODB_URI to .env.local');
+}
+
+async function getMongoClient() {
+  let uri;
+
+  if (useEncryption) {
+    // Decrypt URI using KMS
+    uri = await getDecryptedMongoURI('ENCRYPTED_MONGODB_URI');
+  } else {
+    // Use plain URI (backward compatibility - not recommended)
+    console.warn('⚠️  Using unencrypted MONGODB_URI. Please migrate to ENCRYPTED_MONGODB_URI for better security.');
+    uri = process.env.MONGODB_URI;
+  }
+
+  const mongoClient = new MongoClient(uri, options);
+  return mongoClient.connect();
 }
 
 if (process.env.NODE_ENV === 'development') {
   // In development mode, use a global variable so that the value
   // is preserved across module reloads caused by HMR (Hot Module Replacement).
   if (!global._mongoClientPromise) {
-    client = new MongoClient(uri, options);
-    global._mongoClientPromise = client.connect();
+    global._mongoClientPromise = getMongoClient();
   }
   clientPromise = global._mongoClientPromise;
 } else {
   // In production mode, it's best to not use a global variable.
-  client = new MongoClient(uri, options);
-  clientPromise = client.connect();
+  clientPromise = getMongoClient();
 }
 
 // Export a module-scoped MongoClient promise. By doing this in a

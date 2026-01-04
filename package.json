@@ -6,10 +6,12 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "encrypt-uri": "node scripts/encrypt-mongo-uri.js"
   },
   "dependencies": {
     "@auth/mongodb-adapter": "^3.11.1",
+    "@aws-sdk/client-kms": "^3.962.0",
     "@aws-sdk/client-s3": "^3.876.0",
     "@changey/react-leaflet-markercluster": "^4.0.0-rc1",
     "@fontsource/cinzel": "^5.2.6",

@@ -20,15 +20,19 @@
   width: 100%;
   min-width: 100%;
   flex-direction: column;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 0;
 }
 
 @media only screen and (min-width: 1280px) {
   .cardsList {
     flex-direction: row;
     overflow-y: hidden;
-    overflow-x: hidden;
+    overflow-x: auto;
     min-height: 800px;
     height: 80vh;
+    scroll-snap-type: x proximity;
   }
 }
 
@@ -44,6 +48,7 @@
   background-position: center center;
   overflow: hidden;
   min-height: 120px;
+  scroll-snap-align: start;
 }
 
 @media only screen and (min-width: 1280px) {

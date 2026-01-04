@@ -14,7 +14,7 @@ const cities = {
     { id: 'london', name: 'London', image: 'https://cityphotoscity.s3.amazonaws.com/images/london/london.jpg', description: 'A vibrant city on Ireland\'s west coast.', highlights: ['Cliffs of Moher', 'Traditional music', 'Colorful houses'] },
     { id: 'belfast', name: 'Belfast', image: 'https://cityphotoscity.s3.amazonaws.com/images/belfast/belfast.jpg', description: 'A nice little town in Northern Ireland with rich history and beautiful surroundings.', highlights: ['Historic castle', 'Beautiful countryside', 'Friendly locals'] },
     { id: 'liverpool', name: 'Liverpool', image: 'https://cityphotoscity.s3.amazonaws.com/images/liverpool/liverpool-header.jpg', description: 'A vibrant city on Ireland\'s west coast.', highlights: ['Cliffs of Moher', 'Traditional music', 'Colorful houses'] },
-    { id: 'newyork', name: 'New York', image: 'https://cityphotoscity.s3.amazonaws.com/images/liverpool/liverpool-header.jpg', description: 'A vibrant city on Ireland\'s west coast.', highlights: ['Cliffs of Moher', 'Traditional music', 'Colorful houses'] },
+    { id: 'newyork', name: 'New York', image: 'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/newyork/nyc7.jpg', description: 'A vibrant city on Ireland\'s west coast.', highlights: ['Cliffs of Moher', 'Traditional music', 'Colorful houses'] },
     { id: 'chicago', name: 'Chicago', image: 'https://cityphotoscity.s3.amazonaws.com/images/liverpool/liverpool-header.jpg', description: 'A vibrant city on Ireland\'s west coast.', highlights: ['Cliffs of Moher', 'Traditional music', 'Colorful houses'] },
   ],
   2025: [
@@ -31,7 +31,7 @@ const cities = {
     { id: 'raipur', name: 'Raipur', image: 'https://cityphotoscity.s3.amazonaws.com/images/raipur/raipur.jpg', description: 'The capital of Northern Ireland, known for its maritime history.', highlights: ['Titanic Museum', 'Peace walls', 'Crown Liquor Saloon'] },
     { id: 'nagpur', name: 'Nagpur', image: 'https://cityphotoscity.s3.amazonaws.com/images/raipur/raipur2.jpg', description: 'The capital of Northern Ireland, known for its maritime history.', highlights: ['Titanic Museum', 'Peace walls', 'Crown Liquor Saloon'] },
     { id: 'bengaluru', name: 'Bengaluru', image: 'https://cityphotoscity.s3.amazonaws.com/images/bengaluru/bengaluru.jpeg', description: 'The Silicon Valley of India, known for its thriving tech industry, pleasant climate, and vibrant culture.', highlights: ['Lalbagh Botanical Garden', 'Bengaluru Palace', 'Vidhana Soudha'] },
-    { id: 'newquay', name: 'Newquay', image: 'https://cityphotoscity.s3.amazonaws.com/images/manchester/manchester.jpg', description: 'The capital of Northern Ireland, known for its maritime history.', highlights: ['Titanic Museum', 'Peace walls', 'Crown Liquor Saloon'] },
+    { id: 'newquay', name: 'Newquay', image: 'https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay11.jpg', description: 'The capital of Northern Ireland, known for its maritime history.', highlights: ['Titanic Museum', 'Peace walls', 'Crown Liquor Saloon'] },
   ],
   2026: [
     // Add your 2026 cities here

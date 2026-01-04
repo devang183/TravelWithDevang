@@ -23,7 +23,7 @@ export default function YearBasedCityExplorer() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.mainTitle}>Explore Cities</h1>
+      <h1 className={styles.mainTitle}>City Explorer</h1>
 
       {/* Year Tabs */}
       <div className={styles.yearTabs}>

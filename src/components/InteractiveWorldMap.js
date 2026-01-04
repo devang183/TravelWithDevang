@@ -89,7 +89,7 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
 
   // Function to create image carousel HTML
   const createImageCarousel = (city) => {
-    const cityPhotos = photos[city.name.toLowerCase()]?.images || [];
+    const cityPhotos = photos[city.name.toLowerCase().replace(/\s+/g, '')]?.images || [];
     const cityId = city.id || city.name.toLowerCase().replace(/\s+/g, '-');
 
     if (cityPhotos.length === 0) return '';
@@ -408,7 +408,7 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
 
       // Lightbox open function
       window.openLightbox = (cityName, imageIndex) => {
-        const cityPhotos = photos[cityName.toLowerCase()]?.images || [];
+        const cityPhotos = photos[cityName.toLowerCase().replace(/\s+/g, '')]?.images || [];
         if (cityPhotos.length > 0) {
           setLightboxImages(cityPhotos);
           setLightboxIndex(imageIndex);

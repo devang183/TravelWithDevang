@@ -8,7 +8,7 @@ export default function ExpandableCards({ items }) {
   const cardsListRef = useRef(null);
   const cardRefs = useRef([]);
 
-  // Scroll card to align with top of container when clicked
+  // Scroll card to center with previews of adjacent cards visible
   const scrollToCard = (index) => {
     const cardElement = cardRefs.current[index];
     const containerElement = cardsListRef.current;
@@ -23,17 +23,18 @@ export default function ExpandableCards({ items }) {
     const isMobile = window.innerWidth < 1280;
 
     if (isMobile) {
-      // Mobile: Vertical scrolling - align card top with container top
-      // This shows the full expanded card with next card visible below
-      const cardTopRelativeToContainer = cardRect.top - containerRect.top;
-      const scrollPosition = containerElement.scrollTop + cardTopRelativeToContainer;
+      // Mobile: Vertical scrolling - center card with previews above and below
+      const cardCenter = cardRect.top + cardRect.height / 2;
+      const containerCenter = containerRect.top + containerRect.height / 2;
+      const scrollOffset = cardCenter - containerCenter;
+      const scrollPosition = containerElement.scrollTop + scrollOffset;
 
       containerElement.scrollTo({
         top: scrollPosition,
         behavior: 'smooth'
       });
     } else {
-      // Desktop: Horizontal scrolling - center card horizontally in container
+      // Desktop: Horizontal scrolling - center card with previews left and right
       const cardCenter = cardRect.left + cardRect.width / 2 - containerRect.left;
       const containerCenter = containerRect.width / 2;
       const scrollOffset = cardCenter - containerCenter;

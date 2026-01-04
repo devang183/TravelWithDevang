@@ -21,8 +21,7 @@
   min-width: 100%;
   flex-direction: column;
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
-  scroll-padding-top: 0;
+  scroll-snap-type: y proximity;
 }
 
 @media only screen and (min-width: 1280px) {
@@ -48,7 +47,7 @@
   background-position: center center;
   overflow: hidden;
   min-height: 120px;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
 }
 
 @media only screen and (min-width: 1280px) {

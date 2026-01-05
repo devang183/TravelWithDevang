@@ -1,14 +1,22 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import styles from './ExpandableCards.module.css';
 
 export default function ExpandableCards({ items }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [loadedImages, setLoadedImages] = useState({});
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [isMounted, setIsMounted] = useState(false);
   const cardsListRef = useRef(null);
   const cardRefs = useRef([]);
+
+  // Ensure component is mounted to avoid hydration mismatch
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // Scroll card to center with previews of adjacent cards visible
   const scrollToCard = (index) => {
@@ -65,14 +73,45 @@ export default function ExpandableCards({ items }) {
   return (
     <ul ref={cardsListRef} className={styles.cardsList}>
       {items.map((item, index) => (
-        <li
+        <motion.li
           key={index}
           ref={(el) => (cardRefs.current[index] = el)}
           className={`${styles.card} ${activeIndex === index ? styles.active : ''}`}
           onClick={() => handleCardClick(index)}
+          onHoverStart={() => setHoveredIndex(index)}
+          onHoverEnd={() => setHoveredIndex(null)}
+
+          // Micro-interaction animations
+          whileHover={activeIndex !== index ? {
+            scale: 1.02,
+            y: -4,
+            transition: {
+              type: "spring",
+              stiffness: 400,
+              damping: 17
+            }
+          } : {}}
+
+          whileTap={activeIndex !== index ? {
+            scale: 0.98,
+            transition: {
+              type: "spring",
+              stiffness: 400,
+              damping: 17
+            }
+          } : {}}
+
+          // Initial animation on mount
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.5,
+            delay: index * 0.05, // Stagger effect
+            ease: [0.22, 1, 0.36, 1]
+          }}
         >
           {/* Progressive Image Background */}
-          <div className={styles.imageWrapper}>
+          <div className={styles.imageWrapper} suppressHydrationWarning>
             <Image
               src={item.image}
               alt={item.title}
@@ -92,10 +131,11 @@ export default function ExpandableCards({ items }) {
               style={{
                 willChange: loadedImages[index] ? 'auto' : 'transform, filter, opacity'
               }}
+              suppressHydrationWarning
             />
 
-            {/* Shimmer loading effect */}
-            {!loadedImages[index] && (
+            {/* Shimmer loading effect - only render after mount to avoid hydration issues */}
+            {isMounted && !loadedImages[index] && (
               <div
                 className={styles.shimmer}
                 style={{
@@ -140,7 +180,18 @@ export default function ExpandableCards({ items }) {
               </div>
             </div>
           </div>
-        </li>
+
+          {/* Hover glow effect */}
+          {hoveredIndex === index && activeIndex !== index && (
+            <motion.div
+              className={styles.hoverGlow}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            />
+          )}
+        </motion.li>
       ))}
     </ul>
   );

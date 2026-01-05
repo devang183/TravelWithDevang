@@ -1,10 +1,12 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
+import Image from 'next/image';
 import styles from './ExpandableCards.module.css';
 
 export default function ExpandableCards({ items }) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [loadedImages, setLoadedImages] = useState({});
   const cardsListRef = useRef(null);
   const cardRefs = useRef([]);
 
@@ -56,6 +58,10 @@ export default function ExpandableCards({ items }) {
     }, 50);
   };
 
+  const handleImageLoad = (index) => {
+    setLoadedImages((prev) => ({ ...prev, [index]: true }));
+  };
+
   return (
     <ul ref={cardsListRef} className={styles.cardsList}>
       {items.map((item, index) => (
@@ -63,9 +69,47 @@ export default function ExpandableCards({ items }) {
           key={index}
           ref={(el) => (cardRefs.current[index] = el)}
           className={`${styles.card} ${activeIndex === index ? styles.active : ''}`}
-          style={{ backgroundImage: `url('${item.image}')` }}
           onClick={() => handleCardClick(index)}
         >
+          {/* Progressive Image Background */}
+          <div className={styles.imageWrapper}>
+            <Image
+              src={item.image}
+              alt={item.title}
+              fill
+              priority={index === 0 || index === 1} // Prioritize first two images
+              quality={90}
+              sizes="(max-width: 1280px) 100vw, 50vw"
+              className={`
+                object-cover
+                transition-all duration-700 ease-out
+                ${loadedImages[index]
+                  ? 'blur-0 scale-100 opacity-100'
+                  : 'blur-md scale-105 opacity-0'
+                }
+              `}
+              onLoad={() => handleImageLoad(index)}
+              style={{
+                willChange: loadedImages[index] ? 'auto' : 'transform, filter, opacity'
+              }}
+            />
+
+            {/* Shimmer loading effect */}
+            {!loadedImages[index] && (
+              <div
+                className={styles.shimmer}
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%)',
+                  backgroundSize: '200% 100%',
+                  animation: 'shimmerSlide 1.5s infinite linear',
+                  zIndex: 1
+                }}
+              />
+            )}
+          </div>
+
           <h3>{item.title}</h3>
           <div className={styles.sectionContent}>
             <div className={styles.inner}>

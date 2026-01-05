@@ -42,12 +42,16 @@
   cursor: pointer;
   transition: all 0.35s ease;
   position: relative;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
   overflow: hidden;
   min-height: 120px;
   scroll-snap-align: center;
+}
+
+/* Image wrapper for progressive loading */
+.imageWrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
 }
 
 @media only screen and (min-width: 1280px) {
@@ -293,4 +297,18 @@
 
 .active .showCityButton {
   pointer-events: all;
+}
+
+/* Shimmer loading animation */
+@keyframes shimmerSlide {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  pointer-events: none;
 }

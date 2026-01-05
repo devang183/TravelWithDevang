@@ -33,6 +33,7 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
   const [lightboxImages, setLightboxImages] = useState([]);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [lightboxCityName, setLightboxCityName] = useState('');
+  const [lightboxSliderId, setLightboxSliderId] = useState('');
 
   // Function to create a custom marker icon
   const createCustomIcon = (isSelected = false) => {
@@ -109,7 +110,7 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
           src="${imageUrl}"
           alt="${city.name} ${idx + 1}"
           class="w-full h-40 object-cover ${photographer && instagram ? 'rounded-t-lg' : 'rounded-lg'} cursor-pointer hover:opacity-90 transition-opacity"
-          onclick="window.openLightbox('${city.name}', ${idx})"
+          onclick="window.openLightboxFromSlider('${sliderId}')"
         >
         ${photographer && instagram ? `
           <div class="px-2.5 py-1.5 mb-2 bg-gradient-to-r from-gray-50 to-blue-50 rounded-b-lg border-t border-gray-200/50">
@@ -406,7 +407,38 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
         updateSlider(sliderId, current, prev);
       };
 
-      // Lightbox open function
+      // Lightbox open function from slider - finds current slide dynamically
+      window.openLightboxFromSlider = (sliderId) => {
+        const slider = document.getElementById(sliderId);
+        if (!slider) return;
+
+        const slides = slider.querySelectorAll('.popup-slide');
+        if (!slides.length) return;
+
+        // Find which slide is currently visible
+        const currentIndex = [...slides].findIndex(slide =>
+          window.getComputedStyle(slide).display === 'block'
+        );
+
+        if (currentIndex === -1) return;
+
+        // Extract city name from the slider's city info
+        const cityNameElement = slider.querySelector('h3');
+        if (!cityNameElement) return;
+
+        const cityName = cityNameElement.textContent;
+        const cityPhotos = photos[cityName.toLowerCase().replace(/\s+/g, '')]?.images || [];
+
+        if (cityPhotos.length > 0) {
+          setLightboxImages(cityPhotos);
+          setLightboxIndex(currentIndex);
+          setLightboxCityName(cityName);
+          setLightboxSliderId(sliderId);
+          setLightboxOpen(true);
+        }
+      };
+
+      // Legacy lightbox open function (kept for backward compatibility)
       window.openLightbox = (cityName, imageIndex) => {
         const cityPhotos = photos[cityName.toLowerCase().replace(/\s+/g, '')]?.images || [];
         if (cityPhotos.length > 0) {
@@ -423,6 +455,7 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
         delete window.showNext;
         delete window.showPrev;
         delete window.openLightbox;
+        delete window.openLightboxFromSlider;
       }
     };
   }, []);
@@ -444,6 +477,46 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [lightboxOpen, lightboxImages.length]);
+
+  // Sync popup carousel when lightbox closes
+  useEffect(() => {
+    // Only sync when lightbox is closed and we have a slider ID
+    if (lightboxOpen || !lightboxSliderId) return;
+
+    const slider = document.getElementById(lightboxSliderId);
+    if (!slider) return;
+
+    const slides = slider.querySelectorAll('.popup-slide');
+    if (!slides.length) return;
+
+    // Find current visible slide
+    const currentIndex = [...slides].findIndex(slide =>
+      window.getComputedStyle(slide).display === 'block'
+    );
+
+    // If the carousel is already showing the right slide, no need to update
+    if (currentIndex === lightboxIndex) return;
+
+    // Extract city ID from slider ID
+    const cityId = lightboxSliderId.replace('slider-', '');
+    const bars = slider.querySelectorAll(`[id^='bar-${cityId}-']`);
+
+    // Hide all slides and reset all bars
+    slides.forEach((slide, idx) => {
+      slide.style.display = 'none';
+      if (bars[idx]) {
+        bars[idx].style.background = '#ccc';
+      }
+    });
+
+    // Show the slide that matches the lightbox index
+    if (slides[lightboxIndex]) {
+      slides[lightboxIndex].style.display = 'block';
+      if (bars[lightboxIndex]) {
+        bars[lightboxIndex].style.background = '#3b82f6';
+      }
+    }
+  }, [lightboxOpen, lightboxIndex, lightboxSliderId]);
 
   // Initialize the map
   useEffect(() => {

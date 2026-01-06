@@ -528,7 +528,7 @@ export const photos={
         backgroundImage: 'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/newyork/nyc7.jpg',
         images:[
             { url: "https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/newyork/nyc7.jpg", photographer: "Meghana Kankaria", instagram: "meghanakankaria" },
-            { url: "https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/newyork/nyc1.jpg", photographer: "Meghana Kankaria", instagram: "meghanakankaria" },
+            { url: "https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/newyork/nyc.jpg", photographer: "Meghana Kankaria", instagram: "meghanakankaria" },
             { url: "https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/newyork/nyc2.jpg", photographer: "Meghana Kankaria", instagram: "meghanakankaria" },
             { url: "https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/newyork/nyc3.jpg", photographer: "Meghana Kankaria", instagram: "meghanakankaria" },
             { url: "https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/newyork/nyc4.jpg", photographer: "Meghana Kankaria", instagram: "meghanakankaria" },

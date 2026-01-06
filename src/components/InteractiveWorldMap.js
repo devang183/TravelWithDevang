@@ -34,6 +34,8 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [lightboxCityName, setLightboxCityName] = useState('');
   const [lightboxSliderId, setLightboxSliderId] = useState('');
+  const [lightboxDragOffset, setLightboxDragOffset] = useState(0);
+  const [lightboxIsDragging, setLightboxIsDragging] = useState(false);
 
   // Function to create a custom marker icon
   const createCustomIcon = (isSelected = false) => {
@@ -105,12 +107,13 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
       const instagramForUrl = instagram;
 
       return `
-      <div class="popup-slide" style="display: ${idx === 0 ? 'block' : 'none'}; width: 100%;">
+      <div class="popup-slide" style="display: ${idx === 0 ? 'block' : 'none'}; width: 100%; position: absolute; top: 0; left: 0; transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);">
         <img
           src="${imageUrl}"
           alt="${city.name} ${idx + 1}"
-          class="w-full h-40 object-cover ${photographer && instagram ? 'rounded-t-lg' : 'rounded-lg'} cursor-pointer hover:opacity-90 transition-opacity"
+          class="w-full h-40 object-cover ${photographer && instagram ? 'rounded-t-lg' : 'rounded-lg'} cursor-pointer hover:opacity-90 transition-opacity select-none"
           onclick="window.openLightboxFromSlider('${sliderId}')"
+          draggable="false"
         >
         ${photographer && instagram ? `
           <div class="px-2.5 py-1.5 mb-2 bg-gradient-to-r from-gray-50 to-blue-50 rounded-b-lg border-t border-gray-200/50">
@@ -145,6 +148,10 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
       ></div>
     `).join('');
 
+    // Check if first photo has credits to calculate container height
+    const hasCredits = cityPhotos.length > 0 && typeof cityPhotos[0] === 'object' && cityPhotos[0].photographer && cityPhotos[0].instagram;
+    const containerHeight = hasCredits ? '192px' : '160px';
+
     // Only show arrows if there's more than one image
     const arrows = cityPhotos.length > 1 ? `
       <div
@@ -163,10 +170,12 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
 
     return `
       <div id="${sliderId}" class="w-64">
-        <div class="relative group">
-          ${slides}
+        <div class="relative group touch-swipe-container" data-slider-id="${sliderId}">
+          <div class="swipe-track" style="position: relative; width: 100%; height: ${containerHeight}; overflow: hidden; touch-action: pan-y pinch-zoom;">
+            ${slides}
+          </div>
           ${arrows}
-          <div class="absolute bottom-0 left-0 right-0 flex p-1">
+          <div class="absolute bottom-0 left-0 right-0 flex p-1 pointer-events-none">
             ${dots}
           </div>
         </div>
@@ -356,7 +365,7 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
   // Global functions for image slider and lightbox
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const updateSlider = (sliderId, current, next) => {
+      const updateSlider = (sliderId, current, next, animate = true) => {
         const slider = document.getElementById(sliderId);
         if (!slider) return;
 
@@ -366,14 +375,40 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
 
         if (!slides.length) return;
 
-        // Hide current slide
-        if (current >= 0 && current < slides.length) {
+        const direction = next > current ? 1 : -1;
+
+        // Animate current slide out
+        if (current >= 0 && current < slides.length && animate) {
+          slides[current].style.transform = `translateX(${-direction * 100}%)`;
+          slides[current].style.opacity = '0';
+
+          setTimeout(() => {
+            slides[current].style.display = 'none';
+            slides[current].style.transform = 'translateX(0)';
+            slides[current].style.opacity = '1';
+          }, 300);
+
+          if (bars[current]) bars[current].style.background = '#ccc';
+        } else if (current >= 0 && current < slides.length) {
+          // Instant change without animation
           slides[current].style.display = 'none';
           if (bars[current]) bars[current].style.background = '#ccc';
         }
 
-        // Show next slide
-        if (next >= 0 && next < slides.length) {
+        // Animate next slide in
+        if (next >= 0 && next < slides.length && animate) {
+          slides[next].style.transform = `translateX(${direction * 100}%)`;
+          slides[next].style.opacity = '0';
+          slides[next].style.display = 'block';
+
+          setTimeout(() => {
+            slides[next].style.transform = 'translateX(0)';
+            slides[next].style.opacity = '1';
+          }, 10);
+
+          if (bars[next]) bars[next].style.background = '#3b82f6';
+        } else if (next >= 0 && next < slides.length) {
+          // Instant change without animation
           slides[next].style.display = 'block';
           if (bars[next]) bars[next].style.background = '#3b82f6';
         }
@@ -448,6 +483,139 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
           setLightboxOpen(true);
         }
       };
+
+      // Touch swipe support for carousel
+      const swipeState = {
+        startX: 0,
+        startY: 0,
+        currentX: 0,
+        isDragging: false,
+        startTime: 0,
+        container: null,
+        sliderId: null
+      };
+
+      const handleTouchStart = (e) => {
+        const container = e.currentTarget;
+        const sliderId = container.getAttribute('data-slider-id');
+
+        swipeState.startX = e.touches[0].clientX;
+        swipeState.startY = e.touches[0].clientY;
+        swipeState.currentX = e.touches[0].clientX;
+        swipeState.isDragging = true;
+        swipeState.startTime = Date.now();
+        swipeState.container = container;
+        swipeState.sliderId = sliderId;
+
+        // Add dragging state
+        const track = container.querySelector('.swipe-track');
+        if (track) {
+          track.style.cursor = 'grabbing';
+        }
+      };
+
+      const handleTouchMove = (e) => {
+        if (!swipeState.isDragging) return;
+
+        swipeState.currentX = e.touches[0].clientX;
+        const deltaX = swipeState.currentX - swipeState.startX;
+        const deltaY = Math.abs(e.touches[0].clientY - swipeState.startY);
+
+        // Only handle horizontal swipes (not vertical scrolling)
+        if (Math.abs(deltaX) > deltaY && Math.abs(deltaX) > 10) {
+          e.preventDefault();
+
+          const track = swipeState.container?.querySelector('.swipe-track');
+          const slides = track?.querySelectorAll('.popup-slide');
+
+          if (slides) {
+            const currentSlide = [...slides].find(slide =>
+              window.getComputedStyle(slide).display === 'block'
+            );
+
+            if (currentSlide) {
+              // Apply drag effect with resistance
+              const dragPercent = (deltaX / track.offsetWidth) * 100;
+              const resistance = 0.6; // Add resistance for better feel
+              currentSlide.style.transform = `translateX(${dragPercent * resistance}%)`;
+              currentSlide.style.transition = 'none';
+            }
+          }
+        }
+      };
+
+      const handleTouchEnd = () => {
+        if (!swipeState.isDragging) return;
+
+        const deltaX = swipeState.currentX - swipeState.startX;
+        const deltaTime = Date.now() - swipeState.startTime;
+        const velocity = Math.abs(deltaX) / deltaTime;
+
+        const track = swipeState.container?.querySelector('.swipe-track');
+        if (track) {
+          track.style.cursor = 'grab';
+
+          const slides = track.querySelectorAll('.popup-slide');
+          const currentSlide = [...slides].find(slide =>
+            window.getComputedStyle(slide).display === 'block'
+          );
+
+          if (currentSlide) {
+            // Restore transition
+            currentSlide.style.transition = 'opacity 0.3s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            currentSlide.style.transform = 'translateX(0)';
+          }
+        }
+
+        // Determine if swipe was significant enough
+        const threshold = 50; // minimum distance in pixels
+        const velocityThreshold = 0.3; // pixels per millisecond
+
+        if ((Math.abs(deltaX) > threshold || velocity > velocityThreshold) && swipeState.sliderId) {
+          if (deltaX > 0) {
+            // Swiped right - show previous
+            window.showPrev(swipeState.sliderId);
+          } else {
+            // Swiped left - show next
+            window.showNext(swipeState.sliderId);
+          }
+        }
+
+        swipeState.isDragging = false;
+      };
+
+      // Attach touch listeners to all swipe containers
+      const attachSwipeListeners = () => {
+        const containers = document.querySelectorAll('.touch-swipe-container');
+        containers.forEach(container => {
+          container.addEventListener('touchstart', handleTouchStart, { passive: false });
+          container.addEventListener('touchmove', handleTouchMove, { passive: false });
+          container.addEventListener('touchend', handleTouchEnd, { passive: true });
+        });
+      };
+
+      // Initial attachment
+      attachSwipeListeners();
+
+      // Re-attach when map updates (for dynamically added markers)
+      const observer = new MutationObserver(() => {
+        attachSwipeListeners();
+      });
+
+      if (document.body) {
+        observer.observe(document.body, { childList: true, subtree: true });
+      }
+
+      // Cleanup function
+      window.cleanupSwipeListeners = () => {
+        observer.disconnect();
+        const containers = document.querySelectorAll('.touch-swipe-container');
+        containers.forEach(container => {
+          container.removeEventListener('touchstart', handleTouchStart);
+          container.removeEventListener('touchmove', handleTouchMove);
+          container.removeEventListener('touchend', handleTouchEnd);
+        });
+      };
     }
 
     return () => {
@@ -456,6 +624,12 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
         delete window.showPrev;
         delete window.openLightbox;
         delete window.openLightboxFromSlider;
+
+        // Cleanup swipe listeners
+        if (window.cleanupSwipeListeners) {
+          window.cleanupSwipeListeners();
+          delete window.cleanupSwipeListeners;
+        }
       }
     };
   }, []);
@@ -476,6 +650,85 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxOpen, lightboxImages.length]);
+
+  // Touch swipe support for lightbox
+  useEffect(() => {
+    if (!lightboxOpen) return;
+
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchCurrentX = 0;
+    let isDragging = false;
+    let startTime = 0;
+
+    const handleTouchStart = (e) => {
+      // Only handle touches on the image container
+      if (!e.target.closest('.lightbox-image-container')) return;
+
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      touchCurrentX = e.touches[0].clientX;
+      isDragging = true;
+      startTime = Date.now();
+      setLightboxIsDragging(true);
+    };
+
+    const handleTouchMove = (e) => {
+      if (!isDragging) return;
+
+      touchCurrentX = e.touches[0].clientX;
+      const deltaX = touchCurrentX - touchStartX;
+      const deltaY = Math.abs(e.touches[0].clientY - touchStartY);
+
+      // Only handle horizontal swipes
+      if (Math.abs(deltaX) > deltaY && Math.abs(deltaX) > 10) {
+        e.preventDefault();
+
+        // Apply drag effect with resistance
+        const dragPercent = (deltaX / window.innerWidth) * 100;
+        const resistance = 0.5;
+        setLightboxDragOffset(dragPercent * resistance);
+      }
+    };
+
+    const handleTouchEnd = () => {
+      if (!isDragging) return;
+
+      const deltaX = touchCurrentX - touchStartX;
+      const deltaTime = Date.now() - startTime;
+      const velocity = Math.abs(deltaX) / deltaTime;
+
+      // Reset drag state
+      setLightboxDragOffset(0);
+      setLightboxIsDragging(false);
+
+      // Determine if swipe was significant
+      const threshold = 75; // Larger threshold for full-screen images
+      const velocityThreshold = 0.3;
+
+      if (Math.abs(deltaX) > threshold || velocity > velocityThreshold) {
+        if (deltaX > 0) {
+          // Swiped right - previous image
+          setLightboxIndex((prev) => (prev - 1 + lightboxImages.length) % lightboxImages.length);
+        } else {
+          // Swiped left - next image
+          setLightboxIndex((prev) => (prev + 1) % lightboxImages.length);
+        }
+      }
+
+      isDragging = false;
+    };
+
+    window.addEventListener('touchstart', handleTouchStart, { passive: false });
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
+    window.addEventListener('touchend', handleTouchEnd, { passive: true });
+
+    return () => {
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchend', handleTouchEnd);
+    };
   }, [lightboxOpen, lightboxImages.length]);
 
   // Sync popup carousel when lightbox closes
@@ -795,13 +1048,20 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
 
             {/* Image */}
             <div
-              className="relative max-w-6xl max-h-[90vh] flex flex-col items-center"
+              className="relative max-w-6xl max-h-[90vh] flex flex-col items-center lightbox-image-container"
               onClick={(e) => e.stopPropagation()}
+              style={{ touchAction: 'pan-y pinch-zoom' }}
             >
               <img
                 src={typeof lightboxImages[lightboxIndex] === 'string' ? lightboxImages[lightboxIndex] : lightboxImages[lightboxIndex]?.url}
                 alt={`${lightboxCityName} ${lightboxIndex + 1}`}
-                className="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl"
+                className="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl select-none"
+                draggable="false"
+                style={{
+                  transform: `translateX(${lightboxDragOffset}%) scale(${lightboxIsDragging ? 0.95 : 1})`,
+                  transition: lightboxIsDragging ? 'transform 0.1s ease-out' : 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease',
+                  opacity: lightboxIsDragging ? 0.9 : 1
+                }}
               />
               <div className="mt-4 text-white text-center">
                 <p className="text-lg font-semibold">{lightboxCityName}</p>
@@ -814,7 +1074,7 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
                   </p>
                 )}
                 <p className="text-xs opacity-50 mt-2">
-                  Use arrow keys or click arrows to navigate • Press ESC to close
+                  Swipe or use arrow keys to navigate • Press ESC to close
                 </p>
               </div>
             </div>

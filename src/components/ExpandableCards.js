@@ -60,10 +60,11 @@ export default function ExpandableCards({ items }) {
   // Handle card click
   const handleCardClick = (index) => {
     setActiveIndex(index);
-    // Small delay to allow the card to start expanding before scrolling
+    // Elegant delay to let expansion animation breathe before scrolling
+    // This creates a smooth, two-phase movement that's easy on the eyes
     setTimeout(() => {
       scrollToCard(index);
-    }, 50);
+    }, 650); // Coordinated with CSS transition (0.6s) + buffer for smoothness
   };
 
   const handleImageLoad = (index) => {

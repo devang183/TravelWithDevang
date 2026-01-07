@@ -9,7 +9,7 @@ import CityParallaxHero from '@/components/CityParallaxHero';
 import MusicSection from '@/components/MusicSection';
 import cityMapRegistry from '@/components/maps/MapRegistry';
 import React from "react";
-import { Compass, Plane, Home, Newspaper, Calendar } from 'lucide-react';
+import { Compass, Plane, Home, Newspaper, Calendar, Users } from 'lucide-react';
 import DublinTipsCarousel from '@/components/DublinTipsCarousel';
 import BengaluruTipsCarousel from '@/components/BengaluruTipsCarousel';
 // import CityQuestionBox from '@/components/CityQuestionBox';
@@ -91,6 +91,15 @@ export default function CityPage({ params }) {
     aria-label="News"
   >
     <Newspaper className="w-8 h-8 sm:w-10 sm:h-10 text-indigo-600 drop-shadow-lg hover:drop-shadow-2xl transition-all" />
+  </Link>
+
+  {/* People & Stories Card */}
+  <Link
+    href={`/test-cities/${cityid}/stories`}
+    className="group transition-transform duration-200 hover:scale-110"
+    aria-label="People & Stories"
+  >
+    <Users className="w-8 h-8 sm:w-10 sm:h-10 text-teal-600 drop-shadow-lg hover:drop-shadow-2xl transition-all" />
   </Link>
 
   {/* Indian cities - Recent Events Card */}

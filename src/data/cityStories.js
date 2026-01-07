@@ -22,18 +22,20 @@ export const cityStories = {
         id: 'abdel-last-three-days',
         type: 'people',
         featured: true,
-        name: 'abdel',
+        name: 'Abdelilah (Abdel) Moussafi',
         role: 'My friend in Rabat - The Last Three Days',
-        days: 'Days 5-7',
-        coverPhoto: 'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/rabat/stories/abdel-cover.jpg', // TODO: Upload your photo to S3
+        days: '5 Days',
+        coverPhoto: 'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/rabat/stories/abdel-cover.heic', // TODO: Upload your photo to S3
         photos: [
-          'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/rabat/stories/abdel-medina.jpg',
-          'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/rabat/stories/abdel-tea.jpg',
-          'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/rabat/stories/hassan-tower-together.jpg'
+          'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/rabat/stories/abdel-football.jpeg',
+          'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/rabat/stories/abdel-photography.jpeg',
+          'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/rabat/stories/abdel-aidersanslimite.jpeg',
+          'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/rabat/stories/abdel-shawarma.jpg',
+          'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/rabat/stories/abdel-pita-bread.jpg'
         ],
         story: `[YOUR STORY HERE]
 
-I met abdel on my fourth day in Rabat, at a small café near the medina. Over mint tea, he insisted on showing me "his city"...
+I met abdel on my third day in Rabat, at a small fast food joint, Snack Chabab, opposite to Terminus Tramway Hay Karima in Salé. Over mint tea, harira, and Khoubz Msemmen, abdel insisted on showing me his city and the rest is right in front of you...
 
 Write about:
 - How you met
@@ -55,28 +57,30 @@ Write about:
         },
 
         sharedMeals: [
-          { dish: 'Tagine', restaurant: 'Local spot abdel took me' },
-          { dish: 'Mint tea', restaurant: 'Street café' }
+          { dish: 'Harira and Khoubz Msemmen', restaurant: 'Snack Chabab in Hay Karima, Salé' },
+          { dish: 'Escargot, Chickpeas with escargot water + a spread of powdered red chilly', restaurant: 'Street side stall' },
+          { dish: 'Konafa (Knafeh)', restaurant: 'Street side stall' },
+          { dish: 'Foul with olive oil, Syrian pita bread, and Hummus', restaurant: 'Yamal Acham, Agdal' }
         ],
 
-        playlist: null, // TODO: Add Spotify playlist if you have one
+        playlist: 'https://open.spotify.com/playlist/37i9dQZEVXbJU9eQpX8gPT?si=641ae837609e4075', // TODO: Add Spotify playlist if you have one
 
         tags: ['guide', 'friendship', 'local-perspective', 'culture'],
 
-        date: '2024-03-15', // TODO: Add actual date
+        date: '2025-05-21', // TODO: Add actual date
       },
 
       {
         id: 'sarah-first-day',
         type: 'people',
         featured: false,
-        name: 'Sarah',
-        role: 'First Day Companion',
+        name: 'Maria',
+        role: 'First day with her',
         days: 'Day 1',
-        coverPhoto: 'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/rabat/stories/sarah-cover.jpg', // TODO: Upload your photo to S3
+        coverPhoto: 'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/rabat/stories/maria-cover.jpg', // TODO: Upload your photo to S3
         photos: [
-          'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/rabat/stories/sarah-walking.jpg',
-          'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/rabat/stories/sarah-market.jpg'
+          'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/rabat/stories/maria-walking.jpg',
+          'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/rabat/stories/maria-market.jpg'
         ],
         story: `[YOUR STORY HERE]
 
@@ -108,7 +112,7 @@ Write about:
 
         tags: ['first-day', 'kindness', 'orientation'],
 
-        date: '2024-03-10', // TODO: Add actual date
+        date: '2025-05-19', // TODO: Add actual date
       },
 
       // FOOD STORIES

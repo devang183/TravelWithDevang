@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState, useCallback } from "react";
-import { PawPrint, Navigation, X, Calendar, MapPin, Plus, Trash2, Download, FileText, GripVertical, ChevronDown, ChevronUp } from "lucide-react";
+import { PawPrint, Navigation, X, Calendar, MapPin, Plus, Trash2, Download, FileText, GripVertical, ChevronDown, ChevronUp, Sparkles } from "lucide-react";
 import Fuse from "fuse.js";
 import CityMapCategoryBar from "./CityMapCategoryBar";
 import { useQuery } from '@tanstack/react-query';
@@ -2978,12 +2978,15 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city",
       {/* Plan Your Trip Button - Bottom Right (Opens Trip Preferences Wizard) */}
       <button
         onClick={() => onOpenWizard?.()}
-        className="absolute z-[9999] bg-purple-600 text-white border-none cursor-pointer shadow-lg flex items-center gap-2 font-semibold text-sm sm:text-base transition-all duration-300"
+        className="absolute z-[9999] bg-purple-600 text-white border-none cursor-pointer shadow-lg flex items-center justify-center gap-2 font-semibold transition-all duration-300"
         style={{
           right: "20px",
           bottom: window.innerWidth < 640 ? "10px" : "20px",
-          borderRadius: "50px",
-          padding: "12px 20px",
+          borderRadius: window.innerWidth < 640 ? "50%" : "50px",
+          width: window.innerWidth < 640 ? "56px" : "auto",
+          height: window.innerWidth < 640 ? "56px" : "auto",
+          padding: window.innerWidth < 640 ? "14px" : "12px 20px",
+          fontSize: window.innerWidth < 640 ? "0" : "0.875rem",
         }}
         onMouseEnter={(e) => {
           e.currentTarget.style.backgroundColor = "#7c3aed";
@@ -2995,6 +2998,8 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city",
         }}
         aria-label="Open trip preferences wizard"
       >
+        <Sparkles size={window.innerWidth < 640 ? 28 : 20} className="sm:hidden" />
+        <Sparkles size={20} className="hidden sm:inline" />
         <span className="hidden sm:inline">Plan Your Trip</span>
       </button>
 

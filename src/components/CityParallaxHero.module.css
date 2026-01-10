@@ -105,6 +105,22 @@
   }
 }
 
+/* Weather Container - Top Right */
+.weatherContainer {
+  position: absolute;
+  top: 6rem;
+  right: 1.5rem;
+  z-index: 20;
+  pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  .weatherContainer {
+    top: 5rem;
+    right: 1rem;
+  }
+}
+
 /* City Name Overlay */
 .cityNameOverlay {
   position: absolute;

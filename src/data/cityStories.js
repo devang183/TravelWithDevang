@@ -23,28 +23,20 @@ export const cityStories = {
         type: 'people',
         featured: true,
         name: 'Abdelilah (Abdel) Moussafi',
-        role: 'My friend in Rabat - The Last Three Days',
+        role: 'Energy Efficiency Engineer & Humanitarian',
         days: '5 Days',
-        coverPhoto: 'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/rabat/stories/abdel-cover.heic', // TODO: Upload your photo to S3
+        coverPhoto: 'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/rabat/stories/abdel-cover.jpg',
         photos: [
+          'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/rabat/stories/abdel-cover.jpg',
           'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/rabat/stories/abdel-football.jpeg',
           'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/rabat/stories/abdel-photography.jpeg',
           'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/rabat/stories/abdel-aidersanslimite.jpeg',
           'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/rabat/stories/abdel-shawarma.jpg',
           'https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/rabat/stories/abdel-pita-bread.jpg'
         ],
-        story: `[YOUR STORY HERE]
+        story: `I met Abdel on my third day in Rabat, at a small fast food joint, Snack Chabab, opposite to Terminus Tramway Hay Karima in Salé. Over mint tea, harira, and Khoubz Msemmen, Abdel insisted on showing me his city and the rest is right in front of you...`,
 
-I met abdel on my third day in Rabat, at a small fast food joint, Snack Chabab, opposite to Terminus Tramway Hay Karima in Salé. Over mint tea, harira, and Khoubz Msemmen, abdel insisted on showing me his city and the rest is right in front of you...
-
-Write about:
-- How you met
-- What made him special
-- What he showed you
-- A memorable moment together
-- How saying goodbye felt`,
-
-        quote: '"This is not just tourism, my friend. This is Rabat." - abdel',
+        quote: '"This is not just tourism, my friend. This is Rabat." - Abdel',
 
         location: {
           lat: 34.0209,
@@ -63,11 +55,57 @@ Write about:
           { dish: 'Foul with olive oil, Syrian pita bread, and Hummus', restaurant: 'Yamal Acham, Agdal' }
         ],
 
-        playlist: 'https://open.spotify.com/playlist/37i9dQZEVXbJU9eQpX8gPT?si=641ae837609e4075', // TODO: Add Spotify playlist if you have one
+        // Professional background
+        professionalDetails: {
+          title: 'Energy Efficiency Engineer',
+          expertise: [
+            'Energy Auditing & Consumption Analysis',
+            'Energy Renovation Project Design',
+            'Thermal Insulation & Heating Systems',
+            'Sustainable Building Rehabilitation',
+            'Renewable Energy Integration'
+          ],
+          certifications: [
+            {
+              name: 'Réno Copro - Réhabilitation Énergétique',
+              issuer: 'MOOC Bâtiment Durable (ASDER, ALEC Lyon)',
+              date: 'January 6, 2025',
+              certificateId: '3dc43e314cf248d494a8bdd88004e2e0'
+            }
+          ],
+          humanitarian: [
+            {
+              organization: 'Association Aider Sans Limite',
+              role: 'Volunteer',
+              activities: [
+                'Organized humanitarian caravan to address water scarcity in rural villages',
+                'Led well-digging projects in two villages',
+                'Community engagement through football and cultural activities',
+                'Built connections with local communities'
+              ],
+              impact: 'Brought sustainable water solutions and hope to villages in need',
+              quote: 'Le bénévolat, ce n\'est pas juste donner de son temps. C\'est guérir son âme au contact de ceux qui font la vraie force de notre pays.'
+            },
+            {
+              organization: 'Al Haouz Reconstruction Mission',
+              date: 'December 13, 2025',
+              activities: [
+                'Well drilling and water access projects',
+                'School and Kouttab renovation',
+                'Two nights living with local communities',
+                'Witnessed extraordinary hospitality and resilience'
+              ],
+              partners: ['Association Aider Sans Limite', 'Kiwi Collecte', 'Hanns Seidel Stiftung Maroc'],
+              reflection: 'We came to give help, but we received a lesson in humanity. People who have little, yet give everything.'
+            }
+          ]
+        },
 
-        tags: ['guide', 'friendship', 'local-perspective', 'culture'],
+        playlist: 'https://open.spotify.com/playlist/37i9dQZEVXbJU9eQpX8gPT?si=641ae837609e4075',
 
-        date: '2025-05-21', // TODO: Add actual date
+        tags: ['guide', 'friendship', 'local-perspective', 'culture', 'humanitarian', 'engineer'],
+
+        date: '2025-05-21',
       },
 
       {

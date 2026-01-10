@@ -58,14 +58,9 @@ export default function CityPage({ params }) {
 
       {/* <NewsCard cityName={city.name} /> */}
 
-      {/* Weather + base city map */}
+      {/* Base city map */}
       {city.coords && (
         <>
-          {/* Sticky Weather Info */}
-          <div className="sticky top-0 z-[1000] mb-4">
-            <WeatherInfo coords={city.coords} />
-          </div>
-
           <CityMap
             cityId={cityid}
             coords={city.coords}

@@ -105,7 +105,7 @@ export default function StoryModal({ story, isOpen, onClose }) {
           {/* Main content */}
           <div className="h-full w-full flex flex-col lg:flex-row">
             {/* Left side: Photo carousel */}
-            <div className="relative lg:w-2/3 h-1/2 lg:h-full bg-black flex items-center justify-center">
+            <div className="relative lg:w-2/3 h-[55vh] lg:h-full bg-black flex items-center justify-center">
               {/* Photo */}
               <motion.img
                 key={currentPhotoIndex}
@@ -155,7 +155,7 @@ export default function StoryModal({ story, isOpen, onClose }) {
             </div>
 
             {/* Right side: Story content */}
-            <div className="lg:w-1/3 h-1/2 lg:h-full bg-gradient-to-br from-gray-900 to-black overflow-y-auto">
+            <div className="lg:w-1/3 h-[45vh] lg:h-full bg-gradient-to-br from-gray-900 to-black overflow-y-auto">
               <div className="p-6 lg:p-8">
                 {/* Category badge */}
                 <div className="flex items-center gap-2 mb-6">
@@ -260,6 +260,122 @@ export default function StoryModal({ story, isOpen, onClose }) {
                         </div>
                       ))}
                     </div>
+                  </div>
+                )}
+
+                {/* Professional Details - Beautiful Section */}
+                {story.type === 'people' && story.professionalDetails && (
+                  <div className="mb-6 space-y-6">
+                    {/* Divider */}
+                    <div className="h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent my-6" />
+
+                    <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+                      <span className="w-1 h-6 bg-gradient-to-b from-cyan-400 to-blue-600 rounded-full"></span>
+                      Beyond Travel
+                    </h3>
+
+                    {/* Professional Title */}
+                    <div className="bg-gradient-to-br from-cyan-500/10 to-blue-600/10 border border-cyan-500/30 rounded-lg p-4">
+                      <h4 className="text-lg font-bold text-cyan-400 mb-2">{story.professionalDetails.title}</h4>
+                      {story.professionalDetails.expertise && (
+                        <div className="space-y-1">
+                          {story.professionalDetails.expertise.map((skill, index) => (
+                            <div key={index} className="flex items-start gap-2 text-sm text-white/80">
+                              <span className="text-cyan-400 mt-1">•</span>
+                              <span>{skill}</span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Certifications */}
+                    {story.professionalDetails.certifications && story.professionalDetails.certifications.length > 0 && (
+                      <div className="space-y-3">
+                        <h4 className="text-sm font-bold text-white/70 uppercase tracking-wider">Certifications</h4>
+                        {story.professionalDetails.certifications.map((cert, index) => (
+                          <div key={index} className="bg-white/5 border border-white/10 rounded-lg p-4">
+                            <div className="flex items-start gap-3">
+                              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center flex-shrink-0">
+                                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                              </div>
+                              <div className="flex-1">
+                                <h5 className="font-bold text-white mb-1">{cert.name}</h5>
+                                <p className="text-sm text-white/60 mb-1">{cert.issuer}</p>
+                                <div className="flex items-center gap-4 text-xs text-white/50">
+                                  <span>📅 {cert.date}</span>
+                                  {cert.certificateId && <span className="font-mono">ID: {cert.certificateId.slice(0, 8)}...</span>}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Humanitarian Work */}
+                    {story.professionalDetails.humanitarian && story.professionalDetails.humanitarian.length > 0 && (
+                      <div className="space-y-4">
+                        <h4 className="text-sm font-bold text-white/70 uppercase tracking-wider flex items-center gap-2">
+                          <span>❤️</span> Humanitarian Work
+                        </h4>
+                        {story.professionalDetails.humanitarian.map((work, index) => (
+                          <div key={index} className="bg-gradient-to-br from-orange-500/10 to-red-600/10 border border-orange-500/30 rounded-lg p-5 space-y-3">
+                            <div className="flex items-start justify-between gap-3">
+                              <div>
+                                <h5 className="font-bold text-orange-400 text-lg mb-1">{work.organization}</h5>
+                                {work.role && <p className="text-sm text-white/60">{work.role}</p>}
+                                {work.date && <p className="text-xs text-white/50 mt-1">📅 {work.date}</p>}
+                              </div>
+                            </div>
+
+                            {work.activities && (
+                              <div className="space-y-2">
+                                {work.activities.map((activity, actIndex) => (
+                                  <div key={actIndex} className="flex items-start gap-2 text-sm text-white/80">
+                                    <span className="text-orange-400 mt-1">→</span>
+                                    <span>{activity}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+
+                            {work.impact && (
+                              <div className="bg-white/5 rounded-lg p-3 border-l-4 border-orange-400">
+                                <p className="text-sm text-white/90 italic">💫 {work.impact}</p>
+                              </div>
+                            )}
+
+                            {work.reflection && (
+                              <blockquote className="border-l-4 border-orange-400 pl-4 italic text-white/80 text-sm">
+                                {work.reflection}
+                              </blockquote>
+                            )}
+
+                            {work.quote && (
+                              <blockquote className="border-l-4 border-cyan-400 pl-4 italic text-white/70 text-sm">
+                                &ldquo;{work.quote}&rdquo;
+                              </blockquote>
+                            )}
+
+                            {work.partners && work.partners.length > 0 && (
+                              <div className="pt-2 border-t border-white/10">
+                                <p className="text-xs text-white/50 mb-2">Partners:</p>
+                                <div className="flex flex-wrap gap-2">
+                                  {work.partners.map((partner, pIndex) => (
+                                    <span key={pIndex} className="px-2 py-1 bg-white/10 rounded text-xs text-white/70">
+                                      {partner}
+                                    </span>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 )}
 

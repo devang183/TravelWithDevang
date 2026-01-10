@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import styles from './CityParallaxHero.module.css';
 import Breadcrumb from '@/components/Breadcrumb';
+import WeatherInfo from '@/components/WeatherInfo';
 
 export default function CityParallaxHero({ cityName, cityid, city }) {
   const [scrollY, setScrollY] = useState(0);
@@ -66,6 +67,13 @@ export default function CityParallaxHero({ cityName, cityid, city }) {
       <div className={styles.breadcrumbContainer}>
         <Breadcrumb cityid={cityid} city={city} />
       </div>
+
+      {/* Weather Info - Top Right aligned with Breadcrumb */}
+      {city.coords && (
+        <div className={styles.weatherContainer}>
+          <WeatherInfo coords={city.coords} />
+        </div>
+      )}
 
       {/* City Name Overlay */}
       <div

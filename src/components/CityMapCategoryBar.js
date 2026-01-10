@@ -113,9 +113,9 @@ const CityMapCategoryBar = ({
   }, [availableCategories]);
 
   // Responsive calculations
-  const emojiButtonWidth = isMobile ? 52 : 56; // Slightly larger touch targets on mobile
+  const emojiButtonWidth = isMobile ? 48 : 56; // Optimized for mobile screens
   const visibleEmojisCount = 6; // Fixed at 6 as requested
-  const gap = isMobile ? 8 : 10;
+  const gap = isMobile ? 6 : 10;
   const totalGaps = (visibleEmojisCount - 1) * gap;
   const scrollContainerWidth = (emojiButtonWidth * visibleEmojisCount) + totalGaps;
   const arrowSize = isMobile ? 20 : 16;
@@ -252,8 +252,8 @@ const CityMapCategoryBar = ({
   };
 
   const categoryButtonStyles = (isActive) => ({
-    fontSize: isMobile ? "1.6rem" : "1.4rem",
-    padding: isMobile ? "10px 12px" : "8px 10px",
+    fontSize: isMobile ? "1.4rem" : "1.4rem",
+    padding: isMobile ? "8px 10px" : "8px 10px",
     cursor: "pointer",
     borderRadius: "12px",
     background: isActive ? "bg-white/30 backdrop-blur-md" : "bg-transparent backdrop-blur-0", // when not selected,
@@ -271,8 +271,8 @@ const CityMapCategoryBar = ({
   });
 
   const actionButtonStyles = {
-    fontSize: isMobile ? "0.9rem" : "1rem",
-    padding: isMobile ? "10px 16px" : "8px 12px",
+    fontSize: isMobile ? "0.7rem" : "1rem",
+    padding: isMobile ? "8px 10px" : "8px 12px",
     cursor: "pointer",
     borderRadius: "12px",
     background: "rgba(255,255,255,0.9)",
@@ -281,7 +281,8 @@ const CityMapCategoryBar = ({
     userSelect: "none",
     transition: "all 0.2s ease",
     fontWeight: "500",
-    boxShadow: "0 2px 8px rgba(0,0,0,0.1)"
+    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+    whiteSpace: "nowrap"
   };
 
   return (
@@ -348,13 +349,13 @@ const CityMapCategoryBar = ({
       {/* Button Container */}
       <div style={{
         display: "flex",
-        // flexDirection: isMobile ? "row" : "row",
+        flexWrap: isMobile ? "wrap" : "nowrap",
         justifyContent: "center",
         alignItems: "center",
-        gap: isMobile ? "12px" : "20px",
+        gap: isMobile ? "6px" : "20px",
         marginTop: "16px",
         marginBottom: "20px",
-        padding: isMobile ? "0 20px" : "0"
+        padding: isMobile ? "0 8px" : "0"
       }}>
         {/* Show/Hide Markers Button */}
         <button

@@ -91,7 +91,7 @@ const CATEGORY_EMOJIS = {
   coworking: "💼",
 };
 
-export default function CityMap({ cityId, coords, zoom = 20, name = "this city" }) {
+export default function CityMap({ cityId, coords, zoom = 20, name = "this city", onOpenWizard }) {
   const mapRef = useRef(null);
   const mapInstance = useRef(null);
   const markerRefs = useRef([]);
@@ -162,6 +162,7 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
   // Collapse states for sections
   const [isRoutePlannerCollapsed, setIsRoutePlannerCollapsed] = useState(false);
   const [isTripPlannerCollapsed, setIsTripPlannerCollapsed] = useState(false);
+
 
   // Refs to hold current values for closures
   const tripModeRef = useRef(tripMode);
@@ -2974,15 +2975,15 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
         </div>
       </div>
 
-      {/* Floating Toggle Button for Trip Planner */}
+      {/* Plan Your Trip Button - Bottom Right (Opens Trip Preferences Wizard) */}
       <button
-        onClick={() => setShowTripPlanner(!showTripPlanner)}
-        className="fixed z-[9999] bg-purple-600 text-white border-none cursor-pointer shadow-lg flex items-center gap-2 font-semibold text-sm transition-all duration-300"
+        onClick={() => onOpenWizard?.()}
+        className="absolute z-[9999] bg-purple-600 text-white border-none cursor-pointer shadow-lg flex items-center gap-2 font-semibold text-sm sm:text-base transition-all duration-300"
         style={{
-          left: showTripPlanner ? "min(410px, calc(100vw - 100px))" : "20px",
-          bottom: "120px",
+          right: "20px",
+          bottom: window.innerWidth < 640 ? "10px" : "20px",
           borderRadius: "50px",
-          padding: "12px",
+          padding: "12px 20px",
         }}
         onMouseEnter={(e) => {
           e.currentTarget.style.backgroundColor = "#7c3aed";
@@ -2992,33 +2993,63 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
           e.currentTarget.style.backgroundColor = "#8b5cf6";
           e.currentTarget.style.transform = "scale(1)";
         }}
-        aria-label={showTripPlanner ? "Hide trip planner" : "Show trip planner"}
+        aria-label="Open trip preferences wizard"
       >
-        {showTripPlanner ? (
-          <X size={20} />
-        ) : (
-          <Calendar size={20} />
-        )}
+        <span className="hidden sm:inline">Plan Your Trip</span>
+      </button>
+
+      {/* Calendar Icon Button - Bottom Left */}
+      <button
+        onClick={() => setShowTripPlanner(!showTripPlanner)}
+        className="absolute z-[9999] bg-blue-600 text-white border-none cursor-pointer shadow-lg flex items-center justify-center transition-all duration-300"
+        style={{
+          left: "20px",
+          bottom: window.innerWidth < 640 ? "10px" : "20px",
+          borderRadius: "50%",
+          width: "48px",
+          height: "48px",
+          padding: "12px",
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.backgroundColor = "#2563eb";
+          e.currentTarget.style.transform = "scale(1.1)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.backgroundColor = "#3b82f6";
+          e.currentTarget.style.transform = "scale(1)";
+        }}
+        aria-label="Toggle trip planner"
+      >
+        <Calendar size={24} />
       </button>
 
       {/* Recenter Button */}
       <button
         onClick={handleRecenter}
+        className="recenter-btn"
         style={{
           position: "absolute",
           top: "90px",
           right: "10px",
           zIndex: 1000,
-          backgroundColor: "rgba(255, 255, 255, 0.3)",
-          padding: "6px 10px",
-          borderRadius: "8px",
+          backgroundColor: "rgba(16, 185, 129, 0.5)",
+          backdropFilter: "blur(10px)",
+          padding: "8px 12px",
+          borderRadius: "12px",
           fontSize: "0.9rem",
           cursor: "pointer",
-          color: "white",
+          color: "#10b981",
+          border: "2px solid rgba(16, 185, 129, 0.3)",
           transition: "transform 0.2s, border-color 0.3s, background-color 0.3s",
         }}
-        onMouseEnter={(e) => { e.currentTarget.style.transform = "scale(1.2)"; }}
-        onMouseLeave={(e) => { e.currentTarget.style.transform = "scale(1)"; }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = "scale(1.15)";
+          e.currentTarget.style.backgroundColor = "rgba(16, 185, 129, 0.7)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = "scale(1)";
+          e.currentTarget.style.backgroundColor = "rgba(16, 185, 129, 0.5)";
+        }}
         aria-label="Recenter map"
       >
         <PawPrint size={20} />
@@ -3074,6 +3105,32 @@ export default function CityMap({ cityId, coords, zoom = 20, name = "this city" 
         ))}
       </div>
       <style jsx>{`
+        /* Recenter button responsive styles */
+        @media (max-width: 640px) {
+          .recenter-btn {
+            top: 75px !important;
+            right: 5px !important;
+            padding: 6px 10px !important;
+            border-radius: 10px !important;
+          }
+          .recenter-btn svg {
+            width: 18px !important;
+            height: 18px !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .recenter-btn {
+            top: 65px !important;
+            right: 3px !important;
+            padding: 5px 8px !important;
+            border-radius: 8px !important;
+          }
+          .recenter-btn svg {
+            width: 16px !important;
+            height: 16px !important;
+          }
+        }
+
         /* Zoom controls responsive styles */
         @media (max-width: 640px) {
           .zoom-controls {

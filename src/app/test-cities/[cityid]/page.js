@@ -9,11 +9,11 @@ import CityParallaxHero from '@/components/CityParallaxHero';
 import MusicSection from '@/components/MusicSection';
 import cityMapRegistry from '@/components/maps/MapRegistry';
 import React from "react";
-import { Compass, Plane, Home, Newspaper, Calendar, Users } from 'lucide-react';
 import DublinTipsCarousel from '@/components/DublinTipsCarousel';
 import BengaluruTipsCarousel from '@/components/BengaluruTipsCarousel';
 // import CityQuestionBox from '@/components/CityQuestionBox';
 import TripPreferencesWizard from '@/components/TripPreferencesWizard';
+import CircularTabMenu from '@/components/CircularTabMenu';
 
 
 export default function CityPage({ params }) {
@@ -21,6 +21,7 @@ export default function CityPage({ params }) {
   const {cityid}=React.use(params);
   const city = cities[cityid.toLowerCase()];
   const CityMapComponents = cityMapRegistry[cityid] || [];
+  const [showWizard, setShowWizard] = React.useState(false);
 
   if (!city) {
     return <p className="p-6 text-center text-red-600">City not found</p>;
@@ -30,89 +31,13 @@ export default function CityPage({ params }) {
     <main className="min-h-screen w-full mx-auto">
       <CityParallaxHero cityName={city.name} cityid={cityid} city={city} />
 
+      {/* Circular Expanding Tab Menu */}
+      <CircularTabMenu
+        cityid={cityid}
+        showEvents={['bengaluru', 'delhi', 'nagpur', 'raipur'].includes(cityid.toLowerCase())}
+      />
+
       <div className="relative px-4 pt-8 pb-6 sm:px-8 sm:pt-8">
-      {/* Explore links */}
-      {/* <h2 className="text-2xl font-semibold mb-4">Explore more:</h2> */}
-      <div className="flex justify-center gap-4 sm:gap-6 mb-8 max-w-6xl mx-auto">
-  {/* Existing Explore Card */}
-  <Link
-    href={`/test-cities/${cityid}/explore`}
-    className="group transition-transform duration-200 hover:scale-110"
-    aria-label="Explore"
-  >
-    <Compass className="w-8 h-8 sm:w-10 sm:h-10 text-blue-600 drop-shadow-lg hover:drop-shadow-2xl transition-all" />
-  </Link>
-
-  {/* Existing Travel Card */}
-  <Link
-    href={`/test-cities/${cityid}/travel`}
-    className="group transition-transform duration-200 hover:scale-110"
-    aria-label="Travel"
-  >
-    <Plane className="w-8 h-8 sm:w-10 sm:h-10 text-green-600 drop-shadow-lg hover:drop-shadow-2xl transition-all" />
-  </Link>
-
-  {/* Existing Stays Card */}
-  <Link
-    href={`/test-cities/${cityid}/airbnb`}
-    className="group transition-transform duration-200 hover:scale-110"
-    aria-label="Stays"
-  >
-    <Home className="w-8 h-8 sm:w-10 sm:h-10 text-purple-600 drop-shadow-lg hover:drop-shadow-2xl transition-all" />
-  </Link>
-
-  {/* New Reddit Card */}
-  <Link
-    href={`/test-cities/${cityid}/reddit`}
-    className="group transition-transform duration-200 hover:scale-110"
-    aria-label="What's happening"
-  >
-    <svg className="w-8 h-8 sm:w-10 sm:h-10 text-orange-600 drop-shadow-lg hover:drop-shadow-2xl transition-all" viewBox="0 0 20 20" fill="currentColor">
-      <path d="M10 0C4.48 0 0 4.48 0 10c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.8-.22 1.65-.33 2.5-.33.85 0 1.7.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.93.69 1.88V19c0 .27.16.59.67.5C17.14 18.16 20 14.42 20 10c0-5.52-4.48-10-10-10z"/>
-    </svg>
-  </Link>
-
-  {/* New Attractions Card */}
-  <Link
-    href={`/test-cities/${cityid}/attractions`}
-    className="group transition-transform duration-200 hover:scale-110"
-    aria-label="Places"
-  >
-    <svg className="w-8 h-8 sm:w-10 sm:h-10 text-pink-600 drop-shadow-lg hover:drop-shadow-2xl transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-    </svg>
-  </Link>
-
-  {/* New News Card */}
-  <Link
-    href={`/test-cities/${cityid}/news`}
-    className="group transition-transform duration-200 hover:scale-110"
-    aria-label="News"
-  >
-    <Newspaper className="w-8 h-8 sm:w-10 sm:h-10 text-indigo-600 drop-shadow-lg hover:drop-shadow-2xl transition-all" />
-  </Link>
-
-  {/* People & Stories Card */}
-  <Link
-    href={`/test-cities/${cityid}/stories`}
-    className="group transition-transform duration-200 hover:scale-110"
-    aria-label="People & Stories"
-  >
-    <Users className="w-8 h-8 sm:w-10 sm:h-10 text-teal-600 drop-shadow-lg hover:drop-shadow-2xl transition-all" />
-  </Link>
-
-  {/* Indian cities - Recent Events Card */}
-  {['bengaluru', 'delhi', 'nagpur', 'raipur'].includes(cityid.toLowerCase()) && (
-    <Link
-      href={`/test-cities/${cityid}/events`}
-      className="group transition-transform duration-200 hover:scale-110"
-      aria-label="Recent Events"
-    >
-      <Calendar className="w-8 h-8 sm:w-10 sm:h-10 text-red-600 drop-shadow-lg hover:drop-shadow-2xl transition-all" />
-    </Link>
-  )}
-</div>
       {/* <ul className="list-disc list-inside space-y-2">
         <li>
           <Link href={`/test-cities/${cityid}/explore`} className="text-[#1f2526] hover:underline">
@@ -136,12 +61,17 @@ export default function CityPage({ params }) {
       {/* Weather + base city map */}
       {city.coords && (
         <>
-          <WeatherInfo coords={city.coords} />
+          {/* Sticky Weather Info */}
+          <div className="sticky top-0 z-[1000] mb-4">
+            <WeatherInfo coords={city.coords} />
+          </div>
+
           <CityMap
             cityId={cityid}
             coords={city.coords}
             zoom={13}
             name={city.name}
+            onOpenWizard={() => setShowWizard(true)}
           />
 
           {/* AI-Powered Q&A Box */}
@@ -197,11 +127,14 @@ export default function CityPage({ params }) {
       {/* <TaylorSwiftDashboard cityred={cityid} /> */}
       {/* <AccommodationDisplay /> */}
 
-      {/* Trip Preferences Wizard - Floating Button */}
+      {/* Trip Preferences Wizard - External Control */}
       {city.coords && (
         <TripPreferencesWizard
           cityId={cityid}
           cityName={city.name}
+          hideButton={true}
+          externalIsOpen={showWizard}
+          onExternalClose={() => setShowWizard(false)}
         />
       )}
 

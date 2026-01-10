@@ -73,8 +73,18 @@ const DURATION_OPTIONS = [
   { days: 7, label: '1 Week', description: 'Complete immersion' }
 ];
 
-export default function TripPreferencesWizard({ cityId, cityName, markers: propMarkers = [], onGenerateTrip }) {
+export default function TripPreferencesWizard({ cityId, cityName, markers: propMarkers = [], onGenerateTrip, externalIsOpen, onExternalClose, hideButton = false }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Use external control if provided, otherwise use internal state
+  const wizardIsOpen = externalIsOpen !== undefined ? externalIsOpen : isOpen;
+  const setWizardOpen = (value) => {
+    if (externalIsOpen !== undefined && onExternalClose) {
+      if (!value) onExternalClose();
+    } else {
+      setIsOpen(value);
+    }
+  };
   const [step, setStep] = useState(1); // 1: Preferences, 2: Duration, 3: Generated
   const [selectedPreferences, setSelectedPreferences] = useState([]); // Changed to array for multiple selection
   const [selectedDuration, setSelectedDuration] = useState(null);
@@ -89,7 +99,7 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
       if (!response.ok) throw new Error('Failed to fetch markers');
       return response.json();
     },
-    enabled: isOpen && cityId !== undefined,
+    enabled: wizardIsOpen && cityId !== undefined,
     staleTime: 30 * 60 * 1000, // 30 minutes
   });
 
@@ -610,27 +620,29 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
 
   return (
     <>
-      {/* Trigger Button */}
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 z-40 flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full shadow-2xl hover:shadow-purple-500/50 transition-all"
-      >
-        <Sparkles className="w-5 h-5" />
-        <span className="font-semibold hidden sm:inline">Plan Your Trip</span>
-        <span className="font-semibold sm:hidden">Plan</span>
-      </motion.button>
+      {/* Trigger Button - Only show if not hidden */}
+      {!hideButton && (
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => setWizardOpen(true)}
+          className="fixed bottom-6 right-6 z-40 flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full shadow-2xl hover:shadow-purple-500/50 transition-all"
+        >
+          <Sparkles className="w-5 h-5" />
+          <span className="font-semibold hidden sm:inline">Plan Your Trip</span>
+          <span className="font-semibold sm:hidden">Plan</span>
+        </motion.button>
+      )}
 
       {/* Wizard Modal */}
       <AnimatePresence>
-        {isOpen && (
+        {wizardIsOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
-            onClick={() => setIsOpen(false)}
+            onClick={() => setWizardOpen(false)}
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
@@ -650,7 +662,7 @@ export default function TripPreferencesWizard({ cityId, cityName, markers: propM
                     </div>
                   </div>
                   <button
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => setWizardOpen(false)}
                     className="p-2 hover:bg-white/20 rounded-full transition-colors"
                   >
                     <X className="w-6 h-6" />

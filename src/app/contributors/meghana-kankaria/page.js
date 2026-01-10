@@ -224,14 +224,27 @@ export default function MeghanaKankariaProfile() {
           {/* Header with Photo Carousel */}
           <div className="relative overflow-hidden">
             {/* Background Image Carousel */}
-            <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] bg-gray-900">
+            <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] bg-gray-900 overflow-hidden">
               <AnimatePresence initial={false}>
                 <motion.div
                   key={currentImageIndex}
-                  initial={{ opacity: 0, scale: 1.1 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 1.2, ease: "easeInOut" }}
+                  initial={{ opacity: 0, scale: 1.15 }}
+                  animate={{
+                    opacity: 1,
+                    scale: 1.05,
+                    transition: {
+                      opacity: { duration: 0.8, ease: "easeOut" },
+                      scale: { duration: 8, ease: "linear" }
+                    }
+                  }}
+                  exit={{
+                    opacity: 0,
+                    scale: 1.15,
+                    transition: {
+                      opacity: { duration: 0.6, ease: "easeIn" },
+                      scale: { duration: 0.6, ease: "easeIn" }
+                    }
+                  }}
                   className="absolute inset-0"
                 >
                   <Image

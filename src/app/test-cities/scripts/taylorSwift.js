@@ -81,13 +81,26 @@ const TaylorSwiftDashboard = ({cityred}) => {
 //   const [summary, setSummary] = useState(null);
 //   const [loadingSummary, setLoadingSummary] = useState(false);
 
-  // 🔹 Fetch live subreddit JSON
+  // 🔹 Fetch live subreddit JSON via our API route (bypasses CORS)
   useEffect(() => {
-    fetch(`https://www.reddit.com/r/${cityred}/top/.json?t=week&limit=100`)
+    fetch(`/api/reddit?subreddit=${cityred}&t=week&limit=100`)
       .then(res => res.json())
-      .then(data => setRedditData(data))
-      .catch(err => console.error('Error fetching Reddit data:', err));
-  }, []);
+      .then(data => {
+        // Check if the response is an error
+        if (data.error) {
+          console.error('Reddit API Error:', data.message);
+          // Set empty data structure so component doesn't crash
+          setRedditData({ data: { children: [] } });
+        } else {
+          setRedditData(data);
+        }
+      })
+      .catch(err => {
+        console.error('Error fetching Reddit data:', err);
+        // Set empty data structure so component doesn't crash
+        setRedditData({ data: { children: [] } });
+      });
+  }, [cityred]);
 
   // Function to handle chart clicks and open Reddit post in modal
   const handleChartClick = (data, event) => {
@@ -142,7 +155,7 @@ const TaylorSwiftDashboard = ({cityred}) => {
     setLoadingComments(true);
     setShowComments(true);
     try {
-      const response = await fetch(`https://www.reddit.com${permalink}.json`);
+      const response = await fetch(`/api/reddit?permalink=${encodeURIComponent(permalink)}`);
       const data = await response.json();
       
       // Comments are in the second element of the response array
@@ -254,20 +267,20 @@ const TaylorSwiftDashboard = ({cityred}) => {
   }, [redditData]);
 
   const StatCard = ({ title, value, icon: Icon, color, subtitle }) => (
-    <div className={`bg-gradient-to-br ${color} p-6 rounded-2xl text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1`}>
+    <div className={`bg-gradient-to-br ${color} p-4 sm:p-6 rounded-xl sm:rounded-2xl text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1`}>
       <div className="flex items-center justify-between">
-        <div>
-          <p className="text-sm opacity-90 font-medium">{title}</p>
-          <p className="text-3xl font-bold mt-1">{value.toLocaleString("en-US")}</p>
+        <div className="flex-1">
+          <p className="text-xs sm:text-sm opacity-90 font-medium">{title}</p>
+          <p className="text-xl sm:text-3xl font-bold mt-1">{value.toLocaleString("en-US")}</p>
           {subtitle && <p className="text-xs opacity-75 mt-1">{subtitle}</p>}
         </div>
-        <Icon className="w-8 h-8 opacity-80" />
+        <Icon className="w-6 h-6 sm:w-8 sm:h-8 opacity-80 flex-shrink-0 ml-2" />
       </div>
     </div>
   );
 
   const ViewSelector = () => (
-    <div className="flex justify-center space-x-2 mb-8">
+    <div className="flex justify-center gap-2 sm:gap-3 mb-4 sm:mb-6 px-2">
       {[
         { id: 'overview', label: 'Overview', icon: TrendingUp },
         { id: 'engagement', label: 'Engagement', icon: Heart },
@@ -277,13 +290,13 @@ const TaylorSwiftDashboard = ({cityred}) => {
         <button
           key={id}
           onClick={() => setActiveView(id)}
-          className={`flex items-center space-x-2 px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-            activeView === id 
-              ? 'bg-blue-500 text-white shadow-lg' 
+          className={`flex items-center space-x-1.5 sm:space-x-2 px-3 sm:px-6 py-2 sm:py-3 rounded-full font-medium text-sm sm:text-base transition-all duration-300 whitespace-nowrap ${
+            activeView === id
+              ? 'bg-blue-500 text-white shadow-lg'
               : 'bg-white text-gray-600 hover:bg-blue-100 hover:text-blue-600'
           }`}
         >
-          <Icon className="w-4 h-4" />
+          <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           <span>{label}</span>
         </button>
       ))}
@@ -481,17 +494,15 @@ const TaylorSwiftDashboard = ({cityred}) => {
     };
 
     return (
-      <div 
-        className="fixed inset-0 z-50 flex items-center justify-center p-4 animate-fadeIn"
-        style={{ 
-          backgroundColor: 'rgba(0, 0, 0, 0.5)', 
-          backdropFilter: 'blur(8px)',
+      <div
+        className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm animate-fadeIn flex items-center justify-center overflow-hidden"
+        style={{
           animation: 'fadeIn 0.3s ease-out'
         }}
         onClick={onClose}
       >
-        <div 
-          className="relative bg-white rounded-2xl shadow-2xl max-w-4xl max-h-[100vh] w-full overflow-hidden transform transition-all duration-300 animate-slideUp"
+        <div
+          className="relative bg-white w-full h-full max-h-screen flex flex-col transform transition-all duration-300 overflow-hidden"
           style={{
             animation: 'slideUp 0.3s ease-out'
           }}
@@ -505,10 +516,10 @@ const TaylorSwiftDashboard = ({cityred}) => {
                   e.stopPropagation();
                   navigatePost('prev');
                 }}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white/80 hover:bg-white text-gray-800 rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-10 sm:h-10 bg-white/80 hover:bg-white text-gray-800 rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-500"
                 aria-label="Previous post"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
@@ -517,42 +528,42 @@ const TaylorSwiftDashboard = ({cityred}) => {
                   e.stopPropagation();
                   navigatePost('next');
                 }}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white/80 hover:bg-white text-gray-800 rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-10 sm:h-10 bg-white/80 hover:bg-white text-gray-800 rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-500"
                 aria-label="Next post"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
-              
+
               {/* Post counter */}
-              <div className="absolute top-4 right-4 bg-black/60 text-white text-xs px-2 py-1 rounded-full z-10">
+              <div className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-black/60 text-white text-xs px-2 py-1 rounded-full z-10">
                 {currentPostIndex + 1} / {processedData.engagementData.length}
               </div>
             </>
           )}
-          {/* Modal Header */}
-          <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-6">
-            <div className="flex justify-between items-start">
-              <div className="flex-1">
-                <h2 className="text-xl font-bold mb-2">{post.fullTitle}</h2>
-                <div className="flex items-center space-x-4 text-sm opacity-90">
-                  <span>u/{post.author}</span>
+          {/* Modal Header - Fixed */}
+          <div className="flex-shrink-0 bg-gradient-to-r from-purple-600 to-pink-600 text-white p-3 sm:p-4 md:p-6">
+            <div className="flex justify-between items-start gap-2">
+              <div className="flex-1 min-w-0">
+                <h2 className="text-sm sm:text-lg md:text-xl font-bold mb-2 line-clamp-2">{post.fullTitle}</h2>
+                <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs sm:text-sm opacity-90">
+                  <span className="truncate">u/{post.author}</span>
                   <span>r/{post.subreddit}</span>
-                  <span>{formatDate(post.created_utc)}</span>
+                  <span className="hidden sm:inline">{formatDate(post.created_utc)}</span>
                 </div>
               </div>
               <button
                 onClick={onClose}
-                className="ml-4 text-white hover:text-gray-200 text-2xl font-bold transition-colors hover:scale-110"
+                className="flex-shrink-0 text-white hover:text-gray-200 text-xl sm:text-2xl font-bold transition-colors hover:scale-110"
               >
                 ×
               </button>
             </div>
           </div>
 
-          {/* Modal Body - Scrollable */}
-          <div className="overflow-y-auto max-h-[calc(90vh-140px)]">
+          {/* Modal Body - Scrollable - Flex grow to fill remaining space */}
+          <div className="flex-1 overflow-y-auto overflow-x-hidden">
                     {/* AI Summary Section
         <div className="bg-yellow-50 rounded-lg p-4 shadow-md hover:shadow-lg transition mb-6">
         <div className="flex justify-between items-center mb-2">
@@ -577,36 +588,37 @@ const TaylorSwiftDashboard = ({cityred}) => {
         </div> */}
             {!showComments ? (
               /* Original Post Content */
-              <div className="p-6">
+              <div className="p-4 sm:p-6 md:p-8 lg:px-16 xl:px-24 lg:py-12 w-full">
+                <div className="max-w-[1400px] mx-auto">
                 {/* Post Stats */}
-                <div className="grid grid-cols-4 gap-4 mb-6">
-                  <div className="bg-purple-50 rounded-lg p-3 text-center hover:bg-purple-100 transition-colors">
-                    <div className="text-2xl font-bold text-purple-600">{formatNumber(post.score)}</div>
-                    <div className="text-sm text-gray-600">Upvotes</div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8">
+                  <div className="bg-purple-50 rounded-lg p-2 sm:p-3 text-center hover:bg-purple-100 transition-colors">
+                    <div className="text-lg sm:text-2xl font-bold text-purple-600">{formatNumber(post.score)}</div>
+                    <div className="text-xs sm:text-sm text-gray-600">Upvotes</div>
                   </div>
-                  <div 
-                    className="bg-pink-50 rounded-lg p-3 text-center hover:bg-pink-100 transition-colors cursor-pointer transform hover:scale-105"
+                  <div
+                    className="bg-pink-50 rounded-lg p-2 sm:p-3 text-center hover:bg-pink-100 transition-colors cursor-pointer transform hover:scale-105"
                     onClick={() => fetchComments(post.permalink)}
                   >
-                    <div className="text-2xl font-bold text-pink-600">{formatNumber(post.comments)}</div>
-                    <div className="text-sm text-gray-600">Comments</div>
+                    <div className="text-lg sm:text-2xl font-bold text-pink-600">{formatNumber(post.comments)}</div>
+                    <div className="text-xs sm:text-sm text-gray-600">Comments</div>
                   </div>
-                  <div className="bg-green-50 rounded-lg p-3 text-center hover:bg-green-100 transition-colors">
-                    <div className="text-2xl font-bold text-green-600">{(post.ratio * 100).toFixed(1)}%</div>
-                    <div className="text-sm text-gray-600">Upvote Ratio</div>
+                  <div className="bg-green-50 rounded-lg p-2 sm:p-3 text-center hover:bg-green-100 transition-colors">
+                    <div className="text-lg sm:text-2xl font-bold text-green-600">{(post.ratio * 100).toFixed(1)}%</div>
+                    <div className="text-xs sm:text-sm text-gray-600">Ratio</div>
                   </div>
-                  <div className="bg-indigo-50 rounded-lg p-3 text-center hover:bg-indigo-100 transition-colors">
-                    <div className="text-2xl font-bold text-indigo-600">{formatNumber(post.ups)}</div>
-                    <div className="text-sm text-gray-600">Total Ups</div>
+                  <div className="bg-indigo-50 rounded-lg p-2 sm:p-3 text-center hover:bg-indigo-100 transition-colors">
+                    <div className="text-lg sm:text-2xl font-bold text-indigo-600">{formatNumber(post.ups)}</div>
+                    <div className="text-xs sm:text-sm text-gray-600">Total Ups</div>
                   </div>
                 </div>
 
                 {/* Post Content */}
-                <div className="space-y-4">
+                <div className="space-y-6">
                   {post.selftext ? (
-                    <div className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors">
-                      <h3 className="font-semibold mb-2 text-gray-800">Post Content:</h3>
-                      <div className="text-gray-700 whitespace-pre-wrap leading-relaxed">
+                    <div className="bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors">
+                      <h3 className="text-lg font-semibold mb-3 text-gray-800">Post Content:</h3>
+                      <div className="text-gray-700 whitespace-pre-wrap leading-relaxed text-base">
                         {post.selftext}
                       </div>
                     </div>
@@ -614,18 +626,18 @@ const TaylorSwiftDashboard = ({cityred}) => {
                   
                   {/* Image Display - Check if URL is an image */}
                   {post.url && (
-                    post.url.match(/\.(jpeg|jpg|gif|png|webp)$/i) || 
-                    post.url.includes('i.redd.it') || 
+                    post.url.match(/\.(jpeg|jpg|gif|png|webp)$/i) ||
+                    post.url.includes('i.redd.it') ||
                     post.url.includes('i.imgur.com') ||
                     (post.preview && post.preview.images && post.preview.images.length > 0)
                   ) && (
-                    <div className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors">
-                      <h3 className="font-semibold mb-2 text-gray-800">Image:</h3>
+                    <div className="bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors">
+                      <h3 className="text-lg font-semibold mb-3 text-gray-800">Image:</h3>
                       <div className="flex justify-center">
-                        <img 
+                        <img
                           src={post.url}
                           alt={post.title}
-                          className="max-w-full max-h-96 object-contain rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                          className="max-w-full max-h-[70vh] object-contain rounded-lg shadow-md hover:shadow-lg transition-shadow"
                           onError={(e) => {
                             // Fallback to preview image if main URL fails
                             if (post.preview && post.preview.images && post.preview.images[0]) {
@@ -693,19 +705,21 @@ const TaylorSwiftDashboard = ({cityred}) => {
                     </div>
                   )}
                 </div>
+                </div>
               </div>
             ) : (
               /* Comments Section */
-              <div className="p-6">
+              <div className="p-4 sm:p-6 md:p-8 lg:px-16 xl:px-24 lg:py-12 w-full">
+                <div className="max-w-[1400px] mx-auto">
                 {/* Comments Header */}
-                <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-xl font-bold text-gray-800 flex items-center">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-6">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-800 flex items-center">
                     <MessageCircle className="w-5 h-5 text-pink-500 mr-2" />
                     Comments ({post.comments})
                   </h3>
                   <button
                     onClick={() => setShowComments(false)}
-                    className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
+                    className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors text-sm sm:text-base"
                   >
                     ← Back to Post
                   </button>
@@ -733,28 +747,29 @@ const TaylorSwiftDashboard = ({cityred}) => {
                     )}
                   </div>
                 )}
+                </div>
               </div>
             )}
           </div>
 
-          {/* Modal Footer */}
-          <div className="bg-gray-50 px-6 py-4 flex justify-between items-center">
-            <div className="text-sm text-gray-600">
+          {/* Modal Footer - Fixed */}
+          <div className="flex-shrink-0 bg-gray-50 px-3 sm:px-6 py-3 sm:py-4 flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div className="text-xs sm:text-sm text-gray-600 hidden sm:block">
               Click outside to close or press the × button
             </div>
-            <div className="space-x-3">
+            <div className="flex gap-2 sm:gap-3">
               <a
                 href={`https://www.reddit.com${post.permalink}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors"
+                className="bg-purple-600 text-white px-3 sm:px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors text-sm"
                 onClick={(e) => e.stopPropagation()}
               >
                 View on Reddit
               </a>
               <button
                 onClick={onClose}
-                className="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors"
+                className="bg-gray-200 text-gray-800 px-3 sm:px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors text-sm"
               >
                 Close
               </button>
@@ -784,73 +799,69 @@ const TaylorSwiftDashboard = ({cityred}) => {
   };
 
   return (
-    <div className="min-h-screen bg-[white/30] backdrop-blur-md p-6">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-10">
-        <h1 className="text-5xl mt-0 font-bold mb-8 text-center text-[5vw] uppercase tracking-widest text-[#3e4a4c]">
-            {"City Happenings".split("").map((char, idx) => (
-            <span
-                key={idx}
-                className="inline-block transition-transform duration-200 hover:scale-150 hover:text-white"
-            >
-                {char === " " ? "\u00A0" : char}
-            </span>
-            ))}
-        </h1>
-        </div>
-
+    <div className="min-h-screen bg-[white/30] backdrop-blur-md px-2 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-4 md:py-6">
+      <div className="w-full mx-auto">
         <ViewSelector />
 
         {activeView === 'overview' && (
-          <div className="space-y-8">
-            {/* Stats Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <StatCard 
-                title="Total Subscribers"
-                value={subscriberCount || 0}
-                icon={Users}
-                color="bg-white/10"
-                subtitle="Headcount"
-              />
-              <StatCard 
-                title="Total Upvotes"
-                value={totalScore}
-                icon={Heart}
-                color="bg-white/10"
-                subtitle="Community love"
-              />
-              <StatCard 
-                title="Total Comments"
-                value={totalComments}
-                icon={MessageCircle}
-                color="bg-white/10"
-                subtitle="Discussions"
-              />
-              <StatCard 
-                title="Avg. Positivity"
-                value={Math.round(avgRatio * 100)}
-                icon={Star}
-                color="bg-white/10"
-                subtitle="% upvote ratio"
-              />
+          <div className="space-y-4 sm:space-y-8">
+            {/* Stats Grid - Horizontally Scrollable */}
+            <div className="overflow-x-auto pb-2 -mx-2 px-2">
+              <div className="flex gap-3 sm:gap-4 md:gap-6 min-w-max">
+                <StatCard
+                  title="Total Subscribers"
+                  value={subscriberCount || 0}
+                  icon={Users}
+                  color="bg-white/10"
+                  subtitle="Headcount"
+                />
+                <StatCard
+                  title="Total Upvotes"
+                  value={totalScore}
+                  icon={Heart}
+                  color="bg-white/10"
+                  subtitle="Community love"
+                />
+                <StatCard
+                  title="Total Comments"
+                  value={totalComments}
+                  icon={MessageCircle}
+                  color="bg-white/10"
+                  subtitle="Discussions"
+                />
+                <StatCard
+                  title="Avg. Positivity"
+                  value={Math.round(avgRatio * 100)}
+                  icon={Star}
+                  color="bg-white/10"
+                  subtitle="% upvote ratio"
+                />
+              </div>
             </div>
 
             {/* Main Charts */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg">
-              <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                <Flame className="w-5 h-5 text-blue-500 mr-2" />
-                Top Posts Engagement
+            <div className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-6 shadow-lg">
+              <h3 className="text-base sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4 flex items-center">
+                <Flame className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 mr-2" />
+                <span className="text-sm sm:text-base">Top Posts Engagement</span>
               </h3>
-              <ResponsiveContainer width="100%" height={300}>
+              <ResponsiveContainer width="100%" height={250}>
                 <BarChart 
                   data={processedData.engagementData}
                   onClick={handleChartClick}
                   style={{ cursor: 'pointer' }}
                 >
                   <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                  <XAxis dataKey="title" angle={-30} textAnchor="end" height={80} fontSize={12} />
-                  <YAxis />
+                  <XAxis
+                    dataKey="title"
+                    angle={-45}
+                    textAnchor="end"
+                    height={80}
+                    fontSize={10}
+                    interval={0}
+                    className="text-xs"
+                  />
+                  <YAxis fontSize={10} />
                   <Tooltip
                       content={<CustomTooltip />}
                     formatter={(value, name) => [value.toLocaleString("en-US"), name === 'score' ? 'Upvotes' : 'Comments']}
@@ -866,21 +877,23 @@ const TaylorSwiftDashboard = ({cityred}) => {
         )}
 
         {activeView === 'engagement' && (
-          <div className="space-y-8">
-            <div className="bg-white rounded-2xl p-6 shadow-lg">
-              <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                <Heart className="w-5 h-5 text-blue-500 mr-2" />
-                Upvote Ratios by Post
-                <span className="text-sm font-normal text-blue-500 ml-2">(Click points to view post details)</span>
+          <div className="space-y-4 sm:space-y-8">
+            <div className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-6 shadow-lg">
+              <h3 className="text-base sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4 flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-0">
+                <div className="flex items-center">
+                  <Heart className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 mr-2" />
+                  <span className="text-sm sm:text-base">Upvote Ratios by Post</span>
+                </div>
+                <span className="text-xs sm:text-sm font-normal text-blue-500 sm:ml-2">(Click to view details)</span>
               </h3>
-              
+
               {/* Search Bar */}
-              <div className="relative mb-6">
+              <div className="relative mb-4 sm:mb-6">
                 <div className="relative">
                   {/* <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" /> */}
                   <input
                     type="text"
-                    placeholder=" Search posts by title or author..."
+                    placeholder="Search posts..."
                     value={searchQuery}
                     onChange={(e) => handleSearch(e.target.value)}
                     onFocus={() => searchQuery && setShowSearchDropdown(true)}

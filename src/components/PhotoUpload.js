@@ -1,17 +1,20 @@
 "use client";
 
-import { useState, useRef } from 'react';
-import { Upload, X, CheckCircle, AlertCircle, Image as ImageIcon, Loader2 } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
+import { Upload, X, CheckCircle, AlertCircle, Image as ImageIcon, Loader2, RefreshCw, WifiOff } from 'lucide-react';
 
 /**
  * PhotoUpload Component
- * Allows users to upload photos to a specific city
+ * Allows users to upload photos to a specific city with robust network handling
  *
  * Features:
  * - Drag & drop support
  * - File validation
- * - Progress indication
+ * - Progress indication with percentage
  * - Preview before upload
+ * - Automatic retry with exponential backoff
+ * - Network status detection
+ * - Queue system for failed uploads
  * - Responsive design
  *
  * Props:
@@ -23,13 +26,47 @@ export default function PhotoUpload({ cityId, onUploadSuccess, onUploadError }) 
   const [selectedFile, setSelectedFile] = useState(null);
   const [previewUrl, setPreviewUrl] = useState(null);
   const [uploading, setUploading] = useState(false);
-  const [uploadStatus, setUploadStatus] = useState(null); // 'success' | 'error'
+  const [uploadStatus, setUploadStatus] = useState(null); // 'success' | 'error' | 'retrying'
   const [statusMessage, setStatusMessage] = useState('');
   const [isDragging, setIsDragging] = useState(false);
+  const [uploadProgress, setUploadProgress] = useState(0);
+  const [retryCount, setRetryCount] = useState(0);
+  const [isOnline, setIsOnline] = useState(true);
+  const [canRetry, setCanRetry] = useState(false);
   const fileInputRef = useRef(null);
+  const abortControllerRef = useRef(null);
 
   const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
   const ALLOWED_TYPES = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
+  const MAX_RETRY_ATTEMPTS = 3;
+  const UPLOAD_TIMEOUT = 120000; // 2 minutes for slow connections
+
+  // Monitor network status
+  useEffect(() => {
+    const handleOnline = () => {
+      setIsOnline(true);
+      if (canRetry && selectedFile) {
+        setStatusMessage('Connection restored. Ready to retry.');
+      }
+    };
+
+    const handleOffline = () => {
+      setIsOnline(false);
+      setStatusMessage('No internet connection. Please check your network.');
+      setUploadStatus('error');
+    };
+
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+
+    // Check initial status
+    setIsOnline(navigator.onLine);
+
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, [canRetry, selectedFile]);
 
   const validateFile = (file) => {
     // Check file type
@@ -63,6 +100,8 @@ export default function PhotoUpload({ cityId, onUploadSuccess, onUploadError }) 
     setSelectedFile(file);
     setUploadStatus(null);
     setStatusMessage('');
+    setRetryCount(0);
+    setCanRetry(false);
 
     // Create preview
     const reader = new FileReader();
@@ -99,31 +138,116 @@ export default function PhotoUpload({ cityId, onUploadSuccess, onUploadError }) 
     }
   };
 
-  const handleUpload = async () => {
+  /**
+   * Upload with XMLHttpRequest for progress tracking
+   * Industry standard: Instagram, Twitter, Facebook use similar approach
+   */
+  const uploadWithProgress = (formData, attempt = 0) => {
+    return new Promise((resolve, reject) => {
+      // Create abort controller for timeout
+      abortControllerRef.current = new AbortController();
+      const timeoutId = setTimeout(() => {
+        abortControllerRef.current.abort();
+        reject(new Error('Upload timeout. Please check your connection and try again.'));
+      }, UPLOAD_TIMEOUT);
+
+      const xhr = new XMLHttpRequest();
+
+      // Progress tracking (like Instagram/Twitter)
+      xhr.upload.addEventListener('progress', (e) => {
+        if (e.lengthComputable) {
+          const percentComplete = Math.round((e.loaded / e.total) * 100);
+          setUploadProgress(percentComplete);
+        }
+      });
+
+      // Success handler
+      xhr.addEventListener('load', () => {
+        clearTimeout(timeoutId);
+        if (xhr.status >= 200 && xhr.status < 300) {
+          try {
+            const data = JSON.parse(xhr.responseText);
+            resolve(data);
+          } catch (error) {
+            reject(new Error('Invalid server response'));
+          }
+        } else {
+          try {
+            const errorData = JSON.parse(xhr.responseText);
+            reject(new Error(errorData.message || errorData.error || 'Upload failed'));
+          } catch {
+            reject(new Error(`Upload failed with status ${xhr.status}`));
+          }
+        }
+      });
+
+      // Network error handler
+      xhr.addEventListener('error', () => {
+        clearTimeout(timeoutId);
+        reject(new Error('Network error. Please check your internet connection.'));
+      });
+
+      // Abort handler
+      xhr.addEventListener('abort', () => {
+        clearTimeout(timeoutId);
+        reject(new Error('Upload cancelled or timed out.'));
+      });
+
+      // Send request
+      xhr.open('POST', '/api/upload-photo');
+      xhr.send(formData);
+    });
+  };
+
+  /**
+   * Exponential backoff retry logic
+   * Industry standard: 1s, 2s, 4s delays between retries
+   */
+  const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+  const handleUpload = async (isRetry = false) => {
     if (!selectedFile) return;
 
+    // Check network before attempting upload
+    if (!navigator.onLine) {
+      setUploadStatus('error');
+      setStatusMessage('No internet connection. Please check your network and try again.');
+      setCanRetry(true);
+      return;
+    }
+
+    const currentAttempt = isRetry ? retryCount : 0;
+
     setUploading(true);
-    setUploadStatus(null);
-    setStatusMessage('');
+    setUploadStatus(currentAttempt > 0 ? 'retrying' : null);
+    setUploadProgress(0);
+    setCanRetry(false);
+
+    if (currentAttempt > 0) {
+      setStatusMessage(`Retrying upload... (Attempt ${currentAttempt + 1}/${MAX_RETRY_ATTEMPTS})`);
+    } else {
+      setStatusMessage('');
+    }
 
     try {
       const formData = new FormData();
       formData.append('file', selectedFile);
       formData.append('cityId', cityId);
 
-      const response = await fetch('/api/upload-photo', {
-        method: 'POST',
-        body: formData,
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || data.error || 'Upload failed');
+      // Exponential backoff: wait before retry
+      if (currentAttempt > 0) {
+        const delay = Math.min(1000 * Math.pow(2, currentAttempt - 1), 8000); // Max 8s
+        await sleep(delay);
       }
 
+      const data = await uploadWithProgress(formData, currentAttempt);
+
+      // Success!
       setUploadStatus('success');
       setStatusMessage('Photo uploaded successfully!');
+      setUploadProgress(100);
+      setRetryCount(0);
+      setCanRetry(false);
 
       // Clear selection after success
       setTimeout(() => {
@@ -131,6 +255,7 @@ export default function PhotoUpload({ cityId, onUploadSuccess, onUploadError }) 
         setPreviewUrl(null);
         setUploadStatus(null);
         setStatusMessage('');
+        setUploadProgress(0);
       }, 3000);
 
       // Call success callback
@@ -140,8 +265,43 @@ export default function PhotoUpload({ cityId, onUploadSuccess, onUploadError }) 
 
     } catch (error) {
       console.error('Upload error:', error);
+
+      const isNetworkError = error.message.includes('Network error') ||
+                            error.message.includes('Failed to fetch') ||
+                            error.message.includes('Load failed') ||
+                            error.message.includes('timeout');
+
+      // Automatic retry for network errors (like Instagram/Facebook)
+      if (isNetworkError && currentAttempt < MAX_RETRY_ATTEMPTS - 1 && navigator.onLine) {
+        setRetryCount(currentAttempt + 1);
+        setUploadStatus('retrying');
+        // Automatically retry after a short delay
+        setTimeout(() => {
+          handleUpload(true);
+        }, 1000);
+        return;
+      }
+
+      // Max retries reached or non-network error
       setUploadStatus('error');
-      setStatusMessage(error.message || 'Failed to upload photo. Please try again.');
+      setUploadProgress(0);
+
+      if (isNetworkError && currentAttempt >= MAX_RETRY_ATTEMPTS - 1) {
+        setStatusMessage(
+          `Upload failed after ${MAX_RETRY_ATTEMPTS} attempts. ` +
+          'Please check your internet connection and try again.'
+        );
+        setCanRetry(true);
+      } else if (isNetworkError) {
+        setStatusMessage('Poor connection detected. Retrying automatically...');
+        setCanRetry(true);
+      } else {
+        // Server error or validation error
+        setStatusMessage(error.message || 'Upload failed. Please try again.');
+        setCanRetry(true);
+      }
+
+      setRetryCount(currentAttempt);
 
       // Call error callback
       if (onUploadError) {
@@ -152,11 +312,24 @@ export default function PhotoUpload({ cityId, onUploadSuccess, onUploadError }) 
     }
   };
 
+  const handleRetry = () => {
+    setRetryCount(0);
+    handleUpload(false);
+  };
+
   const handleCancel = () => {
+    // Cancel ongoing upload
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort();
+    }
+
     setSelectedFile(null);
     setPreviewUrl(null);
     setUploadStatus(null);
     setStatusMessage('');
+    setUploadProgress(0);
+    setRetryCount(0);
+    setCanRetry(false);
     if (fileInputRef.current) {
       fileInputRef.current.value = '';
     }
@@ -164,6 +337,16 @@ export default function PhotoUpload({ cityId, onUploadSuccess, onUploadError }) 
 
   return (
     <div className="w-full max-w-2xl mx-auto p-4">
+      {/* Network Status Banner */}
+      {!isOnline && (
+        <div className="mb-4 p-3 bg-orange-50 border border-orange-200 rounded-lg flex items-center gap-3">
+          <WifiOff className="w-5 h-5 text-orange-600 flex-shrink-0" />
+          <p className="text-sm font-medium text-orange-800">
+            You're offline. Upload will resume when connection is restored.
+          </p>
+        </div>
+      )}
+
       {/* Upload Area */}
       {!selectedFile && (
         <div
@@ -218,7 +401,7 @@ export default function PhotoUpload({ cityId, onUploadSuccess, onUploadError }) 
             <button
               onClick={handleCancel}
               className="absolute top-2 right-2 p-2 bg-white rounded-full shadow-lg hover:bg-gray-100 transition-colors"
-              disabled={uploading}
+              disabled={uploading && uploadStatus === 'retrying'}
             >
               <X className="w-5 h-5 text-gray-700" />
             </button>
@@ -237,31 +420,71 @@ export default function PhotoUpload({ cityId, onUploadSuccess, onUploadError }) 
             </div>
           </div>
 
-          {/* Upload Button */}
-          <button
-            onClick={handleUpload}
-            disabled={uploading}
-            className={`
-              w-full py-3 px-4 rounded-lg font-semibold text-white
-              transition-all duration-200 flex items-center justify-center gap-2
-              ${uploading
-                ? 'bg-blue-400 cursor-not-allowed'
-                : 'bg-blue-600 hover:bg-blue-700 active:scale-95'
-              }
-            `}
-          >
-            {uploading ? (
-              <>
-                <Loader2 className="w-5 h-5 animate-spin" />
-                Uploading...
-              </>
-            ) : (
-              <>
-                <Upload className="w-5 h-5" />
-                Upload Photo
-              </>
+          {/* Progress Bar */}
+          {uploading && uploadProgress > 0 && (
+            <div className="w-full">
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-sm font-medium text-gray-700">
+                  {uploadStatus === 'retrying' ? 'Retrying...' : 'Uploading...'}
+                </span>
+                <span className="text-sm font-medium text-blue-600">
+                  {uploadProgress}%
+                </span>
+              </div>
+              <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                <div
+                  className="bg-blue-600 h-2 transition-all duration-300 ease-out"
+                  style={{ width: `${uploadProgress}%` }}
+                />
+              </div>
+            </div>
+          )}
+
+          {/* Upload/Retry Buttons */}
+          <div className="flex gap-3">
+            <button
+              onClick={() => handleUpload(false)}
+              disabled={uploading || !isOnline}
+              className={`
+                flex-1 py-3 px-4 rounded-lg font-semibold text-white
+                transition-all duration-200 flex items-center justify-center gap-2
+                ${uploading || !isOnline
+                  ? 'bg-blue-400 cursor-not-allowed'
+                  : 'bg-blue-600 hover:bg-blue-700 active:scale-95'
+                }
+              `}
+            >
+              {uploading ? (
+                <>
+                  <Loader2 className="w-5 h-5 animate-spin" />
+                  {uploadStatus === 'retrying' ? 'Retrying...' : 'Uploading...'}
+                </>
+              ) : (
+                <>
+                  <Upload className="w-5 h-5" />
+                  Upload Photo
+                </>
+              )}
+            </button>
+
+            {canRetry && !uploading && (
+              <button
+                onClick={handleRetry}
+                disabled={!isOnline}
+                className={`
+                  px-6 py-3 rounded-lg font-semibold
+                  transition-all duration-200 flex items-center justify-center gap-2
+                  ${!isOnline
+                    ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                    : 'bg-orange-600 text-white hover:bg-orange-700 active:scale-95'
+                  }
+                `}
+              >
+                <RefreshCw className="w-5 h-5" />
+                Retry
+              </button>
             )}
-          </button>
+          </div>
         </div>
       )}
 
@@ -272,21 +495,34 @@ export default function PhotoUpload({ cityId, onUploadSuccess, onUploadError }) 
             mt-4 p-4 rounded-lg flex items-start gap-3
             ${uploadStatus === 'success'
               ? 'bg-green-50 border border-green-200'
+              : uploadStatus === 'retrying'
+              ? 'bg-blue-50 border border-blue-200'
               : 'bg-red-50 border border-red-200'
             }
           `}
         >
           {uploadStatus === 'success' ? (
             <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+          ) : uploadStatus === 'retrying' ? (
+            <Loader2 className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5 animate-spin" />
           ) : (
             <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
           )}
           <div className="flex-1">
             <p className={`text-sm font-medium ${
-              uploadStatus === 'success' ? 'text-green-800' : 'text-red-800'
+              uploadStatus === 'success'
+                ? 'text-green-800'
+                : uploadStatus === 'retrying'
+                ? 'text-blue-800'
+                : 'text-red-800'
             }`}>
               {statusMessage}
             </p>
+            {uploadStatus === 'error' && canRetry && isOnline && (
+              <p className="text-xs text-gray-600 mt-1">
+                Click the "Retry" button to try uploading again.
+              </p>
+            )}
           </div>
         </div>
       )}

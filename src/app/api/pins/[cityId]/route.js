@@ -1,6 +1,7 @@
 import clientPromise from "@/lib/mongodb";
 import clientPromise2 from "@/lib/mongodb2";
 import { NextResponse } from 'next/server';
+import { validateCityId } from "@/lib/security";
 
 // In-memory cache with TTL
 const cache = new Map();
@@ -27,12 +28,15 @@ export async function GET(request, context) {
     const { params } = context;
     const { cityId } = await params;
 
+    // SECURITY: Validate cityId to prevent NoSQL injection
+    const validatedCityId = validateCityId(cityId);
+
     // Check in-memory cache first
-    const cacheKey = `pins:${cityId}`;
+    const cacheKey = `pins:${validatedCityId}`;
     const cachedData = getCachedData(cacheKey);
 
     if (cachedData) {
-      console.log(`Cache HIT for ${cityId}`);
+      console.log(`Cache HIT for ${validatedCityId}`);
       return NextResponse.json(cachedData, {
         headers: {
           'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600',
@@ -43,12 +47,12 @@ export async function GET(request, context) {
       });
     }
 
-    console.log(`Cache MISS for ${cityId} - fetching from DB`);
+    console.log(`Cache MISS for ${validatedCityId} - fetching from DB`);
 
     // Determine which database to use based on cityId
     let client, db, collection;
 
-    if (cityId.toLowerCase() === 'newyork') {
+    if (validatedCityId.toLowerCase() === 'newyork') {
       // Use hello2 database for New York
       client = await clientPromise2;
       db = client.db('hello2');
@@ -57,10 +61,11 @@ export async function GET(request, context) {
       // Use hello database for all other cities
       client = await clientPromise;
       db = client.db('hello');
-      collection = db.collection(cityId);
+      collection = db.collection(validatedCityId);
     }
 
-    const pins = await collection.find({}).toArray();
+    // SECURITY: Limit query results to prevent DoS
+    const pins = await collection.find({}).limit(5000).toArray();
 
     const transformedPins = pins.map(pin => ({
       coords: pin.coords,
@@ -87,8 +92,9 @@ export async function GET(request, context) {
     });
   } catch (error) {
     console.error('Database error:', error);
+    // SECURITY: Don't expose internal error details
     return NextResponse.json(
-      { error: 'Failed to fetch pins', details: error.message },
+      { error: 'Failed to fetch pins' },
       { status: 500 }
     );
   }

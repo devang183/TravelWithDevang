@@ -2,6 +2,7 @@ import clientPromise from "@/lib/mongodb";
 import { ObjectId } from "mongodb";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { validateCityId, isValidCoordinates, sanitizeInput, isValidObjectId } from "@/lib/security";
 
 // GET: Fetch all guestbook pins for a city
 export async function GET(request, context) {
@@ -9,11 +10,15 @@ export async function GET(request, context) {
     const { params } = context;
     const { cityId } = await params;
 
+    // SECURITY: Validate cityId against whitelist to prevent NoSQL injection
+    const validatedCityId = validateCityId(cityId);
+
     const client = await clientPromise;
     const db = client.db('hello');
-    const collection = db.collection(`guestbook_${cityId}`);
+    const collection = db.collection(`guestbook_${validatedCityId}`);
 
-    const pins = await collection.find({}).sort({ timestamp: -1 }).toArray();
+    // SECURITY: Limit query results to prevent DoS
+    const pins = await collection.find({}).sort({ timestamp: -1 }).limit(1000).toArray();
 
     // Transform MongoDB _id to string for JSON serialization
     const transformedPins = pins.map(pin => ({
@@ -35,7 +40,8 @@ export async function GET(request, context) {
     return Response.json(transformedPins);
   } catch (error) {
     console.error('Database error:', error);
-    return Response.json({ error: 'Failed to fetch guestbook pins', details: error.message }, { status: 500 });
+    // SECURITY: Don't expose internal error details to client
+    return Response.json({ error: 'Failed to fetch guestbook pins' }, { status: 500 });
   }
 }
 
@@ -44,6 +50,9 @@ export async function POST(request, context) {
   try {
     const { params } = context;
     const { cityId } = await params;
+
+    // SECURITY: Validate cityId against whitelist
+    const validatedCityId = validateCityId(cityId);
 
     // Check if user is authenticated
     const session = await getServerSession(authOptions);
@@ -64,24 +73,33 @@ export async function POST(request, context) {
       }, { status: 400 });
     }
 
+    // SECURITY: Validate coordinates
+    if (!isValidCoordinates(body.lat, body.lng)) {
+      return Response.json({
+        error: 'Invalid coordinates',
+        message: 'Latitude must be between -90 and 90, longitude between -180 and 180'
+      }, { status: 400 });
+    }
+
     const client = await clientPromise;
     const db = client.db('hello');
-    const collection = db.collection(`guestbook_${cityId}`);
+    const collection = db.collection(`guestbook_${validatedCityId}`);
 
     // Create the pin document with user information
+    // SECURITY: Sanitize all user inputs to prevent XSS
     const newPin = {
       lat: parseFloat(body.lat),
       lng: parseFloat(body.lng),
-      title: body.title,
-      note: body.note || '',
+      title: sanitizeInput(body.title, 200),
+      note: sanitizeInput(body.note || '', 1000),
       author: session.user.name || session.user.email || 'Anonymous',
       authorEmail: session.user.email,
       userId: session.user.id,
       timestamp: Date.now(),
-      likes: body.likes || 0,
-      category: body.category || 'general',
-      image: body.image || null,
-      cityId: cityId,
+      likes: 0, // Always start with 0, don't trust client
+      category: sanitizeInput(body.category || 'general', 50),
+      image: body.image ? sanitizeInput(body.image, 500) : null,
+      cityId: validatedCityId,
       createdAt: new Date()
     };
 
@@ -98,9 +116,9 @@ export async function POST(request, context) {
 
   } catch (error) {
     console.error('Database error:', error);
+    // SECURITY: Don't expose internal error details
     return Response.json({
-      error: 'Failed to create guestbook pin',
-      details: error.message
+      error: 'Failed to create guestbook pin'
     }, { status: 500 });
   }
 }
@@ -110,6 +128,9 @@ export async function DELETE(request, context) {
   try {
     const { params } = context;
     const { cityId } = await params;
+
+    // SECURITY: Validate cityId
+    const validatedCityId = validateCityId(cityId);
 
     // Check if user is authenticated
     const session = await getServerSession(authOptions);
@@ -127,9 +148,14 @@ export async function DELETE(request, context) {
       return Response.json({ error: 'Pin ID is required' }, { status: 400 });
     }
 
+    // SECURITY: Validate ObjectId format to prevent injection
+    if (!isValidObjectId(pinId)) {
+      return Response.json({ error: 'Invalid pin ID format' }, { status: 400 });
+    }
+
     const client = await clientPromise;
     const db = client.db('hello');
-    const collection = db.collection(`guestbook_${cityId}`);
+    const collection = db.collection(`guestbook_${validatedCityId}`);
 
     // First, fetch the pin to check ownership
     const pin = await collection.findOne({ _id: new ObjectId(pinId) });
@@ -157,9 +183,9 @@ export async function DELETE(request, context) {
 
   } catch (error) {
     console.error('Database error:', error);
+    // SECURITY: Don't expose internal error details
     return Response.json({
-      error: 'Failed to delete guestbook pin',
-      details: error.message
+      error: 'Failed to delete guestbook pin'
     }, { status: 500 });
   }
 }

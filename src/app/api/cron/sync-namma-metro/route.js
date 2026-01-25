@@ -7,11 +7,12 @@ const GITHUB_CSV_URL = 'https://raw.githubusercontent.com/thecont1/namma-metro-r
 
 export async function GET(request) {
   try {
-    // Optional: Add authentication check
-    // const authHeader = request.headers.get('authorization');
-    // if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
-    //   return Response.json({ error: 'Unauthorized' }, { status: 401 });
-    // }
+    // SECURITY: Authenticate cron requests to prevent unauthorized database wipes
+    const authHeader = request.headers.get('authorization');
+    if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+      console.error(`[${new Date().toISOString()}] Unauthorized cron attempt from ${request.headers.get('x-forwarded-for') || 'unknown'}`);
+      return Response.json({ error: 'Unauthorized' }, { status: 401 });
+    }
 
     console.log(`[${new Date().toISOString()}] Starting automated Namma Metro data sync...`);
 

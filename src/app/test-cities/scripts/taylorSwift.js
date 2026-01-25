@@ -280,7 +280,7 @@ const TaylorSwiftDashboard = ({cityred}) => {
   );
 
   const ViewSelector = () => (
-    <div className="flex justify-center gap-2 sm:gap-3 mb-4 sm:mb-6 px-2">
+    <div className="flex justify-center gap-1.5 sm:gap-3 mb-4 sm:mb-6 px-2 overflow-x-auto">
       {[
         { id: 'overview', label: 'Overview', icon: TrendingUp },
         { id: 'engagement', label: 'Engagement', icon: Heart },
@@ -290,13 +290,13 @@ const TaylorSwiftDashboard = ({cityred}) => {
         <button
           key={id}
           onClick={() => setActiveView(id)}
-          className={`flex items-center space-x-1.5 sm:space-x-2 px-3 sm:px-6 py-2 sm:py-3 rounded-full font-medium text-sm sm:text-base transition-all duration-300 whitespace-nowrap ${
+          className={`flex items-center space-x-1 sm:space-x-2 px-2.5 sm:px-6 py-2 sm:py-3 rounded-full font-medium text-xs sm:text-base transition-all duration-300 whitespace-nowrap flex-shrink-0 ${
             activeView === id
               ? 'bg-blue-500 text-white shadow-lg'
               : 'bg-white text-gray-600 hover:bg-blue-100 hover:text-blue-600'
           }`}
         >
-          <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+          <Icon className="w-3 h-3 sm:w-4 sm:h-4" />
           <span>{label}</span>
         </button>
       ))}
@@ -495,14 +495,14 @@ const TaylorSwiftDashboard = ({cityred}) => {
 
     return (
       <div
-        className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm animate-fadeIn flex items-center justify-center overflow-hidden"
+        className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm animate-fadeIn flex items-center justify-center overflow-hidden p-2 sm:p-4"
         style={{
           animation: 'fadeIn 0.3s ease-out'
         }}
         onClick={onClose}
       >
         <div
-          className="relative bg-white w-full h-full max-h-screen flex flex-col transform transition-all duration-300 overflow-hidden"
+          className="relative bg-white w-full h-full max-w-6xl max-h-[calc(100vh-16px)] sm:max-h-[calc(100vh-32px)] flex flex-col transform transition-all duration-300 overflow-hidden rounded-lg sm:rounded-xl"
           style={{
             animation: 'slideUp 0.3s ease-out'
           }}
@@ -799,12 +799,12 @@ const TaylorSwiftDashboard = ({cityred}) => {
   };
 
   return (
-    <div className="min-h-screen bg-[white/30] backdrop-blur-md px-2 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-4 md:py-6">
+    <div className="min-h-screen bg-[white/30] backdrop-blur-md px-2 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-6">
       <div className="w-full mx-auto">
         <ViewSelector />
 
         {activeView === 'overview' && (
-          <div className="space-y-4 sm:space-y-8">
+          <div className="space-y-3 sm:space-y-6">
             {/* Stats Grid - Horizontally Scrollable */}
             <div className="overflow-x-auto pb-2 -mx-2 px-2">
               <div className="flex gap-3 sm:gap-4 md:gap-6 min-w-max">
@@ -841,11 +841,11 @@ const TaylorSwiftDashboard = ({cityred}) => {
 
             {/* Main Charts */}
             <div className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-6 shadow-lg">
-              <h3 className="text-base sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4 flex items-center">
+              <h3 className="text-base sm:text-xl font-bold text-gray-800 mb-2 sm:mb-4 flex items-center">
                 <Flame className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 mr-2" />
                 <span className="text-sm sm:text-base">Top Posts Engagement</span>
               </h3>
-              <ResponsiveContainer width="100%" height={250}>
+              <ResponsiveContainer width="100%" height={220}>
                 <BarChart 
                   data={processedData.engagementData}
                   onClick={handleChartClick}
@@ -877,9 +877,9 @@ const TaylorSwiftDashboard = ({cityred}) => {
         )}
 
         {activeView === 'engagement' && (
-          <div className="space-y-4 sm:space-y-8">
+          <div className="space-y-3 sm:space-y-6">
             <div className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-6 shadow-lg">
-              <h3 className="text-base sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4 flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-0">
+              <h3 className="text-base sm:text-xl font-bold text-gray-800 mb-2 sm:mb-4 flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-0">
                 <div className="flex items-center">
                   <Heart className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 mr-2" />
                   <span className="text-sm sm:text-base">Upvote Ratios by Post</span>
@@ -888,7 +888,7 @@ const TaylorSwiftDashboard = ({cityred}) => {
               </h3>
 
               {/* Search Bar */}
-              <div className="relative mb-4 sm:mb-6">
+              <div className="relative mb-3 sm:mb-4">
                 <div className="relative">
                   {/* <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" /> */}
                   <input
@@ -964,7 +964,7 @@ const TaylorSwiftDashboard = ({cityred}) => {
                   </div>
                 )}
               </div>
-              <ResponsiveContainer width="100%" height={300}>
+              <ResponsiveContainer width="100%" height={220}>
                 <AreaChart 
                   data={processedData.engagementData}
                   onClick={handleChartClick}
@@ -1036,41 +1036,45 @@ const TaylorSwiftDashboard = ({cityred}) => {
         )} */}
         
         {activeView === 'community' && (
-          <div className="space-y-8">
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white rounded-2xl p-6 shadow-lg">
-                <h3 className="text-xl font-bold text-blue-800 mb-6">Top Contributors</h3>
-                <div className="space-y-4 max-h-80 overflow-y-auto pr-2">
+          <div className="space-y-3 sm:space-y-6">
+            {/* Top Contributors - Horizontally Scrollable */}
+            <div className="overflow-x-auto pb-2 -mx-2 px-2">
+              <div className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-6 shadow-lg min-w-max md:min-w-0">
+                <h3 className="text-base sm:text-xl font-bold text-blue-800 mb-3 sm:mb-4">Top Contributors</h3>
+                <div className="flex md:flex-col gap-3 sm:gap-4 md:space-y-0 md:max-h-80 md:overflow-y-auto md:pr-2">
                   {[...new Set(processedData.posts.map(p => p.author))].map((author, index) => (
-                    <div key={author} className="flex items-center justify-between p-4 bg-blue-50 rounded-lg">
-                      <div className="flex items-center space-x-3">
-                        <div className={`w-8 h-8 rounded-full bg-gradient-to-r ${index % 2 === 0 ? 'from-purple-500 to-blue-500' : 'from-pink-500 to-indigo-500'} flex items-center justify-center text-white font-bold text-sm`}>
+                    <div key={author} className="flex items-center justify-between p-3 sm:p-4 bg-blue-50 rounded-lg min-w-[280px] md:min-w-0">
+                      <div className="flex items-center space-x-2 sm:space-x-3">
+                        <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r ${index % 2 === 0 ? 'from-purple-500 to-blue-500' : 'from-pink-500 to-indigo-500'} flex items-center justify-center text-white font-bold text-xs sm:text-sm flex-shrink-0`}>
                           {author.charAt(0).toUpperCase()}
                         </div>
-                        <span className="font-medium text-gray-800">u/{author}</span>
+                        <span className="font-medium text-gray-800 text-sm sm:text-base truncate">u/{author}</span>
                       </div>
-                      <div className="text-sm text-blue-600 font-medium">
+                      <div className="text-xs sm:text-sm text-blue-600 font-medium whitespace-nowrap ml-2">
                         {processedData.posts.filter(p => p.author === author).length} posts
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
+            </div>
 
-              <div className="bg-white rounded-2xl p-6 shadow-lg">
-                <h3 className="text-xl font-bold text-gray-800 mb-6">Community Highlights</h3>
-                <div className="space-y-4">
-                  <div className="p-4 bg-gradient-to-r from-indigo-500 to-white-500 text-white rounded-lg">
-                    <div className="text-2xl font-bold">{subscriberCount.toLocaleString()}</div>
-                    <div className="text-sm opacity-90">Total Members</div>
+            {/* Community Highlights - Horizontally Scrollable */}
+            <div className="overflow-x-auto pb-2 -mx-2 px-2">
+              <div className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-6 shadow-lg min-w-max md:min-w-0">
+                <h3 className="text-base sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">Community Highlights</h3>
+                <div className="flex md:flex-col gap-3 sm:gap-4">
+                  <div className="p-4 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-lg min-w-[200px] md:min-w-0">
+                    <div className="text-xl sm:text-2xl font-bold">{subscriberCount.toLocaleString()}</div>
+                    <div className="text-xs sm:text-sm opacity-90">Total Members</div>
                   </div>
-                  <div className="p-4 bg-gradient-to-r from-indigo-500 to-white-500 text-white rounded-lg">
-                    <div className="text-2xl font-bold">{Math.round(avgRatio * 100)}%</div>
-                    <div className="text-sm opacity-90">Average Positivity</div>
+                  <div className="p-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg min-w-[200px] md:min-w-0">
+                    <div className="text-xl sm:text-2xl font-bold">{Math.round(avgRatio * 100)}%</div>
+                    <div className="text-xs sm:text-sm opacity-90">Average Positivity</div>
                   </div>
-                  <div className="p-4 bg-gradient-to-r from-indigo-500 to-white-500 text-white rounded-lg">
-                    <div className="text-2xl font-bold">{processedData.posts.length}</div>
-                    <div className="text-sm opacity-90">Recent Posts</div>
+                  <div className="p-4 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-lg min-w-[200px] md:min-w-0">
+                    <div className="text-xl sm:text-2xl font-bold">{processedData.posts.length}</div>
+                    <div className="text-xs sm:text-sm opacity-90">Recent Posts</div>
                   </div>
                 </div>
               </div>

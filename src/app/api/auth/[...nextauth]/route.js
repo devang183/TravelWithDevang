@@ -4,6 +4,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { MongoDBAdapter } from "@auth/mongodb-adapter";
 import clientPromise from "@/lib/mongodb";
 import bcrypt from "bcryptjs";
+import { loginRateLimiter } from "@/lib/security";
 
 export const authOptions = {
   adapter: MongoDBAdapter(clientPromise),
@@ -14,9 +15,18 @@ export const authOptions = {
         email: { label: "Email", type: "email" },
         password: { label: "Password", type: "password" }
       },
-      async authorize(credentials) {
+      async authorize(credentials, req) {
         if (!credentials?.email || !credentials?.password) {
           throw new Error("Email and password are required");
+        }
+
+        const email = credentials.email.toLowerCase().trim();
+
+        // SECURITY: OWASP A07:2025 - Brute force protection
+        const rateLimitCheck = loginRateLimiter.checkLimit(email);
+        if (!rateLimitCheck.allowed) {
+          const resetTime = rateLimitCheck.resetTime.toLocaleTimeString();
+          throw new Error(`Too many failed login attempts. Please try again after ${resetTime}`);
         }
 
         const client = await clientPromise;
@@ -24,9 +34,11 @@ export const authOptions = {
         const usersCollection = db.collection('users');
 
         // Find user by email
-        const user = await usersCollection.findOne({ email: credentials.email });
+        const user = await usersCollection.findOne({ email });
 
         if (!user || !user.password) {
+          // SECURITY: Record failed attempt
+          loginRateLimiter.recordAttempt(email);
           throw new Error("Invalid email or password");
         }
 
@@ -34,8 +46,13 @@ export const authOptions = {
         const isPasswordValid = await bcrypt.compare(credentials.password, user.password);
 
         if (!isPasswordValid) {
+          // SECURITY: Record failed attempt
+          loginRateLimiter.recordAttempt(email);
           throw new Error("Invalid email or password");
         }
+
+        // SECURITY: Reset rate limit on successful login
+        loginRateLimiter.reset(email);
 
         // Return user object (without password)
         return {
@@ -88,8 +105,21 @@ export const authOptions = {
   },
   session: {
     strategy: "jwt", // Use JWT for credentials provider
+    maxAge: 30 * 24 * 60 * 60, // 30 days
   },
   secret: process.env.NEXTAUTH_SECRET,
+  // SECURITY: OWASP A07:2025 - Cookie security
+  cookies: {
+    sessionToken: {
+      name: `next-auth.session-token`,
+      options: {
+        httpOnly: true,
+        sameSite: 'lax',
+        path: '/',
+        secure: process.env.NODE_ENV === 'production', // HTTPS only in production
+      },
+    },
+  },
 };
 
 const handler = NextAuth(authOptions);

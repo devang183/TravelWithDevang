@@ -1,5 +1,6 @@
 import clientPromise from "@/lib/mongodb";
 import bcrypt from "bcryptjs";
+import { isValidEmail, validatePasswordStrength, sanitizeInput } from "@/lib/security";
 
 export async function POST(request) {
   try {
@@ -13,19 +14,22 @@ export async function POST(request) {
       );
     }
 
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
+    // SECURITY: Validate email format using security utility
+    if (!isValidEmail(email)) {
       return Response.json(
         { error: 'Invalid email format' },
         { status: 400 }
       );
     }
 
-    // Validate password strength (minimum 6 characters)
-    if (password.length < 6) {
+    // SECURITY: OWASP A07:2025 - Validate password strength (8+ chars, complexity)
+    const passwordValidation = validatePasswordStrength(password);
+    if (!passwordValidation.valid) {
       return Response.json(
-        { error: 'Password must be at least 6 characters long' },
+        {
+          error: 'Password does not meet security requirements',
+          requirements: passwordValidation.errors
+        },
         { status: 400 }
       );
     }
@@ -47,9 +51,10 @@ export async function POST(request) {
     const hashedPassword = await bcrypt.hash(password, 12);
 
     // Create new user
+    // SECURITY: Sanitize user inputs
     const newUser = {
-      email,
-      name: name.trim(),
+      email: email.toLowerCase().trim(),
+      name: sanitizeInput(name.trim(), 100),
       password: hashedPassword,
       emailVerified: null,
       image: null,
@@ -73,8 +78,9 @@ export async function POST(request) {
     );
   } catch (error) {
     console.error('Signup error:', error);
+    // SECURITY: Don't expose internal error details
     return Response.json(
-      { error: 'Failed to create user', details: error.message },
+      { error: 'Failed to create user' },
       { status: 500 }
     );
   }

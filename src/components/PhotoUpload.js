@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { Upload, X, CheckCircle, AlertCircle, Image as ImageIcon, Loader2, RefreshCw, WifiOff } from 'lucide-react';
+import { compressImage, getOptimalQuality, estimateUploadTime } from '@/utils/imageProcessing';
 
 /**
  * PhotoUpload Component
@@ -24,8 +25,10 @@ import { Upload, X, CheckCircle, AlertCircle, Image as ImageIcon, Loader2, Refre
  */
 export default function PhotoUpload({ cityId, onUploadSuccess, onUploadError }) {
   const [selectedFile, setSelectedFile] = useState(null);
+  const [originalFile, setOriginalFile] = useState(null); // Store original for display
   const [previewUrl, setPreviewUrl] = useState(null);
   const [uploading, setUploading] = useState(false);
+  const [compressing, setCompressing] = useState(false);
   const [uploadStatus, setUploadStatus] = useState(null); // 'success' | 'error' | 'retrying'
   const [statusMessage, setStatusMessage] = useState('');
   const [isDragging, setIsDragging] = useState(false);
@@ -33,6 +36,7 @@ export default function PhotoUpload({ cityId, onUploadSuccess, onUploadError }) 
   const [retryCount, setRetryCount] = useState(0);
   const [isOnline, setIsOnline] = useState(true);
   const [canRetry, setCanRetry] = useState(false);
+  const [compressionSavings, setCompressionSavings] = useState(null);
   const fileInputRef = useRef(null);
   const abortControllerRef = useRef(null);
 
@@ -88,7 +92,7 @@ export default function PhotoUpload({ cityId, onUploadSuccess, onUploadError }) 
     return { valid: true };
   };
 
-  const handleFileSelect = (file) => {
+  const handleFileSelect = async (file) => {
     const validation = validateFile(file);
 
     if (!validation.valid) {
@@ -97,18 +101,58 @@ export default function PhotoUpload({ cityId, onUploadSuccess, onUploadError }) 
       return;
     }
 
-    setSelectedFile(file);
+    // Store original file for reference
+    setOriginalFile(file);
     setUploadStatus(null);
     setStatusMessage('');
     setRetryCount(0);
     setCanRetry(false);
+    setCompressing(true);
 
-    // Create preview
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      setPreviewUrl(reader.result);
-    };
-    reader.readAsDataURL(file);
+    try {
+      // Instagram-style compression
+      const quality = getOptimalQuality(file.size);
+      const compressedBlob = await compressImage(file, {
+        maxWidth: 1920,
+        maxHeight: 1920,
+        quality: quality,
+        format: 'image/jpeg'
+      });
+
+      // Create File object from compressed blob
+      const compressedFile = new File(
+        [compressedBlob],
+        file.name.replace(/\.[^/.]+$/, '.jpg'), // Change extension to .jpg
+        { type: 'image/jpeg' }
+      );
+
+      // Calculate compression savings
+      const savingsPercent = Math.round((1 - compressedFile.size / file.size) * 100);
+      setCompressionSavings(savingsPercent);
+
+      setSelectedFile(compressedFile);
+
+      // Create preview from compressed file
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPreviewUrl(reader.result);
+      };
+      reader.readAsDataURL(compressedFile);
+
+    } catch (error) {
+      console.error('Compression error:', error);
+      // Fall back to original file if compression fails
+      setSelectedFile(file);
+      setCompressionSavings(0);
+
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPreviewUrl(reader.result);
+      };
+      reader.readAsDataURL(file);
+    } finally {
+      setCompressing(false);
+    }
   };
 
   const handleFileInputChange = (e) => {
@@ -348,7 +392,7 @@ export default function PhotoUpload({ cityId, onUploadSuccess, onUploadError }) 
       )}
 
       {/* Upload Area */}
-      {!selectedFile && (
+      {!selectedFile && !compressing && (
         <div
           className={`
             border-2 border-dashed rounded-lg p-8 text-center cursor-pointer
@@ -388,8 +432,25 @@ export default function PhotoUpload({ cityId, onUploadSuccess, onUploadError }) 
         </div>
       )}
 
+      {/* Compressing indicator */}
+      {compressing && (
+        <div className="border-2 border-dashed border-blue-300 rounded-lg p-8 text-center bg-blue-50">
+          <div className="flex flex-col items-center gap-3">
+            <Loader2 className="w-12 h-12 text-blue-600 animate-spin" />
+            <div>
+              <p className="text-lg font-semibold text-blue-700">
+                Optimizing image...
+              </p>
+              <p className="text-sm text-blue-600 mt-1">
+                Compressing for faster upload
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Preview & Upload */}
-      {selectedFile && (
+      {selectedFile && !compressing && (
         <div className="space-y-4">
           {/* Preview */}
           <div className="relative rounded-lg overflow-hidden border-2 border-gray-200">
@@ -408,16 +469,32 @@ export default function PhotoUpload({ cityId, onUploadSuccess, onUploadError }) 
           </div>
 
           {/* File Info */}
-          <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-            <ImageIcon className="w-5 h-5 text-gray-600" />
-            <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium text-gray-900 truncate">
-                {selectedFile.name}
-              </p>
-              <p className="text-xs text-gray-500">
-                {(selectedFile.size / 1024 / 1024).toFixed(2)} MB
-              </p>
+          <div className="space-y-2">
+            <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+              <ImageIcon className="w-5 h-5 text-gray-600" />
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-medium text-gray-900 truncate">
+                  {selectedFile.name}
+                </p>
+                <p className="text-xs text-gray-500">
+                  {(selectedFile.size / 1024 / 1024).toFixed(2)} MB
+                  {compressionSavings > 0 && (
+                    <span className="text-green-600 ml-2">
+                      ({compressionSavings}% smaller)
+                    </span>
+                  )}
+                </p>
+              </div>
             </div>
+
+            {/* Upload time estimate */}
+            {!uploading && (
+              <div className="px-3 py-2 bg-blue-50 rounded-lg">
+                <p className="text-xs text-blue-700">
+                  ⚡ Estimated upload time: {estimateUploadTime(selectedFile.size)}
+                </p>
+              </div>
+            )}
           </div>
 
           {/* Progress Bar */}

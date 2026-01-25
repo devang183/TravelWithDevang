@@ -5,28 +5,22 @@
  * Features:
  * - Validates user authentication
  * - Validates file type and size
- * - Atomic filename generation (prevents race conditions)
- * - S3 integration with proper error handling
+ * - Stores photos in MongoDB (hello2 database)
+ * - Organizes by user account with metadata
  * - Rate limiting
  */
 
 import { NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth/next';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
-import { S3Client, PutObjectCommand, ListObjectsV2Command } from '@aws-sdk/client-s3';
 import { validateCityId } from '@/lib/security';
-import crypto from 'crypto';
+import { MongoClient } from 'mongodb';
 
-// Initialize S3 client
-const s3Client = new S3Client({
-  region: process.env.AWS_REGION || 'eu-west-1',
-  credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-  },
-});
+// MongoDB connection for hello2 database
+const MONGODB_URI2 = process.env.ENCRYPTED_MONGODB_URI2
+  ? process.env.ENCRYPTED_MONGODB_URI2
+  : process.env.MONGODB_URI2;
 
-const BUCKET_NAME = 'cityphotoscity';
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
 const ALLOWED_MIME_TYPES = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
 const ALLOWED_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.webp'];
@@ -48,52 +42,6 @@ function checkUploadRateLimit(userId) {
   attempts.push(now);
   uploadAttempts.set(userId, attempts);
   return true;
-}
-
-/**
- * Get next available photo number for a city
- * Uses atomic pattern: list all files, find max, increment
- * Race condition safe: S3 PutObject with unique hash prevents overwrites
- */
-async function getNextPhotoNumber(cityId) {
-  try {
-    const command = new ListObjectsV2Command({
-      Bucket: BUCKET_NAME,
-      Prefix: `images/${cityId}/`,
-    });
-
-    const response = await s3Client.send(command);
-
-    if (!response.Contents || response.Contents.length === 0) {
-      return 1;
-    }
-
-    // Extract numbers from filenames like "dublin1.jpg", "dublin2.jpg"
-    const numbers = response.Contents
-      .map(obj => {
-        const filename = obj.Key.split('/').pop();
-        const match = filename.match(new RegExp(`^${cityId}(\\d+)\\.(jpg|jpeg|png|webp)$`, 'i'));
-        return match ? parseInt(match[1], 10) : 0;
-      })
-      .filter(num => num > 0);
-
-    const maxNumber = numbers.length > 0 ? Math.max(...numbers) : 0;
-    return maxNumber + 1;
-  } catch (error) {
-    console.error('Error getting next photo number:', error);
-    throw new Error('Failed to determine photo number');
-  }
-}
-
-/**
- * Generate unique filename to prevent race conditions
- * Format: {cityId}{number}-{timestamp}-{random}.{ext}
- * Example: dublin23-1738234567890-a3f2.jpg
- */
-function generateUniqueFilename(cityId, number, extension) {
-  const timestamp = Date.now();
-  const randomHash = crypto.randomBytes(2).toString('hex');
-  return `${cityId}${number}-${timestamp}-${randomHash}${extension}`;
 }
 
 /**
@@ -123,6 +71,8 @@ function validateFileType(buffer, mimeType) {
 }
 
 export async function POST(request) {
+  let client;
+
   try {
     // SECURITY: Check authentication
     const session = await getServerSession(authOptions);
@@ -197,46 +147,53 @@ export async function POST(request) {
       );
     }
 
-    // Get next available photo number (atomic operation)
-    const photoNumber = await getNextPhotoNumber(validatedCityId);
+    // Connect to MongoDB (hello2 database)
+    client = await MongoClient.connect(MONGODB_URI2);
+    const db = client.db('hello2');
 
-    // Generate unique filename to prevent race conditions
-    const filename = generateUniqueFilename(validatedCityId, photoNumber, extension);
-    const s3Key = `images/${validatedCityId}/${filename}`;
+    // Get username from session (use email if name not available)
+    const username = session.user.name || session.user.email.split('@')[0];
 
-    // Upload to S3
-    const uploadCommand = new PutObjectCommand({
-      Bucket: BUCKET_NAME,
-      Key: s3Key,
-      Body: buffer,
-      ContentType: file.type,
-      Metadata: {
-        uploadedBy: session.user.email,
-        uploadedByName: session.user.name || 'Anonymous',
-        uploadedAt: new Date().toISOString(),
-        originalFilename: file.name,
-        cityId: validatedCityId,
+    // Create collection name based on username (sanitize for MongoDB collection naming)
+    const collectionName = `photos_${username.replace(/[^a-zA-Z0-9]/g, '_')}`;
+    const collection = db.collection(collectionName);
+
+    // Convert buffer to base64 for storage in MongoDB
+    const base64Image = buffer.toString('base64');
+
+    // Create photo document
+    const photoDocument = {
+      cityId: validatedCityId,
+      filename: file.name,
+      contentType: file.type,
+      size: file.size,
+      imageData: base64Image, // Base64 encoded image
+      uploadedBy: {
+        name: session.user.name,
+        email: session.user.email,
       },
-      // SECURITY: Don't make public by default
-      // ACL: 'public-read', // Uncomment if you want public access
-    });
+      uploadedAt: new Date(),
+      metadata: {
+        originalFilename: file.name,
+        fileExtension: extension,
+        compressed: file.name.endsWith('.jpg'), // Indicate if it was compressed
+      }
+    };
 
-    await s3Client.send(uploadCommand);
-
-    // Generate public URL
-    const photoUrl = `https://${BUCKET_NAME}.s3.${process.env.AWS_REGION || 'eu-west-1'}.amazonaws.com/${s3Key}`;
+    // Insert into MongoDB
+    const result = await collection.insertOne(photoDocument);
 
     // Log successful upload
-    console.log(`[Photo Upload] User ${session.user.email} uploaded ${filename} to ${validatedCityId}`);
+    console.log(`[Photo Upload] User ${session.user.email} uploaded ${file.name} to ${validatedCityId} in collection ${collectionName}`);
 
     return NextResponse.json({
       success: true,
       message: 'Photo uploaded successfully',
       photo: {
-        url: photoUrl,
-        filename: filename,
+        id: result.insertedId.toString(),
+        collectionName: collectionName,
+        filename: file.name,
         cityId: validatedCityId,
-        photoNumber: photoNumber,
         size: file.size,
         uploadedAt: new Date().toISOString(),
         uploadedBy: session.user.name || session.user.email,
@@ -265,6 +222,11 @@ export async function POST(request) {
       },
       { status: 500 }
     );
+  } finally {
+    // Close MongoDB connection
+    if (client) {
+      await client.close();
+    }
   }
 }
 

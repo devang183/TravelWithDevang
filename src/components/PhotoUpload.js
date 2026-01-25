@@ -342,7 +342,7 @@ export default function PhotoUpload({ cityId, onUploadSuccess, onUploadError }) 
         <div className="mb-4 p-3 bg-orange-50 border border-orange-200 rounded-lg flex items-center gap-3">
           <WifiOff className="w-5 h-5 text-orange-600 flex-shrink-0" />
           <p className="text-sm font-medium text-orange-800">
-            You're offline. Upload will resume when connection is restored.
+            You'&quot;re offline. Upload will resume when connection is restored.
           </p>
         </div>
       )}
@@ -520,7 +520,7 @@ export default function PhotoUpload({ cityId, onUploadSuccess, onUploadError }) 
             </p>
             {uploadStatus === 'error' && canRetry && isOnline && (
               <p className="text-xs text-gray-600 mt-1">
-                Click the "Retry" button to try uploading again.
+                Click the "&apos;Retry"&apos; button to try uploading again.
               </p>
             )}
           </div>

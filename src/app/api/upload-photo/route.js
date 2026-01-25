@@ -134,7 +134,9 @@ export async function POST(request) {
     }
 
     // SECURITY: Rate limiting
-    if (!checkUploadRateLimit(session.user.id)) {
+    // Use email or id as user identifier (NextAuth may use either)
+    const userId = session.user.id || session.user.email;
+    if (!checkUploadRateLimit(userId)) {
       return NextResponse.json(
         { error: 'Rate limit exceeded', message: `Maximum ${MAX_UPLOADS_PER_HOUR} uploads per hour` },
         { status: 429 }
@@ -243,10 +245,24 @@ export async function POST(request) {
 
   } catch (error) {
     console.error('Photo upload error:', error);
+    console.error('Error details:', {
+      name: error.name,
+      message: error.message,
+      stack: error.stack,
+    });
 
-    // SECURITY: Don't expose internal error details
+    // SECURITY: Don't expose internal error details in production
+    // But show helpful errors in development
+    const isDevelopment = process.env.NODE_ENV === 'development';
+
     return NextResponse.json(
-      { error: 'Failed to upload photo', message: 'An error occurred while processing your upload' },
+      {
+        error: 'Failed to upload photo',
+        message: isDevelopment
+          ? `Upload failed: ${error.message}`
+          : 'An error occurred while processing your upload',
+        ...(isDevelopment && { details: error.stack })
+      },
       { status: 500 }
     );
   }

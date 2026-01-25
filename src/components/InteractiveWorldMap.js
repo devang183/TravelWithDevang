@@ -6,6 +6,7 @@ import 'leaflet/dist/leaflet.css';
 import 'leaflet.fullscreen';
 import 'leaflet.fullscreen/Control.FullScreen.css';
 import { photos } from '@/app/test-cities/CityPhotos';
+import PhotoUpload from './PhotoUpload';
 
 // Fix for default marker icons in Leaflet
 delete L.Icon.Default.prototype._getIconUrl;
@@ -36,6 +37,11 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
   const [lightboxSliderId, setLightboxSliderId] = useState('');
   const [lightboxDragOffset, setLightboxDragOffset] = useState(0);
   const [lightboxIsDragging, setLightboxIsDragging] = useState(false);
+
+  // State for photo upload modal
+  const [uploadModalOpen, setUploadModalOpen] = useState(false);
+  const [uploadCityId, setUploadCityId] = useState('');
+  const [uploadCityName, setUploadCityName] = useState('');
 
   // Function to create a custom marker icon
   const createCustomIcon = (isSelected = false) => {
@@ -187,6 +193,17 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
             ${city.date ? `<p class="text-xs text-gray-500">${city.date}</p>` : ''}
             ${city.food ? `<div class="mt-1"><p class="text-xs font-medium">Best Food:</p><p class="text-xs">${city.food}</p></div>` : ''}
           </div>
+          <button
+            onclick="event.stopPropagation(); window.openPhotoUpload && window.openPhotoUpload('${cityId}', '${city.name}')"
+            class="w-full mt-2 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
+            style="cursor: pointer;"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+              <circle cx="12" cy="13" r="4"></circle>
+            </svg>
+            Upload Photo
+          </button>
         </div>
       </div>
     `;
@@ -361,6 +378,21 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
       }
     }
   };
+
+  // Global function for opening photo upload modal
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.openPhotoUpload = (cityId, cityName) => {
+        setUploadCityId(cityId);
+        setUploadCityName(cityName);
+        setUploadModalOpen(true);
+      };
+
+      return () => {
+        delete window.openPhotoUpload;
+      };
+    }
+  }, []);
 
   // Global functions for image slider and lightbox
   useEffect(() => {
@@ -1090,6 +1122,54 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
             >
               →
             </button>
+          </div>
+        </div>
+      )}
+
+      {/* Photo Upload Modal */}
+      {uploadModalOpen && (
+        <div
+          className="fixed inset-0 z-[10000] bg-black bg-opacity-75 flex items-center justify-center p-4"
+          onClick={() => setUploadModalOpen(false)}
+        >
+          <div
+            className="bg-white rounded-lg shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between z-10">
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900">Upload Photo</h2>
+                <p className="text-sm text-gray-600 mt-1">Share your photos from {uploadCityName}</p>
+              </div>
+              <button
+                onClick={() => setUploadModalOpen(false)}
+                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                aria-label="Close upload modal"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+
+            {/* Modal Body */}
+            <div className="px-6 py-4">
+              <PhotoUpload
+                cityId={uploadCityId}
+                onUploadSuccess={(photo) => {
+                  console.log('Photo uploaded successfully:', photo);
+                  // Close modal after successful upload
+                  setTimeout(() => {
+                    setUploadModalOpen(false);
+                  }, 2000);
+                }}
+                onUploadError={(error) => {
+                  console.error('Upload error:', error);
+                }}
+              />
+            </div>
           </div>
         </div>
       )}

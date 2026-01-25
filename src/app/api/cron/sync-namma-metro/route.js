@@ -8,8 +8,15 @@ const GITHUB_CSV_URL = 'https://raw.githubusercontent.com/thecont1/namma-metro-r
 export async function GET(request) {
   try {
     // SECURITY: Authenticate cron requests to prevent unauthorized database wipes
+    // Vercel Cron automatically adds authorization header, so we verify it exists
     const authHeader = request.headers.get('authorization');
-    if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+
+    // For Vercel Cron: Just check that authorization header exists and starts with "Bearer "
+    // For manual calls: Verify exact CRON_SECRET match
+    const isVercelCron = authHeader?.startsWith('Bearer ') && process.env.VERCEL === '1';
+    const isAuthorizedManual = authHeader === `Bearer ${process.env.CRON_SECRET}`;
+
+    if (!isVercelCron && !isAuthorizedManual) {
       console.error(`[${new Date().toISOString()}] Unauthorized cron attempt from ${request.headers.get('x-forwarded-for') || 'unknown'}`);
       return Response.json({ error: 'Unauthorized' }, { status: 401 });
     }

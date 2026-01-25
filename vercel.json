@@ -2,10 +2,7 @@
   "crons": [
     {
       "path": "/api/cron/sync-namma-metro",
-      "schedule": "0 0 * * *",
-      "headers": {
-        "Authorization": "Bearer SG+yGYwSfzjNH0JvJ7Mcut2MnShLdIPvMQsRFKl3Rro="
-      }
+      "schedule": "0 0 * * *"
     }
   ]
 }

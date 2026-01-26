@@ -562,14 +562,76 @@ const scrollContainerRef = useRef(null);
     setDeleteConfirmText('');
   };
 
-  const handleImageUpload = (e) => {
+  const handleImageUpload = async (e) => {
     const file = e.target.files[0];
-    if (file) {
+    if (!file) return;
+
+    // Validate file type
+    const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
+    if (!allowedTypes.includes(file.type)) {
+      alert('Please upload a valid image file (JPEG, PNG, GIF, or WebP)');
+      return;
+    }
+
+    // Validate file size (max 3.75MB to stay within 5MB base64 limit)
+    const maxSize = 3.75 * 1024 * 1024; // 3.75MB
+    if (file.size > maxSize) {
+      alert('Image is too large. Please upload an image smaller than 3.75MB.');
+      return;
+    }
+
+    // Compress image before converting to base64
+    try {
+      const img = new Image();
       const reader = new FileReader();
+
       reader.onload = (e) => {
-        setNewPin({ ...newPin, image: e.target.result });
+        img.onload = () => {
+          // Create canvas for compression
+          const canvas = document.createElement('canvas');
+          let width = img.width;
+          let height = img.height;
+
+          // Resize if too large (max 1200px on longest side)
+          const maxDimension = 1200;
+          if (width > maxDimension || height > maxDimension) {
+            if (width > height) {
+              height = (height / width) * maxDimension;
+              width = maxDimension;
+            } else {
+              width = (width / height) * maxDimension;
+              height = maxDimension;
+            }
+          }
+
+          canvas.width = width;
+          canvas.height = height;
+
+          const ctx = canvas.getContext('2d');
+          ctx.imageSmoothingEnabled = true;
+          ctx.imageSmoothingQuality = 'high';
+          ctx.drawImage(img, 0, 0, width, height);
+
+          // Convert to base64 with quality compression
+          const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.85);
+          setNewPin({ ...newPin, image: compressedDataUrl });
+        };
+
+        img.onerror = () => {
+          alert('Failed to load image. Please try a different file.');
+        };
+
+        img.src = e.target.result;
       };
+
+      reader.onerror = () => {
+        alert('Failed to read file. Please try again.');
+      };
+
       reader.readAsDataURL(file);
+    } catch (error) {
+      console.error('Image upload error:', error);
+      alert('Failed to process image. Please try again.');
     }
   };
 
@@ -902,7 +964,7 @@ useEffect(() => {
                 <input
                   ref={fileInputRef}
                   type="file"
-                  accept="image/*"
+                  accept="image/jpeg,image/jpg,image/png,image/gif,image/webp"
                   onChange={handleImageUpload}
                   className="hidden"
                 />
@@ -913,6 +975,9 @@ useEffect(() => {
                   <Camera size={18} className="sm:w-5 sm:h-5" />
                   {newPin.image ? 'Photo Added ✓' : 'Upload Photo'}
                 </button>
+                <p className="text-xs text-gray-500 mt-1">
+                  JPEG, PNG, GIF, or WebP • Max 3.75MB
+                </p>
               </div>
               {clickPosition && (
                 <div className="text-xs sm:text-sm text-gray-600 bg-blue-50 p-2.5 sm:p-3 rounded-lg">

@@ -85,6 +85,33 @@ export async function POST(request, context) {
     const db = client.db('hello');
     const collection = db.collection(`guestbook_${validatedCityId}`);
 
+    // SECURITY: Validate image if provided
+    let validatedImage = null;
+    if (body.image) {
+      // Check if it's a valid data URL
+      const dataUrlPattern = /^data:image\/(jpeg|jpg|png|gif|webp);base64,/;
+      if (dataUrlPattern.test(body.image)) {
+        // Extract base64 data
+        const base64Data = body.image.split(',')[1];
+
+        // Validate base64 length (max 5MB as base64, ~3.75MB original)
+        const maxBase64Length = 5 * 1024 * 1024 * 4 / 3; // Base64 is ~133% of original size
+        if (base64Data && base64Data.length <= maxBase64Length) {
+          validatedImage = body.image;
+        } else {
+          return Response.json({
+            error: 'Image too large',
+            message: 'Image must be less than 3.75MB'
+          }, { status: 400 });
+        }
+      } else {
+        return Response.json({
+          error: 'Invalid image format',
+          message: 'Only JPEG, PNG, GIF, and WebP images are supported'
+        }, { status: 400 });
+      }
+    }
+
     // Create the pin document with user information
     // SECURITY: Sanitize all user inputs to prevent XSS
     const newPin = {
@@ -98,7 +125,7 @@ export async function POST(request, context) {
       timestamp: Date.now(),
       likes: 0, // Always start with 0, don't trust client
       category: sanitizeInput(body.category || 'general', 50),
-      image: body.image ? sanitizeInput(body.image, 500) : null,
+      image: validatedImage,
       cityId: validatedCityId,
       createdAt: new Date()
     };

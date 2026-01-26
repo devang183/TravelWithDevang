@@ -148,18 +148,27 @@ export async function POST(request) {
     }
 
     // Connect to MongoDB (hello2 database)
+    console.log('[Photo Upload] Connecting to MongoDB...');
     client = await MongoClient.connect(MONGODB_URI2);
+    console.log('[Photo Upload] MongoDB connected successfully');
+
     const db = client.db('hello2');
+    console.log('[Photo Upload] Using database: hello2');
 
     // Get username from session (use email if name not available)
     const username = session.user.name || session.user.email.split('@')[0];
+    console.log('[Photo Upload] Username:', username);
 
     // Create collection name based on username (sanitize for MongoDB collection naming)
     const collectionName = `photos_${username.replace(/[^a-zA-Z0-9]/g, '_')}`;
+    console.log('[Photo Upload] Collection name:', collectionName);
+
     const collection = db.collection(collectionName);
 
     // Convert buffer to base64 for storage in MongoDB
+    console.log('[Photo Upload] Buffer size:', buffer.length, 'bytes');
     const base64Image = buffer.toString('base64');
+    console.log('[Photo Upload] Base64 encoded, length:', base64Image.length, 'characters');
 
     // Create photo document
     const photoDocument = {
@@ -181,10 +190,12 @@ export async function POST(request) {
     };
 
     // Insert into MongoDB
+    console.log('[Photo Upload] Inserting document into MongoDB...');
     const result = await collection.insertOne(photoDocument);
+    console.log('[Photo Upload] Document inserted with ID:', result.insertedId);
 
     // Log successful upload
-    console.log(`[Photo Upload] User ${session.user.email} uploaded ${file.name} to ${validatedCityId} in collection ${collectionName}`);
+    console.log(`[Photo Upload] SUCCESS: User ${session.user.email} uploaded ${file.name} to ${validatedCityId} in collection ${collectionName}`);
 
     return NextResponse.json({
       success: true,
@@ -201,12 +212,14 @@ export async function POST(request) {
     }, { status: 201 });
 
   } catch (error) {
-    console.error('Photo upload error:', error);
-    console.error('Error details:', {
-      name: error.name,
-      message: error.message,
-      stack: error.stack,
-    });
+    console.error('[Photo Upload] Error occurred:', error);
+    console.error('[Photo Upload] Error name:', error.name);
+    console.error('[Photo Upload] Error message:', error.message);
+    console.error('[Photo Upload] Error stack:', error.stack);
+
+    // Additional context logging
+    console.error('[Photo Upload] MongoDB URI2 configured:', !!MONGODB_URI2);
+    console.error('[Photo Upload] Client connected:', !!client);
 
     // SECURITY: Don't expose internal error details in production
     // But show helpful errors in development
@@ -218,14 +231,22 @@ export async function POST(request) {
         message: isDevelopment
           ? `Upload failed: ${error.message}`
           : 'An error occurred while processing your upload',
-        ...(isDevelopment && { details: error.stack })
+        ...(isDevelopment && {
+          details: error.stack,
+          errorType: error.name
+        })
       },
       { status: 500 }
     );
   } finally {
     // Close MongoDB connection
     if (client) {
-      await client.close();
+      try {
+        await client.close();
+        console.log('[Photo Upload] MongoDB connection closed');
+      } catch (closeError) {
+        console.error('[Photo Upload] Error closing MongoDB connection:', closeError);
+      }
     }
   }
 }

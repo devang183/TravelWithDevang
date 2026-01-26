@@ -43,9 +43,6 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
   const [uploadCityId, setUploadCityId] = useState('');
   const [uploadCityName, setUploadCityName] = useState('');
 
-  // State for user-uploaded photos
-  const [userPhotos, setUserPhotos] = useState({});
-
   // Function to create a custom marker icon
   const createCustomIcon = (isSelected = false) => {
     const color = isSelected ? '#ef4444' : '#3b82f6';
@@ -99,80 +96,19 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
     'Bengaluru': 'The Silicon Valley of the East, where garden city greenery meets a high-octane startup hustle. It\'s a city of pub crawls, filter coffee, and the brightest minds in the game.'
   };
 
-  // Function to fetch user photos for a specific city
-  const fetchUserPhotos = async (cityId) => {
-    try {
-      const response = await fetch(`/api/user-photos?cityId=${cityId}`);
-      if (response.ok) {
-        const data = await response.json();
-        return data.photos || [];
-      }
-    } catch (error) {
-      console.error('Error fetching user photos:', error);
-    }
-    return [];
-  };
-
-  // Function to merge static photos with user-uploaded photos
-  const getMergedPhotos = (city) => {
-    const cityKey = city.name.toLowerCase().replace(/\s+/g, '');
-    const cityId = city.id || city.name.toLowerCase().replace(/\s+/g, '-');
-
-    // Get static photos
-    const staticPhotos = photos[cityKey]?.images || [];
-
-    // Get user photos for this city
-    const cityUserPhotos = userPhotos[cityId] || [];
-
-    // Transform user photos to match the format of static photos
-    const transformedUserPhotos = cityUserPhotos.map(photo => ({
-      url: photo.dataUrl,
-      photographer: photo.uploadedBy.name || photo.uploadedBy.email,
-      instagram: null, // User photos don't have Instagram handles
-      isUserPhoto: true // Flag to identify user photos
-    }));
-
-    // Merge: user photos first, then static photos
-    return [...transformedUserPhotos, ...staticPhotos];
-  };
-
-  // Helper function to get merged photos by city name (for lightbox)
-  const getMergedPhotosByCityName = (cityName) => {
-    const cityKey = cityName.toLowerCase().replace(/\s+/g, '');
-    const cityId = cityName.toLowerCase().replace(/\s+/g, '-');
-
-    // Get static photos
-    const staticPhotos = photos[cityKey]?.images || [];
-
-    // Get user photos for this city
-    const cityUserPhotos = userPhotos[cityId] || [];
-
-    // Transform user photos to match the format of static photos
-    const transformedUserPhotos = cityUserPhotos.map(photo => ({
-      url: photo.dataUrl,
-      photographer: photo.uploadedBy.name || photo.uploadedBy.email,
-      instagram: null,
-      isUserPhoto: true
-    }));
-
-    // Merge: user photos first, then static photos
-    return [...transformedUserPhotos, ...staticPhotos];
-  };
-
   // Function to create image carousel HTML
   const createImageCarousel = (city) => {
-    const allPhotos = getMergedPhotos(city);
+    const cityPhotos = photos[city.name.toLowerCase().replace(/\s+/g, '')]?.images || [];
     const cityId = city.id || city.name.toLowerCase().replace(/\s+/g, '-');
 
-    if (allPhotos.length === 0) return '';
+    if (cityPhotos.length === 0) return '';
 
     const sliderId = `slider-${cityId}`;
-    const slides = allPhotos.map((img, idx) => {
+    const slides = cityPhotos.map((img, idx) => {
       // Support both old format (string) and new format (object with credits)
       const imageUrl = typeof img === 'string' ? img : img.url;
       const photographer = typeof img === 'object' && img.photographer ? img.photographer : null;
       const instagram = typeof img === 'object' && img.instagram ? img.instagram : null;
-      const isUserPhoto = typeof img === 'object' && img.isUserPhoto;
 
       const instagramForUrl = instagram;
 
@@ -204,23 +140,12 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
               </svg>
             </a>
           </div>
-        ` : isUserPhoto && photographer ? `
-          <div class="px-2.5 py-1.5 mb-2 bg-gradient-to-r from-green-50 to-emerald-50 rounded-b-lg border-t border-green-200/50">
-            <div class="flex items-center gap-1.5">
-              <div class="w-5 h-5 rounded-full bg-gradient-to-br from-green-400 to-emerald-400 flex items-center justify-center text-white font-bold text-[10px] border border-green-400/60 shadow-sm flex-shrink-0">
-                ${photographer.charAt(0).toUpperCase()}
-              </div>
-              <span class="text-[10px] text-gray-500 flex-shrink-0">📸</span>
-              <span class="text-xs font-medium text-green-700 truncate flex-1 min-w-0">${photographer}</span>
-              <span class="text-xs text-green-600 flex-shrink-0">You</span>
-            </div>
-          </div>
         ` : ''}
       </div>
     `;
     }).join('');
 
-    const dots = allPhotos.map((_, idx) => `
+    const dots = cityPhotos.map((_, idx) => `
       <div
         id="bar-${cityId}-${idx}"
         class="h-1 flex-1 mx-0.5 rounded-full ${idx === 0 ? 'bg-blue-500' : 'bg-gray-300'}"
@@ -230,11 +155,11 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
     `).join('');
 
     // Check if first photo has credits to calculate container height
-    const hasCredits = allPhotos.length > 0 && typeof allPhotos[0] === 'object' && (allPhotos[0].photographer && allPhotos[0].instagram || allPhotos[0].isUserPhoto);
+    const hasCredits = cityPhotos.length > 0 && typeof cityPhotos[0] === 'object' && cityPhotos[0].photographer && cityPhotos[0].instagram;
     const containerHeight = hasCredits ? '192px' : '160px';
 
     // Only show arrows if there's more than one image
-    const arrows = allPhotos.length > 1 ? `
+    const arrows = cityPhotos.length > 1 ? `
       <div
         class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full w-8 h-8 flex items-center justify-center z-10 cursor-pointer hover:bg-opacity-75"
         onclick="event.stopPropagation(); const sliderId = this.closest('[id^=slider-]').id; window.showPrev(sliderId);"
@@ -454,33 +379,6 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
     }
   };
 
-  // Fetch all user photos on mount
-  useEffect(() => {
-    const fetchAllUserPhotos = async () => {
-      try {
-        const response = await fetch('/api/user-photos');
-        if (response.ok) {
-          const data = await response.json();
-
-          // Organize photos by cityId
-          const photosByCity = {};
-          data.photos.forEach(photo => {
-            if (!photosByCity[photo.cityId]) {
-              photosByCity[photo.cityId] = [];
-            }
-            photosByCity[photo.cityId].push(photo);
-          });
-
-          setUserPhotos(photosByCity);
-        }
-      } catch (error) {
-        console.error('Error fetching user photos:', error);
-      }
-    };
-
-    fetchAllUserPhotos();
-  }, []);
-
   // Global function for opening photo upload modal
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -596,10 +494,10 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
         if (!cityNameElement) return;
 
         const cityName = cityNameElement.textContent;
-        const allPhotos = getMergedPhotosByCityName(cityName);
+        const cityPhotos = photos[cityName.toLowerCase().replace(/\s+/g, '')]?.images || [];
 
-        if (allPhotos.length > 0) {
-          setLightboxImages(allPhotos);
+        if (cityPhotos.length > 0) {
+          setLightboxImages(cityPhotos);
           setLightboxIndex(currentIndex);
           setLightboxCityName(cityName);
           setLightboxSliderId(sliderId);
@@ -609,9 +507,9 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
 
       // Legacy lightbox open function (kept for backward compatibility)
       window.openLightbox = (cityName, imageIndex) => {
-        const allPhotos = getMergedPhotosByCityName(cityName);
-        if (allPhotos.length > 0) {
-          setLightboxImages(allPhotos);
+        const cityPhotos = photos[cityName.toLowerCase().replace(/\s+/g, '')]?.images || [];
+        if (cityPhotos.length > 0) {
+          setLightboxImages(cityPhotos);
           setLightboxIndex(imageIndex);
           setLightboxCityName(cityName);
           setLightboxOpen(true);
@@ -1260,37 +1158,8 @@ const InteractiveWorldMap = ({ selectedCity, onCitySelect, cities = [] }) => {
             <div className="px-6 py-4">
               <PhotoUpload
                 cityId={uploadCityId}
-                onUploadSuccess={async (photo) => {
+                onUploadSuccess={(photo) => {
                   console.log('Photo uploaded successfully:', photo);
-
-                  // Fetch updated photos for this city
-                  try {
-                    const response = await fetch(`/api/user-photos?cityId=${uploadCityId}`);
-                    if (response.ok) {
-                      const data = await response.json();
-                      setUserPhotos(prev => ({
-                        ...prev,
-                        [uploadCityId]: data.photos
-                      }));
-
-                      // Update the popup for this city if it's currently open
-                      const marker = markersRef.current[uploadCityId];
-                      if (marker && marker.getPopup() && marker.getPopup().isOpen()) {
-                        // Find the city object
-                        const city = cities.find(c =>
-                          (c.id || c.name.toLowerCase().replace(/\s+/g, '-')) === uploadCityId
-                        );
-                        if (city) {
-                          // Recreate popup content with updated photos
-                          const popupContent = createImageCarousel(city);
-                          marker.getPopup().setContent(popupContent);
-                        }
-                      }
-                    }
-                  } catch (error) {
-                    console.error('Error refreshing photos:', error);
-                  }
-
                   // Close modal after successful upload
                   setTimeout(() => {
                     setUploadModalOpen(false);

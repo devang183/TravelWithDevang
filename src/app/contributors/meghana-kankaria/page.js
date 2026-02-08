@@ -147,7 +147,7 @@ export default function MeghanaKankariaProfile() {
     { name: 'Hindi', level: 'Native', flag: '🇮🇳' },
     { name: 'Gujarati', level: 'Intermediate', flag: '🇮🇳' },
     { name: 'Marathi', level: 'Intermediate', flag: '🇮🇳' },
-    { name: 'French', level: 'Intermediate', flag: '🇫🇷' }
+    { name: 'French', level: 'Beginner', flag: '🇫🇷' }
   ];
 
   const achievements = [
@@ -317,7 +317,7 @@ export default function MeghanaKankariaProfile() {
                   <span>LinkedIn</span>
                 </a>
                 <a
-                  href="https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/contributors/MeghanaKankaria/PortfolioMeghanaKankaria.pdf"
+                  href="https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/contributors/MeghanaKankaria/PortfolioWithTechWorkMeghanaKankaria.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-3 py-1.5 sm:px-4 sm:py-2 lg:px-6 lg:py-3 rounded-full flex items-center space-x-1.5 sm:space-x-2 transition-all duration-300 hover:scale-105 shadow-lg text-xs sm:text-sm lg:text-base font-semibold"

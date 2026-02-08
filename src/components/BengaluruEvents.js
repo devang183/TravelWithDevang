@@ -8,7 +8,7 @@ export default function BengaluruEvents() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
-  const [limit] = useState(50);
+  //const [limit] = useState(50);
 
   useEffect(() => {
     fetchEvents();
@@ -18,7 +18,7 @@ export default function BengaluruEvents() {
     try {
       setLoading(true);
       const url = new URL('/api/events/bengaluru', window.location.origin);
-      url.searchParams.set('limit', limit);
+      //url.searchParams.set('limit', limit);
       if (searchQuery) {
         url.searchParams.set('search', searchQuery);
       }

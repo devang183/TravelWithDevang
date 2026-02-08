@@ -3,6 +3,9 @@ import path from 'path';
 import fs from 'fs/promises';
 import Database from 'better-sqlite3';
 
+// Disable Next.js caching for this route
+export const dynamic = 'force-dynamic';
+
 // GitHub URL for the latest events.db
 const EVENTS_DB_URL = 'https://github.com/blr-today/dataset/releases/latest/download/events.db';
 const CACHE_DIR = path.join(process.cwd(), '.cache');

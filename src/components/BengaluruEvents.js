@@ -8,7 +8,6 @@ export default function BengaluruEvents() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
-  //const [limit] = useState(50);
 
   useEffect(() => {
     fetchEvents();
@@ -18,7 +17,7 @@ export default function BengaluruEvents() {
     try {
       setLoading(true);
       const url = new URL('/api/events/bengaluru', window.location.origin);
-      //url.searchParams.set('limit', limit);
+      // No limit - fetch all events
       if (searchQuery) {
         url.searchParams.set('search', searchQuery);
       }
@@ -27,6 +26,7 @@ export default function BengaluruEvents() {
       if (!response.ok) throw new Error('Failed to fetch events');
 
       const data = await response.json();
+      console.log(`Fetched ${data.events.length} events`); // Debug log
       setEvents(data.events);
       setError(null);
     } catch (err) {

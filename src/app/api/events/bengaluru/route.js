@@ -84,34 +84,27 @@ export async function GET(request) {
     // Open database connection
     const db = new Database(dbPath, { readonly: true });
 
+    // Fetch ALL events first, then filter for future events
+    // This is necessary because startDate is stored inside JSON
     let query = 'SELECT url, event_json FROM events';
-    let countQuery = 'SELECT COUNT(*) as total FROM events';
     const params = [];
-    const countParams = [];
 
     // Add search filter if provided
     if (search) {
       query += ' WHERE event_json LIKE ?';
-      countQuery += ' WHERE event_json LIKE ?';
       params.push(`%${search}%`);
-      countParams.push(`%${search}%`);
     }
 
-    // Get total count
-    const totalResult = db.prepare(countQuery).get(...countParams);
-    const total = totalResult.total;
-
-    // Add pagination
-    query += ' LIMIT ? OFFSET ?';
-    params.push(limit, offset);
-
-    // Execute query
+    // Execute query (get all events)
     const stmt = db.prepare(query);
     const rows = stmt.all(...params);
 
-    // Parse JSON and filter future events
+    // Close database connection
+    db.close();
+
+    // Parse JSON and filter future events BEFORE applying limit
     const now = new Date();
-    const events = rows
+    const allFutureEvents = rows
       .map(row => {
         try {
           const eventData = JSON.parse(row.event_json);
@@ -140,8 +133,9 @@ export async function GET(request) {
         return dateA - dateB;
       });
 
-    // Close database connection
-    db.close();
+    // Apply pagination AFTER filtering
+    const total = allFutureEvents.length;
+    const events = allFutureEvents.slice(offset, offset + limit);
 
     return NextResponse.json({
       events,

@@ -22,7 +22,7 @@ export default function BengaluruEvents() {
         url.searchParams.set('search', searchQuery);
       }
 
-      const response = await fetch(url);
+      const response = await fetch(url, { cache: 'no-store' });
       if (!response.ok) throw new Error('Failed to fetch events');
 
       const data = await response.json();

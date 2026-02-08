@@ -74,7 +74,7 @@ export async function GET(request) {
   try {
     // Get query parameters
     const { searchParams } = new URL(request.url);
-    const limit = parseInt(searchParams.get('limit') || '50');
+    const limitParam = searchParams.get('limit');
     const offset = parseInt(searchParams.get('offset') || '0');
     const search = searchParams.get('search') || '';
 
@@ -133,16 +133,19 @@ export async function GET(request) {
         return dateA - dateB;
       });
 
-    // Apply pagination AFTER filtering
+    // Apply pagination AFTER filtering (if limit is specified)
     const total = allFutureEvents.length;
-    const events = allFutureEvents.slice(offset, offset + limit);
+    const limit = limitParam ? parseInt(limitParam) : null;
+    const events = limit
+      ? allFutureEvents.slice(offset, offset + limit)
+      : allFutureEvents.slice(offset);
 
     return NextResponse.json({
       events,
       total,
-      limit,
+      limit: limit || total,
       offset,
-      hasMore: offset + limit < total
+      hasMore: limit ? offset + limit < total : false
     });
   } catch (error) {
     console.error('Error fetching events:', error);

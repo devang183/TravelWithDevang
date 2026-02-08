@@ -99,6 +99,28 @@ export default function BengaluruTipsCarousel() {
       onTouchStart={(e) => e.stopPropagation()}
       onTouchMove={(e) => e.stopPropagation()}
     >
+      {/* Swipe indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5 }}
+        className="flex items-center justify-center gap-2 mb-3 text-gray-500"
+      >
+        <motion.div
+          animate={{ x: [-3, 3, -3] }}
+          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+          className="flex items-center gap-1.5 text-sm"
+        >
+          <svg className="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+          <span>Swipe for more tips</span>
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </motion.div>
+      </motion.div>
+
       {/* Card Container */}
       <div className="relative h-[280px] sm:h-[320px] md:h-[340px] flex items-center justify-center overflow-hidden">
         <AnimatePresence initial={false} custom={direction} mode="wait">

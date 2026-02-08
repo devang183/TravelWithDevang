@@ -10,7 +10,7 @@ export const dynamic = 'force-dynamic';
 const EVENTS_DB_URL = 'https://github.com/blr-today/dataset/releases/latest/download/events.db';
 const CACHE_DIR = path.join(process.cwd(), '.cache');
 const CACHE_FILE = path.join(CACHE_DIR, 'events.db');
-const CACHE_DURATION = 6 * 60 * 60 * 1000; // 6 hours in milliseconds
+const CACHE_DURATION = 1 * 60 * 60 * 1000; // 1 hour in milliseconds
 
 async function ensureCacheDir() {
   try {
@@ -105,8 +105,11 @@ export async function GET(request) {
     // Close database connection
     db.close();
 
-    // Parse JSON and filter future events BEFORE applying limit
-    const now = new Date();
+    // Parse JSON and filter events from today onwards
+    // Use start of today (midnight) so all events happening today are included
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
     const allFutureEvents = rows
       .map(row => {
         try {
@@ -122,10 +125,10 @@ export async function GET(request) {
       })
       .filter(event => event !== null)
       .filter(event => {
-        // Only show future events
+        // Only show events from today onwards
         if (event.startDate) {
           const startDate = new Date(event.startDate);
-          return startDate >= now;
+          return startDate >= today;
         }
         return true;
       })

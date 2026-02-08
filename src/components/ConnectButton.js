@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X, Mail, Linkedin, Users, Lightbulb, ChevronRight } from 'lucide-react';
+import { MessageCircle, X, Mail, Linkedin, Users, Lightbulb, ChevronRight, Phone } from 'lucide-react';
 
 const contactOptions = [
   {
@@ -17,7 +17,7 @@ const contactOptions = [
     icon: Lightbulb,
     label: 'Collaborate',
     description: 'Ideas, partnerships & projects',
-    href: 'mailto:devangkankaria@gmail.com?subject=Collaboration%20Inquiry%20-%20Travel%20With%20Devang',
+    href: 'mailto:kankariadevang@gmail.com?subject=Collaboration%20Inquiry%20-%20Travel%20With%20Devang',
     color: 'from-amber-500 to-orange-500',
     internal: false
   },
@@ -25,7 +25,7 @@ const contactOptions = [
     icon: Mail,
     label: 'Say Hello',
     description: 'Questions, feedback or just to connect',
-    href: 'mailto:devangkankaria@gmail.com?subject=Hello%20from%20Travel%20With%20Devang',
+    href: 'mailto:kankariadevang@gmail.com?subject=Hello%20from%20Travel%20With%20Devang',
     color: 'from-blue-500 to-cyan-500',
     internal: false
   },
@@ -33,8 +33,16 @@ const contactOptions = [
     icon: Linkedin,
     label: 'LinkedIn',
     description: 'Let\'s connect professionally',
-    href: 'https://www.linkedin.com/in/devangkankaria/',
+    href: 'https://www.linkedin.com/in/devang-kankaria-89ba7b15b/',
     color: 'from-blue-600 to-blue-700',
+    internal: false
+  },
+  {
+    icon: Phone,
+    label: 'Call / WhatsApp',
+    description: '+91 82087 76174',
+    href: 'https://wa.me/918208776174?text=Hi%20Devang!%20I%20found%20you%20through%20your%20website%20%27Travel%20With%20Devang%27.%20Can%20I%20talk%20to%20you%20for%20a%20sec%3F',
+    color: 'from-green-500 to-emerald-600',
     internal: false
   }
 ];

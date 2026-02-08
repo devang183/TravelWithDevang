@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
 import { cities as cityData } from '@/components/citycoord';
+import ConnectButton from '@/components/ConnectButton';
 
 const VideoTextPage = dynamic(() => import('@/components/VideoText/page'), { 
   ssr: false 
@@ -71,6 +72,9 @@ export default function HomePage() {
           />
         </div>
       </div>
+
+      {/* Floating Connect Button */}
+      <ConnectButton />
     </main>
   );
 }

@@ -517,7 +517,7 @@ export default function MeghanaKankariaProfile() {
                 </div>
                 <div className="flex gap-3">
                   <a
-                    href="https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/contributors/MeghanaKankaria/PortfolioMeghanaKankaria.pdf"
+                    href="https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/contributors/MeghanaKankaria/PortfolioWithTechWorkMeghanaKankaria.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-white text-purple-600 px-6 py-3 rounded-full flex items-center space-x-2 hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-lg font-semibold"
@@ -526,7 +526,7 @@ export default function MeghanaKankariaProfile() {
                     <span>View Portfolio</span>
                   </a>
                   <a
-                    href="https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/contributors/MeghanaKankaria/PortfolioMeghanaKankaria.pdf"
+                    href="https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/contributors/MeghanaKankaria/PortfolioWithTechWorkMeghanaKankaria.pdf"
                     download
                     className="bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-full flex items-center space-x-2 hover:bg-white/30 transition-all duration-300 hover:scale-105 shadow-lg font-semibold border border-white/30"
                   >
@@ -619,7 +619,7 @@ export default function MeghanaKankariaProfile() {
 
                   {/* Portfolio */}
                   <a
-                    href="https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/contributors/MeghanaKankaria/PortfolioMeghanaKankaria.pdf"
+                    href="https://cityphotoscity.s3.eu-west-1.amazonaws.com/images/contributors/MeghanaKankaria/PortfolioWithTechWorkMeghanaKankaria.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-4 p-4 bg-gradient-to-r from-purple-50 to-pink-100 rounded-xl hover:from-purple-100 hover:to-pink-200 transition-all duration-300 group"

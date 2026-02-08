@@ -185,6 +185,16 @@ const NammaMetroAnalysis = () => {
         'Reliable service across 3 lines',
         'Network operating at capacity'
       ]
+    },
+    '2026-02': {
+      color: '#A855F7',
+      title: 'February 2026: Steady Momentum',
+      description: 'February continues the strong momentum from 2026. Namma Metro maintains its position as Bengaluru\'s preferred public transit option with consistent ridership across all lines.',
+      highlights: [
+        'Consistent million+ daily ridership',
+        'Yellow Line fully integrated',
+        'Commuter confidence at all-time high'
+      ]
     }
   };
 

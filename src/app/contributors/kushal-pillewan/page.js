@@ -325,10 +325,13 @@ export default function KushalPillewanProfile() {
                   <Globe className="h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5" />
                   <span>Portfolio</span>
                 </a>
-                <button className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white px-3 py-1.5 sm:px-4 sm:py-2 lg:px-6 lg:py-3 rounded-full flex items-center space-x-1.5 sm:space-x-2 transition-all duration-300 hover:scale-105 shadow-lg text-xs sm:text-sm lg:text-base">
+                <Link
+                  href="/contributors/kushal-pillewan/thank-you"
+                  className="bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white px-3 py-1.5 sm:px-4 sm:py-2 lg:px-6 lg:py-3 rounded-full flex items-center space-x-1.5 sm:space-x-2 transition-all duration-300 hover:scale-105 shadow-lg text-xs sm:text-sm lg:text-base font-semibold"
+                >
                   <Heart className="h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5 fill-current" />
                   <span>Thank You!</span>
-                </button>
+                </Link>
               </motion.div>
             </div>
           </div>

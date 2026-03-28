@@ -86,6 +86,34 @@ export const cityTipsData = {
     { text: '**Use UPI (Unified Payments Interface)** - India is a leader in digital payments. Apps like Google Pay, PhonePe, or BHIM are used almost everywhere. Setting one up can make transactions much easier than handling cash and change.', category: 'Helpful Advice', icon: '☀️', keywords: ['upi', 'payment', 'google pay', 'phonepe', 'digital', 'money', 'app', 'transaction'] },
     { text: '**Local SIM Card** - Getting a local SIM card (Airtel or Jio are good options) is highly recommended for using navigation apps and ride-sharing services. You will need your passport, visa, and a passport-sized photo.', category: 'Helpful Advice', icon: '☀️', keywords: ['sim', 'phone', 'airtel', 'jio', 'mobile', 'internet', 'data', 'navigation'] },
   ],
+  goa: [
+    { text: '**Getting Around** - Renting a scooter or motorcycle is the most popular and practical way to explore Goa. Taxis and auto-rickshaws are available but negotiate the fare before boarding.', category: 'Logistics & Transportation', icon: '🛵', keywords: ['scooter', 'bike', 'transport', 'taxi', 'auto', 'getting around', 'rent', 'motorbike'] },
+    { text: '**Avoid Peak Season Traffic** - December and January are peak tourist months and roads get very congested, especially around North Goa beaches. Start your day early to beat the crowds.', category: 'Logistics & Transportation', icon: '🛵', keywords: ['traffic', 'peak season', 'december', 'january', 'crowds', 'north goa', 'beach', 'timing'] },
+    { text: '**GoaMiles App** - Use the GoaMiles cab aggregator app for fair and metered cab fares across Goa.', category: 'Logistics & Transportation', icon: '🛵', keywords: ['app', 'goamiles', 'cab', 'taxi', 'fare', 'transport', 'book'] },
+    { text: '**North vs South Goa** - North Goa (Baga, Calangute, Anjuna) is lively and commercialised. South Goa (Palolem, Agonda, Colva) is quieter and more scenic. Choose based on the vibe you want.', category: 'Logistics & Transportation', icon: '🛵', keywords: ['north goa', 'south goa', 'baga', 'palolem', 'agonda', 'beach', 'quiet', 'party', 'compare'] },
+
+    { text: '**Seafood is King** - Fresh fish, prawns, lobster, and crab are what Goa does best. Head to small local shacks on the beach rather than fancy restaurants for the freshest and most affordable seafood.', category: 'Eating & Drinking', icon: '🦐', keywords: ['seafood', 'fish', 'prawns', 'crab', 'lobster', 'beach shack', 'food', 'eat', 'fresh', 'local'] },
+    { text: '**Try Goan Curry** - Don\'t miss Goan fish curry with rice, prawn balchão, pork vindaloo, and sorpotel. These are authentic local dishes with Portuguese influences.', category: 'Eating & Drinking', icon: '🦐', keywords: ['curry', 'fish curry', 'vindaloo', 'sorpotel', 'balchao', 'pork', 'local food', 'goan cuisine', 'must try'] },
+    { text: '**Feni** - Goa\'s local cashew or coconut spirit. Try it at a local taverna — it\'s cheap, strong, and a true Goan experience. Cashew feni is more prized than coconut.', category: 'Eating & Drinking', icon: '🦐', keywords: ['feni', 'cashew', 'coconut', 'alcohol', 'drinks', 'spirit', 'local', 'taverna', 'try'] },
+    { text: '**Drink Coconut Water** - Fresh tender coconut (nariyal pani) is sold everywhere on the beach and is perfect for hydration in the heat.', category: 'Eating & Drinking', icon: '🦐', keywords: ['coconut water', 'nariyal', 'drink', 'hydration', 'beach', 'fresh', 'healthy'] },
+    { text: '**Avoid Eating at Tourist Traps on Main Roads** - Restaurants directly on the main tourist strips charge a premium. Walk one or two lanes back and you\'ll find much better food at half the price.', category: 'Eating & Drinking', icon: '🦐', keywords: ['restaurant', 'expensive', 'tourist', 'avoid', 'local', 'cheap', 'food', 'price'] },
+
+    { text: '**Old Goa Churches are Free** - The Basilica of Bom Jesus and Se Cathedral are UNESCO World Heritage Sites and free to enter. Visit in the morning before the crowds arrive.', category: 'Budget & Sightseeing', icon: '⛪', keywords: ['church', 'bom jesus', 'se cathedral', 'old goa', 'free', 'UNESCO', 'heritage', 'sightseeing', 'morning'] },
+    { text: '**Dudhsagar Falls Day Trip** - A stunning four-tiered waterfall deep inside the forest. Best visited between October and February when water flow is strong. Book a jeep safari in advance.', category: 'Budget & Sightseeing', icon: '⛪', keywords: ['dudhsagar', 'waterfall', 'falls', 'jeep', 'safari', 'day trip', 'forest', 'october', 'february'] },
+    { text: '**Anjuna Flea Market** - Every Wednesday, Anjuna hosts a famous flea market with clothes, handicrafts, jewelry, and spices. Bargaining is expected and half the fun.', category: 'Budget & Sightseeing', icon: '⛪', keywords: ['anjuna', 'market', 'flea', 'wednesday', 'bargain', 'shopping', 'clothes', 'handicrafts', 'jewelry'] },
+    { text: '**Chapora Fort** - The fort made famous by the Bollywood film Dil Chahta Hai. Free entry, great views of Vagator beach and the Arabian Sea at sunset.', category: 'Budget & Sightseeing', icon: '⛪', keywords: ['chapora', 'fort', 'free', 'sunset', 'vagator', 'views', 'bollywood', 'sightseeing'] },
+    { text: '**Spice Plantation Tours** - Visit a working spice farm in the Ponda region for a guided tour and a home-style Goan meal. Usually around ₹600-800 per person all-in.', category: 'Budget & Sightseeing', icon: '⛪', keywords: ['spice', 'plantation', 'ponda', 'farm', 'tour', 'meal', 'budget', 'experience'] },
+
+    { text: '**Water Safety on Beaches** - Always swim between the flags and heed lifeguard warnings. Goa\'s beaches can have strong undertows and rip currents, especially during the monsoon and post-monsoon periods.', category: 'Safety & Weather', icon: '🌊', keywords: ['swim', 'beach', 'safety', 'flags', 'rip current', 'lifeguard', 'drowning', 'sea', 'waves'] },
+    { text: '**Avoid Monsoon Beaches** - The official beach season is October to May. During monsoon (June–September), most beach shacks close and swimming is dangerous. The landscape is green and lush but the sea is off-limits.', category: 'Safety & Weather', icon: '🌊', keywords: ['monsoon', 'june', 'september', 'closed', 'season', 'rain', 'swimming', 'beach', 'avoid', 'october', 'may'] },
+    { text: '**Use Sunscreen** - The Goan sun is intense year-round. Apply a high SPF sunscreen every two hours on the beach and wear a hat and UV-protective sunglasses.', category: 'Safety & Weather', icon: '🌊', keywords: ['sunscreen', 'sun', 'spf', 'hat', 'sunglasses', 'burn', 'safety', 'beach', 'heat'] },
+    { text: '**Beware of Valuables on the Beach** - Don\'t leave bags, phones, or wallets unattended on the beach. Use your hotel safe for passports, extra cash, and valuables.', category: 'Safety & Weather', icon: '🌊', keywords: ['theft', 'valuables', 'beach', 'bag', 'phone', 'wallet', 'safe', 'hotel', 'leave', 'security'] },
+
+    { text: '**Dress Code at Religious Sites** - When visiting temples (like Mangeshi or Shantadurga) or old churches, cover your shoulders and knees. Remove footwear before entering temples.', category: 'Cultural & Practical Etiquette', icon: '🏖️', keywords: ['temple', 'church', 'dress', 'clothing', 'cover', 'etiquette', 'respect', 'footwear', 'religious'] },
+    { text: '**Goan Culture is Laid-Back** - Goans have a relaxed attitude to life. Don\'t expect things to move quickly. Embrace "Susegad" — the Goan philosophy of contentment and a leisurely pace of life.', category: 'Cultural & Practical Etiquette', icon: '🏖️', keywords: ['culture', 'susegad', 'relaxed', 'slow', 'pace', 'laid back', 'goan', 'lifestyle', 'attitude'] },
+    { text: '**Tipping is Appreciated** - Tipping 10% at restaurants and rounding up taxi fares is appreciated. For beach shack staff and hotel housekeeping, a small tip goes a long way.', category: 'Cultural & Practical Etiquette', icon: '🏖️', keywords: ['tipping', 'tip', 'restaurant', 'taxi', 'hotel', 'shack', 'money', 'gratuity', 'etiquette'] },
+    { text: '**Nudism is Illegal** - Topless sunbathing and nudism are technically illegal in Goa, though tolerance varies by beach. Be respectful of local norms, especially in South Goa and near villages.', category: 'Cultural & Practical Etiquette', icon: '🏖️', keywords: ['nudism', 'topless', 'beach', 'illegal', 'respect', 'etiquette', 'culture', 'local'] },
+  ],
 };
 
 // Quick suggestions for each city
@@ -103,5 +131,12 @@ export const quickSuggestions = {
     { label: '🌳 Parks & nature', query: 'What parks should I visit?' },
     { label: '🕉️ Cultural tips', query: 'What cultural norms should I know?' },
     { label: '☀️ Weather & packing', query: 'What should I pack?' },
+  ],
+  goa: [
+    { label: '🛵 Getting around', query: 'How do I get around Goa?' },
+    { label: '🦐 Food & seafood', query: 'What should I eat in Goa?' },
+    { label: '⛪ Sightseeing', query: 'What are the best things to see for free?' },
+    { label: '🌊 Beach safety', query: 'What should I know about beach safety?' },
+    { label: '🏖️ Cultural tips', query: 'What cultural norms should I know?' },
   ],
 };

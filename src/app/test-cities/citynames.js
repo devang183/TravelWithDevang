@@ -125,11 +125,18 @@ export const cities = {
       description: 'The capital of Northern Ireland, known for its maritime history.', 
       highlights: ['Titanic Museum', 'Peace walls', 'Crown Liquor Saloon'] 
     },
-    nagpur:  { 
-      name: 'Nagpur', 
+    nagpur:  {
+      name: 'Nagpur',
       year:"2025",
-      image: '/images/nagpur.jpg', 
-      description: 'The capital of Northern Ireland, known for its maritime history.', 
-      highlights: ['Titanic Museum', 'Peace walls', 'Crown Liquor Saloon'] 
+      image: '/images/nagpur.jpg',
+      description: 'The capital of Northern Ireland, known for its maritime history.',
+      highlights: ['Titanic Museum', 'Peace walls', 'Crown Liquor Saloon']
+    },
+    goa:  {
+      name: 'Goa',
+      year:"2026",
+      image: '/images/bengaluru.jpg',
+      description: 'India\'s coastal paradise, famous for its golden beaches, Portuguese heritage, and vibrant nightlife.',
+      highlights: ['Baga Beach', 'Old Goa Churches', 'Dudhsagar Falls']
     },
   };

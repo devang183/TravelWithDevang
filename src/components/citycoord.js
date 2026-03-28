@@ -179,6 +179,14 @@ export const cities = {
     highlights: ['Trinity College', 'Temple Bar', 'Guinness Storehouse'],
     timezone: 'Europe/Dublin',
   },
+  goa: {
+    name: 'Goa',
+    coords: [15.2993, 74.1240],
+    image: '/images/bengaluru.jpg',
+    description: 'India\'s coastal paradise, famous for its golden beaches, Portuguese heritage, and vibrant nightlife along the Arabian Sea.',
+    highlights: ['Baga Beach', 'Old Goa Churches', 'Dudhsagar Falls'],
+    timezone: 'Asia/Kolkata',
+  },
 };
 
 // export const cities = {

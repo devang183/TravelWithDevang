@@ -598,6 +598,17 @@ export const photos={
             "https://cityphotoscity.s3.amazonaws.com/images/galway/galway16.jpg",
         ]
     },
+    goa:{
+        name:'goa',
+        backgroundImage: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200',
+        images:[
+            { url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800" },
+            { url: "https://images.unsplash.com/photo-1590921093740-5f46ae4349f5?w=800" },
+            { url: "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=800" },
+            { url: "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=800" },
+            { url: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800" },
+        ],
+    },
     newquay:{
         name:'newquay',
         backgroundImage: 'https://cityphotoscity.s3.amazonaws.com/images/newquay/newquay.jpg',

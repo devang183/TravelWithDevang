@@ -195,6 +195,16 @@ const NammaMetroAnalysis = () => {
         'Yellow Line fully integrated',
         'Commuter confidence at all-time high'
       ]
+    },
+    '2026-03': {
+      color: '#22C55E',
+      title: 'March 2026: Summer Surge',
+      description: 'Rising summer temperatures once again drive Bengalureans to the air-conditioned comfort of the metro. Ridership sees a seasonal uptick mirroring March 2025\'s heat-driven surge, reinforcing the metro\'s role as the city\'s cool commute.',
+      highlights: [
+        'Summer heat driving metro preference',
+        'Seasonal ridership uptick across all lines',
+        'Strong year-on-year growth vs March 2025'
+      ]
     }
   };
 

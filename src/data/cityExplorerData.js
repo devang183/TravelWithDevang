@@ -89,5 +89,45 @@ export const cityExplorerData = {
         link: "https://bangaloretourism.in/commercial-street"
       }
     ]
+  },
+  goa: {
+    2026: [
+      {
+        title: "Basilica of Bom Jesus",
+        image: "https://images.unsplash.com/photo-1590921093740-5f46ae4349f5?w=800",
+        description: "A UNESCO World Heritage Site and one of the finest examples of baroque architecture in India. Built in 1605, this basilica houses the mortal remains of St. Francis Xavier. The gilded altarpiece and ornate interior are breathtaking, and entry is completely free.",
+        link: "https://en.wikipedia.org/wiki/Basilica_of_Bom_Jesus"
+      },
+      {
+        title: "Baga Beach",
+        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+        description: "One of North Goa's most vibrant beaches, famous for its golden sands, water sports, beach shacks, and lively nightlife. Perfect for parasailing, jet-skiing, and watching the sunset with a cold Kingfisher beer in hand.",
+        link: "https://en.wikipedia.org/wiki/Baga_beach"
+      },
+      {
+        title: "Dudhsagar Falls",
+        image: "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=800",
+        description: "One of India's tallest waterfalls at 310 metres, Dudhsagar (meaning 'sea of milk') is a breathtaking four-tiered cascade deep inside the Bhagwan Mahavir Wildlife Sanctuary. Accessible via jeep safari from Mollem and best visited between October and February.",
+        link: "https://en.wikipedia.org/wiki/Dudhsagar_Falls"
+      },
+      {
+        title: "Anjuna Flea Market",
+        image: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=800",
+        description: "Running every Wednesday since the 1960s hippie era, Anjuna's flea market is a Goan institution. Hundreds of stalls sell clothes, spices, jewellery, handicrafts, and souvenirs. Bargaining is expected and the atmosphere is electric.",
+        link: "https://en.wikipedia.org/wiki/Anjuna"
+      },
+      {
+        title: "Chapora Fort",
+        image: "https://images.unsplash.com/photo-1590086782792-42dd2350140b?w=800",
+        description: "A 17th-century Portuguese fort perched on a cliff overlooking Vagator beach and the Arabian Sea. Made famous by the Bollywood film Dil Chahta Hai, it offers some of the most stunning sunset views in all of Goa. Free entry.",
+        link: "https://en.wikipedia.org/wiki/Chapora_Fort"
+      },
+      {
+        title: "Panjim Latin Quarter (Fontainhas)",
+        image: "https://images.unsplash.com/photo-1549918864-48ac978761a4?w=800",
+        description: "Goa's capital city hides a charming Portuguese-era neighbourhood with narrow winding lanes, colourful heritage houses, and a distinctly European atmosphere. Perfect for an afternoon stroll, with great cafes and art galleries.",
+        link: "https://en.wikipedia.org/wiki/Fontainhas,_Goa"
+      }
+    ]
   }
 };

@@ -35,6 +35,7 @@ const cityMapRegistry = {
   newquay:[DublinArcGISMap],
   chicago:[DublinArcGISMap],
   galway:[CityAttractionsGalway],
+  goa:[NagpurPoliceStationsMap],
   // more cities...
 };
 
